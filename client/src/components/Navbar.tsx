@@ -99,9 +99,9 @@ export default function Navbar() {
           <div className="flex items-center">
             <a href="#" className="flex items-center">
               <img 
-                src="/assets/logo.svg" 
+                src="/assets/company-logo.jpeg" 
                 alt="RT NextGenAI Logo" 
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
             </a>
           </div>
