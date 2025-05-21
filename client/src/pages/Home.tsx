@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Solutions from "@/components/Solutions";
+import ServicesHighlights from "@/components/ServicesHighlights";
+import CaseStudies from "@/components/CaseStudies";
 import Statistics from "@/components/Statistics";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
@@ -23,7 +24,8 @@ export default function Home() {
     >
       <Hero />
       <About />
-      <Solutions />
+      <ServicesHighlights />
+      <CaseStudies />
       <Statistics />
       <Testimonials />
       <CTA />
