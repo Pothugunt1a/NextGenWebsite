@@ -93,7 +93,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
+    <header className={`fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300 ${scrolled ? 'py-1' : 'py-2'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -107,61 +107,79 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-4" ref={dropdownRef}>
-            {navLinks.map((link) => (
-              <div key={link.id} className="relative group">
-                {link.hasDropdown ? (
-                  <div className="relative">
+          <nav className="hidden lg:flex items-center" ref={dropdownRef}>
+            <div className="flex items-center flex-wrap justify-end">
+              {navLinks.slice(0, 3).map((link) => (
+                <div key={link.id} className="relative group mx-1">
+                  {link.hasDropdown ? (
+                    <div className="relative">
+                      <a
+                        href={link.href}
+                        className="nav-link flex items-center text-dark-light hover:text-primary font-medium transition-colors px-2 py-2 text-sm"
+                        onClick={(e) => toggleDropdown(link.id, e)}
+                      >
+                        {link.name}
+                        <ChevronDown className={`ml-1 h-3 w-3 transition-transform ${activeDropdown === link.id ? 'rotate-180' : ''}`} />
+                      </a>
+                      
+                      {/* Multi-level Dropdown */}
+                      {activeDropdown === link.id && (
+                        <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl z-50 py-3 animate-in fade-in-10 slide-in-from-top-5">
+                          {link.dropdownItems?.map((category, idx) => (
+                            <div key={idx} className="py-2 px-4">
+                              <div className="font-semibold text-primary mb-2">{category.name}</div>
+                              <ul className="space-y-1">
+                                {category.items.map((item, itemIdx) => (
+                                  <li key={itemIdx}>
+                                    <a 
+                                      href={item.href} 
+                                      className="block px-2 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary rounded-md transition-all"
+                                      onClick={(e) => scrollToSection(e, item.href)}
+                                    >
+                                      {item.name}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
                     <a
                       href={link.href}
-                      className="nav-link flex items-center text-dark-light hover:text-primary font-medium transition-colors px-2 py-2"
-                      onClick={(e) => toggleDropdown(link.id, e)}
+                      className="nav-link text-dark-light hover:text-primary font-medium transition-colors px-2 py-2 text-sm"
+                      onClick={(e) => scrollToSection(e, link.href)}
                     >
                       {link.name}
-                      <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === link.id ? 'rotate-180' : ''}`} />
                     </a>
-                    
-                    {/* Multi-level Dropdown */}
-                    {activeDropdown === link.id && (
-                      <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl z-50 py-3 animate-in fade-in-10 slide-in-from-top-5">
-                        {link.dropdownItems?.map((category, idx) => (
-                          <div key={idx} className="py-2 px-4">
-                            <div className="font-semibold text-primary mb-2">{category.name}</div>
-                            <ul className="space-y-1">
-                              {category.items.map((item, itemIdx) => (
-                                <li key={itemIdx}>
-                                  <a 
-                                    href={item.href} 
-                                    className="block px-2 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary rounded-md transition-all"
-                                    onClick={(e) => scrollToSection(e, item.href)}
-                                  >
-                                    {item.name}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
+                  )}
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex items-center flex-wrap justify-end ml-2">
+              {navLinks.slice(3, 9).map((link) => (
+                <div key={link.id} className="relative group mx-1">
                   <a
                     href={link.href}
-                    className="nav-link text-dark-light hover:text-primary font-medium transition-colors px-2 py-2"
+                    className="nav-link text-dark-light hover:text-primary font-medium transition-colors px-2 py-2 text-sm"
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
                     {link.name}
                   </a>
-                )}
-              </div>
-            ))}
-            <Button 
-              onClick={(e) => scrollToSection(e as any, "#contact")}
-              className="bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors ml-2"
-            >
-              Contact Us
-            </Button>
+                </div>
+              ))}
+              
+              <Button 
+                onClick={(e) => scrollToSection(e as any, "#contact")}
+                className="bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors text-sm px-4 py-1 h-8 ml-2"
+                size="sm"
+              >
+                Contact
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Navigation Toggle */}
