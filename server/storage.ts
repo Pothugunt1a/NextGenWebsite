@@ -1,23 +1,40 @@
-import { users, type User, type InsertUser } from "@shared/schema";
+import { 
+  users, 
+  type User, 
+  type InsertUser, 
+  contactFormSubmissions,
+  type InsertContactForm,
+  type ContactFormSubmission
+} from "@shared/schema";
 
 // modify the interface with any CRUD methods
 // you might need
 
 export interface IStorage {
+  // User methods
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  
+  // Contact form methods
+  saveContactSubmission(submission: InsertContactForm): Promise<ContactFormSubmission>;
+  getContactSubmissions(): Promise<ContactFormSubmission[]>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
-  currentId: number;
+  private contactSubmissions: Map<number, ContactFormSubmission>;
+  currentUserId: number;
+  currentContactSubmissionId: number;
 
   constructor() {
     this.users = new Map();
-    this.currentId = 1;
+    this.contactSubmissions = new Map();
+    this.currentUserId = 1;
+    this.currentContactSubmissionId = 1;
   }
 
+  // User methods
   async getUser(id: number): Promise<User | undefined> {
     return this.users.get(id);
   }
@@ -29,10 +46,27 @@ export class MemStorage implements IStorage {
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentId++;
+    const id = this.currentUserId++;
     const user: User = { ...insertUser, id };
     this.users.set(id, user);
     return user;
+  }
+
+  // Contact form methods
+  async saveContactSubmission(submission: InsertContactForm): Promise<ContactFormSubmission> {
+    const id = this.currentContactSubmissionId++;
+    const now = new Date();
+    const contactSubmission: ContactFormSubmission = { 
+      ...submission, 
+      id,
+      createdAt: now
+    };
+    this.contactSubmissions.set(id, contactSubmission);
+    return contactSubmission;
+  }
+
+  async getContactSubmissions(): Promise<ContactFormSubmission[]> {
+    return Array.from(this.contactSubmissions.values());
   }
 }
 
