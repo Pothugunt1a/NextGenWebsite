@@ -6,6 +6,8 @@ import {
   type InsertContactForm,
   type ContactFormSubmission
 } from "@shared/schema";
+import { eq } from "drizzle-orm";
+import { db } from "./db";
 
 // modify the interface with any CRUD methods
 // you might need
@@ -21,53 +23,42 @@ export interface IStorage {
   getContactSubmissions(): Promise<ContactFormSubmission[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private contactSubmissions: Map<number, ContactFormSubmission>;
-  currentUserId: number;
-  currentContactSubmissionId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.contactSubmissions = new Map();
-    this.currentUserId = 1;
-    this.currentContactSubmissionId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   // User methods
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const result = await db.select().from(users).where(eq(users.id, id));
+    return result[0];
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const result = await db.select().from(users).where(eq(users.username, username));
+    return result[0];
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+    const result = await db.insert(users).values(insertUser).returning();
+    return result[0];
   }
 
   // Contact form methods
   async saveContactSubmission(submission: InsertContactForm): Promise<ContactFormSubmission> {
-    const id = this.currentContactSubmissionId++;
-    const now = new Date();
-    const contactSubmission: ContactFormSubmission = { 
-      ...submission, 
-      id,
-      createdAt: now
+    // Make sure company can be null for database compatibility
+    const data = {
+      ...submission,
+      company: submission.company || null
     };
-    this.contactSubmissions.set(id, contactSubmission);
-    return contactSubmission;
+    
+    const result = await db
+      .insert(contactFormSubmissions)
+      .values(data)
+      .returning();
+    
+    return result[0];
   }
 
   async getContactSubmissions(): Promise<ContactFormSubmission[]> {
-    return Array.from(this.contactSubmissions.values());
+    return db.select().from(contactFormSubmissions).orderBy(contactFormSubmissions.createdAt);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
