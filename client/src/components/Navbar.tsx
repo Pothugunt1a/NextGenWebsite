@@ -98,10 +98,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="flex items-center">
-              <span className="text-3xl font-bold">
-                <span className="text-primary">RT</span>
-                <span className="text-dark">NextGenAI</span>
-              </span>
+              <img 
+                src="/assets/logo.svg" 
+                alt="RT NextGenAI Logo" 
+                className="h-10 w-auto"
+              />
             </a>
           </div>
 
