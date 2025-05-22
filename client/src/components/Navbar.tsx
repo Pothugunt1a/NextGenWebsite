@@ -55,23 +55,26 @@ export default function Navbar() {
   };
 
   // Handle smooth scrolling
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const navigate = useNavigate();
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const targetId = href.replace("#", "");
-    const targetElement = document.getElementById(targetId);
-    
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 80, // Account for fixed header
-        behavior: "smooth",
-      });
+    if (href === '/contact') {
+      navigate('/contact');
+    } else {
+      const targetId = href.replace("#", "");
+      const targetElement = document.getElementById(targetId);
       
-      // Update URL without page reload
-      window.history.pushState(null, "", href);
-      
-      // Close mobile menu
-      handleLinkClick();
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: "smooth",
+        });
+        
+        window.history.pushState(null, "", href);
+      }
     }
+    
+    handleLinkClick();
   };
 
   // Toggle dropdown for desktop navigation
