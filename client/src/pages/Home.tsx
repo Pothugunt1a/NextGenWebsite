@@ -28,16 +28,15 @@ export default function Home() {
       <CaseStudies />
       <Statistics />
       <Testimonials />
-      <CTA />
       <motion.div
-          className="max-w-5xl mx-auto mb-12"
+          className="max-w-5xl mx-auto my-24"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="bg-slate-100 rounded-xl overflow-hidden shadow-md">
-            <div className="relative p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-slate-100 to-slate-200">
+          <div className="bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative p-8 sm:p-10 md:p-12 flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-slate-100 to-slate-200">
               <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/pattern-dots.svg')]"></div>
               
               <div className="flex-1 relative z-10">
