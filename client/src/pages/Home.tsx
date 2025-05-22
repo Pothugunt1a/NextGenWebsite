@@ -7,7 +7,6 @@ import CaseStudies from "@/components/CaseStudies";
 import Statistics from "@/components/Statistics";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
-import InfoBanner from "@/components/InfoBanner";
 
 export default function Home() {
   // Scroll to top when the component mounts
@@ -29,7 +28,6 @@ export default function Home() {
       <Statistics />
       <Testimonials />
       <CTA />
-      <InfoBanner />
     </motion.div>
   );
 }
