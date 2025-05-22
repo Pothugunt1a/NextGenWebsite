@@ -142,7 +142,7 @@ export default function Navbar() {
                                         e.preventDefault();
                                         if (item.name === "Life Science") {
                                           setLocation("/life-science");
-                                        } else if (item.name === "Validation") {
+                                        } else if (item.name === "Validation Services") {
                                           setLocation("/validation");
                                         } else {
                                           scrollToSection(e, item.href);
@@ -252,17 +252,7 @@ export default function Navbar() {
                                     <a 
                                       href={item.href} 
                                       className="block py-1 text-sm text-gray-700 hover:text-primary"
-                                      onClick={(e) => {
-                                        e.preventDefault();
-                                        if (item.name === "Life Science") {
-                                          setLocation("/life-science");
-                                        } else if (item.name === "Validation") {
-                                          setLocation("/validation");
-                                        } else {
-                                          scrollToSection(e, item.href);
-                                        }
-                                        handleLinkClick();
-                                      }}
+                                      onClick={(e) => scrollToSection(e, item.href)}
                                     >
                                       {item.name}
                                     </a>
