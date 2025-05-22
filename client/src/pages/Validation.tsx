@@ -8,32 +8,34 @@ const validationServices = [
   {
     icon: <Cog className="h-12 w-12 text-primary" />,
     title: "Equipment Validation Engineering",
-    description: "RT NextGen AI Consulting Validation Engineers manages, inspects, calibrates, tests and modifies instrumentation and equipment.",
+    description: "RT NextGen AI Consulting Validation Engineers manages, inspects, calibrates, tests and modifies the instrumentation, equipment, mechanics and procedures used to manufacture various products. They ensure all systems are running correctly and efficiently to produce high-quality products. They also investigate the causes of equipment failures and anomalies and decide if the equipment needs to be repaired or replaced. RT NextGen AI Consulting in-house staff of highly skilled professionals consults with you to determine your optimal strategy and immediate solutions. Our team also helps you with any resources for on-site tasks.",
     tasks: [
       "Monitoring and testing equipment",
       "Analyzing and documenting test results",
       "Preparing compliance reports",
       "Directing validation activities",
       "Resolving testing problems",
-      "Making adjustments or improvements",
-      "Creating validation databases",
+      "Making adjustments or improvements to equipment and processes",
+      " Creating databases to track validation activities",
       "Interpreting customer requirements",
       "Developing validation schedules",
-      "Conducting training",
-      "Maintaining instrumentation",
-      "Following industry standards"
+      "Conducting training and overseeing the work of validation technicians",
+      "Maintaining instrumentation and equipment",
+      "Keeping up to date on industry standards and regulations"   
+      
     ]
   },
   {
     icon: <FlaskConical className="h-12 w-12 text-primary" />,
     title: "Cleaning Validation Engineering",
-    description: "A risk-based approach for establishing effective cleaning validation, including policies and master plans.",
+    description: "A risk-based approach is followed for establishing an effective cleaning validation, including the development of policies, master plans and the appropriate content for each study to be performed incorporating critical quality attributes and critical process parameters and process control.",
     services: [
       "Cleaning Validation Regulatory Guidelines",
       "Cleaning Validation Methodology",
       "Analytical Development",
-      "Visual Examination & Sampling",
+      "Visual Examination – Sampling, Swab Sampling, Rinse Sampling",
       "Analytical Testing and Reporting",
+      "Cleaning Validation Sampling and Testing",
       "Worst Case Product Selection Matrix",
       "Qualification and Validation"
     ]
@@ -41,26 +43,32 @@ const validationServices = [
   {
     icon: <Monitor className="h-12 w-12 text-primary" />,
     title: "Computer System Validation",
-    description: "Comprehensive validation throughout the complete life cycle of computer systems.",
+    description: "Computer Systems Validation is not a one-time event. Validation should be considered as part of the complete life cycle of a computer system. This cycle includes the stages of planning, specification, programming, testing commissioning, documentation, operation, monitoring and modifying",
     services: [
-      "Validation Program Development",
-      "Retrospective Evaluation",
-      "Continuous reassessment",
-      "Automated processes validation",
-      "Validation Certification"
+      "Validation Program, Procedure, and Template Development",
+      "Retrospective Evaluation of Legacy Systems",
+      "Continuous reassessment and re-validation",
+    "Automated or semi-automated processes, controlled by a DCS (distributed control system), PLC (programmable logic controller), or similar computer system Validation Certification Package Development" 
+      
     ]
   },
   {
     icon: <Binary className="h-12 w-12 text-primary" />,
     title: "Process Validation",
-    description: "Expert guidance in identifying risks and critical control points that impact product quality.",
+    description: "Having years of experience, our highly experienced team understands the concerns companies face in this highly regulated environment. The first step in process validation in manufacturing is to identify the risks and critical control points of the process. Which aspects of the process will impact product quality i.e. GMP risk, if they fail, or if they fall outside the control parameters?",
     services: [
-      "Quality Systems Regulation",
+      "Quality Systems Regulation and Standards for medical devices and process validation",
       "Design Control and Risk Management",
-      "Process validation prerequisites",
-      "Statistics and quality metrics",
+      "Process validation prerequisites including validated test methods",
+      "Statistics and quality metrics calculations",
+      "Verification versus Validation",
+      " Process development / Engineering studies and Design Controls",
       "Design of Experiments (DOE)",
+      "Validating manual processes",
+      "Establishing methods for cleaning, facilities, utilities, and sterilization",
+      "Validation Process Failure Mode and Effects Analysis (PFMEA)",
       "Process Monitoring and Control",
+      "Revalidation",
       "Documentation for process validation"
     ]
   }
@@ -104,7 +112,7 @@ export default function Validation() {
                 Ensuring quality, compliance, and efficiency in regulated environments
               </p>
               <Button size="lg" variant="secondary">
-                Contact Us Today
+                Contact Us
               </Button>
             </motion.div>
           </div>
