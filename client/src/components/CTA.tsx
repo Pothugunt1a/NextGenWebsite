@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "wouter";
 
 export default function CTA() {
   const navigate = useNavigate();

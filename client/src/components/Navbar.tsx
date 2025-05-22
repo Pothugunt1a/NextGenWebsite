@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
