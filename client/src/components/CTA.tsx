@@ -1,15 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "wouter";
 
 export default function CTA() {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      window.scrollTo({
-        top: contactSection.offsetTop - 80,
-        behavior: 'smooth',
-      });
-    }
+  const navigate = useNavigate();
+  const goToContact = () => {
+    navigate('/contact');
   };
 
   return (
@@ -27,7 +23,7 @@ export default function CTA() {
             Take the first step toward leveraging AI to drive growth, efficiency, and innovation.
           </p>
           <Button
-            onClick={scrollToContact}
+            onClick={goToContact}
             className="bg-white text-primary hover:bg-slate-200 font-semibold px-8 py-6 rounded-full transition-colors h-auto"
           >
             Schedule a Free Consultation

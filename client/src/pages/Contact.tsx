@@ -1,9 +1,9 @@
 
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import Contact from "@/components/Contact";
 
 export default function ContactPage() {
+  // Scroll to top when the component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
