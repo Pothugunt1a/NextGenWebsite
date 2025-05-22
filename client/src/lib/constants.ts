@@ -171,7 +171,7 @@ export const navLinks = [
   { id: 7, name: "Life Science", href: "#life-science" },
   { id: 8, name: "Validation", href: "#validation" },
   { id: 9, name: "Projects", href: "#projects" },
-  { id: 10, name: "Contact", href: "#contact" },
+  { id: 10, name: "Contact", href: "/contact" },
 ];
 
 // Contact info
