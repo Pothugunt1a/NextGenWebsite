@@ -26,7 +26,7 @@ export default function Hero() {
       title: "WE ARE RT NEXTGEN AI",
       subtitle: "Transformative AI Solutions",
       description: "Pioneering the future with cutting-edge artificial intelligence and machine learning solutions that revolutionize business operations and unlock unprecedented possibilities.",
-      image: "https://images.unsplash.com/photo-1680553437331-6d66121ada86?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1932&h=1024"
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1932&h=1024"
     },
     {
       title: "WE ARE RT NEXTGEN AI",
