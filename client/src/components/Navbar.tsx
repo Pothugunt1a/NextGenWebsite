@@ -138,14 +138,7 @@ export default function Navbar() {
                                     <a 
                                       href={item.href} 
                                       className="block px-2 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary rounded-md transition-all"
-                                      onClick={(e) => {
-                                        e.preventDefault();
-                                        if (item.name === "Life Science") {
-                                          setLocation("/validation");
-                                        } else {
-                                          scrollToSection(e, item.href);
-                                        }
-                                      }}
+                                      onClick={(e) => scrollToSection(e, item.href)}
                                     >
                                       {item.name}
                                     </a>
