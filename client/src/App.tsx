@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import LifeScience from "@/pages/LifeScience";
 import Layout from "@/components/Layout";
+import Validation from "@/pages/Validation";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/life-science" component={LifeScience} />
+        <Route path="/validation" component={Validation} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
