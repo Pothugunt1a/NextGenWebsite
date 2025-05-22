@@ -28,6 +28,7 @@ export default function Home() {
       <CaseStudies />
       <Statistics />
       <Testimonials />
+      <CTA />
       <motion.div
           className="max-w-5xl mx-auto mb-12"
           initial={{ opacity: 0 }}
@@ -66,7 +67,6 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
-      <CTA />
     </motion.div>
   );
 }
