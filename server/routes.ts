@@ -10,23 +10,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       // Validate request body against schema
       const formData = contactFormSchema.parse(req.body);
-      
+
       // Store contact form submission
-      const contact = await storage.saveContactSubmission(formData);
-      
+      // const contact = await storage.saveContactSubmission(formData); // Commented out database operation
+
       // In a production environment, you would typically:
       // 1. Send an email notification
       // 2. Create a CRM entry
       // 3. Set up an automated response
-      
+
       res.status(201).json({
         success: true,
         message: "Contact form submitted successfully",
-        id: contact.id
+        // id: contact.id // Removed database id
       });
     } catch (error) {
       console.error("Error processing contact form:", error);
-      
+
       if (error instanceof z.ZodError) {
         // Send validation errors
         return res.status(400).json({
@@ -35,7 +35,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           errors: error.errors
         });
       }
-      
+
       res.status(500).json({
         success: false,
         message: "Failed to process contact form submission"
