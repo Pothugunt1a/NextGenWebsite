@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -56,26 +55,23 @@ export default function Navbar() {
   };
 
   // Handle smooth scrolling
-  const navigate = useNavigate();
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    if (href === '/contact') {
-      navigate('/contact');
-    } else {
-      const targetId = href.replace("#", "");
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: "smooth",
-        });
-        
-        window.history.pushState(null, "", href);
-      }
-    }
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
     
-    handleLinkClick();
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 80, // Account for fixed header
+        behavior: "smooth",
+      });
+      
+      // Update URL without page reload
+      window.history.pushState(null, "", href);
+      
+      // Close mobile menu
+      handleLinkClick();
+    }
   };
 
   // Toggle dropdown for desktop navigation
