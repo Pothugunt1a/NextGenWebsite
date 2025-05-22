@@ -24,15 +24,15 @@ export default function Hero() {
   const banners = [
     {
       title: "WE ARE RT NEXTGEN AI",
-      subtitle: "Creative AI Solutions",
-      description: "Accelerating innovation with next-gen AI-powered technologies designed to empower enterprises and drive progress through intelligent automation and data-driven insights.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995"
+      subtitle: "Transformative AI Solutions",
+      description: "Pioneering the future with cutting-edge artificial intelligence and machine learning solutions that revolutionize business operations and unlock unprecedented possibilities.",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1932&h=1024"
     },
     {
       title: "WE ARE RT NEXTGEN AI",
-      subtitle: "Innovate with Intelligence",
-      description: "Join us on the journey to the future with adaptive technologies that think, learn, and evolve with your business needs.",
-      image: "https://images.unsplash.com/photo-1680795456471-e153bf1db64f"
+      subtitle: "AI-Powered Innovation",
+      description: "Harness the power of neural networks, deep learning, and advanced algorithms to transform your data into actionable intelligence and competitive advantage.",
+      image: "https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1932&h=1024"
     }
   ];
 
