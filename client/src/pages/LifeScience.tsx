@@ -37,20 +37,33 @@ export default function LifeScience() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="py-24 bg-light"
+      className="bg-light"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto text-center mb-16"
-        >
-          <h1 className="text-4xl font-bold mb-6">Life Science Solutions</h1>
-          <p className="text-lg text-slate-600">
-            Comprehensive solutions for pharmaceutical, biotech, and healthcare organizations
-          </p>
-        </motion.div>
+      <div className="relative h-[400px] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/90">
+          <img 
+            src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80"
+            alt="Life Science Banner"
+            className="w-full h-full object-cover mix-blend-overlay"
+          />
+        </div>
+        <div className="absolute inset-0 flex items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl text-white"
+            >
+              <h1 className="text-5xl font-bold mb-6">Life Science Solutions</h1>
+              <p className="text-xl text-white/90">
+                Advancing healthcare through innovative technology solutions for pharmaceutical, biotech, and healthcare organizations
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
