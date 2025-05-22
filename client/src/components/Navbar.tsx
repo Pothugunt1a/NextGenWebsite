@@ -59,11 +59,11 @@ export default function Navbar() {
   // Handle smooth scrolling
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    
+
     if (href.startsWith("#")) {
       const targetId = href.replace("#", "");
       const targetElement = document.getElementById(targetId);
-      
+
       if (targetElement) {
         window.scrollTo({
           top: targetElement.offsetTop - 80,
@@ -74,7 +74,7 @@ export default function Navbar() {
     } else {
       setLocation(href);
     }
-    
+
     handleLinkClick();
   };
 
@@ -125,7 +125,7 @@ export default function Navbar() {
                         {link.name}
                         <ChevronDown className={`ml-1 h-3 w-3 transition-transform ${activeDropdown === link.id ? 'rotate-180' : ''}`} />
                       </a>
-                      
+
                       {/* Multi-level Dropdown */}
                       {activeDropdown === link.id && (
                         <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl z-50 py-3 animate-in fade-in-10 slide-in-from-top-5">
@@ -154,7 +154,14 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       className="nav-link text-dark-light hover:text-primary font-medium transition-colors px-2 py-2 text-sm"
-                      onClick={(e) => scrollToSection(e, link.href)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (link.href === "#home") {
+                          setLocation("/");
+                        } else {
+                          scrollToSection(e, link.href);
+                        }
+                      }}
                     >
                       {link.name}
                     </a>
@@ -162,7 +169,7 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
-            
+
             <div className="flex items-center flex-wrap justify-end ml-2">
               {navLinks.slice(3, 9).map((link) => (
                 <div key={link.id} className="relative group mx-1">
@@ -175,7 +182,7 @@ export default function Navbar() {
                   </a>
                 </div>
               ))}
-              
+
               <Button 
                 onClick={(e) => scrollToSection(e as any, "#contact")}
                 className="bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors text-sm px-4 py-1 h-8 ml-2"
@@ -214,7 +221,7 @@ export default function Navbar() {
                       {link.name}
                       <ChevronDown className={`h-4 w-4 transition-transform ${activeMobileDropdown === link.id ? 'rotate-180' : ''}`} />
                     </a>
-                    
+
                     {/* Mobile dropdown content */}
                     {activeMobileDropdown === link.id && (
                       <div className="pl-4 pb-2">
@@ -228,7 +235,7 @@ export default function Navbar() {
                               {category.name}
                               <ChevronDown className={`h-4 w-4 transition-transform ${activeMobileSubmenu === category.name ? 'rotate-180' : ''}`} />
                             </a>
-                            
+
                             {activeMobileSubmenu === category.name && (
                               <ul className="pl-4 space-y-2 mt-1">
                                 {category.items.map((item, itemIdx) => (
