@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ServicesHighlights from "@/components/ServicesHighlights";
@@ -53,14 +52,9 @@ export default function Home() {
                 <p className="text-sm font-semibold uppercase text-slate-600 tracking-wider mb-1">REACH OUT NOW!</p>
                 <a 
                   href="tel:+14696660019" 
-                  className="text-2xl md:text-3xl font-bold text-primary hover:text-primary-dark transition-colors flex items-center justify-end gap-3 mb-3 group"
+                  className="text-2xl md:text-3xl font-bold text-primary hover:text-primary-dark transition-colors block mb-3"
                 >
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    +1 (469) 666-0019
-                  </span>
-                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <Phone className="h-5 w-5 text-primary animate-pulse" />
-                  </span>
+                  +1 (469) 666-0019
                 </a>
                 <Button 
                   className="bg-primary hover:bg-primary-dark text-white"
