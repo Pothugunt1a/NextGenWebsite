@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ServicesHighlights from "@/components/ServicesHighlights";
