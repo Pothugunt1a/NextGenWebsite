@@ -9,6 +9,7 @@ export default function ContactInfo() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
+      className="py-16 md:py-24"
     >
       <Contact />
     </motion.div>
