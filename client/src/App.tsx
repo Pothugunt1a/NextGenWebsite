@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import LifeScience from "@/pages/LifeScience";
 import Layout from "@/components/Layout";
 
 function Router() {
@@ -12,6 +13,7 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/life-science" component={LifeScience} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
