@@ -153,7 +153,7 @@ export default function Validation() {
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                             {service.tasks.map((task, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-sm">
-                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                                <CheckCircle2 className="h-5 w-5 text-primary" />
                                 <span>{task}</span>
                               </div>
                             ))}
@@ -167,7 +167,7 @@ export default function Validation() {
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {service.services.map((item, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-sm">
-                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                                <CheckCircle2 className="h-5 w-5 text-primary" />
                                 <span>{item}</span>
                               </div>
                             ))}
