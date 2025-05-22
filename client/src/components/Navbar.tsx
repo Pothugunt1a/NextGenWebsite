@@ -256,7 +256,7 @@ export default function Navbar() {
                                         e.preventDefault();
                                         if (item.name === "Life Science") {
                                           setLocation("/life-science");
-                                        } else if (item.name === "Validation") {
+                                        } else if (item.name === "Validation" || item.href === "/validation") {
                                           setLocation("/validation");
                                         } else {
                                           scrollToSection(e, item.href);
