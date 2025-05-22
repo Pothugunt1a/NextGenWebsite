@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import Contact from "@/components/Contact";
+import InfoBanner from "@/components/InfoBanner";
 
 export default function ContactInfo() {
   return (
@@ -10,6 +11,7 @@ export default function ContactInfo() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <InfoBanner />
       <Contact />
     </motion.div>
   );
