@@ -193,7 +193,7 @@ export default function Navbar() {
               ))}
 
               <Button 
-                onClick={(e) => scrollToSection(e as any, "#contact")}
+                onClick={() => setLocation("/contact")}
                 className="bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors text-sm px-4 py-1 h-8 ml-2"
                 size="sm"
               >
@@ -287,7 +287,10 @@ export default function Navbar() {
               </div>
             ))}
             <Button 
-              onClick={(e) => scrollToSection(e as any, "#contact")}
+              onClick={() => {
+                setLocation("/contact");
+                handleLinkClick();
+              }}
               className="bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors w-full mt-2"
             >
               Contact Us
