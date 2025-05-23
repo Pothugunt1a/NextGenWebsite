@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
