@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -35,7 +34,7 @@ export default function LogoCarousel() {
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-h-12 w-auto object-contain"
                   />
                 </div>
               </CarouselItem>
