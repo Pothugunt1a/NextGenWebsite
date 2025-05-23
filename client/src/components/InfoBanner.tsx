@@ -8,27 +8,29 @@ export default function InfoBanner() {
   };
 
   return (
-    <div className="bg-slate-50 py-12">
+    <div className="bg-gradient-to-r from-slate-50 to-slate-100 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">
-              For Further Information And To Learn More About Our AI Solutions <br></br>             Along with how we can support your organisation in harnessing <br></br>the full potential of AI make contact with our experienced IT staff.
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-white rounded-2xl shadow-lg p-8 border border-slate-100">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 leading-tight">
+              For Further Information And To Learn More About Our AI Solutions
             </h2>
-           
+            <p className="text-lg text-slate-600 mb-6">
+              Learn how we can support your organisation in harnessing the full potential of AI. Make contact with our experienced IT staff today.
+            </p>
           </div>
-          <div className="flex flex-col items-end gap-2">
-            <div className="text-sm text-slate-600">REACH OUT NOW!</div>
+          <div className="flex flex-col items-center md:items-end gap-4">
+            <div className="text-sm font-semibold text-primary uppercase tracking-wide">Reach Out Now!</div>
             <button 
               onClick={handlePhoneClick}
-              className="text-xl font-bold text-primary flex items-center gap-2 hover:text-primary-dark transition-colors group"
+              className="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all group"
             >
               <div className="bg-primary/10 p-2 rounded-full group-hover:bg-primary/20 transition-colors">
                 <Phone size={24} className="text-primary" />
               </div>
-              +1 (469) 666-0019
+              <span className="text-xl font-bold text-primary">+1 (469) 666-0019</span>
             </button>
-            <Button className="bg-primary hover:bg-primary-dark text-white">
+            <Button className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-full text-lg font-semibold h-auto transition-colors">
               Contact us
             </Button>
           </div>
