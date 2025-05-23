@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -11,35 +10,26 @@ const logos = [
   { src: "/assets/deloitte-seeklogo.png", alt: "Deloitte" },
 ];
 
-// Duplicate logos for seamless loop
-const duplicatedLogos = [...logos, ...logos];
-
 export default function LogoCarousel() {
   return (
-    <section className="py-12 bg-white/50 backdrop-blur-sm overflow-hidden">
+    <section className="py-12 bg-white/50 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <Carousel
           opts={{
             align: "start",
             loop: true,
-            dragFree: true,
-            skipSnaps: true,
           }}
           plugins={[
             Autoplay({
-              delay: 0,
+              delay: 2000,
               stopOnInteraction: false,
-              playOnInit: true,
             }),
           ]}
           className="w-full"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
-            {duplicatedLogos.map((logo, index) => (
-              <CarouselItem 
-                key={index} 
-                className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/6"
-              >
+            {logos.map((logo, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/6">
                 <div className="p-2 h-24 flex items-center justify-center">
                   <img
                     src={logo.src}
