@@ -27,7 +27,6 @@ export default function Home() {
       <Statistics />
       <Testimonials />
       <LogoCarousel />
-      <Contact />
     </motion.div>
   );
 }
