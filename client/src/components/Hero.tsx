@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BrainCircuit, Cpu, ServerCog } from "lucide-react";
@@ -109,7 +110,7 @@ export default function Hero() {
                     >
                       <Button
                         onClick={() => scrollToSection("case-studies")}
-                        className="bg-primary text-white hover:bg-primary-dark font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto"
+                        className="bg-white text-primary hover:bg-slate-200 font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto"
                       >
                         View Case Studies
                       </Button>
@@ -134,7 +135,7 @@ export default function Hero() {
                         alt="AI visualization" 
                         className="rounded-xl shadow-2xl w-full h-auto"
                       />
-
+                      
                       <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-4 w-60">
                         <div className="text-sm text-slate-500 mb-1">Success Rate</div>
                         <div className="text-2xl font-bold text-primary mb-2">95% Accuracy</div>
@@ -142,7 +143,7 @@ export default function Hero() {
                           <div className="h-full bg-primary rounded-full" style={{ width: "95%" }}></div>
                         </div>
                       </div>
-
+                      
                       <div className="absolute -top-4 -right-4 bg-secondary rounded-full shadow-lg p-3 text-white">
                         <div className="text-sm font-bold">Enterprise</div>
                         <div className="text-xs">AI Solutions</div>
