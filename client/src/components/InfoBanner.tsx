@@ -14,12 +14,12 @@ export default function InfoBanner() {
         <div className="bg-white rounded-2xl p-8 shadow-sm">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="flex-1">
-              <h2 className="text-2xl font-bold text-slate-900 mb-3">
-                For Further Information And To Learn<br />More About Our AI Solutions
+              <h2 className="text-1xl font-bold text-slate-900 mb-3">
+                For Further Information And To Learn More About Our AI Solutions <br />Along With How We Can Support Your Organisation In Harnessing The Full Potential Of AI Make Contact With Our Experienced IT Staff.
               </h2>
-              <p className="text-slate-600">
-                Along with how we can support your organisation in harnessing the full potential of AI make contact with our experienced IT staff.
-              </p>
+            
+                
+             
             </div>
             <div className="flex flex-col items-start md:items-end gap-4">
               <div className="text-sm font-medium text-primary uppercase tracking-wide">REACH OUT NOW!</div>
