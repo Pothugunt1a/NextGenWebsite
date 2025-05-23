@@ -39,12 +39,12 @@ export default function LifeScience() {
       exit={{ opacity: 0 }}
       className="bg-light"
     >
-      <div className="relative h-[400px] overflow-hidden">
+      <div className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/90">
           <img 
             src="/assets/LifeSciences.png"
             alt="Life Science Digital Solutions"
-            className="w-full h-full object-cover mix-blend-overlay"
+            className="w-full h-full object-cover object-center mix-blend-overlay"
           />
         </div>
         <div className="absolute inset-0 flex items-center">
