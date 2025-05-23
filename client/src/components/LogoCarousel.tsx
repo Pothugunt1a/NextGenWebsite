@@ -13,26 +13,26 @@ const logos = [
 export default function LogoCarousel() {
   return (
     <section className="py-12 bg-white/50 backdrop-blur-sm overflow-hidden">
-      <div className="container mx-auto">
+      <div className="w-full">
         <div className="relative flex overflow-x-hidden">
-          <div className="animate-marquee whitespace-nowrap flex gap-16">
+          <div className="animate-marquee whitespace-nowrap flex gap-8 md:gap-16">
             {logos.map((logo, index) => (
-              <div key={index} className="flex items-center justify-center">
+              <div key={index} className="flex items-center justify-center px-4">
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-12 w-auto object-contain"
+                  className="h-8 md:h-12 w-auto object-contain"
                 />
               </div>
             ))}
           </div>
-          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex gap-16">
+          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex gap-8 md:gap-16">
             {logos.map((logo, index) => (
-              <div key={index} className="flex items-center justify-center">
+              <div key={index} className="flex items-center justify-center px-4">
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-12 w-auto object-contain"
+                  className="h-8 md:h-12 w-auto object-contain"
                 />
               </div>
             ))}
