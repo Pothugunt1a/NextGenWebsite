@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+
 import ServicesHighlights from "@/components/ServicesHighlights";
 import CaseStudies from "@/components/CaseStudies";
 import Statistics from "@/components/Statistics";
@@ -23,7 +23,6 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       <Hero />
-      <About />
       <ServicesHighlights />
       <CaseStudies />
       <Statistics />

@@ -9,6 +9,7 @@ import LifeScience from "@/pages/LifeScience";
 import Layout from "@/components/Layout";
 import Validation from "@/pages/Validation";
 import ContactInfo from "@/pages/ContactInfo";
+import AboutPage from "@/pages/About";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
         <Route path="/life-science" component={LifeScience} />
         <Route path="/validation" component={Validation} />
         <Route path="/contact" component={ContactInfo} />
+        <Route path="/about" component={AboutPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
