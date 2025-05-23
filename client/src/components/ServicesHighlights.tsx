@@ -112,23 +112,13 @@ export default function ServicesHighlights() {
           >
             {services.filter(service => service.category === "ai").map((service) => (
               <motion.div key={service.id} variants={itemVariants}>
-                <Card 
-                  className={`h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow relative overflow-hidden ${
-                    service.id === 1 ? 'text-white' : ''
-                  }`}
-                  style={service.id === 1 ? {
-                    backgroundImage: 'url(/assets/ai-network-banner1.jpg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  } : undefined}
-                >
-                  {service.id === 1 && <div className="absolute inset-0 bg-black/50 hover:bg-black/40 transition-colors" />}
-                  <CardContent className="p-6 flex flex-col items-center text-center relative z-10">
-                    <div className={`mb-4 p-3 rounded-full ${service.id === 1 ? 'bg-white/20' : 'bg-primary/10'}`}>
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow">
+                  <CardContent className="p-6 flex flex-col items-center text-center">
+                    <div className="mb-4 p-3 bg-primary/10 rounded-full">
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                    <p className={service.id === 1 ? 'text-white/90' : 'text-slate-600'}>
+                    <p className="text-slate-600">
                       {service.description}
                     </p>
                   </CardContent>
