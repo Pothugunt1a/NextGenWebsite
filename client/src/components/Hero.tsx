@@ -52,15 +52,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="pt-28 pb-16 md:pt-36 md:pb-24 relative text-white">
-      <div className="absolute inset-0 w-full h-full">
-        <img 
-          src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop"
-          alt="Banner Background"
-          className="w-full h-full object-cover brightness-50"
-        />
-      </div>
-      <div className="relative z-10">
+    <section id="home" className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-r from-[#0066CC] to-[#0080FF] text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Carousel className="w-full">
           <CarouselContent>
