@@ -24,8 +24,6 @@ export default function LogoCarousel() {
             loop: true,
             dragFree: true,
             skipSnaps: true,
-            slidesToScroll: 1,
-            containScroll: "trimSnaps",
           }}
           plugins={[
             Autoplay({
@@ -40,7 +38,7 @@ export default function LogoCarousel() {
             {duplicatedLogos.map((logo, index) => (
               <CarouselItem 
                 key={index} 
-                className="pl-2 md:pl-4 basis-1/4 md:basis-1/3 lg:basis-1/6"
+                className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/6"
               >
                 <div className="p-2 h-24 flex items-center justify-center">
                   <img
