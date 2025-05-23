@@ -73,11 +73,11 @@ export default function Hero() {
       </div>
       <div className="relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Carousel className="w-full">
-            <CarouselContent>
+          <Carousel className="w-full px-12">
+            <CarouselContent className="px-4">
               {banners.map((banner, index) => (
                 <CarouselItem key={index}>
-                  <div className="flex flex-col md:flex-row items-center justify-between">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                     <motion.div
                       className="md:w-1/2 mb-10 md:mb-0"
                       initial={{ opacity: 0, y: 20 }}
@@ -165,8 +165,8 @@ export default function Hero() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="hidden md:flex -left-4" />
+            <CarouselNext className="hidden md:flex -right-4" />
           </Carousel>
         </div>
       </div>
