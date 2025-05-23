@@ -30,8 +30,9 @@ export default function InfoBanner() {
               </div>
               <span className="text-xl font-bold text-primary">+1 (469) 666-0019</span>
             </button>
-            <Button className="bg-primary hover:bg-primary-dark text-white">
-              Contact us
+            <Button className="bg-primary hover:bg-primary-dark text-white group">
+              Contact us 
+              <span className="ml-2 group-hover:animate-bounce inline-block">✉️</span>
             </Button>
           </div>
         </div>
