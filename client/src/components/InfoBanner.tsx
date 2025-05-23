@@ -8,32 +8,30 @@ export default function InfoBanner() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-slate-50 to-slate-100 py-16">
+    <div className="bg-slate-50 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-white rounded-2xl shadow-lg p-8 border border-slate-100">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 leading-tight">
-              For Further Information And To Learn More About Our AI Solutions
-            </h2>
-            <p className="text-lg text-slate-600 mb-6">
-              Learn how we can support your organisation in harnessing the full potential of AI. Make contact with our experienced IT staff today.
-            </p>
-          </div>
-          <div className="flex flex-col items-center md:items-end gap-4">
-            <div className="text-sm font-semibold text-primary uppercase tracking-wide">Reach Out Now!</div>
-            <button 
-              onClick={handlePhoneClick}
-              className="flex items-center justify-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all group w-full md:w-auto"
-            >
-              <div className="bg-primary/10 p-2 rounded-full group-hover:bg-primary/20 transition-colors">
-                <Phone size={24} className="text-primary" />
-              </div>
-              <span className="text-xl font-bold text-primary">+1 (469) 666-0019</span>
-            </button>
-            <Button className="bg-primary hover:bg-primary-dark text-white group flex items-center justify-center gap-2">
-              Contact us 
-              <span className="group-hover:translate-x-1 transition-transform">✉️</span>
-            </Button>
+        <div className="bg-white rounded-2xl p-8 shadow-sm">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                For Further Information And To Learn More About Our AI Solutions
+              </h2>
+              <p className="text-slate-600">
+                Along with how we can support your organisation in harnessing the full potential of AI make contact with our experienced IT staff.
+              </p>
+            </div>
+            <div className="flex flex-col items-start md:items-end gap-4">
+              <div className="text-sm font-medium text-slate-600">REACH OUT NOW!</div>
+              <a 
+                href="tel:+14696660019"
+                className="text-[#7C3AED] text-2xl font-semibold hover:text-[#6D28D9] transition-colors"
+              >
+                +1 (469) 666-0019
+              </a>
+              <Button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white px-6">
+                Contact us
+              </Button>
+            </div>
           </div>
         </div>
       </div>
