@@ -52,11 +52,11 @@ export default function LifeScience() {
     >
       <div className="relative h-[600px] overflow-hidden">
         <img
-          src="/assets/Lifescience_banner.jpg"
+          src="/assets/clinicalscience.jpg"
           alt="Life Science Digital Solutions"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center brightness-100"
         />
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 flex items-center bg-black/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
