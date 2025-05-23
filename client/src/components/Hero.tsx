@@ -115,15 +115,30 @@ export default function Hero() {
                           Our AI Expertise:
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                          {bannerIcons.map((item, idx) => (
-                            <div
-                              key={idx}
-                              className="flex items-center space-x-2 bg-white/10 rounded-lg p-3 transition-all hover:bg-white/20"
-                            >
-                              <div className="text-white">{item.icon}</div>
-                              <span>{item.label}</span>
+                          <div className="h-32 relative rounded-lg overflow-hidden">
+                            <div className="absolute inset-0">
+                              <img src="/assets/ai-network-banner1.jpg" alt="AI Consulting" className="w-full h-full object-cover" />
                             </div>
-                          ))}
+                            <div className="relative z-10 h-full flex items-center justify-center text-white font-semibold backdrop-blur-sm bg-black/30">
+                              AI Consulting
+                            </div>
+                          </div>
+                          <div className="h-32 relative rounded-lg overflow-hidden">
+                            <div className="absolute inset-0">
+                              <img src="/assets/ai-network-banner2.jpg" alt="Machine Learning" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="relative z-10 h-full flex items-center justify-center text-white font-semibold backdrop-blur-sm bg-black/30">
+                              Machine Learning
+                            </div>
+                          </div>
+                          <div className="h-32 relative rounded-lg overflow-hidden">
+                            <div className="absolute inset-0">
+                              <img src="/assets/ai-network-banner3.jpg" alt="Generative AI" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="relative z-10 h-full flex items-center justify-center text-white font-semibold backdrop-blur-sm bg-black/30">
+                              Generative AI
+                            </div>
+                          </div>
                         </div>
                       </motion.div>
 
