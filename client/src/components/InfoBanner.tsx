@@ -19,10 +19,10 @@ export default function InfoBanner() {
               </p>
             </div>
             <div className="flex flex-col items-start md:items-end gap-4">
-              <div className="text-sm font-medium text-[#7C3AED] uppercase tracking-wide">REACH OUT NOW!</div>
+              <div className="text-sm font-medium text-primary uppercase tracking-wide">REACH OUT NOW!</div>
               <a 
                 href="tel:+14696660019"
-                className="text-[#7C3AED] text-2xl font-semibold hover:text-[#6D28D9] transition-colors"
+                className="text-primary text-2xl font-semibold hover:bg-primary-dark transition-colors"
               >
                 +1 (469) 666-0019
               </a>
