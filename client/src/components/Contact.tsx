@@ -87,7 +87,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div 
@@ -104,8 +104,8 @@ export default function Contact() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-extrabold text-white mb-6">Get in Touch</h2>
-              <p className="text-white font-medium mb-8">
+              <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+              <p className="text-slate-600 mb-8">
                 Have questions about our AI solutions or want to discuss how we can help your business? 
                 Fill out the form and our team will contact you shortly.
               </p>
@@ -178,7 +178,7 @@ export default function Contact() {
                 </div>
               ) : (
                 <Form {...form}>
-                  <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-lg border border-white/20">
+                  <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="bg-light rounded-xl p-8 shadow-lg">
                     <FormField
                       control={form.control}
                       name="name"
