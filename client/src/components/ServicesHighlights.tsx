@@ -141,9 +141,9 @@ export default function ServicesHighlights() {
           >
             {services.filter(service => service.category === "it").map((service) => (
               <motion.div key={service.id} variants={itemVariants}>
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-none" style={{ boxShadow: "0 8px 30px rgba(249, 115, 22, 0.15)" }}>
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow">
                   <CardContent className="p-6 flex flex-col items-center text-center">
-                    <div className="mb-4 p-3 bg-secondary/10 rounded-full">
+                    <div className="mb-4 p-3 bg-primary/10 rounded-full">
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{service.title}</h3>
