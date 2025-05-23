@@ -3,7 +3,7 @@ import { footerLinks, socialLinks } from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   // Get icon component for social links
   const getSocialIconComponent = (iconName: string) => {
     const iconClass = `fab fa-${iconName}`;
@@ -16,7 +16,7 @@ export default function Footer() {
       e.preventDefault();
       const targetId = href.replace("#", "");
       const targetElement = document.getElementById(targetId);
-      
+
       if (targetElement) {
         window.scrollTo({
           top: targetElement.offsetTop - 80,
@@ -53,24 +53,33 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-4">Solutions</h4>
             <ul className="space-y-2">
               {footerLinks.solutions.map((link, idx) => (
                 <li key={idx}>
-                  <a 
-                    href={link.href} 
-                    className="text-slate-400 hover:text-white transition-colors"
-                    onClick={(e) => scrollToSection(e, link.href)}
-                  >
-                    {link.name}
-                  </a>
+                  {link.name === "Contact" ? (
+                      <Link 
+                        to="/contact"
+                        className="text-slate-400 hover:text-white transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a 
+                        href={link.href} 
+                        className="text-slate-400 hover:text-white transition-colors"
+                        onClick={(e) => scrollToSection(e, link.href)}
+                      >
+                        {link.name}
+                      </a>
+                    )}
                 </li>
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
@@ -87,7 +96,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
@@ -104,7 +113,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-slate-700 mt-12 pt-8 text-center">
           <p className="text-slate-400">
             &copy; {currentYear} RT NextGenAI. All rights reserved.
