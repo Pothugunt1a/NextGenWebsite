@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
+import { Phone } from "lucide-react";
 
 export default function InfoBanner() {
   const [, setLocation] = useLocation();
@@ -24,8 +25,11 @@ export default function InfoBanner() {
               <div className="text-sm font-medium text-primary uppercase tracking-wide">REACH OUT NOW!</div>
               <a 
                 href="tel:+14696660019"
-                className="text-primary text-2xl font-semibold hover:bg-primary-dark transition-colors"
+                className="flex items-center gap-2 text-primary text-2xl font-semibold hover:text-primary-dark transition-colors group"
               >
+                <span className="bg-primary/10 p-2 rounded-full group-hover:bg-primary/20 transition-colors">
+                  <Phone className="h-6 w-6" />
+                </span>
                 +1 (469) 666-0019
               </a>
               <Button 
