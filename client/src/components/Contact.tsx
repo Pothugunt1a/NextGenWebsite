@@ -87,7 +87,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-white">
+    <section id="contact" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div 
@@ -178,7 +178,7 @@ export default function Contact() {
                 </div>
               ) : (
                 <Form {...form}>
-                  <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="bg-light rounded-xl p-8 shadow-lg">
+                  <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-lg border border-white/20">
                     <FormField
                       control={form.control}
                       name="name"
