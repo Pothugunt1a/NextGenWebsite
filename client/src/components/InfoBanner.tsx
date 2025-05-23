@@ -30,7 +30,7 @@ export default function InfoBanner() {
               </div>
               <span className="text-xl font-bold text-primary">+1 (469) 666-0019</span>
             </button>
-            <Button className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-full text-lg font-semibold h-auto transition-colors">
+            <Button className="bg-primary hover:bg-primary-dark text-white">
               Contact us
             </Button>
           </div>
