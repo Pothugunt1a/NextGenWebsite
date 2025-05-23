@@ -98,7 +98,7 @@ export default function ServicesHighlights() {
             Comprehensive solutions to drive your organization's digital transformation and innovation
           </p>
         </motion.div>
-
+        
         <div className="mb-10">
           <h3 className="text-2xl font-bold mb-8 text-center">
             <span className="bg-gray-800 text-white px-6 py-2 rounded-full">AI & Machine Learning</span>
@@ -112,18 +112,8 @@ export default function ServicesHighlights() {
           >
             {services.filter(service => service.category === "ai").map((service) => (
               <motion.div key={service.id} variants={itemVariants}>
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow relative overflow-hidden">
-                  {service.title === "AI Software Development" && (
-                    <div 
-                      className="absolute inset-0 opacity-15"
-                      style={{
-                        backgroundImage: `url(/assets/ai-network-banner2.png)`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                      }}
-                    />
-                  )}
-                  <CardContent className="p-6 flex flex-col items-center text-center relative z-10">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow">
+                  <CardContent className="p-6 flex flex-col items-center text-center">
                     <div className="mb-4 p-3 bg-primary/10 rounded-full">
                       {service.icon}
                     </div>
@@ -137,7 +127,7 @@ export default function ServicesHighlights() {
             ))}
           </motion.div>
         </div>
-
+        
         <div className="mb-10">
           <h3 className="text-2xl font-bold mb-8 text-center">
             <span className="bg-gray-800 text-white px-6 py-2 rounded-full">IT & Consulting</span>
@@ -166,7 +156,7 @@ export default function ServicesHighlights() {
             ))}
           </motion.div>
         </div>
-
+        
         <div>
           <h3 className="text-2xl font-bold mb-8 text-center">
             <span className="bg-gray-800 text-white px-6 py-2 rounded-full">Life Science & Validation</span>
