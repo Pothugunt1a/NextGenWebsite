@@ -13,13 +13,14 @@ export default function ContactInfo() {
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute inset-0 opacity-10" 
+          className="absolute inset-0 opacity-20" 
           style={{ 
             backgroundImage: 'url("/pattern-dots.svg")',
-            backgroundSize: '400px 400px',
+            backgroundSize: '800px 800px',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
-            transform: 'rotate(-5deg) scale(1.2)'
+            transform: 'scale(1.5)',
+            filter: 'blur(0.5px)'
           }}
         />
       </div>
