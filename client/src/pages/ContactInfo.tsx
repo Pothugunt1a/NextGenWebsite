@@ -16,8 +16,9 @@ export default function ContactInfo() {
           className="absolute inset-0 opacity-10" 
           style={{ 
             backgroundImage: 'url("/pattern-dots.svg")',
-            backgroundSize: '30px 30px',
-            backgroundPosition: '0 0',
+            backgroundSize: '400px 400px',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
             transform: 'rotate(-5deg) scale(1.2)'
           }}
         />
