@@ -1,63 +1,32 @@
-import { 
-  users, 
-  type User, 
-  type InsertUser, 
-  contactFormSubmissions,
-  type InsertContactForm,
-  type ContactFormSubmission
-} from "@shared/schema";
-import { eq } from "drizzle-orm";
-import { db } from "./db";
-
-// modify the interface with any CRUD methods
-// you might need
+import { type User, type InsertUser, type ContactFormSubmission, type InsertContactForm } from "@shared/schema";
 
 export interface IStorage {
-  // User methods
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  
-  // Contact form methods
   saveContactSubmission(submission: InsertContactForm): Promise<ContactFormSubmission>;
   getContactSubmissions(): Promise<ContactFormSubmission[]>;
 }
 
 export class DatabaseStorage implements IStorage {
-  // User methods
   async getUser(id: number): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.id, id));
-    return result[0];
+    return undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.username, username));
-    return result[0];
+    return undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const result = await db.insert(users).values(insertUser).returning();
-    return result[0];
+    throw new Error("Database operations removed");
   }
 
-  // Contact form methods
   async saveContactSubmission(submission: InsertContactForm): Promise<ContactFormSubmission> {
-    // Make sure company can be null for database compatibility
-    const data = {
-      ...submission,
-      company: submission.company || null
-    };
-    
-    const result = await db
-      .insert(contactFormSubmissions)
-      .values(data)
-      .returning();
-    
-    return result[0];
+    throw new Error("Database operations removed");
   }
 
   async getContactSubmissions(): Promise<ContactFormSubmission[]> {
-    return db.select().from(contactFormSubmissions).orderBy(contactFormSubmissions.createdAt);
+    return [];
   }
 }
 

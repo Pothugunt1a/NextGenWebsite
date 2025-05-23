@@ -1,3 +1,3 @@
 
-// Placeholder for future storage needs if required
+// Database removed
 export const db = null;
