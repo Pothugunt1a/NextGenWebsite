@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
-import { Phone } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 export default function InfoBanner() {
   const [, setLocation] = useLocation();
@@ -36,6 +36,7 @@ export default function InfoBanner() {
                 className="bg-primary hover:bg-primary-dark text-white group transition-all duration-300 flex items-center gap-2"
                 onClick={() => setLocation("/contact")}
               >
+                <Mail className="h-4 w-4 text-white group-hover:rotate-12 transition-transform duration-300" />
                 Contact us
               </Button>
             </div>
