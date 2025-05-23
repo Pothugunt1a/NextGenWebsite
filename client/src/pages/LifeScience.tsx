@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -52,7 +51,7 @@ export default function LifeScience() {
     >
       <div className="relative h-[600px] overflow-hidden">
         <img
-          src="/assets/clinicalscience.jpg"
+          src="/assets/Lifescience_banner.jpg"
           alt="Life Science Digital Solutions"
           className="w-full h-full object-cover object-center brightness-100"
         />
