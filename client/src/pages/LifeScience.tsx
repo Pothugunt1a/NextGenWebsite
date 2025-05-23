@@ -50,11 +50,13 @@ export default function LifeScience() {
       className="bg-light"
     >
       <div className="relative h-[600px] overflow-hidden">
-        <img
-          src="/assets/Lifescience_banner.jpg"
-          alt="Life Science Digital Solutions"
-          className="w-full h-full object-cover object-center"
-        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/90">
+          <img
+            src="/assets/Lifescience_banner.jpg"
+            alt="Life Science Digital Solutions"
+            className="w-full h-full object-cover object-center mix-blend-overlay"
+          />
+        </div>
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
