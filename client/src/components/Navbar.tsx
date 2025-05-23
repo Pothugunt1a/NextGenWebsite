@@ -103,9 +103,9 @@ export default function Navbar() {
           <div className="flex items-center">
             <a href="#" className="flex items-center">
               <img 
-                src="/assets/3dgifmaker34062.gif" 
+                src="/assets/rt-nextgen-logo-blue.png" 
                 alt="RT NextGenAI Logo" 
-                className="h-16 w-auto"
+                className="h-12 w-auto"
               />
             </a>
           </div>
