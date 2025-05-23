@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BrainCircuit, Cpu, ServerCog } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -73,7 +74,19 @@ export default function Hero() {
       </div>
       <div className="relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Carousel className="w-full">
+          <Carousel 
+            className="w-full" 
+            opts={{
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: true,
+                stopOnMouseEnter: true,
+              })
+            ]}
+          >
             <CarouselContent>
               {banners.map((banner, index) => (
                 <CarouselItem key={index}>
