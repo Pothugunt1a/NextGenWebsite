@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
 
 export default function InfoBanner() {
   return (
@@ -16,7 +17,10 @@ export default function InfoBanner() {
           </div>
           <div className="flex flex-col items-end gap-2">
             <div className="text-sm text-slate-600">REACH OUT NOW!</div>
-            <div className="text-xl font-bold text-primary">+1 (469) 666-0019</div>
+            <div className="text-xl font-bold text-primary flex items-center gap-2">
+              <Phone size={20} />
+              +1 (469) 666-0019
+            </div>
             <Button className="bg-primary hover:bg-primary-dark text-white">
               Contact us
             </Button>
