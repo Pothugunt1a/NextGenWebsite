@@ -28,35 +28,35 @@ const services = [
     id: 4,
     title: "IT Services",
     description: "Comprehensive IT solutions including infrastructure management, cloud services, and enterprise applications.",
-    icon: <Server className="h-10 w-10 text-secondary" />,
+    icon: <Server className="h-10 w-10 text-primary" />,
     category: "it"
   },
   {
     id: 5,
     title: "Life Science Solutions",
     description: "Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance and innovation.",
-    icon: <Beaker className="h-10 w-10 text-secondary" />,
+    icon: <Beaker className="h-10 w-10 text-primary" />,
     category: "life-science"
   },
   {
     id: 6,
     title: "IT Consulting",
     description: "Expert guidance on technology strategy, digital transformation, and maximizing IT investments.",
-    icon: <Database className="h-10 w-10 text-secondary" />,
+    icon: <Database className="h-10 w-10 text-primary" />,
     category: "it"
   },
   {
     id: 7,
     title: "Validation",
     description: "Computer system validation, process validation, and qualification services for regulated industries.",
-    icon: <ChartBar className="h-10 w-10 text-secondary" />,
+    icon: <ChartBar className="h-10 w-10 text-primary" />,
     category: "life-science"
   },
   {
     id: 8,
     title: "Project Management",
     description: "End-to-end project planning, execution, and delivery services with a focus on quality and efficiency.",
-    icon: <Shield className="h-10 w-10 text-secondary" />,
+    icon: <Shield className="h-10 w-10 text-primary" />,
     category: "it"
   }
 ];
