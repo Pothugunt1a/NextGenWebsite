@@ -13,28 +13,30 @@ const logos = [
 export default function LogoCarousel() {
   return (
     <section className="py-12 bg-white/50 backdrop-blur-sm overflow-hidden">
-      <div className="relative flex overflow-x-hidden">
-        <div className="py-12 animate-marquee whitespace-nowrap flex">
-          {logos.map((logo, index) => (
-            <div key={index} className="mx-8 flex items-center justify-center">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-12 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex">
-          {logos.map((logo, index) => (
-            <div key={index} className="mx-8 flex items-center justify-center">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-12 w-auto object-contain"
-              />
-            </div>
-          ))}
+      <div className="container mx-auto">
+        <div className="relative flex overflow-x-hidden">
+          <div className="animate-marquee whitespace-nowrap flex gap-16">
+            {logos.map((logo, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex gap-16">
+            {logos.map((logo, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
