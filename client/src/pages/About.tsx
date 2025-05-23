@@ -68,9 +68,11 @@ export default function AboutPage() {
               About RT NextGenAI
             </h2>
             <p className="text-lg text-slate-600">
-              We're a team of AI experts, data scientists, and business
-              strategists dedicated to transforming how organizations operate
-              through artificial intelligence.
+              At RT NextGen AI, we deliver a full spectrum of cutting-edge IT services 
+              designed to power your success. From AI-driven solutions to digital 
+              transformation strategies, we harness next-generation technologies to help 
+              businesses thrive in an ever-evolving digital landscape. Our mission is to 
+              innovate, automate, and elevate—so you can lead with confidence and agility.
             </p>
           </motion.div>
 
