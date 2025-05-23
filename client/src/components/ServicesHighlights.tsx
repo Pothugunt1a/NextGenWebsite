@@ -101,7 +101,7 @@ export default function ServicesHighlights() {
         
         <div className="mb-10">
           <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="gradient-bg text-white px-6 py-2 rounded-full">AI & Machine Learning</span>
+            <span className="bg-gray-800 text-white px-6 py-2 rounded-full">AI & Machine Learning</span>
           </h3>
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
@@ -130,7 +130,7 @@ export default function ServicesHighlights() {
         
         <div className="mb-10">
           <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="bg-secondary text-white px-6 py-2 rounded-full">IT & Consulting</span>
+            <span className="bg-gray-800 text-white px-6 py-2 rounded-full">IT & Consulting</span>
           </h3>
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
