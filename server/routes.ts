@@ -43,6 +43,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Serve static files from the client/dist/public directory
+  app.use(express.static('dist/public'));
+
+  // Handle client-side routing - always serve index.html for any unknown routes
+  app.get('*', (req, res) => {
+    res.sendFile('dist/public/index.html', { root: '.' });
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
