@@ -90,9 +90,9 @@ export default function Hero() {
             <CarouselContent>
               {banners.map((banner, index) => (
                 <CarouselItem key={index}>
-                  <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-8 px-4 md:px-8">
                     <motion.div
-                      className="md:w-1/2 mb-10 md:mb-0"
+                      className="md:w-1/2 mb-10 md:mb-0 max-w-2xl"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
@@ -141,7 +141,7 @@ export default function Hero() {
                       </motion.div>
                     </motion.div>
                     <motion.div
-                      className="md:w-1/2"
+                      className="md:w-1/2 max-w-xl mx-auto"
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7, delay: 0.4 }}
