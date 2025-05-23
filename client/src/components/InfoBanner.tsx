@@ -13,8 +13,7 @@ export default function InfoBanner() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl font-bold text-slate-900 mb-2">
-              For Further Information And To Learn More About Our AI Solutions
-              <br>Along with how we can support your organisation in harnessing the full potential of AI make contact with our experienced IT staff.
+              For Further Information And To Learn More About Our AI Solutions <br></br>             Along with how we can support your organisation in harnessing <br></br>the full potential of AI make contact with our experienced IT staff.
             </h2>
            
           </div>
