@@ -32,7 +32,10 @@ export default function InfoBanner() {
               </a>
               <Button 
                 className="bg-primary hover:bg-primary-dark text-white group transition-all duration-300 flex items-center gap-2"
-                onClick={() => setLocation("/contact")}
+                onClick={() => {
+                  setLocation("/contact");
+                  window.scrollTo(0, 0);
+                }}
               >
                 <Mail className="h-4 w-4 text-white group-hover:rotate-12 transition-transform duration-300" />
                 Contact us
