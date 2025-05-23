@@ -97,7 +97,11 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 bg-transparent shadow-md z-50 transition-all duration-300 ${scrolled ? 'py-1' : 'py-2'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white shadow-md py-1 text-black' 
+        : 'bg-transparent py-2 text-white'
+    }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -119,7 +123,9 @@ export default function Navbar() {
                     <div className="relative">
                       <a
                         href={link.href}
-                        className="nav-link text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm inline-flex items-center"
+                        className={`nav-link font-medium transition-colors px-2 py-2 text-sm inline-flex items-center ${
+                        scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-gray-200'
+                      }`}
                         onClick={(e) => toggleDropdown(link.id, e)}
                       >
                         {link.name}
@@ -194,7 +200,11 @@ export default function Navbar() {
 
               <Button 
                 onClick={() => setLocation("/contact")}
-                className="bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors text-sm px-4 py-1 h-8 ml-2"
+                className={`rounded-full font-medium transition-colors text-sm px-4 py-1 h-8 ml-2 ${
+                  scrolled 
+                    ? 'bg-primary hover:bg-primary-dark text-white' 
+                    : 'bg-white hover:bg-gray-100 text-primary'
+                }`}
                 size="sm"
               >
                 Contact
@@ -278,7 +288,9 @@ export default function Navbar() {
                 ) : (
                   <a
                     href={link.href}
-                    className="block text-white hover:text-gray-200 font-medium transition-colors py-3"
+                    className={`block font-medium transition-colors py-3 ${
+                      scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-gray-200'
+                    }`}
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
                     {link.name}
