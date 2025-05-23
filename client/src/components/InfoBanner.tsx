@@ -14,10 +14,9 @@ export default function InfoBanner() {
           <div>
             <h2 className="text-2xl font-bold text-slate-900 mb-2">
               For Further Information And To Learn More About Our AI Solutions
+              <br>Along with how we can support your organisation in harnessing the full potential of AI make contact with our experienced IT staff.
             </h2>
-            <p className="text-slate-600">
-              Along with how we can support your organisation in harnessing the full potential of AI make contact with our experienced IT staff.
-            </p>
+           
           </div>
           <div className="flex flex-col items-end gap-2">
             <div className="text-sm text-slate-600">REACH OUT NOW!</div>
