@@ -101,7 +101,7 @@ export default function ServicesHighlights() {
         
         <div className="mb-10">
           <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="gradient-bg text-white px-6 py-2 rounded-full">AI & Machine Learning</span>
+            <span className="bg-gradient-to-r from-[#0066CC] to-[#0080FF] text-white px-6 py-2 rounded-full">AI & Machine Learning</span>
           </h3>
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
