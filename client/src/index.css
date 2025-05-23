@@ -1,5 +1,8 @@
 @tailwind base;
 @tailwind components;
+
+@import 'leaflet/dist/leaflet.css';
+
 @tailwind utilities;
 
 :root {

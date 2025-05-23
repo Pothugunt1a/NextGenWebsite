@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Map from './Map';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -109,6 +110,8 @@ export default function Contact() {
                 Have questions about our AI solutions or want to discuss how we can help your business? 
                 Fill out the form and our team will contact you shortly.
               </p>
+              <Map />
+              <div className="h-8" /> {/* Spacer */}
               
               <div className="space-y-6">
                 {contactInfo.map((item) => (
