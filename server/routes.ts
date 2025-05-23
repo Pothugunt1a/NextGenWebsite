@@ -1,5 +1,6 @@
 import express, { type Express } from "express";
 import { createServer, type Server } from "http";
+import path from "path";
 import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { z } from "zod";
@@ -48,7 +49,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Handle client-side routing - always serve index.html for any unknown routes
   app.get('*', (req, res) => {
-    res.sendFile('dist/public/index.html', { root: '.' });
+    if (!req.path.startsWith('/api')) {
+      res.sendFile(path.resolve('./dist/public/index.html'));
+    } else {
+      res.status(404).json({ message: 'API endpoint not found' });
+    }
   });
 
   const httpServer = createServer(app);
