@@ -104,8 +104,8 @@ export default function Contact() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-              <p className="text-slate-600 mb-8">
+              <h2 className="text-3xl font-extrabold text-white mb-6">Get in Touch</h2>
+              <p className="text-white font-medium mb-8">
                 Have questions about our AI solutions or want to discuss how we can help your business? 
                 Fill out the form and our team will contact you shortly.
               </p>

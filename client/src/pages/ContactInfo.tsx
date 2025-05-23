@@ -26,8 +26,8 @@ export default function ContactInfo() {
       <div className="relative z-10 pt-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Get in Touch</h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">Get in Touch</h1>
+            <p className="text-xl font-medium text-white max-w-2xl mx-auto">
               Let's discuss how our AI solutions can transform your business. 
               We're here to help you navigate the future of technology.
             </p>
