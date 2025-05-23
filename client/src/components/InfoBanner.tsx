@@ -23,16 +23,16 @@ export default function InfoBanner() {
             <div className="text-sm font-semibold text-primary uppercase tracking-wide">Reach Out Now!</div>
             <button 
               onClick={handlePhoneClick}
-              className="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all group"
+              className="flex items-center justify-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all group w-full md:w-auto"
             >
               <div className="bg-primary/10 p-2 rounded-full group-hover:bg-primary/20 transition-colors">
                 <Phone size={24} className="text-primary" />
               </div>
               <span className="text-xl font-bold text-primary">+1 (469) 666-0019</span>
             </button>
-            <Button className="bg-primary hover:bg-primary-dark text-white group">
+            <Button className="bg-primary hover:bg-primary-dark text-white group flex items-center justify-center gap-2">
               Contact us 
-              <span className="ml-2 group-hover:animate-bounce inline-block">✉️</span>
+              <span className="group-hover:translate-x-1 transition-transform">✉️</span>
             </Button>
           </div>
         </div>
