@@ -1,5 +1,5 @@
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+
+import React from 'react';
 
 const logos = [
   { src: "/assets/microsoft-seeklogo.png", alt: "Microsoft" },
@@ -12,35 +12,30 @@ const logos = [
 
 export default function LogoCarousel() {
   return (
-    <section className="py-12 bg-white/50 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 2000,
-              stopOnInteraction: false,
-            }),
-          ]}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {logos.map((logo, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/6">
-                <div className="p-2 h-24 flex items-center justify-center">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="max-h-12 w-auto object-contain"
-                  />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+    <section className="py-12 bg-white/50 backdrop-blur-sm overflow-hidden">
+      <div className="relative flex overflow-x-hidden">
+        <div className="py-12 animate-marquee whitespace-nowrap flex">
+          {logos.map((logo, index) => (
+            <div key={index} className="mx-8 flex items-center justify-center">
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex">
+          {logos.map((logo, index) => (
+            <div key={index} className="mx-8 flex items-center justify-center">
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
