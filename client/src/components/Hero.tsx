@@ -178,8 +178,8 @@ export default function Hero() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-2" />
-            <CarouselNext className="hidden md:flex -right-2" />
+            <CarouselPrevious className="hidden md:flex -left-2 text-black hover:text-primary transition-colors" />
+            <CarouselNext className="hidden md:flex -right-2 text-black hover:text-primary transition-colors" />
           </Carousel>
         </div>
       </div>
