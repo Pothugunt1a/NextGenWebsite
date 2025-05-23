@@ -159,20 +159,7 @@ export default function Hero() {
                           className="rounded-xl shadow-2xl w-full h-auto"
                         />
 
-                        <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-4 w-60">
-                          <div className="text-sm text-slate-500 mb-1">
-                            Success Rate
-                          </div>
-                          <div className="text-2xl font-bold text-primary mb-2">
-                            95% Accuracy
-                          </div>
-                          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-primary rounded-full"
-                              style={{ width: "95%" }}
-                            ></div>
-                          </div>
-                        </div>
+                        
 
                         <div className="absolute -top-4 -right-4 bg-primary rounded-full shadow-lg p-3 text-white">
                           <div className="text-sm font-bold">Enterprise</div>
