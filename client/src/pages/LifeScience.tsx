@@ -42,7 +42,7 @@ export default function LifeScience() {
       <div className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/90">
           <img 
-            src="./assets/clinicalscience.jpg"
+            src="/assets/clinicalscience.jpg"
             alt="Life Science Digital Solutions"
             className="w-full h-full object-cover object-center mix-blend-overlay"
           />
