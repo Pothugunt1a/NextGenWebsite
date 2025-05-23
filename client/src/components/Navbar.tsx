@@ -119,11 +119,11 @@ export default function Navbar() {
                     <div className="relative">
                       <a
                         href={link.href}
-                        className="nav-link text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm"
+                        className="nav-link text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm inline-flex items-center"
                         onClick={(e) => toggleDropdown(link.id, e)}
                       >
                         {link.name}
-                        <ChevronDown className={`ml-1 h-3 w-3 transition-transform ${activeDropdown === link.id ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`ml-1 h-3 w-3 transition-transform inline-block ${activeDropdown === link.id ? 'rotate-180' : ''}`} />
                       </a>
 
                       {/* Multi-level Dropdown */}
