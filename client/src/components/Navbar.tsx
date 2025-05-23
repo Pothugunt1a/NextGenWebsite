@@ -97,7 +97,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 gradient-bg shadow-md z-50 transition-all duration-300 ${scrolled ? 'py-1' : 'py-2'}`}>
+    <header className={`fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300 ${scrolled ? 'py-1' : 'py-2'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -119,7 +119,7 @@ export default function Navbar() {
                     <div className="relative">
                       <a
                         href={link.href}
-                        className="nav-link text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm"
+                        className="nav-link flex items-center text-dark-light hover:text-primary font-medium transition-colors px-2 py-2 text-sm"
                         onClick={(e) => toggleDropdown(link.id, e)}
                       >
                         {link.name}
@@ -162,7 +162,7 @@ export default function Navbar() {
                   ) : (
                     <a
                       href={link.href}
-                      className="nav-link text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm"
+                      className="nav-link text-dark-light hover:text-primary font-medium transition-colors px-2 py-2 text-sm"
                       onClick={(e) => {
                         e.preventDefault();
                         if (link.href === "#home") {
@@ -184,7 +184,7 @@ export default function Navbar() {
                 <div key={link.id} className="relative group mx-1">
                   <a
                     href={link.href}
-                    className="nav-link text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm"
+                    className="nav-link text-dark-light hover:text-primary font-medium transition-colors px-2 py-2 text-sm"
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
                     {link.name}
@@ -224,7 +224,7 @@ export default function Navbar() {
                   <div>
                     <a
                       href={link.href}
-                      className="flex justify-between items-center text-white hover:text-gray-200 font-medium transition-colors py-3"
+                      className="flex justify-between items-center text-dark-light hover:text-primary font-medium transition-colors py-3"
                       onClick={(e) => toggleMobileDropdown(link.id, e)}
                     >
                       {link.name}
@@ -278,7 +278,7 @@ export default function Navbar() {
                 ) : (
                   <a
                     href={link.href}
-                    className="block text-white hover:text-gray-200 font-medium transition-colors py-3"
+                    className="block text-dark-light hover:text-primary font-medium transition-colors py-3"
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
                     {link.name}
