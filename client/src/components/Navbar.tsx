@@ -99,8 +99,8 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white shadow-md py-1 text-black' 
-        : 'bg-transparent py-2 text-white'
+        ? 'bg-white shadow-md py-1' 
+        : 'bg-transparent py-2'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -168,7 +168,9 @@ export default function Navbar() {
                   ) : (
                     <a
                       href={link.href}
-                      className="nav-link text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm"
+                      className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
+                        scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-gray-200'
+                      }`}
                       onClick={(e) => {
                         e.preventDefault();
                         if (link.href === "#home") {
@@ -218,6 +220,7 @@ export default function Navbar() {
               variant="ghost" 
               size="icon" 
               onClick={toggleMenu}
+              className={scrolled ? 'text-gray-800' : 'text-white'}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -226,7 +229,13 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-[80vh] opacity-100 py-4 overflow-y-auto' : 'max-h-0 opacity-0'}`}>
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen 
+            ? 'max-h-[80vh] opacity-100 py-4 overflow-y-auto' 
+            : 'max-h-0 opacity-0'
+        } ${
+          scrolled ? 'bg-white' : 'bg-transparent'
+        }`}>
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <div key={link.id} className="border-b border-gray-100 last:border-b-0">
