@@ -66,11 +66,7 @@ export const solutions = [
     title: "AI Security Solutions",
     description:
       "Protect your digital assets with AI-powered threat detection and response capabilities.",
-    features: [
-      "Fraud detection",
-      "Threat monitoring",
-      "Behavioral analysis",
-    ],
+    features: ["Fraud detection", "Threat monitoring", "Behavioral analysis"],
   },
 ];
 
@@ -133,37 +129,43 @@ export const testimonials = [
 export const navLinks = [
   { id: 1, name: "Home", href: "#home" },
   { id: 2, name: "About", href: "#about" },
-  { 
-    id: 3, 
-    name: "Artificial Intelligence & ML", 
+  {
+    id: 3,
+    name: "AI",
     href: "#ai",
     hasDropdown: true,
     dropdownItems: [
-      { 
-        name: "AI Consulting", 
+      {
+        name: "AI Consulting",
         items: [
           { name: "AI and Data Strategy", href: "#ai-strategy" },
-          { name: "Process Optimization with AI", href: "#process-optimization" },
-          { name: "AI Use Case Discovery & Identification", href: "#use-case-discovery" }
-        ]
+          {
+            name: "Process Optimization with AI",
+            href: "#process-optimization",
+          },
+          {
+            name: "AI Use Case Discovery & Identification",
+            href: "#use-case-discovery",
+          },
+        ],
       },
       {
         name: "AI Software Development",
         items: [
           { name: "AI Components Development", href: "#ai-components" },
           { name: "AI Academy - R&D for AI", href: "#ai-academy" },
-          { name: "SOTA Research/Patents", href: "#sota-research" }
-        ]
+          { name: "SOTA Research/Patents", href: "#sota-research" },
+        ],
       },
       {
         name: "Generative AI",
         items: [
           { name: "Generative AI Development", href: "#generative-ai" },
           { name: "AI Chatbot Development", href: "#chatbot" },
-          { name: "LLM Development and Consulting", href: "#llm-consulting" }
-        ]
-      }
-    ]
+          { name: "LLM Development and Consulting", href: "#llm-consulting" },
+        ],
+      },
+    ],
   },
   { id: 4, name: "IT Services", href: "#it-services" },
   { id: 5, name: "Career", href: "#career" },
