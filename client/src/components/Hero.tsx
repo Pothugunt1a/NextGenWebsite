@@ -61,8 +61,8 @@ export default function Hero() {
     <section id="home" className="relative pt-28 pb-16 md:pt-36 md:pb-24 text-white">
       <div className="absolute inset-0 w-full h-full">
         <img 
-          src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop"
-          alt="Banner Background"
+          src="/assets/ai-brain-banner.jpg"
+          alt="AI Brain Banner"
           className="w-full h-full object-cover brightness-75"
         />
       </div>
