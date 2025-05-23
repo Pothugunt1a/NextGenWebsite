@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 
 export default function InfoBanner() {
+  const [, setLocation] = useLocation();
   const handlePhoneClick = () => {
     window.location.href = "tel:+14696660019";
   };
@@ -28,7 +30,7 @@ export default function InfoBanner() {
               </a>
               <Button 
                 className="bg-primary hover:bg-primary-dark text-white group transition-all duration-300 flex items-center gap-2"
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => setLocation("/contact")}
               >
                 Contact us
               </Button>
