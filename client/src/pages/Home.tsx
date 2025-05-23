@@ -7,8 +7,6 @@ import ServicesHighlights from "@/components/ServicesHighlights";
 import CaseStudies from "@/components/CaseStudies";
 import Statistics from "@/components/Statistics";
 import Testimonials from "@/components/Testimonials";
-import CTA from "@/components/CTA";
-
 export default function Home() {
   // Scroll to top when the component mounts
   useEffect(() => {
@@ -27,7 +25,6 @@ export default function Home() {
       <CaseStudies />
       <Statistics />
       <Testimonials />
-      <CTA />
     </motion.div>
   );
 }
