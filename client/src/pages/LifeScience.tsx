@@ -55,7 +55,7 @@ export default function LifeScience() {
           alt="Life Science Digital Solutions"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 flex items-center bg-black/20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
