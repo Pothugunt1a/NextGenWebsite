@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 import { ArrowRight, BrainCircuit, Cpu, ServerCog } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -11,6 +12,8 @@ import {
 } from "@/components/ui/carousel";
 
 export default function Hero() {
+  const [, setLocation] = useLocation();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -132,7 +135,10 @@ export default function Hero() {
                           View Case Studies
                         </Button>
                         <Button
-                          onClick={() => scrollToSection("contact")}
+                          onClick={() => {
+                            setLocation("/contact");
+                            window.scrollTo(0, 0);
+                          }}
                           variant="outline"
                           className="bg-transparent hover:bg-primary-dark border-2 border-white font-semibold px-8 py-6 rounded-full text-center transition-colors text-white h-auto"
                         >
