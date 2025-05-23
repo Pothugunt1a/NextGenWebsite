@@ -119,7 +119,7 @@ export default function Navbar() {
                     <div className="relative">
                       <a
                         href={link.href}
-                        className="nav-link flex items-center text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm"
+                        className="nav-link text-white hover:text-gray-200 font-medium transition-colors px-2 py-2 text-sm"
                         onClick={(e) => toggleDropdown(link.id, e)}
                       >
                         {link.name}
@@ -224,7 +224,7 @@ export default function Navbar() {
                   <div>
                     <a
                       href={link.href}
-                      className="flex justify-between items-center text-dark-light hover:text-primary font-medium transition-colors py-3"
+                      className="flex justify-between items-center text-white hover:text-gray-200 font-medium transition-colors py-3"
                       onClick={(e) => toggleMobileDropdown(link.id, e)}
                     >
                       {link.name}
@@ -278,7 +278,7 @@ export default function Navbar() {
                 ) : (
                   <a
                     href={link.href}
-                    className="block text-dark-light hover:text-primary font-medium transition-colors py-3"
+                    className="block text-white hover:text-gray-200 font-medium transition-colors py-3"
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
                     {link.name}
