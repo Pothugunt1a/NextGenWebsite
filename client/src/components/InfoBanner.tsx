@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 export default function InfoBanner() {
@@ -27,9 +26,11 @@ export default function InfoBanner() {
               >
                 +1 (469) 666-0019
               </a>
-              <Button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white flex items-center gap-2 group px-6">
+              <Button 
+                className="bg-primary hover:bg-primary-dark text-white group transition-all duration-300 flex items-center gap-2"
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Contact us
-                <span className="transition-transform duration-300 ease-in-out group-hover:translate-x-1 text-xl">✉️</span>
               </Button>
             </div>
           </div>
