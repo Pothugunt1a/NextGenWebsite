@@ -26,24 +26,21 @@ export default function Hero() {
       subtitle: "Creative AI Solutions",
       description:
         "Accelerating innovation with next-gen AI-powered technologies designed to empower enterprises and drive progress through intelligent automation and data-driven insights.",
-      image:
-        "https://images.unsplash.com/photo-1680553437331-6d66121ada86?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1932&h=1024",
+      image: "/assets/ai-global.jpg",
     },
     {
       title: "WE ARE RT NEXTGEN AI",
       subtitle: "Smarter Business",
       description:
         "We help companies build smarter workflows and predictive systems using cutting-edge AI technologies and machine learning frameworks.",
-      image:
-        "https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1932&h=1024",
+      image: "/assets/ai-circuit.jpg",
     },
     {
       title: "WE ARE RT NEXTGEN AI",
       subtitle: "Innovate with Intelligence",
       description:
         "Join us on the journey to the future with adaptive technologies that think, learn, and evolve with your business needs.",
-      image:
-        "https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1932&h=1024",
+      image: "/assets/ai-business.jpg",
     },
   ];
 
