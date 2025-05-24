@@ -115,7 +115,7 @@ export default function ServicesHighlights() {
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow relative overflow-hidden group">
                   <div className="absolute inset-0">
                     <img 
-                      src={`/assets/ai-network-banner${service.id}.jpg`} 
+                      src={service.id === 1 ? "/assets/ai-network-banner2.png" : `/assets/ai-network-banner${service.id}.jpg`} 
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
