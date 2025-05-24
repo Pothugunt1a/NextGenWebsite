@@ -7,56 +7,56 @@ const services = [
     id: 1,
     title: "AI Consulting",
     description: "Strategic guidance on implementing AI to enhance operations, improve efficiency, and drive innovation.",
-    icon: <BrainCircuit className="h-10 w-10 text-primary" />,
+    icon: <BrainCircuit className="h-10 w-10 text-white" />,
     category: "ai"
   },
   {
     id: 2,
     title: "AI Software Development",
     description: "Custom AI solutions tailored to your business needs, from proof-of-concept to full-scale deployment.",
-    icon: <Code className="h-10 w-10 text-primary" />,
+    icon: <Code className="h-10 w-10 text-white" />,
     category: "ai"
   },
   {
     id: 3,
     title: "Generative AI Development",
     description: "Implementation of cutting-edge generative models for content creation, design, and process automation.",
-    icon: <FileCode className="h-10 w-10 text-primary" />,
+    icon: <FileCode className="h-10 w-10 text-white" />,
     category: "ai"
   },
   {
     id: 4,
     title: "IT Services",
     description: "Comprehensive IT solutions including infrastructure management, cloud services, and enterprise applications.",
-    icon: <Server className="h-10 w-10 text-primary" />,
+    icon: <Server className="h-10 w-10 text-white" />,
     category: "it"
   },
   {
     id: 5,
     title: "Life Science Solutions",
     description: "Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance and innovation.",
-    icon: <Beaker className="h-10 w-10 text-primary" />,
+    icon: <Beaker className="h-10 w-10 text-white" />,
     category: "life-science"
   },
   {
     id: 6,
     title: "IT Consulting",
     description: "Expert guidance on technology strategy, digital transformation, and maximizing IT investments.",
-    icon: <Database className="h-10 w-10 text-primary" />,
+    icon: <Database className="h-10 w-10 text-white" />,
     category: "it"
   },
   {
     id: 7,
     title: "Validation",
     description: "Computer system validation, process validation, and qualification services for regulated industries.",
-    icon: <ChartBar className="h-10 w-10 text-primary" />,
+    icon: <ChartBar className="h-10 w-10 text-white" />,
     category: "life-science"
   },
   {
     id: 8,
     title: "Project Management",
     description: "End-to-end project planning, execution, and delivery services with a focus on quality and efficiency.",
-    icon: <Shield className="h-10 w-10 text-primary" />,
+    icon: <Shield className="h-10 w-10 text-white" />,
     category: "it"
   }
 ];
