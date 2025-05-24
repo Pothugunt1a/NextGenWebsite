@@ -104,9 +104,7 @@ export default function Contact() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              {/* Section heading with large text and bottom margin */}
               <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-              {/* Description text in slate color with bottom margin */}
               <p className="text-slate-600 mb-8">
                 Have questions about our AI solutions or want to discuss how we can help your business? 
                 Fill out the form and our team will contact you shortly.
