@@ -148,7 +148,7 @@ export default function Hero() {
                       </motion.div>
 
                       <motion.div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <div className="bg-white/20 text-white font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto backdrop-blur-sm">
+                        <div className="bg-primary text-white font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto">
                           Enterprise Solutions
                         </div>
                         <Button
