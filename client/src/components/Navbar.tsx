@@ -137,13 +137,13 @@ export default function Navbar() {
                         <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl z-50 py-3 animate-in fade-in-10 slide-in-from-top-5">
                           {link.dropdownItems?.map((category, idx) => (
                             <div key={idx} className="py-2 px-4">
-                              <div className="font-semibold text-primary mb-2">{category.name}</div>
+                              <div className="font-semibold text-black mb-2">{category.name}</div>
                               <ul className="space-y-1">
                                 {category.items.map((item, itemIdx) => (
                                   <li key={itemIdx}>
                                     <a 
                                       href={item.href} 
-                                      className="block px-2 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary rounded-md transition-all"
+                                      className="block px-2 py-1 text-sm text-black hover:bg-gray-100 hover:text-primary rounded-md transition-all"
                                       onClick={(e) => {
                                         e.preventDefault();
                                         if (item.name === "Life Science") {
