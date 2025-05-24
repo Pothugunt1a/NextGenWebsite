@@ -116,7 +116,7 @@ export default function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-
+              
               <div className="space-y-6">
                 {contactInfo.map((item) => (
                   <div key={item.id} className="flex items-start">
@@ -132,7 +132,7 @@ export default function Contact() {
                   </div>
                 ))}
               </div>
-
+              
               <div className="mt-8">
                 <h4 className="font-semibold mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
@@ -149,7 +149,7 @@ export default function Contact() {
                 </div>
               </div>
             </motion.div>
-
+            
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -192,7 +192,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-
+                    
                     <FormField
                       control={form.control}
                       name="email"
@@ -211,7 +211,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-
+                    
                     <FormField
                       control={form.control}
                       name="company"
@@ -229,7 +229,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-
+                    
                     <FormField
                       control={form.control}
                       name="message"
@@ -248,7 +248,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-
+                    
                     <Button 
                       type="submit"
                       className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors"
