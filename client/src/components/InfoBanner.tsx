@@ -9,8 +9,15 @@ export default function InfoBanner() {
   };
 
   return (
-    <div className="bg-slate-50 py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative py-12">
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src="/assets/contact.jpg"
+          alt="Contact Banner"
+          className="w-full h-full object-cover opacity-20"
+        />
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white rounded-2xl p-8 shadow-sm">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="flex-1">
