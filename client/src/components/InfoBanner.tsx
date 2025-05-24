@@ -16,12 +16,11 @@ export default function InfoBanner() {
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-slate-900 mb-3 pl-6 border-l-4 border-primary">
                 For Further Information And To Learn More About Our AI Solutions
-                Along With How We Can Support <br /> Your Organisation In Harnessing
-                
-                The Full Potential Of AI <br />Make Contact With Our Experienced IT
-                Staff.
+                Along With How We Can Support <br /> Your Organisation In
+                Harnessing The Full Potential Of AI Make Contact With Our
+                Experienced IT Staff.
               </h3>
-              <p className="text-slate-600">
+              <p className="text-slate-600 border-l-0">
                 We’re available for 8 hours a day! Contact us to request a
                 detailed analysis and assessment of your plan.
               </p>
