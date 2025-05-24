@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Contact from "@/components/Contact";
 
@@ -30,7 +29,9 @@ export default function ContactInfo() {
               Get in Touch
             </h1>
             <p className="text-lg text-slate-600">
-              We're here to help bring your vision to life. Reach out to us and let's start a conversation about your needs.
+              Have questions about our AI solutions or want to discuss how we
+              can help your business? Fill out the form and our team will
+              contact you shortly.
             </p>
           </div>
         </div>

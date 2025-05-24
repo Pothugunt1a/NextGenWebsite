@@ -182,19 +182,19 @@ export const contactInfo = [
     id: 1,
     icon: "map-marker-alt",
     title: "Location",
-    detail: "123 Innovation Ave, San Francisco, CA 94107",
+    detail: "Bridgewater DrArgyle, TX 76226",
   },
   {
     id: 2,
     icon: "envelope",
     title: "Email",
-    detail: "info@rtnextgenai.com",
+    detail: "hr@techexpertsus.com",
   },
   {
     id: 3,
     icon: "phone-alt",
     title: "Phone",
-    detail: "+1 (555) 123-4567",
+    detail: "+1 (469) 666 0019",
   },
 ];
 
