@@ -104,11 +104,7 @@ export default function Contact() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              /*<h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-              <p className="text-slate-600 mb-8">
-                Have questions about our AI solutions or want to discuss how we can help your business? 
-                Fill out the form and our team will contact you shortly.
-              </p>
+              /*
               <div className="w-full h-[300px] rounded-lg overflow-hidden mb-8">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.8876111668214!2d-97.18333688479374!3d33.36498808079461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c425c8900ab43%3A0x4a0e31bc1c7bfae0!2sBridgewater%20Dr%2C%20Argyle%2C%20TX%2076226!5e0!3m2!1sen!2sus!4v1629308012345!5m2!1sen!2sus"
