@@ -169,7 +169,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
-                        scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-gray-200'
+                        scrolled || !scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
                       }`}
                       onClick={(e) => {
                         e.preventDefault();
