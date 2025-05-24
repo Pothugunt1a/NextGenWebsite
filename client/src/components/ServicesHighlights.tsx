@@ -41,7 +41,7 @@ const services = [
     title: "IT Services",
     description:
       "Comprehensive IT solutions including infrastructure management, cloud services, and enterprise applications.",
-    icon: <Server className="h-10 w-10 text-white" />,
+    icon: <Server className="h-10 w-10 text-primary" />,
     category: "it",
   },
   {
@@ -49,7 +49,7 @@ const services = [
     title: "Life Science Solutions",
     description:
       "Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance and innovation.",
-    icon: <Beaker className="h-10 w-10 text-white" />,
+    icon: <Beaker className="h-10 w-10 text-primary" />,
     category: "life-science",
   },
   {
@@ -57,7 +57,7 @@ const services = [
     title: "IT Consulting",
     description:
       "Expert guidance on technology strategy, digital transformation, and maximizing IT investments.",
-    icon: <Database className="h-10 w-10 text-white" />,
+    icon: <Database className="h-10 w-10 text-primary" />,
     category: "it",
   },
   {
@@ -65,7 +65,7 @@ const services = [
     title: "Validation",
     description:
       "Computer system validation, process validation, and qualification services for regulated industries.",
-    icon: <ChartBar className="h-10 w-10 text-white" />,
+    icon: <ChartBar className="h-10 w-10 text-primary" />,
     category: "life-science",
   },
   {
@@ -73,7 +73,7 @@ const services = [
     title: "Project Management",
     description:
       "End-to-end project planning, execution, and delivery services with a focus on quality and efficiency.",
-    icon: <Shield className="h-10 w-10 text-white" />,
+    icon: <Shield className="h-10 w-10 text-primary" />,
     category: "it",
   },
 ];
