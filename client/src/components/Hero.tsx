@@ -93,9 +93,9 @@ export default function Hero() {
             <CarouselContent>
               {banners.map((banner, index) => (
                 <CarouselItem key={index}>
-                  <div className="flex flex-col md:flex-row items-center justify-between gap-8 px-4 md:px-8">
+                  <div className="flex flex-col items-center justify-center gap-8 px-4 md:px-8">
                     <motion.div
-                      className="md:w-1/2 mb-10 md:mb-0 max-w-2xl"
+                      className="w-full mb-10 md:mb-0 max-w-3xl mx-auto"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
@@ -146,40 +146,7 @@ export default function Hero() {
                         </Button>
                       </motion.div>
                     </motion.div>
-                    <motion.div
-                      className="md:w-1/2 max-w-xl mx-auto"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.7, delay: 0.4 }}
-                    >
-                      <div className="relative">
-                        <img
-                          src={banner.image}
-                          alt="AI visualization"
-                          className="rounded-xl shadow-2xl w-full h-auto"
-                        />
-
-                        <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-4 w-60">
-                          <div className="text-sm text-slate-500 mb-1">
-                            Success Rate
-                          </div>
-                          <div className="text-2xl font-bold text-primary mb-2">
-                            95% Accuracy
-                          </div>
-                          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-primary rounded-full"
-                              style={{ width: "95%" }}
-                            ></div>
-                          </div>
-                        </div>
-
-                        <div className="absolute -top-4 -right-4 bg-primary rounded-full shadow-lg p-3 text-white">
-                          <div className="text-sm font-bold">Enterprise</div>
-                          <div className="text-xs">AI Solutions</div>
-                        </div>
-                      </div>
-                    </motion.div>
+                    
                   </div>
                 </CarouselItem>
               ))}
