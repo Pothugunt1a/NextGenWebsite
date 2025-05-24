@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      <Navbar isDarkBackground={["/", "/about"].includes(window.location.pathname)} />
       <main className="flex-grow">{children}</main>
       {showInfoBanner && <InfoBanner />}
       <Footer />

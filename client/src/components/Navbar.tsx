@@ -4,7 +4,7 @@ import { navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 
-export default function Navbar() {
+export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [, setLocation] = useLocation();
@@ -124,7 +124,7 @@ export default function Navbar() {
                       <a
                         href={link.href}
                         className={`nav-link font-medium transition-colors px-2 py-2 text-sm inline-flex items-center ${
-                        scrolled || !scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
+                        scrolled ? 'text-black hover:text-primary' : isDarkBackground ? 'text-white hover:text-gray-200' : 'text-black hover:text-primary'
                       }`}
                         onClick={(e) => toggleDropdown(link.id, e)}
                       >
@@ -169,7 +169,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
-                        scrolled || !scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
+                        scrolled ? 'text-black hover:text-primary' : isDarkBackground ? 'text-white hover:text-gray-200' : 'text-black hover:text-primary'
                       }`}
                       onClick={(e) => {
                         e.preventDefault();
@@ -193,7 +193,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
-                      scrolled || !scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
+                      scrolled ? 'text-black hover:text-primary' : isDarkBackground ? 'text-white hover:text-gray-200' : 'text-black hover:text-primary'
                     }`}
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
@@ -241,7 +241,7 @@ export default function Navbar() {
                   <div>
                     <a
                       href={link.href}
-                      className="flex justify-between items-center text-white hover:text-gray-200 font-medium transition-colors py-3"
+                      className={`flex justify-between items-center ${scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-gray-200'} font-medium transition-colors py-3`}
                       onClick={(e) => toggleMobileDropdown(link.id, e)}
                     >
                       {link.name}
