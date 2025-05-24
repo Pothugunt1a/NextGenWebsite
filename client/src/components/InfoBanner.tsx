@@ -14,7 +14,7 @@ export default function InfoBanner() {
         <div className="bg-white rounded-2xl p-8 shadow-sm">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3 pl-6 border-l-4 border-primary">
                 For Further Information And To Learn More About Our AI Solutions
                 Along With How We Can Support <br /> Your Organisation In Harnessing
                 
