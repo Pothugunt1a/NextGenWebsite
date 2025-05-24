@@ -14,14 +14,23 @@ export default function InfoBanner() {
         <div className="bg-white rounded-2xl p-8 shadow-sm">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="flex-1">
-              <h2 className="text-1xl font-bold text-slate-900 mb-3">
-                For Further Information And To Learn More About Our AI Solutions <br />Along With How We Can Support Your Organisation In Harnessing <br />The Full Potential Of AI Make Contact With Our Experienced IT Staff.
-              </h2>
-            
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                For Further Information And To Learn More About Our AI Solutions
+                Along With How We Can Support <br /> Your Organisation In Harnessing
+                
+                The Full Potential Of AI <br />Make Contact With Our Experienced IT
+                Staff.
+              </h3>
+              <p className="text-slate-600">
+                We’re available for 8 hours a day! Contact us to request a
+                detailed analysis and assessment of your plan.
+              </p>
             </div>
             <div className="flex flex-col items-start md:items-end gap-4">
-              <div className="text-sm font-medium text-primary uppercase tracking-wide">REACH OUT NOW!</div>
-              <a 
+              <div className="text-sm font-medium text-primary uppercase tracking-wide">
+                REACH OUT NOW!
+              </div>
+              <a
                 href="tel:+14696660019"
                 className="flex items-center gap-2 text-primary text-2xl font-semibold hover:text-primary-dark transition-colors group"
               >
@@ -30,7 +39,7 @@ export default function InfoBanner() {
                 </span>
                 +1 (469) 666-0019
               </a>
-              <Button 
+              <Button
                 className="bg-primary hover:bg-primary-dark text-white group transition-all duration-300 flex items-center gap-2"
                 onClick={() => {
                   setLocation("/contact");

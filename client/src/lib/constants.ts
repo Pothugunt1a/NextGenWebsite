@@ -200,7 +200,12 @@ export const contactInfo = [
 
 // Social links
 export const socialLinks = [
-  { id: 1, name: "linkedin", icon: "linkedin-in", url: "#" },
+  {
+    id: 1,
+    name: "linkedin",
+    icon: "linkedin-in",
+    url: "https://www.linkedin.com/in/venkatesh-naidu-46b59437/",
+  },
   { id: 2, name: "twitter", icon: "twitter", url: "#" },
   { id: 3, name: "facebook", icon: "facebook-f", url: "#" },
   { id: 4, name: "instagram", icon: "instagram", url: "#" },
