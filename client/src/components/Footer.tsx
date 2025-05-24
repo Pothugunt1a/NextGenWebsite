@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { footerLinks, socialLinks } from "@/lib/constants";
 
 export default function Footer() {
@@ -85,13 +85,22 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.map((link, idx) => (
                 <li key={idx}>
-                  <a 
-                    href={link.href} 
-                    className="text-slate-400 hover:text-white transition-colors"
-                    onClick={(e) => scrollToSection(e, link.href)}
-                  >
-                    {link.name}
-                  </a>
+                  {link.name === "Contact" ? (
+                    <Link 
+                      to="/contact"
+                      className="text-slate-400 hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link.href} 
+                      className="text-slate-400 hover:text-white transition-colors"
+                      onClick={(e) => scrollToSection(e, link.href)}
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
