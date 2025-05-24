@@ -115,13 +115,16 @@ export default function ServicesHighlights() {
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow relative overflow-hidden group">
                   <div className="absolute inset-0">
                     <img 
-                      src={service.id === 1 ? "/assets/ai-network-banner2.png" : service.id === 2 ? "/assets/ai-network-banner3.png" : service.id === 3 ? "/assets/ai-network-banner1.jpg" : `/assets/ai-network-banner${service.id}.jpg`} 
+                      src={service.id === 1 ? "/assets/ai-network-banner2.png" : service.id === 2 ? "/assets/ai-network-banner3.png" : service.id === 3 ? "/assets/ai-network-banner1.png" : `/assets/ai-network-banner${service.id}.jpg`} 
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/50"></div>
                   </div>
                   <CardContent className="p-6 flex flex-col items-center text-center relative z-10">
+                    <div className="mb-4 p-3 bg-white/10 backdrop-blur-sm rounded-full">
+                      {service.icon}
+                    </div>
                     <h3 className="text-xl font-bold mb-2 text-white">{service.title}</h3>
                     <p className="text-slate-200">
                       {service.description}
