@@ -124,7 +124,7 @@ export default function Navbar() {
                       <a
                         href={link.href}
                         className={`nav-link font-medium transition-colors px-2 py-2 text-sm inline-flex items-center ${
-                        scrolled || !scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
+                        scrolled ? 'text-white hover:text-gray-200' : 'text-white hover:text-gray-200'
                       }`}
                         onClick={(e) => toggleDropdown(link.id, e)}
                       >
@@ -169,7 +169,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
-                        scrolled || !scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
+                        scrolled ? 'text-white hover:text-gray-200' : 'text-white hover:text-gray-200'
                       }`}
                       onClick={(e) => {
                         e.preventDefault();
