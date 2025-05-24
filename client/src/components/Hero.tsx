@@ -127,6 +127,26 @@ export default function Hero() {
                         </div>
                       </motion.div>
 
+                      <motion.div 
+                        className="bg-white rounded-lg shadow-xl p-4 w-60 mb-8"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6 }}
+                      >
+                        <div className="text-sm text-slate-500 mb-1">
+                          Success Rate
+                        </div>
+                        <div className="text-2xl font-bold text-primary mb-2">
+                          95% Accuracy
+                        </div>
+                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-primary rounded-full"
+                            style={{ width: "95%" }}
+                          ></div>
+                        </div>
+                      </motion.div>
+
                       <motion.div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <div className="bg-white/20 text-white font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto backdrop-blur-sm">
                           Enterprise Solutions
