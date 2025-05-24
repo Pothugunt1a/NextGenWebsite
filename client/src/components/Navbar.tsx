@@ -124,7 +124,7 @@ export default function Navbar() {
                       <a
                         href={link.href}
                         className={`nav-link font-medium transition-colors px-2 py-2 text-sm inline-flex items-center ${
-                        scrolled ? 'text-black hover:text-primary' : 'text-black hover:text-primary'
+                        scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
                       }`}
                         onClick={(e) => toggleDropdown(link.id, e)}
                       >
@@ -169,7 +169,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
-                        scrolled ? 'text-black hover:text-primary' : 'text-black hover:text-primary'
+                        scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
                       }`}
                       onClick={(e) => {
                         e.preventDefault();
@@ -193,7 +193,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
-                      scrolled ? 'text-black hover:text-primary' : 'text-black hover:text-primary'
+                      scrolled ? 'text-black hover:text-primary' : 'text-white hover:text-gray-200'
                     }`}
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
@@ -320,4 +320,3 @@ export default function Navbar() {
     </header>
   );
 }
-```
