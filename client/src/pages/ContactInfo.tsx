@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Contact from "@/components/Contact";
 
@@ -12,13 +11,13 @@ export default function ContactInfo() {
       className="relative"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div 
-          className="absolute inset-0" 
-          style={{ 
-            backgroundImage: 'url("/assets/contact-banner.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.15
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("/assets/contact.jpg")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.15,
           }}
         />
       </div>
