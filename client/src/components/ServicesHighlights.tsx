@@ -123,7 +123,7 @@ export default function ServicesHighlights() {
                   </div>
                   <CardContent className="p-6 flex flex-col items-center text-center relative z-10">
                     <div className="mb-4 p-3 bg-white/10 backdrop-blur-sm rounded-full">
-                      {service.icon}
+                      <div className="text-white">{service.icon}</div>
                     </div>
                     <h3 className="text-xl font-bold mb-2 text-white">{service.title}</h3>
                     <p className="text-slate-200">
@@ -152,7 +152,7 @@ export default function ServicesHighlights() {
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow">
                   <CardContent className="p-6 flex flex-col items-center text-center">
                     <div className="mb-4 p-3 bg-primary/10 rounded-full">
-                      {service.icon}
+                      <div className="text-white">{service.icon}</div>
                     </div>
                     <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                     <p className="text-slate-600">
@@ -181,7 +181,7 @@ export default function ServicesHighlights() {
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-none shadow-lg">
                   <CardContent className="p-6 flex flex-col items-center text-center">
                     <div className="mb-4 p-3 bg-gray-100 rounded-full">
-                      {service.icon}
+                      <div className="text-white">{service.icon}</div>
                     </div>
                     <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                     <p className="text-slate-600">
