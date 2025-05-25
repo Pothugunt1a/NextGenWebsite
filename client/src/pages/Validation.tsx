@@ -184,39 +184,33 @@ export default function Validation() {
                     </Alert>
 
                     <ScrollArea className="h-[300px] rounded-md border p-4">
-                      <Accordion type="single" collapsible>
-                        {service.tasks && (
-                          <AccordionItem value="tasks">
-                            <AccordionTrigger>Key Tasks</AccordionTrigger>
-                            <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {service.tasks.map((task, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
-                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                                    <span>{task}</span>
-                                  </div>
-                                ))}
+                      {service.tasks && (
+                        <div className="mb-6">
+                          <h4 className="text-lg font-semibold mb-4">Key Tasks</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {service.tasks.map((task, idx) => (
+                              <div key={idx} className="flex items-center gap-2 text-sm">
+                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                                <span>{task}</span>
                               </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        )}
+                            ))}
+                          </div>
+                        </div>
+                      )}
 
-                        {service.services && (
-                          <AccordionItem value="services">
-                            <AccordionTrigger>Our Services</AccordionTrigger>
-                            <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {service.services.map((item, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
-                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                                    <span>{item}</span>
-                                  </div>
-                                ))}
+                      {service.services && (
+                        <div>
+                          <h4 className="text-lg font-semibold mb-4">Our Services</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {service.services.map((item, idx) => (
+                              <div key={idx} className="flex items-center gap-2 text-sm">
+                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                                <span>{item}</span>
                               </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        )}
-                      </Accordion>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </ScrollArea>
                   </div>
                 </div>
