@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -162,7 +161,7 @@ export default function Validation() {
             <TabsTrigger value="computer">Computer Systems</TabsTrigger>
             <TabsTrigger value="process">Process</TabsTrigger>
           </TabsList>
-          
+
           {validationServices.map((service, index) => (
             <TabsContent 
               key={index} 
@@ -189,7 +188,7 @@ export default function Validation() {
                           <AccordionItem value="tasks">
                             <AccordionTrigger>Key Tasks</AccordionTrigger>
                             <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
                                 {service.tasks.map((task, idx) => (
                                   <div key={idx} className="flex items-center gap-2 text-sm">
                                     <CheckCircle2 className="h-4 w-4 text-primary" />
@@ -205,7 +204,7 @@ export default function Validation() {
                           <AccordionItem value="services">
                             <AccordionTrigger>Our Services</AccordionTrigger>
                             <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
                                 {service.services.map((item, idx) => (
                                   <div key={idx} className="flex items-center gap-2 text-sm">
                                     <CheckCircle2 className="h-4 w-4 text-primary" />
