@@ -186,7 +186,7 @@ export default function Validation() {
                     <ScrollArea className="h-auto max-h-[400px] rounded-md p-4">
                       <div className="space-y-6">
                         {service.tasks && (
-                          <Card>
+                          <Card className="bg-white rounded-lg shadow-lg">
                             <CardContent className="p-6">
                               <h4 className="text-lg font-semibold mb-4">Key Tasks</h4>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
