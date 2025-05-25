@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Cog, Monitor, FlaskConical, Binary, CheckCircle2, ArrowRight, Info } from "lucide-react";
+import { Cog, Monitor, FlaskConical, Binary, CheckCircle2, ArrowRight, Info, ChevronDown } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -12,103 +12,120 @@ const validationServices = [
     icon: <Cog className="h-12 w-12 text-primary" />,
     title: "Equipment Validation Engineering",
     description: "RT NextGen AI Validation Engineers manages, inspects, calibrates, tests and modifies the instrumentation, equipment, mechanics and procedures used to manufacture various products.",
-    tasks: [
-      "Monitoring and testing equipment",
-      "Analyzing and documenting test results",
-      "Preparing compliance reports",
-      "Directing validation activities",
-      "Resolving testing problems",
-      "Making adjustments or improvements",
-      "Creating databases to track validation",
-      "Interpreting customer requirements",
-      "Developing validation schedules",
-      "Conducting training sessions",
-      "Maintaining instrumentation",
-      "Updating industry standards",
-    ],
+    sections: [
+      {
+        title: "Core Services",
+        items: [
+          "Equipment Calibration",
+          "Performance Testing",
+          "Mechanical Inspection",
+          "Validation Documentation"
+        ]
+      },
+      {
+        title: "Key Activities",
+        items: [
+          "Monitoring and testing equipment",
+          "Analyzing and documenting test results",
+          "Preparing compliance reports",
+          "Directing validation activities"
+        ]
+      },
+      {
+        title: "Quality Assurance",
+        items: [
+          "Resolving testing problems",
+          "Making adjustments or improvements",
+          "Creating databases to track validation",
+          "Maintaining instrumentation"
+        ]
+      }
+    ]
   },
   {
     icon: <FlaskConical className="h-12 w-12 text-primary" />,
     title: "Cleaning Validation Engineering",
     description: "A risk-based approach is followed for establishing an effective cleaning validation, including the development of policies, master plans and appropriate content for each study.",
-    services: [
-      "Cleaning Validation Guidelines",
-      "Validation Methodology",
-      "Analytical Development",
-      "Visual Examination",
-      "Analytical Testing & Reporting",
-      "Validation Sampling",
-      "Product Selection Matrix",
-      "System Qualification",
-    ],
+    sections: [
+      {
+        title: "Methodology",
+        items: [
+          "Cleaning Validation Guidelines",
+          "Validation Methodology",
+          "Analytical Development",
+          "Visual Examination"
+        ]
+      },
+      {
+        title: "Testing & Analysis",
+        items: [
+          "Analytical Testing & Reporting",
+          "Validation Sampling",
+          "Product Selection Matrix",
+          "System Qualification"
+        ]
+      }
+    ]
   },
   {
     icon: <Monitor className="h-12 w-12 text-primary" />,
     title: "Computer System Validation",
     description: "Computer Systems Validation is a complete life cycle process including planning, specification, programming, testing, commissioning, documentation, operation, monitoring and modifying.",
-    services: [
-      "Validation Program Development",
-      "Legacy Systems Evaluation",
-      "Continuous Reassessment",
-      "Automated Process Control",
-      "Validation Documentation",
-      "System Integration Testing",
-      "Performance Qualification",
-      "Risk Assessment",
-    ],
+    sections: [
+      {
+        title: "System Development",
+        items: [
+          "Validation Program Development",
+          "Legacy Systems Evaluation",
+          "Continuous Reassessment",
+          "Automated Process Control"
+        ]
+      },
+      {
+        title: "Testing & Documentation",
+        items: [
+          "Validation Documentation",
+          "System Integration Testing",
+          "Performance Qualification",
+          "Risk Assessment"
+        ]
+      }
+    ]
   },
   {
     icon: <Binary className="h-12 w-12 text-primary" />,
     title: "Process Validation",
     description: "Our experienced team understands the concerns companies face in this highly regulated environment. We identify risks and critical control points that impact product quality.",
-    services: [
-      "Quality Systems & Standards",
-      "Design Control & Risk Management",
-      "Process Prerequisites",
-      "Quality Metrics Analysis",
-      "Verification vs Validation",
-      "Process Development",
-      "Design of Experiments",
-      "Manual Process Validation",
-      "Facilities & Utilities",
-      "Process FMEA",
-      "Process Monitoring",
-      "Documentation Management",
-    ],
-  },
-];
-
-const benefits = [
-  {
-    title: "Regulatory Compliance",
-    description: "Ensure adherence to industry standards and regulations",
-    icon: <CheckCircle2 className="h-6 w-6" />,
-  },
-  {
-    title: "Risk Reduction",
-    description: "Minimize product failures and operational risks",
-    icon: <CheckCircle2 className="h-6 w-6" />,
-  },
-  {
-    title: "Process Efficiency",
-    description: "Optimize workflows and improve productivity",
-    icon: <CheckCircle2 className="h-6 w-6" />,
-  },
-  {
-    title: "Quality Assurance",
-    description: "Maintain consistent product quality standards",
-    icon: <CheckCircle2 className="h-6 w-6" />,
-  },
-  {
-    title: "Cost Optimization",
-    description: "Reduce operational costs and minimize waste",
-    icon: <CheckCircle2 className="h-6 w-6" />,
-  },
-  {
-    title: "Market Readiness",
-    description: "Accelerate time-to-market for new products",
-    icon: <CheckCircle2 className="h-6 w-6" />,
-  },
+    sections: [
+      {
+        title: "Quality Management",
+        items: [
+          "Quality Systems & Standards",
+          "Design Control & Risk Management",
+          "Process Prerequisites",
+          "Quality Metrics Analysis"
+        ]
+      },
+      {
+        title: "Process Development",
+        items: [
+          "Process Development",
+          "Design of Experiments",
+          "Manual Process Validation",
+          "Process FMEA"
+        ]
+      },
+      {
+        title: "Infrastructure",
+        items: [
+          "Facilities & Utilities",
+          "Process Monitoring",
+          "Documentation Management",
+          "Verification vs Validation"
+        ]
+      }
+    ]
+  }
 ];
 
 export default function Validation() {
@@ -166,7 +183,7 @@ export default function Validation() {
           {validationServices.map((service, index) => (
             <TabsContent 
               key={index} 
-              value={['equipment', 'cleaning', 'computer', 'process'][index]}
+              value={["equipment", "cleaning", "computer", "process"][index]}
               className="mt-0"
             >
               <div className="bg-white rounded-lg p-8 shadow-lg">
@@ -183,41 +200,25 @@ export default function Validation() {
                       <AlertDescription>{service.description}</AlertDescription>
                     </Alert>
 
-                    <ScrollArea className="h-[300px] rounded-md border p-4">
-                      <Accordion type="single" collapsible>
-                        {service.tasks && (
-                          <AccordionItem value="tasks">
-                            <AccordionTrigger>Key Tasks</AccordionTrigger>
-                            <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {service.tasks.map((task, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
-                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                                    <span>{task}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        )}
-
-                        {service.services && (
-                          <AccordionItem value="services">
-                            <AccordionTrigger>Our Services</AccordionTrigger>
-                            <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {service.services.map((item, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
-                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                                    <span>{item}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        )}
-                      </Accordion>
-                    </ScrollArea>
+                    <Accordion type="single" collapsible className="w-full">
+                      {service.sections.map((section, idx) => (
+                        <AccordionItem value={`section-${idx}`} key={idx}>
+                          <AccordionTrigger className="text-lg font-semibold">
+                            {section.title}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
+                              {section.items.map((item, itemIdx) => (
+                                <div key={itemIdx} className="flex items-start gap-3 p-2">
+                                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" />
+                                  <span className="text-gray-700">{item}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
                   </div>
                 </div>
               </div>
@@ -227,32 +228,55 @@ export default function Validation() {
 
         <div className="bg-primary/5 rounded-3xl p-12 mt-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Key Benefits</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Choose Our Validation Services?</h2>
             <p className="text-muted-foreground">
-              Experience the advantages of our comprehensive validation services
+              Experience comprehensive validation solutions backed by industry expertise
             </p>
           </div>
-          <ScrollArea className="h-[400px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex flex-col gap-3 p-6 bg-background rounded-xl shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                      {benefit.icon}
-                    </div>
-                    <h3 className="font-semibold text-lg">{benefit.title}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Industry Compliance",
+                description: "Ensure adherence to latest regulatory standards",
+              },
+              {
+                title: "Expert Team",
+                description: "Experienced validation professionals at your service",
+              },
+              {
+                title: "Comprehensive Solutions",
+                description: "End-to-end validation services under one roof",
+              },
+              {
+                title: "Advanced Technology",
+                description: "Cutting-edge tools and methodologies",
+              },
+              {
+                title: "Quality Assurance",
+                description: "Rigorous testing and documentation processes",
+              },
+              {
+                title: "Timely Delivery",
+                description: "Efficient project management and execution",
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col gap-3 p-6 bg-white rounded-xl shadow-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <CheckCircle2 className="h-6 w-6 text-primary" />
                   </div>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </ScrollArea>
+                  <h3 className="font-semibold text-lg">{benefit.title}</h3>
+                </div>
+                <p className="text-muted-foreground">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
