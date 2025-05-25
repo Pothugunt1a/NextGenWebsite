@@ -188,7 +188,7 @@ export default function Validation() {
                           <AccordionItem value="tasks">
                             <AccordionTrigger>Key Tasks</AccordionTrigger>
                             <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 py-1">
                                 {service.tasks.map((task, idx) => (
                                   <div key={idx} className="flex items-center gap-2 text-sm">
                                     <CheckCircle2 className="h-4 w-4 text-primary" />
@@ -204,7 +204,7 @@ export default function Validation() {
                           <AccordionItem value="services">
                             <AccordionTrigger>Our Services</AccordionTrigger>
                             <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 py-1">
                                 {service.services.map((item, idx) => (
                                   <div key={idx} className="flex items-center gap-2 text-sm">
                                     <CheckCircle2 className="h-4 w-4 text-primary" />
