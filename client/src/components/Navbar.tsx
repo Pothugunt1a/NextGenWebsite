@@ -173,9 +173,8 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                       }`}
                       onClick={(e) => {
                         e.preventDefault();
-                        if (link.name === "Home") {
+                        if (link.href === "#home") {
                           setLocation("/");
-                          handleLinkClick();
                         } else {
                           scrollToSection(e, link.href);
                         }
