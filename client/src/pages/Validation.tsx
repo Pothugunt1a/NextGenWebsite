@@ -1,17 +1,17 @@
-
 import { motion } from "framer-motion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-import { Cog, Monitor, FlaskConical, Binary, CheckCircle2, ArrowRight, Info } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
+import { Cog, Monitor, FlaskConical, Binary, CheckCircle2, ArrowRight, Info } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const validationServices = [
   {
     icon: <Cog className="h-12 w-12 text-primary" />,
     title: "Equipment Validation Engineering",
-    description: "RT NextGen AI Validation Engineers manages, inspects, calibrates, tests and modifies the instrumentation, equipment, mechanics and procedures used to manufacture various products.",
+    description:
+      "RT NextGen AI Validation Engineers manages, inspects, calibrates, tests and modifies the instrumentation, equipment, mechanics and procedures used to manufacture various products.",
     tasks: [
       "Monitoring and testing equipment",
       "Analyzing and documenting test results",
@@ -30,7 +30,8 @@ const validationServices = [
   {
     icon: <FlaskConical className="h-12 w-12 text-primary" />,
     title: "Cleaning Validation Engineering",
-    description: "A risk-based approach is followed for establishing an effective cleaning validation, including the development of policies, master plans and appropriate content for each study.",
+    description:
+      "A risk-based approach is followed for establishing an effective cleaning validation, including the development of policies, master plans and appropriate content for each study.",
     services: [
       "Cleaning Validation Guidelines",
       "Validation Methodology",
@@ -45,7 +46,8 @@ const validationServices = [
   {
     icon: <Monitor className="h-12 w-12 text-primary" />,
     title: "Computer System Validation",
-    description: "Computer Systems Validation is a complete life cycle process including planning, specification, programming, testing, commissioning, documentation, operation, monitoring and modifying.",
+    description:
+      "Computer Systems Validation is a complete life cycle process including planning, specification, programming, testing, commissioning, documentation, operation, monitoring and modifying.",
     services: [
       "Validation Program Development",
       "Legacy Systems Evaluation",
@@ -60,7 +62,8 @@ const validationServices = [
   {
     icon: <Binary className="h-12 w-12 text-primary" />,
     title: "Process Validation",
-    description: "Our experienced team understands the concerns companies face in this highly regulated environment. We identify risks and critical control points that impact product quality.",
+    description:
+      "Our experienced team understands the concerns companies face in this highly regulated environment. We identify risks and critical control points that impact product quality.",
     services: [
       "Quality Systems & Standards",
       "Design Control & Risk Management",
@@ -139,20 +142,54 @@ export default function Validation() {
               <p className="text-xl text-white/90 mb-8">
                 Comprehensive validation solutions ensuring quality, compliance, and operational excellence
               </p>
-              <Button size="lg" variant="secondary">
-                Schedule Consultation <ArrowRight className="ml-2" />
-              </Button>
+              <div className="flex gap-4">
+                <Button size="lg" variant="secondary">
+                  Schedule Consultation <ArrowRight className="ml-2" />
+                </Button>
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <Button variant="outline" size="lg">
+                      Learn More <Info className="ml-2 h-4 w-4" />
+                    </Button>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-80">
+                    <div className="space-y-2">
+                      <h4 className="text-sm font-semibold">Why Choose Our Validation Services?</h4>
+                      <p className="text-sm">
+                        Our comprehensive validation solutions ensure compliance with industry standards
+                        while optimizing your operational efficiency.
+                      </p>
+                    </div>
+                  </HoverCardContent>
+                </HoverCard>
+              </div>
             </motion.div>
           </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Our Validation Solutions</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Expert validation services tailored to meet your specific requirements
-          </p>
+        <div className="mb-16">
+          <motion.div 
+            className="bg-white rounded-lg shadow-xl p-4 w-60 mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="text-sm text-slate-500 mb-1">
+              Success Rate
+            </div>
+            <div className="text-2xl font-bold text-primary mb-2">
+              95% Accuracy
+            </div>
+            <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-primary rounded-full transition-all duration-1000"
+                style={{ width: "95%" }}
+              ></div>
+            </div>
+          </motion.div>
         </div>
 
         <Tabs defaultValue="equipment" className="mb-16">
@@ -169,58 +206,67 @@ export default function Validation() {
               value={['equipment', 'cleaning', 'computer', 'process'][index]}
               className="mt-0"
             >
-              <div className="bg-white rounded-lg p-8 shadow-lg">
-                <div className="flex flex-col md:flex-row gap-8">
-                  <div className="flex-shrink-0">
-                    <div className="p-4 bg-primary/10 rounded-2xl">
-                      {service.icon}
-                    </div>
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                    <Alert className="mb-6">
-                      <Info className="h-4 w-4" />
-                      <AlertDescription>{service.description}</AlertDescription>
-                    </Alert>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Card className="border-2 hover:border-primary/50 transition-colors duration-300">
+                  <CardContent className="p-8">
+                    <div className="flex flex-col md:flex-row gap-8">
+                      <div className="flex-shrink-0">
+                        <motion.div 
+                          className="p-4 bg-primary/10 rounded-2xl"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          {service.icon}
+                        </motion.div>
+                      </div>
+                      <div className="flex-grow">
+                        <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                        <p className="text-muted-foreground mb-6">{service.description}</p>
 
-                    <ScrollArea className="h-auto max-h-[400px] rounded-md p-4">
-                      <div className="space-y-6">
                         {service.tasks && (
-                          <Card className="bg-white rounded-lg shadow-lg">
-                            <CardContent className="p-6">
-                              <h4 className="text-lg font-semibold mb-4">Key Tasks</h4>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {service.tasks.map((task, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
-                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                                    <span>{task}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </CardContent>
-                          </Card>
+                          <div className="mt-6">
+                            <h4 className="font-semibold mb-4 text-lg">Key Tasks</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                              {service.tasks.map((task, idx) => (
+                                <motion.div 
+                                  key={idx} 
+                                  className="flex items-center gap-2 text-sm p-2 hover:bg-primary/5 rounded-lg transition-colors"
+                                  whileHover={{ x: 5 }}
+                                >
+                                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                                  <span>{task}</span>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
                         )}
 
                         {service.services && (
-                          <Card>
-                            <CardContent className="p-6">
-                              <h4 className="text-lg font-semibold mb-4">Our Services</h4>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {service.services.map((item, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
-                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                                    <span>{item}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </CardContent>
-                          </Card>
+                          <div className="mt-6">
+                            <h4 className="font-semibold mb-4 text-lg">Our Services</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              {service.services.map((item, idx) => (
+                                <motion.div 
+                                  key={idx} 
+                                  className="flex items-center gap-2 text-sm p-2 hover:bg-primary/5 rounded-lg transition-colors"
+                                  whileHover={{ x: 5 }}
+                                >
+                                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                                  <span>{item}</span>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
                         )}
                       </div>
-                    </ScrollArea>
-                  </div>
-                </div>
-              </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </TabsContent>
           ))}
         </Tabs>
@@ -232,27 +278,27 @@ export default function Validation() {
               Experience the advantages of our comprehensive validation services
             </p>
           </div>
-          <ScrollArea className="h-[400px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex flex-col gap-3 p-6 bg-background rounded-xl shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                      {benefit.icon}
-                    </div>
-                    <h3 className="font-semibold text-lg">{benefit.title}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className="flex flex-col gap-3 p-6 bg-background rounded-xl shadow-sm hover:shadow-md transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                    {benefit.icon}
                   </div>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </ScrollArea>
+                  <h3 className="font-semibold text-lg">{benefit.title}</h3>
+                </div>
+                <p className="text-muted-foreground text-sm">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
