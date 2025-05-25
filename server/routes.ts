@@ -52,7 +52,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     if (req.path.startsWith('/api')) {
       res.status(404).json({ message: 'API endpoint not found' });
     } else {
-      res.sendFile(path.resolve(import.meta.dirname, '../client/index.html'));
+      res.sendFile(path.resolve(import.meta.dirname, '../dist/public/index.html'));
     }
   });
 
