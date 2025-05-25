@@ -142,8 +142,15 @@ export default function Validation() {
               <p className="text-xl text-white/90 mb-8">
                 Comprehensive validation solutions ensuring quality, compliance, and operational excellence
               </p>
-              <Button size="lg" variant="secondary">
-                Schedule Consultation <ArrowRight className="ml-2" />
+              <Button 
+                size="lg" 
+                variant="secondary"
+                onClick={() => {
+                  window.location.href = '/contact';
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Contact Us <ArrowRight className="ml-2" />
               </Button>
             </motion.div>
           </div>
