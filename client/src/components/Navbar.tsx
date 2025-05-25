@@ -173,9 +173,8 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                       }`}
                       onClick={(e) => {
                         e.preventDefault();
-                        if (link.name === "Home") {
+                        if (link.href === "#home") {
                           setLocation("/");
-                          handleLinkClick();
                         } else {
                           scrollToSection(e, link.href);
                         }
@@ -299,7 +298,15 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                     className={`block font-medium transition-colors py-3 ${
                       scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-gray-200'
                     }`}
-                    onClick={(e) => scrollToSection(e, link.href)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (link.href === "#home") {
+                        setLocation("/");
+                        handleLinkClick();
+                      } else {
+                        scrollToSection(e, link.href);
+                      }
+                    }}
                   >
                     {link.name}
                   </a>
