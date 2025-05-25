@@ -183,7 +183,7 @@ export default function Validation() {
                       <AlertDescription>{service.description}</AlertDescription>
                     </Alert>
 
-                    <ScrollArea className="h-auto max-h-[400px] rounded-md border p-4">
+                    <ScrollArea className="h-auto max-h-[400px] rounded-md p-4">
                       <div className="space-y-6">
                         {service.tasks && (
                           <Card>
