@@ -120,7 +120,7 @@ export default function ServicesHighlights() {
         <div className="mb-10">
           <h3 className="text-2xl font-bold mb-8 text-center">
             <span className="bg-gray-800 text-white px-6 py-2 rounded-full">
-              AI & Machine Learning
+              Artificial Intelligence
             </span>
           </h3>
           <motion.div

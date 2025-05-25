@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { Phone, Mail } from "lucide-react";
@@ -10,17 +9,25 @@ export default function InfoBanner() {
   };
 
   return (
-    <div className="bg-slate-50 py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-slate-50 py-12">
+      <div className="absolute inset-0">
+        <img
+          src="/assets/contact-banner.png"
+          alt="Contact Banner"
+          className="w-full h-full object-cover opacity-50"
+        />
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="flex-1">
-            <h3 className="text-2xl font-bold text-slate-900 mb-3 pl-6 border-l-4 border-primary">
+            <h3 className="text-3xl font-bold text-slate-900 mb-3 pl-6 border-l-4 border-primary">
               For Further Information And To Learn More About Our AI Solutions
-              Along With How We Can Support <br /> Your Organisation In
-              Harnessing The Full Potential Of AI Make Contact With Our
+              Along With How We Can Support Your Organisation In Harnessing The
+              Full Potential Of AI{" "}
+              <span className="text-dark-blue">Make Contact</span> With Our
               Experienced IT Staff.
             </h3>
-            <p className="text-slate-600 border-l-0">
+            <p className="text-slate-600">
               We're available for 8 hours a day! Contact us to request a
               detailed analysis and assessment of your plan.
             </p>
