@@ -1,17 +1,17 @@
 
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Cog, Monitor, FlaskConical, Binary, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Cog, Monitor, FlaskConical, Binary, CheckCircle2, ArrowRight, Info } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
 
 const validationServices = [
   {
     icon: <Cog className="h-12 w-12 text-primary" />,
     title: "Equipment Validation Engineering",
-    description: "RT NextGen AI Validation Engineers manages, inspects, calibrates, tests and modifies the instrumentation, equipment, mechanics and procedures used to manufacture various products.",
+    description:
+      "RT NextGen AI Validation Engineers manages, inspects, calibrates, tests and modifies the instrumentation, equipment, mechanics and procedures used to manufacture various products.",
     tasks: [
       "Monitoring and testing equipment",
       "Analyzing and documenting test results",
@@ -30,7 +30,8 @@ const validationServices = [
   {
     icon: <FlaskConical className="h-12 w-12 text-primary" />,
     title: "Cleaning Validation Engineering",
-    description: "A risk-based approach is followed for establishing an effective cleaning validation, including the development of policies, master plans and appropriate content for each study.",
+    description:
+      "A risk-based approach is followed for establishing an effective cleaning validation, including the development of policies, master plans and appropriate content for each study.",
     services: [
       "Cleaning Validation Guidelines",
       "Validation Methodology",
@@ -45,7 +46,8 @@ const validationServices = [
   {
     icon: <Monitor className="h-12 w-12 text-primary" />,
     title: "Computer System Validation",
-    description: "Computer Systems Validation is a complete life cycle process including planning, specification, programming, testing, commissioning, documentation, operation, monitoring and modifying.",
+    description:
+      "Computer Systems Validation is a complete life cycle process including planning, specification, programming, testing, commissioning, documentation, operation, monitoring and modifying.",
     services: [
       "Validation Program Development",
       "Legacy Systems Evaluation",
@@ -60,7 +62,8 @@ const validationServices = [
   {
     icon: <Binary className="h-12 w-12 text-primary" />,
     title: "Process Validation",
-    description: "Our experienced team understands the concerns companies face in this highly regulated environment. We identify risks and critical control points that impact product quality.",
+    description:
+      "Our experienced team understands the concerns companies face in this highly regulated environment. We identify risks and critical control points that impact product quality.",
     services: [
       "Quality Systems & Standards",
       "Design Control & Risk Management",
@@ -169,58 +172,49 @@ export default function Validation() {
               value={['equipment', 'cleaning', 'computer', 'process'][index]}
               className="mt-0"
             >
-              <div className="bg-white rounded-lg p-8 shadow-lg">
-                <div className="flex flex-col md:flex-row gap-8">
-                  <div className="flex-shrink-0">
-                    <div className="p-4 bg-primary/10 rounded-2xl">
-                      {service.icon}
+              <Card className="border-2 hover:border-primary/50 transition-colors duration-300">
+                <CardContent className="p-8">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="flex-shrink-0">
+                      <div className="p-4 bg-primary/10 rounded-2xl">
+                        {service.icon}
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                      <p className="text-muted-foreground mb-6">{service.description}</p>
+
+                      {service.tasks && (
+                        <div className="mt-6">
+                          <h4 className="font-semibold mb-4 text-lg">Key Tasks</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                            {service.tasks.map((task, idx) => (
+                              <div key={idx} className="flex items-center gap-2 text-sm">
+                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                                <span>{task}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {service.services && (
+                        <div className="mt-6">
+                          <h4 className="font-semibold mb-4 text-lg">Our Services</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {service.services.map((item, idx) => (
+                              <div key={idx} className="flex items-center gap-2 text-sm">
+                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                                <span>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                    <Alert className="mb-6">
-                      <Info className="h-4 w-4" />
-                      <AlertDescription>{service.description}</AlertDescription>
-                    </Alert>
-
-                    <ScrollArea className="h-[300px] rounded-md border p-4">
-                      <Accordion type="single" collapsible>
-                        {service.tasks && (
-                          <AccordionItem value="tasks">
-                            <AccordionTrigger>Key Tasks</AccordionTrigger>
-                            <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {service.tasks.map((task, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
-                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                                    <span>{task}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        )}
-
-                        {service.services && (
-                          <AccordionItem value="services">
-                            <AccordionTrigger>Our Services</AccordionTrigger>
-                            <AccordionContent>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {service.services.map((item, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
-                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                                    <span>{item}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        )}
-                      </Accordion>
-                    </ScrollArea>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </TabsContent>
           ))}
         </Tabs>
@@ -232,27 +226,25 @@ export default function Validation() {
               Experience the advantages of our comprehensive validation services
             </p>
           </div>
-          <ScrollArea className="h-[400px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex flex-col gap-3 p-6 bg-background rounded-xl shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                      {benefit.icon}
-                    </div>
-                    <h3 className="font-semibold text-lg">{benefit.title}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col gap-3 p-6 bg-background rounded-xl shadow-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                    {benefit.icon}
                   </div>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </ScrollArea>
+                  <h3 className="font-semibold text-lg">{benefit.title}</h3>
+                </div>
+                <p className="text-muted-foreground text-sm">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
