@@ -134,8 +134,8 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
 
                       {/* Multi-level Dropdown */}
                       {activeDropdown === link.id && (
-                        <div className="absolute left-0 mt-2 w-[600px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-lg shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
-                          <div className="relative flex">
+                        <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
+                          <div className="container mx-auto relative flex max-w-none">
                             {/* Left content area with border */}
                             <div className="flex-1 p-6 border-l-4 border-cyan-400">
                               <div className="space-y-6">
@@ -170,7 +170,7 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                             </div>
                             
                             {/* Right image area */}
-                            <div className="w-48 relative bg-gradient-to-br from-cyan-900/20 to-blue-900/20 flex items-center justify-center">
+                            <div className="w-96 relative bg-gradient-to-br from-cyan-900/20 to-blue-900/20 flex items-center justify-center">
                               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
                               <div className="relative z-10 text-center">
                                 <div className="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
