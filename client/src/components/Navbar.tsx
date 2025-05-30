@@ -134,8 +134,8 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
 
                       {/* Multi-level Dropdown */}
                       {activeDropdown === link.id && (
-                        <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
-                          <div className="container mx-auto relative flex max-w-none">
+                        <div className="absolute left-0 mt-2 w-[600px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-lg shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
+                          <div className="relative flex">
                             {/* Left content area with border */}
                             <div className="flex-1 p-6 border-l-4 border-cyan-400">
                               <div className="space-y-6">
@@ -170,13 +170,16 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                             </div>
                             
                             {/* Right image area */}
-                            <div className="w-80 relative bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center p-4">
+                            <div className="w-48 relative bg-gradient-to-br from-cyan-900/20 to-blue-900/20 flex items-center justify-center">
                               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
-                              <img 
-                                src="/assets/ai-brain-dropdown.png" 
-                                alt="AI Brain" 
-                                className="max-w-full max-h-full object-contain opacity-90"
-                              />
+                              <div className="relative z-10 text-center">
+                                <div className="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
+                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                  </svg>
+                                </div>
+                                <div className="text-cyan-300 text-xs font-medium">AI Solutions</div>
+                              </div>
                               {/* Decorative elements */}
                               <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full"></div>
                               <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full"></div>
