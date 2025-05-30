@@ -138,12 +138,12 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                           <div className="container mx-auto relative flex max-w-none min-h-[400px]">
                             {/* Background image for entire container */}
                             <div 
-                              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
                               style={{ backgroundImage: 'url(/assets/ai-brain-dropdown.png)' }}
                             ></div>
 
                             {/* Dark overlay for readability */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/90"></div>
 
                             {/* Content area with border */}
                             <div className="relative z-10 flex-1 p-6 border-l-4 border-cyan-400">
