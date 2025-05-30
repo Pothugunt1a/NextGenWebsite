@@ -135,37 +135,41 @@ export const navLinks = [
     href: "#ai",
     hasDropdown: true,
     dropdownItems: [
-      {
-        name: "AI Consulting",
-        items: [
-          { name: "AI and Data Strategy", href: "#ai-strategy" },
-          {
-            name: "Process Optimization with AI",
-            href: "#process-optimization",
-          },
-          {
-            name: "AI Use Case Discovery & Identification",
-            href: "#use-case-discovery",
-          },
-        ],
-      },
-      {
-        name: "AI Software Development",
-        items: [
-          { name: "AI Components Development", href: "#ai-components" },
-          { name: "AI Academy - R&D for AI", href: "#ai-academy" },
-          { name: "SOTA Research/Patents", href: "#sota-research" },
-        ],
-      },
-      {
-        name: "Generative AI",
-        items: [
-          { name: "Generative AI Development", href: "#generative-ai" },
-          { name: "AI Chatbot Development", href: "#chatbot" },
-          { name: "LLM Development and Consulting", href: "#llm-consulting" },
-        ],
-      },
-    ],
+              {
+                name: "AI Consulting & Strategy",
+                items: [
+                  { name: "AI Consulting", href: "#ai-consulting" },
+                  { name: "AI and Data Strategy", href: "#ai-data-strategy" },
+                  { name: "Process Optimization with AI", href: "#process-optimization" },
+                  { name: "AI Use Case Discovery & Identification", href: "#use-case-discovery" },
+                ]
+              },
+              {
+                name: "AI Development & Research",
+                items: [
+                  { name: "AI Software Development", href: "#ai-development" },
+                  { name: "AI Components Development", href: "#ai-components" },
+                  { name: "AI Academy - R&D for AI", href: "#ai-academy" },
+                  { name: "SOTA Research/Patents", href: "#sota-research" },
+                ]
+              },
+              {
+                name: "Generative AI Solutions",
+                items: [
+                  { name: "Generative AI Development", href: "#generative-ai" },
+                  { name: "AI Chatbot Development", href: "#ai-chatbot" },
+                  { name: "LLM Development and Consulting", href: "#llm-development" },
+                ]
+              },
+              {
+                name: "Specialized Services", 
+                items: [
+                  { name: "Life Science", href: "/life-science" },
+                  { name: "Validation", href: "/validation" },
+                  { name: "IT Consulting", href: "#it-consulting" },
+                ]
+              }
+            ]
   },
   { id: 4, name: "IT Services", href: "#it-services" },
   { id: 5, name: "Career", href: "#career" },
