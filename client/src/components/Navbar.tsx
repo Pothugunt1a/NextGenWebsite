@@ -134,19 +134,10 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
 
                       {/* Multi-level Dropdown */}
                       {activeDropdown === link.id && (
-                        <div className="fixed left-0 right-0 mt-2 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
-                          <div className="container mx-auto relative flex max-w-none min-h-[400px]">
-                            {/* Background image for entire container */}
-                            <div 
-                              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
-                              style={{ backgroundImage: 'url(/assets/ai-brain-dropdown.png)' }}
-                            ></div>
-
-                            {/* Dark overlay for readability */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/90"></div>
-
-                            {/* Content area with border */}
-                            <div className="relative z-10 flex-1 p-6 border-l-4 border-cyan-400">
+                        <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
+                          <div className="container mx-auto relative flex max-w-none">
+                            {/* Left content area with border */}
+                            <div className="flex-1 p-6 border-l-4 border-cyan-400">
                               <div className="space-y-6">
                                 {link.dropdownItems?.map((category, idx) => (
                                   <div key={idx}>
@@ -177,10 +168,19 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                                 ))}
                               </div>
                             </div>
-
-                            {/* Decorative elements */}
-                            <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full z-10"></div>
-                            <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full z-10"></div>
+                            
+                            {/* Right image area */}
+                            <div className="w-80 relative bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center p-4">
+                              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
+                              <img 
+                                src="/assets/ai-brain-dropdown.png" 
+                                alt="AI Brain" 
+                                className="max-w-full max-h-full object-contain opacity-90"
+                              />
+                              {/* Decorative elements */}
+                              <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full"></div>
+                              <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full"></div>
+                            </div>
                           </div>
                         </div>
                       )}
