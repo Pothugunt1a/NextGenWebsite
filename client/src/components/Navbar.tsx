@@ -170,13 +170,14 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                             </div>
                             
                             {/* Right image area */}
-                            <div className="w-80 relative bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center p-4">
-                              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
-                              <img 
-                                src="/assets/ai-brain-dropdown.png" 
-                                alt="AI Brain" 
-                                className="max-w-full max-h-full object-contain opacity-90"
-                              />
+                            <div className="w-80 relative bg-gradient-to-br from-slate-900 via-slate-800 to-black overflow-hidden">
+                              {/* Background image */}
+                              <div 
+                                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+                                style={{ backgroundImage: 'url(/assets/ai-brain-dropdown.png)' }}
+                              ></div>
+                              {/* Overlay gradient */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-600/20"></div>
                               {/* Decorative elements */}
                               <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full"></div>
                               <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full"></div>
