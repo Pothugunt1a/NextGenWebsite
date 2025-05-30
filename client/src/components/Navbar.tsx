@@ -170,16 +170,13 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                             </div>
                             
                             {/* Right image area */}
-                            <div className="w-96 relative bg-gradient-to-br from-cyan-900/20 to-blue-900/20 flex items-center justify-center">
+                            <div className="w-96 relative bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center overflow-hidden">
                               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
-                              <div className="relative z-10 text-center">
-                                <div className="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                  </svg>
-                                </div>
-                                <div className="text-cyan-300 text-xs font-medium">AI Solutions</div>
-                              </div>
+                              <img 
+                                src="/assets/ai-brain-dropdown.png" 
+                                alt="AI Brain" 
+                                className="w-full h-full object-cover opacity-90"
+                              />
                               {/* Decorative elements */}
                               <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full"></div>
                               <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full"></div>
