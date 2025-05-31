@@ -4,20 +4,27 @@ import { navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 
-export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolean }) {
+export default function Navbar({
+  isDarkBackground,
+}: {
+  isDarkBackground?: boolean;
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [, setLocation] = useLocation();
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
-  const [activeMobileDropdown, setActiveMobileDropdown] = useState<number | null>(null);
-  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(null);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<
+    number | null
+  >(null);
+  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(
+    null,
+  );
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle scroll event to change navbar appearance
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -33,10 +40,12 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
     };
   }, []);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setActiveDropdown(null);
       }
     };
@@ -47,7 +56,6 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
     };
   }, []);
 
-  // Close mobile menu when clicking a link
   const handleLinkClick = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
@@ -56,8 +64,10 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
     }
   };
 
-  // Handle smooth scrolling
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
 
     if (href.startsWith("#")) {
@@ -78,43 +88,37 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
     handleLinkClick();
   };
 
-  // Toggle dropdown for desktop navigation
   const toggleDropdown = (id: number, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveDropdown(activeDropdown === id ? null : id);
   };
 
-  // Toggle dropdown for mobile navigation
   const toggleMobileDropdown = (id: number, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveMobileDropdown(activeMobileDropdown === id ? null : id);
   };
 
-  // Toggle submenu for mobile navigation
   const toggleMobileSubmenu = (name: string, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveMobileSubmenu(activeMobileSubmenu === name ? null : name);
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white shadow-md py-1' 
-        : 'bg-transparent py-2'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-1" : "bg-transparent py-2"}`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="flex items-center">
-              <img 
-                src="/assets/3dgifmaker34062.gif" 
-                alt="RT NextGenAI Logo" 
+              <img
+                src="/assets/3dgifmaker34062.gif"
+                alt="RT NextGenAI Logo"
                 className="h-16 w-auto"
               />
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center" ref={dropdownRef}>
             <div className="flex items-center flex-wrap justify-end">
               {navLinks.slice(0, 3).map((link) => (
@@ -124,35 +128,61 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                       <a
                         href={link.href}
                         className={`nav-link font-medium transition-colors px-2 py-2 text-sm inline-flex items-center ${
-                        scrolled ? 'text-black hover:text-primary' : isDarkBackground ? 'text-white hover:text-gray-200' : 'text-black hover:text-primary'
-                      }`}
+                          scrolled
+                            ? "text-black hover:text-primary"
+                            : isDarkBackground
+                              ? "text-white hover:text-gray-200"
+                              : "text-black hover:text-primary"
+                        }`}
                         onClick={(e) => toggleDropdown(link.id, e)}
                       >
                         {link.name}
-                        <ChevronDown className={`ml-1 h-3 w-3 transition-transform inline-block ${activeDropdown === link.id ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`ml-1 h-3 w-3 transition-transform inline-block ${activeDropdown === link.id ? "rotate-180" : ""}`}
+                        />
                       </a>
 
-                      {/* Multi-level Dropdown */}
                       {activeDropdown === link.id && (
                         <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
-                          <div className="container mx-auto relative flex max-w-none">
-                            {/* Left content area with border */}
-                            <div className="flex-1 p-6 border-l-4 border-cyan-400">
+                          <div className="container mx-auto relative flex max-w-none min-h-[400px]">
+                            {/* Background image for entire container */}
+                            <div
+                              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                              style={{
+                                backgroundImage:
+                                  "url(/assets/ai-brain-dropdown.png)",
+                                filter: 'brightness(1.2) contrast(1.2)', // Highlight the image
+                                height: "100%",
+                                width: "100%",
+                              }}
+                            ></div>
+
+                            {/* Dark overlay for readability */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/90"></div>
+
+                            {/* Content area with border */}
+                            <div className="relative z-10 flex-1 p-6 border-l-4 border-cyan-400">
                               <div className="space-y-6">
                                 {link.dropdownItems?.map((category, idx) => (
                                   <div key={idx}>
-                                    <div className="font-bold text-white text-lg mb-3 tracking-wide">{category.name}</div>
+                                    <div className="font-bold text-white text-lg mb-3 tracking-wide">
+                                      {category.name}
+                                    </div>
                                     <ul className="space-y-3">
                                       {category.items.map((item, itemIdx) => (
                                         <li key={itemIdx}>
-                                          <a 
-                                            href={item.href} 
+                                          <a
+                                            href={item.href}
                                             className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm leading-relaxed"
                                             onClick={(e) => {
                                               e.preventDefault();
-                                              if (item.name === "Life Science") {
+                                              if (
+                                                item.name === "Life Science"
+                                              ) {
                                                 setLocation("/life-science");
-                                              } else if (item.name === "Validation") {
+                                              } else if (
+                                                item.name === "Validation"
+                                              ) {
                                                 setLocation("/validation");
                                               } else {
                                                 scrollToSection(e, item.href);
@@ -168,19 +198,10 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                                 ))}
                               </div>
                             </div>
-                            
-                            {/* Right image area */}
-                            <div className="w-80 relative bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center p-4">
-                              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
-                              <img 
-                                src="/assets/ai-brain-dropdown.png" 
-                                alt="AI Brain" 
-                                className="max-w-full max-h-full object-contain opacity-90"
-                              />
-                              {/* Decorative elements */}
-                              <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full"></div>
-                              <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full"></div>
-                            </div>
+
+                            {/* Decorative elements */}
+                            <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full z-10"></div>
+                            <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full z-10"></div>
                           </div>
                         </div>
                       )}
@@ -188,9 +209,7 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                   ) : (
                     <a
                       href={link.href}
-                      className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
-                        scrolled ? 'text-black hover:text-primary' : isDarkBackground ? 'text-white hover:text-gray-200' : 'text-black hover:text-primary'
-                      }`}
+                      className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${scrolled ? "text-black hover:text-primary" : isDarkBackground ? "text-white hover:text-gray-200" : "text-black hover:text-primary"}`}
                       onClick={(e) => {
                         e.preventDefault();
                         if (link.href === "#home") {
@@ -213,7 +232,11 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                   <a
                     href={link.href}
                     className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
-                      scrolled ? 'text-black hover:text-primary' : isDarkBackground ? 'text-white hover:text-gray-200' : 'text-black hover:text-primary'
+                      scrolled
+                        ? "text-black hover:text-primary"
+                        : isDarkBackground
+                          ? "text-white hover:text-gray-200"
+                          : "text-black hover:text-primary"
                     }`}
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
@@ -222,7 +245,7 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                 </div>
               ))}
 
-              <Button 
+              <Button
                 onClick={() => setLocation("/contact")}
                 className="rounded-full font-medium transition-colors text-sm px-4 py-1 h-8 ml-2 bg-primary hover:bg-primary-dark text-white"
                 size="sm"
@@ -232,43 +255,45 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
             </div>
           </nav>
 
-          {/* Mobile Navigation Toggle */}
           <div className="lg:hidden">
-            <Button 
-              variant="ghost" 
-              size="icon" 
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={toggleMenu}
-              className={scrolled ? 'text-gray-800' : 'text-white'}
+              className={scrolled ? "text-gray-800" : "text-white"}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen 
-            ? 'max-h-[80vh] opacity-100 py-4 overflow-y-auto' 
-            : 'max-h-0 opacity-0'
-        } ${
-          scrolled ? 'bg-white' : 'bg-transparent'
-        }`}>
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-[80vh] opacity-100 py-4 overflow-y-auto" : "max-h-0 opacity-0"} ${scrolled ? "bg-white" : "bg-transparent"}`}
+        >
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
-              <div key={link.id} className="border-b border-gray-100 last:border-b-0">
+              <div
+                key={link.id}
+                className="border-b border-gray-100 last:border-b-0"
+              >
                 {link.hasDropdown ? (
                   <div>
                     <a
                       href={link.href}
-                      className={`flex justify-between items-center ${scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-gray-200'} font-medium transition-colors py-3`}
+                      className={`flex justify-between items-center ${scrolled ? "text-gray-800 hover:text-primary" : "text-white hover:text-gray-200"} font-medium transition-colors py-3`}
                       onClick={(e) => toggleMobileDropdown(link.id, e)}
                     >
                       {link.name}
-                      <ChevronDown className={`h-4 w-4 transition-transform ${activeMobileDropdown === link.id ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${activeMobileDropdown === link.id ? "rotate-180" : ""}`}
+                      />
                     </a>
 
-                    {/* Mobile dropdown content */}
                     {activeMobileDropdown === link.id && (
                       <div className="pl-4 pb-2">
                         {link.dropdownItems?.map((category, idx) => (
@@ -276,24 +301,31 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                             <a
                               href="#"
                               className="flex justify-between items-center font-medium text-primary py-2"
-                              onClick={(e) => toggleMobileSubmenu(category.name, e)}
+                              onClick={(e) =>
+                                toggleMobileSubmenu(category.name, e)
+                              }
                             >
                               {category.name}
-                              <ChevronDown className={`h-4 w-4 transition-transform ${activeMobileSubmenu === category.name ? 'rotate-180' : ''}`} />
+                              <ChevronDown
+                                className={`h-4 w-4 transition-transform ${activeMobileSubmenu === category.name ? "rotate-180" : ""}`}
+                              />
                             </a>
 
                             {activeMobileSubmenu === category.name && (
                               <ul className="pl-4 space-y-2 mt-1">
                                 {category.items.map((item, itemIdx) => (
                                   <li key={itemIdx}>
-                                    <a 
-                                      href={item.href} 
+                                    <a
+                                      href={item.href}
                                       className="block py-1 text-sm text-gray-700 hover:text-primary"
                                       onClick={(e) => {
                                         e.preventDefault();
                                         if (item.name === "Life Science") {
                                           setLocation("/life-science");
-                                        } else if (item.name === "Validation" || item.href === "/validation") {
+                                        } else if (
+                                          item.name === "Validation" ||
+                                          item.href === "/validation"
+                                        ) {
                                           setLocation("/validation");
                                         } else {
                                           scrollToSection(e, item.href);
@@ -315,9 +347,7 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                 ) : (
                   <a
                     href={link.href}
-                    className={`block font-medium transition-colors py-3 ${
-                      scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-gray-200'
-                    }`}
+                    className={`block font-medium transition-colors py-3 ${scrolled ? "text-gray-800 hover:text-primary" : "text-white hover:text-gray-200"}`}
                     onClick={(e) => {
                       e.preventDefault();
                       if (link.href === "#home") {
@@ -333,7 +363,7 @@ export default function Navbar({ isDarkBackground }: { isDarkBackground?: boolea
                 )}
               </div>
             ))}
-            <Button 
+            <Button
               onClick={() => {
                 setLocation("/contact");
                 handleLinkClick();
