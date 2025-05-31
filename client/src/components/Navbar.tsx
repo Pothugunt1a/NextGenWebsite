@@ -162,7 +162,7 @@ export default function Navbar({
 
                             {/* Content area with border */}
                             <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                              <div className="space-y-8">
                                 {link.dropdownItems?.map((category, idx) => (
                                   <div key={idx} className="space-y-4">
                                     <div className="font-bold text-white text-xl mb-4 tracking-wide border-b border-cyan-400/30 pb-2">
