@@ -143,7 +143,7 @@ export default function Navbar({
                       </a>
 
                       {activeDropdown === link.id && (
-                        <div className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
+                        <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
                           <div className="container mx-auto relative flex max-w-none min-h-[400px]">
                             {/* Background image for entire container */}
                             <div
@@ -158,7 +158,7 @@ export default function Navbar({
                             ></div>
 
                             {/* Dark overlay for readability */}
-                            <div className="absolute inset-0 bg-black/90"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/90"></div>
 
                             {/* Content area with border */}
                             <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
