@@ -161,11 +161,11 @@ export default function Navbar({
                             <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/90"></div>
 
                             {/* Content area with border */}
-                            <div className="relative z-10 flex-1 p-6 border-l-4 border-cyan-400">
-                              <div className="space-y-6">
+                            <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                 {link.dropdownItems?.map((category, idx) => (
-                                  <div key={idx}>
-                                    <div className="font-bold text-white text-lg mb-3 tracking-wide">
+                                  <div key={idx} className="space-y-4">
+                                    <div className="font-bold text-white text-xl mb-4 tracking-wide border-b border-cyan-400/30 pb-2">
                                       {category.name}
                                     </div>
                                     <ul className="space-y-3">
@@ -173,7 +173,7 @@ export default function Navbar({
                                         <li key={itemIdx}>
                                           <a
                                             href={item.href}
-                                            className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm leading-relaxed"
+                                            className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm leading-relaxed hover:translate-x-1 transform transition-transform"
                                             onClick={(e) => {
                                               e.preventDefault();
                                               if (
@@ -189,7 +189,7 @@ export default function Navbar({
                                               }
                                             }}
                                           >
-                                            {item.name}
+                                            • {item.name}
                                           </a>
                                         </li>
                                       ))}
