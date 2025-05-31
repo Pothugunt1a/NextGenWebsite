@@ -165,7 +165,7 @@ export default function Navbar({
                               <div className="space-y-8">
                                 {link.dropdownItems?.map((category, idx) => (
                                   <div key={idx} className="space-y-4">
-                                    <div className="font-bold text-white text-xl mb-4 tracking-wide border-b border-cyan-400/30 pb-2">
+                                    <div className="font-bold text-white text-xl mb-4 tracking-wide">
                                       {category.name}
                                     </div>
                                     <ul className="space-y-3">
@@ -279,7 +279,7 @@ export default function Navbar({
             {navLinks.map((link) => (
               <div
                 key={link.id}
-                className="border-b border-gray-100 last:border-b-0"
+                className=""
               >
                 {link.hasDropdown ? (
                   <div>
