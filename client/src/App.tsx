@@ -27,9 +27,6 @@ function Router() {
 }
 
 function App() {
-  // Add dark class to document root for dark theme
-  document.documentElement.classList.add('dark');
-  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
