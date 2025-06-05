@@ -209,6 +209,10 @@ export default function Navbar({
                                 alt="AI Consulting"
                                 className="w-full h-full object-cover"
                               />
+                              {/* Gradient overlay to blend with background */}
+                              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-slate-900/30 to-slate-900/70"></div>
+                              {/* Additional left edge blend */}
+                              <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-slate-800 to-transparent"></div>
                             </div>
                           </div>
                         </div>
