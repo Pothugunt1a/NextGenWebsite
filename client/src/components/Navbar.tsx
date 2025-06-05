@@ -160,7 +160,7 @@ export default function Navbar({
                               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                               style={{
                                 backgroundImage:
-                                  "url(/assets/ai-brain-dropdown.png)",
+                                  "url(/assets/AI.jpeg)",
                                 filter: 'brightness(1.2) contrast(1.2)', // Highlight the image
                                 height: "100%",
                                 width: "100%",
