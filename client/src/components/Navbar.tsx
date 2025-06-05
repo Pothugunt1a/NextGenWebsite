@@ -155,23 +155,8 @@ export default function Navbar({
                       {activeDropdown === link.id && (
                         <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
                           <div className="container mx-auto relative flex max-w-none min-h-[400px]">
-                            {/* Background image for entire container */}
-                            <div
-                              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                              style={{
-                                backgroundImage:
-                                  "url(/assets/AI.jpeg)",
-                                filter: 'brightness(1.2) contrast(1.2)', // Highlight the image
-                                height: "100%",
-                                width: "100%",
-                              }}
-                            ></div>
-
-                            {/* Dark overlay for readability */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/90"></div>
-
                             {/* Content area with border */}
-                            <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
+                            <div className="flex-1 p-8 border-l-4 border-cyan-400">
                               <div className="space-y-4">
                                 {link.dropdownItems?.map((category, idx) => (
                                   <div key={idx} className="border-b border-cyan-400/20 last:border-b-0">
@@ -217,9 +202,14 @@ export default function Navbar({
                               </div>
                             </div>
 
-                            {/* Decorative elements */}
-                            <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full z-10"></div>
-                            <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full z-10"></div>
+                            {/* Image on the right side */}
+                            <div className="w-64 flex-shrink-0 relative overflow-hidden">
+                              <img
+                                src="/assets/AI.jpeg"
+                                alt="AI Consulting"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
                           </div>
                         </div>
                       )}
