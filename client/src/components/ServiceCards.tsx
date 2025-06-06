@@ -17,9 +17,9 @@ const serviceCards = [
     id: 1,
     title: "Digital Utility Infrastructure",
     subtitle: "IT & Consulting",
-    description: "Building a smarter, more connected grid with next-generation network management systems and smart infrastructure solutions.",
-    icon: <Zap className="h-10 w-10 text-cyan-300" />,
-    backgroundImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    description: "Building a smarter, more connected grid with Esri's next-generation network management system.",
+    icon: <Zap className="h-8 w-8 text-blue-400" />,
+    backgroundImage: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "consulting",
     features: ["Smart Grid Technology", "Network Management", "Infrastructure Optimization"],
     route: "/consulting"
@@ -28,9 +28,9 @@ const serviceCards = [
     id: 2,
     title: "Digital Energy Solutions",
     subtitle: "IT & Consulting", 
-    description: "Unlocking the potential of data to generate creative energy solutions and drive sustainable innovation through advanced analytics.",
-    icon: <Building2 className="h-10 w-10 text-amber-300" />,
-    backgroundImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    description: "Unlocking the potential of data to generate creative solutions and insights.",
+    icon: <Building2 className="h-8 w-8 text-orange-400" />,
+    backgroundImage: "https://images.unsplash.com/photo-1497436072909-f5e4be1ddc98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "consulting",
     features: ["Data Analytics", "Energy Optimization", "Predictive Modeling"],
     route: "/consulting"
@@ -39,9 +39,9 @@ const serviceCards = [
     id: 3,
     title: "Location Intelligence Solutions",
     subtitle: "IT & Consulting",
-    description: "Making smarter decisions with real-time location data, spatial analytics, and intelligent mapping technologies.",
-    icon: <MapPin className="h-10 w-10 text-emerald-300" />,
-    backgroundImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    description: "Making smarter decisions with real-time location data and analytics.",
+    icon: <MapPin className="h-8 w-8 text-green-400" />,
+    backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "consulting", 
     features: ["GIS Technology", "Spatial Analytics", "Location Intelligence"],
     route: "/consulting"
@@ -50,9 +50,9 @@ const serviceCards = [
     id: 4,
     title: "SDI National Mapping",
     subtitle: "Life Science & Validation",
-    description: "Transforming navigation and spatial data management through comprehensive mapping solutions and digital infrastructure.",
-    icon: <Users className="h-10 w-10 text-violet-300" />,
-    backgroundImage: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    description: "Transforming the way we experience and navigate indoor spaces.",
+    icon: <Users className="h-8 w-8 text-purple-400" />,
+    backgroundImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "life-science",
     features: ["Spatial Data Infrastructure", "Digital Mapping", "Navigation Systems"],
     route: "/life-science"
@@ -61,20 +61,20 @@ const serviceCards = [
     id: 5,
     title: "Pharmaceutical Validation",
     subtitle: "Life Science & Validation",
-    description: "Comprehensive validation services ensuring pharmaceutical manufacturing excellence and regulatory compliance standards.",
-    icon: <FlaskConical className="h-10 w-10 text-blue-300" />,
-    backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    description: "Comprehensive validation services for pharmaceutical manufacturing and quality assurance.",
+    icon: <FlaskConical className="h-8 w-8 text-cyan-400" />,
+    backgroundImage: "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "life-science",
     features: ["Process Validation", "Equipment Qualification", "Regulatory Compliance"],
     route: "/validation"
   },
   {
     id: 6,
-    title: "AI-Powered Research Analytics",
+    title: "AI-Powered Analytics",
     subtitle: "Life Science & Validation",
-    description: "Advanced AI solutions for research data analysis, clinical trial optimization, and breakthrough scientific discoveries.",
-    icon: <Cpu className="h-10 w-10 text-pink-300" />,
-    backgroundImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    description: "Advanced AI solutions for research data analysis and clinical trial optimization.",
+    icon: <Cpu className="h-8 w-8 text-pink-400" />,
+    backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "life-science",
     features: ["Clinical Data Analysis", "Research Automation", "Predictive Modeling"],
     route: "/validation"
@@ -151,75 +151,71 @@ export default function ServiceCards() {
                 <CarouselItem key={card.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <motion.div variants={cardVariants}>
                     <Card 
-                      className="group cursor-pointer overflow-hidden border border-white/10 bg-gradient-to-br from-black/20 via-slate-900/30 to-blue-900/20 backdrop-blur-xl hover:from-black/30 hover:via-slate-800/40 hover:to-blue-800/30 transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/20"
+                      className="group cursor-pointer overflow-hidden border-0 bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm hover:from-slate-700/50 hover:to-slate-800/50 transition-all duration-500 hover:scale-105"
                       onClick={() => handleCardClick(card.route)}
                     >
-                      <CardContent className="p-0 relative h-96 overflow-hidden">
-                        {/* Background Image with Enhanced Effects */}
+                      <CardContent className="p-0 relative h-80">
+                        {/* Background Image */}
                         <div className="absolute inset-0">
                           <img
                             src={card.backgroundImage}
                             alt={card.title}
-                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                            className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
-                          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-purple-900/20 opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                        </div>
-
-                        {/* Floating Icon */}
-                        <div className="absolute top-6 right-6 z-20">
-                          <div className="p-3 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md border border-white/20 group-hover:scale-110 transition-transform duration-300">
-                            {card.icon}
-                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                         </div>
 
                         {/* Content */}
                         <div className="relative z-10 p-6 h-full flex flex-col justify-between">
                           {/* Top Section */}
-                          <div className="mt-8">
-                            <div className="mb-4">
-                              <span className="inline-block px-4 py-2 text-sm font-medium bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-white rounded-full border border-blue-400/40 backdrop-blur-sm">
+                          <div>
+                            <div className="flex items-center justify-between mb-4">
+                              <div className="flex items-center space-x-3">
+                                <div className="p-2 rounded-lg bg-white/10 backdrop-blur-sm">
+                                  {card.icon}
+                                </div>
+                              </div>
+                              <span className="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 rounded-full border border-blue-400/30">
                                 {card.subtitle}
                               </span>
                             </div>
                             
-                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-200 transition-colors duration-300 leading-tight">
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
                               {card.title}
                             </h3>
                             
-                            <p className="text-gray-200 text-sm leading-relaxed mb-6 line-clamp-3">
+                            <p className="text-gray-300 text-sm leading-relaxed mb-4">
                               {card.description}
                             </p>
                           </div>
 
                           {/* Bottom Section */}
-                          <div className="space-y-4">
+                          <div>
                             {/* Features */}
-                            <div className="flex flex-wrap gap-2">
-                              {card.features.map((feature, index) => (
-                                <span
-                                  key={index}
-                                  className="px-3 py-1 text-xs bg-white/15 text-gray-100 rounded-lg border border-white/25 backdrop-blur-sm font-medium"
-                                >
-                                  {feature}
-                                </span>
-                              ))}
+                            <div className="mb-4">
+                              <div className="flex flex-wrap gap-1">
+                                {card.features.map((feature, index) => (
+                                  <span
+                                    key={index}
+                                    className="px-2 py-1 text-xs bg-white/10 text-gray-200 rounded border border-white/20"
+                                  >
+                                    {feature}
+                                  </span>
+                                ))}
+                              </div>
                             </div>
 
-                            {/* Enhanced CTA Button */}
+                            {/* CTA Button */}
                             <Button
                               variant="ghost"
                               size="sm"
-                              className="w-full text-white bg-gradient-to-r from-blue-600/40 to-purple-600/40 border border-blue-400/50 hover:from-blue-500/60 hover:to-purple-500/60 hover:border-blue-300/70 transition-all duration-300 backdrop-blur-sm font-medium group/btn"
+                              className="w-full text-white border border-white/30 hover:bg-white/10 hover:border-white/50 transition-all duration-300 group"
                             >
-                              Explore Solution
-                              <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                              Learn More
+                              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                             </Button>
                           </div>
                         </div>
-
-                        {/* Hover Glow Effect */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-blue-500/0 via-blue-500/0 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -227,8 +223,8 @@ export default function ServiceCards() {
               ))}
             </CarouselContent>
             
-            <CarouselPrevious className="left-4 bg-gradient-to-r from-blue-600/40 to-purple-600/40 border-blue-400/50 hover:from-blue-500/60 hover:to-purple-500/60 text-white backdrop-blur-md shadow-lg hover:shadow-blue-500/20 transition-all duration-300" />
-            <CarouselNext className="right-4 bg-gradient-to-r from-blue-600/40 to-purple-600/40 border-blue-400/50 hover:from-blue-500/60 hover:to-purple-500/60 text-white backdrop-blur-md shadow-lg hover:shadow-blue-500/20 transition-all duration-300" />
+            <CarouselPrevious className="left-4 bg-white/10 border-white/30 hover:bg-white/20 text-white" />
+            <CarouselNext className="right-4 bg-white/10 border-white/30 hover:bg-white/20 text-white" />
           </Carousel>
         </motion.div>
       </div>
