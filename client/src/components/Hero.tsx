@@ -68,6 +68,13 @@ export default function Hero() {
       id="home"
       className="relative pt-28 pb-16 md:pt-36 md:pb-24 text-white"
     >
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src="/assets/ai-brain-banner.png"
+          alt="AI Brain Banner"
+          className="w-full h-full object-cover opacity-30"
+        />
+      </div>
       <div className="relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Carousel 
