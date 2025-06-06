@@ -19,6 +19,9 @@ export default function Navbar({
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(
     null,
   );
+  const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<string | null>(
+    null,
+  );
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
@@ -47,6 +50,7 @@ export default function Navbar({
         !dropdownRef.current.contains(event.target as Node)
       ) {
         setActiveDropdown(null);
+        setActiveDesktopSubmenu(null);
       }
     };
 
@@ -91,6 +95,7 @@ export default function Navbar({
   const toggleDropdown = (id: number, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveDropdown(activeDropdown === id ? null : id);
+    setActiveDesktopSubmenu(null);
   };
 
   const toggleMobileDropdown = (id: number, e: React.MouseEvent) => {
@@ -101,6 +106,11 @@ export default function Navbar({
   const toggleMobileSubmenu = (name: string, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveMobileSubmenu(activeMobileSubmenu === name ? null : name);
+  };
+
+  const toggleDesktopSubmenu = (name: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    setActiveDesktopSubmenu(activeDesktopSubmenu === name ? null : name);
   };
 
   return (
@@ -143,7 +153,7 @@ export default function Navbar({
                       </a>
 
                       {activeDropdown === link.id && (
-                        <div className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
+                        <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
                           <div className="container mx-auto relative flex max-w-none min-h-[400px]">
                             {/* Background image for entire container */}
                             <div
@@ -158,42 +168,50 @@ export default function Navbar({
                             ></div>
 
                             {/* Dark overlay for readability */}
-                            <div className="absolute inset-0 bg-black/90"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/90"></div>
 
                             {/* Content area with border */}
                             <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
-                              <div className="space-y-8">
+                              <div className="space-y-4">
                                 {link.dropdownItems?.map((category, idx) => (
-                                  <div key={idx} className="space-y-4">
-                                    <div className="font-bold text-white text-xl mb-4 tracking-wide border-b border-cyan-400/30 pb-2">
+                                  <div key={idx} className="border-b border-cyan-400/20 last:border-b-0">
+                                    <div 
+                                      className="font-bold text-white text-xl mb-4 tracking-wide pb-2 cursor-pointer hover:text-cyan-400 transition-colors flex justify-between items-center"
+                                      onClick={(e) => toggleDesktopSubmenu(category.name, e)}
+                                    >
                                       {category.name}
+                                      <ChevronDown
+                                        className={`h-5 w-5 transition-transform ${activeDesktopSubmenu === category.name ? "rotate-180" : ""}`}
+                                      />
                                     </div>
-                                    <ul className="space-y-3">
-                                      {category.items.map((item, itemIdx) => (
-                                        <li key={itemIdx}>
-                                          <a
-                                            href={item.href}
-                                            className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm leading-relaxed hover:translate-x-1 transform transition-transform"
-                                            onClick={(e) => {
-                                              e.preventDefault();
-                                              if (
-                                                item.name === "Life Science"
-                                              ) {
-                                                setLocation("/life-science");
-                                              } else if (
-                                                item.name === "Validation"
-                                              ) {
-                                                setLocation("/validation");
-                                              } else {
-                                                scrollToSection(e, item.href);
-                                              }
-                                            }}
-                                          >
-                                            • {item.name}
-                                          </a>
-                                        </li>
-                                      ))}
-                                    </ul>
+                                    {activeDesktopSubmenu === category.name && (
+                                      <ul className="space-y-3 pb-6 animate-in slide-in-from-top-5 fade-in-20">
+                                        {category.items.map((item, itemIdx) => (
+                                          <li key={itemIdx}>
+                                            <a
+                                              href={item.href}
+                                              className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm leading-relaxed hover:translate-x-1 transform transition-transform"
+                                              onClick={(e) => {
+                                                e.preventDefault();
+                                                if (
+                                                  item.name === "Life Science"
+                                                ) {
+                                                  setLocation("/life-science");
+                                                } else if (
+                                                  item.name === "Validation"
+                                                ) {
+                                                  setLocation("/validation");
+                                                } else {
+                                                  scrollToSection(e, item.href);
+                                                }
+                                              }}
+                                            >
+                                              • {item.name}
+                                            </a>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    )}
                                   </div>
                                 ))}
                               </div>
