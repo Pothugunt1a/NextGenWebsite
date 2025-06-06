@@ -43,7 +43,7 @@ export default function Solutions() {
   };
 
   return (
-    <section id="solutions" className="py-16 md:py-24 bg-light">
+    <section id="solutions" className="py-16 md:py-24 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-16"
