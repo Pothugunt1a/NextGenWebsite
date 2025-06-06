@@ -72,7 +72,7 @@ export default function Hero() {
         <img
           src="/assets/ai-brain-banner.png"
           alt="AI Brain Banner"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-60 brightness-125"
         />
       </div>
       <div className="relative z-10">
