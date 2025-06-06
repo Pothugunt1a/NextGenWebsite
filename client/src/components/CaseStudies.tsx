@@ -54,7 +54,7 @@ export default function CaseStudies() {
   };
 
   return (
-    <section id="case-studies" className="py-16 md:py-24 bg-white">
+    <section id="case-studies" className="py-16 md:py-24 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-16"
@@ -64,7 +64,7 @@ export default function CaseStudies() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Case Studies</h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-gray-300">
             Real-world AI solutions we've implemented to solve complex business challenges
           </p>
         </motion.div>

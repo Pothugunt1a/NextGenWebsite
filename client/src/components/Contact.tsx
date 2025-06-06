@@ -87,7 +87,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-16 bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl mx-4">
+    <section id="contact" className="py-12 md:py-16 text-white rounded-3xl mx-4">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div 

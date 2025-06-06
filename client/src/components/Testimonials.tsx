@@ -26,7 +26,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-light">
+    <section id="testimonials" className="py-16 md:py-24 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-16"
@@ -36,7 +36,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">What Our Clients Say</h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-gray-300">
             Discover how our AI solutions have transformed businesses across industries.
           </p>
         </motion.div>

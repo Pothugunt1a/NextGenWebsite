@@ -60,7 +60,7 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             About RT NextGenAI
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-gray-300">
             At RT NextGen AI, we deliver a full spectrum of cutting-edge IT services 
             designed to power your success. From AI-driven solutions to digital 
             transformation strategies, we harness next-generation technologies to help 
