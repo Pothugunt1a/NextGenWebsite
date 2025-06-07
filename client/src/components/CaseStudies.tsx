@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Button } from "../ui/ui/button";
-import { Card, CardContent } from "../ui/ui/card";
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
 
 // Case studies data
 const caseStudies = [

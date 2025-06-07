@@ -7,7 +7,7 @@ import {
   CustomDropdownItem,
   CustomDropdownLabel,
   CustomDropdownSeparator,
-} from "../ui/ui/custom-dropdown";
+} from "./ui/custom-dropdown";
 
 const ExampleCustomDropdown = () => {
   return (

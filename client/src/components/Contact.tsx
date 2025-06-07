@@ -5,7 +5,7 @@ import { z } from "zod";
 import { useState } from "react";
 import { apiRequest } from "../lib/queryClient";
 import { contactInfo, socialLinks } from "../lib/constants";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "../hooks/use-toast";
 import {
   Form,
   FormControl,
@@ -13,10 +13,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/ui/form";
-import { Input } from "../ui/ui/input";
-import { Textarea } from "../ui/ui/textarea";
-import { Button } from "../ui/ui/button";
+} from "./ui/form";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Button } from "./ui/button";
 import { CheckCircle } from "lucide-react";
 
 // Contact form schema

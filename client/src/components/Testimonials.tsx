@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { testimonials } from "../lib/constants";
-import { Card, CardContent } from "../ui/ui/card";
+import { Card, CardContent } from "./ui/card";
 import { QuoteIcon } from "lucide-react";
 
 export default function Testimonials() {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "../ui/ui/button";
+import { Button } from "./ui/button";
 import { useLocation } from "wouter";
 import { ArrowRight, BrainCircuit, Cpu, ServerCog } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -9,7 +9,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../ui/ui/carousel";
+} from "./ui/carousel";
 
 export default function Hero() {
   const [, setLocation] = useLocation();

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navLinks } from "../lib/constants";
-import { Button } from "../ui/ui/button";
+import { Button } from "./ui/button";
 import { useLocation } from "wouter";
 
 export default function Navbar({

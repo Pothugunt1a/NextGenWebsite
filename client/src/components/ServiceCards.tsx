@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "../ui/ui/card";
+import { Card, CardContent } from "./ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../ui/ui/carousel";
-import { Button } from "../ui/ui/button";
+} from "./ui/carousel";
+import { Button } from "./ui/button";
 import { ArrowRight, Building2, FlaskConical, MapPin, Cpu, Zap, Users } from "lucide-react";
 import { useLocation } from "wouter";
 import Autoplay from "embla-carousel-autoplay";
