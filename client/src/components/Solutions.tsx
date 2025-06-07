@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { solutions } from "@/lib/constants";
+import { solutions } from "../lib/constants";
 import { ArrowRight, Check } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "../ui/ui/card";
 
 export default function Solutions() {
   // Animation variants

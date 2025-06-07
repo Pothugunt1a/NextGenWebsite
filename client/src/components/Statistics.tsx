@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { stats } from "@/lib/constants";
+import { stats } from "../lib/constants";
 
 export default function Statistics() {
   const containerVariants = {

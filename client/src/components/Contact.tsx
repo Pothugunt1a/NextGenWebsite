@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
-import { apiRequest } from "@/lib/queryClient";
-import { contactInfo, socialLinks } from "@/lib/constants";
+import { apiRequest } from "../lib/queryClient";
+import { contactInfo, socialLinks } from "../lib/constants";
 import { useToast } from "@/hooks/use-toast";
 import {
   Form,
@@ -13,10 +13,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+} from "../ui/ui/form";
+import { Input } from "../ui/ui/input";
+import { Textarea } from "../ui/ui/textarea";
+import { Button } from "../ui/ui/button";
 import { CheckCircle } from "lucide-react";
 
 // Contact form schema

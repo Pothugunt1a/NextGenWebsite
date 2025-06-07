@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { useEffect } from "react";
-import Hero from "@/components/Hero";
+import Hero from "../components/Hero";
 
-import ServicesHighlights from "@/components/ServicesHighlights";
-import ServiceCards from "@/components/ServiceCards";
-import CaseStudies from "@/components/CaseStudies";
-import Statistics from "@/components/Statistics";
-import Testimonials from "@/components/Testimonials";
-import LogoCarousel from "@/components/LogoCarousel";
+import ServicesHighlights from "../components/ServicesHighlights";
+import ServiceCards from "../components/ServiceCards";
+import CaseStudies from "../components/CaseStudies";
+import Statistics from "../components/Statistics";
+import Testimonials from "../components/Testimonials";
+import LogoCarousel from "../components/LogoCarousel";
 export default function Home() {
   // Scroll to top when the component mounts
   useEffect(() => {

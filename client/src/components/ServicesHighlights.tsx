@@ -9,7 +9,7 @@ import {
   ChartBar,
   Shield,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "../ui/ui/card";
 
 const services = [
   {

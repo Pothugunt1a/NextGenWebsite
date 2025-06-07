@@ -110,7 +110,8 @@
   }
 
   body {
-    @apply font-sans antialiased text-foreground;
+    @apply font-sans antialiased;
+    color: hsl(var(--foreground));
     background: linear-gradient(180deg, #000 0%, #0b1531 100%) no-repeat;
     min-height: 100vh;
     background-attachment: fixed;

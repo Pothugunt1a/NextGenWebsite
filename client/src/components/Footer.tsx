@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { footerLinks, socialLinks } from "@/lib/constants";
+import { footerLinks, socialLinks } from "../lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
