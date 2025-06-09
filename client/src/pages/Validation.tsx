@@ -169,7 +169,7 @@ const validationServices = [
       "Complete lifecycle validation for computer systems including planning, testing, documentation, and continuous monitoring.",
     icon: <Monitor className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "@assets/Computer-system-validation.webp",
+    backgroundImage: "/assets/Computer-system-validation.webp",
     overview:
       "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
     keyBenefits: [
@@ -232,7 +232,7 @@ const validationServices = [
       "Systematic approach to process validation ensuring consistent product quality and regulatory compliance throughout manufacturing.",
     icon: <Binary className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "@assets/Process-validation.jpg",
+    backgroundImage: "/assets/Process-validation.jpg",
     overview:
       "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
     keyBenefits: [
