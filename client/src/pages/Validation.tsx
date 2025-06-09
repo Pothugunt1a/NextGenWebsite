@@ -39,7 +39,7 @@ const validationServices = [
     title: "Equipment Validation",
     subtitle: "Engineering Excellence",
     description: "Comprehensive equipment validation services ensuring optimal performance, compliance, and reliability across all manufacturing systems.",
-    icon: <Cog className="h-12 w-12 text-blue-400" />,
+    icon: <Cog className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
     overview: "Our Equipment Validation services ensure that your manufacturing equipment operates consistently within predetermined specifications and quality attributes. We provide comprehensive validation strategies that meet regulatory requirements while optimizing operational efficiency.",
     keyBenefits: [
@@ -83,7 +83,7 @@ const validationServices = [
     title: "Cleaning Validation",
     subtitle: "Quality Assurance",
     description: "Risk-based cleaning validation protocols incorporating critical quality attributes and regulatory compliance standards.",
-    icon: <FlaskConical className="h-12 w-12 text-green-400" />,
+    icon: <FlaskConical className="h-12 w-12 text-white" />,
     color: "from-green-500 to-emerald-500",
     overview: "Our Cleaning Validation services provide scientifically sound and regulatory compliant cleaning procedures for pharmaceutical and biotechnology manufacturing equipment. We develop risk-based cleaning validation protocols that ensure product quality and patient safety.",
     keyBenefits: [
@@ -127,7 +127,7 @@ const validationServices = [
     title: "Computer System Validation",
     subtitle: "Digital Compliance",
     description: "Complete lifecycle validation for computer systems including planning, testing, documentation, and continuous monitoring.",
-    icon: <Monitor className="h-12 w-12 text-purple-400" />,
+    icon: <Monitor className="h-12 w-12 text-white" />,
     color: "from-purple-500 to-violet-500",
     overview: "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
     keyBenefits: [
@@ -171,7 +171,7 @@ const validationServices = [
     title: "Process Validation",
     subtitle: "Manufacturing Excellence", 
     description: "Systematic approach to process validation ensuring consistent product quality and regulatory compliance throughout manufacturing.",
-    icon: <Binary className="h-12 w-12 text-orange-400" />,
+    icon: <Binary className="h-12 w-12 text-white" />,
     color: "from-orange-500 to-red-500",
     overview: "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
     keyBenefits: [
@@ -248,29 +248,25 @@ const whyChooseUs = [
     icon: <Award className="h-10 w-10" />,
     title: "Industry Expertise",
     description: "Decades of experience in pharmaceutical and life science validation with deep regulatory knowledge.",
-    color: "from-blue-500 to-cyan-500",
-    badge: "15+ Years"
+    color: "from-blue-500 to-cyan-500"
   },
   {
     icon: <Users className="h-10 w-10" />,
     title: "Expert Team",
     description: "Certified validation professionals with extensive experience across multiple industries and regulations.",
-    color: "from-green-500 to-emerald-500",
-    badge: "50+ Experts"
+    color: "from-green-500 to-emerald-500"
   },
   {
     icon: <Shield className="h-10 w-10" />,
     title: "Regulatory Compliance",
     description: "Comprehensive understanding of FDA, EMA, and other global regulatory requirements and standards.",
-    color: "from-purple-500 to-violet-500",
-    badge: "100% Compliant"
+    color: "from-purple-500 to-violet-500"
   },
   {
     icon: <Target className="h-10 w-10" />,
     title: "Quality Focus",
     description: "Commitment to delivering high-quality validation services that exceed industry standards and expectations.",
-    color: "from-orange-500 to-red-500",
-    badge: "ISO Certified"
+    color: "from-orange-500 to-red-500"
   }
 ];
 
@@ -654,13 +650,6 @@ export default function Validation() {
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                   
                   <div className="relative z-10">
-                    {/* Badge */}
-                    <div className="absolute -top-2 -right-2">
-                      <Badge variant="secondary" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0 text-xs font-bold">
-                        {item.badge}
-                      </Badge>
-                    </div>
-
                     {/* Icon */}
                     <div className="flex justify-center mb-6">
                       <div className={`relative p-5 rounded-2xl bg-gradient-to-br ${item.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
