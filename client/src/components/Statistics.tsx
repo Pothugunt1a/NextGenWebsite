@@ -82,11 +82,19 @@ export default function Statistics() {
             >
               {/* Icon/Image */}
               <div className="mb-6">
-                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-white/3 to-white/8 backdrop-blur-md flex items-center justify-center overflow-hidden group-hover:scale-110 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.2),0_4px_20px_rgba(0,0,0,0.3)] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2),inset_0_1px_0_rgba(255,255,255,0.3),0_8px_30px_rgba(0,0,0,0.4)] border border-white/10">
+                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full relative flex items-center justify-center overflow-hidden group-hover:scale-110 transition-all duration-500">
+                  {/* Background gradient that blends with the dark background */}
+                  <div className="absolute inset-0 bg-gradient-radial from-transparent via-slate-800/20 to-slate-900/80 rounded-full"></div>
+                  
+                  {/* Image with seamless blend effect */}
                   <img 
                     src={stat.image} 
                     alt={stat.label}
-                    className="w-full h-full object-cover opacity-60 mix-blend-screen filter brightness-110 contrast-120 group-hover:opacity-80 transition-all duration-300"
+                    className="w-full h-full object-cover opacity-70 mix-blend-screen filter brightness-125 contrast-110 group-hover:opacity-90 transition-all duration-300 relative z-10"
+                    style={{
+                      maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)',
+                      WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)'
+                    }}
                   />
                 </div>
               </div>
