@@ -118,10 +118,10 @@ export default function Hero() {
                           {bannerIcons.map((item, idx) => (
                             <div
                               key={idx}
-                              className="flex items-center space-x-2 bg-white/10 rounded-lg p-3 transition-all hover:bg-white/20"
+                              className="flex items-center space-x-2 rounded-lg p-3 transition-all"
                             >
-                              <div className="text-white">{item.icon}</div>
-                              <span>{item.label}</span>
+                              <div className="text-blue-500">{item.icon}</div>
+                              <span className="text-blue-500">{item.label}</span>
                             </div>
                           ))}
                         </div>
@@ -148,15 +148,6 @@ export default function Hero() {
                       </motion.div>
 
                       <motion.div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <div className="bg-primary text-white font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto">
-                          Enterprise Solutions
-                        </div>
-                        <Button
-                          onClick={() => scrollToSection("case-studies")}
-                          className="bg-white text-primary hover:bg-slate-200 font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto"
-                        >
-                          View Case Studies
-                        </Button>
                         <Button
                           onClick={() => {
                             setLocation("/contact");
