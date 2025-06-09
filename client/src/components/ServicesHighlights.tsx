@@ -267,7 +267,7 @@ export default function ServicesHighlights() {
                         <div className="p-6">
                           {/* Icon */}
                           <div className="absolute -top-6 right-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-purple-400/90 to-purple-600/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
+                            <div className="w-12 h-12 bg-primary backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
                               {service.icon}
                             </div>
                           </div>
