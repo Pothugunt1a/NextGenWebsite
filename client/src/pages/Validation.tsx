@@ -303,11 +303,11 @@ export default function Validation() {
     >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background similar to home page */}
+        {/* Background for validation page */}
         <div className="absolute inset-0">
           <img
-            src="/assets/ai-brain-banner.png"
-            alt="Validation Banner"
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Pharmaceutical Laboratory"
             className="w-full h-full object-cover opacity-60 brightness-125"
           />
         </div>
@@ -442,7 +442,7 @@ export default function Validation() {
                         {selectedService.icon}
                       </div>
                       <div>
-                        <Badge variant="secondary" className="mb-3 bg-blue-500/20 text-blue-300 border-blue-400/30">
+                        <Badge variant="secondary" className="mb-3 bg-gray-800 text-white border-white/20">
                           {selectedService.subtitle}
                         </Badge>
                         <h3 className="text-3xl font-bold text-white mb-2">
@@ -516,7 +516,7 @@ export default function Validation() {
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div>
                           <h4 className="text-2xl font-bold text-white mb-6">Overview</h4>
-                          <Card className="bg-slate-800/30 border-slate-700">
+                          <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
                             <CardContent className="p-6">
                               <p className="text-gray-300 leading-relaxed">
                                 {selectedService.overview}
@@ -527,28 +527,28 @@ export default function Validation() {
                         <div>
                           <h4 className="text-2xl font-bold text-white mb-6">Performance Metrics</h4>
                           <div className="grid grid-cols-2 gap-4">
-                            <Card className="bg-slate-800/30 border-slate-700">
+                            <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
                               <CardContent className="p-4 text-center">
-                                <div className="text-2xl font-bold text-blue-400 mb-1">99.9%</div>
-                                <div className="text-sm text-gray-400">Accuracy Rate</div>
+                                <div className="text-2xl font-bold text-white mb-1">99.9%</div>
+                                <div className="text-sm text-gray-300">Accuracy Rate</div>
                               </CardContent>
                             </Card>
-                            <Card className="bg-slate-800/30 border-slate-700">
+                            <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
                               <CardContent className="p-4 text-center">
-                                <div className="text-2xl font-bold text-green-400 mb-1">30%</div>
-                                <div className="text-sm text-gray-400">Time Reduction</div>
+                                <div className="text-2xl font-bold text-white mb-1">30%</div>
+                                <div className="text-sm text-gray-300">Time Reduction</div>
                               </CardContent>
                             </Card>
-                            <Card className="bg-slate-800/30 border-slate-700">
+                            <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
                               <CardContent className="p-4 text-center">
-                                <div className="text-2xl font-bold text-purple-400 mb-1">100%</div>
-                                <div className="text-sm text-gray-400">Compliance</div>
+                                <div className="text-2xl font-bold text-white mb-1">100%</div>
+                                <div className="text-sm text-gray-300">Compliance</div>
                               </CardContent>
                             </Card>
-                            <Card className="bg-slate-800/30 border-slate-700">
+                            <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
                               <CardContent className="p-4 text-center">
-                                <div className="text-2xl font-bold text-orange-400 mb-1">200+</div>
-                                <div className="text-sm text-gray-400">Projects</div>
+                                <div className="text-2xl font-bold text-white mb-1">200+</div>
+                                <div className="text-sm text-gray-300">Projects</div>
                               </CardContent>
                             </Card>
                           </div>
@@ -560,10 +560,10 @@ export default function Validation() {
                       <h4 className="text-2xl font-bold text-white mb-6">Our Process</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {selectedService.process.map((step, index) => (
-                          <Card key={index} className="bg-slate-800/30 border-slate-700">
+                          <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm">
                             <CardContent className="p-6">
                               <div className="flex items-center gap-4 mb-4">
-                                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+                                <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold">
                                   {step.step}
                                 </div>
                                 <h5 className="text-lg font-semibold text-white">{step.title}</h5>
@@ -579,10 +579,10 @@ export default function Validation() {
                       <h4 className="text-2xl font-bold text-white mb-6">Key Benefits</h4>
                       <div className="space-y-4">
                         {selectedService.keyBenefits.map((benefit, index) => (
-                          <Card key={index} className="bg-slate-800/30 border-slate-700">
+                          <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm">
                             <CardContent className="p-6">
                               <div className="flex items-center gap-4">
-                                <CheckCircle2 className="h-6 w-6 text-green-400 flex-shrink-0" />
+                                <CheckCircle2 className="h-6 w-6 text-white flex-shrink-0" />
                                 <p className="text-gray-300">{benefit}</p>
                               </div>
                             </CardContent>
@@ -595,11 +595,11 @@ export default function Validation() {
                       <h4 className="text-2xl font-bold text-white mb-6">Industries Served</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {selectedService.industries.map((industry, index) => (
-                          <Card key={index} className="bg-slate-800/30 border-slate-700 hover:bg-slate-800/50 transition-colors">
+                          <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/8 transition-colors">
                             <CardContent className="p-6">
                               <div className="flex items-center gap-4">
-                                <div className="p-3 rounded-xl bg-blue-600/20">
-                                  <div className="text-blue-400">
+                                <div className="p-3 rounded-xl bg-white/10">
+                                  <div className="text-white">
                                     {industry.icon}
                                   </div>
                                 </div>
