@@ -393,16 +393,14 @@ export default function Validation() {
               className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
               style={{ fontWeight: 700 }}
             >
-              <span className="text-white">Validation</span>
-              <br />
-              <span className="text-white">Excellence</span>
+              <span className="text-white">Validation Excellence</span>
             </motion.h1>
 
             <motion.p
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-gray-300 mb-32 leading-relaxed max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-300 mb-32 leading-relaxed max-w-3xl"
             >
               Transforming life sciences through precision validation,
               regulatory excellence, and cutting-edge compliance solutions
@@ -413,7 +411,7 @@ export default function Validation() {
         {/* Enhanced Stats Section */}
         <div className="absolute bottom-8 left-0 right-0">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-center">
+            <div className="flex justify-start">
               <motion.div
                 className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl"
                 variants={containerVariants}
