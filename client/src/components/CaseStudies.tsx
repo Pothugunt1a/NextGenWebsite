@@ -78,14 +78,14 @@ export default function CaseStudies() {
         >
           {caseStudies.map((study) => (
             <motion.div key={study.id} variants={itemVariants}>
-              <Card className="h-full overflow-hidden bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
+              <Card className="h-full overflow-hidden bg-transparent border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all duration-300">
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={study.imageUrl} 
                     alt={study.title} 
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full border border-blue-400/30 backdrop-blur-sm">
+                  <div className="absolute top-4 left-4 bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm">
                     {study.industry}
                   </div>
                 </div>
@@ -96,14 +96,14 @@ export default function CaseStudies() {
                   </p>
                   <div className="mb-4 flex flex-wrap gap-2">
                     {study.tags.map((tag, idx) => (
-                      <span key={idx} className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full border border-blue-400/30">
+                      <span key={idx} className="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20">
                         {tag}
                       </span>
                     ))}
                   </div>
                   <a 
                     href="#" 
-                    className="text-blue-400 font-medium inline-flex items-center hover:text-blue-300 transition-colors"
+                    className="text-white font-medium inline-flex items-center hover:text-gray-300 transition-colors"
                   >
                     View case study <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
@@ -116,7 +116,7 @@ export default function CaseStudies() {
         <div className="text-center mt-12">
           <Button 
             variant="outline"
-            className="border-blue-400/50 text-blue-300 hover:bg-blue-500/20 hover:border-blue-300 hover:text-blue-200 transition-all duration-300"
+            className="border-white/20 text-white hover:bg-white/10 hover:border-white/30 hover:text-gray-300 transition-all duration-300"
           >
             View All Case Studies
           </Button>

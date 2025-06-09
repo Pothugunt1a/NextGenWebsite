@@ -151,7 +151,7 @@ export default function ServiceCards() {
                 <CarouselItem key={card.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <motion.div variants={cardVariants}>
                     <Card 
-                      className="group cursor-pointer overflow-hidden border-0 bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm hover:from-slate-700/50 hover:to-slate-800/50 transition-all duration-500 hover:scale-105"
+                      className="group cursor-pointer overflow-hidden border border-white/10 bg-transparent hover:border-white/20 hover:bg-white/5 transition-all duration-500 hover:scale-105"
                       onClick={() => handleCardClick(card.route)}
                     >
                       <CardContent className="p-0 relative h-80">
