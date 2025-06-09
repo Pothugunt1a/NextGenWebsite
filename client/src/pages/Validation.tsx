@@ -370,8 +370,18 @@ export default function Validation() {
             transition={{ duration: 0.8 }}
             className="max-w-5xl"
           >
-            {/* Badge */}
-            <div className="flex justify-center mb-8">
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
+            >
+              <span className="text-white">Validation Excellence</span>
+            </motion.h1>
+
+            {/* Badge positioned to the right between title and description */}
+            <div className="flex justify-end mb-8">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -385,16 +395,6 @@ export default function Validation() {
                 <Star className="h-4 w-4 text-white fill-current" />
               </motion.div>
             </div>
-
-            <motion.h1
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-              style={{ fontWeight: 700 }}
-            >
-              <span className="text-white">Validation Excellence</span>
-            </motion.h1>
 
             <motion.p
               initial={{ y: 30, opacity: 0 }}
