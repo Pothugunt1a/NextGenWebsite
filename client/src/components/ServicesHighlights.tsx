@@ -139,10 +139,10 @@ export default function ServicesHighlights() {
                       <img
                         src={
                           service.id === 1
-                            ? "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            ? "/assets/ai-network-banner2.png"
                             : service.id === 2
-                              ? "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                              : "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                              ? "/assets/ai-network-banner3.png"
+                              : "/assets/ai-network-banner1.jpg"
                         }
                         alt={service.title}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
