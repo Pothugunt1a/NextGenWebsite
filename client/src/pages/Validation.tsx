@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
@@ -274,6 +275,8 @@ const whyChooseUs = [
 ];
 
 export default function Validation() {
+  const [selectedService, setSelectedService] = React.useState(validationServices[0]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -435,47 +438,57 @@ export default function Validation() {
               <CardContent className="p-0">
                 {/* Header Section */}
                 <div className="relative p-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-6">
-                      <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg">
-                        {equipmentValidationService.icon}
+                      <div className={`p-4 rounded-2xl bg-gradient-to-br ${selectedService.color} shadow-lg`}>
+                        {selectedService.icon}
                       </div>
                       <div>
                         <Badge variant="secondary" className="mb-3 bg-blue-500/20 text-blue-300 border-blue-400/30">
-                          {equipmentValidationService.subtitle}
+                          {selectedService.subtitle}
                         </Badge>
                         <h3 className="text-3xl font-bold text-white mb-2">
-                          {equipmentValidationService.title}
+                          {selectedService.title}
                         </h3>
                         <p className="text-gray-300 max-w-2xl">
-                          {equipmentValidationService.description}
+                          {selectedService.description}
                         </p>
                       </div>
                     </div>
-                    <Button className="bg-blue-600 hover:bg-blue-700">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <div className="flex flex-col gap-4">
+                      <Select
+                        value={selectedService.id}
+                        onValueChange={(value) => {
+                          const service = validationServices.find(s => s.id === value);
+                          if (service) setSelectedService(service);
+                        }}
+                      >
+                        <SelectTrigger className="w-64 bg-slate-800/50 border-slate-600 text-white">
+                          <SelectValue placeholder="Select validation service" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-slate-800 border-slate-600">
+                          {validationServices.map((service) => (
+                            <SelectItem key={service.id} value={service.id} className="text-white focus:bg-slate-700">
+                              {service.title}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <Button className="bg-blue-600 hover:bg-blue-700">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
                   
                   {/* Features checklist */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                    <div className="flex items-center gap-2 text-sm text-gray-300">
-                      <CheckCircle2 className="h-4 w-4 text-green-400" />
-                      <span>Instrumentation Calibration</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-300">
-                      <CheckCircle2 className="h-4 w-4 text-green-400" />
-                      <span>Performance Qualification</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-300">
-                      <CheckCircle2 className="h-4 w-4 text-green-400" />
-                      <span>Compliance Documentation</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-300">
-                      <CheckCircle2 className="h-4 w-4 text-green-400" />
-                      <span>Risk Assessment</span>
-                    </div>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {selectedService.keyBenefits.slice(0, 4).map((benefit, index) => (
+                      <div key={index} className="flex items-center gap-2 text-sm text-gray-300">
+                        <CheckCircle2 className="h-4 w-4 text-green-400" />
+                        <span>{benefit}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -508,7 +521,7 @@ export default function Validation() {
                           <Card className="bg-slate-800/30 border-slate-700">
                             <CardContent className="p-6">
                               <p className="text-gray-300 leading-relaxed">
-                                {equipmentValidationService.overview}
+                                {selectedService.overview}
                               </p>
                             </CardContent>
                           </Card>
@@ -548,7 +561,7 @@ export default function Validation() {
                     <TabsContent value="process" className="mt-8">
                       <h4 className="text-2xl font-bold text-white mb-6">Our Process</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {equipmentValidationService.process.map((step, index) => (
+                        {selectedService.process.map((step, index) => (
                           <Card key={index} className="bg-slate-800/30 border-slate-700">
                             <CardContent className="p-6">
                               <div className="flex items-center gap-4 mb-4">
@@ -567,7 +580,7 @@ export default function Validation() {
                     <TabsContent value="benefits" className="mt-8">
                       <h4 className="text-2xl font-bold text-white mb-6">Key Benefits</h4>
                       <div className="space-y-4">
-                        {equipmentValidationService.keyBenefits.map((benefit, index) => (
+                        {selectedService.keyBenefits.map((benefit, index) => (
                           <Card key={index} className="bg-slate-800/30 border-slate-700">
                             <CardContent className="p-6">
                               <div className="flex items-center gap-4">
@@ -583,7 +596,7 @@ export default function Validation() {
                     <TabsContent value="industries" className="mt-8">
                       <h4 className="text-2xl font-bold text-white mb-6">Industries Served</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {equipmentValidationService.industries.map((industry, index) => (
+                        {selectedService.industries.map((industry, index) => (
                           <Card key={index} className="bg-slate-800/30 border-slate-700 hover:bg-slate-800/50 transition-colors">
                             <CardContent className="p-6">
                               <div className="flex items-center gap-4">
