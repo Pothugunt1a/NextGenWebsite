@@ -424,16 +424,18 @@ export default function Validation() {
                     variants={itemVariants}
                     className="group relative"
                   >
-                    <div className="relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden">
+                    <div className="relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                       />
 
                       <div className="relative z-10">
-                        <div
-                          className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${stat.color} mb-4`}
-                        >
-                          <div className="text-white">{stat.icon}</div>
+                        <div className="flex justify-center mb-4">
+                          <div
+                            className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${stat.color}`}
+                          >
+                            <div className="text-white">{stat.icon}</div>
+                          </div>
                         </div>
                         <div className="text-3xl font-bold mb-2 text-white">
                           {stat.title}
