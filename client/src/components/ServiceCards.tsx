@@ -74,7 +74,7 @@ const serviceCards = [
     title: "AI-Powered Analytics",
     subtitle: "Life Science & Validation",
     description: "Advanced AI solutions for research data analysis and clinical trial optimization.",
-    icon: <Cpu className="h-8 w-8 text-pink-400" />,
+    icon: <Cpu className="h-8 w-8 text-white" />,
     backgroundImage: lifeScienceImage,
     category: "life-science",
     features: ["Clinical Data Analysis", "Research Automation", "Predictive Modeling"],
@@ -172,7 +172,7 @@ export default function ServiceCards() {
                           <div className="p-8">
                             {/* Hexagonal Icon */}
                             <div className="absolute -top-6 right-8">
-                              <div className="w-12 h-12 bg-gradient-to-br from-blue-400/90 to-blue-600/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
+                              <div className="w-12 h-12 bg-primary backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
                                 {card.icon}
                               </div>
                             </div>

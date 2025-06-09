@@ -41,7 +41,7 @@ const services = [
     title: "IT Services",
     description:
       "Comprehensive IT solutions including infrastructure management, cloud services, and enterprise applications.",
-    icon: <Server className="h-10 w-10 text-primary" />,
+    icon: <Server className="h-10 w-10 text-white" />,
     category: "it",
   },
   {
@@ -49,7 +49,7 @@ const services = [
     title: "Life Science Solutions",
     description:
       "Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance and innovation.",
-    icon: <Beaker className="h-10 w-10 text-primary" />,
+    icon: <Beaker className="h-10 w-10 text-white" />,
     category: "life-science",
   },
   {
@@ -57,7 +57,7 @@ const services = [
     title: "IT Consulting",
     description:
       "Expert guidance on technology strategy, digital transformation, and maximizing IT investments.",
-    icon: <Database className="h-10 w-10 text-primary" />,
+    icon: <Database className="h-10 w-10 text-white" />,
     category: "it",
   },
   {
@@ -65,7 +65,7 @@ const services = [
     title: "Validation",
     description:
       "Computer system validation, process validation, and qualification services for regulated industries.",
-    icon: <ChartBar className="h-10 w-10 text-primary" />,
+    icon: <ChartBar className="h-10 w-10 text-white" />,
     category: "life-science",
   },
   {
@@ -73,7 +73,7 @@ const services = [
     title: "Project Management",
     description:
       "End-to-end project planning, execution, and delivery services with a focus on quality and efficiency.",
-    icon: <Shield className="h-10 w-10 text-primary" />,
+    icon: <Shield className="h-10 w-10 text-white" />,
     category: "it",
   },
 ];
@@ -205,7 +205,7 @@ export default function ServicesHighlights() {
                         <div className="p-6">
                           {/* Icon */}
                           <div className="absolute -top-6 right-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-blue-400/90 to-blue-600/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
+                            <div className="w-12 h-12 bg-primary backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
                               {service.icon}
                             </div>
                           </div>
