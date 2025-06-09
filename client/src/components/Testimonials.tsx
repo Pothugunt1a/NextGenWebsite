@@ -50,15 +50,15 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial) => (
             <motion.div key={testimonial.id} variants={itemVariants}>
-              <Card className="testimonial-card bg-white rounded-xl shadow-lg h-full">
+              <Card className="testimonial-card bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-blue-500/10 h-full transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-4">
-                    <div className="text-primary">
+                    <div className="text-blue-400">
                       <QuoteIcon className="h-6 w-6" />
                     </div>
                   </div>
                   <div className="mb-6">
-                    <p className="text-slate-600 italic">
+                    <p className="text-gray-300 italic">
                       "{testimonial.quote}"
                     </p>
                   </div>
@@ -67,12 +67,12 @@ export default function Testimonials() {
                       <img 
                         src={testimonial.imageUrl} 
                         alt={testimonial.name} 
-                        className="w-12 h-12 rounded-full object-cover"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-slate-600/50"
                       />
                     </div>
                     <div>
-                      <h4 className="font-semibold">{testimonial.name}</h4>
-                      <p className="text-sm text-slate-600">{testimonial.position}</p>
+                      <h4 className="font-semibold text-white">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-400">{testimonial.position}</p>
                     </div>
                   </div>
                 </CardContent>
