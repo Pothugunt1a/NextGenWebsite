@@ -357,13 +357,15 @@ export default function Validation() {
         {/* Background for validation page */}
         <div className="absolute inset-0">
           <img
-            src="/assets/validation.jpg"
+            src="/assets/validation-banner.jpeg"
             alt="Validation Services"
-            className="w-full h-full object-cover opacity-60 brightness-125"
+            className="w-full h-full object-cover opacity-70 brightness-150"
           />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-cyan-800/20 to-blue-800/40"></div>
+          {/* Additional brightness overlay for focal areas */}
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-blue-500/10 to-transparent"></div>
         </div>
-
-
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <motion.div
@@ -372,7 +374,6 @@ export default function Validation() {
             transition={{ duration: 0.8 }}
             className="max-w-5xl"
           >
-
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -558,8 +559,6 @@ export default function Validation() {
                       </Button>
                     </div>
                   </div>
-
-
                 </div>
 
                 {/* Tabbed Content - Only shown when Learn More is clicked */}
