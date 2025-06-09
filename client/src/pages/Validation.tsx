@@ -363,21 +363,7 @@ export default function Validation() {
           />
         </div>
 
-        {/* Centered Badge */}
-        <div className="absolute inset-0 flex items-center justify-center z-20 -mt-32 ml-16">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3, type: "spring" }}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
-          >
-            <Sparkles className="h-5 w-5 text-white" />
-            <span className="text-white font-medium">
-              Industry-Leading Validation Excellence
-            </span>
-            <Star className="h-4 w-4 text-white fill-current" />
-          </motion.div>
-        </div>
+
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <motion.div
@@ -401,11 +387,27 @@ export default function Validation() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-gray-300 mb-32 leading-relaxed max-w-3xl"
+              className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl"
             >
               Transforming life sciences through precision validation,
               regulatory excellence, and cutting-edge compliance solutions
             </motion.p>
+
+            {/* Badge below description */}
+            <div className="mb-32">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
+              >
+                <Sparkles className="h-5 w-5 text-white" />
+                <span className="text-white font-medium">
+                  Industry-Leading Validation Excellence
+                </span>
+                <Star className="h-4 w-4 text-white fill-current" />
+              </motion.div>
+            </div>
           </motion.div>
         </div>
 
