@@ -194,7 +194,7 @@ export default function ServicesHighlights() {
 
                   {/* Hexagonal Icon */}
                   <div className="absolute top-8 right-8">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400/90 to-blue-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-white/30 transform rotate-45">
+                    <div className="w-16 h-16 bg-primary backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-white/30 transform rotate-45">
                       <div className="transform -rotate-45">
                         <Server className="h-8 w-8 text-white" />
                       </div>
@@ -202,31 +202,34 @@ export default function ServicesHighlights() {
                   </div>
 
                   {/* Glassmorphism Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-2xl border-t border-white/20 rounded-b-3xl">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-2xl rounded-b-3xl">
                     <div className="p-8">
-                      {/* Divider Line */}
-                      <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mb-6 rounded-full"></div>
-                      
-                      {/* Title */}
-                      <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
-                        IT & Consulting Solutions
-                      </h3>
-                      
-                      {/* Description */}
-                      <p className="text-gray-200 text-lg leading-relaxed font-medium mb-6 max-w-2xl">
-                        Comprehensive technology solutions including infrastructure management, cloud services, digital transformation, and strategic IT consulting to maximize your investments.
-                      </p>
+                      {/* Content Area with Border */}
+                      <div className="border border-white/20 rounded-2xl p-6 bg-black/20 backdrop-blur-sm">
+                        {/* Divider Line */}
+                        <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mb-6 rounded-full"></div>
+                        
+                        {/* Title */}
+                        <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                          IT & Consulting Solutions
+                        </h3>
+                        
+                        {/* Description */}
+                        <p className="text-gray-200 text-lg leading-relaxed font-medium mb-6 max-w-2xl">
+                          Comprehensive technology solutions including infrastructure management, cloud services, digital transformation, and strategic IT consulting to maximize your investments.
+                        </p>
 
-                      {/* Services List */}
-                      <div className="flex flex-wrap gap-3">
-                        {["IT Services", "IT Consulting", "Project Management"].map((service, index) => (
-                          <span
-                            key={index}
-                            className="px-4 py-2 text-sm bg-white/15 text-white rounded-full border border-white/25 backdrop-blur-sm font-medium"
-                          >
-                            {service}
-                          </span>
-                        ))}
+                        {/* Services List */}
+                        <div className="flex flex-wrap gap-3">
+                          {["IT Services", "IT Consulting", "Project Management"].map((service, index) => (
+                            <span
+                              key={index}
+                              className="px-4 py-2 text-sm bg-white/15 text-white rounded-full border border-white/25 backdrop-blur-sm font-medium"
+                            >
+                              {service}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -264,7 +267,7 @@ export default function ServicesHighlights() {
 
                   {/* Hexagonal Icon */}
                   <div className="absolute top-8 right-8">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-400/90 to-purple-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-white/30 transform rotate-45">
+                    <div className="w-16 h-16 bg-primary backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-white/30 transform rotate-45">
                       <div className="transform -rotate-45">
                         <Beaker className="h-8 w-8 text-white" />
                       </div>
@@ -272,31 +275,34 @@ export default function ServicesHighlights() {
                   </div>
 
                   {/* Glassmorphism Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-2xl border-t border-white/20 rounded-b-3xl">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-2xl rounded-b-3xl">
                     <div className="p-8">
-                      {/* Divider Line */}
-                      <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mb-6 rounded-full"></div>
-                      
-                      {/* Title */}
-                      <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
-                        Life Science & Validation
-                      </h3>
-                      
-                      {/* Description */}
-                      <p className="text-gray-200 text-lg leading-relaxed font-medium mb-6 max-w-2xl">
-                        Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance, validation, and regulatory excellence.
-                      </p>
+                      {/* Content Area with Border */}
+                      <div className="border border-white/20 rounded-2xl p-6 bg-black/20 backdrop-blur-sm">
+                        {/* Divider Line */}
+                        <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mb-6 rounded-full"></div>
+                        
+                        {/* Title */}
+                        <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                          Life Science & Validation
+                        </h3>
+                        
+                        {/* Description */}
+                        <p className="text-gray-200 text-lg leading-relaxed font-medium mb-6 max-w-2xl">
+                          Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance, validation, and regulatory excellence.
+                        </p>
 
-                      {/* Services List */}
-                      <div className="flex flex-wrap gap-3">
-                        {["Life Science Solutions", "Validation", "Regulatory Compliance"].map((service, index) => (
-                          <span
-                            key={index}
-                            className="px-4 py-2 text-sm bg-white/15 text-white rounded-full border border-white/25 backdrop-blur-sm font-medium"
-                          >
-                            {service}
-                          </span>
-                        ))}
+                        {/* Services List */}
+                        <div className="flex flex-wrap gap-3">
+                          {["Life Science Solutions", "Validation", "Regulatory Compliance"].map((service, index) => (
+                            <span
+                              key={index}
+                              className="px-4 py-2 text-sm bg-white/15 text-white rounded-full border border-white/25 backdrop-blur-sm font-medium"
+                            >
+                              {service}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
