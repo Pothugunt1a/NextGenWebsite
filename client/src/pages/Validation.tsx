@@ -58,10 +58,6 @@ const validationServices = [
     overview:
       "Our Equipment Validation services ensure that your manufacturing equipment operates consistently within predetermined specifications and quality attributes. We provide comprehensive validation strategies that meet regulatory requirements while optimizing operational efficiency.",
     keyBenefits: [
-      "FDA 21 CFR Part 11 and EU GMP Annex 11 compliance",
-      "Comprehensive IQ/OQ/PQ documentation packages",
-      "Risk-based validation approach per ICH Q9",
-      "Reduced validation timelines by up to 40%",
       "Regulatory audit support and defense",
     ],
     process: [
@@ -122,10 +118,6 @@ const validationServices = [
     overview:
       "Our Cleaning Validation services provide scientifically sound and regulatory compliant cleaning procedures for pharmaceutical and biotechnology manufacturing equipment. We develop risk-based cleaning validation protocols that ensure product quality and patient safety.",
     keyBenefits: [
-      "MACO (Maximum Allowable Carryover) calculations",
-      "Analytical method development and validation",
-      "Cleaning agent residue testing protocols",
-      "Cross-contamination risk assessments",
       "Regulatory compliance documentation",
     ],
     process: [
@@ -173,10 +165,6 @@ const validationServices = [
     overview:
       "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
     keyBenefits: [
-      "GAMP 5 compliant validation approach",
-      "21 CFR Part 11 electronic records compliance",
-      "Data integrity and audit trail validation",
-      "Risk-based validation strategies",
       "Ongoing compliance monitoring",
     ],
     process: [
@@ -236,10 +224,6 @@ const validationServices = [
     overview:
       "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
     keyBenefits: [
-      "Stage 1-3 process validation lifecycle",
-      "Statistical process control implementation",
-      "Critical process parameter identification",
-      "Process capability studies (Cpk/Ppk)",
       "Continuous process verification programs",
     ],
     process: [
