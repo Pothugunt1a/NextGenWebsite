@@ -11,41 +11,40 @@ import { Button } from "./ui/button";
 import { ArrowRight, Building2, FlaskConical, MapPin, Cpu, Zap, Users } from "lucide-react";
 import { useLocation } from "wouter";
 import Autoplay from "embla-carousel-autoplay";
-import itConsultingImage from "@assets/it-consulting.svg";
 import lifeScienceImage from "@assets/life-science.svg";
 
 const serviceCards = [
   {
     id: 1,
-    title: "Digital Utility Infrastructure",
-    subtitle: "IT & Consulting",
-    description: "Building a smarter, more connected grid with Esri's next-generation network management system.",
+    title: "AI Consulting",
+    subtitle: "Artificial Intelligence Solutions",
+    description: "Strategic AI implementation and consulting services to transform your business operations.",
     icon: <Zap className="h-8 w-8 text-blue-400" />,
-    backgroundImage: itConsultingImage,
+    backgroundImage: "/assets/ai-network-banner2.png",
     category: "consulting",
-    features: ["Smart Grid Technology", "Network Management", "Infrastructure Optimization"],
+    features: ["AI Strategy", "Digital Transformation", "Process Automation"],
     route: "/consulting"
   },
   {
     id: 2,
-    title: "Digital Energy Solutions",
-    subtitle: "IT & Consulting", 
-    description: "Unlocking the potential of data to generate creative solutions and insights.",
+    title: "AI Software Development",
+    subtitle: "Artificial Intelligence Solutions",
+    description: "Custom AI software development and machine learning solutions for enterprise applications.",
     icon: <Building2 className="h-8 w-8 text-orange-400" />,
-    backgroundImage: itConsultingImage,
+    backgroundImage: "/assets/ai-network-banner3.png",
     category: "consulting",
-    features: ["Data Analytics", "Energy Optimization", "Predictive Modeling"],
+    features: ["Custom AI Development", "Machine Learning", "Enterprise Solutions"],
     route: "/consulting"
   },
   {
     id: 3,
-    title: "Location Intelligence Solutions",
-    subtitle: "IT & Consulting",
-    description: "Making smarter decisions with real-time location data and analytics.",
+    title: "Generative AI Development",
+    subtitle: "Artificial Intelligence Solutions",
+    description: "Advanced generative AI solutions for content creation, automation, and innovative applications.",
     icon: <MapPin className="h-8 w-8 text-blue-400" />,
-    backgroundImage: itConsultingImage,
+    backgroundImage: "/assets/ai-network-banner1.jpg",
     category: "consulting", 
-    features: ["GIS Technology", "Spatial Analytics", "Location Intelligence"],
+    features: ["Content Generation", "AI Models", "Creative Solutions"],
     route: "/consulting"
   },
   {
