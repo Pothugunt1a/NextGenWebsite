@@ -364,7 +364,7 @@ export default function Validation() {
         </div>
 
         {/* Centered Badge */}
-        <div className="absolute inset-0 flex items-center justify-center z-20">
+        <div className="absolute inset-0 flex items-center justify-center z-20 -mt-32">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
