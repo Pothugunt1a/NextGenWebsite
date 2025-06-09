@@ -175,12 +175,12 @@ export default function ServiceCards() {
                                   {card.icon}
                                 </div>
                               </div>
-                              <span className="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 rounded-full border border-blue-400/30">
+                              <span className="px-3 py-1 text-xs font-medium bg-white/10 text-white rounded-full border border-white/20">
                                 {card.subtitle}
                               </span>
                             </div>
                             
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gray-300 transition-colors duration-300">
                               {card.title}
                             </h3>
                             
@@ -197,7 +197,7 @@ export default function ServiceCards() {
                                 {card.features.map((feature, index) => (
                                   <span
                                     key={index}
-                                    className="px-2 py-1 text-xs bg-white/10 text-gray-200 rounded border border-white/20"
+                                    className="px-2 py-1 text-xs bg-white/10 text-gray-300 rounded border border-white/20"
                                   >
                                     {feature}
                                   </span>
