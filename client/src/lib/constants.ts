@@ -74,23 +74,35 @@ export const solutions = [
 export const stats = [
   {
     id: 1,
-    value: "95%",
+    value: 95,
+    suffix: "%",
     label: "Client Satisfaction",
+    icon: "👥",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
   },
   {
     id: 2,
-    value: "120+",
+    value: 120,
+    suffix: "+",
     label: "Projects Completed",
+    icon: "📊",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
   },
   {
     id: 3,
-    value: "15+",
+    value: 15,
+    suffix: "+",
     label: "Industries Served",
+    icon: "🌍",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
   },
   {
     id: 4,
-    value: "35%",
+    value: 35,
+    suffix: "%",
     label: "Avg. Efficiency Gain",
+    icon: "⚡",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
   },
 ];
 

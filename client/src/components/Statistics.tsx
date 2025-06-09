@@ -1,5 +1,31 @@
-import { motion } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { stats } from "../lib/constants";
+
+function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { damping: 60, stiffness: 100 });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [motionValue, isInView, value]);
+
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Math.floor(latest) + suffix;
+      }
+    });
+
+    return () => unsubscribe();
+  }, [springValue, suffix]);
+
+  return <span ref={ref}>0{suffix}</span>;
+}
 
 export default function Statistics() {
   const containerVariants = {
@@ -7,63 +33,79 @@ export default function Statistics() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
     visible: {
       opacity: 1,
+      y: 0,
       scale: 1,
       transition: {
-        duration: 0.4,
+        duration: 0.6,
+        ease: "easeOut",
       },
     },
   };
 
   return (
-    <section className="py-12 text-white">
+    <section className="py-16 md:py-24 text-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="bg-white rounded-lg shadow-xl p-4 w-60 mx-auto mb-12"
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          className="max-w-3xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ delay: 0.2 }}
+          transition={{ duration: 0.6 }}
         >
-          <div className="text-sm text-slate-500 mb-1">
-            Success Rate
-          </div>
-          <div className="text-2xl font-bold text-primary mb-2">
-            95% Accuracy
-          </div>
-          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-primary rounded-full"
-              style={{ width: "95%" }}
-            ></div>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Impact in Numbers</h2>
+          <p className="text-lg text-gray-300">
+            Delivering measurable results across industries with cutting-edge solutions
+          </p>
         </motion.div>
+        
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           {stats.map((stat) => (
             <motion.div 
               key={stat.id} 
-              className="p-6"
+              className="text-center group"
               variants={itemVariants}
             >
-              <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-              <p className="text-slate-600">{stat.label}</p>
+              {/* Icon/Image */}
+              <div className="mb-6">
+                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                  <img 
+                    src={stat.image} 
+                    alt={stat.label}
+                    className="w-full h-full object-cover opacity-90"
+                  />
+                </div>
+              </div>
+
+              {/* Animated Number */}
+              <div className="text-5xl md:text-6xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
+                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+              </div>
+              
+              <p className="text-gray-300 font-medium text-base md:text-lg">
+                {stat.label}
+              </p>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Background decorative elements */}
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-500/5 rounded-full blur-2xl" />
       </div>
     </section>
   );
