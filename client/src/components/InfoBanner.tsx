@@ -12,7 +12,7 @@ export default function InfoBanner() {
     <div className="relative bg-slate-50 py-12">
       <div className="absolute inset-0">
         <img
-          src="@assets/contact_1749506545236.jpeg"
+          src="/assets/contact.jpeg"
           alt="Contact Banner"
           className="w-full h-full object-cover opacity-50"
         />
