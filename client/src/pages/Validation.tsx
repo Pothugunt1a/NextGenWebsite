@@ -276,6 +276,7 @@ const whyChooseUs = [
 
 export default function Validation() {
   const [selectedService, setSelectedService] = React.useState(validationServices[0]);
+  const [showDetails, setShowDetails] = React.useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -469,9 +470,12 @@ export default function Validation() {
                           ))}
                         </SelectContent>
                       </Select>
-                      <Button className="bg-blue-600 hover:bg-blue-700">
-                        Learn More
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                      <Button 
+                        className="bg-blue-600 hover:bg-blue-700"
+                        onClick={() => setShowDetails(!showDetails)}
+                      >
+                        {showDetails ? 'Hide Details' : 'Learn More'}
+                        <ArrowRight className={`ml-2 h-4 w-4 transition-transform ${showDetails ? 'rotate-90' : ''}`} />
                       </Button>
                     </div>
                   </div>
@@ -487,128 +491,136 @@ export default function Validation() {
                   </div>
                 </div>
 
-                {/* Tabbed Content */}
-                <div className="p-8">
-                  <Tabs defaultValue="overview" className="w-full">
-                    <TabsList className="grid w-full grid-cols-4 bg-slate-800/50 border border-slate-700">
-                      <TabsTrigger value="overview" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
-                        <Eye className="h-4 w-4 mr-2" />
-                        Overview
-                      </TabsTrigger>
-                      <TabsTrigger value="process" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
-                        <Settings className="h-4 w-4 mr-2" />
-                        Our Process
-                      </TabsTrigger>
-                      <TabsTrigger value="benefits" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
-                        <Shield className="h-4 w-4 mr-2" />
-                        Key Benefits
-                      </TabsTrigger>
-                      <TabsTrigger value="industries" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
-                        <Building2 className="h-4 w-4 mr-2" />
-                        Industries Served
-                      </TabsTrigger>
-                    </TabsList>
+                {/* Tabbed Content - Only shown when Learn More is clicked */}
+                {showDetails && (
+                  <motion.div 
+                    className="p-8"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Tabs defaultValue="overview" className="w-full">
+                      <TabsList className="grid w-full grid-cols-4 bg-slate-800/50 border border-slate-700">
+                        <TabsTrigger value="overview" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                          <Eye className="h-4 w-4 mr-2" />
+                          Overview
+                        </TabsTrigger>
+                        <TabsTrigger value="process" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                          <Settings className="h-4 w-4 mr-2" />
+                          Our Process
+                        </TabsTrigger>
+                        <TabsTrigger value="benefits" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                          <Shield className="h-4 w-4 mr-2" />
+                          Key Benefits
+                        </TabsTrigger>
+                        <TabsTrigger value="industries" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                          <Building2 className="h-4 w-4 mr-2" />
+                          Industries Served
+                        </TabsTrigger>
+                      </TabsList>
 
-                    <TabsContent value="overview" className="mt-8">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div>
-                          <h4 className="text-2xl font-bold text-white mb-6">Overview</h4>
-                          <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
-                            <CardContent className="p-6">
-                              <p className="text-gray-300 leading-relaxed">
-                                {selectedService.overview}
-                              </p>
-                            </CardContent>
-                          </Card>
-                        </div>
-                        <div>
-                          <h4 className="text-2xl font-bold text-white mb-6">Performance Metrics</h4>
-                          <div className="grid grid-cols-2 gap-4">
+                      <TabsContent value="overview" className="mt-8">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                          <div>
+                            <h4 className="text-2xl font-bold text-white mb-6">Overview</h4>
                             <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
-                              <CardContent className="p-4 text-center">
-                                <div className="text-2xl font-bold text-white mb-1">99.9%</div>
-                                <div className="text-sm text-gray-300">Accuracy Rate</div>
-                              </CardContent>
-                            </Card>
-                            <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
-                              <CardContent className="p-4 text-center">
-                                <div className="text-2xl font-bold text-white mb-1">30%</div>
-                                <div className="text-sm text-gray-300">Time Reduction</div>
-                              </CardContent>
-                            </Card>
-                            <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
-                              <CardContent className="p-4 text-center">
-                                <div className="text-2xl font-bold text-white mb-1">100%</div>
-                                <div className="text-sm text-gray-300">Compliance</div>
-                              </CardContent>
-                            </Card>
-                            <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
-                              <CardContent className="p-4 text-center">
-                                <div className="text-2xl font-bold text-white mb-1">200+</div>
-                                <div className="text-sm text-gray-300">Projects</div>
+                              <CardContent className="p-6">
+                                <p className="text-gray-300 leading-relaxed">
+                                  {selectedService.overview}
+                                </p>
                               </CardContent>
                             </Card>
                           </div>
+                          <div>
+                            <h4 className="text-2xl font-bold text-white mb-6">Performance Metrics</h4>
+                            <div className="grid grid-cols-2 gap-4">
+                              <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
+                                <CardContent className="p-4 text-center">
+                                  <div className="text-2xl font-bold text-white mb-1">99.9%</div>
+                                  <div className="text-sm text-gray-300">Accuracy Rate</div>
+                                </CardContent>
+                              </Card>
+                              <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
+                                <CardContent className="p-4 text-center">
+                                  <div className="text-2xl font-bold text-white mb-1">30%</div>
+                                  <div className="text-sm text-gray-300">Time Reduction</div>
+                                </CardContent>
+                              </Card>
+                              <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
+                                <CardContent className="p-4 text-center">
+                                  <div className="text-2xl font-bold text-white mb-1">100%</div>
+                                  <div className="text-sm text-gray-300">Compliance</div>
+                                </CardContent>
+                              </Card>
+                              <Card className="bg-white/5 border border-white/10 backdrop-blur-sm">
+                                <CardContent className="p-4 text-center">
+                                  <div className="text-2xl font-bold text-white mb-1">200+</div>
+                                  <div className="text-sm text-gray-300">Projects</div>
+                                </CardContent>
+                              </Card>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </TabsContent>
+                      </TabsContent>
 
-                    <TabsContent value="process" className="mt-8">
-                      <h4 className="text-2xl font-bold text-white mb-6">Our Process</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {selectedService.process.map((step, index) => (
-                          <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm">
-                            <CardContent className="p-6">
-                              <div className="flex items-center gap-4 mb-4">
-                                <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold">
-                                  {step.step}
-                                </div>
-                                <h5 className="text-lg font-semibold text-white">{step.title}</h5>
-                              </div>
-                              <p className="text-gray-300">{step.description}</p>
-                            </CardContent>
-                          </Card>
-                        ))}
-                      </div>
-                    </TabsContent>
-
-                    <TabsContent value="benefits" className="mt-8">
-                      <h4 className="text-2xl font-bold text-white mb-6">Key Benefits</h4>
-                      <div className="space-y-4">
-                        {selectedService.keyBenefits.map((benefit, index) => (
-                          <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm">
-                            <CardContent className="p-6">
-                              <div className="flex items-center gap-4">
-                                <CheckCircle2 className="h-6 w-6 text-white flex-shrink-0" />
-                                <p className="text-gray-300">{benefit}</p>
-                              </div>
-                            </CardContent>
-                          </Card>
-                        ))}
-                      </div>
-                    </TabsContent>
-
-                    <TabsContent value="industries" className="mt-8">
-                      <h4 className="text-2xl font-bold text-white mb-6">Industries Served</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {selectedService.industries.map((industry, index) => (
-                          <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/8 transition-colors">
-                            <CardContent className="p-6">
-                              <div className="flex items-center gap-4">
-                                <div className="p-3 rounded-xl bg-white/10">
-                                  <div className="text-white">
-                                    {industry.icon}
+                      <TabsContent value="process" className="mt-8">
+                        <h4 className="text-2xl font-bold text-white mb-6">Our Process</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {selectedService.process.map((step, index) => (
+                            <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm">
+                              <CardContent className="p-6">
+                                <div className="flex items-center gap-4 mb-4">
+                                  <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold">
+                                    {step.step}
                                   </div>
+                                  <h5 className="text-lg font-semibold text-white">{step.title}</h5>
                                 </div>
-                                <h5 className="text-lg font-semibold text-white">{industry.name}</h5>
-                              </div>
-                            </CardContent>
-                          </Card>
-                        ))}
-                      </div>
-                    </TabsContent>
-                  </Tabs>
-                </div>
+                                <p className="text-gray-300">{step.description}</p>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                      </TabsContent>
+
+                      <TabsContent value="benefits" className="mt-8">
+                        <h4 className="text-2xl font-bold text-white mb-6">Key Benefits</h4>
+                        <div className="space-y-4">
+                          {selectedService.keyBenefits.map((benefit, index) => (
+                            <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm">
+                              <CardContent className="p-6">
+                                <div className="flex items-center gap-4">
+                                  <CheckCircle2 className="h-6 w-6 text-white flex-shrink-0" />
+                                  <p className="text-gray-300">{benefit}</p>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                      </TabsContent>
+
+                      <TabsContent value="industries" className="mt-8">
+                        <h4 className="text-2xl font-bold text-white mb-6">Industries Served</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {selectedService.industries.map((industry, index) => (
+                            <Card key={index} className="bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/8 transition-colors">
+                              <CardContent className="p-6">
+                                <div className="flex items-center gap-4">
+                                  <div className="p-3 rounded-xl bg-white/10">
+                                    <div className="text-white">
+                                      {industry.icon}
+                                    </div>
+                                  </div>
+                                  <h5 className="text-lg font-semibold text-white">{industry.name}</h5>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                      </TabsContent>
+                    </Tabs>
+                  </motion.div>
+                )}
               </CardContent>
             </Card>
           </motion.div>
