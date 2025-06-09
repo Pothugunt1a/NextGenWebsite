@@ -78,7 +78,7 @@ export const stats = [
     suffix: "%",
     label: "Client Satisfaction",
     icon: "👥",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&sat=-100&hue=220"
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
   },
   {
     id: 2,
