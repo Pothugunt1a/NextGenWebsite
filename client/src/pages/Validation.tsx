@@ -83,7 +83,7 @@ const validationServices = [
     title: "Cleaning Validation",
     subtitle: "Quality Assurance",
     description: "Risk-based cleaning validation protocols incorporating critical quality attributes and regulatory compliance standards.",
-    icon: <FlaskConical className="h-12 w-12 text-white" />,
+    icon: <FlaskConical className="h-12 w-12 text-blue-500" />,
     color: "from-green-500 to-emerald-500",
     overview: "Our Cleaning Validation services provide scientifically sound and regulatory compliant cleaning procedures for pharmaceutical and biotechnology manufacturing equipment. We develop risk-based cleaning validation protocols that ensure product quality and patient safety.",
     keyBenefits: [
@@ -127,7 +127,7 @@ const validationServices = [
     title: "Computer System Validation",
     subtitle: "Digital Compliance",
     description: "Complete lifecycle validation for computer systems including planning, testing, documentation, and continuous monitoring.",
-    icon: <Monitor className="h-12 w-12 text-white" />,
+    icon: <Monitor className="h-12 w-12 text-violet-300" />,
     color: "from-purple-500 to-violet-500",
     overview: "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
     keyBenefits: [
@@ -171,7 +171,7 @@ const validationServices = [
     title: "Process Validation",
     subtitle: "Manufacturing Excellence", 
     description: "Systematic approach to process validation ensuring consistent product quality and regulatory compliance throughout manufacturing.",
-    icon: <Binary className="h-12 w-12 text-white" />,
+    icon: <Binary className="h-12 w-12 text-orange-300" />,
     color: "from-orange-500 to-red-500",
     overview: "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
     keyBenefits: [
