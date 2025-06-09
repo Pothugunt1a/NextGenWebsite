@@ -44,17 +44,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Serve static files from the client/dist/public directory
-  app.use(express.static('dist/public'));
-
-  // Handle client-side routing - always serve index.html for any unknown routes
-  app.get('*', (req, res) => {
-    if (req.path.startsWith('/api')) {
-      res.status(404).json({ message: 'API endpoint not found' });
-    } else {
-      res.sendFile(path.resolve(import.meta.dirname, '../dist/public/index.html'));
-    }
-  });
+  // Static file serving and fallback routing is handled by setupVite in development
+  // and serveStatic in production - see server/vite.ts
 
   const httpServer = createServer(app);
 
