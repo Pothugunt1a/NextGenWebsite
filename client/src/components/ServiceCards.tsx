@@ -11,6 +11,8 @@ import { Button } from "./ui/button";
 import { ArrowRight, Building2, FlaskConical, MapPin, Cpu, Zap, Users } from "lucide-react";
 import { useLocation } from "wouter";
 import Autoplay from "embla-carousel-autoplay";
+import itConsultingImage from "@assets/it-consulting.svg";
+import lifeScienceImage from "@assets/life-science.svg";
 
 const serviceCards = [
   {
@@ -19,7 +21,7 @@ const serviceCards = [
     subtitle: "IT & Consulting",
     description: "Building a smarter, more connected grid with Esri's next-generation network management system.",
     icon: <Zap className="h-8 w-8 text-blue-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: itConsultingImage,
     category: "consulting",
     features: ["Smart Grid Technology", "Network Management", "Infrastructure Optimization"],
     route: "/consulting"
@@ -30,7 +32,7 @@ const serviceCards = [
     subtitle: "IT & Consulting", 
     description: "Unlocking the potential of data to generate creative solutions and insights.",
     icon: <Building2 className="h-8 w-8 text-orange-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: itConsultingImage,
     category: "consulting",
     features: ["Data Analytics", "Energy Optimization", "Predictive Modeling"],
     route: "/consulting"
@@ -41,7 +43,7 @@ const serviceCards = [
     subtitle: "IT & Consulting",
     description: "Making smarter decisions with real-time location data and analytics.",
     icon: <MapPin className="h-8 w-8 text-blue-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: itConsultingImage,
     category: "consulting", 
     features: ["GIS Technology", "Spatial Analytics", "Location Intelligence"],
     route: "/consulting"
