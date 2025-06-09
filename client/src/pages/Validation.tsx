@@ -371,18 +371,20 @@ export default function Validation() {
             className="max-w-5xl"
           >
             {/* Badge */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.3, type: "spring" }}
-              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
-            >
-              <Sparkles className="h-5 w-5 text-white" />
-              <span className="text-white font-medium">
-                Industry-Leading Validation Excellence
-              </span>
-              <Star className="h-4 w-4 text-white fill-current" />
-            </motion.div>
+            <div className="flex justify-center mb-8">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.3, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
+              >
+                <Sparkles className="h-5 w-5 text-white" />
+                <span className="text-white font-medium">
+                  Industry-Leading Validation Excellence
+                </span>
+                <Star className="h-4 w-4 text-white fill-current" />
+              </motion.div>
+            </div>
 
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
