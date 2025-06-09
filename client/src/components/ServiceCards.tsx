@@ -54,7 +54,7 @@ const serviceCards = [
     subtitle: "Life Science & Validation",
     description: "Transforming the way we experience and navigate indoor spaces.",
     icon: <Users className="h-8 w-8 text-purple-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: lifeScienceImage,
     category: "life-science",
     features: ["Spatial Data Infrastructure", "Digital Mapping", "Navigation Systems"],
     route: "/life-science"
@@ -65,7 +65,7 @@ const serviceCards = [
     subtitle: "Life Science & Validation",
     description: "Comprehensive validation services for pharmaceutical manufacturing and quality assurance.",
     icon: <FlaskConical className="h-8 w-8 text-cyan-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: lifeScienceImage,
     category: "life-science",
     features: ["Process Validation", "Equipment Qualification", "Regulatory Compliance"],
     route: "/validation"
@@ -76,7 +76,7 @@ const serviceCards = [
     subtitle: "Life Science & Validation",
     description: "Advanced AI solutions for research data analysis and clinical trial optimization.",
     icon: <Cpu className="h-8 w-8 text-pink-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: lifeScienceImage,
     category: "life-science",
     features: ["Clinical Data Analysis", "Research Automation", "Predictive Modeling"],
     route: "/validation"

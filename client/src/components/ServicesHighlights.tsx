@@ -139,12 +139,10 @@ export default function ServicesHighlights() {
                       <img
                         src={
                           service.id === 1
-                            ? "/assets/ai-network-banner2.png"
+                            ? "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             : service.id === 2
-                              ? "/assets/ai-network-banner3.png"
-                              : service.id === 3
-                                ? "/assets/ai-network-banner1.jpg"
-                                : `/assets/ai-network-banner${service.id}.jpg`
+                              ? "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                              : "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         }
                         alt={service.title}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
@@ -190,10 +188,10 @@ export default function ServicesHighlights() {
                         <img
                           src={
                             index === 0 
-                              ? "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                              ? "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                               : index === 1
-                                ? "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                : "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                ? "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                           }
                           alt={service.title}
                           className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
@@ -254,8 +252,8 @@ export default function ServicesHighlights() {
                         <img
                           src={
                             index === 0 
-                              ? "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                              : "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                              ? "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                              : "https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                           }
                           alt={service.title}
                           className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
