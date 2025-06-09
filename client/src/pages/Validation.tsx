@@ -41,6 +41,7 @@ const validationServices = [
     description: "Comprehensive equipment validation services ensuring optimal performance, compliance, and reliability across all manufacturing systems.",
     icon: <Cog className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
+    backgroundImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     overview: "Our Equipment Validation services ensure that your manufacturing equipment operates consistently within predetermined specifications and quality attributes. We provide comprehensive validation strategies that meet regulatory requirements while optimizing operational efficiency.",
     keyBenefits: [
       "FDA 21 CFR Part 11 and EU GMP Annex 11 compliance",
@@ -85,6 +86,7 @@ const validationServices = [
     description: "Risk-based cleaning validation protocols incorporating critical quality attributes and regulatory compliance standards.",
     icon: <FlaskConical className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
+    backgroundImage: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     overview: "Our Cleaning Validation services provide scientifically sound and regulatory compliant cleaning procedures for pharmaceutical and biotechnology manufacturing equipment. We develop risk-based cleaning validation protocols that ensure product quality and patient safety.",
     keyBenefits: [
       "MACO (Maximum Allowable Carryover) calculations",
@@ -129,6 +131,7 @@ const validationServices = [
     description: "Complete lifecycle validation for computer systems including planning, testing, documentation, and continuous monitoring.",
     icon: <Monitor className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
+    backgroundImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     overview: "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
     keyBenefits: [
       "GAMP 5 compliant validation approach",
@@ -173,6 +176,7 @@ const validationServices = [
     description: "Systematic approach to process validation ensuring consistent product quality and regulatory compliance throughout manufacturing.",
     icon: <Binary className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
+    backgroundImage: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     overview: "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
     keyBenefits: [
       "Stage 1-3 process validation lifecycle",
@@ -417,6 +421,16 @@ export default function Validation() {
           >
             <Card className="overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl">
               <CardContent className="p-0">
+                {/* Background Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={selectedService.backgroundImage}
+                    alt={selectedService.title}
+                    className="w-full h-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
+                </div>
+                
                 {/* Header Section */}
                 <div className="relative p-8 bg-white/5">
                   <div className="flex items-center justify-between mb-6">
