@@ -363,12 +363,12 @@ export default function Validation() {
           />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="max-w-5xl mx-auto"
+            className="max-w-5xl"
           >
             {/* Badge */}
             <motion.div
