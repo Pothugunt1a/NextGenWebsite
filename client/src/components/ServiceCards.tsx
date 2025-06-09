@@ -151,7 +151,7 @@ export default function ServiceCards() {
                 <CarouselItem key={card.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <motion.div variants={cardVariants}>
                     <Card 
-                      className="group cursor-pointer overflow-hidden border border-white/10 bg-transparent hover:border-white/20 hover:bg-white/5 transition-all duration-500 hover:scale-105"
+                      className="group cursor-pointer overflow-hidden border border-white/20 bg-white/5 backdrop-blur-xl hover:border-white/30 hover:bg-white/10 transition-all duration-500 hover:scale-105 shadow-2xl shadow-black/20"
                       onClick={() => handleCardClick(card.route)}
                     >
                       <CardContent className="p-0 relative h-80">
@@ -175,7 +175,7 @@ export default function ServiceCards() {
                                   {card.icon}
                                 </div>
                               </div>
-                              <span className="px-3 py-1 text-xs font-medium bg-white/10 text-white rounded-full border border-white/20">
+                              <span className="px-3 py-1 text-xs font-medium bg-white/10 text-white rounded-full border border-white/30 backdrop-blur-sm">
                                 {card.subtitle}
                               </span>
                             </div>
@@ -197,7 +197,7 @@ export default function ServiceCards() {
                                 {card.features.map((feature, index) => (
                                   <span
                                     key={index}
-                                    className="px-2 py-1 text-xs bg-white/10 text-gray-300 rounded border border-white/20"
+                                    className="px-2 py-1 text-xs bg-white/10 text-gray-300 rounded border border-white/30 backdrop-blur-sm"
                                   >
                                     {feature}
                                   </span>
@@ -209,7 +209,7 @@ export default function ServiceCards() {
                             <Button
                               variant="ghost"
                               size="sm"
-                              className="w-full text-white border border-white/30 hover:bg-white/10 hover:border-white/50 transition-all duration-300 group"
+                              className="w-full text-white border border-white/30 hover:bg-white/15 hover:border-white/50 transition-all duration-300 group backdrop-blur-sm"
                             >
                               Learn More
                               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />

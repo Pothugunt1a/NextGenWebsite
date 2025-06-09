@@ -78,14 +78,14 @@ export default function CaseStudies() {
         >
           {caseStudies.map((study) => (
             <motion.div key={study.id} variants={itemVariants}>
-              <Card className="h-full overflow-hidden bg-transparent border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all duration-300">
+              <Card className="h-full overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 hover:border-white/30 hover:bg-white/10 transition-all duration-300 shadow-2xl shadow-black/20">
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={study.imageUrl} 
                     alt={study.title} 
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm">
+                  <div className="absolute top-4 left-4 bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/30 backdrop-blur-md">
                     {study.industry}
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function CaseStudies() {
                   </p>
                   <div className="mb-4 flex flex-wrap gap-2">
                     {study.tags.map((tag, idx) => (
-                      <span key={idx} className="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20">
+                      <span key={idx} className="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/30 backdrop-blur-sm">
                         {tag}
                       </span>
                     ))}
@@ -116,7 +116,7 @@ export default function CaseStudies() {
         <div className="text-center mt-12">
           <Button 
             variant="outline"
-            className="border-white/20 text-white hover:bg-white/10 hover:border-white/30 hover:text-gray-300 transition-all duration-300"
+            className="border-white/30 text-white hover:bg-white/15 hover:border-white/40 hover:text-gray-300 transition-all duration-300 backdrop-blur-sm"
           >
             View All Case Studies
           </Button>

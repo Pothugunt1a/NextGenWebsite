@@ -50,7 +50,7 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial) => (
             <motion.div key={testimonial.id} variants={itemVariants}>
-              <Card className="testimonial-card bg-transparent border border-white/10 hover:border-white/20 hover:bg-white/5 rounded-xl h-full transition-all duration-300">
+              <Card className="testimonial-card bg-white/5 backdrop-blur-xl border border-white/20 hover:border-white/30 hover:bg-white/10 rounded-xl h-full transition-all duration-300 shadow-2xl shadow-black/20">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-4">
                     <div className="text-white">
@@ -67,7 +67,7 @@ export default function Testimonials() {
                       <img 
                         src={testimonial.imageUrl} 
                         alt={testimonial.name} 
-                        className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-white/30"
                       />
                     </div>
                     <div>
