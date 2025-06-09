@@ -82,7 +82,7 @@ export default function Statistics() {
             >
               {/* Icon/Image */}
               <div className="mb-6">
-                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-white/3 to-white/8 backdrop-blur-md border border-white/5 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-all duration-500 shadow-lg">
+                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-white/3 to-white/8 backdrop-blur-md flex items-center justify-center overflow-hidden group-hover:scale-110 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.2),0_4px_20px_rgba(0,0,0,0.3)] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2),inset_0_1px_0_rgba(255,255,255,0.3),0_8px_30px_rgba(0,0,0,0.4)] border border-white/10">
                   <img 
                     src={stat.image} 
                     alt={stat.label}
