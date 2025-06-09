@@ -26,7 +26,7 @@ const caseStudies = [
     title: "Computer Vision for Quality Control",
     industry: "Manufacturing",
     description: "Created a vision-based defect detection system that increased quality assurance efficiency by 45% while reducing false negatives by 76%.",
-    imageUrl: "https://images.unsplash.com/photo-1563770660941-10a67e4bae4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     tags: ["Computer Vision", "Quality Assurance", "Process Automation"]
   }
 ];
