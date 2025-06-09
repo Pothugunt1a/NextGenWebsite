@@ -116,7 +116,7 @@ export default function CaseStudies() {
         <div className="text-center mt-12">
           <Button 
             variant="outline"
-            className="border-white/30 text-white hover:bg-white/15 hover:border-white/40 hover:text-gray-300 transition-all duration-300 backdrop-blur-sm"
+            className="bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-lg shadow-black/20"
           >
             View All Case Studies
           </Button>
