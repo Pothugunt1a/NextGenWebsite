@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import {
   Cog,
   Monitor,
@@ -21,72 +23,191 @@ import {
   BookOpen,
   Sparkles,
   ArrowUpRight,
+  Eye,
+  Settings,
+  Building2,
+  Heart,
+  Pill,
+  Factory,
+  Beaker,
 } from "lucide-react";
 
 const validationServices = [
   {
-    id: 1,
-    icon: <Cog className="h-12 w-12" />,
+    id: "equipment",
     title: "Equipment Validation",
     subtitle: "Engineering Excellence",
     description: "Comprehensive equipment validation services ensuring optimal performance, compliance, and reliability across all manufacturing systems.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    icon: <Cog className="h-12 w-12 text-blue-400" />,
     color: "from-blue-500 to-cyan-500",
-    features: [
-      "Instrumentation Calibration",
-      "Performance Qualification", 
-      "Compliance Documentation",
-      "Risk Assessment"
+    overview: "Our Equipment Validation services ensure that your manufacturing equipment operates consistently within predetermined specifications and quality attributes. We provide comprehensive validation strategies that meet regulatory requirements while optimizing operational efficiency.",
+    keyBenefits: [
+      "FDA 21 CFR Part 11 and EU GMP Annex 11 compliance",
+      "Comprehensive IQ/OQ/PQ documentation packages",
+      "Risk-based validation approach per ICH Q9",
+      "Reduced validation timelines by up to 40%",
+      "Regulatory audit support and defense"
     ],
-    metrics: { accuracy: "99.9%", time: "30% faster", compliance: "100%" }
+    process: [
+      {
+        step: 1,
+        title: "Design Qualification (DQ)",
+        description: "Documented verification that proposed design of facilities, systems, and equipment is suitable for intended purpose"
+      },
+      {
+        step: 2,
+        title: "Installation Qualification (IQ)", 
+        description: "Documented verification that equipment is installed according to written and pre-approved specifications"
+      },
+      {
+        step: 3,
+        title: "Operational Qualification (OQ)",
+        description: "Documented verification that installed equipment operates as intended throughout anticipated operating ranges"
+      },
+      {
+        step: 4,
+        title: "Performance Qualification (PQ)",
+        description: "Documented verification that equipment consistently performs according to predetermined criteria and produces products meeting specifications"
+      }
+    ],
+    industries: [
+      { name: "Pharmaceutical Manufacturing", icon: <Pill className="h-6 w-6" /> },
+      { name: "Biotechnology & Biosimilars", icon: <Beaker className="h-6 w-6" /> },
+      { name: "Medical Device Manufacturing", icon: <Heart className="h-6 w-6" /> },
+      { name: "Food & Beverage Production", icon: <Factory className="h-6 w-6" /> }
+    ]
   },
   {
-    id: 2,
-    icon: <FlaskConical className="h-12 w-12" />,
+    id: "cleaning",
     title: "Cleaning Validation",
     subtitle: "Quality Assurance",
     description: "Risk-based cleaning validation protocols incorporating critical quality attributes and regulatory compliance standards.",
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    icon: <FlaskConical className="h-12 w-12 text-green-400" />,
     color: "from-green-500 to-emerald-500",
-    features: [
-      "Regulatory Guidelines",
-      "Analytical Testing",
-      "Sampling Protocols", 
-      "Method Development"
+    overview: "Our Cleaning Validation services provide scientifically sound and regulatory compliant cleaning procedures for pharmaceutical and biotechnology manufacturing equipment. We develop risk-based cleaning validation protocols that ensure product quality and patient safety.",
+    keyBenefits: [
+      "MACO (Maximum Allowable Carryover) calculations",
+      "Analytical method development and validation",
+      "Cleaning agent residue testing protocols",
+      "Cross-contamination risk assessments",
+      "Regulatory compliance documentation"
     ],
-    metrics: { accuracy: "99.8%", time: "25% faster", compliance: "100%" }
+    process: [
+      {
+        step: 1,
+        title: "Risk Assessment",
+        description: "Evaluation of products, equipment, and cleaning procedures to determine cleaning validation requirements"
+      },
+      {
+        step: 2,
+        title: "Acceptance Criteria",
+        description: "Establishment of scientifically justified limits for active ingredients, cleaning agents, and microbial contamination"
+      },
+      {
+        step: 3,
+        title: "Analytical Methods",
+        description: "Development and validation of analytical methods for detection and quantification of residues"
+      },
+      {
+        step: 4,
+        title: "Protocol Execution",
+        description: "Execution of cleaning validation studies with comprehensive sampling and testing procedures"
+      }
+    ],
+    industries: [
+      { name: "Pharmaceutical APIs", icon: <Pill className="h-6 w-6" /> },
+      { name: "Biopharmaceuticals", icon: <Beaker className="h-6 w-6" /> },
+      { name: "Contract Manufacturing", icon: <Factory className="h-6 w-6" /> },
+      { name: "Generic Drug Production", icon: <Heart className="h-6 w-6" /> }
+    ]
   },
   {
-    id: 3,
-    icon: <Monitor className="h-12 w-12" />,
+    id: "computer",
     title: "Computer System Validation",
     subtitle: "Digital Compliance",
     description: "Complete lifecycle validation for computer systems including planning, testing, documentation, and continuous monitoring.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    icon: <Monitor className="h-12 w-12 text-purple-400" />,
     color: "from-purple-500 to-violet-500",
-    features: [
-      "System Lifecycle Management",
-      "Regulatory Compliance",
-      "Risk-Based Approach",
-      "Documentation Control"
+    overview: "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
+    keyBenefits: [
+      "GAMP 5 compliant validation approach",
+      "21 CFR Part 11 electronic records compliance",
+      "Data integrity and audit trail validation",
+      "Risk-based validation strategies",
+      "Ongoing compliance monitoring"
     ],
-    metrics: { accuracy: "99.7%", time: "40% faster", compliance: "100%" }
+    process: [
+      {
+        step: 1,
+        title: "System Assessment",
+        description: "Evaluation of system complexity and risk categorization per GAMP 5 guidelines"
+      },
+      {
+        step: 2,
+        title: "Validation Planning",
+        description: "Development of comprehensive validation master plan and protocols"
+      },
+      {
+        step: 3,
+        title: "Testing & Verification",
+        description: "Execution of IQ/OQ/PQ testing with traceability matrix validation"
+      },
+      {
+        step: 4,
+        title: "Ongoing Compliance",
+        description: "Change control, periodic review, and continuous compliance monitoring"
+      }
+    ],
+    industries: [
+      { name: "Manufacturing Execution Systems", icon: <Factory className="h-6 w-6" /> },
+      { name: "Laboratory Information Systems", icon: <Beaker className="h-6 w-6" /> },
+      { name: "Quality Management Systems", icon: <Shield className="h-6 w-6" /> },
+      { name: "Enterprise Resource Planning", icon: <Building2 className="h-6 w-6" /> }
+    ]
   },
   {
-    id: 4,
-    icon: <Binary className="h-12 w-12" />,
-    title: "Process Validation", 
-    subtitle: "Manufacturing Excellence",
+    id: "process",
+    title: "Process Validation",
+    subtitle: "Manufacturing Excellence", 
     description: "Systematic approach to process validation ensuring consistent product quality and regulatory compliance throughout manufacturing.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    icon: <Binary className="h-12 w-12 text-orange-400" />,
     color: "from-orange-500 to-red-500",
-    features: [
-      "Risk Management",
-      "Statistical Analysis",
-      "Process Control",
-      "Continuous Monitoring"
+    overview: "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
+    keyBenefits: [
+      "Stage 1-3 process validation lifecycle",
+      "Statistical process control implementation",
+      "Critical process parameter identification",
+      "Process capability studies (Cpk/Ppk)",
+      "Continuous process verification programs"
     ],
-    metrics: { accuracy: "99.6%", time: "35% faster", compliance: "100%" }
+    process: [
+      {
+        step: 1,
+        title: "Stage 1: Process Design",
+        description: "Commercial manufacturing process is defined based on knowledge gained through development and scale-up activities"
+      },
+      {
+        step: 2,
+        title: "Stage 2: Process Qualification",
+        description: "Process design is evaluated to determine if capable of reproducible commercial manufacturing"
+      },
+      {
+        step: 3,
+        title: "Stage 3: Continued Verification",
+        description: "Ongoing assurance that process remains in validated state during commercial manufacturing"
+      },
+      {
+        step: 4,
+        title: "Statistical Analysis",
+        description: "Statistical evaluation of process performance data to demonstrate process capability"
+      }
+    ],
+    industries: [
+      { name: "Solid Dosage Manufacturing", icon: <Pill className="h-6 w-6" /> },
+      { name: "Sterile Manufacturing", icon: <Heart className="h-6 w-6" /> },
+      { name: "Biologics Production", icon: <Beaker className="h-6 w-6" /> },
+      { name: "Combination Products", icon: <Factory className="h-6 w-6" /> }
+    ]
   }
 ];
 
@@ -286,8 +407,8 @@ export default function Validation() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24">
+      {/* Equipment Validation Service Section */}
+      <section className="py-24 bg-slate-900/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -302,89 +423,186 @@ export default function Validation() {
             </p>
           </motion.div>
 
+          {/* Main Service Card */}
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-6xl mx-auto"
           >
-            {validationServices.map((service, index) => (
-              <motion.div key={service.id} variants={itemVariants}>
-                <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm hover:from-slate-700/40 hover:to-slate-800/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
-                  <CardContent className="p-0 relative">
-                    {/* Gradient Background */}
-                    <div className="absolute inset-0">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-5 group-hover:opacity-10 transition-opacity duration-500`} />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-10 p-8">
-                      {/* Header */}
-                      <div className="flex items-center justify-between mb-6">
-                        <div className={`p-4 rounded-2xl bg-gradient-to-br ${service.color} shadow-lg`}>
-                          <div className="text-white">
-                            {service.icon}
-                          </div>
-                        </div>
-                        <Badge variant="secondary" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
-                          {service.subtitle}
+            <Card className="overflow-hidden border-0 bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm">
+              <CardContent className="p-0">
+                {/* Header Section */}
+                <div className="relative p-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-6">
+                      <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg">
+                        {equipmentValidationService.icon}
+                      </div>
+                      <div>
+                        <Badge variant="secondary" className="mb-3 bg-blue-500/20 text-blue-300 border-blue-400/30">
+                          {equipmentValidationService.subtitle}
                         </Badge>
+                        <h3 className="text-3xl font-bold text-white mb-2">
+                          {equipmentValidationService.title}
+                        </h3>
+                        <p className="text-gray-300 max-w-2xl">
+                          {equipmentValidationService.description}
+                        </p>
                       </div>
-                      
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {service.title}
-                      </h3>
-                      
-                      <p className="text-gray-300 leading-relaxed mb-8 text-base">
-                        {service.description}
-                      </p>
+                    </div>
+                    <Button className="bg-blue-600 hover:bg-blue-700">
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                  
+                  {/* Features checklist */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                      <CheckCircle2 className="h-4 w-4 text-green-400" />
+                      <span>Instrumentation Calibration</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                      <CheckCircle2 className="h-4 w-4 text-green-400" />
+                      <span>Performance Qualification</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                      <CheckCircle2 className="h-4 w-4 text-green-400" />
+                      <span>Compliance Documentation</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                      <CheckCircle2 className="h-4 w-4 text-green-400" />
+                      <span>Risk Assessment</span>
+                    </div>
+                  </div>
+                </div>
 
-                      {/* Metrics */}
-                      <div className="grid grid-cols-3 gap-4 mb-8">
-                        <div className="text-center p-3 rounded-xl bg-white/5 backdrop-blur-sm">
-                          <div className="text-lg font-bold text-white">{service.metrics.accuracy}</div>
-                          <div className="text-xs text-gray-400">Accuracy</div>
-                        </div>
-                        <div className="text-center p-3 rounded-xl bg-white/5 backdrop-blur-sm">
-                          <div className="text-lg font-bold text-white">{service.metrics.time}</div>
-                          <div className="text-xs text-gray-400">Time Saved</div>
-                        </div>
-                        <div className="text-center p-3 rounded-xl bg-white/5 backdrop-blur-sm">
-                          <div className="text-lg font-bold text-white">{service.metrics.compliance}</div>
-                          <div className="text-xs text-gray-400">Compliance</div>
-                        </div>
-                      </div>
+                {/* Tabbed Content */}
+                <div className="p-8">
+                  <Tabs defaultValue="overview" className="w-full">
+                    <TabsList className="grid w-full grid-cols-4 bg-slate-800/50 border border-slate-700">
+                      <TabsTrigger value="overview" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                        <Eye className="h-4 w-4 mr-2" />
+                        Overview
+                      </TabsTrigger>
+                      <TabsTrigger value="process" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                        <Settings className="h-4 w-4 mr-2" />
+                        Our Process
+                      </TabsTrigger>
+                      <TabsTrigger value="benefits" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                        <Shield className="h-4 w-4 mr-2" />
+                        Key Benefits
+                      </TabsTrigger>
+                      <TabsTrigger value="industries" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                        <Building2 className="h-4 w-4 mr-2" />
+                        Industries Served
+                      </TabsTrigger>
+                    </TabsList>
 
-                      {/* Features */}
-                      <div className="space-y-3 mb-8">
-                        {service.features.map((feature, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-center gap-3 text-sm text-gray-300 group-hover:text-white transition-colors"
-                          >
-                            <div className={`p-1 rounded-full bg-gradient-to-r ${service.color}`}>
-                              <CheckCircle2 className="h-3 w-3 text-white" />
-                            </div>
-                            <span className="font-medium">{feature}</span>
+                    <TabsContent value="overview" className="mt-8">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                          <h4 className="text-2xl font-bold text-white mb-6">Overview</h4>
+                          <Card className="bg-slate-800/30 border-slate-700">
+                            <CardContent className="p-6">
+                              <p className="text-gray-300 leading-relaxed">
+                                {equipmentValidationService.overview}
+                              </p>
+                            </CardContent>
+                          </Card>
+                        </div>
+                        <div>
+                          <h4 className="text-2xl font-bold text-white mb-6">Performance Metrics</h4>
+                          <div className="grid grid-cols-2 gap-4">
+                            <Card className="bg-slate-800/30 border-slate-700">
+                              <CardContent className="p-4 text-center">
+                                <div className="text-2xl font-bold text-blue-400 mb-1">99.9%</div>
+                                <div className="text-sm text-gray-400">Accuracy Rate</div>
+                              </CardContent>
+                            </Card>
+                            <Card className="bg-slate-800/30 border-slate-700">
+                              <CardContent className="p-4 text-center">
+                                <div className="text-2xl font-bold text-green-400 mb-1">30%</div>
+                                <div className="text-sm text-gray-400">Time Reduction</div>
+                              </CardContent>
+                            </Card>
+                            <Card className="bg-slate-800/30 border-slate-700">
+                              <CardContent className="p-4 text-center">
+                                <div className="text-2xl font-bold text-purple-400 mb-1">100%</div>
+                                <div className="text-sm text-gray-400">Compliance</div>
+                              </CardContent>
+                            </Card>
+                            <Card className="bg-slate-800/30 border-slate-700">
+                              <CardContent className="p-4 text-center">
+                                <div className="text-2xl font-bold text-orange-400 mb-1">200+</div>
+                                <div className="text-sm text-gray-400">Projects</div>
+                              </CardContent>
+                            </Card>
                           </div>
+                        </div>
+                      </div>
+                    </TabsContent>
+
+                    <TabsContent value="process" className="mt-8">
+                      <h4 className="text-2xl font-bold text-white mb-6">Our Process</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {equipmentValidationService.process.map((step, index) => (
+                          <Card key={index} className="bg-slate-800/30 border-slate-700">
+                            <CardContent className="p-6">
+                              <div className="flex items-center gap-4 mb-4">
+                                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+                                  {step.step}
+                                </div>
+                                <h5 className="text-lg font-semibold text-white">{step.title}</h5>
+                              </div>
+                              <p className="text-gray-300">{step.description}</p>
+                            </CardContent>
+                          </Card>
                         ))}
                       </div>
+                    </TabsContent>
 
-                      {/* CTA Button */}
-                      <Button
-                        className={`w-full group/btn bg-gradient-to-r ${service.color} hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 text-white font-semibold`}
-                      >
-                        <Zap className="mr-2 h-4 w-4" />
-                        Explore Solution
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                    <TabsContent value="benefits" className="mt-8">
+                      <h4 className="text-2xl font-bold text-white mb-6">Key Benefits</h4>
+                      <div className="space-y-4">
+                        {equipmentValidationService.keyBenefits.map((benefit, index) => (
+                          <Card key={index} className="bg-slate-800/30 border-slate-700">
+                            <CardContent className="p-6">
+                              <div className="flex items-center gap-4">
+                                <CheckCircle2 className="h-6 w-6 text-green-400 flex-shrink-0" />
+                                <p className="text-gray-300">{benefit}</p>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
+                    </TabsContent>
+
+                    <TabsContent value="industries" className="mt-8">
+                      <h4 className="text-2xl font-bold text-white mb-6">Industries Served</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {equipmentValidationService.industries.map((industry, index) => (
+                          <Card key={index} className="bg-slate-800/30 border-slate-700 hover:bg-slate-800/50 transition-colors">
+                            <CardContent className="p-6">
+                              <div className="flex items-center gap-4">
+                                <div className="p-3 rounded-xl bg-blue-600/20">
+                                  <div className="text-blue-400">
+                                    {industry.icon}
+                                  </div>
+                                </div>
+                                <h5 className="text-lg font-semibold text-white">{industry.name}</h5>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
+                    </TabsContent>
+                  </Tabs>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </section>
@@ -464,29 +682,112 @@ export default function Validation() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Enhanced CTA Section */}
+      <section className="py-32 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            className="text-center p-16 rounded-3xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20"
+            className="text-center p-16 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/20 shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Contact our validation experts to discuss your specific requirements and how we can help ensure your compliance and quality goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg">
-                Schedule Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
+            {/* Top Badge */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-400/30 rounded-full backdrop-blur-sm"
+            >
+              <Globe className="h-5 w-5 text-green-400" />
+              <span className="text-green-300 font-medium">Trusted Globally by Industry Leaders</span>
+              <Star className="h-4 w-4 text-yellow-400 fill-current" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold mb-6"
+            >
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                Transform Your
+              </span>
+              <br />
+              <span className="text-white">Validation Process</span>
+            </motion.h2>
+            
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
+              Join hundreds of life science companies who trust RT NextGenAI for their validation needs. 
+              Our experts are ready to accelerate your compliance journey with cutting-edge solutions.
+            </motion.p>
+
+            {/* Benefits Grid */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle2 className="h-6 w-6 text-green-400" />
+                <span className="text-white font-semibold">Free Consultation</span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle2 className="h-6 w-6 text-green-400" />
+                <span className="text-white font-semibold">24/7 Expert Support</span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle2 className="h-6 w-6 text-green-400" />
+                <span className="text-white font-semibold">Guaranteed Results</span>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+            >
+              <Button size="lg" className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300">
+                <Users className="mr-2 h-5 w-5" />
+                Schedule Free Consultation
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg">
-                Download Brochure
+              <Button size="lg" variant="outline" className="group border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-10 py-6 text-lg font-semibold backdrop-blur-sm">
+                <BookOpen className="mr-2 h-5 w-5" />
+                Download Resources
+                <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </Button>
-            </div>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="mt-12 pt-8 border-t border-white/10"
+            >
+              <p className="text-sm text-gray-400 mb-4">Trusted by industry leaders worldwide</p>
+              <div className="flex items-center justify-center gap-8 opacity-60">
+                <Badge variant="outline" className="border-white/20 text-white">FDA Compliant</Badge>
+                <Badge variant="outline" className="border-white/20 text-white">EMA Certified</Badge>
+                <Badge variant="outline" className="border-white/20 text-white">ISO 9001</Badge>
+                <Badge variant="outline" className="border-white/20 text-white">GMP Ready</Badge>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
