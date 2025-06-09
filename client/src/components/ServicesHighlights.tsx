@@ -10,71 +10,92 @@ import {
   Shield,
 } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-const services = [
+const serviceCategories = [
   {
     id: 1,
-    title: "AI Consulting",
-    description:
-      "Strategic guidance on implementing AI to enhance operations, improve efficiency, and drive innovation.",
-    icon: <BrainCircuit className="h-10 w-10 text-white" />,
-    category: "ai",
+    category: "Artificial Intelligence",
+    description: "Cutting-edge AI solutions to transform your business operations",
+    services: [
+      {
+        id: 1,
+        title: "AI Consulting",
+        description: "Strategic guidance on implementing AI to enhance operations, improve efficiency, and drive innovation.",
+        icon: <BrainCircuit className="h-10 w-10 text-white" />,
+        backgroundImage: "/assets/ai-network-banner2.png",
+      },
+      {
+        id: 2,
+        title: "AI Software Development",
+        description: "Custom AI solutions tailored to your business needs, from proof-of-concept to full-scale deployment.",
+        icon: <Code className="h-10 w-10 text-white" />,
+        backgroundImage: "/assets/ai-network-banner3.png",
+      },
+      {
+        id: 3,
+        title: "Generative AI Development",
+        description: "Implementation of cutting-edge generative models for content creation, design, and process automation.",
+        icon: <FileCode className="h-10 w-10 text-white" />,
+        backgroundImage: "/assets/ai-network-banner1.jpg",
+      },
+    ]
   },
   {
     id: 2,
-    title: "AI Software Development",
-    description:
-      "Custom AI solutions tailored to your business needs, from proof-of-concept to full-scale deployment.",
-    icon: <Code className="h-10 w-10 text-white" />,
-    category: "ai",
+    category: "IT & Consulting",
+    description: "Comprehensive IT solutions and strategic consulting services",
+    services: [
+      {
+        id: 4,
+        title: "IT Services",
+        description: "Comprehensive IT solutions including infrastructure management, cloud services, and enterprise applications.",
+        icon: <Server className="h-10 w-10 text-white" />,
+        backgroundImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        id: 6,
+        title: "IT Consulting",
+        description: "Expert guidance on technology strategy, digital transformation, and maximizing IT investments.",
+        icon: <Database className="h-10 w-10 text-white" />,
+        backgroundImage: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        id: 8,
+        title: "Project Management",
+        description: "End-to-end project planning, execution, and delivery services with a focus on quality and efficiency.",
+        icon: <Shield className="h-10 w-10 text-white" />,
+        backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      },
+    ]
   },
   {
     id: 3,
-    title: "Generative AI Development",
-    description:
-      "Implementation of cutting-edge generative models for content creation, design, and process automation.",
-    icon: <FileCode className="h-10 w-10 text-white" />,
-    category: "ai",
-  },
-  {
-    id: 4,
-    title: "IT Services",
-    description:
-      "Comprehensive IT solutions including infrastructure management, cloud services, and enterprise applications.",
-    icon: <Server className="h-10 w-10 text-white" />,
-    category: "it",
-  },
-  {
-    id: 5,
-    title: "Life Science Solutions",
-    description:
-      "Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance and innovation.",
-    icon: <Beaker className="h-10 w-10 text-white" />,
-    category: "life-science",
-  },
-  {
-    id: 6,
-    title: "IT Consulting",
-    description:
-      "Expert guidance on technology strategy, digital transformation, and maximizing IT investments.",
-    icon: <Database className="h-10 w-10 text-white" />,
-    category: "it",
-  },
-  {
-    id: 7,
-    title: "Validation",
-    description:
-      "Computer system validation, process validation, and qualification services for regulated industries.",
-    icon: <ChartBar className="h-10 w-10 text-white" />,
-    category: "life-science",
-  },
-  {
-    id: 8,
-    title: "Project Management",
-    description:
-      "End-to-end project planning, execution, and delivery services with a focus on quality and efficiency.",
-    icon: <Shield className="h-10 w-10 text-white" />,
-    category: "it",
+    category: "Life Science & Validation",
+    description: "Specialized validation services for regulated industries",
+    services: [
+      {
+        id: 5,
+        title: "Life Science Solutions",
+        description: "Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance and innovation.",
+        icon: <Beaker className="h-10 w-10 text-white" />,
+        backgroundImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        id: 7,
+        title: "Validation",
+        description: "Computer system validation, process validation, and qualification services for regulated industries.",
+        icon: <ChartBar className="h-10 w-10 text-white" />,
+        backgroundImage: "https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      },
+    ]
   },
 ];
 
@@ -117,178 +138,108 @@ export default function ServicesHighlights() {
           </p>
         </motion.div>
 
-        <div className="mb-10">
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="bg-gray-800 text-white px-6 py-2 rounded-full">
-              Artificial Intelligence
-            </span>
-          </h3>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+        <motion.div
+          className="relative"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <Carousel
+            className="w-full max-w-7xl mx-auto"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 5000,
+                stopOnInteraction: true,
+                stopOnMouseEnter: true,
+              })
+            ]}
           >
-            {services
-              .filter((service) => service.category === "ai")
-              .map((service) => (
-                <motion.div key={service.id} variants={itemVariants}>
-                  <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow relative overflow-hidden group">
-                    <div className="absolute inset-0">
-                      <img
-                        src={
-                          service.id === 1
-                            ? "/assets/ai-network-banner2.png"
-                            : service.id === 2
-                              ? "/assets/ai-network-banner3.png"
-                              : "/assets/ai-network-banner1.jpg"
-                        }
-                        alt={service.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-black/50"></div>
-                    </div>
-                    <CardContent className="p-6 flex flex-col items-center text-center relative z-10">
-                      <div className="mb-4 p-3 bg-white/10 backdrop-blur-sm rounded-full">
-                        {service.icon}
-                      </div>
-                      <h3 className="text-xl font-bold mb-2 text-white">
-                        {service.title}
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {serviceCategories.map((categoryGroup) => (
+                <CarouselItem key={categoryGroup.id} className="pl-2 md:pl-4">
+                  <motion.div variants={itemVariants} className="space-y-8">
+                    {/* Category Header */}
+                    <div className="text-center mb-8">
+                      <h3 className="text-2xl font-bold mb-4">
+                        <span className="bg-gray-800 text-white px-6 py-2 rounded-full">
+                          {categoryGroup.category}
+                        </span>
                       </h3>
-                      <p className="text-slate-200">{service.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-          </motion.div>
-        </div>
+                      <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                        {categoryGroup.description}
+                      </p>
+                    </div>
 
-        <div className="mb-10">
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="bg-gray-800 text-white px-6 py-2 rounded-full">
-              IT & Consulting
-            </span>
-          </h3>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {services
-              .filter((service) => service.category === "it")
-              .map((service, index) => (
-                <motion.div key={service.id} variants={itemVariants}>
-                  <Card className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96">
-                    <CardContent className="p-0 relative h-full">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                        <img
-                          src={
-                            index === 0 
-                              ? "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                              : index === 1
-                                ? "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                          }
-                          alt={service.title}
-                          className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      </div>
-
-                      {/* Glassmorphism Content Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
-                        <div className="p-6">
-                          {/* Icon */}
-                          <div className="absolute -top-6 right-6">
-                            <div className="w-12 h-12 bg-primary backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
-                              {service.icon}
+                    {/* Services Grid */}
+                    <div className={`grid gap-6 ${
+                      categoryGroup.category === "Artificial Intelligence" 
+                        ? "grid-cols-1 md:grid-cols-3" 
+                        : categoryGroup.category === "IT & Consulting"
+                        ? "grid-cols-1 md:grid-cols-3"
+                        : "grid-cols-1 md:grid-cols-2"
+                    }`}>
+                      {categoryGroup.services.map((service) => (
+                        <Card 
+                          key={service.id} 
+                          className={`group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl ${
+                            categoryGroup.category === "Artificial Intelligence" ? "h-80" : "h-96"
+                          }`}
+                        >
+                          <CardContent className="p-0 relative h-full">
+                            {/* Background Image */}
+                            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                              <img
+                                src={service.backgroundImage}
+                                alt={service.title}
+                                className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                             </div>
-                          </div>
-                          
-                          {/* Title */}
-                          <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                            {service.title}
-                          </h3>
-                          
-                          {/* Description */}
-                          <p className="text-gray-200 text-sm leading-relaxed font-medium">
-                            {service.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-          </motion.div>
-        </div>
 
-        <div>
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="bg-gray-800 text-white px-6 py-2 rounded-full">
-              Life Science & Validation
-            </span>
-          </h3>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {services
-              .filter((service) => service.category === "life-science")
-              .map((service, index) => (
-                <motion.div key={service.id} variants={itemVariants}>
-                  <Card className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96">
-                    <CardContent className="p-0 relative h-full">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                        <img
-                          src={
-                            index === 0 
-                              ? "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                              : "https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                          }
-                          alt={service.title}
-                          className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      </div>
-
-                      {/* Glassmorphism Content Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
-                        <div className="p-6">
-                          {/* Icon */}
-                          <div className="absolute -top-6 right-6">
-                            <div className="w-12 h-12 bg-primary backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
-                              {service.icon}
+                            {/* Content Overlay */}
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
+                              <div className="p-6">
+                                {/* Icon */}
+                                <div className="absolute -top-6 right-6">
+                                  <div className={`w-12 h-12 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20 ${
+                                    categoryGroup.category === "Artificial Intelligence" 
+                                      ? "bg-white/10" 
+                                      : "bg-primary"
+                                  }`}>
+                                    {service.icon}
+                                  </div>
+                                </div>
+                                
+                                {/* Title */}
+                                <h3 className="text-xl font-bold text-white mb-3 leading-tight">
+                                  {service.title}
+                                </h3>
+                                
+                                {/* Description */}
+                                <p className="text-gray-200 text-sm leading-relaxed font-medium">
+                                  {service.description}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                          
-                          {/* Title */}
-                          <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                            {service.title}
-                          </h3>
-                          
-                          {/* Description */}
-                          <p className="text-gray-200 text-sm leading-relaxed font-medium">
-                            {service.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </motion.div>
+                </CarouselItem>
               ))}
-          </motion.div>
-        </div>
+            </CarouselContent>
+            
+            <CarouselPrevious className="left-4 bg-white/10 border-white/30 hover:bg-white/20 text-white" />
+            <CarouselNext className="right-4 bg-white/10 border-white/30 hover:bg-white/20 text-white" />
+          </Carousel>
+        </motion.div>
       </div>
     </section>
   );
