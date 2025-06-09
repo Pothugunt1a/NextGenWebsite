@@ -303,11 +303,13 @@ export default function Validation() {
     >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background with parallax effect */}
+        {/* Background similar to home page */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/50 to-purple-900/50" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent)] animate-pulse" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,107,107,0.2),transparent)] animate-pulse" style={{ animationDelay: '2s' }} />
+          <img
+            src="/assets/ai-brain-banner.png"
+            alt="Validation Banner"
+            className="w-full h-full object-cover opacity-60 brightness-125"
+          />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -322,11 +324,11 @@ export default function Validation() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.3, type: "spring" }}
-              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-400/30 rounded-full backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
             >
-              <Sparkles className="h-5 w-5 text-blue-400" />
-              <span className="text-blue-300 font-medium">Industry-Leading Validation Excellence</span>
-              <Star className="h-4 w-4 text-yellow-400 fill-current" />
+              <Sparkles className="h-5 w-5 text-white" />
+              <span className="text-white font-medium">Industry-Leading Validation Excellence</span>
+              <Star className="h-4 w-4 text-white fill-current" />
             </motion.div>
 
             <motion.h1
@@ -335,7 +337,7 @@ export default function Validation() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-6xl md:text-8xl font-bold mb-8 leading-tight"
             >
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="text-white">
                 Validation
               </span>
               <br />
@@ -357,7 +359,7 @@ export default function Validation() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
             >
-              <Button size="lg" className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25">
+              <Button size="lg" className="group bg-white text-black hover:bg-gray-200 px-10 py-6 text-lg font-semibold">
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -406,8 +408,8 @@ export default function Validation() {
         </div>
       </section>
 
-      {/* Equipment Validation Service Section */}
-      <section className="py-24 bg-slate-900/20">
+      {/* Validation Service Section */}
+      <section className="py-16 md:py-24 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -430,10 +432,10 @@ export default function Validation() {
             transition={{ duration: 0.6 }}
             className="max-w-6xl mx-auto"
           >
-            <Card className="overflow-hidden border-0 bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm">
+            <Card className="overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl">
               <CardContent className="p-0">
                 {/* Header Section */}
-                <div className="relative p-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+                <div className="relative p-8 bg-white/5">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-6">
                       <div className={`p-4 rounded-2xl bg-gradient-to-br ${selectedService.color} shadow-lg`}>
