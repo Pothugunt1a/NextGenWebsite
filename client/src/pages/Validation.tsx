@@ -363,6 +363,22 @@ export default function Validation() {
           />
         </div>
 
+        {/* Centered Badge */}
+        <div className="absolute inset-0 flex items-center justify-center z-20 -mt-32">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.3, type: "spring" }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
+          >
+            <Sparkles className="h-5 w-5 text-white" />
+            <span className="text-white font-medium">
+              Industry-Leading Validation Excellence
+            </span>
+            <Star className="h-4 w-4 text-white fill-current" />
+          </motion.div>
+        </div>
+
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -370,6 +386,7 @@ export default function Validation() {
             transition={{ duration: 0.8 }}
             className="max-w-5xl"
           >
+
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -379,22 +396,6 @@ export default function Validation() {
             >
               <span className="text-white">Validation Excellence</span>
             </motion.h1>
-
-            {/* Badge positioned to the right between title and description */}
-            <div className="flex justify-end mb-8">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3, type: "spring" }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
-              >
-                <Sparkles className="h-5 w-5 text-white" />
-                <span className="text-white font-medium">
-                  Industry-Leading Validation Excellence
-                </span>
-                <Star className="h-4 w-4 text-white fill-current" />
-              </motion.div>
-            </div>
 
             <motion.p
               initial={{ y: 30, opacity: 0 }}
