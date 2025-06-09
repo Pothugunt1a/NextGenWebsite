@@ -348,27 +348,10 @@ export default function Validation() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-300 mb-16 leading-relaxed max-w-3xl mx-auto"
             >
               Transforming life sciences through precision validation, regulatory excellence, and cutting-edge compliance solutions
             </motion.p>
-            
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
-            >
-              <Button size="lg" className="group bg-white text-black hover:bg-gray-200 px-10 py-6 text-lg font-semibold">
-                Start Your Project
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="group border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-10 py-6 text-lg font-semibold backdrop-blur-sm">
-                <BookOpen className="mr-2 h-5 w-5" />
-                Case Studies
-                <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </Button>
-            </motion.div>
           </motion.div>
         </div>
 
