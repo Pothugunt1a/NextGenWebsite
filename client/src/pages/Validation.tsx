@@ -652,12 +652,8 @@ export default function Validation() {
                   <div className="relative z-10">
                     {/* Icon */}
                     <div className="flex justify-center mb-6">
-                      <div className={`relative p-5 rounded-2xl bg-gradient-to-br ${item.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                        <div className="text-white">
-                          {item.icon}
-                        </div>
-                        {/* Glow effect */}
-                        <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300`} />
+                      <div className="text-white">
+                        {item.icon}
                       </div>
                     </div>
 
@@ -668,14 +664,6 @@ export default function Validation() {
                     <p className="text-gray-300 group-hover:text-gray-200 leading-relaxed transition-colors duration-300">
                       {item.description}
                     </p>
-
-                    {/* Hover indicator */}
-                    <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="flex items-center justify-center gap-2 text-sm text-blue-400">
-                        <span>Learn More</span>
-                        <ArrowUpRight className="h-4 w-4" />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </motion.div>
