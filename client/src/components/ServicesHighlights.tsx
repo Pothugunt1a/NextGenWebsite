@@ -181,17 +181,48 @@ export default function ServicesHighlights() {
           >
             {services
               .filter((service) => service.category === "it")
-              .map((service) => (
+              .map((service, index) => (
                 <motion.div key={service.id} variants={itemVariants}>
-                  <Card className="h-full hover:shadow-lg transition-all duration-300 border-none primary-shadow">
-                    <CardContent className="p-6 flex flex-col items-center text-center">
-                      <div className="mb-4 p-3 bg-primary/10 rounded-full">
-                        {service.icon}
+                  <Card className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96">
+                    <CardContent className="p-0 relative h-full">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                        <img
+                          src={
+                            index === 0 
+                              ? "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                              : index === 1
+                                ? "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                : "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                          }
+                          alt={service.title}
+                          className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       </div>
-                      <h3 className="text-xl font-bold mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-slate-600">{service.description}</p>
+
+                      {/* Glassmorphism Content Overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
+                        <div className="p-6">
+                          {/* Icon */}
+                          <div className="absolute -top-6 right-6">
+                            <div className="w-12 h-12 bg-gradient-to-br from-blue-400/90 to-blue-600/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
+                              {service.icon}
+                            </div>
+                          </div>
+                          
+                          {/* Title */}
+                          <h3 className="text-xl font-bold text-white mb-3 leading-tight">
+                            {service.title}
+                          </h3>
+                          
+                          {/* Description */}
+                          <p className="text-gray-200 text-sm leading-relaxed font-medium">
+                            {service.description}
+                          </p>
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -214,17 +245,46 @@ export default function ServicesHighlights() {
           >
             {services
               .filter((service) => service.category === "life-science")
-              .map((service) => (
+              .map((service, index) => (
                 <motion.div key={service.id} variants={itemVariants}>
-                  <Card className="h-full hover:shadow-lg transition-all duration-300 border-none shadow-lg">
-                    <CardContent className="p-6 flex flex-col items-center text-center">
-                      <div className="mb-4 p-3 bg-gray-100 rounded-full">
-                        {service.icon}
+                  <Card className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96">
+                    <CardContent className="p-0 relative h-full">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                        <img
+                          src={
+                            index === 0 
+                              ? "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                              : "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                          }
+                          alt={service.title}
+                          className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       </div>
-                      <h3 className="text-xl font-bold mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-slate-600">{service.description}</p>
+
+                      {/* Glassmorphism Content Overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
+                        <div className="p-6">
+                          {/* Icon */}
+                          <div className="absolute -top-6 right-6">
+                            <div className="w-12 h-12 bg-gradient-to-br from-purple-400/90 to-purple-600/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
+                              {service.icon}
+                            </div>
+                          </div>
+                          
+                          {/* Title */}
+                          <h3 className="text-xl font-bold text-white mb-3 leading-tight">
+                            {service.title}
+                          </h3>
+                          
+                          {/* Description */}
+                          <p className="text-gray-200 text-sm leading-relaxed font-medium">
+                            {service.description}
+                          </p>
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
