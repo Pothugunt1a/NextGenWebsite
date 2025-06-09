@@ -173,60 +173,66 @@ export default function ServicesHighlights() {
             </span>
           </h3>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="max-w-4xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
           >
-            {services
-              .filter((service) => service.category === "it")
-              .map((service, index) => (
-                <motion.div key={service.id} variants={itemVariants}>
-                  <Card className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96">
-                    <CardContent className="p-0 relative h-full">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                        <img
-                          src={
-                            index === 0 
-                              ? "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                              : index === 1
-                                ? "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                : "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                          }
-                          alt={service.title}
-                          className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      </div>
+            <motion.div variants={itemVariants}>
+              <Card className="group cursor-pointer overflow-hidden border border-white/20 bg-white/10 backdrop-blur-xl hover:border-white/30 hover:bg-white/15 transition-all duration-500 shadow-2xl shadow-black/40 rounded-3xl h-[500px]">
+                <CardContent className="p-0 relative h-full">
+                  {/* Background Image */}
+                  <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                      alt="IT & Consulting Solutions"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-slate-800/30 to-black/70" />
+                  </div>
 
-                      {/* Glassmorphism Content Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
-                        <div className="p-6">
-                          {/* Icon */}
-                          <div className="absolute -top-6 right-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-blue-400/90 to-blue-600/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
-                              {service.icon}
-                            </div>
-                          </div>
-                          
-                          {/* Title */}
-                          <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                            {service.title}
-                          </h3>
-                          
-                          {/* Description */}
-                          <p className="text-gray-200 text-sm leading-relaxed font-medium">
-                            {service.description}
-                          </p>
-                        </div>
+                  {/* Hexagonal Icon */}
+                  <div className="absolute top-8 right-8">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400/90 to-blue-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-white/30 transform rotate-45">
+                      <div className="transform -rotate-45">
+                        <Server className="h-8 w-8 text-white" />
                       </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+                    </div>
+                  </div>
+
+                  {/* Glassmorphism Content Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-2xl border-t border-white/20 rounded-b-3xl">
+                    <div className="p-8">
+                      {/* Divider Line */}
+                      <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mb-6 rounded-full"></div>
+                      
+                      {/* Title */}
+                      <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                        IT & Consulting Solutions
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-gray-200 text-lg leading-relaxed font-medium mb-6 max-w-2xl">
+                        Comprehensive technology solutions including infrastructure management, cloud services, digital transformation, and strategic IT consulting to maximize your investments.
+                      </p>
+
+                      {/* Services List */}
+                      <div className="flex flex-wrap gap-3">
+                        {["IT Services", "IT Consulting", "Project Management"].map((service, index) => (
+                          <span
+                            key={index}
+                            className="px-4 py-2 text-sm bg-white/15 text-white rounded-full border border-white/25 backdrop-blur-sm font-medium"
+                          >
+                            {service}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -237,58 +243,66 @@ export default function ServicesHighlights() {
             </span>
           </h3>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="max-w-4xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
           >
-            {services
-              .filter((service) => service.category === "life-science")
-              .map((service, index) => (
-                <motion.div key={service.id} variants={itemVariants}>
-                  <Card className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96">
-                    <CardContent className="p-0 relative h-full">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                        <img
-                          src={
-                            index === 0 
-                              ? "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                              : "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                          }
-                          alt={service.title}
-                          className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      </div>
+            <motion.div variants={itemVariants}>
+              <Card className="group cursor-pointer overflow-hidden border border-white/20 bg-white/10 backdrop-blur-xl hover:border-white/30 hover:bg-white/15 transition-all duration-500 shadow-2xl shadow-black/40 rounded-3xl h-[500px]">
+                <CardContent className="p-0 relative h-full">
+                  {/* Background Image */}
+                  <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                      alt="Life Science & Validation Solutions"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-slate-800/30 to-black/70" />
+                  </div>
 
-                      {/* Glassmorphism Content Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
-                        <div className="p-6">
-                          {/* Icon */}
-                          <div className="absolute -top-6 right-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-purple-400/90 to-purple-600/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
-                              {service.icon}
-                            </div>
-                          </div>
-                          
-                          {/* Title */}
-                          <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                            {service.title}
-                          </h3>
-                          
-                          {/* Description */}
-                          <p className="text-gray-200 text-sm leading-relaxed font-medium">
-                            {service.description}
-                          </p>
-                        </div>
+                  {/* Hexagonal Icon */}
+                  <div className="absolute top-8 right-8">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-400/90 to-purple-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-white/30 transform rotate-45">
+                      <div className="transform -rotate-45">
+                        <Beaker className="h-8 w-8 text-white" />
                       </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+                    </div>
+                  </div>
+
+                  {/* Glassmorphism Content Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent backdrop-blur-2xl border-t border-white/20 rounded-b-3xl">
+                    <div className="p-8">
+                      {/* Divider Line */}
+                      <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mb-6 rounded-full"></div>
+                      
+                      {/* Title */}
+                      <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                        Life Science & Validation
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-gray-200 text-lg leading-relaxed font-medium mb-6 max-w-2xl">
+                        Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance, validation, and regulatory excellence.
+                      </p>
+
+                      {/* Services List */}
+                      <div className="flex flex-wrap gap-3">
+                        {["Life Science Solutions", "Validation", "Regulatory Compliance"].map((service, index) => (
+                          <span
+                            key={index}
+                            className="px-4 py-2 text-sm bg-white/15 text-white rounded-full border border-white/25 backdrop-blur-sm font-medium"
+                          >
+                            {service}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </motion.div>
         </div>
       </div>
