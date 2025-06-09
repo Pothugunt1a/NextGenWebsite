@@ -357,8 +357,8 @@ export default function Validation() {
         {/* Background for validation page */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="Pharmaceutical Laboratory"
+            src="/assets/validation.jpg"
+            alt="Validation Services"
             className="w-full h-full object-cover opacity-60 brightness-125"
           />
         </div>
