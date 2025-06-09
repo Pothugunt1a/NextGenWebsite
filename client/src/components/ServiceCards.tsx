@@ -19,7 +19,7 @@ const serviceCards = [
     subtitle: "IT & Consulting",
     description: "Building a smarter, more connected grid with Esri's next-generation network management system.",
     icon: <Zap className="h-8 w-8 text-blue-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "consulting",
     features: ["Smart Grid Technology", "Network Management", "Infrastructure Optimization"],
     route: "/consulting"
@@ -30,7 +30,7 @@ const serviceCards = [
     subtitle: "IT & Consulting", 
     description: "Unlocking the potential of data to generate creative solutions and insights.",
     icon: <Building2 className="h-8 w-8 text-orange-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1497436072909-f5e4be1ddc98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "consulting",
     features: ["Data Analytics", "Energy Optimization", "Predictive Modeling"],
     route: "/consulting"
@@ -40,8 +40,8 @@ const serviceCards = [
     title: "Location Intelligence Solutions",
     subtitle: "IT & Consulting",
     description: "Making smarter decisions with real-time location data and analytics.",
-    icon: <MapPin className="h-8 w-8 text-green-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    icon: <MapPin className="h-8 w-8 text-blue-400" />,
+    backgroundImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "consulting", 
     features: ["GIS Technology", "Spatial Analytics", "Location Intelligence"],
     route: "/consulting"
@@ -52,7 +52,7 @@ const serviceCards = [
     subtitle: "Life Science & Validation",
     description: "Transforming the way we experience and navigate indoor spaces.",
     icon: <Users className="h-8 w-8 text-purple-400" />,
-    backgroundImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "life-science",
     features: ["Spatial Data Infrastructure", "Digital Mapping", "Navigation Systems"],
     route: "/life-science"
@@ -151,65 +151,65 @@ export default function ServiceCards() {
                 <CarouselItem key={card.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <motion.div variants={cardVariants}>
                     <Card 
-                      className="group cursor-pointer overflow-hidden border border-white/20 bg-white/5 backdrop-blur-xl hover:border-white/30 hover:bg-white/10 transition-all duration-500 hover:scale-105 shadow-2xl shadow-black/20"
+                      className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl"
                       onClick={() => handleCardClick(card.route)}
                     >
-                      <CardContent className="p-0 relative h-80">
+                      <CardContent className="p-0 relative h-96">
                         {/* Background Image */}
-                        <div className="absolute inset-0">
+                        <div className="absolute inset-0 rounded-2xl overflow-hidden">
                           <img
                             src={card.backgroundImage}
                             alt={card.title}
-                            className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
+                            className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500 scale-110"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         </div>
 
-                        {/* Content */}
-                        <div className="relative z-10 p-6 h-full flex flex-col justify-between">
-                          {/* Top Section */}
-                          <div>
-                            <div className="flex items-center justify-between mb-4">
-                              <div className="flex items-center space-x-3">
-                                <div className="p-2 rounded-lg bg-white/10 backdrop-blur-sm">
-                                  {card.icon}
-                                </div>
+                        {/* Glassmorphism Content Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
+                          <div className="p-8">
+                            {/* Hexagonal Icon */}
+                            <div className="absolute -top-6 right-8">
+                              <div className="w-12 h-12 bg-gradient-to-br from-blue-400/90 to-blue-600/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20">
+                                {card.icon}
                               </div>
-                              <span className="px-3 py-1 text-xs font-medium bg-white/10 text-white rounded-full border border-white/30 backdrop-blur-sm">
+                            </div>
+
+                            {/* Category Badge */}
+                            <div className="mb-4">
+                              <span className="px-3 py-1 text-xs font-medium bg-white/15 text-white/90 rounded-full border border-white/20 backdrop-blur-sm">
                                 {card.subtitle}
                               </span>
                             </div>
                             
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gray-300 transition-colors duration-300">
+                            {/* Title */}
+                            <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                               {card.title}
                             </h3>
                             
-                            <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                            {/* Description */}
+                            <p className="text-gray-200 text-base leading-relaxed mb-6 font-medium">
                               {card.description}
                             </p>
-                          </div>
 
-                          {/* Bottom Section */}
-                          <div>
-                            {/* Features */}
-                            <div className="mb-4">
-                              <div className="flex flex-wrap gap-1">
-                                {card.features.map((feature, index) => (
-                                  <span
-                                    key={index}
-                                    className="px-2 py-1 text-xs bg-white/10 text-gray-300 rounded border border-white/30 backdrop-blur-sm"
-                                  >
-                                    {feature}
-                                  </span>
-                                ))}
-                              </div>
+                            {/* Features Tags */}
+                            <div className="flex flex-wrap gap-2 mb-6">
+                              {card.features.slice(0, 2).map((feature, index) => (
+                                <span
+                                  key={index}
+                                  className="px-3 py-1 text-xs bg-white/10 text-gray-200 rounded-lg border border-white/20 backdrop-blur-sm font-medium"
+                                >
+                                  {feature}
+                                </span>
+                              ))}
                             </div>
 
                             {/* CTA Button */}
                             <Button
                               variant="ghost"
                               size="sm"
-                              className="w-full text-white border border-white/30 hover:bg-white/15 hover:border-white/50 transition-all duration-300 group backdrop-blur-sm"
+                              className="text-white border border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 backdrop-blur-sm px-6 py-2 rounded-lg font-medium"
                             >
                               Learn More
                               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
