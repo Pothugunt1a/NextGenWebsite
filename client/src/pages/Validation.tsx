@@ -551,20 +551,7 @@ export default function Validation() {
                     </div>
                   </div>
 
-                  {/* Features checklist */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {selectedService.keyBenefits
-                      .slice(0, 4)
-                      .map((benefit, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-2 text-sm text-gray-300"
-                        >
-                          <CheckCircle2 className="h-4 w-4 text-green-400" />
-                          <span>{benefit}</span>
-                        </div>
-                      ))}
-                  </div>
+
                 </div>
 
                 {/* Tabbed Content - Only shown when Learn More is clicked */}
@@ -577,7 +564,7 @@ export default function Validation() {
                     transition={{ duration: 0.3 }}
                   >
                     <Tabs defaultValue="overview" className="w-full">
-                      <TabsList className="grid w-full grid-cols-4 bg-slate-800/50 border border-slate-700">
+                      <TabsList className="grid w-full grid-cols-2 bg-slate-800/50 border border-slate-700">
                         <TabsTrigger
                           value="overview"
                           className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
@@ -590,21 +577,7 @@ export default function Validation() {
                           className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
                         >
                           <Settings className="h-4 w-4 mr-2" />
-                          Our Process
-                        </TabsTrigger>
-                        <TabsTrigger
-                          value="benefits"
-                          className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
-                        >
-                          <Shield className="h-4 w-4 mr-2" />
-                          Key Benefits
-                        </TabsTrigger>
-                        <TabsTrigger
-                          value="industries"
-                          className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
-                        >
-                          <Building2 className="h-4 w-4 mr-2" />
-                          Industries Served
+                          Key Tasks
                         </TabsTrigger>
                       </TabsList>
 
@@ -674,7 +647,7 @@ export default function Validation() {
 
                       <TabsContent value="process" className="mt-8">
                         <h4 className="text-2xl font-bold text-white mb-6">
-                          Our Process
+                          Key Tasks
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           {selectedService.process.map((step, index) => (
@@ -694,54 +667,6 @@ export default function Validation() {
                                 <p className="text-gray-300">
                                   {step.description}
                                 </p>
-                              </CardContent>
-                            </Card>
-                          ))}
-                        </div>
-                      </TabsContent>
-
-                      <TabsContent value="benefits" className="mt-8">
-                        <h4 className="text-2xl font-bold text-white mb-6">
-                          Key Benefits
-                        </h4>
-                        <div className="space-y-4">
-                          {selectedService.keyBenefits.map((benefit, index) => (
-                            <Card
-                              key={index}
-                              className="bg-white/5 border border-white/10 backdrop-blur-sm"
-                            >
-                              <CardContent className="p-6">
-                                <div className="flex items-center gap-4">
-                                  <CheckCircle2 className="h-6 w-6 text-white flex-shrink-0" />
-                                  <p className="text-gray-300">{benefit}</p>
-                                </div>
-                              </CardContent>
-                            </Card>
-                          ))}
-                        </div>
-                      </TabsContent>
-
-                      <TabsContent value="industries" className="mt-8">
-                        <h4 className="text-2xl font-bold text-white mb-6">
-                          Industries Served
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          {selectedService.industries.map((industry, index) => (
-                            <Card
-                              key={index}
-                              className="bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/8 transition-colors"
-                            >
-                              <CardContent className="p-6">
-                                <div className="flex items-center gap-4">
-                                  <div className="p-3 rounded-xl bg-white/10">
-                                    <div className="text-white">
-                                      {industry.icon}
-                                    </div>
-                                  </div>
-                                  <h5 className="text-lg font-semibold text-white">
-                                    {industry.name}
-                                  </h5>
-                                </div>
                               </CardContent>
                             </Card>
                           ))}
