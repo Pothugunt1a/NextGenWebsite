@@ -186,9 +186,7 @@ export default function ServicesHighlights() {
                       {categoryGroup.services.map((service) => (
                         <Card 
                           key={service.id} 
-                          className={`group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl ${
-                            categoryGroup.category === "Artificial Intelligence" ? "h-80" : "h-96"
-                          }`}
+                          className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96"
                         >
                           <CardContent className="p-0 relative h-full">
                             {/* Background Image */}
