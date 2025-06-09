@@ -413,43 +413,45 @@ export default function Validation() {
         {/* Enhanced Stats Section */}
         <div className="absolute bottom-8 left-0 right-0">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-6"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="group relative"
-                >
-                  <div className="relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                    />
-
-                    <div className="relative z-10">
+            <div className="flex justify-center">
+              <motion.div
+                className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="group relative"
+                  >
+                    <div className="relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden">
                       <div
-                        className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${stat.color} mb-4`}
-                      >
-                        <div className="text-white">{stat.icon}</div>
-                      </div>
-                      <div className="text-3xl font-bold mb-2 text-white">
-                        {stat.title}
-                      </div>
-                      <div className="text-sm font-semibold text-gray-300 mb-1">
-                        {stat.subtitle}
-                      </div>
-                      <div className="text-xs text-gray-400">
-                        {stat.description}
+                        className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                      />
+
+                      <div className="relative z-10">
+                        <div
+                          className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${stat.color} mb-4`}
+                        >
+                          <div className="text-white">{stat.icon}</div>
+                        </div>
+                        <div className="text-3xl font-bold mb-2 text-white">
+                          {stat.title}
+                        </div>
+                        <div className="text-sm font-semibold text-gray-300 mb-1">
+                          {stat.subtitle}
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          {stat.description}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
