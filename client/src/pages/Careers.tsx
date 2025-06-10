@@ -394,7 +394,7 @@ export default function Careers() {
             <div className="relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0">
                 <img
-                  src="/assets/current-openings.jpg"
+                  src="./assets/current-openings.jpg"
                   alt="Current Openings Background"
                   className="w-full h-full object-cover"
                 />
