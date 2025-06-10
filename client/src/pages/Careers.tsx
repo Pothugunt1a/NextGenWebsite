@@ -381,6 +381,12 @@ export default function Careers() {
               </div>
               <div className="relative p-6">
                 <div className="space-y-4">
+                  <div className="flex justify-between items-center py-4 border-b-2 border-cyan-400/50 mb-6">
+                    <span className="text-cyan-400 font-bold text-lg">Job Title</span>
+                    <span className="text-cyan-400 font-bold text-lg">Experience & Location</span>
+                    <span className="text-cyan-400 font-bold text-lg">Apply</span>
+                  </div>
+                  
                   <div className="flex justify-between items-center py-3 border-b border-white/10">
                     <span className="text-white font-medium">AI Cloud Engineer</span>
                     <span className="text-cyan-400">5 Years • Dallas, TX</span>
