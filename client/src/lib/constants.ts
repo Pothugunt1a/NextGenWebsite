@@ -139,12 +139,12 @@ export const testimonials = [
 
 // Navigation links with dropdown menus
 export const navLinks = [
-  { id: 1, name: "Home", href: "/" },
+  { id: 1, name: "Home", href: "#home" },
   { id: 2, name: "About", href: "/about" },
   {
     id: 3,
     name: "AI",
-    href: "/ai",
+    href: "#ai",
     hasDropdown: true,
     dropdownItems: [
       {
@@ -179,10 +179,13 @@ export const navLinks = [
       },
     ],
   },
-  { id: 4, name: "Life Science", href: "/life-science" },
-  { id: 5, name: "Validation", href: "/validation" },
-  { id: 6, name: "Careers", href: "/careers" },
-  { id: 7, name: "Contact", href: "/contact" },
+  { id: 4, name: "IT Services", href: "#it-services" },
+  { id: 5, name: "Career", href: "/careers" },
+  { id: 6, name: "IT Consulting", href: "#it-consulting" },
+  { id: 7, name: "Life Science", href: "/life-science" },
+  { id: 8, name: "Validation", href: "/validation" },
+  { id: 9, name: "Projects", href: "#projects" },
+  { id: 10, name: "Contact", href: "#contact" },
 ];
 
 // Contact info
