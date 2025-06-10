@@ -490,7 +490,11 @@ export default function Validation() {
                   <img
                     src={selectedService.backgroundImage}
                     alt={selectedService.title}
-                    className="w-full h-full object-cover object-center opacity-60 brightness-125 scale-105 hover:scale-100 transition-transform duration-500"
+                    className={`w-full h-full object-cover opacity-60 brightness-125 scale-105 hover:scale-100 transition-transform duration-500 ${
+                      selectedService.id === 'cleaning' 
+                        ? 'object-[50%_20%]' 
+                        : 'object-center'
+                    }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
                 </div>
