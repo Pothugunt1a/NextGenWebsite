@@ -271,7 +271,7 @@ export default function Careers() {
                       <div className="text-white">{value.icon}</div>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-blue-400 transition-all">
+                  <h3 className="text-2xl font-bold mb-4 text-white transition-all">
                     {value.title}
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
