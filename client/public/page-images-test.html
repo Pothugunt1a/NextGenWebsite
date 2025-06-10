@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers & Validation Page Images Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .image-item { text-align: center; }
+        .test-image { max-width: 100%; height: 250px; object-fit: cover; border: 2px solid #ddd; border-radius: 4px; }
+        .image-status { margin-top: 10px; padding: 5px; border-radius: 4px; }
+        .status-pass { background: #d4edda; color: #155724; }
+        .status-fail { background: #f8d7da; color: #721c24; }
+        h1, h2 { color: #333; }
+        .overview { background: #e7f3ff; padding: 15px; border-left: 4px solid #007bff; }
+        .banner-test { height: 400px; background-size: cover; background-position: center; border: 2px solid #ddd; border-radius: 8px; position: relative; margin: 20px 0; }
+        .banner-overlay { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Careers & Validation Page Images Test</h1>
+        
+        <div class="overview">
+            <strong>Purpose:</strong> Verify specific internal images used in careers and validation pages load correctly on cPanel
+        </div>
+
+        <div class="section">
+            <h2>1. Careers Page Images</h2>
+            
+            <h3>Career Banner (Main Hero)</h3>
+            <div class="banner-test" style="background-image: url('/assets/career-banner.png')">
+                <div class="banner-overlay" id="career-banner-status">Career Banner Loading...</div>
+            </div>
+            
+            <h3>Current Openings Background</h3>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="/assets/current-openings.jpg" alt="Current Openings" class="test-image"
+                         onload="showStatus(this, 'pass')" onerror="showStatus(this, 'fail')">
+                    <div class="image-status" id="status-openings">Current Openings (current-openings.jpg)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Validation Page Images</h2>
+            
+            <h3>Validation Banner (Main Hero)</h3>
+            <div class="banner-test" style="background-image: url('/assets/validation-banner.png')">
+                <div class="banner-overlay" id="validation-banner-status">Validation Banner Loading...</div>
+            </div>
+            
+            <h3>Validation Service Background Images</h3>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="/assets/equipment-validation.jpeg" alt="Equipment Validation" class="test-image"
+                         onload="showStatus(this, 'pass')" onerror="showStatus(this, 'fail')">
+                    <div class="image-status" id="status-equipment">Equipment Validation</div>
+                </div>
+                <div class="image-item">
+                    <img src="/assets/cleaning-validation.jpeg" alt="Cleaning Validation" class="test-image"
+                         onload="showStatus(this, 'pass')" onerror="showStatus(this, 'fail')">
+                    <div class="image-status" id="status-cleaning">Cleaning Validation</div>
+                </div>
+                <div class="image-item">
+                    <img src="/assets/computer-system-validation.jpeg" alt="Computer System Validation" class="test-image"
+                         onload="showStatus(this, 'pass')" onerror="showStatus(this, 'fail')">
+                    <div class="image-status" id="status-computer">Computer System Validation</div>
+                </div>
+                <div class="image-item">
+                    <img src="/assets/process-validation.jpeg" alt="Process Validation" class="test-image"
+                         onload="showStatus(this, 'pass')" onerror="showStatus(this, 'fail')">
+                    <div class="image-status" id="status-process">Process Validation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Image URL Direct Tests</h2>
+            <p>Test these URLs directly in your browser after deployment:</p>
+            <ul>
+                <li><a href="/assets/career-banner.png" target="_blank">Career Banner</a></li>
+                <li><a href="/assets/validation-banner.png" target="_blank">Validation Banner</a></li>
+                <li><a href="/assets/current-openings.jpg" target="_blank">Current Openings</a></li>
+                <li><a href="/assets/equipment-validation.jpeg" target="_blank">Equipment Validation</a></li>
+                <li><a href="/assets/cleaning-validation.jpeg" target="_blank">Cleaning Validation</a></li>
+                <li><a href="/assets/computer-system-validation.jpeg" target="_blank">Computer System Validation</a></li>
+                <li><a href="/assets/process-validation.jpeg" target="_blank">Process Validation</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function showStatus(img, status) {
+            const statusDiv = img.nextElementSibling;
+            if (status === 'pass') {
+                statusDiv.className = 'image-status status-pass';
+                statusDiv.innerHTML = statusDiv.innerHTML + ' ✓ LOADED';
+            } else {
+                statusDiv.className = 'image-status status-fail';
+                statusDiv.innerHTML = statusDiv.innerHTML + ' ✗ FAILED';
+            }
+        }
+
+        // Test banner backgrounds
+        function testBannerImage(url, elementId) {
+            const img = new Image();
+            img.onload = function() {
+                document.getElementById(elementId).innerHTML = 'Banner ✓ LOADED';
+                document.getElementById(elementId).style.background = '#d4edda';
+                document.getElementById(elementId).style.color = '#155724';
+            };
+            img.onerror = function() {
+                document.getElementById(elementId).innerHTML = 'Banner ✗ FAILED';
+                document.getElementById(elementId).style.background = '#f8d7da';
+                document.getElementById(elementId).style.color = '#721c24';
+            };
+            img.src = url;
+        }
+
+        // Test banner images
+        window.addEventListener('load', function() {
+            testBannerImage('/assets/career-banner.png', 'career-banner-status');
+            testBannerImage('/assets/validation-banner.png', 'validation-banner-status');
+            
+            // Show summary after delay
+            setTimeout(function() {
+                const passed = document.querySelectorAll('.status-pass').length;
+                const bannerPassed = document.querySelectorAll('[style*="d4edda"]').length;
+                const totalPassed = passed + bannerPassed;
+                const totalImages = 6; // 4 validation + 1 current opening + 1 banner test
+                
+                const summary = document.createElement('div');
+                summary.className = 'section';
+                summary.innerHTML = `
+                    <h2>Test Results</h2>
+                    <p><strong>Validation Service Images:</strong> ${document.querySelectorAll('[id^="status-"]:not([id*="banner"])').length} tested</p>
+                    <p><strong>Career Page Images:</strong> 2 tested (banner + openings)</p>
+                    <p><strong>Total Success Rate:</strong> ${Math.round((totalPassed/6)*100)}%</p>
+                    <p><strong>Status:</strong> ${totalPassed === 6 ? 'All images ready for cPanel' : 'Some images need attention'}</p>
+                `;
+                document.querySelector('.container').appendChild(summary);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
