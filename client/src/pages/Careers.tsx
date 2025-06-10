@@ -564,6 +564,7 @@ export default function Careers() {
             <Button 
               variant="outline" 
               className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+              onClick={() => window.location.href = "mailto:careers@rtnextgenai.com"}
             >
               Send Us Your Resume
               <Mail className="ml-2 h-4 w-4" />
