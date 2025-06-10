@@ -31,7 +31,7 @@ const values = [
     color: "from-green-500 to-emerald-500",
   },
   {
-    icon: <Target className="h-8 w-8" />,
+    icon: <TrendingUp className="h-8 w-8" />,
     title: "Growth",
     description: "Continuous learning and professional development",
     color: "from-blue-500 to-cyan-500",
