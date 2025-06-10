@@ -356,13 +356,14 @@ export default function Validation() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background for validation page */}
         <div className="absolute inset-0">
-          {/* Professional gradient background for validation */}
-          <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"></div>
-          {/* Overlay pattern */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-          {/* Additional gradient overlay */}
+          <img
+            src="/assets/validation-banner.png"
+            alt="Validation Services"
+            className="w-full h-full object-cover opacity-70 brightness-150"
+          />
+          {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-cyan-800/20 to-blue-800/40"></div>
-          {/* Subtle brightness overlay */}
+          {/* Additional brightness overlay for focal areas */}
           <div className="absolute inset-0 bg-gradient-to-t from-transparent via-blue-500/10 to-transparent"></div>
         </div>
 
