@@ -79,7 +79,7 @@ export default function Careers() {
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/assets/Careers.jpeg"
+            src="/assets/validation-banner.png"
             alt="Careers at RT NextGen AI"
             className="w-full h-full object-cover object-center"
           />
