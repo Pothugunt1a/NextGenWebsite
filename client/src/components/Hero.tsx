@@ -30,7 +30,7 @@ export default function Hero() {
       subtitle: "Creative AI Solutions",
       description:
         "Accelerating innovation with next-gen AI-powered technologies designed to empower enterprises and drive progress through intelligent automation and data-driven insights.",
-      image: "./assets/ai-network-banner1.jpg",
+      image: "assets/ai-network-banner1.jpg",
     },
     {
       title: "WE ARE RT NEXTGEN AI",
