@@ -706,7 +706,7 @@ export default function Careers() {
                     }
                   >
                     <Mail className="mr-4 h-7 w-7" />
-                    Send Your Application
+                    Send Your Resume
                     <ArrowRight className="ml-4 h-7 w-7 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
