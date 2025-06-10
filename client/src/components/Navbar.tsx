@@ -19,9 +19,9 @@ export default function Navbar({
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(
     null,
   );
-  const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<string | null>(
-    null,
-  );
+  const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<
+    string | null
+  >(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
@@ -158,7 +158,7 @@ export default function Navbar({
                             {/* AI Image on the right */}
                             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
                               <img
-                                src="/attached_assets/AI-removebg-preview (1)_1749593433382.png"
+                                src="/assets/AI-brain-new.png"
                                 alt="AI Technology"
                                 className="w-48 h-48 object-contain opacity-90"
                               />
@@ -171,10 +171,15 @@ export default function Navbar({
                             <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
                               <div className="space-y-4">
                                 {link.dropdownItems?.map((category, idx) => (
-                                  <div key={idx} className="border-b border-cyan-400/20 last:border-b-0">
-                                    <div 
+                                  <div
+                                    key={idx}
+                                    className="border-b border-cyan-400/20 last:border-b-0"
+                                  >
+                                    <div
                                       className="font-bold text-white text-xl mb-4 tracking-wide pb-2 cursor-pointer hover:text-cyan-400 transition-colors flex justify-between items-center"
-                                      onClick={(e) => toggleDesktopSubmenu(category.name, e)}
+                                      onClick={(e) =>
+                                        toggleDesktopSubmenu(category.name, e)
+                                      }
                                     >
                                       {category.name}
                                       <ChevronDown
