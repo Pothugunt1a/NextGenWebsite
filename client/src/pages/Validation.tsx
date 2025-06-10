@@ -103,30 +103,14 @@ const validationServices = [
       "Our Cleaning Validation services provide scientifically sound and regulatory compliant cleaning procedures for pharmaceutical and biotechnology manufacturing equipment. We develop risk-based cleaning validation protocols that ensure product quality and patient safety.",
     keyBenefits: [],
     process: [
-      {
-        step: 1,
-        title: "Risk Assessment",
-        description:
-          "Evaluation of products, equipment, and cleaning procedures to determine cleaning validation requirements",
-      },
-      {
-        step: 2,
-        title: "Acceptance Criteria",
-        description:
-          "Establishment of scientifically justified limits for active ingredients, cleaning agents, and microbial contamination",
-      },
-      {
-        step: 3,
-        title: "Analytical Methods",
-        description:
-          "Development and validation of analytical methods for detection and quantification of residues",
-      },
-      {
-        step: 4,
-        title: "Protocol Execution",
-        description:
-          "Execution of cleaning validation studies with comprehensive sampling and testing procedures",
-      },
+      "Cleaning Validation Regulatory Guidelines",
+      "Cleaning Validation Methodology",
+      "Analytical Development",
+      "Visual Examination – Sampling, Swab Sampling, Rinse Sampling",
+      "Analytical Testing and Reporting",
+      "Cleaning Validation Sampling and Testing",
+      "Worst Case Product Selection Matrix",
+      "Qualification and Validation",
     ],
     industries: [
       { name: "Pharmaceutical APIs", icon: <Pill className="h-6 w-6" /> },
