@@ -109,11 +109,14 @@ export default function Careers() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-6xl md:text-8xl font-black mb-8 text-white leading-tight"
+                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+                style={{ fontWeight: 700 }}
               >
-                RT NextGen AI
+                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                  RT NextGen AI
+                </span>
                 <br />
-                <span className="text-5xl md:text-7xl font-bold">IS HIRING!</span>
+                <span className="text-white">IS HIRING!</span>
               </motion.h1>
 
               <motion.p
