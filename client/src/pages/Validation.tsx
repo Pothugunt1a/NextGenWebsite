@@ -459,7 +459,7 @@ export default function Validation() {
       </section>
 
       {/* Validation Service Section */}
-      <section className="py-16 md:py-24 text-white">
+      <section className="py-16 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -687,7 +687,7 @@ export default function Validation() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -745,7 +745,7 @@ export default function Validation() {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
