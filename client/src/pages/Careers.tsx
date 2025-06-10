@@ -119,10 +119,19 @@ export default function Careers() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
-                className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto"
+                className="text-xl md:text-2xl text-white mb-8 leading-relaxed max-w-3xl mx-auto"
               >
-                Step into a world of <span className="text-cyan-400 font-semibold">innovation</span>, continuous <span className="text-blue-400 font-semibold">learning</span>, and boundless <span className="text-cyan-500 font-semibold">growth</span>—where equal opportunity is more than a promise; it's our foundation.
+                Step into a world of innovation, continuous learning, and boundless growth—where equal opportunity is more than a promise; it's our foundation.
               </motion.p>
+
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.9, duration: 0.8 }}
+                className="text-xl md:text-2xl text-white mb-12 font-semibold"
+              >
+                careers@rtnextgenai.com
+              </motion.div>
 
               <motion.div
                 initial={{ y: 30, opacity: 0 }}
