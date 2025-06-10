@@ -131,8 +131,8 @@ export default function ServicesHighlights() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Services</h2>
-          <p className="text-xl text-gray-300 leading-relaxed" style={{ lineHeight: '1.75rem' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
+          <p className="text-lg text-gray-300">
             Comprehensive solutions to drive your organization's digital
             transformation and innovation
           </p>
@@ -166,11 +166,11 @@ export default function ServicesHighlights() {
                     {/* Category Header */}
                     <div className="text-center mb-8">
                       <h3 className="text-2xl font-bold mb-4">
-                        <span className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full">
+                        <span className="bg-gray-800 text-white px-6 py-2 rounded-full">
                           {categoryGroup.category}
                         </span>
                       </h3>
-                      <p className="text-gray-300 text-xl max-w-2xl mx-auto leading-relaxed" style={{ lineHeight: '1.75rem' }}>
+                      <p className="text-gray-300 text-lg max-w-2xl mx-auto">
                         {categoryGroup.description}
                       </p>
                     </div>
@@ -184,13 +184,11 @@ export default function ServicesHighlights() {
                         : "grid-cols-1 md:grid-cols-2"
                     }`}>
                       {categoryGroup.services.map((service) => (
-                        <motion.div
-                          key={service.id}
-                          whileHover={{ y: -10, scale: 1.02 }}
-                          transition={{ duration: 0.3 }}
+                        <Card 
+                          key={service.id} 
+                          className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96"
                         >
-                          <Card className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-cyan-400/40 hover:bg-white/8 transition-all duration-500 shadow-2xl shadow-black/30 rounded-2xl h-96 hover:shadow-cyan-500/20">
-                            <CardContent className="p-0 relative h-full">
+                          <CardContent className="p-0 relative h-full">
                             {/* Background Image */}
                             <div className="absolute inset-0 rounded-2xl overflow-hidden">
                               <img
@@ -229,7 +227,6 @@ export default function ServicesHighlights() {
                             </div>
                           </CardContent>
                         </Card>
-                        </motion.div>
                       ))}
                     </div>
                   </motion.div>
