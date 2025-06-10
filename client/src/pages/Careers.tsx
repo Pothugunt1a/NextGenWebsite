@@ -385,31 +385,42 @@ export default function Careers() {
             viewport={{ once: true }}
             className="text-center max-w-5xl mx-auto"
           >
-            <div className="bg-gradient-to-br from-slate-800/40 to-blue-900/40 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-12 mb-12">
-              <p className="text-2xl mb-8 text-gray-200">
-                Send your CV/Resume to:
-              </p>
-              <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-8">
-                careers@rtnextgenai.com
+            <div className="relative bg-gradient-to-br from-slate-800/40 to-blue-900/40 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-12 mb-12 overflow-hidden">
+              <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                  alt="Professional application background"
+                  className="w-full h-full object-cover opacity-20"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 to-blue-900/80"></div>
               </div>
-              <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">
-                Even if there's no immediate opening, we'll keep your resume on file and reach out when an opportunity that matches your skill set becomes available.
-              </p>
+              
+              <div className="relative z-10">
+                <p className="text-2xl mb-8 text-gray-200">
+                  Send your CV/Resume to:
+                </p>
+                <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-8">
+                  careers@rtnextgenai.com
+                </div>
+                <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">
+                  Even if there's no immediate opening, we'll keep your resume on file and reach out when an opportunity that matches your skill set becomes available.
+                </p>
 
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  size="lg"
-                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-12 py-8 text-xl font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0 rounded-2xl"
-                  onClick={() => window.location.href = "mailto:careers@rtnextgenai.com"}
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Mail className="mr-4 h-7 w-7" />
-                  Send Your Application
-                  <ArrowRight className="ml-4 h-7 w-7 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </motion.div>
+                  <Button
+                    size="lg"
+                    className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-12 py-8 text-xl font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0 rounded-2xl"
+                    onClick={() => window.location.href = "mailto:careers@rtnextgenai.com"}
+                  >
+                    <Mail className="mr-4 h-7 w-7" />
+                    Send Your Application
+                    <ArrowRight className="ml-4 h-7 w-7 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </motion.div>
+              </div>
             </div>
 
             <motion.div
