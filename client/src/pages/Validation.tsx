@@ -833,7 +833,7 @@ export default function Validation() {
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center"
+              className="flex justify-center"
             >
               <Button
                 size="lg"
@@ -843,42 +843,9 @@ export default function Validation() {
                 Schedule Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="group border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-10 py-6 text-lg font-semibold backdrop-blur-sm"
-              >
-                <BookOpen className="mr-2 h-5 w-5" />
-                Download Resources
-                <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </Button>
             </motion.div>
 
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-              className="mt-12 pt-8 border-t border-white/10"
-            >
-              <p className="text-sm text-gray-400 mb-4">
-                Trusted by industry leaders worldwide
-              </p>
-              <div className="flex items-center justify-center gap-8 opacity-60">
-                <Badge variant="outline" className="border-white/20 text-white">
-                  FDA Compliant
-                </Badge>
-                <Badge variant="outline" className="border-white/20 text-white">
-                  EMA Certified
-                </Badge>
-                <Badge variant="outline" className="border-white/20 text-white">
-                  ISO 9001
-                </Badge>
-                <Badge variant="outline" className="border-white/20 text-white">
-                  GMP Ready
-                </Badge>
-              </div>
-            </motion.div>
+
           </motion.div>
         </div>
       </section>
