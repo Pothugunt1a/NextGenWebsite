@@ -149,7 +149,6 @@ export default function Careers() {
 
       {/* About Section */}
       <div className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-800/80 to-blue-800/80"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500"></div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -173,7 +172,6 @@ export default function Careers() {
 
       {/* Values Section */}
       <div className="relative py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 to-blue-900/70"></div>
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
           <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
@@ -227,7 +225,6 @@ export default function Careers() {
 
       {/* Team Culture Section */}
       <div className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-slate-900/80"></div>
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
           <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
@@ -284,7 +281,6 @@ export default function Careers() {
 
       {/* Application Section */}
       <div className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-blue-900/80 to-cyan-900/80"></div>
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-cyan-500/20 rounded-full blur-3xl"></div>
         </div>
