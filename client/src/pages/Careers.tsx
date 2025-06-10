@@ -34,13 +34,13 @@ const values = [
     icon: <TrendingUp className="h-8 w-8" />,
     title: "Growth",
     description: "Continuous learning and professional development",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-primary to-primary",
   },
   {
     icon: <Globe className="h-8 w-8" />,
     title: "Impact",
     description: "Creating solutions that shape the future",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-primary to-primary",
   },
 ];
 
