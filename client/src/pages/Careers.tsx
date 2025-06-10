@@ -388,7 +388,7 @@ export default function Careers() {
             <div className="relative bg-gradient-to-br from-slate-800/40 to-blue-900/40 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-12 mb-12 overflow-hidden">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Professional application background"
                   className="w-full h-full object-cover opacity-20"
                 />
