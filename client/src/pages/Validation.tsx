@@ -56,131 +56,32 @@ const validationServices = [
     backgroundImage: "/assets/equipment-validation.jpeg",
     overview:
       "Our Equipment Validation services ensure that your manufacturing equipment operates consistently within predetermined specifications and quality attributes. We provide comprehensive validation strategies that meet regulatory requirements while optimizing operational efficiency.",
-    keyBenefits: [
-      {
-        icon: <Eye className="h-6 w-6" />,
-        title: "Monitoring & Testing",
-        description: "Continuous monitoring and testing of equipment performance with real-time data analysis"
-      },
-      {
-        icon: <BookOpen className="h-6 w-6" />,
-        title: "Documentation & Reporting",
-        description: "Comprehensive analysis and documentation of test results with compliance reports"
-      },
-      {
-        icon: <Settings className="h-6 w-6" />,
-        title: "Validation Activities",
-        description: "Direct validation activities and resolve testing problems with systematic approaches"
-      },
-      {
-        icon: <TrendingUp className="h-6 w-6" />,
-        title: "Process Improvement",
-        description: "Make adjustments and improvements to equipment and processes based on validation data"
-      },
-      {
-        icon: <Monitor className="h-6 w-6" />,
-        title: "Database Management",
-        description: "Create and maintain databases to track validation activities and equipment performance"
-      },
-      {
-        icon: <Users className="h-6 w-6" />,
-        title: "Training & Oversight",
-        description: "Conduct training and oversee validation technicians while maintaining instrumentation"
-      }
-    ],
+    keyBenefits: [],
     process: [
       {
         step: 1,
-        title: "Customer Requirements & Planning",
+        title: "Design Qualification (DQ)",
         description:
-          "Interpret customer requirements, develop comprehensive validation schedules, and establish validation master plans aligned with industry standards",
+          "Documented verification that proposed design of facilities, systems, and equipment is suitable for intended purpose",
       },
       {
         step: 2,
-        title: "Design Qualification (DQ)",
+        title: "Installation Qualification (IQ)",
         description:
-          "Documented verification that proposed design of facilities, systems, and equipment is suitable for intended purpose with regulatory compliance",
+          "Documented verification that equipment is installed according to written and pre-approved specifications",
       },
       {
         step: 3,
-        title: "Installation Qualification (IQ)",
+        title: "Operational Qualification (OQ)",
         description:
-          "Documented verification that equipment is installed according to written and pre-approved specifications with comprehensive testing protocols",
+          "Documented verification that installed equipment operates as intended throughout anticipated operating ranges",
       },
       {
         step: 4,
-        title: "Operational Qualification (OQ)",
-        description:
-          "Documented verification that installed equipment operates as intended throughout anticipated operating ranges with performance monitoring",
-      },
-      {
-        step: 5,
         title: "Performance Qualification (PQ)",
         description:
           "Documented verification that equipment consistently performs according to predetermined criteria and produces products meeting specifications",
       },
-      {
-        step: 6,
-        title: "Ongoing Compliance & Maintenance",
-        description:
-          "Maintain instrumentation, keep current with industry standards and regulations, conduct training, and oversee validation technicians",
-      },
-    ],
-    keyTasks: [
-      {
-        category: "Testing & Monitoring",
-        tasks: [
-          "Continuous monitoring and testing of equipment performance",
-          "Real-time data collection and analysis systems",
-          "Performance trend analysis and reporting",
-          "Equipment calibration and maintenance verification"
-        ]
-      },
-      {
-        category: "Documentation & Compliance",
-        tasks: [
-          "Comprehensive analysis and documentation of test results",
-          "Preparation of detailed compliance reports for regulatory bodies",
-          "Creation and maintenance of validation databases",
-          "Traceability documentation for all validation activities"
-        ]
-      },
-      {
-        category: "Project Management",
-        tasks: [
-          "Interpretation of customer requirements and specifications",
-          "Development of comprehensive validation schedules",
-          "Direction and coordination of validation activities",
-          "Resource allocation and timeline management"
-        ]
-      },
-      {
-        category: "Problem Resolution",
-        tasks: [
-          "Systematic resolution of testing problems and anomalies",
-          "Root cause analysis for equipment failures",
-          "Implementation of corrective and preventive actions",
-          "Process optimization and improvement initiatives"
-        ]
-      },
-      {
-        category: "Training & Oversight",
-        tasks: [
-          "Conducting comprehensive training for validation technicians",
-          "Overseeing day-to-day validation operations",
-          "Mentoring junior staff and knowledge transfer",
-          "Performance evaluation and skill development"
-        ]
-      },
-      {
-        category: "Regulatory & Standards",
-        tasks: [
-          "Maintaining current knowledge of industry standards and regulations",
-          "Ensuring compliance with FDA, EMA, and other regulatory requirements",
-          "Implementation of Good Manufacturing Practices (GMP)",
-          "Regular review and update of validation procedures"
-        ]
-      }
     ],
     industries: [
       {
@@ -674,7 +575,7 @@ export default function Validation() {
                     transition={{ duration: 0.3 }}
                   >
                     <Tabs defaultValue="overview" className="w-full">
-                      <TabsList className="grid w-full grid-cols-3 bg-slate-800/50 border border-slate-700">
+                      <TabsList className="grid w-full grid-cols-2 bg-slate-800/50 border border-slate-700">
                         <TabsTrigger
                           value="overview"
                           className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
@@ -687,13 +588,6 @@ export default function Validation() {
                           className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
                         >
                           <Settings className="h-4 w-4 mr-2" />
-                          Process
-                        </TabsTrigger>
-                        <TabsTrigger
-                          value="tasks"
-                          className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
-                        >
-                          <CheckCircle2 className="h-4 w-4 mr-2" />
                           Key Tasks
                         </TabsTrigger>
                       </TabsList>
@@ -764,109 +658,30 @@ export default function Validation() {
 
                       <TabsContent value="process" className="mt-8">
                         <h4 className="text-2xl font-bold text-white mb-6">
-                          Key Tasks & Responsibilities
+                          Key Tasks
                         </h4>
-                        
-                        {/* Key Benefits Section */}
-                        {selectedService.keyBenefits && selectedService.keyBenefits.length > 0 && (
-                          <div className="mb-12">
-                            <h5 className="text-xl font-semibold text-white mb-6">Core Validation Activities</h5>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                              {selectedService.keyBenefits.map((benefit, index) => (
-                                <Card
-                                  key={index}
-                                  className="bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-                                >
-                                  <CardContent className="p-6">
-                                    <div className="flex items-center gap-3 mb-4">
-                                      <div className="text-blue-400">
-                                        {benefit.icon}
-                                      </div>
-                                      <h6 className="text-lg font-semibold text-white">
-                                        {benefit.title}
-                                      </h6>
-                                    </div>
-                                    <p className="text-gray-300 text-sm leading-relaxed">
-                                      {benefit.description}
-                                    </p>
-                                  </CardContent>
-                                </Card>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Process Steps */}
-                        <div>
-                          <h5 className="text-xl font-semibold text-white mb-6">Validation Process Steps</h5>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {selectedService.process.map((step, index) => (
-                              <Card
-                                key={index}
-                                className="bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-                              >
-                                <CardContent className="p-6">
-                                  <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white flex items-center justify-center font-bold">
-                                      {step.step}
-                                    </div>
-                                    <h6 className="text-lg font-semibold text-white">
-                                      {step.title}
-                                    </h6>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {selectedService.process.map((step, index) => (
+                            <Card
+                              key={index}
+                              className="bg-white/5 border border-white/10 backdrop-blur-sm"
+                            >
+                              <CardContent className="p-6">
+                                <div className="flex items-center gap-4 mb-4">
+                                  <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold">
+                                    {step.step}
                                   </div>
-                                  <p className="text-gray-300 leading-relaxed">
-                                    {step.description}
-                                  </p>
-                                </CardContent>
-                              </Card>
-                            ))}
-                          </div>
-                        </div>
-                      </TabsContent>
-
-                      <TabsContent value="tasks" className="mt-8">
-                        <h4 className="text-2xl font-bold text-white mb-6">
-                          Comprehensive Validation Tasks
-                        </h4>
-                        
-                        {/* Display detailed key tasks for Equipment Validation */}
-                        {selectedService.keyTasks && (
-                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            {selectedService.keyTasks.map((taskGroup, index) => (
-                              <Card
-                                key={index}
-                                className="bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-                              >
-                                <CardContent className="p-6">
-                                  <h5 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                                    {taskGroup.category}
+                                  <h5 className="text-lg font-semibold text-white">
+                                    {step.title}
                                   </h5>
-                                  <ul className="space-y-3">
-                                    {taskGroup.tasks.map((task, taskIndex) => (
-                                      <li
-                                        key={taskIndex}
-                                        className="flex items-start gap-3 text-gray-300"
-                                      >
-                                        <CheckCircle2 className="h-4 w-4 text-green-400 mt-0.5 flex-shrink-0" />
-                                        <span className="text-sm leading-relaxed">{task}</span>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </CardContent>
-                              </Card>
-                            ))}
-                          </div>
-                        )}
-
-                        {/* Fallback for services without keyTasks */}
-                        {!selectedService.keyTasks && (
-                          <div className="text-center py-12">
-                            <p className="text-gray-400 text-lg">
-                              Detailed task breakdown available for Equipment Validation service.
-                            </p>
-                          </div>
-                        )}
+                                </div>
+                                <p className="text-gray-300">
+                                  {step.description}
+                                </p>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
                       </TabsContent>
                     </Tabs>
                   </motion.div>
@@ -874,76 +689,6 @@ export default function Validation() {
               </CardContent>
             </Card>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Regulatory Compliance Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-900/50 to-slate-800/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Regulatory Compliance Excellence
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Maintaining current knowledge of industry standards and ensuring full regulatory compliance
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <motion.div
-              className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="text-blue-400 mb-4">
-                <Shield className="h-12 w-12" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">FDA Compliance</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Current knowledge of FDA regulations including 21 CFR Part 11, GMP requirements, and validation guidance documents
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="text-green-400 mb-4">
-                <Globe className="h-12 w-12" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">International Standards</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Expertise in EMA guidelines, ICH Q7, ISO standards, and global regulatory requirements across multiple regions
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="text-purple-400 mb-4">
-                <BookOpen className="h-12 w-12" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">Continuous Learning</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Regular updates on evolving industry standards, attending regulatory workshops, and maintaining professional certifications
-              </p>
-            </motion.div>
-          </div>
         </div>
       </section>
 
