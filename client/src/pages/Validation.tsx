@@ -359,12 +359,14 @@ export default function Validation() {
           <img
             src="/assets/validation-banner.png"
             alt="Validation Services"
-            className="w-full h-full object-cover opacity-70 brightness-150"
+            className="w-full h-full object-cover opacity-60"
           />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-cyan-800/20 to-blue-800/40"></div>
-          {/* Additional brightness overlay for focal areas */}
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-blue-500/10 to-transparent"></div>
+          {/* Theme-matching gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0066CC]/40 via-[#004C99]/30 to-[#0080FF]/35"></div>
+          {/* Secondary theme overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#006699]/20 via-transparent to-[#004D73]/15"></div>
+          {/* Subtle brand color highlight */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0099CC]/10 to-transparent"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
@@ -381,14 +383,16 @@ export default function Validation() {
               className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
               style={{ fontWeight: 700 }}
             >
-              <span className="text-white">Validation Excellence</span>
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Validation Excellence
+              </span>
             </motion.h1>
 
             <motion.p
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl"
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
             >
               Transforming life sciences through precision validation,
               regulatory excellence, and cutting-edge compliance solutions
@@ -400,13 +404,13 @@ export default function Validation() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.6, type: "spring" }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                <Sparkles className="h-5 w-5 text-white" />
+                <Sparkles className="h-5 w-5 text-[#0080FF]" />
                 <span className="text-white font-medium">
                   Industry-Leading Validation Excellence
                 </span>
-                <Star className="h-4 w-4 text-white fill-current" />
+                <Star className="h-4 w-4 text-[#0080FF] fill-current" />
               </motion.div>
             </div>
           </motion.div>
