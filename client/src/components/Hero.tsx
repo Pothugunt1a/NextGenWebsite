@@ -100,62 +100,98 @@ export default function Hero() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <motion.h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                        {banner.title}
+                      <motion.h1 
+                        className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                      >
+                        <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                          {banner.title}
+                        </span>
                       </motion.h1>
-                      <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                      <motion.h2 
+                        className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-white"
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.4, duration: 0.8 }}
+                      >
                         {banner.subtitle}
                       </motion.h2>
-                      <motion.p className="text-lg md:text-xl mb-8 text-slate-200">
+                      <motion.p 
+                        className="text-lg md:text-xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
+                        style={{ lineHeight: '1.75rem' }}
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.6, duration: 0.8 }}
+                      >
                         {banner.description}
                       </motion.p>
 
-                      <motion.div className="bg-white/10 rounded-xl p-4 mb-8 backdrop-blur-sm">
-                        <div className="text-xl font-semibold mb-3">
+                      <motion.div 
+                        className="bg-white/5 rounded-xl p-6 mb-8 backdrop-blur-sm border border-white/10"
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.8, duration: 0.8 }}
+                      >
+                        <div className="text-xl font-semibold mb-4 text-white">
                           Our AI Expertise:
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                           {bannerIcons.map((item, idx) => (
-                            <div
+                            <motion.div
                               key={idx}
-                              className="flex items-center space-x-2 bg-white/10 rounded-lg p-3 transition-all hover:bg-white/20"
+                              className="flex items-center space-x-3 bg-white/5 rounded-lg p-4 transition-all hover:bg-blue-500/20 hover:scale-105 cursor-pointer group"
+                              whileHover={{ y: -2 }}
                             >
-                              <div className="text-white">{item.icon}</div>
-                              <span>{item.label}</span>
-                            </div>
+                              <div className="text-cyan-400 group-hover:text-white transition-colors">{item.icon}</div>
+                              <span className="text-white font-medium">{item.label}</span>
+                            </motion.div>
                           ))}
                         </div>
                       </motion.div>
 
                       <motion.div 
-                        className="bg-white rounded-lg shadow-xl p-4 w-60 mb-8"
+                        className="bg-white/5 rounded-xl shadow-xl p-6 w-72 mb-8 backdrop-blur-sm border border-white/10"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
+                        transition={{ delay: 1.0, duration: 0.8 }}
+                        whileHover={{ scale: 1.05, y: -5 }}
                       >
-                        <div className="text-sm text-slate-500 mb-1">
+                        <div className="text-sm text-gray-300 mb-2">
                           Success Rate
                         </div>
-                        <div className="text-2xl font-bold text-primary mb-2">
+                        <div className="text-3xl font-bold text-white mb-3">
                           95% Accuracy
                         </div>
-                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-primary rounded-full"
-                            style={{ width: "95%" }}
-                          ></div>
+                        <div className="h-3 bg-gray-700 rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"
+                            initial={{ width: 0 }}
+                            animate={{ width: "95%" }}
+                            transition={{ delay: 1.2, duration: 1.0 }}
+                          ></motion.div>
                         </div>
                       </motion.div>
 
-                      <motion.div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <div className="bg-primary text-white font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto">
+                      <motion.div 
+                        className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 1.4, duration: 0.8 }}
+                      >
+                        <motion.div 
+                          className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold px-8 py-4 rounded-full text-center transition-all hover:from-blue-600 hover:to-cyan-600 hover:scale-105 cursor-pointer"
+                          whileHover={{ y: -2 }}
+                        >
                           Enterprise Solutions
-                        </div>
+                        </motion.div>
                         <Button
                           onClick={() => scrollToSection("case-studies")}
-                          className="bg-white text-primary hover:bg-slate-200 font-semibold px-8 py-6 rounded-full text-center transition-colors h-auto"
+                          className="group bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-4 rounded-full text-center transition-all hover:scale-105"
                         >
                           View Case Studies
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </Button>
                         <Button
                           onClick={() => {
@@ -163,9 +199,10 @@ export default function Hero() {
                             window.scrollTo(0, 0);
                           }}
                           variant="outline"
-                          className="bg-transparent hover:bg-primary-dark border-2 border-white font-semibold px-8 py-6 rounded-full text-center transition-colors text-white h-auto"
+                          className="group bg-transparent hover:bg-blue-500 border-2 border-white font-semibold px-8 py-4 rounded-full text-center transition-all text-white hover:scale-105"
                         >
                           Contact Us
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </motion.div>
                     </motion.div>
