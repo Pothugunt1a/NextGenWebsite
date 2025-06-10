@@ -69,9 +69,9 @@ const benefits = [
 
 export default function Careers() {
   const scrollToApplication = () => {
-    const element = document.getElementById('application-section');
+    const element = document.getElementById("application-section");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
   return (
@@ -85,13 +85,13 @@ export default function Careers() {
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/assets/Careers.jpeg"
+            src="/assets/career-banner.png"
             alt="Careers at RT NextGen AI"
             className="w-full h-full object-cover object-center"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
-        
+
         <div className="relative flex items-center justify-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
@@ -107,7 +107,9 @@ export default function Careers() {
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 rounded-full backdrop-blur-xl mb-8"
               >
                 <Briefcase className="h-5 w-5 text-cyan-400" />
-                <span className="text-white font-medium">Join Our Elite Team</span>
+                <span className="text-white font-medium">
+                  Join Our Elite Team
+                </span>
                 <Star className="h-5 w-5 text-blue-400 fill-current" />
               </motion.div>
 
@@ -131,7 +133,9 @@ export default function Careers() {
                 transition={{ delay: 0.7, duration: 0.8 }}
                 className="text-xl md:text-2xl text-white mb-8 leading-relaxed max-w-3xl mx-auto"
               >
-                Step into a world of innovation, continuous learning, and boundless growth—where equal opportunity is more than a promise; it's our foundation.
+                Step into a world of innovation, continuous learning, and
+                boundless growth—where equal opportunity is more than a promise;
+                it's our foundation.
               </motion.p>
 
               <motion.div
@@ -143,7 +147,9 @@ export default function Careers() {
                 <Button
                   size="lg"
                   className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-10 py-6 text-lg font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0"
-                  onClick={() => window.location.href = "mailto:careers@rtnextgenai.com"}
+                  onClick={() =>
+                    (window.location.href = "mailto:careers@rtnextgenai.com")
+                  }
                 >
                   <Mail className="mr-3 h-6 w-6" />
                   Apply Now
@@ -158,11 +164,8 @@ export default function Careers() {
         </div>
       </div>
 
-
-
       {/* About Section */}
       <div className="relative py-24 overflow-hidden">
-        
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             <motion.div
@@ -172,14 +175,26 @@ export default function Careers() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
-                Your <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Potential</span> Meets <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Possibility</span>
+                Your{" "}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  Potential
+                </span>{" "}
+                Meets{" "}
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                  Possibility
+                </span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mb-8"></div>
               <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-                At RT NextGen AI, we are dedicated to attracting, retaining, and inspiring a diverse, talented, and creative workforce. We value individuals who are eager to learn and grow with us. Our teams work in an entrepreneurial, client-focused environment, engaging with cutting-edge technologies to develop enterprise solutions that shape the future.
+                At RT NextGen AI, we are dedicated to attracting, retaining, and
+                inspiring a diverse, talented, and creative workforce. We value
+                individuals who are eager to learn and grow with us. Our teams
+                work in an entrepreneurial, client-focused environment, engaging
+                with cutting-edge technologies to develop enterprise solutions
+                that shape the future.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -207,7 +222,7 @@ export default function Careers() {
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
           <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
         </div>
-        
+
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto mb-16">
             <motion.div
@@ -221,10 +236,11 @@ export default function Careers() {
                 Our Core Values
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed">
-                We believe in creating an environment where innovation thrives and every team member can reach their full potential.
+                We believe in creating an environment where innovation thrives
+                and every team member can reach their full potential.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -255,10 +271,10 @@ export default function Careers() {
                 className="group"
               >
                 <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${value.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">
-                      {value.icon}
-                    </div>
+                  <div
+                    className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${value.color} mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <div className="text-white">{value.icon}</div>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-blue-400 transition-all">
                     {value.title}
@@ -279,7 +295,7 @@ export default function Careers() {
           <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
           <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
         </div>
-        
+
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto mb-16">
             <motion.div
@@ -299,7 +315,7 @@ export default function Careers() {
               </div>
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-60"></div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -312,7 +328,11 @@ export default function Careers() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 lg:mx-0 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 leading-relaxed">
-                RT NextGen AI is home to several specialized AI technology groups that collaborate closely to deliver impactful, forward-thinking solutions. If you are confident in your experience and skills, and passionate about making meaningful contributions, we invite you to explore a future with us.
+                RT NextGen AI is home to several specialized AI technology
+                groups that collaborate closely to deliver impactful,
+                forward-thinking solutions. If you are confident in your
+                experience and skills, and passionate about making meaningful
+                contributions, we invite you to explore a future with us.
               </p>
             </motion.div>
           </div>
@@ -360,11 +380,15 @@ export default function Careers() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Current <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Openings</span>
+              Current{" "}
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Openings
+              </span>
             </h2>
             <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
-              Join our dynamic team and shape the future of AI-driven validation solutions
+              Join our dynamic team and shape the future of AI-driven validation
+              solutions
             </p>
           </motion.div>
 
@@ -386,18 +410,31 @@ export default function Careers() {
               </div>
               <div className="relative p-6">
                 <div className="space-y-4">
-                  <div className="grid grid-cols-3 gap-4 py-4 border-b-2 mb-6" style={{ borderColor: 'hsl(var(--primary))' }}>
-                    <span className="text-white font-bold text-lg text-left">Job Title</span>
-                    <span className="text-white font-bold text-lg text-left">Experience & Location</span>
-                    <span className="text-white font-bold text-lg text-center">Apply</span>
+                  <div
+                    className="grid grid-cols-3 gap-4 py-4 border-b-2 mb-6"
+                    style={{ borderColor: "hsl(var(--primary))" }}
+                  >
+                    <span className="text-white font-bold text-lg text-left">
+                      Job Title
+                    </span>
+                    <span className="text-white font-bold text-lg text-left">
+                      Experience & Location
+                    </span>
+                    <span className="text-white font-bold text-lg text-center">
+                      Apply
+                    </span>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">AI Cloud Engineer</span>
-                    <span className="text-white text-left">5 Years • Dallas, TX</span>
+                    <span className="text-white font-medium text-left">
+                      AI Cloud Engineer
+                    </span>
+                    <span className="text-white text-left">
+                      5 Years • Dallas, TX
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -405,13 +442,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">AI Support Engineer</span>
-                    <span className="text-white text-left">7 Years • Dallas, TX</span>
+                    <span className="text-white font-medium text-left">
+                      AI Support Engineer
+                    </span>
+                    <span className="text-white text-left">
+                      7 Years • Dallas, TX
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -419,13 +460,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">AI DevOps Cloud Engineer</span>
-                    <span className="text-white text-left">7 Years • Dallas, TX</span>
+                    <span className="text-white font-medium text-left">
+                      AI DevOps Cloud Engineer
+                    </span>
+                    <span className="text-white text-left">
+                      7 Years • Dallas, TX
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -433,13 +478,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">AI Technical Project Manager</span>
-                    <span className="text-white text-left">Service Delivery & AI</span>
+                    <span className="text-white font-medium text-left">
+                      AI Technical Project Manager
+                    </span>
+                    <span className="text-white text-left">
+                      Service Delivery & AI
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -447,13 +496,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">(AI) Project Leader</span>
-                    <span className="text-white text-left">10 Years • Dallas, TX</span>
+                    <span className="text-white font-medium text-left">
+                      (AI) Project Leader
+                    </span>
+                    <span className="text-white text-left">
+                      10 Years • Dallas, TX
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -461,13 +514,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">Associate Validation Engineer</span>
-                    <span className="text-white text-left">5 Years • Pharma</span>
+                    <span className="text-white font-medium text-left">
+                      Associate Validation Engineer
+                    </span>
+                    <span className="text-white text-left">
+                      5 Years • Pharma
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -475,13 +532,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">Quality Engineer</span>
-                    <span className="text-white text-left">5 Years • Pharma</span>
+                    <span className="text-white font-medium text-left">
+                      Quality Engineer
+                    </span>
+                    <span className="text-white text-left">
+                      5 Years • Pharma
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -489,13 +550,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">Quality Specialist</span>
-                    <span className="text-white text-left">5 Years • Pharma</span>
+                    <span className="text-white font-medium text-left">
+                      Quality Specialist
+                    </span>
+                    <span className="text-white text-left">
+                      5 Years • Pharma
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -503,13 +568,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">Manufacturing Quality Engineer</span>
-                    <span className="text-white text-left">5 Years • Pharma</span>
+                    <span className="text-white font-medium text-left">
+                      Manufacturing Quality Engineer
+                    </span>
+                    <span className="text-white text-left">
+                      5 Years • Pharma
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -517,13 +586,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium text-left">Supply Quality Engineer</span>
-                    <span className="text-white text-left">5 Years • Pharma</span>
+                    <span className="text-white font-medium text-left">
+                      Supply Quality Engineer
+                    </span>
+                    <span className="text-white text-left">
+                      5 Years • Pharma
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -531,13 +604,17 @@ export default function Careers() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-4 items-center py-3">
-                    <span className="text-white font-medium text-left">Process Engineer</span>
-                    <span className="text-white text-left">5 Years • Pharma & Chemical</span>
+                    <span className="text-white font-medium text-left">
+                      Process Engineer
+                    </span>
+                    <span className="text-white text-left">
+                      5 Years • Pharma & Chemical
+                    </span>
                     <div className="text-center">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
                         onClick={scrollToApplication}
                       >
@@ -558,12 +635,15 @@ export default function Careers() {
             className="text-center mt-16"
           >
             <p className="text-white/80 text-lg mb-6">
-              Don't see the perfect role? We're always looking for talented individuals.
+              Don't see the perfect role? We're always looking for talented
+              individuals.
             </p>
-            <Button 
-              variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
-              onClick={() => window.location.href = "mailto:careers@rtnextgenai.com"}
+            <Button
+              variant="outline"
+              className="bg-transparent border-white/30 text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300"
+              onClick={() =>
+                (window.location.href = "mailto:careers@rtnextgenai.com")
+              }
             >
               Send Us Your Resume
               <Mail className="ml-2 h-4 w-4" />
@@ -577,7 +657,7 @@ export default function Careers() {
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-cyan-500/20 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-16">
             <motion.div
@@ -587,13 +667,16 @@ export default function Careers() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
-                Ready to <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Join Our Team?</span>
+                Ready to{" "}
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                  Join Our Team?
+                </span>
               </h2>
-              
+
               <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-12"></div>
             </motion.div>
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -610,7 +693,7 @@ export default function Careers() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 to-blue-900/60"></div>
               </div>
-              
+
               <div className="relative z-10">
                 <p className="text-2xl mb-8 text-gray-200">
                   Send your CV/Resume to:
@@ -619,7 +702,9 @@ export default function Careers() {
                   careers@rtnextgenai.com
                 </div>
                 <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">
-                  Even if there's no immediate opening, we'll keep your resume on file and reach out when an opportunity that matches your skill set becomes available.
+                  Even if there's no immediate opening, we'll keep your resume
+                  on file and reach out when an opportunity that matches your
+                  skill set becomes available.
                 </p>
 
                 <motion.div
@@ -629,7 +714,9 @@ export default function Careers() {
                   <Button
                     size="lg"
                     className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-12 py-8 text-xl font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0 rounded-2xl"
-                    onClick={() => window.location.href = "mailto:careers@rtnextgenai.com"}
+                    onClick={() =>
+                      (window.location.href = "mailto:careers@rtnextgenai.com")
+                    }
                   >
                     <Mail className="mr-4 h-7 w-7" />
                     Send Your Application
@@ -647,7 +734,9 @@ export default function Careers() {
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-xl"
             >
               <Star className="h-6 w-6 text-cyan-400 fill-current" />
-              <span className="text-xl font-medium text-white">Join RT NextGen AI—where your potential meets possibility</span>
+              <span className="text-xl font-medium text-white">
+                Join RT NextGen AI—where your potential meets possibility
+              </span>
               <Star className="h-6 w-6 text-blue-400 fill-current" />
             </motion.div>
           </motion.div>
