@@ -77,7 +77,14 @@ export default function Careers() {
     >
       {/* Hero Section */}
       <div className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/90 to-cyan-900/90"></div>
+        <div className="absolute inset-0">
+          <img
+            src="/assets/Careers.jpeg"
+            alt="Careers at RT NextGen AI"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-blue-900/70 to-cyan-900/70"></div>
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
           <div className="absolute bottom-40 right-32 w-48 h-48 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-30 animate-pulse delay-1000"></div>
