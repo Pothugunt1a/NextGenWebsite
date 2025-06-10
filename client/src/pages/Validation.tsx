@@ -58,30 +58,18 @@ const validationServices = [
       "Our Equipment Validation services ensure that your manufacturing equipment operates consistently within predetermined specifications and quality attributes. We provide comprehensive validation strategies that meet regulatory requirements while optimizing operational efficiency.",
     keyBenefits: [],
     process: [
-      {
-        step: 1,
-        title: "Design Qualification (DQ)",
-        description:
-          "Documented verification that proposed design of facilities, systems, and equipment is suitable for intended purpose",
-      },
-      {
-        step: 2,
-        title: "Installation Qualification (IQ)",
-        description:
-          "Documented verification that equipment is installed according to written and pre-approved specifications",
-      },
-      {
-        step: 3,
-        title: "Operational Qualification (OQ)",
-        description:
-          "Documented verification that installed equipment operates as intended throughout anticipated operating ranges",
-      },
-      {
-        step: 4,
-        title: "Performance Qualification (PQ)",
-        description:
-          "Documented verification that equipment consistently performs according to predetermined criteria and produces products meeting specifications",
-      },
+      "Monitoring and testing equipment",
+      "Analyzing and documenting test results",
+      "Preparing compliance reports",
+      "Directing validation activities",
+      "Resolving testing problems",
+      "Making adjustments or improvements to equipment and processes",
+      "Creating databases to track validation activities",
+      "Interpreting customer requirements",
+      "Developing validation schedules",
+      "Conducting training and overseeing the work of validation technicians",
+      "Maintaining instrumentation and equipment",
+      "Keeping up to date on industry standards and regulations",
     ],
     industries: [
       {
@@ -661,23 +649,36 @@ export default function Validation() {
                           Key Tasks
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          {selectedService.process.map((step, index) => (
+                          {selectedService.process.map((task, index) => (
                             <Card
                               key={index}
                               className="bg-white/5 border border-white/10 backdrop-blur-sm"
                             >
                               <CardContent className="p-6">
-                                <div className="flex items-center gap-4 mb-4">
-                                  <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold">
-                                    {step.step}
+                                {typeof task === 'string' ? (
+                                  <div className="flex items-center gap-4">
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center font-bold text-white text-sm flex-shrink-0">
+                                      {index + 1}
+                                    </div>
+                                    <p className="text-gray-300 leading-relaxed">
+                                      {task}
+                                    </p>
                                   </div>
-                                  <h5 className="text-lg font-semibold text-white">
-                                    {step.title}
-                                  </h5>
-                                </div>
-                                <p className="text-gray-300">
-                                  {step.description}
-                                </p>
+                                ) : (
+                                  <>
+                                    <div className="flex items-center gap-4 mb-4">
+                                      <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold">
+                                        {(task as any).step}
+                                      </div>
+                                      <h5 className="text-lg font-semibold text-white">
+                                        {(task as any).title}
+                                      </h5>
+                                    </div>
+                                    <p className="text-gray-300">
+                                      {(task as any).description}
+                                    </p>
+                                  </>
+                                )}
                               </CardContent>
                             </Card>
                           ))}
