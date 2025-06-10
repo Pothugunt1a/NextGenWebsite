@@ -90,9 +90,9 @@ export default function Careers() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
+      <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -151,7 +151,7 @@ export default function Careers() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 lg:py-24 bg-gray-50 dark:bg-slate-800">
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
@@ -161,10 +161,10 @@ export default function Careers() {
             className="max-w-4xl mx-auto text-center"
           >
             <motion.div variants={itemVariants}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 dark:text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
                 Your Potential Meets Possibility
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 leading-relaxed">
+              <p className="text-lg text-gray-300 mb-12 leading-relaxed">
                 At RT NextGen AI, we are dedicated to attracting, retaining, and inspiring a diverse, talented, and creative workforce. We value individuals who are eager to learn and grow with us. Our teams work in an entrepreneurial, client-focused environment, engaging with cutting-edge technologies to develop enterprise solutions that shape the future.
               </p>
             </motion.div>
@@ -173,7 +173,7 @@ export default function Careers() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 lg:py-24 bg-white dark:bg-slate-900">
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
@@ -182,10 +182,10 @@ export default function Careers() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Our Values
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                 We believe in creating an environment where innovation thrives and every team member can reach their full potential.
               </p>
             </motion.div>
@@ -193,17 +193,17 @@ export default function Careers() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, index) => (
                 <motion.div key={index} variants={itemVariants}>
-                  <Card className="h-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <Card className="h-full bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 group">
                     <CardContent className="p-6 text-center">
                       <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${value.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
                         <div className="text-white">
                           {value.icon}
                         </div>
                       </div>
-                      <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                      <h3 className="text-xl font-semibold mb-3 text-white">
                         {value.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300">
+                      <p className="text-gray-300">
                         {value.description}
                       </p>
                     </CardContent>
@@ -216,7 +216,7 @@ export default function Careers() {
       </section>
 
       {/* Team Culture Section */}
-      <section className="py-16 lg:py-24 bg-gray-50 dark:bg-slate-800">
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
@@ -226,10 +226,10 @@ export default function Careers() {
             className="max-w-4xl mx-auto"
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Specialized AI Technology Groups
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
+              <p className="text-lg text-gray-300">
                 RT NextGen AI is home to several specialized AI technology groups that collaborate closely to deliver impactful, forward-thinking solutions. If you are confident in your experience and skills, and passionate about making meaningful contributions, we invite you to explore a future with us.
               </p>
             </motion.div>
@@ -237,17 +237,17 @@ export default function Careers() {
             <motion.div variants={itemVariants}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-4 p-6 bg-white dark:bg-slate-700 rounded-xl shadow-lg">
+                  <div key={index} className="flex items-start gap-4 p-6 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-xl transition-all duration-300">
                     <div className="flex-shrink-0 p-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
                       <div className="text-white">
                         {benefit.icon}
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                      <h3 className="text-lg font-semibold mb-2 text-white">
                         {benefit.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300">
+                      <p className="text-gray-300">
                         {benefit.description}
                       </p>
                     </div>
@@ -260,9 +260,8 @@ export default function Careers() {
       </section>
 
       {/* Application Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
             initial="hidden"
