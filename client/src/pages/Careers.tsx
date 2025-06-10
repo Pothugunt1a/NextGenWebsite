@@ -381,71 +381,71 @@ export default function Careers() {
               </div>
               <div className="relative p-6">
                 <div className="space-y-4">
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white font-medium">AI Cloud Engineer</span>
-                  <span className="text-cyan-400">5 Years • Dallas, TX</span>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply
-                  </Button>
-                </div>
-                
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white font-medium">AI Support Engineer</span>
-                  <span className="text-cyan-400">7 Years • Dallas, TX</span>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply
-                  </Button>
-                </div>
-                
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white font-medium">AI DevOps Cloud Engineer</span>
-                  <span className="text-cyan-400">7 Years • Dallas, TX</span>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply
-                  </Button>
-                </div>
-                
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white font-medium">AI Technical Project Manager</span>
-                  <span className="text-cyan-400">Service Delivery & AI</span>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply
-                  </Button>
-                </div>
-                
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white font-medium">(AI) Project Leader</span>
-                  <span className="text-cyan-400">10 Years • Dallas, TX</span>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply
-                  </Button>
-                </div>
-                
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white font-medium">Associate Validation Engineer</span>
-                  <span className="text-cyan-400">5 Years • Pharma</span>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply
-                  </Button>
-                </div>
-                
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white font-medium">Quality Engineer</span>
-                  <span className="text-cyan-400">5 Years • Pharma</span>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply
-                  </Button>
-                </div>
-                
-                <div className="flex justify-between items-center py-3">
-                  <span className="text-white font-medium">Quality Specialist</span>
-                  <span className="text-cyan-400">5 Years • Pharma</span>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply
-                  </Button>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">AI Cloud Engineer</span>
+                    <span className="text-cyan-400">5 Years • Dallas, TX</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">AI Support Engineer</span>
+                    <span className="text-cyan-400">7 Years • Dallas, TX</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">AI DevOps Cloud Engineer</span>
+                    <span className="text-cyan-400">7 Years • Dallas, TX</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">AI Technical Project Manager</span>
+                    <span className="text-cyan-400">Service Delivery & AI</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">(AI) Project Leader</span>
+                    <span className="text-cyan-400">10 Years • Dallas, TX</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">Associate Validation Engineer</span>
+                    <span className="text-cyan-400">5 Years • Pharma</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">Quality Engineer</span>
+                    <span className="text-cyan-400">5 Years • Pharma</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-white font-medium">Quality Specialist</span>
+                    <span className="text-cyan-400">5 Years • Pharma</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </motion.div>
 
