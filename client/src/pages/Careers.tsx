@@ -173,7 +173,7 @@ export default function Careers() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
-                Your <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Potential</span> Meets <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Possibility</span>
+                Your Potential Meets Possibility
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mb-8"></div>
               <p className="text-xl text-gray-300 mb-12 leading-relaxed">
@@ -218,7 +218,7 @@ export default function Careers() {
               viewport={{ once: true }}
               className="text-center lg:text-left"
             >
-              <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
                 Our Core Values
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed">
@@ -308,7 +308,7 @@ export default function Careers() {
               viewport={{ once: true }}
               className="text-center lg:text-left order-1 lg:order-2"
             >
-              <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
                 Specialized AI Technology Groups
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 lg:mx-0 mx-auto mb-8"></div>
@@ -361,7 +361,7 @@ export default function Careers() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Current <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Openings</span>
+              Current Openings
             </h2>
             <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
