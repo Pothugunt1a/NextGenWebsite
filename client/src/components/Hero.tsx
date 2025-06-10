@@ -73,6 +73,12 @@ export default function Hero() {
           src="/assets/ai-brain-banner.png"
           alt="AI Brain Banner"
           className="w-full h-full object-cover opacity-60 brightness-125"
+          style={{
+            imageRendering: 'crisp-edges',
+            filter: 'brightness(1.25) contrast(1.1)',
+            transform: 'scale(1.02)',
+            transformOrigin: 'center'
+          }}
         />
       </div>
       <div className="relative z-10">
