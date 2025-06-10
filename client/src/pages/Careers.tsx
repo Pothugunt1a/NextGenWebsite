@@ -68,6 +68,12 @@ const benefits = [
 ];
 
 export default function Careers() {
+  const scrollToApplication = () => {
+    const element = document.getElementById('application-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -391,7 +397,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">AI Cloud Engineer</span>
                     <span className="text-white text-left">5 Years • Dallas, TX</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -401,7 +411,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">AI Support Engineer</span>
                     <span className="text-white text-left">7 Years • Dallas, TX</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -411,7 +425,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">AI DevOps Cloud Engineer</span>
                     <span className="text-white text-left">7 Years • Dallas, TX</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -421,7 +439,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">AI Technical Project Manager</span>
                     <span className="text-white text-left">Service Delivery & AI</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -431,7 +453,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">(AI) Project Leader</span>
                     <span className="text-white text-left">10 Years • Dallas, TX</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -441,7 +467,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">Associate Validation Engineer</span>
                     <span className="text-white text-left">5 Years • Pharma</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -451,7 +481,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">Quality Engineer</span>
                     <span className="text-white text-left">5 Years • Pharma</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -461,7 +495,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">Quality Specialist</span>
                     <span className="text-white text-left">5 Years • Pharma</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -471,7 +509,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">Manufacturing Quality Engineer</span>
                     <span className="text-white text-left">5 Years • Pharma</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -481,7 +523,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">Supply Quality Engineer</span>
                     <span className="text-white text-left">5 Years • Pharma</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -491,7 +537,11 @@ export default function Careers() {
                     <span className="text-white font-medium text-left">Process Engineer</span>
                     <span className="text-white text-left">5 Years • Pharma & Chemical</span>
                     <div className="text-center">
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                        onClick={scrollToApplication}
+                      >
                         Apply
                       </Button>
                     </div>
@@ -523,7 +573,7 @@ export default function Careers() {
       </section>
 
       {/* Application Section */}
-      <div className="relative py-32 overflow-hidden">
+      <div id="application-section" className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-cyan-500/20 rounded-full blur-3xl"></div>
         </div>
