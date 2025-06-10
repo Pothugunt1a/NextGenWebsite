@@ -38,7 +38,16 @@ npm run build
 - Upload the `.htaccess` file to the root directory
 
 ### 3. Verify Image Loading
-After deployment, test these critical images:
+After deployment, use the comprehensive image test at: `yourdomain.com/internal-images-test.html`
+
+**Critical Images to Test:**
+- Page banners (5): AI, Life Science, Validation, Careers, Contact
+- Navigation: Company logo, current openings image
+- Validation services (4): Equipment, cleaning, computer system, process
+- AI service backgrounds (3): Network banner images
+- Logo carousel (6): Microsoft, Infosys, IBM, Google, Envato, Deloitte
+
+**Manual Test URLs:**
 - Navigation logo: `yourdomain.com/assets/3dgifmaker34062.gif`
 - AI page banner: `yourdomain.com/assets/ai-brain-banner.png`
 - Life Science banner: `yourdomain.com/assets/Lifescience_banner.jpg`
