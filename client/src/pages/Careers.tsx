@@ -174,7 +174,7 @@ export default function Careers() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
+              <h2 className="text-5xl font-bold mb-8 text-white">
                 Your Potential Meets Possibility
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mb-8"></div>
@@ -225,7 +225,7 @@ export default function Careers() {
               viewport={{ once: true }}
               className="text-center lg:text-left"
             >
-              <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
+              <h2 className="text-5xl font-bold mb-6 text-white">
                 Our Core Values
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed">
@@ -316,7 +316,7 @@ export default function Careers() {
               viewport={{ once: true }}
               className="text-center lg:text-left order-1 lg:order-2"
             >
-              <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
+              <h2 className="text-5xl font-bold mb-6 text-white">
                 Specialized AI Technology Groups
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 lg:mx-0 mx-auto mb-8"></div>
@@ -372,7 +372,7 @@ export default function Careers() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-5xl font-bold mb-6 text-white">
               Current Openings
             </h2>
             <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-8"></div>
@@ -656,7 +656,7 @@ export default function Careers() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
+              <h2 className="text-5xl font-bold mb-8 text-white">
                 Ready to Join Our Team?
               </h2>
 
