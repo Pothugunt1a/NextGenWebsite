@@ -381,7 +381,7 @@ export default function Careers() {
               </div>
               <div className="relative p-6">
                 <div className="space-y-4">
-                  <div className="grid grid-cols-3 gap-4 py-4 border-b-2 border-cyan-400/50 mb-6">
+                  <div className="grid grid-cols-3 gap-4 py-4 border-b-2 mb-6" style={{ borderColor: 'hsl(var(--primary))' }}>
                     <span className="font-bold text-lg text-left" style={{ color: 'hsl(var(--primary))' }}>Job Title</span>
                     <span className="font-bold text-lg text-left" style={{ color: 'hsl(var(--primary))' }}>Experience & Location</span>
                     <span className="text-cyan-400 font-bold text-lg text-center">Apply</span>
