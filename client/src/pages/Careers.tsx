@@ -73,15 +73,15 @@ export default function Careers() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 text-white"
+      className="min-h-screen bg-light text-white"
     >
       {/* Hero Section */}
       <div className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/50 to-indigo-900/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-purple-900/90 to-indigo-900/90"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-40 right-32 w-48 h-48 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-3xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-10 animate-pulse delay-500"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute bottom-40 right-32 w-48 h-48 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-3xl opacity-30 animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse delay-500"></div>
         </div>
         
         <div className="relative flex items-center justify-center h-full">
@@ -149,7 +149,7 @@ export default function Careers() {
 
       {/* About Section */}
       <div className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-800/50 to-purple-800/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-800/80 to-purple-800/80"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"></div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -173,9 +173,10 @@ export default function Careers() {
 
       {/* Values Section */}
       <div className="relative py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 to-indigo-900/70"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-20"></div>
-          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-2xl opacity-20"></div>
+          <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
+          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-2xl opacity-30"></div>
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -226,10 +227,10 @@ export default function Careers() {
 
       {/* Team Culture Section */}
       <div className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 to-slate-900/80"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-15"></div>
-          <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-3xl opacity-15"></div>
+          <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
+          <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-3xl opacity-25"></div>
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -283,9 +284,9 @@ export default function Careers() {
 
       {/* Application Section */}
       <div className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-purple-900/50 to-indigo-900/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-purple-900/80 to-indigo-900/80"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/10 via-purple-400/10 to-pink-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
