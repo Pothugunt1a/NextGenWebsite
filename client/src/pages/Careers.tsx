@@ -381,98 +381,120 @@ export default function Careers() {
               </div>
               <div className="relative p-6">
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center py-4 border-b-2 border-cyan-400/50 mb-6">
-                    <span className="text-cyan-400 font-bold text-lg">Job Title</span>
-                    <span className="text-cyan-400 font-bold text-lg">Experience & Location</span>
-                    <span className="text-cyan-400 font-bold text-lg">Apply</span>
+                  <div className="grid grid-cols-3 gap-4 py-4 border-b-2 border-cyan-400/50 mb-6">
+                    <span className="text-cyan-400 font-bold text-lg text-left">Job Title</span>
+                    <span className="text-cyan-400 font-bold text-lg text-left">Experience & Location</span>
+                    <span className="text-cyan-400 font-bold text-lg text-center">Apply</span>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">AI Cloud Engineer</span>
-                    <span className="text-cyan-400">5 Years • Dallas, TX</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">AI Cloud Engineer</span>
+                    <span className="text-cyan-400 text-left">5 Years • Dallas, TX</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">AI Support Engineer</span>
-                    <span className="text-cyan-400">7 Years • Dallas, TX</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">AI Support Engineer</span>
+                    <span className="text-cyan-400 text-left">7 Years • Dallas, TX</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">AI DevOps Cloud Engineer</span>
-                    <span className="text-cyan-400">7 Years • Dallas, TX</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">AI DevOps Cloud Engineer</span>
+                    <span className="text-cyan-400 text-left">7 Years • Dallas, TX</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">AI Technical Project Manager</span>
-                    <span className="text-cyan-400">Service Delivery & AI</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">AI Technical Project Manager</span>
+                    <span className="text-cyan-400 text-left">Service Delivery & AI</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">(AI) Project Leader</span>
-                    <span className="text-cyan-400">10 Years • Dallas, TX</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">(AI) Project Leader</span>
+                    <span className="text-cyan-400 text-left">10 Years • Dallas, TX</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">Associate Validation Engineer</span>
-                    <span className="text-cyan-400">5 Years • Pharma</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">Associate Validation Engineer</span>
+                    <span className="text-cyan-400 text-left">5 Years • Pharma</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">Quality Engineer</span>
-                    <span className="text-cyan-400">5 Years • Pharma</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">Quality Engineer</span>
+                    <span className="text-cyan-400 text-left">5 Years • Pharma</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">Quality Specialist</span>
-                    <span className="text-cyan-400">5 Years • Pharma</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">Quality Specialist</span>
+                    <span className="text-cyan-400 text-left">5 Years • Pharma</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">Manufacturing Quality Engineer</span>
-                    <span className="text-cyan-400">5 Years • Pharma</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">Manufacturing Quality Engineer</span>
+                    <span className="text-cyan-400 text-left">5 Years • Pharma</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white font-medium">Supply Quality Engineer</span>
-                    <span className="text-cyan-400">5 Years • Pharma</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium text-left">Supply Quality Engineer</span>
+                    <span className="text-cyan-400 text-left">5 Years • Pharma</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-white font-medium">Process Engineer</span>
-                    <span className="text-cyan-400">5 Years • Pharma & Chemical</span>
-                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply
-                    </Button>
+                  <div className="grid grid-cols-3 gap-4 items-center py-3">
+                    <span className="text-white font-medium text-left">Process Engineer</span>
+                    <span className="text-cyan-400 text-left">5 Years • Pharma & Chemical</span>
+                    <div className="text-center">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                        Apply
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
