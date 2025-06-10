@@ -368,7 +368,7 @@ export default function Careers() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
             <div className="relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0">
