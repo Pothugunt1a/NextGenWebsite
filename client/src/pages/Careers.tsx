@@ -28,7 +28,7 @@ const values = [
     icon: <Users className="h-8 w-8" />,
     title: "Diversity",
     description: "Building an inclusive and talented workforce",
-    color: "from-green-500 to-emerald-500",
+    color: "from-blue-500 to-cyan-500",
   },
   {
     icon: <TrendingUp className="h-8 w-8" />,
@@ -40,7 +40,7 @@ const values = [
     icon: <Globe className="h-8 w-8" />,
     title: "Impact",
     description: "Creating solutions that shape the future",
-    color: "from-orange-500 to-red-500",
+    color: "from-blue-500 to-cyan-500",
   },
 ];
 
