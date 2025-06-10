@@ -147,8 +147,4 @@
   .nav-link:hover::after {
     @apply w-full;
   }
-
-  .bg-light {
-    @apply bg-white;
-  }
 }
