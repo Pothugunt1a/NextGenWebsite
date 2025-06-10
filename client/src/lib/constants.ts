@@ -180,7 +180,7 @@ export const navLinks = [
     ],
   },
   { id: 4, name: "IT Services", href: "#it-services" },
-  { id: 5, name: "Career", href: "#career" },
+  { id: 5, name: "Career", href: "/careers" },
   { id: 6, name: "IT Consulting", href: "#it-consulting" },
   { id: 7, name: "Life Science", href: "/life-science" },
   { id: 8, name: "Validation", href: "/validation" },
