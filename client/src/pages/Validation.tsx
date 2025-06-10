@@ -492,13 +492,13 @@ export default function Validation() {
                     alt={selectedService.title}
                     className={`w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-500 ${
                       selectedService.id === 'cleaning' 
-                        ? 'object-top sm:object-center opacity-85 sm:opacity-80' 
+                        ? 'object-top opacity-85 sm:opacity-70' 
                         : 'object-center opacity-70'
                     }`}
                   />
                   <div className={`absolute inset-0 ${
                     selectedService.id === 'cleaning' 
-                      ? 'bg-gradient-to-b from-black/15 via-black/30 to-black/55 sm:from-black/20 sm:via-black/40 sm:to-black/60'
+                      ? 'bg-gradient-to-b from-black/15 via-black/30 to-black/55 sm:from-black/30 sm:via-black/50 sm:to-black/70'
                       : 'bg-gradient-to-b from-black/30 via-black/50 to-black/70'
                   }`} />
                 </div>
