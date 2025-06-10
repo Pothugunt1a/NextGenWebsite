@@ -1,12 +1,25 @@
 #!/usr/bin/env node
 import { execSync } from 'child_process';
-import { copyFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, copyFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
 console.log('Building for cPanel deployment...');
 
 // Run the standard build
 execSync('npm run build', { stdio: 'inherit' });
+
+// Fix asset paths in built HTML for cPanel deployment
+const indexPath = 'dist/public/index.html';
+if (existsSync(indexPath)) {
+  let indexContent = readFileSync(indexPath, 'utf8');
+  
+  // Replace absolute asset paths with relative ones for cPanel
+  indexContent = indexContent.replace(/src="\/assets\//g, 'src="assets/');
+  indexContent = indexContent.replace(/href="\/assets\//g, 'href="assets/');
+  
+  writeFileSync(indexPath, indexContent);
+  console.log('✓ Fixed asset paths in index.html for cPanel');
+}
 
 // Ensure .htaccess is in the dist/public folder
 const htaccessSource = 'client/public/.htaccess';
