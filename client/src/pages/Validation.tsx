@@ -55,7 +55,7 @@ const validationServices = [
     color: "from-blue-500 to-cyan-500",
     backgroundImage: "/assets/equipment-validation.jpeg",
     overview:
-      "Our Equipment Validation services ensure that your manufacturing equipment operates consistently within predetermined specifications and quality attributes. We provide comprehensive validation strategies that meet regulatory requirements while optimizing operational efficiency.",
+      "RT NextGen AI Validation Engineers manages, inspects, calibrates, tests and modifies the instrumentation, equipment, mechanics and procedures used to manufacture various products. They ensure all systems are running correctly and efficiently to produce high-quality products. They also investigate the causes of equipment failures and anomalies and decide if the equipment needs to be repaired or replaced. RT NextGen AI in-house staff of highly skilled professionals consults with you to determine your optimal strategy and immediate solutions. Our team also helps you with any resources for on-site tasks.",
     keyBenefits: [],
     process: [
       "Monitoring and testing equipment",
@@ -100,7 +100,7 @@ const validationServices = [
     color: "from-blue-500 to-cyan-500",
     backgroundImage: "/assets/cleaning-validation.jpeg",
     overview:
-      "Our Cleaning Validation services provide scientifically sound and regulatory compliant cleaning procedures for pharmaceutical and biotechnology manufacturing equipment. We develop risk-based cleaning validation protocols that ensure product quality and patient safety.",
+      "A ri approach is followed for establishing an effective cleaning validation, including the development of policies, master plans and the appropriate content for each study to be performed incorporating critical quality attributes and critical process parameters and process control.",
     keyBenefits: [],
     process: [
       "Cleaning Validation Regulatory Guidelines",
@@ -129,7 +129,7 @@ const validationServices = [
     color: "from-blue-500 to-cyan-500",
     backgroundImage: "/assets/computer-system-validation.jpeg",
     overview:
-      "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
+      "Computer Systems Validation is not a one-time event. Validation should be considered as part of the complete life cycle of a computer system. This cycle includes the stages of planning, specification, programming, testing commissioning, documentation, operation, monitoring and modifying. Our computer system validation consultants have extensive experience in providing leadership to companies seeking to meet regulatory expectations. our experienced CSV team can provide expert project planning and oversight that includes:",
     keyBenefits: [],
     process: [
       "Validation Program, Procedure, and Template Development",
@@ -166,7 +166,7 @@ const validationServices = [
     color: "from-blue-500 to-cyan-500",
     backgroundImage: "/assets/process-validation.jpeg",
     overview:
-      "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
+      "Having years of experience, our highly experienced team understands the concerns companies face in this highly regulated environment. The first step in process validation in manufacturing is to identify the risks and critical control points of the process. Which aspects of the process will impact product quality i.e. GMP risk, if they fail, or if they fall outside the control parameters?",
     keyBenefits: [],
     process: [
       "Quality Systems Regulation and Standards for medical devices and process validation",
@@ -432,16 +432,18 @@ export default function Validation() {
                     src={selectedService.backgroundImage}
                     alt={selectedService.title}
                     className={`w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-500 ${
-                      selectedService.id === 'cleaning' 
-                        ? 'object-top opacity-85 sm:opacity-70' 
-                        : 'object-center opacity-70'
+                      selectedService.id === "cleaning"
+                        ? "object-top opacity-85 sm:opacity-70"
+                        : "object-center opacity-70"
                     }`}
                   />
-                  <div className={`absolute inset-0 ${
-                    selectedService.id === 'cleaning' 
-                      ? 'bg-gradient-to-b from-black/15 via-black/30 to-black/55 sm:from-black/30 sm:via-black/50 sm:to-black/70'
-                      : 'bg-gradient-to-b from-black/30 via-black/50 to-black/70'
-                  }`} />
+                  <div
+                    className={`absolute inset-0 ${
+                      selectedService.id === "cleaning"
+                        ? "bg-gradient-to-b from-black/15 via-black/30 to-black/55 sm:from-black/30 sm:via-black/50 sm:to-black/70"
+                        : "bg-gradient-to-b from-black/30 via-black/50 to-black/70"
+                    }`}
+                  />
                 </div>
 
                 {/* Header Section */}
@@ -608,7 +610,7 @@ export default function Validation() {
                               className="bg-white/5 border border-white/10 backdrop-blur-sm"
                             >
                               <CardContent className="p-6">
-                                {typeof task === 'string' ? (
+                                {typeof task === "string" ? (
                                   <div className="flex items-center gap-4">
                                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center font-bold text-white text-sm flex-shrink-0">
                                       {index + 1}
@@ -772,19 +774,19 @@ export default function Validation() {
               className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
             >
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle2 className="h-6 w-6 text-green-400" />
+                <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
                 <span className="text-white font-semibold">
                   Free Consultation
                 </span>
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle2 className="h-6 w-6 text-green-400" />
+                <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
                 <span className="text-white font-semibold">
                   24/7 Expert Support
                 </span>
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle2 className="h-6 w-6 text-green-400" />
+                <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
                 <span className="text-white font-semibold">
                   Guaranteed Results
                 </span>
