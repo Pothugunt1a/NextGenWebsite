@@ -185,8 +185,8 @@ export default function Careers() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
-              Our <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Core Values</span>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              Our Core Values
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               We believe in creating an environment where innovation thrives and every team member can reach their full potential.
@@ -210,7 +210,7 @@ export default function Careers() {
                       {value.icon}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-blue-400 transition-all">
                     {value.title}
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -238,10 +238,10 @@ export default function Careers() {
             viewport={{ once: true }}
             className="text-center mb-16 max-w-5xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
-              Specialized <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">AI Technology</span> Groups
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              Specialized AI Technology Groups
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto mb-8"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 leading-relaxed">
               RT NextGen AI is home to several specialized AI technology groups that collaborate closely to deliver impactful, forward-thinking solutions. If you are confident in your experience and skills, and passionate about making meaningful contributions, we invite you to explore a future with us.
             </p>
@@ -260,13 +260,13 @@ export default function Careers() {
               >
                 <div className="h-full bg-gradient-to-br from-slate-800/60 to-blue-900/60 backdrop-blur-xl border border-emerald-500/20 rounded-3xl p-8 hover:border-cyan-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
                   <div className="flex items-center mb-6">
-                    <div className="p-4 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-2xl border border-emerald-400/30 group-hover:scale-110 transition-transform duration-300">
-                      <div className="text-emerald-400 group-hover:text-cyan-300 transition-colors">
+                    <div className="p-4 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-400/30 group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-blue-400 group-hover:text-cyan-300 transition-colors">
                         {benefit.icon}
                       </div>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-emerald-300 transition-colors">
+                  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-blue-400 transition-all">
                     {benefit.title}
                   </h3>
                   <p className="text-gray-300 leading-relaxed text-lg">
