@@ -69,7 +69,7 @@ export default function AI() {
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            src="/assets/ai-network-banner1.jpg"
             alt="AI Technology"
             className="w-full h-full object-cover object-center"
           />
