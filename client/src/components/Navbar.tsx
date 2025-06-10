@@ -155,20 +155,17 @@ export default function Navbar({
                       {activeDropdown === link.id && (
                         <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
                           <div className="container mx-auto relative flex max-w-none min-h-[400px]">
-                            {/* Background image for entire container */}
-                            <div
-                              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                              style={{
-                                backgroundImage:
-                                  "url(/assets/ai-brain-dropdown.png)",
-                                filter: 'brightness(1.2) contrast(1.2)', // Highlight the image
-                                height: "100%",
-                                width: "100%",
-                              }}
-                            ></div>
+                            {/* AI Image on the right */}
+                            <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
+                              <img
+                                src="/attached_assets/AI-removebg-preview (1)_1749593433382.png"
+                                alt="AI Technology"
+                                className="w-48 h-48 object-contain opacity-90"
+                              />
+                            </div>
 
-                            {/* Dark overlay for readability */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/90"></div>
+                            {/* Left to right gradient overlay similar to validation/career banners */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 
                             {/* Content area with border */}
                             <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
