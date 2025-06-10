@@ -34,7 +34,7 @@ const values = [
     icon: <Target className="h-8 w-8" />,
     title: "Growth",
     description: "Continuous learning and professional development",
-    color: "from-purple-500 to-violet-500",
+    color: "from-blue-500 to-cyan-500",
   },
   {
     icon: <Globe className="h-8 w-8" />,
@@ -227,10 +227,10 @@ export default function Careers() {
 
       {/* Team Culture Section */}
       <div className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 to-slate-900/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-slate-900/80"></div>
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
-          <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-3xl opacity-25"></div>
+          <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -261,7 +261,7 @@ export default function Careers() {
                 whileHover={{ scale: 1.02, y: -5 }}
                 className="group"
               >
-                <div className="h-full bg-gradient-to-br from-slate-800/60 to-indigo-900/60 backdrop-blur-xl border border-emerald-500/20 rounded-3xl p-8 hover:border-cyan-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="h-full bg-gradient-to-br from-slate-800/60 to-blue-900/60 backdrop-blur-xl border border-emerald-500/20 rounded-3xl p-8 hover:border-cyan-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
                   <div className="flex items-center mb-6">
                     <div className="p-4 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-2xl border border-emerald-400/30 group-hover:scale-110 transition-transform duration-300">
                       <div className="text-emerald-400 group-hover:text-cyan-300 transition-colors">
@@ -284,9 +284,9 @@ export default function Careers() {
 
       {/* Application Section */}
       <div className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-purple-900/80 to-indigo-900/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-blue-900/80 to-cyan-900/80"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-cyan-500/20 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -298,16 +298,16 @@ export default function Careers() {
             className="text-center max-w-5xl mx-auto"
           >
             <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
-              Ready to <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Join Our Team?</span>
+              Ready to <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Join Our Team?</span>
             </h2>
             
-            <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 mx-auto mb-12"></div>
+            <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-12"></div>
             
-            <div className="bg-gradient-to-br from-slate-800/40 to-purple-900/40 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-12 mb-12">
+            <div className="bg-gradient-to-br from-slate-800/40 to-blue-900/40 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-12 mb-12">
               <p className="text-2xl mb-8 text-gray-200">
                 Send your CV/Resume to:
               </p>
-              <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-8">
+              <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-8">
                 careers@rtnextgenai.com
               </div>
               <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">
@@ -320,7 +320,7 @@ export default function Careers() {
               >
                 <Button
                   size="lg"
-                  className="group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 px-12 py-8 text-xl font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0 rounded-2xl"
+                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-12 py-8 text-xl font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0 rounded-2xl"
                   onClick={() => window.location.href = "mailto:careers@rtnextgenai.com"}
                 >
                   <Mail className="mr-4 h-7 w-7" />
@@ -335,11 +335,11 @@ export default function Careers() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-400/30 rounded-full backdrop-blur-xl"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-xl"
             >
-              <Star className="h-6 w-6 text-emerald-400 fill-current" />
-              <span className="text-xl font-medium text-white">Join RT NextGen AI—where your potential meets possibility</span>
               <Star className="h-6 w-6 text-cyan-400 fill-current" />
+              <span className="text-xl font-medium text-white">Join RT NextGen AI—where your potential meets possibility</span>
+              <Star className="h-6 w-6 text-blue-400 fill-current" />
             </motion.div>
           </motion.div>
         </div>
