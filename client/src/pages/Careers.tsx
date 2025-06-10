@@ -171,116 +171,64 @@ export default function Careers() {
             </p>
           </motion.div>
 
-          <div className="grid gap-8 max-w-4xl mx-auto">
-            {/* Engineering Positions */}
+          <div className="grid gap-6 max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
             >
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Senior Validation Engineer</h3>
-                <p className="text-cyan-400 font-medium mb-4">Engineering • Full-time • Remote/Hybrid</p>
-                <p className="text-white/80 leading-relaxed">
-                  Lead validation projects for pharmaceutical and life science companies. Design and execute comprehensive validation strategies for equipment, processes, and computer systems.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {["GMP", "FDA", "CSV", "IQ/OQ/PQ", "GAMP 5"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+              <h3 className="text-xl font-bold text-white mb-2">Validation Engineer</h3>
+              <p className="text-cyan-400 font-medium mb-3">Full-time • Remote/Hybrid</p>
+              <p className="text-white/80 mb-4">Lead validation projects for pharmaceutical companies.</p>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
                 Apply Now
-                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
 
-            {/* Data Science Positions */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
             >
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">AI/ML Data Scientist</h3>
-                <p className="text-cyan-400 font-medium mb-4">Data Science • Full-time • Remote</p>
-                <p className="text-white/80 leading-relaxed">
-                  Develop AI-powered solutions for validation processes. Build machine learning models to optimize compliance workflows and predictive analytics for life science applications.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {["Python", "TensorFlow", "MLOps", "AWS", "Statistical Analysis"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+              <h3 className="text-xl font-bold text-white mb-2">Data Scientist</h3>
+              <p className="text-cyan-400 font-medium mb-3">Full-time • Remote</p>
+              <p className="text-white/80 mb-4">Develop data solutions for validation processes.</p>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
                 Apply Now
-                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
 
-            {/* Consultant Positions */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
             >
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Senior Regulatory Consultant</h3>
-                <p className="text-cyan-400 font-medium mb-4">Consulting • Full-time • Travel Required</p>
-                <p className="text-white/80 leading-relaxed">
-                  Provide regulatory expertise to pharmaceutical clients. Lead compliance initiatives, conduct audits, and ensure adherence to global regulatory standards.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {["FDA", "EMA", "ICH", "Audit", "Risk Management"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+              <h3 className="text-xl font-bold text-white mb-2">Regulatory Consultant</h3>
+              <p className="text-cyan-400 font-medium mb-3">Full-time • Travel Required</p>
+              <p className="text-white/80 mb-4">Provide regulatory expertise to pharmaceutical clients.</p>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
                 Apply Now
-                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
 
-            {/* Internship Positions */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
             >
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Validation Engineering Intern</h3>
-                <p className="text-cyan-400 font-medium mb-4">Internship • Summer 2025 • On-site</p>
-                <p className="text-white/80 leading-relaxed">
-                  Gain hands-on experience in validation engineering. Work alongside senior engineers on real projects while learning industry best practices and regulatory requirements.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {["Engineering", "Validation", "Documentation", "Testing", "Learning"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+              <h3 className="text-xl font-bold text-white mb-2">Engineering Intern</h3>
+              <p className="text-cyan-400 font-medium mb-3">Internship • Summer 2025</p>
+              <p className="text-white/80 mb-4">Gain hands-on experience in validation engineering.</p>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
                 Apply Now
-                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
           </div>
