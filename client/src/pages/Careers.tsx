@@ -266,7 +266,20 @@ export default function Careers() {
                 <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
                   <div className="flex justify-center mb-6">
                     <div
-                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${value.color} group-hover:scale-110 transition-transform duration-300`}
+                      className={`inline-flex p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 ${
+                        value.title === 'Growth' || value.title === 'Impact'
+                          ? 'bg-gradient-to-br'
+                          : `bg-gradient-to-br ${value.color}`
+                      }`}
+                      style={
+                        value.title === 'Growth' || value.title === 'Impact'
+                          ? {
+                              '--tw-gradient-from': 'hsl(var(--primary)) var(--tw-gradient-from-position)',
+                              '--tw-gradient-to': 'hsl(var(--primary) / 0) var(--tw-gradient-to-position)',
+                              '--tw-gradient-stops': 'var(--tw-gradient-from), var(--tw-gradient-to)',
+                            }
+                          : {}
+                      }
                     >
                       <div className="text-white">{value.icon}</div>
                     </div>
