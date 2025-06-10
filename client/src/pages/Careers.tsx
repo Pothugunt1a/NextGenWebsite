@@ -152,21 +152,40 @@ export default function Careers() {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500"></div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="max-w-5xl mx-auto text-center"
-          >
-            <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
-              Your <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Potential</span> Meets <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Possibility</span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-              At RT NextGen AI, we are dedicated to attracting, retaining, and inspiring a diverse, talented, and creative workforce. We value individuals who are eager to learn and grow with us. Our teams work in an entrepreneurial, client-focused environment, engaging with cutting-edge technologies to develop enterprise solutions that shape the future.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
+                Your <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Potential</span> Meets <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Possibility</span>
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mb-8"></div>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed">
+                At RT NextGen AI, we are dedicated to attracting, retaining, and inspiring a diverse, talented, and creative workforce. We value individuals who are eager to learn and grow with us. Our teams work in an entrepreneurial, client-focused environment, engaging with cutting-edge technologies to develop enterprise solutions that shape the future.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Team collaboration and innovation"
+                  className="w-full h-[400px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20"></div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-60"></div>
+            </motion.div>
+          </div>
         </div>
       </div>
 
@@ -178,20 +197,39 @@ export default function Careers() {
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-              Our Core Values
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We believe in creating an environment where innovation thrives and every team member can reach their full potential.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center lg:text-left"
+            >
+              <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                Our Core Values
+              </h2>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                We believe in creating an environment where innovation thrives and every team member can reach their full potential.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Innovation and technology workspace"
+                  className="w-full h-[350px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20"></div>
+              </div>
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
@@ -231,21 +269,41 @@ export default function Careers() {
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16 max-w-5xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-              Specialized AI Technology Groups
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              RT NextGen AI is home to several specialized AI technology groups that collaborate closely to deliver impactful, forward-thinking solutions. If you are confident in your experience and skills, and passionate about making meaningful contributions, we invite you to explore a future with us.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="AI technology and development teams"
+                  className="w-full h-[400px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20"></div>
+              </div>
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-60"></div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center lg:text-left order-1 lg:order-2"
+            >
+              <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                Specialized AI Technology Groups
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 lg:mx-0 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                RT NextGen AI is home to several specialized AI technology groups that collaborate closely to deliver impactful, forward-thinking solutions. If you are confident in your experience and skills, and passionate about making meaningful contributions, we invite you to explore a future with us.
+              </p>
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
@@ -286,6 +344,39 @@ export default function Careers() {
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center lg:text-left"
+            >
+              <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
+                Ready to <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Join Our Team?</span>
+              </h2>
+              
+              <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 lg:mx-0 mx-auto mb-12"></div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Professional career opportunities"
+                  className="w-full h-[400px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-cyan-500/20"></div>
+              </div>
+            </motion.div>
+          </div>
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -293,12 +384,6 @@ export default function Careers() {
             viewport={{ once: true }}
             className="text-center max-w-5xl mx-auto"
           >
-            <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
-              Ready to <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Join Our Team?</span>
-            </h2>
-            
-            <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-12"></div>
-            
             <div className="bg-gradient-to-br from-slate-800/40 to-blue-900/40 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-12 mb-12">
               <p className="text-2xl mb-8 text-gray-200">
                 Send your CV/Resume to:
