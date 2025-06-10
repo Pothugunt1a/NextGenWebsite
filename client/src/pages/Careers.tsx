@@ -437,9 +437,33 @@ export default function Careers() {
                     </Button>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3">
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
                     <span className="text-white font-medium">Quality Specialist</span>
                     <span className="text-cyan-400">5 Years • Pharma</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">Manufacturing Quality Engineer</span>
+                    <span className="text-cyan-400">5 Years • Pharma</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white font-medium">Supply Quality Engineer</span>
+                    <span className="text-cyan-400">5 Years • Pharma</span>
+                    <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-white font-medium">Process Engineer</span>
+                    <span className="text-cyan-400">5 Years • Pharma & Chemical</span>
                     <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
                       Apply
                     </Button>
