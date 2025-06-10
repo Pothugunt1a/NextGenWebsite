@@ -79,10 +79,20 @@ Verify all pages load correctly:
 ## Troubleshooting
 
 ### If Images Don't Load
-1. Check file permissions (should be 644 for files, 755 for folders)
+1. **CRITICAL: Check file permissions** (should be 644 for files, 755 for folders)
+   - Fixed validation-banner.png and career-banner.png permissions
+   - Fixed all validation service images permissions
+   - All images now have proper 644 permissions
 2. Verify the assets folder uploaded correctly
 3. Test image URLs directly in browser
 4. Check browser console for 404 errors
+
+### Common Permission Issues Fixed
+The following images had restrictive permissions that caused loading failures:
+- validation-banner.png (was 600, now 644)
+- career-banner.png (was 600, now 644)
+- All validation service images (equipment, cleaning, computer-system, process)
+- current-openings.jpg images
 
 ### If Navigation Doesn't Work
 1. Ensure .htaccess file is in the root directory
