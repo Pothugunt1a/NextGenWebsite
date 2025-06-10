@@ -169,30 +169,19 @@ const validationServices = [
       "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
     keyBenefits: [],
     process: [
-      {
-        step: 1,
-        title: "Stage 1: Process Design",
-        description:
-          "Commercial manufacturing process is defined based on knowledge gained through development and scale-up activities",
-      },
-      {
-        step: 2,
-        title: "Stage 2: Process Qualification",
-        description:
-          "Process design is evaluated to determine if capable of reproducible commercial manufacturing",
-      },
-      {
-        step: 3,
-        title: "Stage 3: Continued Verification",
-        description:
-          "Ongoing assurance that process remains in validated state during commercial manufacturing",
-      },
-      {
-        step: 4,
-        title: "Statistical Analysis",
-        description:
-          "Statistical evaluation of process performance data to demonstrate process capability",
-      },
+      "Quality Systems Regulation and Standards for medical devices and process validation",
+      "Design Control and Risk Management",
+      "Process validation prerequisites including validated test methods",
+      "Statistics and quality metrics calculations",
+      "Verification versus Validation",
+      "Process development / Engineering studies and Design Controls",
+      "Design of Experiments (DOE)",
+      "Validating manual processes",
+      "Establishing methods for cleaning, facilities, utilities, and sterilization",
+      "Validation Process Failure Mode and Effects Analysis (PFMEA)",
+      "Process Monitoring and Control",
+      "Revalidation",
+      "Documentation for process validation",
     ],
     industries: [
       {
