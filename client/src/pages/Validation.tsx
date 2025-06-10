@@ -132,30 +132,10 @@ const validationServices = [
       "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
     keyBenefits: [],
     process: [
-      {
-        step: 1,
-        title: "System Assessment",
-        description:
-          "Evaluation of system complexity and risk categorization per GAMP 5 guidelines",
-      },
-      {
-        step: 2,
-        title: "Validation Planning",
-        description:
-          "Development of comprehensive validation master plan and protocols",
-      },
-      {
-        step: 3,
-        title: "Testing & Verification",
-        description:
-          "Execution of IQ/OQ/PQ testing with traceability matrix validation",
-      },
-      {
-        step: 4,
-        title: "Ongoing Compliance",
-        description:
-          "Change control, periodic review, and continuous compliance monitoring",
-      },
+      "Validation Program, Procedure, and Template Development",
+      "Retrospective Evaluation of Legacy Systems",
+      "Continuous reassessment and re-validation",
+      "Automated or semi-automated processes, controlled by a DCS (distributed control system), PLC (programmable logic controller), or similar computer system Validation Certification Package Development",
     ],
     industries: [
       {
