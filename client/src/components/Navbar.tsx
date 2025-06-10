@@ -158,9 +158,9 @@ export default function Navbar({
                             {/* AI Image on the right */}
                             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
                               <img
-                                src="/assets/AI-brain-new.png"
+                                src="/assets/AI-dropdown.png"
                                 alt="AI Technology"
-                                className="w-48 h-48 object-contain opacity-90"
+                                className="w-56 h-56 object-contain opacity-90"
                               />
                             </div>
 
