@@ -376,7 +376,7 @@ export default function Careers() {
               Current Openings
             </h2>
             <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-white max-w-3xl mx-auto" style={{ lineHeight: '1.75rem' }}>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto" style={{ lineHeight: '1.75rem' }}>
               Join our dynamic team and shape the future of AI-driven validation
               solutions
             </p>
@@ -624,7 +624,7 @@ export default function Careers() {
             viewport={{ once: true }}
             className="text-center mt-16"
           >
-            <p className="text-white/80 text-lg mb-6">
+            <p className="text-gray-300 text-lg mb-6">
               Don't see the perfect role? We're always looking for talented
               individuals.
             </p>
