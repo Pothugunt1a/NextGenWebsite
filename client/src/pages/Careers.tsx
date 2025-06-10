@@ -152,6 +152,188 @@ export default function Careers() {
         </div>
       </div>
 
+      {/* Current Openings Section */}
+      <section className="py-16 md:py-24 bg-light">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Current <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Openings</span>
+            </h2>
+            <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+              Join our dynamic team and shape the future of AI-driven validation solutions
+            </p>
+          </motion.div>
+
+          <div className="grid gap-8 max-w-4xl mx-auto">
+            {/* Engineering Positions */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Senior Validation Engineer</h3>
+                  <p className="text-cyan-400 font-medium mb-4">Engineering • Full-time • Remote/Hybrid</p>
+                  <p className="text-white/80 leading-relaxed">
+                    Lead validation projects for pharmaceutical and life science companies. Design and execute comprehensive validation strategies for equipment, processes, and computer systems.
+                  </p>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-full text-cyan-400 font-medium">
+                    New
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["GMP", "FDA", "CSV", "IQ/OQ/PQ", "GAMP 5"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+                Apply Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </motion.div>
+
+            {/* Data Science Positions */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">AI/ML Data Scientist</h3>
+                  <p className="text-cyan-400 font-medium mb-4">Data Science • Full-time • Remote</p>
+                  <p className="text-white/80 leading-relaxed">
+                    Develop AI-powered solutions for validation processes. Build machine learning models to optimize compliance workflows and predictive analytics for life science applications.
+                  </p>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-full text-green-400 font-medium">
+                    Hot
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["Python", "TensorFlow", "MLOps", "AWS", "Statistical Analysis"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+                Apply Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </motion.div>
+
+            {/* Consultant Positions */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Senior Regulatory Consultant</h3>
+                  <p className="text-cyan-400 font-medium mb-4">Consulting • Full-time • Travel Required</p>
+                  <p className="text-white/80 leading-relaxed">
+                    Provide regulatory expertise to pharmaceutical clients. Lead compliance initiatives, conduct audits, and ensure adherence to global regulatory standards.
+                  </p>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500/20 to-violet-500/20 border border-purple-400/30 rounded-full text-purple-400 font-medium">
+                    Remote
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["FDA", "EMA", "ICH", "Audit", "Risk Management"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+                Apply Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </motion.div>
+
+            {/* Internship Positions */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Validation Engineering Intern</h3>
+                  <p className="text-cyan-400 font-medium mb-4">Internship • Summer 2025 • On-site</p>
+                  <p className="text-white/80 leading-relaxed">
+                    Gain hands-on experience in validation engineering. Work alongside senior engineers on real projects while learning industry best practices and regulatory requirements.
+                  </p>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-400/30 rounded-full text-orange-400 font-medium">
+                    Entry
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["Engineering", "Validation", "Documentation", "Testing", "Learning"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+                Apply Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <p className="text-white/80 text-lg mb-6">
+              Don't see the perfect role? We're always looking for talented individuals.
+            </p>
+            <Button 
+              variant="outline" 
+              className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+            >
+              Send Us Your Resume
+              <Mail className="ml-2 h-4 w-4" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* About Section */}
       <div className="relative py-24 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500"></div>
