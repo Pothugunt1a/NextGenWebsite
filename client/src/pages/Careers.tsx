@@ -165,7 +165,7 @@ export default function Careers() {
       </div>
 
       {/* About Section */}
-      <div className="relative py-24 overflow-hidden">
+      <div className="relative py-16 overflow-hidden">
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             <motion.div
@@ -210,7 +210,7 @@ export default function Careers() {
       </div>
 
       {/* Values Section */}
-      <div className="relative py-24">
+      <div className="relative py-16">
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
           <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
@@ -285,7 +285,7 @@ export default function Careers() {
       </div>
 
       {/* Team Culture Section */}
-      <div className="relative py-24 overflow-hidden">
+      <div className="relative py-16 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
           <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
@@ -365,7 +365,7 @@ export default function Careers() {
       </div>
 
       {/* Current Openings Section */}
-      <section className="py-16 md:py-24 bg-light">
+      <section className="py-16 bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -645,7 +645,7 @@ export default function Careers() {
       </section>
 
       {/* Application Section */}
-      <div id="application-section" className="relative py-32 overflow-hidden">
+      <div id="application-section" className="relative py-16 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-cyan-500/20 rounded-full blur-3xl"></div>
         </div>
