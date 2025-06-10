@@ -717,13 +717,13 @@ export default function Validation() {
                 variants={itemVariants}
                 className="group relative"
               >
-                <div className="relative text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 overflow-hidden">
+                <div className="relative text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col">
                   {/* Background gradient on hover */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
                   />
 
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     {/* Icon */}
                     <div className="flex justify-center mb-6">
                       <div style={{ color: 'hsl(var(--primary))' }}>{item.icon}</div>
@@ -733,7 +733,7 @@ export default function Validation() {
                       {item.title}
                     </h3>
 
-                    <p className="text-gray-300 group-hover:text-gray-200 leading-relaxed transition-colors duration-300">
+                    <p className="text-gray-300 group-hover:text-gray-200 leading-relaxed transition-colors duration-300 flex-grow">
                       {item.description}
                     </p>
                   </div>
