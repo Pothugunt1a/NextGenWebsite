@@ -390,9 +390,9 @@ export default function Careers() {
                 <img
                   src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Professional application background"
-                  className="w-full h-full object-cover opacity-20"
+                  className="w-full h-full object-cover opacity-60 brightness-125"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 to-blue-900/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 to-blue-900/60"></div>
               </div>
               
               <div className="relative z-10">
