@@ -84,6 +84,7 @@ export default function Careers() {
             className="w-full h-full object-cover object-center"
           />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent"></div>
         
         <div className="relative flex items-center justify-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
