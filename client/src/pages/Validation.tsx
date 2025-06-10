@@ -359,14 +359,12 @@ export default function Validation() {
           <img
             src="/assets/validation-banner.jpeg"
             alt="Validation Services"
-            className="w-full h-full object-cover opacity-80 brightness-125 contrast-110 saturate-110"
+            className="w-full h-full object-cover opacity-70 brightness-150"
           />
-          {/* Enhanced gradient overlay for brightness and theme */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-400/15 to-blue-600/25"></div>
-          {/* Subtle light enhancement overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-cyan-100/8 to-white/5"></div>
-          {/* Center brightness boost */}
-          <div className="absolute inset-0 bg-gradient-radial from-white/8 via-transparent to-transparent"></div>
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-cyan-800/20 to-blue-800/40"></div>
+          {/* Additional brightness overlay for focal areas */}
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-blue-500/10 to-transparent"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
