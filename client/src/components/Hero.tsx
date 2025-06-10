@@ -37,14 +37,14 @@ export default function Hero() {
       subtitle: "Smarter Business",
       description:
         "We help companies build smarter workflows and predictive systems using cutting-edge AI technologies and machine learning frameworks.",
-      image: "./assets/ai-network-banner2.png",
+      image: "assets/ai-network-banner2.png",
     },
     {
       title: "WE ARE RT NEXTGEN AI",
       subtitle: "Innovate with Intelligence",
       description:
         "Join us on the journey to the future with adaptive technologies that think, learn, and evolve with your business needs.",
-      image: "./assets/ai-network-banner3.png",
+      image: "assets/ai-network-banner3.png",
     },
   ];
 
