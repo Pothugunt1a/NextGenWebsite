@@ -155,17 +155,18 @@ export default function Navbar({
                       {activeDropdown === link.id && (
                         <div className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
                           <div className="container mx-auto relative flex max-w-none min-h-[400px]">
-                            {/* AI Image on the right */}
+                            {/* AI Image on the right with gradient overlay */}
                             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
-                              <img
-                                src="/assets/AI-dropdown.png"
-                                alt="AI Technology"
-                                className="w-56 h-56 object-contain opacity-90"
-                              />
+                              <div className="relative">
+                                <img
+                                  src="/assets/AI-dropdown.png"
+                                  alt="AI Technology"
+                                  className="w-56 h-56 object-contain opacity-90"
+                                />
+                                {/* Gradient overlay on the image */}
+                                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/60"></div>
+                              </div>
                             </div>
-
-                            {/* Left to right gradient overlay similar to validation/career banners */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 
                             {/* Content area with border */}
                             <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
