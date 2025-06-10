@@ -726,7 +726,7 @@ export default function Validation() {
                   <div className="relative z-10">
                     {/* Icon */}
                     <div className="flex justify-center mb-6">
-                      <div className="text-white">{item.icon}</div>
+                      <div style={{ color: 'hsl(var(--primary))' }}>{item.icon}</div>
                     </div>
 
                     <h3 className="text-xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
