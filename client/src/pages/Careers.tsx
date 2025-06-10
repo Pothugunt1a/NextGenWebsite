@@ -153,8 +153,17 @@ export default function Careers() {
       </div>
 
       {/* Current Openings Section */}
-      <section className="py-16 md:py-24 bg-light">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/assets/current-openings.jpg"
+            alt="Current Openings Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70"></div>
+        </div>
+        
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +187,7 @@ export default function Careers() {
             viewport={{ once: true }}
             className="max-w-5xl mx-auto"
           >
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-3 border-b border-white/10">
                   <span className="text-white font-medium">AI Cloud Engineer</span>
