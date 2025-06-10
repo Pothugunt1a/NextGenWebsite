@@ -339,11 +339,11 @@ export default function Validation() {
                 transition={{ delay: 0.6, type: "spring" }}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                <Sparkles className="h-5 w-5 text-[#0080FF]" />
+                <Sparkles className="h-5 w-5 text-cyan-400" />
                 <span className="text-white font-medium">
                   Industry-Leading Validation Excellence
                 </span>
-                <Star className="h-4 w-4 text-[#0080FF] fill-current" />
+                <Star className="h-4 w-4 text-blue-400 fill-current" />
               </motion.div>
             </div>
           </motion.div>
@@ -733,13 +733,13 @@ export default function Validation() {
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring" }}
-              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-400/30 rounded-full backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
             >
-              <Globe className="h-5 w-5 text-green-400" />
-              <span className="text-green-300 font-medium">
+              <Globe className="h-5 w-5 text-cyan-400" />
+              <span className="text-white font-medium">
                 Trusted Globally by Industry Leaders
               </span>
-              <Star className="h-4 w-4 text-yellow-400 fill-current" />
+              <Star className="h-4 w-4 text-blue-400 fill-current" />
             </motion.div>
 
             <motion.h2
