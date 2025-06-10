@@ -171,159 +171,81 @@ export default function Careers() {
             </p>
           </motion.div>
 
-          <div className="grid gap-6 max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white">AI Cloud Engineer</h3>
-                <div className="text-right">
-                  <p className="text-cyan-400 font-medium">5 Years Experience</p>
-                  <p className="text-white/80">Dallas, TX</p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span className="text-white font-medium">AI Cloud Engineer</span>
+                  <span className="text-cyan-400">5 Years • Dallas, TX</span>
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    Apply
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span className="text-white font-medium">AI Support Engineer</span>
+                  <span className="text-cyan-400">7 Years • Dallas, TX</span>
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    Apply
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span className="text-white font-medium">AI DevOps Cloud Engineer</span>
+                  <span className="text-cyan-400">7 Years • Dallas, TX</span>
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    Apply
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span className="text-white font-medium">AI Technical Project Manager</span>
+                  <span className="text-cyan-400">Service Delivery & AI</span>
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    Apply
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span className="text-white font-medium">(AI) Project Leader</span>
+                  <span className="text-cyan-400">10 Years • Dallas, TX</span>
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    Apply
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span className="text-white font-medium">Associate Validation Engineer</span>
+                  <span className="text-cyan-400">5 Years • Pharma</span>
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    Apply
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span className="text-white font-medium">Quality Engineer</span>
+                  <span className="text-cyan-400">5 Years • Pharma</span>
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    Apply
+                  </Button>
+                </div>
+                
+                <div className="flex justify-between items-center py-3">
+                  <span className="text-white font-medium">Quality Specialist</span>
+                  <span className="text-cyan-400">5 Years • Pharma</span>
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    Apply
+                  </Button>
                 </div>
               </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                Apply Now
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white">AI Support Engineer</h3>
-                <div className="text-right">
-                  <p className="text-cyan-400 font-medium">7 Years Experience</p>
-                  <p className="text-white/80">Dallas, TX</p>
-                </div>
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                Apply Now
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white">AI DevOps Cloud Engineer</h3>
-                <div className="text-right">
-                  <p className="text-cyan-400 font-medium">7 Years Experience</p>
-                  <p className="text-white/80">Dallas, TX</p>
-                </div>
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                Apply Now
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white">AI Technical Project Manager</h3>
-                <div className="text-right">
-                  <p className="text-cyan-400 font-medium">Service Delivery Management</p>
-                  <p className="text-white/80">and AI Integration</p>
-                </div>
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                Apply Now
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white">(AI) Project Leader</h3>
-                <div className="text-right">
-                  <p className="text-cyan-400 font-medium">10 Years Experience</p>
-                  <p className="text-white/80">Dallas, TX</p>
-                </div>
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                Apply Now
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white">Associate Validation Engineer</h3>
-                <div className="text-right">
-                  <p className="text-cyan-400 font-medium">5 Years Experience</p>
-                  <p className="text-white/80">Pharma Related</p>
-                </div>
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                Apply Now
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white">Quality Engineer</h3>
-                <div className="text-right">
-                  <p className="text-cyan-400 font-medium">5 Years Experience</p>
-                  <p className="text-white/80">Pharma Related</p>
-                </div>
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                Apply Now
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white">Quality Specialist</h3>
-                <div className="text-right">
-                  <p className="text-cyan-400 font-medium">5 Years Experience</p>
-                  <p className="text-white/80">Pharma Related</p>
-                </div>
-              </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                Apply Now
-              </Button>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
