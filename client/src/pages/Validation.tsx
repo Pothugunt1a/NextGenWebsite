@@ -357,7 +357,7 @@ export default function Validation() {
         {/* Background for validation page */}
         <div className="absolute inset-0">
           <img
-            src="/assets/validation-banner.jpeg"
+            src="/@assets/validation-banner.jpeg"
             alt="Validation Services"
             className="w-full h-full object-cover opacity-70 brightness-150"
           />
