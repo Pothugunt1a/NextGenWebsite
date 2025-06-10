@@ -153,7 +153,7 @@ export default function Navbar({
                       </a>
 
                       {activeDropdown === link.id && (
-                        <div className="fixed left-0 right-0 mt-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
+                        <div className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
                           <div className="container mx-auto relative flex max-w-none min-h-[400px]">
                             {/* AI Image on the right */}
                             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
