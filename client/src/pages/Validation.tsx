@@ -359,14 +359,8 @@ export default function Validation() {
           <img
             src="/assets/validation-banner.png"
             alt="Validation Services"
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover"
           />
-          {/* Theme-matching gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0066CC]/40 via-[#004C99]/30 to-[#0080FF]/35"></div>
-          {/* Secondary theme overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#006699]/20 via-transparent to-[#004D73]/15"></div>
-          {/* Subtle brand color highlight */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0099CC]/10 to-transparent"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
