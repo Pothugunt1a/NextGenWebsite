@@ -53,8 +53,7 @@ const validationServices = [
       "Comprehensive equipment validation services ensuring optimal performance, compliance, and reliability across all manufacturing systems.",
     icon: <Cog className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    backgroundImage: "/attached_assets/equipment-validation_1749537740155.jpeg",
     overview:
       "Our Equipment Validation services ensure that your manufacturing equipment operates consistently within predetermined specifications and quality attributes. We provide comprehensive validation strategies that meet regulatory requirements while optimizing operational efficiency.",
     keyBenefits: [],
@@ -111,8 +110,7 @@ const validationServices = [
       "Risk-based cleaning validation protocols incorporating critical quality attributes and regulatory compliance standards.",
     icon: <FlaskConical className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    backgroundImage: "/attached_assets/cleaning-validation_1749537740155.jpeg",
     overview:
       "Our Cleaning Validation services provide scientifically sound and regulatory compliant cleaning procedures for pharmaceutical and biotechnology manufacturing equipment. We develop risk-based cleaning validation protocols that ensure product quality and patient safety.",
     keyBenefits: [],
@@ -157,7 +155,7 @@ const validationServices = [
       "Complete lifecycle validation for computer systems including planning, testing, documentation, and continuous monitoring.",
     icon: <Monitor className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "/assets/Computer-system-validation.webp",
+    backgroundImage: "/attached_assets/computer-system-validation_1749537740155.jpeg",
     overview:
       "Our Computer System Validation (CSV) services ensure that computerized systems used in regulated environments consistently perform their intended functions and maintain data integrity throughout their lifecycle.",
     keyBenefits: [],
@@ -214,7 +212,7 @@ const validationServices = [
       "Systematic approach to process validation ensuring consistent product quality and regulatory compliance throughout manufacturing.",
     icon: <Binary className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "/assets/Process-validation.jpg",
+    backgroundImage: "/attached_assets/process-validation_1749537747992.jpeg",
     overview:
       "Our Process Validation services follow FDA guidance for process validation lifecycle approach, ensuring manufacturing processes consistently produce products meeting predetermined specifications and quality attributes.",
     keyBenefits: [],
