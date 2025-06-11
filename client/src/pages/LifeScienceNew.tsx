@@ -150,7 +150,7 @@ export default function LifeScience() {
         </div>
       </section>
 
-      {/* Services Section - Hexagon Grid */}
+      {/* Services Section - Image-Driven Layout */}
       <div className="py-20 bg-gray-900 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -177,118 +177,72 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          {/* Orbital Layout */}
-          <div className="relative max-w-6xl mx-auto min-h-[800px] flex items-center justify-center">
-            {/* Central Hub */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 1, type: "spring" }}
-              className="relative z-20"
-            >
-              <div className="w-48 h-48 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full shadow-2xl flex items-center justify-center group hover:shadow-blue-500/40 transition-all duration-500">
-                <div className="w-40 h-40 bg-gray-900 rounded-full flex flex-col items-center justify-center text-center p-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                    <Target className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-1">Life Science</h3>
-                  <p className="text-blue-200 text-xs">Solutions Hub</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Orbital Services */}
-            {services.map((service, index) => {
-              const angle = (index * 72) - 90; // 72 degrees apart, starting from top
-              const radius = 280;
-              const x = Math.cos((angle * Math.PI) / 180) * radius;
-              const y = Math.sin((angle * Math.PI) / 180) * radius;
-              
-              return (
+          {/* Image-Rich Grid Layout */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, scale: 0.3 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ 
-                    delay: 0.5 + index * 0.15, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 100
-                  }}
-                  className="absolute group"
-                  style={{
-                    transform: `translate(${x}px, ${y}px)`,
-                    left: '50%',
-                    top: '50%',
-                    marginLeft: '-120px',
-                    marginTop: '-100px'
-                  }}
+                  transition={{ delay: index * 0.15, duration: 0.8 }}
+                  className="group cursor-pointer"
                 >
-                  <div className="relative w-60 h-52 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-3xl hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/25 group-hover:scale-105">
-                    {/* Service Number Badge */}
-                    <div className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg z-10">
-                      {String(index + 1).padStart(2, '0')}
-                    </div>
-                    
-                    {/* Background Image */}
-                    <div className="absolute inset-0 rounded-3xl overflow-hidden opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                  <div className="relative h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-900/80 hover:to-cyan-900/80 transition-all duration-500 group-hover:scale-[1.02] shadow-xl hover:shadow-blue-500/25">
+                    {/* Full Background Image */}
+                    <div className="absolute inset-0">
                       <img
                         src={service.backgroundImage}
                         alt={service.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 group-hover:from-blue-900/90 group-hover:via-blue-800/60 group-hover:to-cyan-800/30 transition-all duration-500"></div>
                     </div>
                     
-                    {/* Content */}
-                    <div className="relative z-10 p-6 h-full flex flex-col">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                          {index === 0 && <Stethoscope className="h-6 w-6" />}
-                          {index === 1 && <TrendingUp className="h-6 w-6" />}
-                          {index === 2 && <Beaker className="h-6 w-6" />}
-                          {index === 3 && <ScrollText className="h-6 w-6" />}
-                          {index === 4 && <Shield className="h-6 w-6" />}
-                        </div>
-                        <div className="text-xs text-blue-400 font-medium uppercase tracking-wider">
-                          Solution
-                        </div>
-                      </div>
-                      
-                      <h3 className="text-lg font-bold text-white mb-3 leading-tight group-hover:text-blue-300 transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                      
-                      <p className="text-gray-300 text-xs leading-relaxed mb-4 flex-grow group-hover:text-blue-100 transition-colors duration-300">
-                        {service.description.substring(0, 100)}...
-                      </p>
-                      
-                      <button className="px-4 py-2 bg-gradient-to-r from-blue-600/80 to-cyan-600/80 text-white text-xs font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105 self-start">
-                        Explore
-                      </button>
+                    {/* Floating Number Badge */}
+                    <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
+                      {String(index + 1).padStart(2, '0')}
                     </div>
 
-                    {/* Connecting Line to Center */}
-                    <div className="absolute inset-0 pointer-events-none">
-                      <svg className="w-full h-full">
-                        <line
-                          x1="50%"
-                          y1="50%"
-                          x2={`${50 - (x / 4)}%`}
-                          y2={`${50 - (y / 4)}%`}
-                          stroke="url(#connectionGradient)"
-                          strokeWidth="2"
-                          strokeDasharray="3,3"
-                          opacity="0.3"
-                          className="group-hover:opacity-60 transition-opacity duration-300"
-                        />
-                      </svg>
+                    {/* Icon Badge */}
+                    <div className="absolute top-4 left-4 w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center z-20 group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-300">
+                      {index === 0 && <Stethoscope className="h-7 w-7 text-white" />}
+                      {index === 1 && <TrendingUp className="h-7 w-7 text-white" />}
+                      {index === 2 && <Beaker className="h-7 w-7 text-white" />}
+                      {index === 3 && <ScrollText className="h-7 w-7 text-white" />}
+                      {index === 4 && <Shield className="h-7 w-7 text-white" />}
                     </div>
+                    
+                    {/* Content at Bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <div className="mb-3">
+                        <div className="text-sm text-blue-300 font-medium uppercase tracking-wider mb-2">
+                          Solution {String(index + 1).padStart(2, '0')}
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-blue-200 transition-colors duration-300">
+                          {service.title}
+                        </h3>
+                      </div>
+                      
+                      <p className="text-gray-200 text-sm leading-relaxed mb-4 group-hover:text-blue-100 transition-colors duration-300">
+                        {service.description.substring(0, 120)}...
+                      </p>
+                      
+                      <div className="flex items-center justify-between">
+                        <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105 shadow-lg">
+                          Learn More
+                        </button>
+                        <ArrowRight className="h-5 w-5 text-blue-400 group-hover:text-blue-300 group-hover:translate-x-1 transition-all duration-300" />
+                      </div>
+                    </div>
+
+                    {/* Subtle Light Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-transparent to-cyan-500/0 group-hover:from-blue-500/10 group-hover:to-cyan-500/10 transition-all duration-500 rounded-2xl"></div>
                   </div>
                 </motion.div>
-              );
-            })}
+              ))}
+            </div>
 
             {/* Connecting Lines */}
             <div className="absolute inset-0 pointer-events-none">
@@ -298,48 +252,12 @@ export default function LifeScience() {
                     <stop offset="0%" stopColor="#3B82F6" />
                     <stop offset="100%" stopColor="#06B6D4" />
                   </linearGradient>
-                  <radialGradient id="orbitalGradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="transparent" />
-                    <stop offset="80%" stopColor="#3B82F620" />
-                    <stop offset="100%" stopColor="#06B6D620" />
-                  </radialGradient>
                 </defs>
-                
-                {/* Orbital Rings */}
-                <circle cx="50%" cy="50%" r="280" fill="none" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="8,8" opacity="0.3" />
-                <circle cx="50%" cy="50%" r="200" fill="none" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="4,4" opacity="0.2" />
-                
-                {/* Radial connecting lines */}
-                {services.map((_, index) => {
-                  const angle = (index * 72) - 90;
-                  const startX = 50 + Math.cos((angle * Math.PI) / 180) * 12;
-                  const startY = 50 + Math.sin((angle * Math.PI) / 180) * 12;
-                  const endX = 50 + Math.cos((angle * Math.PI) / 180) * 35;
-                  const endY = 50 + Math.sin((angle * Math.PI) / 180) * 35;
-                  
-                  return (
-                    <line
-                      key={index}
-                      x1={`${startX}%`}
-                      y1={`${startY}%`}
-                      x2={`${endX}%`}
-                      y2={`${endY}%`}
-                      stroke="url(#connectionGradient)"
-                      strokeWidth="2"
-                      strokeDasharray="5,5"
-                      opacity="0.4"
-                    />
-                  );
-                })}
+                {/* Subtle connecting curves */}
+                <path d="M100,200 Q400,150 700,250" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="8,8" opacity="0.3" />
+                <path d="M200,400 Q500,350 800,450" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="8,8" opacity="0.3" />
+                <path d="M150,300 Q450,250 750,350" stroke="url(#connectionGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" opacity="0.2" />
               </svg>
-            </div>
-
-            {/* Floating Particles */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-20 left-20 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
-              <div className="absolute top-40 right-32 w-3 h-3 bg-cyan-400 rounded-full animate-pulse delay-1000"></div>
-              <div className="absolute bottom-32 left-40 w-2 h-2 bg-blue-300 rounded-full animate-ping delay-500"></div>
-              <div className="absolute bottom-20 right-20 w-1 h-1 bg-cyan-300 rounded-full animate-pulse delay-2000"></div>
             </div>
           </div>
         </div>
