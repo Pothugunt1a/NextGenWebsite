@@ -186,7 +186,7 @@ export default function Navbar({
                                   src={link.name === "IT Services" ? "/assets/IT-Services-dropdown.png" : "/assets/AI-dropdown.png"}
                                   alt={link.name === "IT Services" ? "IT Services Technology" : "AI Technology"}
                                   className="object-contain opacity-90"
-                                  style={{ width: '24rem', height: '16rem' }}
+                                  style={{ width: '30rem', height: '20rem' }}
                                 />
                                 {/* Gradient overlay on the image */}
                                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/60"></div>
