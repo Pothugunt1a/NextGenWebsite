@@ -262,16 +262,16 @@ export default function Navbar({
                                               <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors">
                                                 {category.name}
                                               </h3>
-                                              <p className="text-gray-400 text-sm">
-                                                {category.items.length} services available
-                                              </p>
+
                                             </div>
                                           </div>
-                                          <ChevronDown
-                                            className={`h-5 w-5 text-cyan-400 transition-transform duration-300 ${
-                                              isActive ? "rotate-180" : ""
-                                            }`}
-                                          />
+                                          {category.name !== "AI Consulting" && (
+                                            <ChevronDown
+                                              className={`h-5 w-5 text-cyan-400 transition-transform duration-300 ${
+                                                isActive ? "rotate-180" : ""
+                                              }`}
+                                            />
+                                          )}
                                         </div>
                                       </div>
 
