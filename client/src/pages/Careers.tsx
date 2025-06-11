@@ -683,9 +683,7 @@ export default function Careers() {
                   <Button
                     size="lg"
                     className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-12 py-8 text-xl font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0 rounded-2xl"
-                    onClick={() =>
-                      (window.location.href = "mailto:careers@rtnextgenai.com")
-                    }
+                    onClick={redirectToContact}
                   >
                     <Mail className="mr-4 h-7 w-7" />
                     Send Your Resume
