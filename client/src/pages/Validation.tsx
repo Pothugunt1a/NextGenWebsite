@@ -489,8 +489,8 @@ export default function Validation() {
                               setSelectedService(service);
                             }}
                           >
-                            <div className="flex items-center justify-center h-full">
-                              <span className="font-semibold text-lg leading-tight text-center">
+                            <div className="flex items-center justify-center h-full px-2">
+                              <span className="font-semibold text-base leading-tight text-center">
                                 {service.title}
                               </span>
                             </div>
