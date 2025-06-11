@@ -143,41 +143,9 @@ export const navLinks = [
   { id: 2, name: "About", href: "/about" },
   {
     id: 3,
-    name: "AI",
+    name: "AI Consulting",
     href: "/ai-consulting",
-    hasDropdown: true,
-    dropdownItems: [
-      {
-        name: "AI Consulting",
-        items: [
-          { name: "AI and Data Strategy", href: "/ai-consulting" },
-          {
-            name: "Process Optimization with AI",
-            href: "/ai-consulting",
-          },
-          {
-            name: "AI Use Case Discovery & Identification",
-            href: "/ai-consulting",
-          },
-        ],
-      },
-      {
-        name: "AI Software Development",
-        items: [
-          { name: "AI Components Development", href: "#ai-components" },
-          { name: "AI Application Development", href: "#ai-application" },
-          { name: "Intelligent Systems Development", href: "#intelligent-systems" },
-        ],
-      },
-      {
-        name: "Generative AI",
-        items: [
-          { name: "Generative AI Development", href: "#generative-ai" },
-          { name: "AI Chatbot Development", href: "#chatbot" },
-          { name: "LLM Development and Consulting", href: "#llm-consulting" },
-        ],
-      },
-    ],
+    hasDropdown: false,
   },
   {
     id: 4,
