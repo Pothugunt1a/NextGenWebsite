@@ -471,7 +471,7 @@ export default function Validation() {
                       </div>
                     </div>
                     <div className="flex flex-col gap-4">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-4xl">
                         {validationServices.map((service) => (
                           <Button
                             key={service.id}
@@ -480,17 +480,17 @@ export default function Validation() {
                                 ? "default"
                                 : "outline"
                             }
-                            className={`text-left justify-start p-4 h-auto min-h-[80px] transition-all duration-300 ${
+                            className={`text-center justify-center p-3 h-auto min-h-[70px] transition-all duration-300 ${
                               selectedService.id === service.id
                                 ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
-                                : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40"
+                                : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
                             }`}
                             onClick={() => {
                               setSelectedService(service);
                             }}
                           >
-                            <div className="flex items-center justify-center h-full px-3">
-                              <span className="font-semibold text-sm leading-tight text-center break-words">
+                            <div className="flex items-center justify-center w-full h-full px-2">
+                              <span className="font-semibold text-sm sm:text-base leading-tight text-center whitespace-normal hyphens-auto">
                                 {service.title}
                               </span>
                             </div>
