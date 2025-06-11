@@ -39,6 +39,7 @@
 .nav-link {
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .nav-link::after {
@@ -55,6 +56,13 @@
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.nav-link:hover {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 :root {
