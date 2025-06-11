@@ -142,7 +142,7 @@ export default function Careers() {
                   Apply Now
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <div className="text-xl font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                <div className="text-xl font-semibold text-cyan-300 hover:text-cyan-200 transition-colors duration-300">
                   careers@rtnextgenai.com
                 </div>
               </motion.div>
@@ -166,7 +166,7 @@ export default function Careers() {
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mb-8"></div>
               <p
-                className="text-xl text-gray-300 mb-12"
+                className="text-xl text-gray-100 mb-12"
                 style={{ lineHeight: "1.75rem" }}
               >
                 At RT NextGen AI, we are dedicated to attracting, retaining, and
@@ -219,7 +219,7 @@ export default function Careers() {
                 Our Core Values
               </h2>
               <p
-                className="text-xl text-gray-300"
+                className="text-xl text-gray-100"
                 style={{ lineHeight: "1.75rem" }}
               >
                 We believe in creating an environment where innovation thrives
@@ -256,7 +256,7 @@ export default function Careers() {
                 whileHover={{ y: -10, scale: 1.05 }}
                 className="group"
               >
-                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                <div className="h-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-8 hover:border-blue-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 text-center">
                   <div className="flex justify-center mb-6">
                     <div
                       className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${value.color} group-hover:scale-110 transition-transform duration-300`}
@@ -267,7 +267,7 @@ export default function Careers() {
                   <h3 className="text-2xl font-bold mb-4 text-white transition-all">
                     {value.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-gray-100 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -316,7 +316,7 @@ export default function Careers() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 lg:mx-0 mx-auto mb-8"></div>
               <p
-                className="text-xl text-gray-300"
+                className="text-xl text-gray-100"
                 style={{ lineHeight: "1.75rem" }}
               >
                 RT NextGen AI is home to several specialized AI technology
@@ -350,7 +350,7 @@ export default function Careers() {
                   <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-blue-400 transition-all">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed text-lg">
+                  <p className="text-gray-100 leading-relaxed text-lg">
                     {benefit.description}
                   </p>
                 </div>
@@ -375,7 +375,7 @@ export default function Careers() {
             </h2>
             <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-8"></div>
             <p
-              className="text-xl text-gray-300 max-w-3xl mx-auto"
+              className="text-xl text-gray-100 max-w-3xl mx-auto"
               style={{ lineHeight: "1.75rem" }}
             >
               Join our dynamic team and shape the future of AI-driven validation
@@ -651,24 +651,24 @@ export default function Careers() {
             viewport={{ once: true }}
             className="text-center max-w-5xl mx-auto"
           >
-            <div className="relative bg-gradient-to-br from-slate-800/40 to-blue-900/40 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-12 mb-12 overflow-hidden">
+            <div className="relative bg-gradient-to-br from-slate-800/50 to-blue-900/50 backdrop-blur-2xl border border-cyan-500/30 rounded-3xl p-12 mb-12 overflow-hidden">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Professional application background"
-                  className="w-full h-full object-cover opacity-60 brightness-125"
+                  className="w-full h-full object-cover opacity-40 brightness-75"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 to-blue-900/60"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 to-blue-900/80"></div>
               </div>
 
               <div className="relative z-10">
                 <p className="text-2xl mb-8 text-gray-200">
                   Send your CV/Resume to:
                 </p>
-                <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-8">
+                <div className="text-3xl font-bold text-cyan-300 mb-8 drop-shadow-lg">
                   careers@rtnextgenai.com
                 </div>
-                <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">
+                <p className="text-lg text-gray-100 leading-relaxed max-w-3xl mx-auto mb-10">
                   Even if there's no immediate opening, we'll keep your resume
                   on file and reach out when an opportunity that matches your
                   skill set becomes available.
