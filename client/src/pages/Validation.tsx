@@ -485,7 +485,7 @@ export default function Validation() {
 
                     {/* Right Column - Service Selection */}
                     <div className="lg:col-span-1">
-                      <div className="flex flex-col gap-3">
+                      <div className="grid grid-cols-1 gap-4">
                         {validationServices.map((service) => (
                           <Button
                             key={service.id}
@@ -494,7 +494,7 @@ export default function Validation() {
                                 ? "default"
                                 : "outline"
                             }
-                            className={`text-left justify-start p-4 h-auto transition-all duration-300 ${
+                            className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
                               selectedService.id === service.id
                                 ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
                                 : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
@@ -503,7 +503,7 @@ export default function Validation() {
                               setSelectedService(service);
                             }}
                           >
-                            <span className="font-semibold text-sm leading-relaxed whitespace-normal">
+                            <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
                               {service.title}
                             </span>
                           </Button>
