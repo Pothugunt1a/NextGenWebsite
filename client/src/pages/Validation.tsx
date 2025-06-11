@@ -677,32 +677,23 @@ export default function Validation() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group relative"
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="group"
               >
-                <div className="relative text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col">
-                  {/* Background gradient on hover */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                  />
-
-                  <div className="relative z-10 flex flex-col h-full">
-                    {/* Icon */}
-                    <div className="flex justify-center mb-6">
-                      <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500">
-                        <div className="text-white">
-                          {item.icon}
-                        </div>
+                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                  <div className="flex justify-center mb-6">
+                    <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-white">
+                        {item.icon}
                       </div>
                     </div>
-
-                    <h3 className="text-xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-gray-300 group-hover:text-gray-200 leading-relaxed transition-colors duration-300 flex-grow">
-                      {item.description}
-                    </p>
                   </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
