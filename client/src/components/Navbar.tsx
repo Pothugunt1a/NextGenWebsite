@@ -139,7 +139,7 @@ export default function Navbar({
                         href={link.href}
                         className={`nav-link font-medium transition-colors px-2 py-2 text-sm inline-flex items-center ${
                           scrolled
-                            ? "text-black hover:text-primary"
+                            ? "text-white hover:text-cyan-400"
                             : isDarkBackground
                               ? "text-white hover:text-gray-200"
                               : "text-black hover:text-primary"
@@ -230,7 +230,7 @@ export default function Navbar({
                   ) : (
                     <a
                       href={link.href}
-                      className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${scrolled ? "text-black hover:text-primary" : isDarkBackground ? "text-white hover:text-gray-200" : "text-black hover:text-primary"}`}
+                      className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${scrolled ? "text-white hover:text-cyan-400" : isDarkBackground ? "text-white hover:text-gray-200" : "text-black hover:text-primary"}`}
                       onClick={(e) => {
                         e.preventDefault();
                         if (link.href === "#home") {
@@ -254,7 +254,7 @@ export default function Navbar({
                     href={link.href}
                     className={`nav-link font-medium transition-colors px-2 py-2 text-sm ${
                       scrolled
-                        ? "text-black hover:text-primary"
+                        ? "text-white hover:text-cyan-400"
                         : isDarkBackground
                           ? "text-white hover:text-gray-200"
                           : "text-black hover:text-primary"
@@ -281,7 +281,7 @@ export default function Navbar({
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
-              className={scrolled ? "text-gray-800" : "text-white"}
+              className={scrolled ? "text-white" : "text-white"}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
