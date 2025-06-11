@@ -97,8 +97,16 @@ export default function AboutPage() {
       </section>
 
       {/* Content Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             className="max-w-3xl mx-auto text-center mb-16"
             initial="hidden"
@@ -106,10 +114,11 @@ export default function AboutPage() {
             viewport={{ once: true, amount: 0.3 }}
             variants={variants}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-5xl font-bold mb-6 text-white">
               About RT NextGenAI
             </h2>
-            <p className="text-lg text-slate-600">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               At RT NextGen AI, we deliver a full spectrum of cutting-edge IT services 
               designed to power your success. From AI-driven solutions to digital 
               transformation strategies, we harness next-generation technologies to help 
@@ -133,7 +142,7 @@ export default function AboutPage() {
             </motion.div>
             <div>
               <motion.h3
-                className="text-2xl font-bold mb-4"
+                className="text-2xl font-bold mb-4 text-white"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -142,7 +151,7 @@ export default function AboutPage() {
                 Our Mission
               </motion.h3>
               <motion.p
-                className="text-slate-600 mb-6"
+                className="text-gray-300 mb-6"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -166,10 +175,10 @@ export default function AboutPage() {
                   >
                     <div className="flex-shrink-0 mt-1">{feature.icon}</div>
                     <div className="ml-4">
-                      <h4 className="text-xl font-semibold mb-2">
+                      <h4 className="text-xl font-semibold mb-2 text-white">
                         {feature.title}
                       </h4>
-                      <p className="text-slate-600">{feature.description}</p>
+                      <p className="text-gray-300">{feature.description}</p>
                     </div>
                   </motion.div>
                 ))}
