@@ -26,21 +26,33 @@ export default function AboutPage() {
   const features = [
     {
       id: 1,
-      icon: <Award className="text-xl bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent" />,
+      icon: (
+        <div className="p-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500">
+          <Award className="text-xl text-white" />
+        </div>
+      ),
       title: "Industry Expertise",
       description:
         "With over 15 years of combined experience in AI implementation across diverse industries.",
     },
     {
       id: 2,
-      icon: <Rocket className="text-xl bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent" />,
+      icon: (
+        <div className="p-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500">
+          <Rocket className="text-xl text-white" />
+        </div>
+      ),
       title: "Innovation Focus",
       description:
         "Constantly exploring emerging technologies to deliver cutting-edge solutions.",
     },
     {
       id: 3,
-      icon: <Handshake className="text-xl bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent" />,
+      icon: (
+        <div className="p-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500">
+          <Handshake className="text-xl text-white" />
+        </div>
+      ),
       title: "Client Partnership",
       description:
         "We work closely with your team to ensure solutions align with your business goals.",
