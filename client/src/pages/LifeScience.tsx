@@ -138,7 +138,7 @@ export default function LifeScience() {
                 transition={{ delay: 0.6, type: "spring" }}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                <CheckCircle className="h-5 w-5 text-cyan-400" />
+                <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
                 <span className="text-white font-medium">
                   Industry-Leading Life Science Solutions
                 </span>
