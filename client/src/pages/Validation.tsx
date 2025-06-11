@@ -448,15 +448,14 @@ export default function Validation() {
 
                 {/* Header Section */}
                 <div className="relative p-8 bg-white/5">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
-                    {/* Left side - Service details */}
-                    <div className="flex items-center gap-6 flex-1">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-6">
                       <div
                         className={`p-4 rounded-2xl bg-gradient-to-br ${selectedService.color} shadow-lg`}
                       >
                         {selectedService.icon}
                       </div>
-                      <div className="flex-1">
+                      <div>
                         <Badge
                           variant="secondary"
                           className="mb-3 bg-gray-800 text-white border-white/20"
@@ -466,24 +465,13 @@ export default function Validation() {
                         <h3 className="text-3xl font-bold text-white mb-2">
                           {selectedService.title}
                         </h3>
-                        <p className="text-gray-300 max-w-2xl mb-4">
+                        <p className="text-gray-300 max-w-2xl">
                           {selectedService.description}
                         </p>
-                        <Button
-                          className="bg-blue-600 hover:bg-blue-700"
-                          onClick={() => setShowDetails(!showDetails)}
-                        >
-                          {showDetails ? "Hide Details" : "Learn More"}
-                          <ArrowRight
-                            className={`ml-2 h-4 w-4 transition-transform ${showDetails ? "rotate-90" : ""}`}
-                          />
-                        </Button>
                       </div>
                     </div>
-                    
-                    {/* Right side - Service selection buttons */}
-                    <div className="flex flex-col gap-4 lg:max-w-md">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 w-full">
+                    <div className="flex flex-col gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-4xl">
                         {validationServices.map((service) => (
                           <Button
                             key={service.id}
@@ -509,6 +497,15 @@ export default function Validation() {
                           </Button>
                         ))}
                       </div>
+                      <Button
+                        className="bg-blue-600 hover:bg-blue-700 w-fit"
+                        onClick={() => setShowDetails(!showDetails)}
+                      >
+                        {showDetails ? "Hide Details" : "Learn More"}
+                        <ArrowRight
+                          className={`ml-2 h-4 w-4 transition-transform ${showDetails ? "rotate-90" : ""}`}
+                        />
+                      </Button>
                     </div>
                   </div>
                 </div>
