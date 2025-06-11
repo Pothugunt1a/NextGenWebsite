@@ -200,7 +200,7 @@ export const contactInfo = [
     id: 2,
     icon: "envelope",
     title: "Email",
-    detail: "hr@techexpertsus.com",
+    detail: "info@rtnextgenai.com",
   },
   {
     id: 3,
