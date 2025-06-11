@@ -177,71 +177,146 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          {/* Image-Rich Grid Layout */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
+          {/* Unique Spiral Layout */}
+          <div className="max-w-8xl mx-auto relative">
+            <div className="flex flex-col lg:flex-row gap-16 items-center">
+              
+              {/* Left Side - Primary Feature */}
+              <div className="lg:w-1/2">
                 <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.15, duration: 0.8 }}
-                  className="group cursor-pointer"
+                  transition={{ duration: 1, type: "spring" }}
+                  className="relative group"
                 >
-                  <div className="relative h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-900/80 hover:to-cyan-900/80 transition-all duration-500 group-hover:scale-[1.02] shadow-xl hover:shadow-blue-500/25">
-                    {/* Full Background Image */}
+                  {/* Main Feature Card */}
+                  <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="absolute inset-0">
                       <img
-                        src={service.backgroundImage}
-                        alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        src={services[0].backgroundImage}
+                        alt={services[0].title}
+                        className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 group-hover:from-blue-900/90 group-hover:via-blue-800/60 group-hover:to-cyan-800/30 transition-all duration-500"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-cyan-900/50"></div>
                     </div>
                     
-                    {/* Floating Number Badge */}
-                    <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
-                      {String(index + 1).padStart(2, '0')}
-                    </div>
-
-                    {/* Icon Badge */}
-                    <div className="absolute top-4 left-4 w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center z-20 group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-300">
-                      {index === 0 && <Stethoscope className="h-7 w-7 text-white" />}
-                      {index === 1 && <TrendingUp className="h-7 w-7 text-white" />}
-                      {index === 2 && <Beaker className="h-7 w-7 text-white" />}
-                      {index === 3 && <ScrollText className="h-7 w-7 text-white" />}
-                      {index === 4 && <Shield className="h-7 w-7 text-white" />}
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 flex flex-col gap-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Stethoscope className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        01
+                      </div>
                     </div>
                     
-                    {/* Content at Bottom */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                      <div className="mb-3">
-                        <div className="text-sm text-blue-300 font-medium uppercase tracking-wider mb-2">
-                          Solution {String(index + 1).padStart(2, '0')}
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-sm font-medium">Featured Solution</span>
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-blue-200 transition-colors duration-300">
-                          {service.title}
+                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                          {services[0].title}
                         </h3>
+                        <p className="text-blue-100 leading-relaxed mb-6">
+                          {services[0].description.substring(0, 150)}...
+                        </p>
                       </div>
                       
-                      <p className="text-gray-200 text-sm leading-relaxed mb-4 group-hover:text-blue-100 transition-colors duration-300">
-                        {service.description.substring(0, 120)}...
-                      </p>
-                      
-                      <div className="flex items-center justify-between">
-                        <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105 shadow-lg">
-                          Learn More
-                        </button>
-                        <ArrowRight className="h-5 w-5 text-blue-400 group-hover:text-blue-300 group-hover:translate-x-1 transition-all duration-300" />
-                      </div>
+                      <button className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg">
+                        Explore Solution
+                      </button>
                     </div>
-
-                    {/* Subtle Light Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-transparent to-cyan-500/0 group-hover:from-blue-500/10 group-hover:to-cyan-500/10 transition-all duration-500 rounded-2xl"></div>
                   </div>
                 </motion.div>
-              ))}
+              </div>
+
+              {/* Right Side - Stacked Mini Cards */}
+              <div className="lg:w-1/2 space-y-6">
+                {services.slice(1).map((service, index) => (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (index + 1) * 0.2, duration: 0.8 }}
+                    className="group cursor-pointer"
+                  >
+                    <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
+                      
+                      {/* Image Preview */}
+                      <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                        <img
+                          src={service.backgroundImage}
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/60 to-cyan-600/40"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          {index === 0 && <TrendingUp className="h-6 w-6 text-white" />}
+                          {index === 1 && <Beaker className="h-6 w-6 text-white" />}
+                          {index === 2 && <ScrollText className="h-6 w-6 text-white" />}
+                          {index === 3 && <Shield className="h-6 w-6 text-white" />}
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-grow">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                            {String(index + 2).padStart(2, '0')}
+                          </div>
+                          <div className="text-xs text-blue-400 font-medium uppercase tracking-wider">
+                            Solution
+                          </div>
+                        </div>
+                        
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                          {service.title}
+                        </h4>
+                        
+                        <p className="text-gray-400 text-sm leading-relaxed group-hover:text-blue-200 transition-colors duration-300">
+                          {service.description.substring(0, 80)}...
+                        </p>
+                      </div>
+                      
+                      {/* Arrow */}
+                      <div className="flex-shrink-0">
+                        <ArrowRight className="h-5 w-5 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-300" />
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+              {/* Flowing Lines */}
+              <svg className="w-full h-full opacity-10">
+                <defs>
+                  <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="50%" stopColor="#06B6D4" />
+                    <stop offset="100%" stopColor="#3B82F6" />
+                  </linearGradient>
+                </defs>
+                <path d="M0,200 Q300,100 600,200 T1200,200" stroke="url(#flowGradient)" strokeWidth="3" fill="none" strokeDasharray="10,5" opacity="0.6">
+                  <animate attributeName="stroke-dashoffset" values="0;15" dur="2s" repeatCount="indefinite" />
+                </path>
+                <path d="M0,400 Q400,300 800,400 T1600,400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" strokeDasharray="8,4" opacity="0.4">
+                  <animate attributeName="stroke-dashoffset" values="0;12" dur="3s" repeatCount="indefinite" />
+                </path>
+              </svg>
+              
+              {/* Floating Particles */}
+              <div className="absolute top-20 left-1/4 w-3 h-3 bg-blue-400 rounded-full opacity-60 animate-bounce"></div>
+              <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-cyan-400 rounded-full opacity-40 animate-pulse delay-1000"></div>
+              <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-blue-300 rounded-full opacity-30 animate-ping delay-500"></div>
+              <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-cyan-300 rounded-full opacity-50 animate-bounce delay-2000"></div>
             </div>
 
             {/* Connecting Lines */}
@@ -253,10 +328,10 @@ export default function LifeScience() {
                     <stop offset="100%" stopColor="#06B6D4" />
                   </linearGradient>
                 </defs>
-                {/* Subtle connecting curves */}
-                <path d="M100,200 Q400,150 700,250" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="8,8" opacity="0.3" />
-                <path d="M200,400 Q500,350 800,450" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="8,8" opacity="0.3" />
-                <path d="M150,300 Q450,250 750,350" stroke="url(#connectionGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" opacity="0.2" />
+                {/* Curved connecting lines */}
+                <path d="M400,200 Q600,150 800,250" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="8,8" opacity="0.4" />
+                <path d="M450,300 Q650,250 850,350" stroke="url(#connectionGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" opacity="0.3" />
+                <path d="M400,400 Q600,350 800,450" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="6,6" opacity="0.4" />
               </svg>
             </div>
           </div>
