@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
+import { useLocation } from "wouter";
 import {
   Mail,
   Users,
@@ -68,11 +69,10 @@ const benefits = [
 ];
 
 export default function Careers() {
-  const scrollToApplication = () => {
-    const element = document.getElementById("application-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const [, setLocation] = useLocation();
+  
+  const redirectToContact = () => {
+    setLocation("/contact");
   };
   return (
     <motion.div
@@ -429,7 +429,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -447,7 +447,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -465,7 +465,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -483,7 +483,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -501,7 +501,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -519,7 +519,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -537,7 +537,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -555,7 +555,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -573,7 +573,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -591,7 +591,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
@@ -609,7 +609,7 @@ export default function Careers() {
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                        onClick={scrollToApplication}
+                        onClick={redirectToContact}
                       >
                         Apply
                       </Button>
