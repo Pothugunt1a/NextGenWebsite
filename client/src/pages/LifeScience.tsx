@@ -206,7 +206,7 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -216,39 +216,42 @@ export default function LifeScience() {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="group"
               >
-                <div className="relative h-48 rounded-2xl overflow-hidden bg-gradient-to-r from-slate-800/90 to-slate-700/90 backdrop-blur-sm border border-slate-600/30 hover:border-blue-400/50 transition-all duration-300 group-hover:scale-[1.01]">
+                <div className="relative h-80 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-900/90 to-cyan-900/90 backdrop-blur-sm border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 group-hover:scale-[1.02]">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <img
                       src={service.backgroundImage}
                       alt={service.title}
-                      className="w-full h-full object-cover opacity-40"
+                      className="w-full h-full object-cover opacity-30"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-800/70 to-slate-700/60"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-cyan-900/80"></div>
                   </div>
                   
                   {/* Content */}
-                  <div className="relative z-10 p-6 h-full flex items-center justify-between">
-                    {/* Left side - Text content */}
-                    <div className="flex-1 pr-6">
-                      <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                        {service.title}
-                      </h3>
-                      <p className="text-slate-300 text-sm leading-relaxed">
-                        {service.description}
-                      </p>
+                  <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                    {/* Icon in hexagon */}
+                    <div className="absolute top-6 right-6">
+                      <div className="w-16 h-16 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl flex items-center justify-center transform rotate-45">
+                        <div className="transform -rotate-45">
+                          {service.icon}
+                        </div>
+                      </div>
                     </div>
                     
-                    {/* Right side - Icon */}
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        {service.icon}
-                      </div>
+                    {/* Title and Description */}
+                    <div className="mt-16">
+                      <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                        {service.title}
+                      </h3>
+                      <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 mb-4"></div>
+                      <p className="text-blue-100/90 text-base leading-relaxed">
+                        {service.description}
+                      </p>
                     </div>
                   </div>
                   
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </motion.div>
             ))}
