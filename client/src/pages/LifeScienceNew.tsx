@@ -150,9 +150,17 @@ export default function LifeScience() {
         </div>
       </section>
 
-      {/* Services Section - Timeline Style */}
-      <div className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Services Section - Hexagon Grid */}
+      <div className="py-20 bg-gray-900 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -169,80 +177,155 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          {/* Timeline Layout */}
-          <div className="relative max-w-6xl mx-auto">
-            {/* Central Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full"></div>
-            
-            <div className="space-y-16">
-              {services.map((service, index) => {
-                const isLeft = index % 2 === 0;
-                return (
+          {/* Hexagon Honeycomb Layout */}
+          <div className="relative max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              {/* Left Column - Services 1 & 2 */}
+              <div className="lg:col-span-4 space-y-8">
+                {services.slice(0, 2).map((service, index) => (
                   <motion.div
                     key={service.title}
-                    initial={{ opacity: 0, x: isLeft ? -100 : 100 }}
+                    initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2, duration: 0.8 }}
-                    className={`flex items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'} gap-8`}
+                    className="group"
                   >
-                    {/* Content Side */}
-                    <div className="w-5/12">
-                      <div className={`p-8 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 ${!isLeft ? 'text-right' : ''}`}>
-                        <div className={`flex items-center gap-4 mb-6 ${!isLeft ? 'justify-end' : ''}`}>
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center text-blue-400">
-                            {index === 0 && <Stethoscope className="h-6 w-6" />}
-                            {index === 1 && <TrendingUp className="h-6 w-6" />}
-                            {index === 2 && <Beaker className="h-6 w-6" />}
-                            {index === 3 && <ScrollText className="h-6 w-6" />}
-                            {index === 4 && <Shield className="h-6 w-6" />}
-                          </div>
-                          <div className="text-sm text-blue-400 font-medium">
-                            Solution {String(index + 1).padStart(2, '0')}
-                          </div>
+                    <div className="relative p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/20">
+                      {/* Floating Number */}
+                      <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+                      
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-14 h-14 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                          {index === 0 && <Stethoscope className="h-7 w-7" />}
+                          {index === 1 && <TrendingUp className="h-7 w-7" />}
                         </div>
-                        
-                        <h3 className="text-2xl font-bold text-white mb-4">
-                          {service.title}
-                        </h3>
-                        
-                        <p className="text-gray-300 leading-relaxed mb-6">
-                          {service.description}
-                        </p>
-                        
-                        <div className={`flex items-center gap-4 ${!isLeft ? 'justify-end' : ''}`}>
-                          <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105">
-                            Learn More
-                          </button>
-                          <ArrowRight className="h-5 w-5 text-blue-400" />
+                        <div>
+                          <div className="text-sm text-blue-400 font-medium uppercase tracking-wider">
+                            Solution
+                          </div>
+                          <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                            {service.title}
+                          </h3>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Timeline Point */}
-                    <div className="relative">
-                      <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full border-4 border-gray-900 z-10 relative"></div>
-                    </div>
-
-                    {/* Image Side */}
-                    <div className="w-5/12">
-                      <div className="relative h-64 rounded-2xl overflow-hidden shadow-2xl group">
-                        <img
-                          src={service.backgroundImage}
-                          alt={service.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 to-cyan-900/40 group-hover:from-blue-800/70 group-hover:to-cyan-800/50 transition-all duration-500"></div>
-                        
-                        {/* Service Number Overlay */}
-                        <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
-                          {String(index + 1).padStart(2, '0')}
-                        </div>
-                      </div>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4 group-hover:text-blue-100 transition-colors duration-300">
+                        {service.description.substring(0, 120)}...
+                      </p>
+                      
+                      <button className="px-4 py-2 bg-gradient-to-r from-blue-600/80 to-cyan-600/80 text-white text-sm font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105">
+                        Explore
+                      </button>
                     </div>
                   </motion.div>
-                );
-              })}
+                ))}
+              </div>
+
+              {/* Center Column - Main Hexagon */}
+              <div className="lg:col-span-4 flex justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 1, type: "spring" }}
+                  className="relative group"
+                >
+                  {/* Main Hexagon Container */}
+                  <div className="relative w-80 h-80 mx-auto">
+                    {/* Hexagon Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-600 transform rotate-45 rounded-3xl shadow-2xl group-hover:shadow-blue-500/40 transition-all duration-500">
+                      <div className="absolute inset-2 bg-gray-900 rounded-3xl"></div>
+                    </div>
+                    
+                    {/* Central Content */}
+                    <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
+                      <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <Beaker className="h-10 w-10 text-white" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-200 transition-colors duration-300">
+                        {services[2].title}
+                      </h3>
+                      
+                      <p className="text-blue-100 text-sm leading-relaxed mb-6">
+                        Advanced pharmaceutical safety surveillance with AI-powered monitoring
+                      </p>
+                      
+                      <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg">
+                        Learn More
+                      </button>
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-400 rounded-full animate-pulse"></div>
+                    <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-cyan-400 rounded-full animate-pulse delay-1000"></div>
+                    <div className="absolute top-1/2 -right-8 w-4 h-4 bg-blue-300 rounded-full animate-pulse delay-500"></div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column - Services 4 & 5 */}
+              <div className="lg:col-span-4 space-y-8">
+                {services.slice(3, 5).map((service, index) => (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (index + 2) * 0.2, duration: 0.8 }}
+                    className="group"
+                  >
+                    <div className="relative p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/20">
+                      {/* Floating Number */}
+                      <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        {String(index + 4).padStart(2, '0')}
+                      </div>
+                      
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-14 h-14 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                          {index === 0 && <ScrollText className="h-7 w-7" />}
+                          {index === 1 && <Shield className="h-7 w-7" />}
+                        </div>
+                        <div>
+                          <div className="text-sm text-blue-400 font-medium uppercase tracking-wider">
+                            Solution
+                          </div>
+                          <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                            {service.title}
+                          </h3>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4 group-hover:text-blue-100 transition-colors duration-300">
+                        {service.description.substring(0, 120)}...
+                      </p>
+                      
+                      <button className="px-4 py-2 bg-gradient-to-r from-blue-600/80 to-cyan-600/80 text-white text-sm font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105">
+                        Explore
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Connecting Lines */}
+            <div className="absolute inset-0 pointer-events-none">
+              <svg className="w-full h-full opacity-20">
+                <defs>
+                  <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="100%" stopColor="#06B6D4" />
+                  </linearGradient>
+                </defs>
+                {/* Connecting lines between elements */}
+                <path d="M200,150 Q400,100 600,150" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="5,5" />
+                <path d="M200,350 Q400,400 600,350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="5,5" />
+              </svg>
             </div>
           </div>
         </div>
