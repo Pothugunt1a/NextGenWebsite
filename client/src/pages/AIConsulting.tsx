@@ -421,14 +421,14 @@ export default function AIConsulting() {
                 </div>
               ))}
             </div>
-            </div>
           </div>
           </div>
         </section>
 
         {/* How We Work */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">How we work</h2>
             </div>
@@ -462,12 +462,14 @@ export default function AIConsulting() {
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </section>
 
         {/* Industries Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
                 How we implement artificial intelligence across multiple industries
@@ -488,12 +490,14 @@ export default function AIConsulting() {
                 </div>
               ))}
             </div>
+            </div>
           </div>
         </section>
 
         {/* Technology Stack */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
                 Our main AI technology stack and expertise
@@ -509,12 +513,14 @@ export default function AIConsulting() {
                 </div>
               ))}
             </div>
+            </div>
           </div>
         </section>
 
         {/* FAQs Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">FAQs</h2>
               <p className="text-xl text-gray-300">
@@ -548,21 +554,24 @@ export default function AIConsulting() {
                 </div>
               ))}
             </div>
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to transform your business with AI?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how our AI consulting services can accelerate your digital transformation
-            </p>
-            <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105">
-              Start Your AI Journey
-            </button>
+        <section className="py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Ready to transform your business with AI?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Let's discuss how our AI consulting services can accelerate your digital transformation
+              </p>
+              <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105">
+                Start Your AI Journey
+              </button>
+            </div>
           </div>
         </section>
       </motion.div>
