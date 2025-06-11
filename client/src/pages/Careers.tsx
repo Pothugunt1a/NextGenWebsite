@@ -164,7 +164,7 @@ export default function Careers() {
               <h2 className="text-5xl font-bold mb-8 text-white">
                 Your Potential Meets Possibility
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mb-8"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mb-8"></div>
               <p
                 className="text-xl text-gray-300 mb-12"
                 style={{ lineHeight: "1.75rem" }}
@@ -373,7 +373,7 @@ export default function Careers() {
             <h2 className="text-5xl font-bold mb-6 text-white">
               Current Openings
             </h2>
-            <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-8"></div>
+            <div className="w-40 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p
               className="text-xl text-gray-300 max-w-3xl mx-auto"
               style={{ lineHeight: "1.75rem" }}
@@ -640,7 +640,7 @@ export default function Careers() {
                 Ready to Join Our Team?
               </h2>
 
-              <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-12"></div>
+              <div className="w-40 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-12"></div>
             </motion.div>
           </div>
 

@@ -410,6 +410,7 @@ export default function Validation() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our Validation Solutions
             </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive validation services tailored to meet regulatory
               requirements and industry standards
@@ -655,6 +656,7 @@ export default function Validation() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Why Choose RT NextGenAI
             </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Partner with industry leaders in validation services
             </p>
