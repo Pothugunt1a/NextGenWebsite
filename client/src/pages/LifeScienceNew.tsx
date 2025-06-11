@@ -154,7 +154,7 @@ export default function LifeScience() {
       </section>
 
       {/* Services Section - Image-Driven Layout */}
-      <div className="py-20 bg-gray-900 relative overflow-hidden">
+      <div className="py-20 bg-light relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
@@ -200,6 +200,7 @@ export default function LifeScience() {
                         src="/assets/Life-science-solution.jpg"
                         alt="Life Science Innovation"
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                        style={{ backgroundAttachment: 'fixed' }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                     </div>
@@ -260,6 +261,7 @@ export default function LifeScience() {
                           src={service.backgroundImage}
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          style={{ backgroundAttachment: 'fixed' }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
