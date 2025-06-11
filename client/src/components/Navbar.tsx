@@ -178,15 +178,15 @@ export default function Navbar({
 
                       {activeDropdown === link.id && (
                         <div className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
-                          <div className="container mx-auto relative flex max-w-none min-h-[400px]">
-                            {/* AI Image on the right with gradient overlay */}
+                          <div className="container mx-auto relative flex max-w-none min-h-[280px]">
+                            {/* Dynamic Image on the right with gradient overlay */}
                             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
                               <div className="relative">
                                 <img
-                                  src="/assets/AI-dropdown.png"
-                                  alt="AI Technology"
+                                  src={link.name === "IT Services" ? "/assets/IT-Services-dropdown.png" : "/assets/AI-dropdown.png"}
+                                  alt={link.name === "IT Services" ? "IT Services Technology" : "AI Technology"}
                                   className="object-contain opacity-90"
-                                style={{ width: '30rem', height: '20rem' }}
+                                  style={{ width: '30rem', height: '20rem' }}
                                 />
                                 {/* Gradient overlay on the image */}
                                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/60"></div>
@@ -194,8 +194,8 @@ export default function Navbar({
                             </div>
 
                             {/* Content area with interactive hierarchical design */}
-                            <div className="relative z-10 flex-1 p-8 max-w-2xl">
-                              <div className="space-y-6">
+                            <div className="relative z-10 flex-1 p-6 max-w-2xl">
+                              <div className="space-y-4">
                                 {link.dropdownItems?.map((category, idx) => {
                                   const getCategoryIcon = (name: string) => {
                                     switch (name) {
