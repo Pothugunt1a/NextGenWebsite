@@ -293,7 +293,7 @@ export default function LifeScience() {
                         </h4>
 
                         <p className="text-gray-400 text-sm leading-relaxed">
-                          {service.description.substring(0, 80)}...
+                          {service.description}
                         </p>
                       </div>
 
