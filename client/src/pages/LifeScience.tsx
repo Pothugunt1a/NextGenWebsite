@@ -21,39 +21,34 @@ import {
 
 const services = [
   {
-    icon: <Stethoscope className="h-8 w-8" />,
-    title: "Clinical Operations",
-    description:
-      "Develop solutions that increase efficiencies, productivity, and quality in your clinical trial from study start-up through completion.",
-    features: ["Study Start-up", "Patient Recruitment", "Site Operations", "Project Delivery"]
+    icon: <Stethoscope className="h-8 w-8 text-white" />,
+    title: "Clinical Operations Solutions",
+    description: "Making smarter decisions with real-time clinical data and analytics.",
+    backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
   {
-    icon: <FlaskConical className="h-8 w-8" />,
-    title: "Biometrics",
-    description:
-      "Leverage our life science knowledge for guidance on biometric solutions, including clinical data management and SAS programming.",
-    features: ["Clinical Data Management", "SAS Programming", "Data Quality", "Trial Solutions"]
+    icon: <FlaskConical className="h-8 w-8 text-white" />,
+    title: "Laboratory Intelligence",
+    description: "Advanced analytics and AI-driven insights for laboratory operations and research.",
+    backgroundImage: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
   {
-    icon: <Beaker className="h-8 w-8" />,
-    title: "Pharmacovigilance / Drug Safety",
-    description:
-      "Partner with us for consultation that streamlines your end-to-end drug safety surveillance activities for investigational and post-market products.",
-    features: ["Safety Surveillance", "Risk Assessment", "Compliance", "Post-Market Monitoring"]
+    icon: <Beaker className="h-8 w-8 text-white" />,
+    title: "Drug Safety Intelligence",
+    description: "Real-time monitoring and predictive analytics for pharmacovigilance operations.",
+    backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
   {
-    icon: <ScrollText className="h-8 w-8" />,
-    title: "Regulatory Affairs",
-    description:
-      "Engage our consultative approach to quickly identify solutions that reduce costs, accelerate approval timelines and improve your processes.",
-    features: ["FDA Approval", "Regulatory Strategy", "Submission Management", "Compliance"]
+    icon: <ScrollText className="h-8 w-8 text-white" />,
+    title: "Regulatory Intelligence",
+    description: "Intelligent regulatory solutions with automated compliance monitoring.",
+    backgroundImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
   {
-    icon: <Shield className="h-8 w-8" />,
-    title: "Quality and Compliance",
-    description:
-      "Create a long-term plan that ensures the production of quality products while meeting compliance requirements.",
-    features: ["Quality Assurance", "Regulatory Compliance", "Process Improvement", "Risk Management"]
+    icon: <Shield className="h-8 w-8 text-white" />,
+    title: "Quality Intelligence",
+    description: "Smart quality assurance with predictive analytics and risk assessment.",
+    backgroundImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
 ];
 
@@ -211,7 +206,7 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -221,29 +216,43 @@ export default function LifeScience() {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="group"
               >
-                <Card className="h-full bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        {service.icon}
+                <div className="relative h-80 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-900/90 to-cyan-900/90 backdrop-blur-sm border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 group-hover:scale-[1.02]">
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <img
+                      src={service.backgroundImage}
+                      alt={service.title}
+                      className="w-full h-full object-cover opacity-30"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-cyan-900/80"></div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                    {/* Icon in hexagon */}
+                    <div className="absolute top-6 right-6">
+                      <div className="w-16 h-16 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl flex items-center justify-center transform rotate-45">
+                        <div className="transform -rotate-45">
+                          {service.icon}
+                        </div>
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-3">
-                          <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
-                          <span className="text-sm text-gray-400">{feature}</span>
-                        </div>
-                      ))}
+                    
+                    {/* Title and Description */}
+                    <div className="mt-16">
+                      <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                        {service.title}
+                      </h3>
+                      <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 mb-4"></div>
+                      <p className="text-blue-100/90 text-base leading-relaxed">
+                        {service.description}
+                      </p>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                  
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </motion.div>
             ))}
           </div>
