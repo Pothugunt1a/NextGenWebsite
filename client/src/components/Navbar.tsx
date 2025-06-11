@@ -161,7 +161,8 @@ export default function Navbar({
                                 <img
                                   src="/assets/AI-dropdown.png"
                                   alt="AI Technology"
-                                  className="w-72 h-72 object-contain opacity-90"
+                                  className="object-contain opacity-90"
+                                style={{ width: '30rem', height: '20rem' }}
                                 />
                                 {/* Gradient overlay on the image */}
                                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/60"></div>
