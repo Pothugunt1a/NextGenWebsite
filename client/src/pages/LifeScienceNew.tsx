@@ -296,11 +296,6 @@ export default function LifeScience() {
                           {service.description}
                         </p>
                       </div>
-
-                      {/* Arrow */}
-                      <div className="flex-shrink-0">
-                        <ArrowRight className="h-5 w-5 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-300" />
-                      </div>
                     </div>
                   </motion.div>
                 ))}
