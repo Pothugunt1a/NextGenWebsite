@@ -165,8 +165,8 @@ export const navLinks = [
         name: "AI Software Development",
         items: [
           { name: "AI Components Development", href: "#ai-components" },
-          { name: "AI Academy - R&D for AI", href: "#ai-academy" },
-          { name: "SOTA Research/Patents", href: "#sota-research" },
+          { name: "AI Application Development", href: "#ai-application" },
+          { name: "Intelligent Systems Development", href: "#intelligent-systems" },
         ],
       },
       {
