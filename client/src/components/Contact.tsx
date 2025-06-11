@@ -217,11 +217,11 @@ export default function Contact() {
                       name="company"
                       render={({ field }) => (
                         <FormItem className="mb-6">
-                          <FormLabel className="text-dark font-medium">Company</FormLabel>
+                          <FormLabel className="text-white font-medium">Company</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="Your Company Name"
-                              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                              className="px-4 py-3 bg-gray-700/50 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
                               {...field}
                             />
                           </FormControl>
@@ -235,12 +235,12 @@ export default function Contact() {
                       name="message"
                       render={({ field }) => (
                         <FormItem className="mb-6">
-                          <FormLabel className="text-dark font-medium">Message</FormLabel>
+                          <FormLabel className="text-white font-medium">Message</FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder="Tell us about your project and requirements"
                               rows={4}
-                              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                              className="px-4 py-3 bg-gray-700/50 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
                               {...field}
                             />
                           </FormControl>
@@ -251,7 +251,7 @@ export default function Contact() {
                     
                     <Button 
                       type="submit"
-                      className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                      className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
