@@ -55,9 +55,18 @@ export default function AboutPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+      <section className="relative py-16 md:py-24 bg-white">
+        {/* Banner Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src="/assets/ai-brain-banner.png"
+            alt="AI Brain Banner"
+            className="w-full h-full object-cover opacity-20 brightness-125"
+          />
+        </div>
+        <div className="relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
             className="max-w-3xl mx-auto text-center mb-16"
             initial="hidden"
             whileInView="visible"
@@ -133,6 +142,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
