@@ -15,6 +15,8 @@ import {
   Users,
   Clock,
   Award,
+  Star,
+  Sparkles,
 } from "lucide-react";
 
 const services = [
@@ -89,70 +91,105 @@ export default function LifeScience() {
       className="min-h-screen bg-gray-900"
     >
       {/* Hero Section */}
-      <div className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background for life science page */}
         <div className="absolute inset-0">
           <img
             src="/assets/Lifescience_banner.jpg"
-            alt="Life Science Digital Solutions"
-            className="w-full h-full object-cover object-center"
+            alt="Life Science Solutions"
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 
-        <div className="relative flex items-center h-full">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-5xl"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
             >
-              <motion.h1
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-                style={{ fontWeight: 700 }}
-              >
-                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Life Science
-                </span>
-                <br />
-                <span className="text-white">SOLUTIONS</span>
-              </motion.h1>
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Life Science Excellence
+              </span>
+            </motion.h1>
 
-              <motion.p
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-                className="text-xl md:text-2xl text-white mb-8 leading-relaxed max-w-3xl"
-              >
-                Advancing healthcare through innovative technology solutions for
-                pharmaceutical, biotech, and healthcare organizations
-              </motion.p>
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+            >
+              Advancing healthcare through innovative technology solutions for
+              pharmaceutical, biotech, and healthcare organizations
+            </motion.p>
 
+            {/* Badge below description */}
+            <div className="mb-32">
               <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-6 justify-start items-center"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                <Button
-                  size="lg"
-                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-10 py-6 text-lg font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0"
-                  onClick={() => setLocation("/contact")}
-                >
-                  Get Started
-                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <div className="text-xl font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  info@rtnextgenai.com
-                </div>
+                <CheckCircle className="h-5 w-5 text-cyan-400" />
+                <span className="text-white font-medium">
+                  Industry-Leading Life Science Solutions
+                </span>
+                <Award className="h-4 w-4 text-blue-400 fill-current" />
               </motion.div>
-            </motion.div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Enhanced Stats Section */}
+        <div className="absolute bottom-8 left-0 right-0">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-center md:justify-start">
+              <motion.div
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl w-full"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+              >
+                {benefits.map((benefit, index) => (
+                  <motion.div
+                    key={benefit.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
+                    className="group relative"
+                  >
+                    <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                      <div className="relative z-10">
+                        <div className="flex justify-center mb-3 md:mb-4">
+                          <div className="inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
+                            <div className="text-white">{benefit.icon}</div>
+                          </div>
+                        </div>
+                        <div className="text-lg md:text-xl font-bold mb-1 md:mb-2 text-white">
+                          {benefit.title}
+                        </div>
+                        <div className="text-xs text-gray-300">
+                          {benefit.description}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Services Section */}
       <div className="py-20 bg-gray-900">
