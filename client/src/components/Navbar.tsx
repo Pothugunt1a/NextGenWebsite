@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, Brain, Code, Sparkles, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, Brain, Code, Sparkles, ArrowRight, Cloud, Database, BarChart3, Shield, Smartphone, Globe, Settings, Package, GitBranch } from "lucide-react";
 import { navLinks } from "../lib/constants";
 import { Button } from "./ui/button";
 import { useLocation } from "wouter";
@@ -131,7 +131,7 @@ export default function Navbar({
 
           <nav className="hidden lg:flex items-center" ref={dropdownRef}>
             <div className="flex items-center flex-wrap justify-end">
-              {navLinks.slice(0, 3).map((link) => (
+              {navLinks.map((link) => (
                 <div key={link.id} className="relative group mx-1">
                   {link.hasDropdown ? (
                     <div className="relative">
@@ -181,6 +181,26 @@ export default function Navbar({
                                         return <Code className="h-6 w-6 text-blue-400" />;
                                       case "Generative AI":
                                         return <Sparkles className="h-6 w-6 text-purple-400" />;
+                                      case "Cloud Services":
+                                        return <Cloud className="h-6 w-6 text-cyan-400" />;
+                                      case "Data Science":
+                                        return <BarChart3 className="h-6 w-6 text-blue-400" />;
+                                      case "Database":
+                                        return <Database className="h-6 w-6 text-green-400" />;
+                                      case "BI and Big Data":
+                                        return <BarChart3 className="h-6 w-6 text-purple-400" />;
+                                      case "Networking and Cyber Security":
+                                        return <Shield className="h-6 w-6 text-red-400" />;
+                                      case "Mobile Development":
+                                        return <Smartphone className="h-6 w-6 text-pink-400" />;
+                                      case "Web Development":
+                                        return <Globe className="h-6 w-6 text-indigo-400" />;
+                                      case "Systems Integration":
+                                        return <Settings className="h-6 w-6 text-orange-400" />;
+                                      case "ERP":
+                                        return <Package className="h-6 w-6 text-yellow-400" />;
+                                      case "DevOps":
+                                        return <GitBranch className="h-6 w-6 text-teal-400" />;
                                       default:
                                         return <Brain className="h-6 w-6 text-cyan-400" />;
                                     }

@@ -183,7 +183,8 @@ export const navLinks = [
     id: 4,
     name: "IT Services",
     href: "#it-services",
-    dropdown: [
+    hasDropdown: true,
+    dropdownItems: [
       {
         name: "Cloud Services",
         items: [
