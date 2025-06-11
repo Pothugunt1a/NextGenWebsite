@@ -620,28 +620,7 @@ export default function Careers() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <p className="text-gray-300 text-lg mb-6">
-              Don't see the perfect role? We're always looking for talented
-              individuals.
-            </p>
-            <Button
-              variant="outline"
-              className="bg-transparent border-white/30 text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300"
-              onClick={() =>
-                (window.location.href = "mailto:careers@rtnextgenai.com")
-              }
-            >
-              Send Us Your Resume
-              <Mail className="ml-2 h-4 w-4" />
-            </Button>
-          </motion.div>
+
         </div>
       </section>
 
