@@ -202,7 +202,6 @@ export default function LifeScience() {
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: 'fixed' }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                     </div>
 
                     {/* Floating Elements */}
