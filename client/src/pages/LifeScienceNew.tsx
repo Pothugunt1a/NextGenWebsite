@@ -287,7 +287,7 @@ export default function LifeScience() {
                             {String(index + 1).padStart(2, "0")}
                           </div>
                           <div className="text-xs text-blue-400 font-medium uppercase tracking-wider">
-                            Solution
+                            Service
                           </div>
                         </div>
 
