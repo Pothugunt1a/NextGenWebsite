@@ -243,7 +243,15 @@ export default function Navbar({
                                       {/* Clickable Category Header */}
                                       <div 
                                         className="relative cursor-pointer select-none"
-                                        onClick={(e) => toggleDesktopSubmenu(category.name, e)}
+                                        onClick={(e) => {
+                                          if (category.name === "AI Consulting") {
+                                            e.preventDefault();
+                                            setLocation("/ai-consulting");
+                                            handleLinkClick();
+                                          } else {
+                                            toggleDesktopSubmenu(category.name, e);
+                                          }
+                                        }}
                                       >
                                         <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
                                           <div className="flex items-center gap-4">
