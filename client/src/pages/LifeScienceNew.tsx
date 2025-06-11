@@ -234,10 +234,6 @@ export default function LifeScience() {
                           processes.
                         </p>
                       </div>
-
-                      <button className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg">
-                        Explore All Solutions
-                      </button>
                     </div>
                   </div>
                 </motion.div>
