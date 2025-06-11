@@ -131,7 +131,7 @@ export default function Careers() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-6 justify-start items-start"
+                className="flex flex-col sm:flex-row gap-6 justify-start items-center"
               >
                 <Button
                   size="lg"
@@ -144,7 +144,7 @@ export default function Careers() {
                   Apply Now
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <div className="text-sm text-white">
+                <div className="text-xl font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   careers@rtnextgenai.com
                 </div>
               </motion.div>
