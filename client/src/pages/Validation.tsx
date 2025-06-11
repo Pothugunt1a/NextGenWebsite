@@ -688,8 +688,10 @@ export default function Validation() {
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Icon */}
                     <div className="flex justify-center mb-6">
-                      <div style={{ color: "hsl(var(--primary))" }}>
-                        {item.icon}
+                      <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500">
+                        <div className="text-white">
+                          {item.icon}
+                        </div>
                       </div>
                     </div>
 
