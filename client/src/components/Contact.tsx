@@ -23,7 +23,6 @@ import { CheckCircle } from "lucide-react";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters long" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
-  company: z.string().optional(),
   message: z.string().min(10, { message: "Message must be at least 10 characters long" }),
 });
 
@@ -32,6 +31,7 @@ type FormValues = z.infer<typeof formSchema>;
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [attachedFile, setAttachedFile] = useState<File | null>(null);
   const { toast } = useToast();
 
   // Form hook
@@ -40,7 +40,6 @@ export default function Contact() {
     defaultValues: {
       name: "",
       email: "",
-      company: "",
       message: "",
     },
   });
@@ -212,23 +211,20 @@ export default function Contact() {
                       )}
                     />
                     
-                    <FormField
-                      control={form.control}
-                      name="company"
-                      render={({ field }) => (
-                        <FormItem className="mb-6">
-                          <FormLabel className="text-white font-medium">Company</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="Your Company Name"
-                              className="px-4 py-3 bg-gray-700/50 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
+                    <div className="mb-6">
+                      <label className="text-white font-medium mb-2 block">Attachment (PDF/Word)</label>
+                      <Input
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        className="px-4 py-3 bg-gray-700/50 border border-gray-600 text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
+                        onChange={(e) => setAttachedFile(e.target.files?.[0] || null)}
+                      />
+                      {attachedFile && (
+                        <p className="text-sm text-gray-300 mt-2">
+                          Selected: {attachedFile.name} ({Math.round(attachedFile.size / 1024)} KB)
+                        </p>
                       )}
-                    />
+                    </div>
                     
                     <FormField
                       control={form.control}

@@ -21,7 +21,8 @@ export const contactFormSubmissions = pgTable("contact_form_submissions", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
   email: text("email").notNull(),
-  company: text("company"),
+  attachmentName: text("attachment_name"),
+  attachmentSize: integer("attachment_size"),
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
@@ -29,7 +30,8 @@ export const contactFormSubmissions = pgTable("contact_form_submissions", {
 export const contactFormSchema = createInsertSchema(contactFormSubmissions).pick({
   name: true,
   email: true,
-  company: true,
+  attachmentName: true,
+  attachmentSize: true,
   message: true,
 });
 
