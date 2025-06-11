@@ -272,7 +272,38 @@ export const navLinks = [
   { id: 6, name: "IT Consulting", href: "#it-consulting" },
   { id: 7, name: "Life Science", href: "/life-science" },
   { id: 8, name: "Validation", href: "/validation" },
-  { id: 9, name: "Projects", href: "#projects" },
+  {
+    id: 9,
+    name: "Projects",
+    href: "#projects",
+    hasDropdown: true,
+    dropdownItems: [
+      {
+        name: "Events",
+        items: [
+          { name: "Upcoming Events", href: "#upcoming-events" },
+          { name: "Past Events", href: "#past-events" },
+          { name: "Event Registration", href: "#event-registration" },
+        ],
+      },
+      {
+        name: "Videos",
+        items: [
+          { name: "Product Demos", href: "#product-demos" },
+          { name: "Case Study Videos", href: "#case-study-videos" },
+          { name: "Webinar Recordings", href: "#webinar-recordings" },
+        ],
+      },
+      {
+        name: "Blog",
+        items: [
+          { name: "Latest Articles", href: "#latest-articles" },
+          { name: "Technical Insights", href: "#technical-insights" },
+          { name: "Industry News", href: "#industry-news" },
+        ],
+      },
+    ],
+  },
 ];
 
 // Contact info

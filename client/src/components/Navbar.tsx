@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, Brain, Code, Sparkles, ArrowRight, Cloud, Database, BarChart3, Shield, Smartphone, Globe, Settings, Package, GitBranch } from "lucide-react";
+import { Menu, X, ChevronDown, Brain, Code, Sparkles, ArrowRight, Cloud, Database, BarChart3, Shield, Smartphone, Globe, Settings, Package, GitBranch, Calendar, Video, FileText } from "lucide-react";
 import { navLinks } from "../lib/constants";
 import { Button } from "./ui/button";
 import { useLocation } from "wouter";
@@ -201,6 +201,12 @@ export default function Navbar({
                                         return <Package className="h-6 w-6 text-yellow-400" />;
                                       case "DevOps":
                                         return <GitBranch className="h-6 w-6 text-teal-400" />;
+                                      case "Events":
+                                        return <Calendar className="h-6 w-6 text-green-400" />;
+                                      case "Videos":
+                                        return <Video className="h-6 w-6 text-red-400" />;
+                                      case "Blog":
+                                        return <FileText className="h-6 w-6 text-blue-400" />;
                                       default:
                                         return <Brain className="h-6 w-6 text-cyan-400" />;
                                     }
