@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -198,7 +199,7 @@ export default function LifeScience() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Our Services
+              OUR SOLUTIONS
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -206,7 +207,7 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -214,44 +215,56 @@ export default function LifeScience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="group"
+                className="group cursor-pointer"
               >
-                <div className="relative h-80 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-900/90 to-cyan-900/90 backdrop-blur-sm border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 group-hover:scale-[1.02]">
+                <div className="relative h-72 rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 hover:from-blue-900 hover:to-cyan-900 transition-all duration-500 group-hover:scale-[1.02] shadow-xl">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <img
                       src={service.backgroundImage}
                       alt={service.title}
-                      className="w-full h-full object-cover opacity-30"
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-90 transition-opacity duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-cyan-900/80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
                   
-                  {/* Content */}
-                  <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                    {/* Icon in hexagon */}
-                    <div className="absolute top-6 right-6">
-                      <div className="w-16 h-16 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl flex items-center justify-center transform rotate-45">
-                        <div className="transform -rotate-45">
-                          {service.icon}
-                        </div>
+                  {/* Content Container */}
+                  <div className="relative z-10 p-6 h-full flex flex-col">
+                    {/* Icon in top-left corner */}
+                    <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors duration-300">
+                      <div className="text-white group-hover:text-blue-300 transition-colors duration-300">
+                        {index === 0 && <Stethoscope className="h-6 w-6" />}
+                        {index === 1 && <FlaskConical className="h-6 w-6" />}
+                        {index === 2 && <Beaker className="h-6 w-6" />}
+                        {index === 3 && <ScrollText className="h-6 w-6" />}
+                        {index === 4 && <Shield className="h-6 w-6" />}
                       </div>
                     </div>
                     
-                    {/* Title and Description */}
-                    <div className="mt-16">
-                      <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                    {/* Title and Description at bottom */}
+                    <div className="mt-auto">
+                      <h4 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-blue-100 transition-colors duration-300">
                         {service.title}
-                      </h3>
-                      <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 mb-4"></div>
-                      <p className="text-blue-100/90 text-base leading-relaxed">
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed group-hover:text-blue-200 transition-colors duration-300">
                         {service.description}
                       </p>
                     </div>
+                    
+                    {/* Icon overlay in bottom-right */}
+                    <div className="absolute bottom-4 right-4 w-12 h-12 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 group-hover:border-blue-300/50 transition-all duration-300">
+                      <div className="text-blue-300 group-hover:text-blue-200 transition-colors duration-300">
+                        {index === 0 && <Stethoscope className="h-5 w-5" />}
+                        {index === 1 && <FlaskConical className="h-5 w-5" />}
+                        {index === 2 && <Beaker className="h-5 w-5" />}
+                        {index === 3 && <ScrollText className="h-5 w-5" />}
+                        {index === 4 && <Shield className="h-5 w-5" />}
+                      </div>
+                    </div>
                   </div>
                   
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Subtle hover glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/0 via-blue-500/0 to-cyan-500/0 group-hover:from-blue-600/10 group-hover:via-blue-500/5 group-hover:to-cyan-500/10 transition-all duration-500 rounded-2xl"></div>
                 </div>
               </motion.div>
             ))}
