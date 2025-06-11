@@ -136,9 +136,7 @@ export default function Careers() {
                 <Button
                   size="lg"
                   className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-10 py-6 text-lg font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0"
-                  onClick={() =>
-                    (window.location.href = "mailto:careers@rtnextgenai.com")
-                  }
+                  onClick={redirectToContact}
                 >
                   <Mail className="mr-3 h-6 w-6" />
                   Apply Now
