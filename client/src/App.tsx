@@ -5,7 +5,7 @@ import { Toaster } from "./components/ui/toaster";
 import { TooltipProvider } from "./components/ui/tooltip";
 import NotFound from "./pages/not-found";
 import Home from "./pages/Home";
-import LifeScience from "./pages/LifeScience";
+import LifeScience from "./pages/LifeScienceNew";
 import Layout from "./components/Layout";
 import Validation from "./pages/Validation";
 import ContactInfo from "./pages/ContactInfo";
