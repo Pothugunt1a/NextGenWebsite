@@ -11,7 +11,7 @@ export default function Navbar({
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<
     number | null
@@ -60,12 +60,24 @@ export default function Navbar({
     };
   }, []);
 
+  // Close dropdowns when location changes
+  useEffect(() => {
+    setActiveDropdown(null);
+    setActiveDesktopSubmenu(null);
+    setActiveMobileDropdown(null);
+    setActiveMobileSubmenu(null);
+    setIsMenuOpen(false);
+  }, [location]);
+
   const handleLinkClick = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
       setActiveMobileDropdown(null);
       setActiveMobileSubmenu(null);
     }
+    // Close dropdowns on navigation
+    setActiveDropdown(null);
+    setActiveDesktopSubmenu(null);
   };
 
   const scrollToSection = (
@@ -135,8 +147,6 @@ export default function Navbar({
                 <div 
                   key={link.id} 
                   className="relative group mx-1"
-                  onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.id)}
-                  onMouseLeave={() => link.hasDropdown && setActiveDropdown(null)}
                 >
                   {link.hasDropdown ? (
                     <div className="relative">
