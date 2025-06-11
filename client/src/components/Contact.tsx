@@ -220,16 +220,23 @@ export default function Contact() {
                     
                     <div className="mb-6">
                       <label className="text-white font-medium mb-2 block">Attachment (PDF/Word)</label>
-                      <Input
-                        type="file"
-                        accept=".pdf,.doc,.docx"
-                        className="px-4 py-3 bg-gray-700/50 border border-gray-600 text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
-                        onChange={(e) => setAttachedFile(e.target.files?.[0] || null)}
-                      />
+                      <div className="relative">
+                        <Input
+                          type="file"
+                          accept=".pdf,.doc,.docx"
+                          className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-gradient-to-r file:from-blue-500 file:to-cyan-500 file:text-white hover:file:from-blue-600 hover:file:to-cyan-600 file:cursor-pointer"
+                          onChange={(e) => setAttachedFile(e.target.files?.[0] || null)}
+                        />
+                      </div>
                       {attachedFile && (
-                        <p className="text-sm text-gray-300 mt-2">
-                          Selected: {attachedFile.name} ({Math.round(attachedFile.size / 1024)} KB)
-                        </p>
+                        <div className="mt-3 p-3 bg-gray-700/30 border border-gray-600 rounded-lg">
+                          <p className="text-sm text-gray-300">
+                            <span className="font-medium text-white">Selected:</span> {attachedFile.name}
+                          </p>
+                          <p className="text-xs text-gray-400 mt-1">
+                            Size: {Math.round(attachedFile.size / 1024)} KB
+                          </p>
+                        </div>
                       )}
                     </div>
                     
