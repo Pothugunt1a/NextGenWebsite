@@ -100,7 +100,7 @@ const validationServices = [
     color: "from-blue-500 to-cyan-500",
     backgroundImage: "/assets/cleaning-validation.jpeg",
     overview:
-      "A ri approach is followed for establishing an effective cleaning validation, including the development of policies, master plans and the appropriate content for each study to be performed incorporating critical quality attributes and critical process parameters and process control.",
+      "A risk-basedapproach is followed for establishing an effective cleaning validation, including the development of policies, master plans and the appropriate content for each study to be performed incorporating critical quality attributes and critical process parameters and process control.",
     keyBenefits: [],
     process: [
       "Cleaning Validation Regulatory Guidelines",
@@ -475,7 +475,11 @@ export default function Validation() {
                         {validationServices.map((service) => (
                           <Button
                             key={service.id}
-                            variant={selectedService.id === service.id ? "default" : "outline"}
+                            variant={
+                              selectedService.id === service.id
+                                ? "default"
+                                : "outline"
+                            }
                             className={`text-left justify-start p-4 h-auto transition-all duration-300 ${
                               selectedService.id === service.id
                                 ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
@@ -486,14 +490,18 @@ export default function Validation() {
                             }}
                           >
                             <div className="flex items-center gap-3">
-                              <div className={`p-2 rounded-lg ${
-                                selectedService.id === service.id 
-                                  ? "bg-white/20" 
-                                  : "bg-gradient-to-br from-blue-500/20 to-cyan-500/20"
-                              }`}>
+                              <div
+                                className={`p-2 rounded-lg ${
+                                  selectedService.id === service.id
+                                    ? "bg-white/20"
+                                    : "bg-gradient-to-br from-blue-500/20 to-cyan-500/20"
+                                }`}
+                              >
                                 {service.icon}
                               </div>
-                              <span className="font-medium">{service.title}</span>
+                              <span className="font-medium">
+                                {service.title}
+                              </span>
                             </div>
                           </Button>
                         ))}
@@ -686,9 +694,7 @@ export default function Validation() {
                 <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
                   <div className="flex justify-center mb-6">
                     <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
-                      <div className="text-white">
-                        {item.icon}
-                      </div>
+                      <div className="text-white">{item.icon}</div>
                     </div>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
