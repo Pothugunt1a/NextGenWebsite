@@ -188,65 +188,97 @@ export default function Navbar({
                             <div className="relative z-10 flex-1 p-6 max-w-2xl">
                               {link.name === "IT Services" ? (
                                 <div className="grid grid-cols-2 gap-4">
-                                  {link.dropdownItems?.map((category, idx) => (
-                                    <div key={idx} className="group">
-                                      <div className="p-4 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20 h-full">
-                                        <div className="flex items-center gap-3 mb-3">
-                                          <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
-                                            {(() => {
-                                              switch (category.name) {
-                                                case "Cloud Services":
-                                                  return <Cloud className="h-5 w-5 text-cyan-400" />;
-                                                case "Data Science":
-                                                  return <BarChart3 className="h-5 w-5 text-blue-400" />;
-                                                case "Database":
-                                                  return <Database className="h-5 w-5 text-green-400" />;
-                                                case "BI and Big Data":
-                                                  return <BarChart3 className="h-5 w-5 text-purple-400" />;
-                                                case "Networking and Cyber Security":
-                                                  return <Shield className="h-5 w-5 text-red-400" />;
-                                                case "Mobile Development":
-                                                  return <Smartphone className="h-5 w-5 text-pink-400" />;
-                                                case "Web Development":
-                                                  return <Globe className="h-5 w-5 text-indigo-400" />;
-                                                case "Systems Integration":
-                                                  return <Settings className="h-5 w-5 text-orange-400" />;
-                                                case "ERP":
-                                                  return <Package className="h-5 w-5 text-yellow-400" />;
-                                                case "DevOps":
-                                                  return <GitBranch className="h-5 w-5 text-teal-400" />;
-                                                default:
-                                                  return <Brain className="h-5 w-5 text-cyan-400" />;
-                                              }
-                                            })()}
+                                  {link.dropdownItems?.map((category, idx) => {
+                                    const getCategoryIcon = (name: string) => {
+                                      switch (name) {
+                                        case "Cloud Services":
+                                          return <Cloud className="h-6 w-6 text-cyan-400" />;
+                                        case "Data Science":
+                                          return <BarChart3 className="h-6 w-6 text-blue-400" />;
+                                        case "Database":
+                                          return <Database className="h-6 w-6 text-green-400" />;
+                                        case "BI and Big Data":
+                                          return <BarChart3 className="h-6 w-6 text-purple-400" />;
+                                        case "Networking and Cyber Security":
+                                          return <Shield className="h-6 w-6 text-red-400" />;
+                                        case "Mobile Development":
+                                          return <Smartphone className="h-6 w-6 text-pink-400" />;
+                                        case "Web Development":
+                                          return <Globe className="h-6 w-6 text-indigo-400" />;
+                                        case "Systems Integration":
+                                          return <Settings className="h-6 w-6 text-orange-400" />;
+                                        case "ERP":
+                                          return <Package className="h-6 w-6 text-yellow-400" />;
+                                        case "DevOps":
+                                          return <GitBranch className="h-6 w-6 text-teal-400" />;
+                                        default:
+                                          return <Brain className="h-6 w-6 text-cyan-400" />;
+                                      }
+                                    };
+
+                                    const isActive = activeDesktopSubmenu === category.name;
+
+                                    return (
+                                      <div key={idx} className="group">
+                                        {/* Clickable Category Header */}
+                                        <div 
+                                          className="relative cursor-pointer select-none"
+                                          onClick={(e) => toggleDesktopSubmenu(category.name, e)}
+                                        >
+                                          <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
+                                            <div className="flex items-center gap-4">
+                                              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
+                                                {getCategoryIcon(category.name)}
+                                              </div>
+                                              <div>
+                                                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors">
+                                                  {category.name}
+                                                </h3>
+                                              </div>
+                                            </div>
+                                            <ChevronDown
+                                              className={`h-5 w-5 text-cyan-400 transition-transform duration-300 ${
+                                                isActive ? "rotate-180" : ""
+                                              }`}
+                                            />
                                           </div>
-                                          <h3 className="text-white font-semibold text-sm group-hover:text-cyan-400 transition-colors">
-                                            {category.name}
-                                          </h3>
                                         </div>
-                                        <div className="space-y-1">
-                                          {category.items.slice(0, 3).map((item, itemIdx) => (
-                                            <a
-                                              key={itemIdx}
-                                              href={item.href}
-                                              className="block text-gray-300 hover:text-cyan-400 text-xs transition-colors duration-200 hover:translate-x-1"
-                                              onClick={(e) => {
-                                                e.preventDefault();
-                                                if (item.href.startsWith("/")) {
-                                                  setLocation(item.href);
-                                                  handleLinkClick();
-                                                } else {
-                                                  scrollToSection(e, item.href);
-                                                }
-                                              }}
-                                            >
-                                              • {item.name}
-                                            </a>
-                                          ))}
-                                        </div>
+
+                                        {/* Expandable Category Items */}
+                                        {isActive && (
+                                          <div className="mt-3 ml-6 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                            {category.items.map((item, itemIdx) => (
+                                              <a
+                                                key={itemIdx}
+                                                href={item.href}
+                                                className="group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/30"
+                                                onClick={(e) => {
+                                                  e.preventDefault();
+                                                  if (item.href.startsWith("/")) {
+                                                    setLocation(item.href);
+                                                    handleLinkClick();
+                                                  } else {
+                                                    scrollToSection(e, item.href);
+                                                  }
+                                                }}
+                                              >
+                                                {/* Connection line */}
+                                                <div className="w-4 h-px bg-gradient-to-r from-cyan-400/60 to-transparent"></div>
+                                                
+                                                {/* Service icon */}
+                                                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:scale-150 transition-transform duration-200"></div>
+                                                
+                                                {/* Service name */}
+                                                <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 font-medium">
+                                                  {item.name}
+                                                </span>
+                                              </a>
+                                            ))}
+                                          </div>
+                                        )}
                                       </div>
-                                    </div>
-                                  ))}
+                                    );
+                                  })}
                                 </div>
                               ) : (
                                 <div className="space-y-4">
