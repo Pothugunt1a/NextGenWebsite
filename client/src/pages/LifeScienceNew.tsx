@@ -181,7 +181,7 @@ export default function LifeScience() {
           <div className="max-w-8xl mx-auto relative">
             <div className="flex flex-col lg:flex-row gap-16 items-center">
               
-              {/* Left Side - Primary Feature */}
+              {/* Left Side - Main Life Science Hub */}
               <div className="lg:w-1/2">
                 <motion.div
                   initial={{ opacity: 0, x: -100 }}
@@ -194,8 +194,8 @@ export default function LifeScience() {
                   <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="absolute inset-0">
                       <img
-                        src={services[0].backgroundImage}
-                        alt={services[0].title}
+                        src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Life Science Innovation"
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-cyan-900/50"></div>
@@ -204,10 +204,10 @@ export default function LifeScience() {
                     {/* Floating Elements */}
                     <div className="absolute top-8 right-8 flex flex-col gap-4">
                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                        <Stethoscope className="h-8 w-8 text-white" />
+                        <Target className="h-8 w-8 text-white" />
                       </div>
                       <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                        01
+                        Hub
                       </div>
                     </div>
                     
@@ -216,33 +216,33 @@ export default function LifeScience() {
                       <div className="mb-4">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
                           <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">Featured Solution</span>
+                          <span className="text-blue-200 text-sm font-medium">Innovation Hub</span>
                         </div>
                         <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
-                          {services[0].title}
+                          Life Science Solutions
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          {services[0].description.substring(0, 150)}...
+                          Comprehensive suite of advanced life science solutions powered by cutting-edge technology and regulatory expertise to accelerate your research and development processes.
                         </p>
                       </div>
                       
                       <button className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg">
-                        Explore Solution
+                        Explore All Solutions
                       </button>
                     </div>
                   </div>
                 </motion.div>
               </div>
 
-              {/* Right Side - Stacked Mini Cards */}
+              {/* Right Side - All Service Cards */}
               <div className="lg:w-1/2 space-y-6">
-                {services.slice(1).map((service, index) => (
+                {services.map((service, index) => (
                   <motion.div
                     key={service.title}
                     initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: (index + 1) * 0.2, duration: 0.8 }}
+                    transition={{ delay: index * 0.15, duration: 0.8 }}
                     className="group cursor-pointer"
                   >
                     <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
@@ -256,10 +256,11 @@ export default function LifeScience() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/60 to-cyan-600/40"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          {index === 0 && <TrendingUp className="h-6 w-6 text-white" />}
-                          {index === 1 && <Beaker className="h-6 w-6 text-white" />}
-                          {index === 2 && <ScrollText className="h-6 w-6 text-white" />}
-                          {index === 3 && <Shield className="h-6 w-6 text-white" />}
+                          {index === 0 && <Stethoscope className="h-6 w-6 text-white" />}
+                          {index === 1 && <TrendingUp className="h-6 w-6 text-white" />}
+                          {index === 2 && <Beaker className="h-6 w-6 text-white" />}
+                          {index === 3 && <ScrollText className="h-6 w-6 text-white" />}
+                          {index === 4 && <Shield className="h-6 w-6 text-white" />}
                         </div>
                       </div>
                       
@@ -267,7 +268,7 @@ export default function LifeScience() {
                       <div className="flex-grow">
                         <div className="flex items-center gap-3 mb-2">
                           <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {String(index + 2).padStart(2, '0')}
+                            {String(index + 1).padStart(2, '0')}
                           </div>
                           <div className="text-xs text-blue-400 font-medium uppercase tracking-wider">
                             Solution
