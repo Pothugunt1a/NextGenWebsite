@@ -179,7 +179,94 @@ export const navLinks = [
       },
     ],
   },
-  { id: 4, name: "IT Services", href: "#it-services" },
+  {
+    id: 4,
+    name: "IT Services",
+    href: "#it-services",
+    dropdown: [
+      {
+        name: "Cloud Services",
+        items: [
+          { name: "Cloud Computing", href: "#cloud-computing" },
+          { name: "Azure", href: "#azure" },
+          { name: "AWS", href: "#aws" },
+          { name: "Salesforce", href: "#salesforce" },
+        ],
+      },
+      {
+        name: "Data Science",
+        items: [
+          { name: "Data Analytics", href: "#data-analytics" },
+          { name: "Machine Learning", href: "#machine-learning" },
+          { name: "Predictive Modeling", href: "#predictive-modeling" },
+        ],
+      },
+      {
+        name: "Database",
+        items: [
+          { name: "Database Design", href: "#database-design" },
+          { name: "Database Administration", href: "#database-admin" },
+          { name: "Data Migration", href: "#data-migration" },
+        ],
+      },
+      {
+        name: "BI and Big Data",
+        items: [
+          { name: "Business Intelligence", href: "#business-intelligence" },
+          { name: "Big Data Analytics", href: "#big-data-analytics" },
+          { name: "Data Warehousing", href: "#data-warehousing" },
+        ],
+      },
+      {
+        name: "Networking and Cyber Security",
+        items: [
+          { name: "Network Infrastructure", href: "#network-infrastructure" },
+          { name: "Cybersecurity Solutions", href: "#cybersecurity" },
+          { name: "Security Audits", href: "#security-audits" },
+        ],
+      },
+      {
+        name: "Mobile Development",
+        items: [
+          { name: "iOS Development", href: "#ios-development" },
+          { name: "Android Development", href: "#android-development" },
+          { name: "Cross-Platform Apps", href: "#cross-platform" },
+        ],
+      },
+      {
+        name: "Web Development",
+        items: [
+          { name: "Frontend Development", href: "#frontend-development" },
+          { name: "Backend Development", href: "#backend-development" },
+          { name: "Full-Stack Solutions", href: "#fullstack-solutions" },
+        ],
+      },
+      {
+        name: "Systems Integration",
+        items: [
+          { name: "API Integration", href: "#api-integration" },
+          { name: "Third-Party Integrations", href: "#third-party-integrations" },
+          { name: "Legacy System Modernization", href: "#legacy-modernization" },
+        ],
+      },
+      {
+        name: "ERP",
+        items: [
+          { name: "ERP Implementation", href: "#erp-implementation" },
+          { name: "ERP Customization", href: "#erp-customization" },
+          { name: "ERP Support", href: "#erp-support" },
+        ],
+      },
+      {
+        name: "DevOps",
+        items: [
+          { name: "CI/CD Pipeline", href: "#cicd-pipeline" },
+          { name: "Infrastructure Automation", href: "#infrastructure-automation" },
+          { name: "Monitoring & Deployment", href: "#monitoring-deployment" },
+        ],
+      },
+    ],
+  },
   { id: 5, name: "Career", href: "/careers" },
   { id: 6, name: "IT Consulting", href: "#it-consulting" },
   { id: 7, name: "Life Science", href: "/life-science" },
