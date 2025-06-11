@@ -132,6 +132,121 @@ export default function AIConsulting() {
           </div>
         </div>
 
+        {/* AI Consulting Services Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Our AI Consulting Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We offer comprehensive AI consulting services to help you identify opportunities, develop strategies, and optimize processes with artificial intelligence.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+              {/* AI and Data Strategy */}
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/30 rounded-xl p-8 hover:border-cyan-400/60 transition-all duration-300 group">
+                <div className="mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-lg flex items-center justify-center border border-cyan-400/40 mb-4">
+                    <Brain className="h-8 w-8 text-cyan-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                    AI and Data Strategy
+                  </h3>
+                  <p className="text-gray-300 mb-6">
+                    Develop comprehensive AI strategies aligned with your business objectives. We help you create data-driven roadmaps that maximize AI investment returns and ensure sustainable growth.
+                  </p>
+                </div>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    AI readiness assessment
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Data architecture planning
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Technology stack recommendations
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    ROI forecasting and budgeting
+                  </li>
+                </ul>
+              </div>
+
+              {/* Process Optimization with AI */}
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-green-400/30 rounded-xl p-8 hover:border-green-400/60 transition-all duration-300 group">
+                <div className="mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg flex items-center justify-center border border-green-400/40 mb-4">
+                    <Zap className="h-8 w-8 text-green-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors">
+                    Process Optimization with AI
+                  </h3>
+                  <p className="text-gray-300 mb-6">
+                    Transform your business processes with AI-powered automation and optimization. We identify bottlenecks, streamline workflows, and implement intelligent solutions that drive efficiency.
+                  </p>
+                </div>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    Process analysis and mapping
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    Automation opportunity identification
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    Workflow optimization design
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    Implementation roadmap creation
+                  </li>
+                </ul>
+              </div>
+
+              {/* AI Use Case Discovery & Identification */}
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-purple-400/30 rounded-xl p-8 hover:border-purple-400/60 transition-all duration-300 group">
+                <div className="mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center border border-purple-400/40 mb-4">
+                    <Target className="h-8 w-8 text-purple-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                    AI Use Case Discovery & Identification
+                  </h3>
+                  <p className="text-gray-300 mb-6">
+                    Uncover high-impact AI opportunities across your organization. We conduct systematic discovery workshops to identify, evaluate, and prioritize AI use cases that deliver maximum business value.
+                  </p>
+                </div>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    Discovery workshops and interviews
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    Use case feasibility analysis
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    ROI impact assessment
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    Priority matrix and roadmap
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Work With Us Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
