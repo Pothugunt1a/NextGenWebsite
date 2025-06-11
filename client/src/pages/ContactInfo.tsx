@@ -25,10 +25,10 @@ export default function ContactInfo() {
       <div className="relative z-10 pt-24 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500">
               Get in Touch
             </h1>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-white">
               Have questions about our AI solutions or want to discuss how we
               can help your business? Fill out the form and our team will
               contact you shortly.

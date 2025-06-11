@@ -126,15 +126,15 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-semibold mb-1">{item.title}</h4>
-                      <p className="text-slate-600">{item.detail}</p>
+                      <h4 className="font-semibold mb-1 text-white">{item.title}</h4>
+                      <p className="text-gray-300">{item.detail}</p>
                     </div>
                   </div>
                 ))}
               </div>
               
               <div className="mt-8">
-                <h4 className="font-semibold mb-4">Follow Us</h4>
+                <h4 className="font-semibold mb-4 text-white">Follow Us</h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((link) => (
                     <a 
@@ -157,34 +157,34 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
             >
               {isSuccess ? (
-                <div className="bg-light rounded-xl p-8 shadow-lg h-full flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="text-green-500 h-8 w-8" />
+                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-lg h-full flex flex-col items-center justify-center text-center">
+                  <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="text-green-400 h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Message Sent Successfully!</h3>
-                  <p className="text-slate-600 mb-6">
+                  <h3 className="text-xl font-bold mb-2 text-white">Message Sent Successfully!</h3>
+                  <p className="text-gray-300 mb-6">
                     Thank you for contacting us. Our team will get back to you shortly.
                   </p>
                   <Button
                     onClick={handleSendAnother}
-                    className="bg-primary hover:bg-primary-dark text-white font-semibold"
+                    className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold"
                   >
                     Send Another Message
                   </Button>
                 </div>
               ) : (
                 <Form {...form}>
-                  <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="bg-light rounded-xl p-8 shadow-lg">
+                  <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-lg">
                     <FormField
                       control={form.control}
                       name="name"
                       render={({ field }) => (
                         <FormItem className="mb-6">
-                          <FormLabel className="text-dark font-medium">Your Name</FormLabel>
+                          <FormLabel className="text-white font-medium">Your Name</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="John Doe"
-                              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                              className="px-4 py-3 bg-gray-700/50 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
                               {...field}
                             />
                           </FormControl>
@@ -198,12 +198,12 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem className="mb-6">
-                          <FormLabel className="text-dark font-medium">Your Email</FormLabel>
+                          <FormLabel className="text-white font-medium">Your Email</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="john@example.com"
                               type="email"
-                              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                              className="px-4 py-3 bg-gray-700/50 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
                               {...field}
                             />
                           </FormControl>
