@@ -471,7 +471,7 @@ export default function Validation() {
                       </div>
                     </div>
                     <div className="flex flex-col gap-4">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full max-w-4xl">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
                         {validationServices.map((service) => (
                           <Button
                             key={service.id}
@@ -480,7 +480,7 @@ export default function Validation() {
                                 ? "default"
                                 : "outline"
                             }
-                            className={`text-left justify-start p-6 h-auto transition-all duration-300 ${
+                            className={`text-left justify-start p-8 h-auto min-h-[200px] transition-all duration-300 ${
                               selectedService.id === service.id
                                 ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
                                 : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40"
@@ -489,9 +489,9 @@ export default function Validation() {
                               setSelectedService(service);
                             }}
                           >
-                            <div className="flex flex-col items-center text-center gap-4">
+                            <div className="flex flex-col items-center text-center gap-6 h-full justify-center">
                               <div
-                                className={`p-3 rounded-lg ${
+                                className={`p-4 rounded-xl ${
                                   selectedService.id === service.id
                                     ? "bg-white/20"
                                     : "bg-gradient-to-br from-blue-500/20 to-cyan-500/20"
@@ -499,9 +499,14 @@ export default function Validation() {
                               >
                                 {service.icon}
                               </div>
-                              <span className="font-medium text-sm leading-tight">
-                                {service.title}
-                              </span>
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="font-semibold text-lg leading-tight text-center">
+                                  {service.title}
+                                </span>
+                                <span className="text-xs text-gray-300 font-medium">
+                                  {service.subtitle}
+                                </span>
+                              </div>
                             </div>
                           </Button>
                         ))}
