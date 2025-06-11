@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Brain, Lightbulb, Target, Users, Zap, Shield } from "lucide-react";
+import { ChevronDown, ChevronUp, Brain, Lightbulb, Target, Users, Zap, Shield, Network, TrendingUp } from "lucide-react";
 import Layout from "../components/Layout";
 
 interface FAQ {
@@ -139,10 +139,92 @@ export default function AIConsulting() {
               <h2 className="text-4xl font-bold text-white mb-6">
                 Why work with AI Superior on your next AI project
               </h2>
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                We bring world-class expertise, proven methodologies, and deep industry knowledge to accelerate your AI transformation. 
-                Our team combines cutting-edge research with practical business acumen to deliver solutions that drive real results.
-              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Team of experienced professionals */}
+              <div className="text-center">
+                <div className="flex justify-center mb-6">
+                  <div className="relative">
+                    <Users className="h-16 w-16 text-cyan-400" />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                      <Brain className="h-4 w-4 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Team of experienced professionals
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Our team of highly skilled consultants, many of whom hold Ph.D. degrees in AI or related fields, 
+                  brings extensive knowledge and hands-on experience across diverse AI projects. We've successfully 
+                  developed AI-driven solutions spanning multiple industries, from insurance and construction to 
+                  finance, pharmaceutical, and real estate sectors.
+                </p>
+              </div>
+
+              {/* Cutting-edge technology */}
+              <div className="text-center">
+                <div className="flex justify-center mb-6">
+                  <div className="relative">
+                    <Network className="h-16 w-16 text-cyan-400" />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
+                      <Zap className="h-4 w-4 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Cutting-edge technology
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Beyond years of experience and deep domain expertise in AI development, we pride ourselves on 
+                  leveraging the latest tools and technologies. Whether you're adopting AI for the first time, 
+                  seeking to audit existing AI systems, or looking to scale your AI infrastructure, our team 
+                  delivers cutting-edge solutions.
+                </p>
+              </div>
+
+              {/* Reliability & flexibility guaranteed */}
+              <div className="text-center">
+                <div className="flex justify-center mb-6">
+                  <div className="relative">
+                    <Shield className="h-16 w-16 text-cyan-400" />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                      <Target className="h-4 w-4 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Reliability & flexibility guaranteed
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Transparency and continuous communication form the foundation of every successful AI project. 
+                  At AI Superior, we collaborate closely with our clients to ensure complete understanding of 
+                  each project milestone. We maintain flexibility to align with your specific project goals and 
+                  requirements, giving you confidence that you're partnering with trusted experts.
+                </p>
+              </div>
+
+              {/* Take your business to new heights */}
+              <div className="text-center">
+                <div className="flex justify-center mb-6">
+                  <div className="relative">
+                    <TrendingUp className="h-16 w-16 text-cyan-400" />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                      <Lightbulb className="h-4 w-4 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Take your business to new heights
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  As a leading artificial intelligence consulting firm, we strategically implement AI across 
+                  various business processes to ensure sustained efficiency and operational continuity. We 
+                  thoroughly analyze areas and operations where AI-driven solutions can create significant 
+                  value for your organization, helping you unlock AI's transformative potential.
+                </p>
+              </div>
             </div>
           </div>
         </section>
