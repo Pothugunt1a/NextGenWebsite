@@ -92,13 +92,13 @@ export default function Careers() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 
-        <div className="relative flex items-center justify-center h-full">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative flex items-center h-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto"
+              className="max-w-5xl"
             >
 
 
@@ -120,7 +120,7 @@ export default function Careers() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
-                className="text-xl md:text-2xl text-white mb-8 leading-relaxed max-w-3xl mx-auto"
+                className="text-xl md:text-2xl text-white mb-8 leading-relaxed max-w-3xl"
               >
                 Step into a world of innovation, continuous learning, and
                 boundless growth—where equal opportunity is more than a promise;
@@ -131,7 +131,7 @@ export default function Careers() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+                className="flex flex-col sm:flex-row gap-6 justify-start items-start"
               >
                 <Button
                   size="lg"
