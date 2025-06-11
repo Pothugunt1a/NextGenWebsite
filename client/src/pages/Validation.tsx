@@ -489,16 +489,7 @@ export default function Validation() {
                               setSelectedService(service);
                             }}
                           >
-                            <div className="flex flex-col items-center text-center gap-6 h-full justify-center">
-                              <div
-                                className={`p-4 rounded-xl ${
-                                  selectedService.id === service.id
-                                    ? "bg-white/20"
-                                    : "bg-gradient-to-br from-blue-500/20 to-cyan-500/20"
-                                }`}
-                              >
-                                {service.icon}
-                              </div>
+                            <div className="flex flex-col items-center text-center gap-4 h-full justify-center">
                               <div className="flex flex-col items-center gap-2">
                                 <span className="font-semibold text-lg leading-tight text-center">
                                   {service.title}
