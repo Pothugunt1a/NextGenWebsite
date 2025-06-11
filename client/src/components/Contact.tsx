@@ -221,12 +221,19 @@ export default function Contact() {
                     <div className="mb-6">
                       <label className="text-white font-medium mb-2 block">Attachment (PDF/Word)</label>
                       <div className="relative">
-                        <Input
+                        <input
                           type="file"
                           accept=".pdf,.doc,.docx"
-                          className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-gradient-to-r file:from-blue-500 file:to-cyan-500 file:text-white hover:file:from-blue-600 hover:file:to-cyan-600 file:cursor-pointer"
+                          className="hidden"
+                          id="file-upload"
                           onChange={(e) => setAttachedFile(e.target.files?.[0] || null)}
                         />
+                        <label
+                          htmlFor="file-upload"
+                          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-medium rounded-lg cursor-pointer transition-colors duration-200"
+                        >
+                          Choose File
+                        </label>
                       </div>
                       {attachedFile && (
                         <div className="mt-3 p-3 bg-gray-700/30 border border-gray-600 rounded-lg">
