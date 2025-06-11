@@ -150,14 +150,14 @@ export const navLinks = [
       {
         name: "AI Consulting",
         items: [
-          { name: "AI and Data Strategy", href: "#ai-strategy" },
+          { name: "AI and Data Strategy", href: "/ai-consulting" },
           {
             name: "Process Optimization with AI",
-            href: "#process-optimization",
+            href: "/ai-consulting",
           },
           {
             name: "AI Use Case Discovery & Identification",
-            href: "#use-case-discovery",
+            href: "/ai-consulting",
           },
         ],
       },

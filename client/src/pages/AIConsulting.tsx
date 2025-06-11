@@ -1,0 +1,319 @@
+import { useState } from "react";
+import { ChevronDown, ChevronUp, Brain, Lightbulb, Target, Users, Zap, Shield } from "lucide-react";
+import Layout from "../components/Layout";
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQ[] = [
+  {
+    question: "What makes AI Superior's consulting approach different?",
+    answer: "We combine deep technical expertise with industry-specific knowledge to deliver AI solutions that directly impact your business goals. Our team includes PhDs in machine learning, experienced engineers, and industry specialists who understand both the technology and your market."
+  },
+  {
+    question: "How long does a typical AI consulting project take?",
+    answer: "Project timelines vary based on complexity and scope. Strategy assessments typically take 2-4 weeks, proof-of-concept development 4-8 weeks, and full implementation 3-6 months. We provide detailed timelines during our initial consultation."
+  },
+  {
+    question: "Do you work with companies that have no AI experience?",
+    answer: "Absolutely. We specialize in helping organizations at every stage of their AI journey, from complete beginners to companies looking to optimize existing AI systems. We start with education and strategy before moving to implementation."
+  },
+  {
+    question: "What industries do you have the most experience with?",
+    answer: "We have extensive experience across finance, healthcare, manufacturing, retail, and technology sectors. Our consultants bring both technical expertise and deep industry knowledge to ensure solutions fit your specific business context."
+  },
+  {
+    question: "How do you ensure AI solutions are ethical and compliant?",
+    answer: "We prioritize responsible AI development with built-in bias detection, transparency mechanisms, and compliance frameworks. Our team stays current with regulations like GDPR, CCPA, and emerging AI governance standards to ensure your solutions meet all requirements."
+  }
+];
+
+const industries = [
+  {
+    name: "Finance",
+    description: "Fraud detection, algorithmic trading, risk assessment, and personalized financial services using advanced machine learning models."
+  },
+  {
+    name: "Government",
+    description: "Public service optimization, predictive analytics for policy making, citizen service chatbots, and smart city infrastructure."
+  },
+  {
+    name: "Internet & Tech Startups", 
+    description: "Recommendation engines, user behavior analysis, automated customer support, and scalable AI infrastructure for rapid growth."
+  },
+  {
+    name: "Media",
+    description: "Content personalization, automated content generation, audience analytics, and intelligent content moderation systems."
+  },
+  {
+    name: "Oil & Gas",
+    description: "Predictive maintenance, exploration optimization, supply chain automation, and environmental impact monitoring."
+  },
+  {
+    name: "Pharmaceuticals",
+    description: "Drug discovery acceleration, clinical trial optimization, regulatory compliance automation, and personalized medicine solutions."
+  },
+  {
+    name: "NGOs, NPOs, NCOs",
+    description: "Impact measurement analytics, donor behavior prediction, resource optimization, and automated reporting for greater transparency."
+  }
+];
+
+const capabilities = [
+  {
+    icon: <Brain className="h-8 w-8 text-cyan-400" />,
+    title: "AI Strategy & Roadmap",
+    description: "Comprehensive AI strategy development aligned with your business objectives, including technology assessment and implementation roadmaps."
+  },
+  {
+    icon: <Lightbulb className="h-8 w-8 text-yellow-400" />,
+    title: "Use Case Identification",
+    description: "Systematic identification and prioritization of AI opportunities across your organization to maximize ROI and business impact."
+  },
+  {
+    icon: <Target className="h-8 w-8 text-green-400" />,
+    title: "Proof of Concept Development",
+    description: "Rapid prototyping and validation of AI solutions to demonstrate value and feasibility before full-scale implementation."
+  },
+  {
+    icon: <Users className="h-8 w-8 text-blue-400" />,
+    title: "Team Training & Enablement",
+    description: "Comprehensive training programs to upskill your team and ensure successful adoption of AI technologies."
+  },
+  {
+    icon: <Zap className="h-8 w-8 text-purple-400" />,
+    title: "Process Optimization",
+    description: "AI-powered process analysis and optimization to improve efficiency, reduce costs, and enhance decision-making."
+  },
+  {
+    icon: <Shield className="h-8 w-8 text-red-400" />,
+    title: "AI Governance & Ethics",
+    description: "Establishing responsible AI frameworks, bias detection, and compliance systems to ensure ethical AI deployment."
+  }
+];
+
+const techStack = [
+  "Machine Learning: TensorFlow, PyTorch, Scikit-learn, XGBoost",
+  "Deep Learning: Neural Networks, CNN, RNN, LSTM, Transformers",
+  "Natural Language Processing: BERT, GPT, NLTK, spaCy",
+  "Computer Vision: OpenCV, YOLO, ResNet, EfficientNet",
+  "Cloud Platforms: AWS, Azure, Google Cloud, MLOps",
+  "Data Engineering: Apache Spark, Kafka, Airflow, Docker",
+  "Programming: Python, R, Java, Scala, SQL",
+  "Visualization: Tableau, Power BI, D3.js, Plotly"
+];
+
+export default function AIConsulting() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  return (
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        {/* Hero Banner */}
+        <div className="relative h-96 overflow-hidden">
+          <img
+            src="/assets/AI-Consulting.png"
+            alt="AI Consulting"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+            <div className="text-center text-white">
+              <h1 className="text-5xl font-bold mb-4">AI Consulting Services</h1>
+              <p className="text-xl max-w-2xl mx-auto">
+                Transform your business with strategic AI implementation and expert guidance
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Work With Us Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Why work with AI Superior on your next AI project
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                We bring world-class expertise, proven methodologies, and deep industry knowledge to accelerate your AI transformation. 
+                Our team combines cutting-edge research with practical business acumen to deliver solutions that drive real results.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Main AI Consulting Capabilities */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Our main AI consulting capabilities
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {capabilities.map((capability, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20"
+                >
+                  <div className="mb-6">{capability.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-4">
+                    {capability.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    {capability.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How We Work */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">How we work</h2>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+              <div className="lg:col-span-1">
+                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 p-8 rounded-xl border border-cyan-400/30">
+                  <div className="text-3xl font-bold text-cyan-400 mb-4">01</div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Discovery & Assessment</h3>
+                  <p className="text-gray-400">We analyze your current state, identify opportunities, and define success metrics.</p>
+                </div>
+              </div>
+              <div className="lg:col-span-1">
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-8 rounded-xl border border-blue-400/30">
+                  <div className="text-3xl font-bold text-blue-400 mb-4">02</div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Strategy Development</h3>
+                  <p className="text-gray-400">We create a comprehensive AI roadmap tailored to your business goals and constraints.</p>
+                </div>
+              </div>
+              <div className="lg:col-span-1">
+                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-8 rounded-xl border border-purple-400/30">
+                  <div className="text-3xl font-bold text-purple-400 mb-4">03</div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Proof of Concept</h3>
+                  <p className="text-gray-400">We build and validate prototypes to demonstrate value and technical feasibility.</p>
+                </div>
+              </div>
+              <div className="lg:col-span-1">
+                <div className="bg-gradient-to-br from-pink-500/20 to-red-500/20 p-8 rounded-xl border border-pink-400/30">
+                  <div className="text-3xl font-bold text-pink-400 mb-4">04</div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Implementation & Scale</h3>
+                  <p className="text-gray-400">We deploy production-ready solutions and ensure successful adoption across your organization.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Industries Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                How we implement artificial intelligence across multiple industries
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {industries.map((industry, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300"
+                >
+                  <h3 className="text-xl font-semibold text-cyan-400 mb-3">
+                    {industry.name}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {industry.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Technology Stack */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Our main AI technology stack and expertise
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {techStack.map((tech, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg border border-gray-700 hover:border-cyan-400/40 transition-all duration-300"
+                >
+                  <p className="text-gray-300 text-sm font-medium">{tech}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">FAQs</h2>
+              <p className="text-xl text-gray-300">
+                Common questions about our AI consulting services
+              </p>
+            </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 overflow-hidden"
+                >
+                  <button
+                    className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors"
+                    onClick={() => toggleFaq(index)}
+                  >
+                    <h3 className="text-lg font-semibold text-white pr-4">
+                      {faq.question}
+                    </h3>
+                    {openFaq === index ? (
+                      <ChevronUp className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                    )}
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Ready to transform your business with AI?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Let's discuss how our AI consulting services can accelerate your digital transformation
+            </p>
+            <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105">
+              Start Your AI Journey
+            </button>
+          </div>
+        </section>
+      </div>
+    </Layout>
+  );
+}

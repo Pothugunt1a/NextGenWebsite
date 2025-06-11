@@ -253,10 +253,9 @@ export default function Navbar({
                                               className="group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/30"
                                               onClick={(e) => {
                                                 e.preventDefault();
-                                                if (item.name === "Life Science") {
-                                                  setLocation("/life-science");
-                                                } else if (item.name === "Validation") {
-                                                  setLocation("/validation");
+                                                if (item.href.startsWith("/")) {
+                                                  setLocation(item.href);
+                                                  handleLinkClick();
                                                 } else {
                                                   scrollToSection(e, item.href);
                                                 }
@@ -384,13 +383,8 @@ export default function Navbar({
                                       className="block py-1 text-sm text-gray-700 hover:text-primary"
                                       onClick={(e) => {
                                         e.preventDefault();
-                                        if (item.name === "Life Science") {
-                                          setLocation("/life-science");
-                                        } else if (
-                                          item.name === "Validation" ||
-                                          item.href === "/validation"
-                                        ) {
-                                          setLocation("/validation");
+                                        if (item.href.startsWith("/")) {
+                                          setLocation(item.href);
                                         } else {
                                           scrollToSection(e, item.href);
                                         }

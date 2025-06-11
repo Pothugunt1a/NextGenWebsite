@@ -11,6 +11,7 @@ import Validation from "./pages/Validation";
 import ContactInfo from "./pages/ContactInfo";
 import AboutPage from "./pages/About";
 import Careers from "./pages/Careers";
+import AIConsulting from "./pages/AIConsulting";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
         <Route path="/careers" component={Careers} />
         <Route path="/contact" component={ContactInfo} />
         <Route path="/about" component={AboutPage} />
+        <Route path="/ai-consulting" component={AIConsulting} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
