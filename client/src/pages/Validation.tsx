@@ -480,7 +480,7 @@ export default function Validation() {
                                 ? "default"
                                 : "outline"
                             }
-                            className={`text-left justify-start p-8 h-auto min-h-[200px] transition-all duration-300 ${
+                            className={`text-left justify-start p-6 h-auto transition-all duration-300 ${
                               selectedService.id === service.id
                                 ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
                                 : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40"
@@ -489,15 +489,10 @@ export default function Validation() {
                               setSelectedService(service);
                             }}
                           >
-                            <div className="flex flex-col items-center text-center gap-4 h-full justify-center">
-                              <div className="flex flex-col items-center gap-2">
-                                <span className="font-semibold text-lg leading-tight text-center">
-                                  {service.title}
-                                </span>
-                                <span className="text-xs text-gray-300 font-medium">
-                                  {service.subtitle}
-                                </span>
-                              </div>
+                            <div className="flex items-center justify-center h-full">
+                              <span className="font-semibold text-lg leading-tight text-center">
+                                {service.title}
+                              </span>
                             </div>
                           </Button>
                         ))}
