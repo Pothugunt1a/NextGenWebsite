@@ -23,33 +23,43 @@ import {
 const services = [
   {
     icon: <Stethoscope className="h-8 w-8 text-white" />,
-    title: "Clinical Operations Solutions",
-    description: "Making smarter decisions with real-time clinical data and analytics.",
-    backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    title: "Clinical Operations",
+    description:
+      "Develop solutions that increase efficiencies, productivity, and quality in your clinical trial from study start-up through completion. By strategizing for the level of support you need, we create clinical operations solutions to facilitate all aspects of your clinical trial — including management of staff and training, budgets and contracts, patient recruitment and retention, and site operations — to drive on-time project delivery.",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
   {
-    icon: <FlaskConical className="h-8 w-8 text-white" />,
-    title: "Laboratory Intelligence",
-    description: "Advanced analytics and AI-driven insights for laboratory operations and research.",
-    backgroundImage: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    icon: <TrendingUp className="h-8 w-8 text-white" />,
+    title: "Biometrics",
+    description:
+      "Leverage our life science knowledge for guidance on biometric solutions, including clinical data management and SAS programming, throughout the clinical drug development process. We identify solutions for every stage of your trial, minimizing your timeline risks and improving data quality via world-class clinical data management.",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
   {
     icon: <Beaker className="h-8 w-8 text-white" />,
-    title: "Drug Safety Intelligence",
-    description: "Real-time monitoring and predictive analytics for pharmacovigilance operations.",
-    backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    title: "Pharmacovigilance / Drug Safety",
+    description:
+      "If your organization is in the pharmaceutical, biotech, consumer health, animal health or medical device space, partner with us for consultation that streamlines your end-to-end drug safety surveillance activities for investigational and post-market products.",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
   {
     icon: <ScrollText className="h-8 w-8 text-white" />,
-    title: "Regulatory Intelligence",
-    description: "Intelligent regulatory solutions with automated compliance monitoring.",
-    backgroundImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    title: "Regulatory Affairs",
+    description:
+      "Engage our consultative approach to quickly identify solutions that reduce costs, accelerate approval timelines and improve your processes. Ranging from preapproval to post-approval, and from intellectual property to FDA approval, we strategized cost-effective, high-quality regulatory affairs solutions.",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
   {
     icon: <Shield className="h-8 w-8 text-white" />,
-    title: "Quality Intelligence",
-    description: "Smart quality assurance with predictive analytics and risk assessment.",
-    backgroundImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    title: "Quality and Compliance",
+    description:
+      "Create a long-term plan that ensures the production of quality products while meeting compliance requirements. Specializing in corrective and preventive action, we develop solutions that address your quality and regulatory compliance processes.",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   },
 ];
 
@@ -57,23 +67,23 @@ const benefits = [
   {
     icon: <Target className="h-6 w-6" />,
     title: "Accelerated Timelines",
-    description: "Reduce time-to-market with streamlined processes"
+    description: "Reduce time-to-market with streamlined processes",
   },
   {
     icon: <TrendingUp className="h-6 w-6" />,
     title: "Enhanced Efficiency",
-    description: "Optimize operations with cutting-edge technology"
+    description: "Optimize operations with cutting-edge technology",
   },
   {
     icon: <Users className="h-6 w-6" />,
     title: "Expert Guidance",
-    description: "Access specialized life science professionals"
+    description: "Access specialized life science professionals",
   },
   {
     icon: <Award className="h-6 w-6" />,
     title: "Compliance Assurance",
-    description: "Meet regulatory standards with confidence"
-  }
+    description: "Meet regulatory standards with confidence",
+  },
 ];
 
 export default function LifeScience() {
@@ -203,7 +213,8 @@ export default function LifeScience() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive life science solutions designed to accelerate your research and development
+              Comprehensive life science solutions designed to accelerate your
+              research and development
             </p>
           </motion.div>
 
@@ -227,20 +238,20 @@ export default function LifeScience() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
-                  
+
                   {/* Content Container */}
                   <div className="relative z-10 p-6 h-full flex flex-col">
                     {/* Icon in top-left corner */}
                     <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors duration-300">
                       <div className="text-white group-hover:text-blue-300 transition-colors duration-300">
                         {index === 0 && <Stethoscope className="h-6 w-6" />}
-                        {index === 1 && <FlaskConical className="h-6 w-6" />}
+                        {index === 1 && <TrendingUp className="h-6 w-6" />}
                         {index === 2 && <Beaker className="h-6 w-6" />}
                         {index === 3 && <ScrollText className="h-6 w-6" />}
                         {index === 4 && <Shield className="h-6 w-6" />}
                       </div>
                     </div>
-                    
+
                     {/* Title and Description at bottom */}
                     <div className="mt-auto">
                       <h4 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-blue-100 transition-colors duration-300">
@@ -250,19 +261,19 @@ export default function LifeScience() {
                         {service.description}
                       </p>
                     </div>
-                    
+
                     {/* Icon overlay in bottom-right */}
                     <div className="absolute bottom-4 right-4 w-12 h-12 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 group-hover:border-blue-300/50 transition-all duration-300">
                       <div className="text-blue-300 group-hover:text-blue-200 transition-colors duration-300">
                         {index === 0 && <Stethoscope className="h-5 w-5" />}
-                        {index === 1 && <FlaskConical className="h-5 w-5" />}
+                        {index === 1 && <TrendingUp className="h-5 w-5" />}
                         {index === 2 && <Beaker className="h-5 w-5" />}
                         {index === 3 && <ScrollText className="h-5 w-5" />}
                         {index === 4 && <Shield className="h-5 w-5" />}
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Subtle hover glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/0 via-blue-500/0 to-cyan-500/0 group-hover:from-blue-600/10 group-hover:via-blue-500/5 group-hover:to-cyan-500/10 transition-all duration-500 rounded-2xl"></div>
                 </div>
@@ -324,7 +335,8 @@ export default function LifeScience() {
               Ready to Transform Your Life Science Operations?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Partner with us to accelerate your research, ensure compliance, and bring life-changing treatments to market faster.
+              Partner with us to accelerate your research, ensure compliance,
+              and bring life-changing treatments to market faster.
             </p>
             <Button
               onClick={() => setLocation("/contact")}
