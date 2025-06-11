@@ -100,18 +100,7 @@ export default function Careers() {
               transition={{ duration: 0.8 }}
               className="max-w-4xl mx-auto"
             >
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 rounded-full backdrop-blur-xl mb-8"
-              >
-                <Briefcase className="h-5 w-5 text-cyan-400" />
-                <span className="text-white font-medium">
-                  Join Our Elite Team
-                </span>
-                <Star className="h-5 w-5 text-blue-400 fill-current" />
-              </motion.div>
+
 
               <motion.h1
                 initial={{ y: 30, opacity: 0 }}
@@ -178,7 +167,10 @@ export default function Careers() {
                 Your Potential Meets Possibility
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mb-8"></div>
-              <p className="text-xl text-gray-300 mb-12" style={{ lineHeight: '1.75rem' }}>
+              <p
+                className="text-xl text-gray-300 mb-12"
+                style={{ lineHeight: "1.75rem" }}
+              >
                 At RT NextGen AI, we are dedicated to attracting, retaining, and
                 inspiring a diverse, talented, and creative workforce. We value
                 individuals who are eager to learn and grow with us. Our teams
@@ -228,7 +220,10 @@ export default function Careers() {
               <h2 className="text-5xl font-bold mb-6 text-white">
                 Our Core Values
               </h2>
-              <p className="text-xl text-gray-300" style={{ lineHeight: '1.75rem' }}>
+              <p
+                className="text-xl text-gray-300"
+                style={{ lineHeight: "1.75rem" }}
+              >
                 We believe in creating an environment where innovation thrives
                 and every team member can reach their full potential.
               </p>
@@ -322,7 +317,10 @@ export default function Careers() {
                 Specialized AI Technology Groups
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 lg:mx-0 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300" style={{ lineHeight: '1.75rem' }}>
+              <p
+                className="text-xl text-gray-300"
+                style={{ lineHeight: "1.75rem" }}
+              >
                 RT NextGen AI is home to several specialized AI technology
                 groups that collaborate closely to deliver impactful,
                 forward-thinking solutions. If you are confident in your
@@ -378,7 +376,10 @@ export default function Careers() {
               Current Openings
             </h2>
             <div className="w-40 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto" style={{ lineHeight: '1.75rem' }}>
+            <p
+              className="text-xl text-gray-300 max-w-3xl mx-auto"
+              style={{ lineHeight: "1.75rem" }}
+            >
               Join our dynamic team and shape the future of AI-driven validation
               solutions
             </p>
@@ -473,10 +474,10 @@ export default function Careers() {
 
                   <div className="grid grid-cols-3 gap-4 items-center py-3 border-b border-white/10">
                     <span className="text-white font-medium text-left">
-                      AI Technical Project Manager
+                      AI Technical Project Manager, Service Delivery & AI
                     </span>
                     <span className="text-white text-left">
-                      Service Delivery & AI
+                      7 Years • Dallas, TX
                     </span>
                     <div className="text-center">
                       <Button
