@@ -190,17 +190,17 @@ export default function AIConsulting() {
             <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
           </div>
           <div className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Our AI Consulting Services
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We offer comprehensive AI consulting services to help you identify opportunities, develop strategies, and optimize processes with artificial intelligence.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-white mb-6">
+                  Our AI Consulting Services
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  We offer comprehensive AI consulting services to help you identify opportunities, develop strategies, and optimize processes with artificial intelligence.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
               {/* AI and Data Strategy */}
               <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/30 rounded-xl p-8 hover:border-cyan-400/60 transition-all duration-300 group">
                 <div className="mb-6">
@@ -300,6 +300,7 @@ export default function AIConsulting() {
                 </ul>
               </div>
             </div>
+          </div>
           </div>
         </section>
 
