@@ -161,10 +161,12 @@ export default function Navbar({
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          if (link.href.startsWith("/")) {
+                          if (link.hasDropdown) {
+                            toggleDropdown(link.id, e);
+                          } else if (link.href.startsWith("/")) {
                             setLocation(link.href);
                           } else {
-                            toggleDropdown(link.id, e);
+                            scrollToSection(e, link.href);
                           }
                         }}
                       >
