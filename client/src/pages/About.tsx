@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Award, Rocket, Handshake } from "lucide-react";
 
@@ -55,18 +54,38 @@ export default function AboutPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <section className="relative py-16 md:py-24 bg-white">
-        {/* Banner Background Image */}
+      {/* Banner Section */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 text-white">
         <div className="absolute inset-0 w-full h-full">
           <img
             src="/assets/ai-brain-banner.png"
             alt="AI Brain Banner"
-            className="w-full h-full object-cover opacity-20 brightness-125"
+            className="w-full h-full object-cover opacity-60 brightness-125"
           />
         </div>
         <div className="relative z-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
+              className="max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                About Us
+              </h1>
+              <p className="text-lg md:text-xl text-slate-200">
+                Discover our mission, vision, and the passionate team behind RT NextGen AI
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
             className="max-w-3xl mx-auto text-center mb-16"
             initial="hidden"
             whileInView="visible"
@@ -142,7 +161,6 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-          </div>
           </div>
         </div>
       </section>
