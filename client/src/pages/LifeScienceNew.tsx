@@ -63,23 +63,23 @@ const benefits = [
   {
     icon: <Target className="h-6 w-6" />,
     title: "Accelerated Timelines",
-    description: "Reduce time-to-market with streamlined processes"
+    description: "Reduce time-to-market with streamlined processes",
   },
   {
     icon: <Users className="h-6 w-6" />,
     title: "Expert Guidance",
-    description: "Access specialized life science professionals"
+    description: "Access specialized life science professionals",
   },
   {
     icon: <Clock className="h-6 w-6" />,
     title: "Enhanced Efficiency",
-    description: "Optimize operations with cutting-edge technology"
+    description: "Optimize operations with cutting-edge technology",
   },
   {
     icon: <Award className="h-6 w-6" />,
     title: "Compliance Assurance",
-    description: "Meet regulatory standards with confidence"
-  }
+    description: "Meet regulatory standards with confidence",
+  },
 ];
 
 export default function LifeScience() {
@@ -128,7 +128,9 @@ export default function LifeScience() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
             >
-              Accelerating innovation through comprehensive life science solutions, regulatory expertise, and cutting-edge technology to bring breakthrough treatments to market faster
+              Accelerating innovation through comprehensive life science
+              solutions, regulatory expertise, and cutting-edge technology to
+              bring breakthrough treatments to market faster
             </motion.p>
 
             {/* Badge below description */}
@@ -173,14 +175,14 @@ export default function LifeScience() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive life science solutions designed to accelerate your research and development
+              Comprehensive life science solutions designed to accelerate your
+              research and development
             </p>
           </motion.div>
 
           {/* Unique Spiral Layout */}
           <div className="max-w-8xl mx-auto relative">
             <div className="flex flex-col lg:flex-row gap-16 items-center">
-              
               {/* Left Side - Main Life Science Hub */}
               <div className="lg:w-1/2">
                 <motion.div
@@ -194,13 +196,13 @@ export default function LifeScience() {
                   <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="absolute inset-0">
                       <img
-                        src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        src="/assets/Life-science-solution.jpg"
                         alt="Life Science Innovation"
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-cyan-900/50"></div>
                     </div>
-                    
+
                     {/* Floating Elements */}
                     <div className="absolute top-8 right-8 flex flex-col gap-4">
                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
@@ -210,22 +212,27 @@ export default function LifeScience() {
                         Hub
                       </div>
                     </div>
-                    
+
                     {/* Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-8">
                       <div className="mb-4">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
                           <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">Innovation Hub</span>
+                          <span className="text-blue-200 text-sm font-medium">
+                            Innovation Hub
+                          </span>
                         </div>
                         <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
                           Life Science Solutions
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Comprehensive suite of advanced life science solutions powered by cutting-edge technology and regulatory expertise to accelerate your research and development processes.
+                          Comprehensive suite of advanced life science solutions
+                          powered by cutting-edge technology and regulatory
+                          expertise to accelerate your research and development
+                          processes.
                         </p>
                       </div>
-                      
+
                       <button className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg">
                         Explore All Solutions
                       </button>
@@ -246,7 +253,6 @@ export default function LifeScience() {
                     className="group cursor-pointer"
                   >
                     <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
-                      
                       {/* Image Preview */}
                       <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                         <img
@@ -256,34 +262,44 @@ export default function LifeScience() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-cyan-900/50"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          {index === 0 && <Stethoscope className="h-6 w-6 text-white" />}
-                          {index === 1 && <TrendingUp className="h-6 w-6 text-white" />}
-                          {index === 2 && <Beaker className="h-6 w-6 text-white" />}
-                          {index === 3 && <ScrollText className="h-6 w-6 text-white" />}
-                          {index === 4 && <Shield className="h-6 w-6 text-white" />}
+                          {index === 0 && (
+                            <Stethoscope className="h-6 w-6 text-white" />
+                          )}
+                          {index === 1 && (
+                            <TrendingUp className="h-6 w-6 text-white" />
+                          )}
+                          {index === 2 && (
+                            <Beaker className="h-6 w-6 text-white" />
+                          )}
+                          {index === 3 && (
+                            <ScrollText className="h-6 w-6 text-white" />
+                          )}
+                          {index === 4 && (
+                            <Shield className="h-6 w-6 text-white" />
+                          )}
                         </div>
                       </div>
-                      
+
                       {/* Content */}
                       <div className="flex-grow">
                         <div className="flex items-center gap-3 mb-2">
                           <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {String(index + 1).padStart(2, '0')}
+                            {String(index + 1).padStart(2, "0")}
                           </div>
                           <div className="text-xs text-blue-400 font-medium uppercase tracking-wider">
                             Solution
                           </div>
                         </div>
-                        
+
                         <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
                           {service.title}
                         </h4>
-                        
+
                         <p className="text-gray-400 text-sm leading-relaxed group-hover:text-blue-200 transition-colors duration-300">
                           {service.description.substring(0, 80)}...
                         </p>
                       </div>
-                      
+
                       {/* Arrow */}
                       <div className="flex-shrink-0">
                         <ArrowRight className="h-5 w-5 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-300" />
@@ -299,20 +315,50 @@ export default function LifeScience() {
               {/* Flowing Lines */}
               <svg className="w-full h-full opacity-10">
                 <defs>
-                  <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="flowGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#3B82F6" />
                     <stop offset="50%" stopColor="#06B6D4" />
                     <stop offset="100%" stopColor="#3B82F6" />
                   </linearGradient>
                 </defs>
-                <path d="M0,200 Q300,100 600,200 T1200,200" stroke="url(#flowGradient)" strokeWidth="3" fill="none" strokeDasharray="10,5" opacity="0.6">
-                  <animate attributeName="stroke-dashoffset" values="0;15" dur="2s" repeatCount="indefinite" />
+                <path
+                  d="M0,200 Q300,100 600,200 T1200,200"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray="10,5"
+                  opacity="0.6"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;15"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
                 </path>
-                <path d="M0,400 Q400,300 800,400 T1600,400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" strokeDasharray="8,4" opacity="0.4">
-                  <animate attributeName="stroke-dashoffset" values="0;12" dur="3s" repeatCount="indefinite" />
+                <path
+                  d="M0,400 Q400,300 800,400 T1600,400"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="8,4"
+                  opacity="0.4"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;12"
+                    dur="3s"
+                    repeatCount="indefinite"
+                  />
                 </path>
               </svg>
-              
+
               {/* Floating Particles */}
               <div className="absolute top-20 left-1/4 w-3 h-3 bg-blue-400 rounded-full opacity-60 animate-bounce"></div>
               <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-cyan-400 rounded-full opacity-40 animate-pulse delay-1000"></div>
@@ -324,15 +370,42 @@ export default function LifeScience() {
             <div className="absolute inset-0 pointer-events-none">
               <svg className="w-full h-full opacity-20">
                 <defs>
-                  <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="connectionGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#3B82F6" />
                     <stop offset="100%" stopColor="#06B6D4" />
                   </linearGradient>
                 </defs>
                 {/* Curved connecting lines */}
-                <path d="M400,200 Q600,150 800,250" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="8,8" opacity="0.4" />
-                <path d="M450,300 Q650,250 850,350" stroke="url(#connectionGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" opacity="0.3" />
-                <path d="M400,400 Q600,350 800,450" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="6,6" opacity="0.4" />
+                <path
+                  d="M400,200 Q600,150 800,250"
+                  stroke="url(#connectionGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="8,8"
+                  opacity="0.4"
+                />
+                <path
+                  d="M450,300 Q650,250 850,350"
+                  stroke="url(#connectionGradient)"
+                  strokeWidth="1"
+                  fill="none"
+                  strokeDasharray="4,4"
+                  opacity="0.3"
+                />
+                <path
+                  d="M400,400 Q600,350 800,450"
+                  stroke="url(#connectionGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="6,6"
+                  opacity="0.4"
+                />
               </svg>
             </div>
           </div>
@@ -391,7 +464,8 @@ export default function LifeScience() {
               Ready to Transform Your Life Science Operations?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Partner with us to accelerate your research, ensure compliance, and bring life-changing treatments to market faster.
+              Partner with us to accelerate your research, ensure compliance,
+              and bring life-changing treatments to market faster.
             </p>
             <Button
               onClick={() => navigate("/contact")}
