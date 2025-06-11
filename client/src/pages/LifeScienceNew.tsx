@@ -254,7 +254,7 @@ export default function LifeScience() {
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-cyan-900/50"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/60 to-cyan-600/40"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
                           {index === 0 && <Stethoscope className="h-6 w-6 text-white" />}
                           {index === 1 && <TrendingUp className="h-6 w-6 text-white" />}
