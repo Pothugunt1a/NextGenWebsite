@@ -448,30 +448,44 @@ export default function Validation() {
 
                 {/* Header Section */}
                 <div className="relative p-8 bg-white/5">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-6">
-                      <div
-                        className={`p-4 rounded-2xl bg-gradient-to-br ${selectedService.color} shadow-lg`}
-                      >
-                        {selectedService.icon}
-                      </div>
-                      <div>
-                        <Badge
-                          variant="secondary"
-                          className="mb-3 bg-gray-800 text-white border-white/20"
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-6">
+                    {/* Left Column - Service Info */}
+                    <div className="lg:col-span-2">
+                      <div className="flex items-start gap-6">
+                        <div
+                          className={`p-4 rounded-2xl bg-gradient-to-br ${selectedService.color} shadow-lg flex-shrink-0`}
                         >
-                          {selectedService.subtitle}
-                        </Badge>
-                        <h3 className="text-3xl font-bold text-white mb-2">
-                          {selectedService.title}
-                        </h3>
-                        <p className="text-gray-300 max-w-2xl">
-                          {selectedService.description}
-                        </p>
+                          {selectedService.icon}
+                        </div>
+                        <div className="flex-1">
+                          <Badge
+                            variant="secondary"
+                            className="mb-3 bg-gray-800 text-white border-white/20"
+                          >
+                            {selectedService.subtitle}
+                          </Badge>
+                          <h3 className="text-3xl font-bold text-white mb-4">
+                            {selectedService.title}
+                          </h3>
+                          <p className="text-gray-300 mb-6 leading-relaxed">
+                            {selectedService.description}
+                          </p>
+                          <Button
+                            className="bg-blue-600 hover:bg-blue-700"
+                            onClick={() => setShowDetails(!showDetails)}
+                          >
+                            {showDetails ? "Hide Details" : "Learn More"}
+                            <ArrowRight
+                              className={`ml-2 h-4 w-4 transition-transform ${showDetails ? "rotate-90" : ""}`}
+                            />
+                          </Button>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-4">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-4xl">
+
+                    {/* Right Column - Service Selection */}
+                    <div className="lg:col-span-1">
+                      <div className="grid grid-cols-1 gap-4">
                         {validationServices.map((service) => (
                           <Button
                             key={service.id}
@@ -480,7 +494,7 @@ export default function Validation() {
                                 ? "default"
                                 : "outline"
                             }
-                            className={`text-center justify-center p-3 h-auto min-h-[70px] transition-all duration-300 ${
+                            className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
                               selectedService.id === service.id
                                 ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
                                 : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
@@ -489,23 +503,12 @@ export default function Validation() {
                               setSelectedService(service);
                             }}
                           >
-                            <div className="flex items-center justify-center w-full h-full px-2">
-                              <span className="font-semibold text-sm sm:text-base leading-tight text-center whitespace-normal hyphens-auto">
-                                {service.title}
-                              </span>
-                            </div>
+                            <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
+                              {service.title}
+                            </span>
                           </Button>
                         ))}
                       </div>
-                      <Button
-                        className="bg-blue-600 hover:bg-blue-700 w-fit"
-                        onClick={() => setShowDetails(!showDetails)}
-                      >
-                        {showDetails ? "Hide Details" : "Learn More"}
-                        <ArrowRight
-                          className={`ml-2 h-4 w-4 transition-transform ${showDetails ? "rotate-90" : ""}`}
-                        />
-                      </Button>
                     </div>
                   </div>
                 </div>
