@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Brain, Lightbulb, Target, Users, Zap, Shield, Network, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChevronDown, ChevronUp, Brain, Lightbulb, Target, Users, Zap, Shield, Network, TrendingUp, ArrowRight, CheckCircle, Award } from "lucide-react";
+import { Button } from "../components/ui/button";
 import Layout from "../components/Layout";
 
 interface FAQ {
@@ -114,26 +116,80 @@ export default function AIConsulting() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        {/* Hero Banner */}
-        <div className="relative h-96 overflow-hidden">
-          <img
-            src="/assets/AI-Consulting.png"
-            alt="AI Consulting"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-5xl font-bold mb-4">AI Consulting Services</h1>
-              <p className="text-xl max-w-2xl mx-auto">
-                Transform your business with strategic AI implementation and expert guidance
-              </p>
-            </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="text-white"
+      >
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="/assets/AI-Consulting.png"
+              alt="AI Consulting Services"
+              className="w-full h-full object-cover"
+            />
           </div>
-        </div>
+
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-5xl"
+            >
+              <motion.h1
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+                style={{ fontWeight: 700 }}
+              >
+                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                  AI Consulting Services
+                </span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+              >
+                Transform your business with strategic AI implementation, expert guidance, 
+                and comprehensive solutions that drive innovation and competitive advantage
+              </motion.p>
+
+              {/* Badge below description */}
+              <div className="mb-32">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.6, type: "spring" }}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+                >
+                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
+                  <span className="text-white font-medium">
+                    Strategic AI Transformation Solutions
+                  </span>
+                  <Award className="h-4 w-4 text-blue-400 fill-current" />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         {/* AI Consulting Services Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="py-20 bg-light relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+            <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+            <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+            <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+          </div>
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
@@ -246,9 +302,17 @@ export default function AIConsulting() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* Why Work With Us Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="py-20 bg-light relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+            <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+            <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+            <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+          </div>
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
@@ -495,6 +559,7 @@ export default function AIConsulting() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -510,7 +575,8 @@ export default function AIConsulting() {
             </button>
           </div>
         </section>
-      </div>
+        </div>
+      </motion.div>
     </Layout>
   );
 }
