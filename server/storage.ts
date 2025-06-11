@@ -42,10 +42,11 @@ export class DatabaseStorage implements IStorage {
 
   // Contact form methods
   async saveContactSubmission(submission: InsertContactForm): Promise<ContactFormSubmission> {
-    // Make sure company can be null for database compatibility
+    // Make sure attachment fields can be null for database compatibility
     const data = {
       ...submission,
-      company: submission.company || null
+      attachmentName: submission.attachmentName || null,
+      attachmentSize: submission.attachmentSize || null
     };
     
     const result = await db

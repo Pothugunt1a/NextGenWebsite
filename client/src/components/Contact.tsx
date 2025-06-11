@@ -48,8 +48,14 @@ export default function Contact() {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      await apiRequest("POST", "/api/contact", data);
+      const submissionData = {
+        ...data,
+        attachmentName: attachedFile?.name || null,
+        attachmentSize: attachedFile?.size || null,
+      };
+      await apiRequest("POST", "/api/contact", submissionData);
       setIsSuccess(true);
+      setAttachedFile(null);
       toast({
         title: "Message sent successfully!",
         description: "We'll get back to you as soon as possible.",
@@ -82,6 +88,7 @@ export default function Contact() {
   // Reset form to send another message
   const handleSendAnother = () => {
     setIsSuccess(false);
+    setAttachedFile(null);
     form.reset();
   };
 
