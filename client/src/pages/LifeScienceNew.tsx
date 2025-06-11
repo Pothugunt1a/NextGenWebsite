@@ -288,11 +288,11 @@ export default function LifeScience() {
                           </div>
                         </div>
 
-                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                           {service.title}
                         </h4>
 
-                        <p className="text-gray-400 text-sm leading-relaxed group-hover:text-blue-200 transition-colors duration-300">
+                        <p className="text-gray-400 text-sm leading-relaxed">
                           {service.description.substring(0, 80)}...
                         </p>
                       </div>
