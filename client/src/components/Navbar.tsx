@@ -132,7 +132,12 @@ export default function Navbar({
           <nav className="hidden lg:flex items-center" ref={dropdownRef}>
             <div className="flex items-center flex-wrap justify-end">
               {navLinks.map((link) => (
-                <div key={link.id} className="relative group mx-1">
+                <div 
+                  key={link.id} 
+                  className="relative group mx-1"
+                  onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.id)}
+                  onMouseLeave={() => link.hasDropdown && setActiveDropdown(null)}
+                >
                   {link.hasDropdown ? (
                     <div className="relative">
                       <a
@@ -144,7 +149,14 @@ export default function Navbar({
                               ? "text-white hover:text-gray-200"
                               : "text-black hover:text-primary"
                         }`}
-                        onClick={(e) => toggleDropdown(link.id, e)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (link.href.startsWith("/")) {
+                            setLocation(link.href);
+                          } else {
+                            toggleDropdown(link.id, e);
+                          }
+                        }}
                       >
                         {link.name}
                         <ChevronDown
@@ -349,7 +361,15 @@ export default function Navbar({
                     <a
                       href={link.href}
                       className={`flex justify-between items-center ${scrolled ? "text-gray-800 hover:text-primary" : "text-white hover:text-gray-200"} font-medium transition-colors py-3`}
-                      onClick={(e) => toggleMobileDropdown(link.id, e)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (link.href.startsWith("/")) {
+                          setLocation(link.href);
+                          handleLinkClick();
+                        } else {
+                          toggleMobileDropdown(link.id, e);
+                        }
+                      }}
                     >
                       {link.name}
                       <ChevronDown

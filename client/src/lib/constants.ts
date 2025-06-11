@@ -144,7 +144,7 @@ export const navLinks = [
   {
     id: 3,
     name: "AI",
-    href: "#ai",
+    href: "/ai-consulting",
     hasDropdown: true,
     dropdownItems: [
       {
