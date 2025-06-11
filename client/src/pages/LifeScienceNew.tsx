@@ -154,7 +154,7 @@ export default function LifeScience() {
       </section>
 
       {/* Services Section - Image-Driven Layout */}
-      <div className="py-12 bg-light relative overflow-hidden">
+      <div className="py-20 bg-light relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
@@ -169,7 +169,7 @@ export default function LifeScience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-20"
           >
             <h2 className="text-5xl font-bold mb-6 text-white">
               Our Solutions
@@ -404,14 +404,14 @@ export default function LifeScience() {
       </div>
 
       {/* Benefits Section */}
-      <div className="py-12 bg-light">
+      <div className="py-20 bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold mb-6 text-white">
               Why Choose Us
