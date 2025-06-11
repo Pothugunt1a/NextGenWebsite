@@ -194,7 +194,7 @@ export default function Navbar({
                                           <li key={itemIdx}>
                                             <a
                                               href={item.href}
-                                              className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm leading-relaxed hover:translate-x-1 transform transition-transform no-underline"
+                                              className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm leading-relaxed hover:translate-x-1 transform transition-transform"
                                               onClick={(e) => {
                                                 e.preventDefault();
                                                 if (
