@@ -65,6 +65,15 @@
   background-clip: text;
 }
 
+/* Remove underlines from dropdown items */
+.no-underline {
+  text-decoration: none !important;
+}
+
+.no-underline::after {
+  display: none !important;
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 20 14.3% 4.1%;
