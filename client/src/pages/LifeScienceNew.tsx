@@ -191,14 +191,14 @@ export default function LifeScience() {
                   className="relative group"
                 >
                   {/* Main Feature Card */}
-                  <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                  <div className="relative h-96 w-full bg-gradient-to-br from-purple-600 to-pink-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-purple-500/30 transition-all duration-700">
                     <div className="absolute inset-0">
                       <img
                         src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                         alt="Life Science Innovation"
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-cyan-900/50"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/70 to-pink-900/50"></div>
                     </div>
                     
                     {/* Floating Elements */}
@@ -206,7 +206,7 @@ export default function LifeScience() {
                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
                         <Target className="h-8 w-8 text-white" />
                       </div>
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                         Hub
                       </div>
                     </div>
@@ -215,18 +215,18 @@ export default function LifeScience() {
                     <div className="absolute bottom-0 left-0 right-0 p-8">
                       <div className="mb-4">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">Innovation Hub</span>
+                          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                          <span className="text-purple-200 text-sm font-medium">Innovation Hub</span>
                         </div>
                         <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
                           Life Science Solutions
                         </h3>
-                        <p className="text-blue-100 leading-relaxed mb-6">
+                        <p className="text-purple-100 leading-relaxed mb-6">
                           Comprehensive suite of advanced life science solutions powered by cutting-edge technology and regulatory expertise to accelerate your research and development processes.
                         </p>
                       </div>
                       
-                      <button className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg">
+                      <button className="px-8 py-3 bg-white text-purple-600 font-semibold rounded-full hover:bg-purple-50 transition-all duration-300 hover:scale-105 shadow-lg">
                         Explore All Solutions
                       </button>
                     </div>
@@ -254,7 +254,7 @@ export default function LifeScience() {
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/60 to-cyan-600/40"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/60 to-pink-600/40"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
                           {index === 0 && <Stethoscope className="h-6 w-6 text-white" />}
                           {index === 1 && <TrendingUp className="h-6 w-6 text-white" />}
@@ -267,19 +267,19 @@ export default function LifeScience() {
                       {/* Content */}
                       <div className="flex-grow">
                         <div className="flex items-center gap-3 mb-2">
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                             {String(index + 1).padStart(2, '0')}
                           </div>
-                          <div className="text-xs text-blue-400 font-medium uppercase tracking-wider">
+                          <div className="text-xs text-purple-400 font-medium uppercase tracking-wider">
                             Solution
                           </div>
                         </div>
                         
-                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
                           {service.title}
                         </h4>
                         
-                        <p className="text-gray-400 text-sm leading-relaxed group-hover:text-blue-200 transition-colors duration-300">
+                        <p className="text-gray-400 text-sm leading-relaxed group-hover:text-purple-200 transition-colors duration-300">
                           {service.description.substring(0, 80)}...
                         </p>
                       </div>
