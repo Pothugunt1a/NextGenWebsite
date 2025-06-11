@@ -78,13 +78,6 @@ const benefits = [
   }
 ];
 
-const stats = [
-  { value: "500+", label: "Clinical Trials Supported" },
-  { value: "98%", label: "Compliance Rate" },
-  { value: "15+", label: "Years Experience" },
-  { value: "50+", label: "Life Science Clients" }
-];
-
 export default function LifeScience() {
   const [, setLocation] = useLocation();
 
@@ -96,14 +89,14 @@ export default function LifeScience() {
       className="min-h-screen bg-gray-900"
     >
       {/* Hero Section */}
-      <div className="relative h-[70vh] overflow-hidden">
+      <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/assets/Lifescience_banner.jpg"
             alt="Life Science Digital Solutions"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/50"></div>
         </div>
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,35 +145,6 @@ export default function LifeScience() {
               </motion.div>
             </motion.div>
           </div>
-        </div>
-      </div>
-
-      {/* Statistics Section */}
-      <div className="py-16 bg-gray-800/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-gray-300 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </div>
 
