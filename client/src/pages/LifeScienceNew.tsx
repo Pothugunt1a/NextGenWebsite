@@ -286,9 +286,6 @@ export default function LifeScience() {
                           <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                             {String(index + 1).padStart(2, "0")}
                           </div>
-                          <div className="text-xs text-blue-400 font-medium uppercase tracking-wider">
-                            Service
-                          </div>
                         </div>
 
                         <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
