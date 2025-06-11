@@ -169,62 +169,71 @@ export default function Navbar({
                               </div>
                             </div>
 
-                            {/* Content area with enhanced card-based design */}
+                            {/* Content area with unique flowing design */}
                             <div className="relative z-10 flex-1 p-8">
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                              <div className="space-y-8">
                                 {link.dropdownItems?.map((category, idx) => {
                                   const getCategoryIcon = (name: string) => {
                                     switch (name) {
                                       case "AI Consulting":
-                                        return <Brain className="h-8 w-8 text-cyan-400" />;
+                                        return <Brain className="h-6 w-6 text-cyan-400" />;
                                       case "AI Software Development":
-                                        return <Code className="h-8 w-8 text-blue-400" />;
+                                        return <Code className="h-6 w-6 text-blue-400" />;
                                       case "Generative AI":
-                                        return <Sparkles className="h-8 w-8 text-purple-400" />;
+                                        return <Sparkles className="h-6 w-6 text-purple-400" />;
                                       default:
-                                        return <Brain className="h-8 w-8 text-cyan-400" />;
+                                        return <Brain className="h-6 w-6 text-cyan-400" />;
                                     }
                                   };
 
                                   return (
-                                    <div
-                                      key={idx}
-                                      className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-sm border border-cyan-400/30 rounded-xl p-6 hover:border-cyan-400/60 transition-all duration-300 hover:transform hover:scale-[1.02] group"
-                                    >
-                                      {/* Category Header */}
-                                      <div className="flex items-center gap-3 mb-4">
-                                        {getCategoryIcon(category.name)}
-                                        <h3 className="text-white font-bold text-lg group-hover:text-cyan-400 transition-colors">
-                                          {category.name}
-                                        </h3>
+                                    <div key={idx} className="group">
+                                      {/* Category Header with flowing line */}
+                                      <div className="relative">
+                                        <div className="flex items-center gap-4 mb-6">
+                                          <div className="flex items-center gap-3 relative z-10">
+                                            <div className="p-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-lg backdrop-blur-sm border border-cyan-400/30">
+                                              {getCategoryIcon(category.name)}
+                                            </div>
+                                            <h3 className="text-white font-bold text-xl bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
+                                              {category.name}
+                                            </h3>
+                                          </div>
+                                          {/* Flowing line */}
+                                          <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/60 via-blue-400/40 to-transparent"></div>
+                                        </div>
                                       </div>
 
-                                      {/* Category Items */}
-                                      <ul className="space-y-3">
+                                      {/* Category Items in flowing grid */}
+                                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ml-8">
                                         {category.items.map((item, itemIdx) => (
-                                          <li key={itemIdx}>
-                                            <a
-                                              href={item.href}
-                                              className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-200 text-sm p-2 rounded-lg hover:bg-cyan-400/10 group/item"
-                                              onClick={(e) => {
-                                                e.preventDefault();
-                                                if (item.name === "Life Science") {
-                                                  setLocation("/life-science");
-                                                } else if (item.name === "Validation") {
-                                                  setLocation("/validation");
-                                                } else {
-                                                  scrollToSection(e, item.href);
-                                                }
-                                              }}
-                                            >
-                                              <ArrowRight className="h-3 w-3 text-cyan-400 opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                                              <span className="group-hover/item:translate-x-1 transition-transform">
-                                                {item.name}
-                                              </span>
-                                            </a>
-                                          </li>
+                                          <a
+                                            key={itemIdx}
+                                            href={item.href}
+                                            className="relative group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/20"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              if (item.name === "Life Science") {
+                                                setLocation("/life-science");
+                                              } else if (item.name === "Validation") {
+                                                setLocation("/validation");
+                                              } else {
+                                                scrollToSection(e, item.href);
+                                              }
+                                            }}
+                                          >
+                                            {/* Glowing dot indicator */}
+                                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 opacity-60 group-hover/item:opacity-100 group-hover/item:scale-150 transition-all duration-300"></div>
+                                            
+                                            <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 text-sm font-medium group-hover/item:translate-x-1 transform transition-transform">
+                                              {item.name}
+                                            </span>
+                                            
+                                            {/* Subtle arrow */}
+                                            <ArrowRight className="h-3 w-3 text-cyan-400 opacity-0 group-hover/item:opacity-100 transition-all duration-300 ml-auto" />
+                                          </a>
                                         ))}
-                                      </ul>
+                                      </div>
                                     </div>
                                   );
                                 })}
