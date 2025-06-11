@@ -102,55 +102,37 @@ export default function LifeScience() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="max-w-4xl"
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
           >
-            <h1 className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent leading-tight">
-              Life Science Excellence
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed max-w-3xl">
-              Accelerating innovation through comprehensive life science solutions, regulatory expertise, and cutting-edge technology to bring breakthrough treatments to market faster.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 mb-16">
-              <Button
-                onClick={() => navigate("/contact")}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/25 text-lg"
-              >
-                Get Started
-              </Button>
-              <Button
-                variant="outline"
-                className="px-8 py-4 border-blue-400 text-blue-400 hover:bg-blue-500/10 font-semibold rounded-full transition-all duration-300 hover:scale-105 text-lg"
-              >
-                Learn More
-              </Button>
-            </div>
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
+            >
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Life Science Excellence
+              </span>
+            </motion.h1>
 
-            <div className="flex flex-wrap gap-8">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.6 + index * 0.1, type: "spring" }}
-                  className="flex items-center gap-3 bg-black/20 backdrop-blur-sm px-6 py-3 rounded-full border border-blue-500/30"
-                >
-                  <div className="text-blue-400">
-                    {benefit.icon}
-                  </div>
-                  <span className="text-white font-medium">{benefit.title}</span>
-                </motion.div>
-              ))}
-            </div>
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+            >
+              Accelerating innovation through comprehensive life science solutions, regulatory expertise, and cutting-edge technology to bring breakthrough treatments to market faster
+            </motion.p>
 
-            <div className="flex items-center gap-4 mt-8">
+            {/* Badge below description */}
+            <div className="mb-32">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
