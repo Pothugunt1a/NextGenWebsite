@@ -177,141 +177,118 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          {/* Hexagon Honeycomb Layout */}
-          <div className="relative max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
-              {/* Left Column - Services 1 & 2 */}
-              <div className="lg:col-span-4 space-y-8">
-                {services.slice(0, 2).map((service, index) => (
-                  <motion.div
-                    key={service.title}
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2, duration: 0.8 }}
-                    className="group"
-                  >
-                    <div className="relative p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/20">
-                      {/* Floating Number */}
-                      <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
-                      
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-14 h-14 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                          {index === 0 && <Stethoscope className="h-7 w-7" />}
-                          {index === 1 && <TrendingUp className="h-7 w-7" />}
-                        </div>
-                        <div>
-                          <div className="text-sm text-blue-400 font-medium uppercase tracking-wider">
-                            Solution
-                          </div>
-                          <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
-                            {service.title}
-                          </h3>
-                        </div>
-                      </div>
-                      
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4 group-hover:text-blue-100 transition-colors duration-300">
-                        {service.description.substring(0, 120)}...
-                      </p>
-                      
-                      <button className="px-4 py-2 bg-gradient-to-r from-blue-600/80 to-cyan-600/80 text-white text-sm font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105">
-                        Explore
-                      </button>
-                    </div>
-                  </motion.div>
-                ))}
+          {/* Orbital Layout */}
+          <div className="relative max-w-6xl mx-auto min-h-[800px] flex items-center justify-center">
+            {/* Central Hub */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 1, type: "spring" }}
+              className="relative z-20"
+            >
+              <div className="w-48 h-48 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full shadow-2xl flex items-center justify-center group hover:shadow-blue-500/40 transition-all duration-500">
+                <div className="w-40 h-40 bg-gray-900 rounded-full flex flex-col items-center justify-center text-center p-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <Target className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-1">Life Science</h3>
+                  <p className="text-blue-200 text-xs">Solutions Hub</p>
+                </div>
               </div>
+            </motion.div>
 
-              {/* Center Column - Main Hexagon */}
-              <div className="lg:col-span-4 flex justify-center">
+            {/* Orbital Services */}
+            {services.map((service, index) => {
+              const angle = (index * 72) - 90; // 72 degrees apart, starting from top
+              const radius = 280;
+              const x = Math.cos((angle * Math.PI) / 180) * radius;
+              const y = Math.sin((angle * Math.PI) / 180) * radius;
+              
+              return (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  key={service.title}
+                  initial={{ opacity: 0, scale: 0.3 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 1, type: "spring" }}
-                  className="relative group"
+                  transition={{ 
+                    delay: 0.5 + index * 0.15, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  className="absolute group"
+                  style={{
+                    transform: `translate(${x}px, ${y}px)`,
+                    left: '50%',
+                    top: '50%',
+                    marginLeft: '-120px',
+                    marginTop: '-100px'
+                  }}
                 >
-                  {/* Main Hexagon Container */}
-                  <div className="relative w-80 h-80 mx-auto">
-                    {/* Hexagon Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-600 transform rotate-45 rounded-3xl shadow-2xl group-hover:shadow-blue-500/40 transition-all duration-500">
-                      <div className="absolute inset-2 bg-gray-900 rounded-3xl"></div>
+                  <div className="relative w-60 h-52 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-3xl hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/25 group-hover:scale-105">
+                    {/* Service Number Badge */}
+                    <div className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg z-10">
+                      {String(index + 1).padStart(2, '0')}
                     </div>
                     
-                    {/* Central Content */}
-                    <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
-                      <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <Beaker className="h-10 w-10 text-white" />
+                    {/* Background Image */}
+                    <div className="absolute inset-0 rounded-3xl overflow-hidden opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                      <img
+                        src={service.backgroundImage}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10 p-6 h-full flex flex-col">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                          {index === 0 && <Stethoscope className="h-6 w-6" />}
+                          {index === 1 && <TrendingUp className="h-6 w-6" />}
+                          {index === 2 && <Beaker className="h-6 w-6" />}
+                          {index === 3 && <ScrollText className="h-6 w-6" />}
+                          {index === 4 && <Shield className="h-6 w-6" />}
+                        </div>
+                        <div className="text-xs text-blue-400 font-medium uppercase tracking-wider">
+                          Solution
+                        </div>
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-200 transition-colors duration-300">
-                        {services[2].title}
+                      <h3 className="text-lg font-bold text-white mb-3 leading-tight group-hover:text-blue-300 transition-colors duration-300">
+                        {service.title}
                       </h3>
                       
-                      <p className="text-blue-100 text-sm leading-relaxed mb-6">
-                        Advanced pharmaceutical safety surveillance with AI-powered monitoring
+                      <p className="text-gray-300 text-xs leading-relaxed mb-4 flex-grow group-hover:text-blue-100 transition-colors duration-300">
+                        {service.description.substring(0, 100)}...
                       </p>
                       
-                      <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg">
-                        Learn More
-                      </button>
-                    </div>
-
-                    {/* Floating Elements */}
-                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-400 rounded-full animate-pulse"></div>
-                    <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-cyan-400 rounded-full animate-pulse delay-1000"></div>
-                    <div className="absolute top-1/2 -right-8 w-4 h-4 bg-blue-300 rounded-full animate-pulse delay-500"></div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Right Column - Services 4 & 5 */}
-              <div className="lg:col-span-4 space-y-8">
-                {services.slice(3, 5).map((service, index) => (
-                  <motion.div
-                    key={service.title}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: (index + 2) * 0.2, duration: 0.8 }}
-                    className="group"
-                  >
-                    <div className="relative p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/20">
-                      {/* Floating Number */}
-                      <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        {String(index + 4).padStart(2, '0')}
-                      </div>
-                      
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-14 h-14 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                          {index === 0 && <ScrollText className="h-7 w-7" />}
-                          {index === 1 && <Shield className="h-7 w-7" />}
-                        </div>
-                        <div>
-                          <div className="text-sm text-blue-400 font-medium uppercase tracking-wider">
-                            Solution
-                          </div>
-                          <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
-                            {service.title}
-                          </h3>
-                        </div>
-                      </div>
-                      
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4 group-hover:text-blue-100 transition-colors duration-300">
-                        {service.description.substring(0, 120)}...
-                      </p>
-                      
-                      <button className="px-4 py-2 bg-gradient-to-r from-blue-600/80 to-cyan-600/80 text-white text-sm font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105">
+                      <button className="px-4 py-2 bg-gradient-to-r from-blue-600/80 to-cyan-600/80 text-white text-xs font-medium rounded-full hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105 self-start">
                         Explore
                       </button>
                     </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+
+                    {/* Connecting Line to Center */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      <svg className="w-full h-full">
+                        <line
+                          x1="50%"
+                          y1="50%"
+                          x2={`${50 - (x / 4)}%`}
+                          y2={`${50 - (y / 4)}%`}
+                          stroke="url(#connectionGradient)"
+                          strokeWidth="2"
+                          strokeDasharray="3,3"
+                          opacity="0.3"
+                          className="group-hover:opacity-60 transition-opacity duration-300"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
 
             {/* Connecting Lines */}
             <div className="absolute inset-0 pointer-events-none">
@@ -321,11 +298,48 @@ export default function LifeScience() {
                     <stop offset="0%" stopColor="#3B82F6" />
                     <stop offset="100%" stopColor="#06B6D4" />
                   </linearGradient>
+                  <radialGradient id="orbitalGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="transparent" />
+                    <stop offset="80%" stopColor="#3B82F620" />
+                    <stop offset="100%" stopColor="#06B6D620" />
+                  </radialGradient>
                 </defs>
-                {/* Connecting lines between elements */}
-                <path d="M200,150 Q400,100 600,150" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="5,5" />
-                <path d="M200,350 Q400,400 600,350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" strokeDasharray="5,5" />
+                
+                {/* Orbital Rings */}
+                <circle cx="50%" cy="50%" r="280" fill="none" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="8,8" opacity="0.3" />
+                <circle cx="50%" cy="50%" r="200" fill="none" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="4,4" opacity="0.2" />
+                
+                {/* Radial connecting lines */}
+                {services.map((_, index) => {
+                  const angle = (index * 72) - 90;
+                  const startX = 50 + Math.cos((angle * Math.PI) / 180) * 12;
+                  const startY = 50 + Math.sin((angle * Math.PI) / 180) * 12;
+                  const endX = 50 + Math.cos((angle * Math.PI) / 180) * 35;
+                  const endY = 50 + Math.sin((angle * Math.PI) / 180) * 35;
+                  
+                  return (
+                    <line
+                      key={index}
+                      x1={`${startX}%`}
+                      y1={`${startY}%`}
+                      x2={`${endX}%`}
+                      y2={`${endY}%`}
+                      stroke="url(#connectionGradient)"
+                      strokeWidth="2"
+                      strokeDasharray="5,5"
+                      opacity="0.4"
+                    />
+                  );
+                })}
               </svg>
+            </div>
+
+            {/* Floating Particles */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-20 left-20 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+              <div className="absolute top-40 right-32 w-3 h-3 bg-cyan-400 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute bottom-32 left-40 w-2 h-2 bg-blue-300 rounded-full animate-ping delay-500"></div>
+              <div className="absolute bottom-20 right-20 w-1 h-1 bg-cyan-300 rounded-full animate-pulse delay-2000"></div>
             </div>
           </div>
         </div>
