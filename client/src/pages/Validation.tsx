@@ -471,32 +471,35 @@ export default function Validation() {
                       </div>
                     </div>
                     <div className="flex flex-col gap-4">
-                      <Select
-                        value={selectedService.id}
-                        onValueChange={(value) => {
-                          const service = validationServices.find(
-                            (s) => s.id === value,
-                          );
-                          if (service) setSelectedService(service);
-                        }}
-                      >
-                        <SelectTrigger className="w-64 bg-slate-800/50 border-slate-600 text-white">
-                          <SelectValue placeholder="Select validation service" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-slate-800 border-slate-600">
-                          {validationServices.map((service) => (
-                            <SelectItem
-                              key={service.id}
-                              value={service.id}
-                              className="text-white focus:bg-slate-700"
-                            >
-                              {service.title}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full max-w-4xl">
+                        {validationServices.map((service) => (
+                          <Button
+                            key={service.id}
+                            variant={selectedService.id === service.id ? "default" : "outline"}
+                            className={`text-left justify-start p-4 h-auto transition-all duration-300 ${
+                              selectedService.id === service.id
+                                ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
+                                : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40"
+                            }`}
+                            onClick={() => {
+                              setSelectedService(service);
+                            }}
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className={`p-2 rounded-lg ${
+                                selectedService.id === service.id 
+                                  ? "bg-white/20" 
+                                  : "bg-gradient-to-br from-blue-500/20 to-cyan-500/20"
+                              }`}>
+                                {service.icon}
+                              </div>
+                              <span className="font-medium">{service.title}</span>
+                            </div>
+                          </Button>
+                        ))}
+                      </div>
                       <Button
-                        className="bg-blue-600 hover:bg-blue-700"
+                        className="bg-blue-600 hover:bg-blue-700 w-fit"
                         onClick={() => setShowDetails(!showDetails)}
                       >
                         {showDetails ? "Hide Details" : "Learn More"}
