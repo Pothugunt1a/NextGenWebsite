@@ -96,52 +96,58 @@ export default function LifeScience() {
             alt="Life Science Digital Solutions"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/50"></div>
         </div>
-        <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
+
+        <div className="relative flex items-center h-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl text-white"
+              className="max-w-5xl"
             >
-              <motion.h1 
-                initial={{ y: 20, opacity: 0 }}
+              <motion.h1
+                initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent"
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+                style={{ fontWeight: 700 }}
               >
-                Life Science Solutions
+                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                  Life Science
+                </span>
+                <br />
+                <span className="text-white">SOLUTIONS</span>
               </motion.h1>
-              <motion.p 
-                initial={{ y: 20, opacity: 0 }}
+
+              <motion.p
+                initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed"
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="text-xl md:text-2xl text-white mb-8 leading-relaxed max-w-3xl"
               >
                 Advancing healthcare through innovative technology solutions for
                 pharmaceutical, biotech, and healthcare organizations
               </motion.p>
+
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-wrap gap-4"
+                transition={{ delay: 0.9, duration: 0.8 }}
+                className="flex flex-col sm:flex-row gap-6 justify-start items-center"
               >
                 <Button
+                  size="lg"
+                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-10 py-6 text-lg font-bold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 border-0"
                   onClick={() => setLocation("/contact")}
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold rounded-full"
                 >
                   Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold rounded-full"
-                >
-                  Learn More
-                </Button>
+                <div className="text-xl font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  info@rtnextgenai.com
+                </div>
               </motion.div>
             </motion.div>
           </div>
