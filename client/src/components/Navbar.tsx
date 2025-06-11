@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Brain, Code, Sparkles, ArrowRight } from "lucide-react";
 import { navLinks } from "../lib/constants";
 import { Button } from "./ui/button";
 import { useLocation } from "wouter";
@@ -169,55 +169,65 @@ export default function Navbar({
                               </div>
                             </div>
 
-                            {/* Content area with border */}
-                            <div className="relative z-10 flex-1 p-8 border-l-4 border-cyan-400">
-                              <div className="space-y-4">
-                                {link.dropdownItems?.map((category, idx) => (
-                                  <div
-                                    key={idx}
-                                    className="border-b border-cyan-400/20 last:border-b-0"
-                                  >
+                            {/* Content area with enhanced card-based design */}
+                            <div className="relative z-10 flex-1 p-8">
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {link.dropdownItems?.map((category, idx) => {
+                                  const getCategoryIcon = (name: string) => {
+                                    switch (name) {
+                                      case "AI Consulting":
+                                        return <Brain className="h-8 w-8 text-cyan-400" />;
+                                      case "AI Software Development":
+                                        return <Code className="h-8 w-8 text-blue-400" />;
+                                      case "Generative AI":
+                                        return <Sparkles className="h-8 w-8 text-purple-400" />;
+                                      default:
+                                        return <Brain className="h-8 w-8 text-cyan-400" />;
+                                    }
+                                  };
+
+                                  return (
                                     <div
-                                      className="font-bold text-white text-xl mb-4 tracking-wide pb-2 cursor-pointer hover:text-cyan-400 transition-colors flex justify-between items-center"
-                                      onClick={(e) =>
-                                        toggleDesktopSubmenu(category.name, e)
-                                      }
+                                      key={idx}
+                                      className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-sm border border-cyan-400/30 rounded-xl p-6 hover:border-cyan-400/60 transition-all duration-300 hover:transform hover:scale-[1.02] group"
                                     >
-                                      {category.name}
-                                      <ChevronDown
-                                        className={`h-5 w-5 transition-transform ${activeDesktopSubmenu === category.name ? "rotate-180" : ""}`}
-                                      />
-                                    </div>
-                                    {activeDesktopSubmenu === category.name && (
-                                      <ul className="space-y-3 pb-6 animate-in slide-in-from-top-5 fade-in-20">
+                                      {/* Category Header */}
+                                      <div className="flex items-center gap-3 mb-4">
+                                        {getCategoryIcon(category.name)}
+                                        <h3 className="text-white font-bold text-lg group-hover:text-cyan-400 transition-colors">
+                                          {category.name}
+                                        </h3>
+                                      </div>
+
+                                      {/* Category Items */}
+                                      <ul className="space-y-3">
                                         {category.items.map((item, itemIdx) => (
                                           <li key={itemIdx}>
                                             <a
                                               href={item.href}
-                                              className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm leading-relaxed hover:translate-x-1 transform transition-transform"
+                                              className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-200 text-sm p-2 rounded-lg hover:bg-cyan-400/10 group/item"
                                               onClick={(e) => {
                                                 e.preventDefault();
-                                                if (
-                                                  item.name === "Life Science"
-                                                ) {
+                                                if (item.name === "Life Science") {
                                                   setLocation("/life-science");
-                                                } else if (
-                                                  item.name === "Validation"
-                                                ) {
+                                                } else if (item.name === "Validation") {
                                                   setLocation("/validation");
                                                 } else {
                                                   scrollToSection(e, item.href);
                                                 }
                                               }}
                                             >
-                                              • {item.name}
+                                              <ArrowRight className="h-3 w-3 text-cyan-400 opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                                              <span className="group-hover/item:translate-x-1 transition-transform">
+                                                {item.name}
+                                              </span>
                                             </a>
                                           </li>
                                         ))}
                                       </ul>
-                                    )}
-                                  </div>
-                                ))}
+                                    </div>
+                                  );
+                                })}
                               </div>
                             </div>
 
