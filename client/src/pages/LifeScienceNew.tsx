@@ -408,7 +408,7 @@ export default function LifeScience() {
       </div>
 
       {/* Benefits Section */}
-      <div className="py-20 bg-gray-800/30">
+      <div className="py-20 bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
