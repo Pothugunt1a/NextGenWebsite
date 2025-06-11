@@ -305,7 +305,7 @@ export default function Navbar({
 
               <Button
                 onClick={() => setLocation("/contact")}
-                className="rounded-full font-medium transition-colors text-sm px-4 py-1 h-8 ml-2 bg-primary hover:bg-primary-dark text-white"
+                className="rounded-full font-medium transition-colors text-sm px-4 py-1 h-8 ml-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white"
                 size="sm"
               >
                 Contact
