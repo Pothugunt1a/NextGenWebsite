@@ -169,9 +169,9 @@ export default function Navbar({
                               </div>
                             </div>
 
-                            {/* Content area with unique flowing design */}
-                            <div className="relative z-10 flex-1 p-8">
-                              <div className="space-y-8">
+                            {/* Content area with interactive hierarchical design */}
+                            <div className="relative z-10 flex-1 p-8 max-w-2xl">
+                              <div className="space-y-6">
                                 {link.dropdownItems?.map((category, idx) => {
                                   const getCategoryIcon = (name: string) => {
                                     switch (name) {
@@ -186,54 +186,71 @@ export default function Navbar({
                                     }
                                   };
 
+                                  const isActive = activeDesktopSubmenu === category.name;
+
                                   return (
                                     <div key={idx} className="group">
-                                      {/* Category Header with flowing line */}
-                                      <div className="relative">
-                                        <div className="flex items-center gap-4 mb-6">
-                                          <div className="flex items-center gap-3 relative z-10">
-                                            <div className="p-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-lg backdrop-blur-sm border border-cyan-400/30">
+                                      {/* Clickable Category Header */}
+                                      <div 
+                                        className="relative cursor-pointer select-none"
+                                        onClick={(e) => toggleDesktopSubmenu(category.name, e)}
+                                      >
+                                        <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
+                                          <div className="flex items-center gap-4">
+                                            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
                                               {getCategoryIcon(category.name)}
                                             </div>
-                                            <h3 className="text-white font-bold text-xl bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
-                                              {category.name}
-                                            </h3>
+                                            <div>
+                                              <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors">
+                                                {category.name}
+                                              </h3>
+                                              <p className="text-gray-400 text-sm">
+                                                {category.items.length} services available
+                                              </p>
+                                            </div>
                                           </div>
-                                          {/* Flowing line */}
-                                          <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/60 via-blue-400/40 to-transparent"></div>
+                                          <ChevronDown
+                                            className={`h-5 w-5 text-cyan-400 transition-transform duration-300 ${
+                                              isActive ? "rotate-180" : ""
+                                            }`}
+                                          />
                                         </div>
                                       </div>
 
-                                      {/* Category Items in flowing grid */}
-                                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ml-8">
-                                        {category.items.map((item, itemIdx) => (
-                                          <a
-                                            key={itemIdx}
-                                            href={item.href}
-                                            className="relative group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/20"
-                                            onClick={(e) => {
-                                              e.preventDefault();
-                                              if (item.name === "Life Science") {
-                                                setLocation("/life-science");
-                                              } else if (item.name === "Validation") {
-                                                setLocation("/validation");
-                                              } else {
-                                                scrollToSection(e, item.href);
-                                              }
-                                            }}
-                                          >
-                                            {/* Glowing dot indicator */}
-                                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 opacity-60 group-hover/item:opacity-100 group-hover/item:scale-150 transition-all duration-300"></div>
-                                            
-                                            <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 text-sm font-medium group-hover/item:translate-x-1 transform transition-transform">
-                                              {item.name}
-                                            </span>
-                                            
-                                            {/* Subtle arrow */}
-                                            <ArrowRight className="h-3 w-3 text-cyan-400 opacity-0 group-hover/item:opacity-100 transition-all duration-300 ml-auto" />
-                                          </a>
-                                        ))}
-                                      </div>
+                                      {/* Expandable Category Items */}
+                                      {isActive && (
+                                        <div className="mt-3 ml-6 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                          {category.items.map((item, itemIdx) => (
+                                            <a
+                                              key={itemIdx}
+                                              href={item.href}
+                                              className="group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/30"
+                                              onClick={(e) => {
+                                                e.preventDefault();
+                                                if (item.name === "Life Science") {
+                                                  setLocation("/life-science");
+                                                } else if (item.name === "Validation") {
+                                                  setLocation("/validation");
+                                                } else {
+                                                  scrollToSection(e, item.href);
+                                                }
+                                              }}
+                                            >
+                                              {/* Connection line */}
+                                              <div className="w-4 h-px bg-gradient-to-r from-cyan-400/60 to-transparent"></div>
+                                              
+                                              {/* Service icon */}
+                                              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:scale-150 transition-transform duration-200"></div>
+                                              
+                                              <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 text-sm font-medium flex-1">
+                                                {item.name}
+                                              </span>
+                                              
+                                              <ArrowRight className="h-4 w-4 text-cyan-400 opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all duration-200" />
+                                            </a>
+                                          ))}
+                                        </div>
+                                      )}
                                     </div>
                                   );
                                 })}
