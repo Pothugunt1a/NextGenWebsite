@@ -200,7 +200,7 @@ export default function LifeScience() {
                         alt="Life Science Innovation"
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-cyan-900/50"></div>
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                     </div>
 
                     {/* Floating Elements */}
@@ -260,7 +260,7 @@ export default function LifeScience() {
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-cyan-900/50"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
                           {index === 0 && (
                             <Stethoscope className="h-6 w-6 text-white" />
