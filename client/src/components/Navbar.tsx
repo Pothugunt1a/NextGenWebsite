@@ -184,8 +184,8 @@ export default function Navbar({
                               </div>
                             </div>
 
-                            {/* Content area with interactive hierarchical design */}
-                            <div className="relative z-10 flex-1 p-6 max-w-2xl">
+                            {/* Content area with interactive hierarchical design - reduced right padding */}
+                            <div className="relative z-10 flex-1 p-6 pr-12 max-w-2xl">
                               {link.name === "IT Services" ? (
                                 <div className="grid grid-cols-2 gap-4">
                                   {link.dropdownItems?.map((category, idx) => {
