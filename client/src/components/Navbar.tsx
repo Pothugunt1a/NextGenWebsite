@@ -276,19 +276,17 @@ export default function Navbar({
                                             )
                                           }
                                         >
-                                          <div className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
-                                            <div className="flex items-center gap-3">
-                                              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
-                                                {getCategoryIcon(category.name)}
-                                              </div>
-                                              <div>
-                                                <h3 className="text-white font-semibold text-base group-hover:text-cyan-400 transition-colors whitespace-nowrap">
-                                                  {category.name}
-                                                </h3>
-                                              </div>
+                                          <div className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
+                                            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
+                                              {getCategoryIcon(category.name)}
+                                            </div>
+                                            <div className="flex-1">
+                                              <h3 className="text-white font-semibold text-base group-hover:text-cyan-400 transition-colors whitespace-nowrap">
+                                                {category.name}
+                                              </h3>
                                             </div>
                                             <ChevronDown
-                                              className={`h-4 w-4 text-cyan-400 transition-transform duration-300 ${
+                                              className={`h-4 w-4 text-cyan-400 transition-transform duration-300 ml-2 ${
                                                 isActive ? "rotate-180" : ""
                                               }`}
                                             />
@@ -388,19 +386,17 @@ export default function Navbar({
                                             )
                                           }
                                         >
-                                          <div className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
-                                            <div className="flex items-center gap-3">
-                                              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
-                                                {getCategoryIcon(category.name)}
-                                              </div>
-                                              <div>
-                                                <h3 className="text-white font-semibold text-base group-hover:text-cyan-400 transition-colors whitespace-nowrap">
-                                                  {category.name}
-                                                </h3>
-                                              </div>
+                                          <div className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
+                                            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
+                                              {getCategoryIcon(category.name)}
+                                            </div>
+                                            <div className="flex-1">
+                                              <h3 className="text-white font-semibold text-base group-hover:text-cyan-400 transition-colors whitespace-nowrap">
+                                                {category.name}
+                                              </h3>
                                             </div>
                                             <ChevronDown
-                                              className={`h-4 w-4 text-cyan-400 transition-transform duration-300 ${
+                                              className={`h-4 w-4 text-cyan-400 transition-transform duration-300 ml-2 ${
                                                 isActive ? "rotate-180" : ""
                                               }`}
                                             />
@@ -576,7 +572,7 @@ export default function Navbar({
                           setLocation(link.href);
                           handleLinkClick();
                         } else {
-                          scrollToSection(e, link.href);
+                          scrollToSection(e, item.href);
                         }
                       }}
                     >
