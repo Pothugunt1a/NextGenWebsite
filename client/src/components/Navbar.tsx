@@ -213,7 +213,7 @@ export default function Navbar({
                             {/* Content area with interactive hierarchical design - dynamically sized */}
                             <div className="relative z-10 flex-1 p-6 pr-8" style={{ 
                               maxWidth: link.name === "IT Services" ? "64rem" : "48rem" 
-                            }}></div>
+                            }}>
                               {link.name === "IT Services" ? (
                                 <div className="grid grid-cols-2 gap-3 w-full max-w-6xl">
                                   {link.dropdownItems?.map((category, idx) => {
@@ -450,6 +450,7 @@ export default function Navbar({
                                   })}
                                 </div>
                               )}
+                              </div>
                             </div>
 
                             {/* Decorative elements */}
