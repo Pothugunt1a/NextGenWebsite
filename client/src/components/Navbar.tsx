@@ -282,7 +282,7 @@ export default function Navbar({
                                                 {getCategoryIcon(category.name)}
                                               </div>
                                               <div>
-                                                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors">
+                                                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors whitespace-nowrap">
                                                   {category.name}
                                                 </h3>
                                               </div>
@@ -394,7 +394,7 @@ export default function Navbar({
                                                 {getCategoryIcon(category.name)}
                                               </div>
                                               <div>
-                                                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors">
+                                                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors whitespace-nowrap">
                                                   {category.name}
                                                 </h3>
                                               </div>
