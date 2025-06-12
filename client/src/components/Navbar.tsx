@@ -394,6 +394,8 @@ export default function Navbar({
                         e.preventDefault();
                         if (link.href === "#home") {
                           setLocation("/");
+                        } else if (link.href.startsWith("/")) {
+                          setLocation(link.href);
                         } else {
                           scrollToSection(e, link.href);
                         }
@@ -507,6 +509,9 @@ export default function Navbar({
                         e.preventDefault();
                         if (link.href === "#home") {
                           setLocation("/");
+                          handleLinkClick();
+                        } else if (link.href.startsWith("/")) {
+                          setLocation(link.href);
                           handleLinkClick();
                         } else {
                           scrollToSection(e, link.href);
