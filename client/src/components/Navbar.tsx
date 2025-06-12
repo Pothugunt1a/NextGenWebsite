@@ -132,8 +132,8 @@ export default function Navbar({
             </a>
           </div>
 
-          <nav className="hidden lg:flex items-center" ref={dropdownRef}>
-            <div className="flex items-center flex-wrap justify-end">
+          <div className="flex items-center gap-4">
+            <nav className="hidden lg:flex items-center" ref={dropdownRef}>
               {navLinks.map((link) => (
                 <div 
                   key={link.id} 
@@ -306,18 +306,9 @@ export default function Navbar({
 
                                     return (
                                       <div key={idx} className="group">
-                                        {/* Clickable Category Header */}
                                         <div 
                                           className="relative cursor-pointer select-none"
-                                          onClick={(e) => {
-                                            if (category.name === "AI Consulting") {
-                                              e.preventDefault();
-                                              setLocation("/ai-consulting");
-                                              handleLinkClick();
-                                            } else {
-                                              toggleDesktopSubmenu(category.name, e);
-                                            }
-                                          }}
+                                          onClick={(e) => toggleDesktopSubmenu(category.name, e)}
                                         >
                                           <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
                                             <div className="flex items-center gap-4">
@@ -330,17 +321,14 @@ export default function Navbar({
                                                 </h3>
                                               </div>
                                             </div>
-                                            {category.name !== "AI Consulting" && (
-                                              <ChevronDown
-                                                className={`h-5 w-5 text-cyan-400 transition-transform duration-300 ${
-                                                  isActive ? "rotate-180" : ""
-                                                }`}
-                                              />
-                                            )}
+                                            <ChevronDown
+                                              className={`h-5 w-5 text-cyan-400 transition-transform duration-300 ${
+                                                isActive ? "rotate-180" : ""
+                                              }`}
+                                            />
                                           </div>
                                         </div>
 
-                                        {/* Expandable Category Items */}
                                         {isActive && (
                                           <div className="mt-3 ml-6 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300">
                                             {category.items.map((item, itemIdx) => (
@@ -358,13 +346,8 @@ export default function Navbar({
                                                   }
                                                 }}
                                               >
-                                                {/* Connection line */}
                                                 <div className="w-4 h-px bg-gradient-to-r from-cyan-400/60 to-transparent"></div>
-                                                
-                                                {/* Service icon */}
                                                 <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:scale-150 transition-transform duration-200"></div>
-                                                
-                                                {/* Service name */}
                                                 <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 font-medium">
                                                   {item.name}
                                                 </span>
@@ -406,10 +389,8 @@ export default function Navbar({
                   )}
                 </div>
               ))}
-            </div>
-          </nav>
-
-          <div className="flex items-center gap-4">
+            </nav>
+            
             <div className="hidden lg:block">
               <Button
                 variant="outline"
@@ -452,30 +433,24 @@ export default function Navbar({
                       >
                         {link.name}
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform ${
-                            activeMobileDropdown === link.id ? "rotate-180" : ""
-                          }`}
+                          className={`h-4 w-4 transition-transform ${activeMobileDropdown === link.id ? "rotate-180" : ""}`}
                         />
                       </button>
                       {activeMobileDropdown === link.id && (
-                        <div className="ml-4 space-y-2 mt-2">
+                        <div className="ml-4 mt-2 space-y-2">
                           {link.dropdownItems?.map((category, idx) => (
                             <div key={idx}>
                               <button
-                                className="w-full text-left px-3 py-2 text-gray-600 hover:text-primary flex items-center justify-between"
+                                className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-primary flex items-center justify-between"
                                 onClick={() => toggleMobileSubmenu(category.name)}
                               >
                                 {category.name}
                                 <ChevronDown
-                                  className={`h-3 w-3 transition-transform ${
-                                    activeMobileSubmenu === category.name
-                                      ? "rotate-180"
-                                      : ""
-                                  }`}
+                                  className={`h-3 w-3 transition-transform ${activeMobileSubmenu === category.name ? "rotate-180" : ""}`}
                                 />
                               </button>
                               {activeMobileSubmenu === category.name && (
-                                <div className="ml-4 space-y-1 mt-1">
+                                <div className="ml-4 mt-2 space-y-1">
                                   {category.items.map((item, itemIdx) => (
                                     <a
                                       key={itemIdx}
