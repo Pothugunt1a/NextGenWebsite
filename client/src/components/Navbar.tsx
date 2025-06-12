@@ -207,10 +207,10 @@ export default function Navbar({
                               </div>
                             </div>
 
-                            {/* Content area with interactive hierarchical design - increased width */}
-                            <div className="relative z-10 flex-1 p-6 pr-10 max-w-4xl">
+                            {/* Content area with clean design */}
+                            <div className="relative z-10 flex-1 p-6 xl:pr-80 lg:pr-10">
                               {link.name === "IT Services" ? (
-                                <div className="grid grid-cols-2 gap-3 max-w-5xl">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-6xl">
                                   {link.dropdownItems?.map((category, idx) => {
                                     const getCategoryIcon = (name: string) => {
                                       switch (name) {
@@ -266,7 +266,7 @@ export default function Navbar({
 
                                     return (
                                       <div key={idx} className="group">
-                                        {/* Clickable Category Header */}
+                                        {/* Clean Category Header */}
                                         <div
                                           className="relative cursor-pointer select-none"
                                           onClick={(e) =>
@@ -276,19 +276,19 @@ export default function Navbar({
                                             )
                                           }
                                         >
-                                          <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
-                                            <div className="flex items-center gap-4">
-                                              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
+                                          <div className="flex items-center justify-between py-3 px-2 hover:bg-white/5 transition-colors duration-200 rounded">
+                                            <div className="flex items-center gap-3">
+                                              <div className="flex-shrink-0">
                                                 {getCategoryIcon(category.name)}
                                               </div>
                                               <div>
-                                                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors whitespace-nowrap">
+                                                <h3 className="text-white font-medium text-base group-hover:text-cyan-400 transition-colors">
                                                   {category.name}
                                                 </h3>
                                               </div>
                                             </div>
                                             <ChevronDown
-                                              className={`h-5 w-5 text-cyan-400 transition-transform duration-300 ${
+                                              className={`h-4 w-4 text-gray-400 transition-transform duration-300 ${
                                                 isActive ? "rotate-180" : ""
                                               }`}
                                             />
@@ -297,13 +297,13 @@ export default function Navbar({
 
                                         {/* Expandable Category Items */}
                                         {isActive && (
-                                          <div className="mt-3 ml-6 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                          <div className="mt-2 ml-6 space-y-1">
                                             {category.items.map(
                                               (item, itemIdx) => (
                                                 <a
                                                   key={itemIdx}
                                                   href={item.href}
-                                                  className="group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/30"
+                                                  className="flex items-center gap-2 py-2 px-2 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200 rounded text-sm"
                                                   onClick={(e) => {
                                                     e.preventDefault();
                                                     if (
@@ -319,16 +319,8 @@ export default function Navbar({
                                                     }
                                                   }}
                                                 >
-                                                  {/* Connection line */}
-                                                  <div className="w-4 h-px bg-gradient-to-r from-cyan-400/60 to-transparent"></div>
-
-                                                  {/* Service icon */}
-                                                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:scale-150 transition-transform duration-200"></div>
-
-                                                  {/* Service name */}
-                                                  <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 font-medium">
-                                                    {item.name}
-                                                  </span>
+                                                  <span>•</span>
+                                                  <span>{item.name}</span>
                                                 </a>
                                               ),
                                             )}
