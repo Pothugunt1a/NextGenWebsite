@@ -414,10 +414,10 @@ export default function Navbar({
               <Button
                 variant="outline"
                 size="sm"
-                className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black"
+                className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:from-blue-600 hover:to-cyan-600"
                 onClick={() => setLocation("/contact")}
               >
-                Get Quote
+                Contact
               </Button>
             </div>
 
@@ -527,13 +527,13 @@ export default function Navbar({
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black"
+                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:from-blue-600 hover:to-cyan-600"
                   onClick={() => {
                     setLocation("/contact");
                     handleLinkClick();
                   }}
                 >
-                  Get Quote
+                  Contact
                 </Button>
               </div>
             </div>
