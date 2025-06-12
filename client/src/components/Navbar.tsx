@@ -184,9 +184,9 @@ export default function Navbar({
 
                       {activeDropdown === link.id && (
                         <div className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
-                          <div className="container mx-auto relative flex max-w-none min-h-[360px]">
+                          <div className="container mx-auto relative flex max-w-none min-h-[320px]">
                             {/* Dynamic Image on the right with gradient overlay */}
-                            <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20">
+                            <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
                               <div className="relative">
                                 <img
                                   src={
@@ -200,22 +200,17 @@ export default function Navbar({
                                       : "AI Technology"
                                   }
                                   className="object-contain opacity-90"
-                                  style={{ 
-                                    width: link.name === "IT Services" ? "28rem" : "24rem", 
-                                    height: link.name === "IT Services" ? "18rem" : "15rem" 
-                                  }}
+                                  style={{ width: "28rem", height: "18rem" }}
                                 />
                                 {/* Gradient overlay on the image */}
                                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/60"></div>
                               </div>
                             </div>
 
-                            {/* Content area with interactive hierarchical design - dynamically sized */}
-                            <div className="relative z-10 flex-1 p-6 pr-8" style={{ 
-                              maxWidth: link.name === "IT Services" ? "64rem" : "48rem" 
-                            }}>
+                            {/* Content area with interactive hierarchical design - increased width */}
+                            <div className="relative z-10 flex-1 p-6 pr-10 max-w-4xl">
                               {link.name === "IT Services" ? (
-                                <div className="grid grid-cols-2 gap-3 w-full max-w-6xl">
+                                <div className="grid grid-cols-2 gap-3 max-w-5xl">
                                   {link.dropdownItems?.map((category, idx) => {
                                     const getCategoryIcon = (name: string) => {
                                       switch (name) {
@@ -344,7 +339,7 @@ export default function Navbar({
                                   })}
                                 </div>
                               ) : (
-                                <div className="space-y-4 w-full max-w-4xl">
+                                <div className="space-y-4">
                                   {link.dropdownItems?.map((category, idx) => {
                                     const getCategoryIcon = (name: string) => {
                                       switch (name) {
@@ -450,7 +445,6 @@ export default function Navbar({
                                   })}
                                 </div>
                               )}
-                              </div>
                             </div>
 
                             {/* Decorative elements */}
