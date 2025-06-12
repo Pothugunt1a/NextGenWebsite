@@ -447,43 +447,9 @@ export default function Navbar({
                               )}
                             </div>
 
-                            {/* Call-to-action footer */}
-                            <div className="mt-12 pt-8 border-t border-white/10">
-                              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-                                <div>
-                                  <p className="text-gray-300 text-sm">
-                                    Need help choosing the right solution?
-                                  </p>
-                                  <p className="text-white font-medium">
-                                    Contact our experts for personalized recommendations.
-                                  </p>
-                                </div>
-                                <div className="flex gap-3">
-                                  <button 
-                                    className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white text-sm font-medium rounded-lg transition-colors duration-200"
-                                    onClick={() => {
-                                      setLocation("/contact");
-                                      handleLinkClick();
-                                    }}
-                                  >
-                                    Get in Touch
-                                  </button>
-                                  <button 
-                                    className="px-4 py-2 border border-white/20 text-white hover:bg-white/5 text-sm font-medium rounded-lg transition-colors duration-200"
-                                    onClick={() => {
-                                      setLocation("/about");
-                                      handleLinkClick();
-                                    }}
-                                  >
-                                    Learn More
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Subtle decorative elements */}
-                            <div className="absolute top-4 right-4 w-16 h-16 border border-cyan-400/10 rounded-full z-10"></div>
-                            <div className="absolute bottom-4 left-4 w-10 h-10 border border-blue-400/10 rounded-full z-10"></div>
+                            {/* Decorative elements */}
+                            <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/20 rounded-full z-10"></div>
+                            <div className="absolute bottom-4 left-4 w-12 h-12 border border-blue-400/20 rounded-full z-10"></div>
                           </div>
                         </div>
                       )}
