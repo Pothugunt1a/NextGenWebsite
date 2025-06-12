@@ -174,7 +174,7 @@ export default function Navbar({
                             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
                               <div className="relative">
                                 <img
-                                  src={link.name === "IT Services" ? "/assets/IT-Services-dropdown.png" : "/assets/AI-dropdown.png"}
+                                  src={link.name === "IT Services" ? "/assets/IT-Services-dropdown.jpeg" : "/assets/AI-dropdown.png"}
                                   alt={link.name === "IT Services" ? "IT Services Technology" : "AI Technology"}
                                   className="object-contain opacity-90"
                                   style={{ width: '30rem', height: '20rem' }}
