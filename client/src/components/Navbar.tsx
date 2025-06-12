@@ -183,11 +183,11 @@ export default function Navbar({
                       </a>
 
                       {activeDropdown === link.id && (
-                        <div className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
-                          <div className="container mx-auto relative flex max-w-none min-h-[320px]">
-                            {/* Dynamic Image on the right with gradient overlay */}
-                            <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
-                              <div className="relative">
+                        <div className="fixed left-0 right-0 mt-2 bg-gradient-to-b from-gray-900 to-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5 border-t border-gray-700">
+                          <div className="container mx-auto relative flex max-w-none min-h-[450px] max-h-[85vh] overflow-y-auto">
+                            {/* Fixed positioned background image */}
+                            <div className="absolute right-8 top-8 bottom-8 w-80 z-10 hidden xl:flex items-center justify-center">
+                              <div className="relative w-full h-64">
                                 <img
                                   src={
                                     link.name === "IT Services"
@@ -199,18 +199,17 @@ export default function Navbar({
                                       ? "IT Services Technology"
                                       : "AI Technology"
                                   }
-                                  className="object-contain opacity-90"
-                                  style={{ width: "28rem", height: "18rem" }}
+                                  className="object-contain opacity-75 w-full h-full"
                                 />
-                                {/* Gradient overlay on the image */}
-                                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/60"></div>
+                                {/* Enhanced gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/40"></div>
                               </div>
                             </div>
 
-                            {/* Content area with interactive hierarchical design - increased width */}
-                            <div className="relative z-10 flex-1 p-6 pr-10 max-w-4xl">
+                            {/* Enhanced content area with better spacing */}
+                            <div className="relative z-20 flex-1 p-8 xl:pr-96 lg:pr-12">
                               {link.name === "IT Services" ? (
-                                <div className="grid grid-cols-2 gap-3 max-w-5xl">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-4xl">
                                   {link.dropdownItems?.map((category, idx) => {
                                     const getCategoryIcon = (name: string) => {
                                       switch (name) {
@@ -408,13 +407,13 @@ export default function Navbar({
                                         </div>
 
                                         {isActive && (
-                                          <div className="mt-3 ml-6 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                          <div className="mt-2 ml-6 space-y-1">
                                             {category.items.map(
                                               (item, itemIdx) => (
                                                 <a
                                                   key={itemIdx}
                                                   href={item.href}
-                                                  className="group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/30"
+                                                  className="flex items-center gap-2 py-2 px-2 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200 rounded text-sm"
                                                   onClick={(e) => {
                                                     e.preventDefault();
                                                     if (
@@ -430,11 +429,8 @@ export default function Navbar({
                                                     }
                                                   }}
                                                 >
-                                                  <div className="w-4 h-px bg-gradient-to-r from-cyan-400/60 to-transparent"></div>
-                                                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:scale-150 transition-transform duration-200"></div>
-                                                  <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 font-medium">
-                                                    {item.name}
-                                                  </span>
+                                                  <span>•</span>
+                                                  <span>{item.name}</span>
                                                 </a>
                                               ),
                                             )}
