@@ -187,32 +187,32 @@ export default function Navbar({
                             {/* Content area with interactive hierarchical design */}
                             <div className="relative z-10 flex-1 p-6 max-w-2xl">
                               {link.name === "IT Services" ? (
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-2 gap-3">
                                   {link.dropdownItems?.map((category, idx) => {
                                     const getCategoryIcon = (name: string) => {
                                       switch (name) {
                                         case "Cloud Services":
-                                          return <Cloud className="h-6 w-6 text-cyan-400" />;
+                                          return <Cloud className="h-4 w-4 text-cyan-400" />;
                                         case "Data Science":
-                                          return <BarChart3 className="h-6 w-6 text-blue-400" />;
+                                          return <BarChart3 className="h-4 w-4 text-blue-400" />;
                                         case "Database":
-                                          return <Database className="h-6 w-6 text-green-400" />;
+                                          return <Database className="h-4 w-4 text-green-400" />;
                                         case "BI and Big Data":
-                                          return <BarChart3 className="h-6 w-6 text-purple-400" />;
+                                          return <BarChart3 className="h-4 w-4 text-purple-400" />;
                                         case "Networking and Cyber Security":
-                                          return <Shield className="h-6 w-6 text-red-400" />;
+                                          return <Shield className="h-4 w-4 text-red-400" />;
                                         case "Mobile Development":
-                                          return <Smartphone className="h-6 w-6 text-pink-400" />;
+                                          return <Smartphone className="h-4 w-4 text-pink-400" />;
                                         case "Web Development":
-                                          return <Globe className="h-6 w-6 text-indigo-400" />;
+                                          return <Globe className="h-4 w-4 text-indigo-400" />;
                                         case "Systems Integration":
-                                          return <Settings className="h-6 w-6 text-orange-400" />;
+                                          return <Settings className="h-4 w-4 text-orange-400" />;
                                         case "ERP":
-                                          return <Package className="h-6 w-6 text-yellow-400" />;
+                                          return <Package className="h-4 w-4 text-yellow-400" />;
                                         case "DevOps":
-                                          return <GitBranch className="h-6 w-6 text-teal-400" />;
+                                          return <GitBranch className="h-4 w-4 text-teal-400" />;
                                         default:
-                                          return <Brain className="h-6 w-6 text-cyan-400" />;
+                                          return <Brain className="h-4 w-4 text-cyan-400" />;
                                       }
                                     };
 
@@ -225,19 +225,19 @@ export default function Navbar({
                                           className="relative cursor-pointer select-none"
                                           onClick={(e) => toggleDesktopSubmenu(category.name, e)}
                                         >
-                                          <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
-                                            <div className="flex items-center gap-4">
-                                              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
+                                          <div className="flex items-center justify-between p-2 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/60 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-cyan-400/20">
+                                            <div className="flex items-center gap-2">
+                                              <div className="flex items-center justify-center w-6 h-6 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/40">
                                                 {getCategoryIcon(category.name)}
                                               </div>
                                               <div>
-                                                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors">
+                                                <h3 className="text-white font-semibold text-xs group-hover:text-cyan-400 transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
                                                   {category.name}
                                                 </h3>
                                               </div>
                                             </div>
                                             <ChevronDown
-                                              className={`h-5 w-5 text-cyan-400 transition-transform duration-300 ${
+                                              className={`h-3 w-3 text-cyan-400 transition-transform duration-300 flex-shrink-0 ${
                                                 isActive ? "rotate-180" : ""
                                               }`}
                                             />
@@ -246,12 +246,12 @@ export default function Navbar({
 
                                         {/* Expandable Category Items */}
                                         {isActive && (
-                                          <div className="mt-3 ml-6 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                          <div className="mt-1 ml-3 space-y-1 animate-in slide-in-from-top-3 fade-in-20 duration-300">
                                             {category.items.map((item, itemIdx) => (
                                               <a
                                                 key={itemIdx}
                                                 href={item.href}
-                                                className="group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/30"
+                                                className="group/item flex items-center gap-2 p-1 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 border border-transparent hover:border-cyan-400/30"
                                                 onClick={(e) => {
                                                   e.preventDefault();
                                                   if (item.href.startsWith("/")) {
@@ -263,13 +263,13 @@ export default function Navbar({
                                                 }}
                                               >
                                                 {/* Connection line */}
-                                                <div className="w-4 h-px bg-gradient-to-r from-cyan-400/60 to-transparent"></div>
+                                                <div className="w-2 h-px bg-gradient-to-r from-cyan-400/60 to-transparent"></div>
                                                 
                                                 {/* Service icon */}
-                                                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:scale-150 transition-transform duration-200"></div>
+                                                <div className="w-1 h-1 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:scale-150 transition-transform duration-200"></div>
                                                 
                                                 {/* Service name */}
-                                                <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 font-medium">
+                                                <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200 font-medium text-xs">
                                                   {item.name}
                                                 </span>
                                               </a>
