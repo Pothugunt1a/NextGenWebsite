@@ -178,7 +178,7 @@ export default function Navbar({
                       >
                         {link.name}
                         <ChevronDown
-                          className={`ml-0.5 h-3 w-3 transition-transform inline-block ${activeDropdown === link.id ? "rotate-180" : ""}`}
+                          className={`ml-1 h-3 w-3 transition-transform inline-block ${activeDropdown === link.id ? "rotate-180" : ""}`}
                         />
                       </a>
 
