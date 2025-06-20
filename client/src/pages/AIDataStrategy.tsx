@@ -269,18 +269,15 @@ export default function AIDataStrategy() {
           >
             {/* Image Section */}
             <div className="relative">
-              <div className="relative h-80 lg:h-96 overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src="./assets/Data-Governance.png"
-                  alt="Data Governance"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "./assets/data-governance.png";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
+              <img
+                src="./assets/Data-Governance.png"
+                alt="Data Governance"
+                className="w-full h-80 lg:h-96 object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "./assets/data-governance.png";
+                }}
+              />
             </div>
 
             {/* Content Section */}
