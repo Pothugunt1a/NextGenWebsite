@@ -271,10 +271,11 @@ export default function AIDataStrategy() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Our Comprehensive Approach
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Our Comprehensive Approach
+              </span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
 
           <motion.div
@@ -286,15 +287,18 @@ export default function AIDataStrategy() {
           >
             {/* Image Section */}
             <div className="relative">
-              <img
-                src="./assets/Data-Governance.png"
-                alt="Data Governance"
-                className="w-full h-80 lg:h-96 object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "./assets/data-governance.png";
-                }}
-              />
+              <div className="relative h-80 lg:h-96 overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src="./assets/Data-Governance.png"
+                  alt="Data Governance"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "./assets/data-governance.png";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
             </div>
 
             {/* Content Section */}
