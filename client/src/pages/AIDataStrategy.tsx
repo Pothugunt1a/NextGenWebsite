@@ -307,9 +307,11 @@ export default function AIDataStrategy() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-light">
         {/* Background Effects */}
         <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
           <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
         </div>
