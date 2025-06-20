@@ -134,23 +134,38 @@ export default function AIDataStrategy() {
       className="text-white"
     >
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <img
+            src="./assets/AI-DataStatergy.png"
+            alt="AI and Data Strategy"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "./assets/ai-datastatergy.png";
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-5xl"
           >
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
               style={{ fontWeight: 700 }}
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Transform Your Business with AI & Data Strategy
+                AI & Data Strategy
               </span>
             </motion.h1>
 
@@ -158,9 +173,23 @@ export default function AIDataStrategy() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed"
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Unlock the power of intelligent data solutions and strategic AI implementation for sustainable growth
+              Making the right decisions on developing and deploying AI products
+              is crucial if you want to stay competitive in a fast-moving
+              market. We will guide you through this process and ensure complete
+              support.
+            </motion.p>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="text-lg text-blue-200 mb-12 leading-relaxed max-w-4xl"
+            >
+              In short, it's our goal to make your business successful by
+              providing Big Data, Data Science, AI and Machine Learning
+              consulting.
             </motion.p>
 
             {/* Badge */}
@@ -255,7 +284,7 @@ export default function AIDataStrategy() {
           >
             {/* Image Section */}
             <div className="relative">
-              <div className="relative h-80 lg:h-96 overflow-hidden">
+              <div className="relative h-80 lg:h-96 overflow-hidden rounded-2xl border border-white/10">
                 <img
                   src="./assets/Data-Governance.png"
                   alt="Data Governance"
