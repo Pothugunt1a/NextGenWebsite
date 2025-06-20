@@ -434,11 +434,11 @@ export default function Validation() {
             <Card className="overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl">
               <CardContent className="p-0">
                 {/* Background Image */}
-                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden bg-white/10 flex items-center justify-center">
+                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden">
                   <img
                     src={selectedService.backgroundImage}
                     alt={selectedService.title}
-                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-500"
                   />
                 </div>
 
