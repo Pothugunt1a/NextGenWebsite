@@ -175,21 +175,8 @@ export default function AIDataStrategy() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Making the right decisions on developing and deploying AI products
-              is crucial if you want to stay competitive in a fast-moving
-              market. We will guide you through this process and ensure complete
-              support.
-            </motion.p>
-
-            <motion.p
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-lg text-blue-200 mb-12 leading-relaxed max-w-4xl"
-            >
-              In short, it's our goal to make your business successful by
-              providing Big Data, Data Science, AI and Machine Learning
-              consulting.
+              Unlock the power of intelligent data solutions and strategic AI
+              implementation for sustainable growth
             </motion.p>
 
             {/* Badge */}
