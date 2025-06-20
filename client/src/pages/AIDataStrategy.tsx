@@ -254,11 +254,10 @@ export default function AIDataStrategy() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Our Comprehensive Approach
-              </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              Our Comprehensive Approach
             </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
 
           <motion.div
