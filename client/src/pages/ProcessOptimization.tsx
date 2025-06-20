@@ -280,28 +280,38 @@ export default function ProcessOptimization() {
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image Section */}
-            <div className="relative">
-              <img
-                src="./assets/Process-Optimization.png"
-                alt="Process Optimization"
-                className="w-full h-80 lg:h-96 object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "./assets/process-optimization.png";
-                }}
-              />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                <img
+                  src="./assets/Process-Optimization.png"
+                  alt="Process Optimization"
+                  className="w-full h-80 lg:h-96 object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "./assets/process-optimization.png";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20"></div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-60"></div>
+            </motion.div>
 
             {/* Content Section */}
-            <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
               <p className="text-lg text-gray-300 leading-relaxed">
                 Business administration has the power to destroy even the greatest business ideas. 
                 Sometimes, organizations cannot apply new ideas and processes, or they lack capable 
@@ -313,14 +323,20 @@ export default function ProcessOptimization() {
                 shouldn't focus only on rapid implementation. You need to understand how to deploy 
                 AI-based strategies to leverage your business growth.
               </p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* What We Can Do Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
+          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
+        </div>
+        
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -344,7 +360,10 @@ export default function ProcessOptimization() {
             {benefits.map((item, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: index * 0.2, duration: 0.6 }}
+                viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.05 }}
                 className="group"
               >
@@ -387,18 +406,16 @@ export default function ProcessOptimization() {
             </p>
           </motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {capabilities.map((capability, index) => (
               <motion.div
                 key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                viewport={{ once: true }}
                 className="flex items-start gap-4 p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10 hover:border-blue-400/30 transition-all duration-300"
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -5, scale: 1.02 }}
               >
                 <div className="flex-shrink-0">
                   <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 mt-2"></div>
@@ -413,20 +430,18 @@ export default function ProcessOptimization() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                viewport={{ once: true }}
                 className="flex items-start gap-4 p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10 hover:border-blue-400/30 transition-all duration-300"
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -5, scale: 1.02 }}
               >
                 <div className="flex-shrink-0">
                   <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
@@ -443,22 +458,28 @@ export default function ProcessOptimization() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Process Excellence Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+      <section className="py-16 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
+          <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
+        </div>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content Section */}
-            <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
               <p className="text-lg text-gray-300 leading-relaxed">
                 Harnessing AI to optimize your business processes can unlock substantial global opportunities, 
                 and it is imperative to be strategically positioned to fully capitalize on these advancements.
@@ -484,21 +505,31 @@ export default function ProcessOptimization() {
                 ensuring seamless integration and maximum value. By leveraging data specific to your enterprise, 
                 we help you implement these solutions with precision and efficiency.
               </p>
-            </div>
+            </motion.div>
 
             {/* Image Section */}
-            <div className="relative">
-              <img
-                src="./assets/Process-optimization.png"
-                alt="Process Optimization Solutions"
-                className="w-full h-80 lg:h-96 object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "./assets/process-optimization.png";
-                }}
-              />
-            </div>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                <img
+                  src="./assets/Process-optimization.png"
+                  alt="Process Optimization Solutions"
+                  className="w-full h-80 lg:h-96 object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "./assets/process-optimization.png";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20"></div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-60"></div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

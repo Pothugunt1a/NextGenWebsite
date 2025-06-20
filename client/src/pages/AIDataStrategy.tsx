@@ -260,28 +260,38 @@ export default function AIDataStrategy() {
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image Section */}
-            <div className="relative">
-              <img
-                src="./assets/Data-Governance.png"
-                alt="Data Governance"
-                className="w-full h-80 lg:h-96 object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "./assets/data-governance.png";
-                }}
-              />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                <img
+                  src="./assets/Data-Governance.png"
+                  alt="Data Governance"
+                  className="w-full h-80 lg:h-96 object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "./assets/data-governance.png";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20"></div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-60"></div>
+            </motion.div>
 
             {/* Content Section */}
-            <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
               <p className="text-lg text-gray-300 leading-relaxed">
                 Making informed decisions when developing and deploying AI
                 solutions is essential to remain competitive in today’s rapidly
@@ -296,14 +306,20 @@ export default function AIDataStrategy() {
                 with your subject matter experts (SMEs), and provide full
                 support across all data-driven activities.
               </p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
+          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
+        </div>
+        
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -330,7 +346,10 @@ export default function AIDataStrategy() {
             {benefits.map((item, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: index * 0.2, duration: 0.6 }}
+                viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.05 }}
                 className="group"
               >
