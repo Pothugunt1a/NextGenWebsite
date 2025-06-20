@@ -316,7 +316,7 @@ export default function ProcessOptimization() {
                 necessary expertise to implement them successfully.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                AI Superior provides a range of AI-driven solutions designed to
+                RTNextGenAI provides a range of AI-driven solutions designed to
                 help businesses streamline and enhance their operations. While
                 the potential of AI is vast, success depends not merely on swift
                 implementation but on a strategic approach. It is essential to
@@ -339,7 +339,7 @@ export default function ProcessOptimization() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              AI Superior Can Work With Your Business To
+              RTNextGenAI Can Work With Your Business To
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
@@ -388,11 +388,11 @@ export default function ProcessOptimization() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              AI Superior's Digital Journey
+              RTNextGenAI's Digital Journey
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              AI Superior presents a blend of skilled AI software developmental
+              RTNextGenAI presents a blend of skilled AI software developmental
               resources, proven techniques, and tools that enables our team to
               lead you through this digital journey.
             </p>
@@ -477,8 +477,9 @@ export default function ProcessOptimization() {
                   Unlock Massive Global Prospects
                 </p>
                 <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  The optimization of your business processes based on AI will unlock massive 
-                  prospects globally, and you need to be well-positioned to benefit immensely.
+                  The optimization of your business processes based on AI will
+                  unlock massive prospects globally, and you need to be
+                  well-positioned to benefit immensely.
                 </p>
               </div>
             </div>
@@ -502,8 +503,9 @@ export default function ProcessOptimization() {
                 Business Process Development
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                We help companies develop new business processes and implement them more efficiently. 
-                Companies rely on us to use AI-based business process optimization.
+                We help companies develop new business processes and implement
+                them more efficiently. Companies rely on us to use AI-based
+                business process optimization.
               </p>
               <div className="flex items-center text-cyan-400">
                 <ArrowRight className="h-4 w-4 mr-2" />
@@ -521,13 +523,16 @@ export default function ProcessOptimization() {
                 Advanced AI Solutions
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Whether you need a simple chatbot to help with customer queries, or to analyze 
-                and predict various insights from complex customer data, AI Superior has a team 
-                who will take your business to a whole new level.
+                Whether you need a simple chatbot to help with customer queries,
+                or to analyze and predict various insights from complex customer
+                data, RTNextGenAI has a team who will take your business to a
+                whole new level.
               </p>
               <div className="flex items-center text-green-400">
                 <ArrowRight className="h-4 w-4 mr-2" />
-                <span className="text-sm font-medium">Next-Level Performance</span>
+                <span className="text-sm font-medium">
+                  Next-Level Performance
+                </span>
               </div>
             </motion.div>
           </motion.div>
@@ -550,11 +555,13 @@ export default function ProcessOptimization() {
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
                     <CheckCircle2 className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Custom Implementation</h3>
+                  <h3 className="text-xl font-bold text-white">
+                    Custom Implementation
+                  </h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  We will implement a complete solution customized to your company's 
-                  specific business processes.
+                  We will implement a complete solution customized to your
+                  company's specific business processes.
                 </p>
               </div>
             </motion.div>
@@ -569,11 +576,13 @@ export default function ProcessOptimization() {
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-xl flex items-center justify-center">
                     <Database className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Data-Driven Solutions</h3>
+                  <h3 className="text-xl font-bold text-white">
+                    Data-Driven Solutions
+                  </h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  We will help you apply these solutions efficiently by using data 
-                  relevant to your organization.
+                  We will help you apply these solutions efficiently by using
+                  data relevant to your organization.
                 </p>
               </div>
             </motion.div>
