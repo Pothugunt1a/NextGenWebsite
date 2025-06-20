@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import {
   ChevronDown,
   ChevronUp,
@@ -358,7 +359,8 @@ export default function AIConsulting() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
               {/* AI and Data Strategy */}
-              <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 group">
+              <Link href="/ai-data-strategy">
+                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 group cursor-pointer">
                 <div className="mb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Brain className="h-8 w-8 text-white" />
@@ -391,7 +393,8 @@ export default function AIConsulting() {
                     ROI forecasting and budgeting
                   </li>
                 </ul>
-              </div>
+                </div>
+              </Link>
 
               {/* Process Optimization with AI */}
               <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 group">

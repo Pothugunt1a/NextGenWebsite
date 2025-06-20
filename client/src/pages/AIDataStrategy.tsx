@@ -134,12 +134,12 @@ export default function AIDataStrategy() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="./assets/Data-Governance.png"
+            src="./assets/AI-DataStatergy.png"
             alt="AI and Data Strategy"
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "./assets/data-governance.png";
+              target.src = "./assets/ai-datastatergy.png";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
