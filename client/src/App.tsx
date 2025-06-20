@@ -14,6 +14,7 @@ import Careers from "./pages/Careers";
 import AIConsulting from "./pages/AIConsulting";
 import ITConsulting from "./pages/ITConsulting";
 import AIDataStrategy from "./pages/AIDataStrategy";
+import ProcessOptimization from "./pages/ProcessOptimization";
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function Router() {
         <Route path="/ai-consulting" component={AIConsulting} />
         <Route path="/it-consulting" component={ITConsulting} />
         <Route path="/ai-data-strategy" component={AIDataStrategy} />
+        <Route path="/process-optimization" component={ProcessOptimization} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
