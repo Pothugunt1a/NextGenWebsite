@@ -50,54 +50,7 @@ const benefits = [
   },
 ];
 
-const services = [
-  {
-    icon: <Brain className="h-6 w-6" />,
-    title: "AI Process Automation",
-    description:
-      "Intelligent automation solutions for complex business workflows",
-  },
-  {
-    icon: <Cog className="h-6 w-6" />,
-    title: "System Integration",
-    description:
-      "Seamless integration of AI capabilities into existing systems",
-  },
-  {
-    icon: <BarChart3 className="h-6 w-6" />,
-    title: "Performance Analytics",
-    description:
-      "Advanced analytics to measure and optimize process efficiency",
-  },
-  {
-    icon: <Database className="h-6 w-6" />,
-    title: "Data Processing",
-    description:
-      "Intelligent data analysis and predictive insights from complex datasets",
-  },
-];
 
-const capabilities = [
-  {
-    title: "Custom Design Systems",
-    description:
-      "Develop tailored AI systems designed for your specific business needs",
-  },
-  {
-    title: "System Upgrades",
-    description: "Enhance and modernize existing systems with AI capabilities",
-  },
-  {
-    title: "Business Enhancement",
-    description:
-      "Boost your overall business capabilities with intelligent solutions",
-  },
-  {
-    title: "Complete Implementation",
-    description:
-      "End-to-end AI solution deployment customized to your processes",
-  },
-];
 
 const stats = [
   {
@@ -391,82 +344,7 @@ export default function ProcessOptimization() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Our Comprehensive Solutions
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              AI Superior presents a blend of skilled AI software developmental
-              resources, proven techniques, and tools that enables our team to
-              lead you through this digital journey.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {capabilities.map((capability, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex items-start gap-4 p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10 hover:border-blue-400/30 transition-all duration-300"
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <div className="flex-shrink-0">
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 mt-2"></div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {capability.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {capability.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex items-start gap-4 p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10 hover:border-blue-400/30 transition-all duration-300"
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <div className="flex-shrink-0">
-                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
-                    <div className="text-white">{service.icon}</div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Process Excellence Section */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
