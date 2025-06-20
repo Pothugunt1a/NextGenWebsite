@@ -552,22 +552,7 @@ export default function ProcessOptimization() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-              <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10">
-                <CheckCircle2 className="h-8 w-8 text-blue-400 mb-4" />
-                <p className="text-lg text-gray-300">
-                  We will implement a complete solution customized to your
-                  company's specific business processes.
-                </p>
-              </div>
-              <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10">
-                <CheckCircle2 className="h-8 w-8 text-blue-400 mb-4" />
-                <p className="text-lg text-gray-300">
-                  We will help you apply these solutions efficiently by using
-                  data relevant to your organization.
-                </p>
-              </div>
-            </div>
+            
           </motion.div>
         </div>
       </section>
