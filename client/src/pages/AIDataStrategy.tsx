@@ -284,7 +284,7 @@ export default function AIDataStrategy() {
           >
             {/* Image Section */}
             <div className="relative">
-              <div className="relative h-80 lg:h-96 overflow-hidden rounded-2xl border border-white/10">
+              <div className="relative h-80 lg:h-96 overflow-hidden">
                 <img
                   src="./assets/Data-Governance.png"
                   alt="Data Governance"
