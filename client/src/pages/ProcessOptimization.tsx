@@ -287,21 +287,16 @@ export default function ProcessOptimization() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative"
             >
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                <img
-                  src="./assets/Process-Optimization.png"
-                  alt="Process Optimization"
-                  className="w-full h-80 lg:h-96 object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "./assets/process-optimization.png";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20"></div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-60"></div>
+              <img
+                src="./assets/Process-Optimization.png"
+                alt="Process Optimization"
+                className="w-full h-80 lg:h-96 object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "./assets/process-optimization.png";
+                }}
+              />
             </motion.div>
 
             {/* Content Section */}
@@ -513,21 +508,16 @@ export default function ProcessOptimization() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="relative"
             >
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                <img
-                  src="./assets/Process-optimization.png"
-                  alt="Process Optimization Solutions"
-                  className="w-full h-80 lg:h-96 object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "./assets/process-optimization.png";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20"></div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-60"></div>
+              <img
+                src="./assets/Process-optimization.png"
+                alt="Process Optimization Solutions"
+                className="w-full h-80 lg:h-96 object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "./assets/process-optimization.png";
+                }}
+              />
             </motion.div>
           </div>
         </div>
