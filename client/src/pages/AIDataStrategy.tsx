@@ -23,25 +23,29 @@ const benefits = [
   {
     icon: <Database className="h-8 w-8" />,
     title: "Understand Your Data Potential",
-    description: "Unlock the hidden value in your data assets with comprehensive analysis and strategic planning.",
+    description:
+      "Unlock the hidden value in your data assets with comprehensive analysis and strategic planning.",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: <Shield className="h-8 w-8" />,
     title: "Problematic Data Sources",
-    description: "Transform noisy, incomplete, or inaccurate data into reliable, actionable insights.",
+    description:
+      "Transform noisy, incomplete, or inaccurate data into reliable, actionable insights.",
     color: "from-green-500 to-emerald-500",
   },
   {
     icon: <Users className="h-8 w-8" />,
     title: "Expert Resources & Experience",
-    description: "Bridge the gap with our experienced team when you lack internal data expertise.",
+    description:
+      "Bridge the gap with our experienced team when you lack internal data expertise.",
     color: "from-purple-500 to-violet-500",
   },
   {
     icon: <TrendingUp className="h-8 w-8" />,
     title: "Continuous Support & Evolution",
-    description: "Ongoing support to evolve and optimize your analytics solutions over time.",
+    description:
+      "Ongoing support to evolve and optimize your analytics solutions over time.",
     color: "from-orange-500 to-red-500",
   },
 ];
@@ -171,7 +175,12 @@ export default function AIDataStrategy() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Making the right decisions on developing and deploying AI products is crucial if you want to stay competitive in a fast-moving market. We will guide you through this process and ensure complete support.
+              Making informed decisions when developing and deploying AI
+              solutions is essential to remain competitive in today’s rapidly
+              evolving market. We’re here to guide you through the entire
+              journey, offering end-to-end support to help drive your success.
+              Our mission is to empower your business through expert consulting
+              in Big Data, Data Science, AI, and Machine Learning.
             </motion.p>
 
             <motion.p
@@ -180,7 +189,10 @@ export default function AIDataStrategy() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-lg text-blue-200 mb-12 leading-relaxed max-w-4xl"
             >
-              In short, it's our goal to make your business successful by providing Big Data, Data Science, AI and Machine Learning consulting.
+              Our AI consultants follow industry best practices, assess and
+              optimize your current data science initiatives, work closely with
+              your subject matter experts (SMEs), and provide full support
+              across all data-driven activities.
             </motion.p>
 
             {/* Badge */}
@@ -275,27 +287,32 @@ export default function AIDataStrategy() {
           >
             {/* Image Section */}
             <div className="relative">
-              <div className="relative h-80 lg:h-96 overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src="./assets/Data-Governance.png"
-                  alt="Data Governance"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "./assets/data-governance.png";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
+              <img
+                src="./assets/Data-Governance.png"
+                alt="Data Governance"
+                className="w-full h-80 lg:h-96 object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "./assets/data-governance.png";
+                }}
+              />
             </div>
 
             {/* Content Section */}
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                Making the right decisions on developing and deploying AI products is crucial if you want to stay competitive in a fast-moving market. We will guide you through this process and ensure complete support. In short, it's our goal to make your business successful by providing Big Data, Data Science, AI and Machine Learning consulting.
+                Making the right decisions on developing and deploying AI
+                products is crucial if you want to stay competitive in a
+                fast-moving market. We will guide you through this process and
+                ensure complete support. In short, it's our goal to make your
+                business successful by providing Big Data, Data Science, AI and
+                Machine Learning consulting.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Our AI Consultant will implement best practices, find out how to adjust your data science existing solutions, closely cooperate with your subject matter expert (SME) and support you with all data-related activities.
+                Our AI Consultant will implement best practices, find out how to
+                adjust your data science existing solutions, closely cooperate
+                with your subject matter expert (SME) and support you with all
+                data-related activities.
               </p>
             </div>
           </motion.div>
@@ -407,7 +424,9 @@ export default function AIDataStrategy() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Join hundreds of companies who trust RT NextGenAI for their AI and data strategy needs. Our experts are ready to accelerate your digital transformation journey with cutting-edge solutions.
+              Join hundreds of companies who trust RT NextGenAI for their AI and
+              data strategy needs. Our experts are ready to accelerate your
+              digital transformation journey with cutting-edge solutions.
             </motion.p>
 
             {/* Benefits Grid */}
