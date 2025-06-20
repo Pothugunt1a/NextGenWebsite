@@ -447,6 +447,61 @@ export default function ProcessOptimization() {
         </div>
       </section>
 
+      {/* Process Excellence Section */}
+      <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Content Section */}
+            <div className="space-y-6">
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Harnessing AI to optimize your business processes can unlock substantial global opportunities, 
+                and it is imperative to be strategically positioned to fully capitalize on these advancements.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                AI Superior offers a comprehensive suite of capabilities, combining highly skilled AI software 
+                development expertise with proven methodologies and advanced tools. This enables our team to 
+                effectively guide your organization through its digital transformation journey.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                We assist businesses in designing and implementing innovative processes that drive greater 
+                operational efficiency. Many organizations trust us to lead their AI-driven business process 
+                optimization initiatives.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our team delivers tailored AI solutions, modernizes existing systems, and strengthens overall 
+                business capabilities. Whether your goal is to deploy a chatbot to enhance customer engagement 
+                or to derive actionable insights from complex datasets, AI Superior is equipped to elevate 
+                your business operations.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                We deliver end-to-end solutions tailored to your organization's unique processes and objectives, 
+                ensuring seamless integration and maximum value. By leveraging data specific to your enterprise, 
+                we help you implement these solutions with precision and efficiency.
+              </p>
+            </div>
+
+            {/* Image Section */}
+            <div className="relative">
+              <img
+                src="./assets/Process-optimization.png"
+                alt="Process Optimization Solutions"
+                className="w-full h-80 lg:h-96 object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "./assets/process-optimization.png";
+                }}
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Final Content Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -457,19 +512,6 @@ export default function ProcessOptimization() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xl text-gray-300 leading-relaxed">
-              The optimization of your business processes based on AI will unlock massive 
-              prospects globally, and you need to be well-positioned to benefit immensely.
-            </p>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              We help companies develop new business processes and implement them more efficiently. 
-              Companies rely on us to use AI-based business process optimization.
-            </p>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Whether you need a simple chatbot to help with customer queries, or to analyze 
-              and predict various insights from complex customer data, AI Superior has a team 
-              who will take your business to a whole new level.
-            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
               <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10">
                 <CheckCircle2 className="h-8 w-8 text-blue-400 mb-4" />
