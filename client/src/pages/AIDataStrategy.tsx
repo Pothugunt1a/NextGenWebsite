@@ -264,44 +264,46 @@ export default function AIDataStrategy() {
                 Our Comprehensive Approach
               </span>
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Our AI Consultant will implement best practices, find out how to adjust your data science existing solutions, 
-              closely cooperate with your subject matter expert (SME) and support you with all data-related activities.
-            </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            {services.map((service, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Card className="h-full border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 mr-4">
-                        <div className="text-white">{service.icon}</div>
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+            {/* Image Section */}
+            <div className="relative">
+              <div className="relative h-80 lg:h-96 overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src="./assets/Data-Governance.png"
+                  alt="Data Governance"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "./assets/data-governance.png";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="space-y-6">
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Making the right decisions on developing and deploying AI products is crucial if you want to stay competitive in a fast-moving market. We will guide you through this process and ensure complete support. In short, it's our goal to make your business successful by providing Big Data, Data Science, AI and Machine Learning consulting.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our AI Consultant will implement best practices, find out how to adjust your data science existing solutions, closely cooperate with your subject matter expert (SME) and support you with all data-related activities.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-black">
+      <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -310,39 +312,42 @@ export default function AIDataStrategy() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Why Choose Our Data Strategy Services?
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Why Choose Our Data Strategy Services?
             </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Partner with industry leaders in AI and data strategy solutions
+            </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
           >
-            {benefits.map((benefit, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Card className="h-full border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group">
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-6">
-                      <div className={`p-4 rounded-xl bg-gradient-to-br ${benefit.color} flex-shrink-0`}>
-                        <div className="text-white">{benefit.icon}</div>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                          {benefit.title}
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed">
-                          {benefit.description}
-                        </p>
-                      </div>
+            {benefits.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="group"
+              >
+                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                  <div className="flex justify-center mb-6">
+                    <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-white">{item.icon}</div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -350,37 +355,86 @@ export default function AIDataStrategy() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-purple-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-24 bg-gradient-to-r from-blue-900 to-purple-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-purple-900/40"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring" }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm mb-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Ready to Transform Your Data Strategy?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Let our experts guide you through the AI transformation journey and unlock the full potential of your data assets.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 py-3"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
-              >
-                Schedule Consultation
-              </Button>
+            <Sparkles className="h-5 w-5 text-cyan-400" />
+            <span className="text-white font-medium">
+              Trusted Globally by Industry Leaders
+            </span>
+            <Star className="h-4 w-4 text-blue-400 fill-current" />
+          </motion.div>
+
+          <motion.h2
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-4xl md:text-6xl font-bold mb-6"
+          >
+            <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+              Transform Your
+            </span>
+            <br />
+            <span className="text-white">Data Strategy</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
+            Join hundreds of companies who trust RT NextGenAI for their AI and data strategy needs. Our experts are ready to accelerate your digital transformation journey with cutting-edge solutions.
+          </motion.p>
+
+          {/* Benefits Grid */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+          >
+            <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+              <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+              <span className="text-white font-semibold">
+                Free Consultation
+              </span>
             </div>
+            <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+              <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+              <span className="text-white font-semibold">
+                24/7 Expert Support
+              </span>
+            </div>
+            <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+              <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+              <span className="text-white font-semibold">
+                Guaranteed Results
+              </span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex justify-center"
+          >
+            <Button
+              size="lg"
+              className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+            >
+              <Users className="mr-2 h-5 w-5" />
+              Schedule Free Consultation
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </motion.div>
         </div>
       </section>
