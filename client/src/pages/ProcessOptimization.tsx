@@ -54,34 +54,29 @@ const services = [
   {
     icon: <Brain className="h-6 w-6" />,
     title: "AI Process Automation",
-    description:
-      "Intelligent automation solutions for complex business workflows",
+    description: "Intelligent automation solutions for complex business workflows",
   },
   {
     icon: <Cog className="h-6 w-6" />,
     title: "System Integration",
-    description:
-      "Seamless integration of AI capabilities into existing systems",
+    description: "Seamless integration of AI capabilities into existing systems",
   },
   {
     icon: <BarChart3 className="h-6 w-6" />,
     title: "Performance Analytics",
-    description:
-      "Advanced analytics to measure and optimize process efficiency",
+    description: "Advanced analytics to measure and optimize process efficiency",
   },
   {
     icon: <Database className="h-6 w-6" />,
     title: "Data Processing",
-    description:
-      "Intelligent data analysis and predictive insights from complex datasets",
+    description: "Intelligent data analysis and predictive insights from complex datasets",
   },
 ];
 
 const capabilities = [
   {
     title: "Custom Design Systems",
-    description:
-      "Develop tailored AI systems designed for your specific business needs",
+    description: "Develop tailored AI systems designed for your specific business needs",
   },
   {
     title: "System Upgrades",
@@ -89,13 +84,11 @@ const capabilities = [
   },
   {
     title: "Business Enhancement",
-    description:
-      "Boost your overall business capabilities with intelligent solutions",
+    description: "Boost your overall business capabilities with intelligent solutions",
   },
   {
     title: "Complete Implementation",
-    description:
-      "End-to-end AI solution deployment customized to your processes",
+    description: "End-to-end AI solution deployment customized to your processes",
   },
 ];
 
@@ -201,8 +194,8 @@ export default function ProcessOptimization() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Transform your business operations with intelligent AI-driven
-              process optimization solutions
+              Transform your business operations with intelligent AI-driven process
+              optimization solutions
             </motion.p>
 
             {/* Badge */}
@@ -310,18 +303,15 @@ export default function ProcessOptimization() {
             {/* Content Section */}
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                Effective business administration is critical, as even the most
-                innovative ideas can falter without proper execution. In some
-                cases, organizations struggle to adopt new concepts or lack the
-                necessary expertise to implement them successfully.
+                Business administration has the power to destroy even the greatest business ideas. 
+                Sometimes, organizations cannot apply new ideas and processes, or they lack capable 
+                personnel to implement them.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                RTNextGenAI provides a range of AI-driven solutions designed to
-                help businesses streamline and enhance their operations. While
-                the potential of AI is vast, success depends not merely on swift
-                implementation but on a strategic approach. It is essential to
-                understand how to integrate AI effectively to drive sustainable
-                business growth.
+                AI Superior delivers various AI-based solutions for businesses seeking to optimize 
+                their processes. While AI-based solutions offer countless possibilities, your business 
+                shouldn't focus only on rapid implementation. You need to understand how to deploy 
+                AI-based strategies to leverage your business growth.
               </p>
             </div>
           </motion.div>
@@ -339,7 +329,7 @@ export default function ProcessOptimization() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              RTNextGenAI Can Work With Your Business To
+              AI Superior Can Work With Your Business To:
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
@@ -388,13 +378,12 @@ export default function ProcessOptimization() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              RTNextGenAI's Digital Journey
+              Our Comprehensive Solutions
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              RTNextGenAI presents a blend of skilled AI software developmental
-              resources, proven techniques, and tools that enables our team to
-              lead you through this digital journey.
+              AI Superior presents a blend of skilled AI software developmental resources, 
+              proven techniques, and tools that enables our team to lead you through this digital journey.
             </p>
           </motion.div>
 
@@ -458,134 +447,45 @@ export default function ProcessOptimization() {
         </div>
       </section>
 
-      {/* Global Prospects & AI Excellence */}
+      {/* Final Content Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Highlight */}
           <motion.div
-            className="text-center mb-16"
+            className="max-w-4xl mx-auto text-center space-y-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative inline-block">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur opacity-20"></div>
-              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-8">
-                <Rocket className="h-12 w-12 text-cyan-400 mx-auto mb-4" />
-                <p className="text-2xl font-bold text-white mb-4">
-                  Unlock Massive Global Prospects
+            <p className="text-xl text-gray-300 leading-relaxed">
+              The optimization of your business processes based on AI will unlock massive 
+              prospects globally, and you need to be well-positioned to benefit immensely.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              We help companies develop new business processes and implement them more efficiently. 
+              Companies rely on us to use AI-based business process optimization.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Whether you need a simple chatbot to help with customer queries, or to analyze 
+              and predict various insights from complex customer data, AI Superior has a team 
+              who will take your business to a whole new level.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+              <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10">
+                <CheckCircle2 className="h-8 w-8 text-blue-400 mb-4" />
+                <p className="text-lg text-gray-300">
+                  We will implement a complete solution customized to your company's 
+                  specific business processes.
                 </p>
-                <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  The optimization of your business processes based on AI will
-                  unlock massive prospects globally, and you need to be
-                  well-positioned to benefit immensely.
+              </div>
+              <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10">
+                <CheckCircle2 className="h-8 w-8 text-blue-400 mb-4" />
+                <p className="text-lg text-gray-300">
+                  We will help you apply these solutions efficiently by using data 
+                  relevant to your organization.
                 </p>
               </div>
             </div>
-          </motion.div>
-
-          {/* Core Services Grid */}
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.div
-              className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300"
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full -translate-y-16 translate-x-16"></div>
-              <Settings className="h-10 w-10 text-blue-400 mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Business Process Development
-              </h3>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                We help companies develop new business processes and implement
-                them more efficiently. Companies rely on us to use AI-based
-                business process optimization.
-              </p>
-              <div className="flex items-center text-cyan-400">
-                <ArrowRight className="h-4 w-4 mr-2" />
-                <span className="text-sm font-medium">Enhanced Efficiency</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-white/10 p-8 hover:border-green-400/30 transition-all duration-300"
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full -translate-y-16 translate-x-16"></div>
-              <Brain className="h-10 w-10 text-green-400 mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Advanced AI Solutions
-              </h3>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Whether you need a simple chatbot to help with customer queries,
-                or to analyze and predict various insights from complex customer
-                data, RTNextGenAI has a team who will take your business to a
-                whole new level.
-              </p>
-              <div className="flex items-center text-green-400">
-                <ArrowRight className="h-4 w-4 mr-2" />
-                <span className="text-sm font-medium">
-                  Next-Level Performance
-                </span>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Implementation Promise */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.div
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/10 p-8 hover:border-blue-400/40 transition-all duration-500"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                    <CheckCircle2 className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">
-                    Custom Implementation
-                  </h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed">
-                  We will implement a complete solution customized to your
-                  company's specific business processes.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/10 p-8 hover:border-purple-400/40 transition-all duration-500"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-xl flex items-center justify-center">
-                    <Database className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">
-                    Data-Driven Solutions
-                  </h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed">
-                  We will help you apply these solutions efficiently by using
-                  data relevant to your organization.
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -642,9 +542,8 @@ export default function ProcessOptimization() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Join the companies revolutionizing their operations with
-              AI-powered process optimization. Start your transformation journey
-              today.
+              Join the companies revolutionizing their operations with AI-powered 
+              process optimization. Start your transformation journey today.
             </motion.p>
 
             <motion.div
