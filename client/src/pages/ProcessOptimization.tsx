@@ -50,8 +50,6 @@ const benefits = [
   },
 ];
 
-
-
 const stats = [
   {
     icon: <Target className="h-8 w-8" />,
@@ -154,8 +152,8 @@ export default function ProcessOptimization() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Transform your business operations with intelligent AI-driven process
-              optimization solutions
+              Transform your business operations with intelligent AI-driven
+              process optimization solutions
             </motion.p>
 
             {/* Badge */}
@@ -268,15 +266,17 @@ export default function ProcessOptimization() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Business administration has the power to destroy even the greatest business ideas. 
-                Sometimes, organizations cannot apply new ideas and processes, or they lack capable 
-                personnel to implement them.
+                Business administration has the power to destroy even the
+                greatest business ideas. Sometimes, organizations cannot apply
+                new ideas and processes, or they lack capable personnel to
+                implement them.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                AI Superior delivers various AI-based solutions for businesses seeking to optimize 
-                their processes. While AI-based solutions offer countless possibilities, your business 
-                shouldn't focus only on rapid implementation. You need to understand how to deploy 
-                AI-based strategies to leverage your business growth.
+                AI Superior delivers various AI-based solutions for businesses
+                seeking to optimize their processes. While AI-based solutions
+                offer countless possibilities, your business shouldn't focus
+                only on rapid implementation. You need to understand how to
+                deploy AI-based strategies to leverage your business growth.
               </p>
             </motion.div>
           </div>
@@ -290,7 +290,7 @@ export default function ProcessOptimization() {
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
           <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
         </div>
-        
+
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -356,12 +356,14 @@ export default function ProcessOptimization() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              AI Superior presents a blend of skilled AI software developmental resources, 
-              proven techniques, and tools that enables our team to lead you through this digital journey.
+              Streamline your operations, drive intelligent automation, and
+              enhance your business capabilities through AI-powered process
+              optimization. By strategically integrating AI technologies, you
+              can unlock new opportunities, improve operational efficiency, and
+              uncover unique advantages that fuel sustainable growth and
+              innovation.
             </p>
           </motion.div>
-
-          
         </div>
       </section>
 
@@ -384,29 +386,37 @@ export default function ProcessOptimization() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Harnessing AI to optimize your business processes can unlock substantial global opportunities, 
-                and it is imperative to be strategically positioned to fully capitalize on these advancements.
+                Harnessing AI to optimize your business processes can unlock
+                substantial global opportunities, and it is imperative to be
+                strategically positioned to fully capitalize on these
+                advancements.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                AI Superior offers a comprehensive suite of capabilities, combining highly skilled AI software 
-                development expertise with proven methodologies and advanced tools. This enables our team to 
-                effectively guide your organization through its digital transformation journey.
+                AI Superior offers a comprehensive suite of capabilities,
+                combining highly skilled AI software development expertise with
+                proven methodologies and advanced tools. This enables our team
+                to effectively guide your organization through its digital
+                transformation journey.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                We assist businesses in designing and implementing innovative processes that drive greater 
-                operational efficiency. Many organizations trust us to lead their AI-driven business process 
+                We assist businesses in designing and implementing innovative
+                processes that drive greater operational efficiency. Many
+                organizations trust us to lead their AI-driven business process
                 optimization initiatives.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Our team delivers tailored AI solutions, modernizes existing systems, and strengthens overall 
-                business capabilities. Whether your goal is to deploy a chatbot to enhance customer engagement 
-                or to derive actionable insights from complex datasets, AI Superior is equipped to elevate 
-                your business operations.
+                Our team delivers tailored AI solutions, modernizes existing
+                systems, and strengthens overall business capabilities. Whether
+                your goal is to deploy a chatbot to enhance customer engagement
+                or to derive actionable insights from complex datasets, AI
+                Superior is equipped to elevate your business operations.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                We deliver end-to-end solutions tailored to your organization's unique processes and objectives, 
-                ensuring seamless integration and maximum value. By leveraging data specific to your enterprise, 
-                we help you implement these solutions with precision and efficiency.
+                We deliver end-to-end solutions tailored to your organization's
+                unique processes and objectives, ensuring seamless integration
+                and maximum value. By leveraging data specific to your
+                enterprise, we help you implement these solutions with precision
+                and efficiency.
               </p>
             </motion.div>
 
@@ -430,8 +440,6 @@ export default function ProcessOptimization() {
           </div>
         </div>
       </section>
-
-      
 
       {/* Enhanced CTA Section */}
       <section className="py-16 relative overflow-hidden">
@@ -485,8 +493,9 @@ export default function ProcessOptimization() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Join the companies revolutionizing their operations with AI-powered 
-              process optimization. Start your transformation journey today.
+              Join the companies revolutionizing their operations with
+              AI-powered process optimization. Start your transformation journey
+              today.
             </motion.p>
 
             <motion.div
