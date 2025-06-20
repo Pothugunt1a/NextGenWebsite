@@ -223,8 +223,13 @@ export default function ProcessOptimization() {
       </section>
 
       {/* Our Approach Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-light relative">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -288,6 +293,8 @@ export default function ProcessOptimization() {
       <section className="py-16 bg-light relative">
         {/* Background Effects */}
         <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
           <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
         </div>
@@ -343,9 +350,11 @@ export default function ProcessOptimization() {
       </section>
 
       {/* Our Comprehensive Solutions Section */}
-      <section className="py-16 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+      <section className="py-16 bg-light relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
           <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
           <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
         </div>
