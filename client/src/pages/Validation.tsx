@@ -53,7 +53,7 @@ const validationServices = [
       "Comprehensive equipment validation services ensuring optimal performance, compliance, and reliability across all manufacturing systems.",
     icon: <Cog className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "/assets/equipment-validation.jpeg",
+    backgroundImage: "/assets/equipment-validation.png",
     overview:
       "RT NextGen AI Validation Engineers manages, inspects, calibrates, tests and modifies the instrumentation, equipment, mechanics and procedures used to manufacture various products. They ensure all systems are running correctly and efficiently to produce high-quality products. They also investigate the causes of equipment failures and anomalies and decide if the equipment needs to be repaired or replaced. RT NextGen AI in-house staff of highly skilled professionals consults with you to determine your optimal strategy and immediate solutions. Our team also helps you with any resources for on-site tasks.",
     keyBenefits: [],
@@ -98,7 +98,7 @@ const validationServices = [
       "Risk-based cleaning validation protocols incorporating critical quality attributes and regulatory compliance standards.",
     icon: <FlaskConical className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "/assets/cleaning-validation.jpeg",
+    backgroundImage: "/assets/cleaning-validation.png",
     overview:
       "A risk-basedapproach is followed for establishing an effective cleaning validation, including the development of policies, master plans and the appropriate content for each study to be performed incorporating critical quality attributes and critical process parameters and process control.",
     keyBenefits: [],
@@ -127,7 +127,7 @@ const validationServices = [
       "Complete lifecycle validation for computer systems including planning, testing, documentation, and continuous monitoring.",
     icon: <Monitor className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "/assets/computer-system-validation.jpeg",
+    backgroundImage: "/assets/computer-system-validation.png",
     overview:
       "Computer Systems Validation is not a one-time event. Validation should be considered as part of the complete life cycle of a computer system. This cycle includes the stages of planning, specification, programming, testing commissioning, documentation, operation, monitoring and modifying. Our computer system validation consultants have extensive experience in providing leadership to companies seeking to meet regulatory expectations. our experienced CSV team can provide expert project planning and oversight that includes:",
     keyBenefits: [],
@@ -164,7 +164,7 @@ const validationServices = [
       "Systematic approach to process validation ensuring consistent product quality and regulatory compliance throughout manufacturing.",
     icon: <Binary className="h-12 w-12 text-white" />,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "/assets/process-validation.jpeg",
+    backgroundImage: "/assets/process-validation.png",
     overview:
       "Having years of experience, our highly experienced team understands the concerns companies face in this highly regulated environment. The first step in process validation in manufacturing is to identify the risks and critical control points of the process. Which aspects of the process will impact product quality i.e. GMP risk, if they fail, or if they fall outside the control parameters?",
     keyBenefits: [],
@@ -438,7 +438,7 @@ export default function Validation() {
                   <img
                     src={selectedService.backgroundImage}
                     alt={selectedService.title}
-                    className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-500"
+                    className="w-full h-full object-contain scale-105 hover:scale-100 transition-transform duration-500"
                   />
                 </div>
 
