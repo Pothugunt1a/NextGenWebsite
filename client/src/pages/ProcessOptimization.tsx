@@ -285,7 +285,7 @@ export default function ProcessOptimization() {
       </section>
 
       {/* What We Can Do Section */}
-      <section className="py-16 relative">
+      <section className="py-16 bg-light relative">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
