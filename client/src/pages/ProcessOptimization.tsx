@@ -254,7 +254,7 @@ export default function ProcessOptimization() {
               <img
                 src="./assets/Process-Optimization.png"
                 alt="Process Optimization"
-                className="w-full h-80 lg:h-96 object-cover"
+                className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-2xl shadow-black/50 opacity-90 hover:opacity-100 transition-all duration-500 border border-white/10"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = "./assets/process-optimization.png";
