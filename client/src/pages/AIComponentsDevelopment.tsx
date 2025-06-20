@@ -199,14 +199,28 @@ export default function AIComponentsDevelopment() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="components" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-12 h-14">
-              <TabsTrigger value="components" className="text-lg font-semibold">
-                AI Components
-              </TabsTrigger>
-              <TabsTrigger value="research" className="text-lg font-semibold">
-                AI Research and Projects
-              </TabsTrigger>
-            </TabsList>
+            {/* Custom Tab Design */}
+            <div className="flex justify-center mb-8">
+              <TabsList className="bg-transparent p-0 h-auto flex items-center gap-0 border-0">
+                <TabsTrigger 
+                  value="components" 
+                  className="relative bg-white text-gray-700 border border-gray-300 rounded-l-lg px-8 py-4 text-lg font-medium hover:bg-gray-50 data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:border-gray-400 data-[state=active]:shadow-sm data-[state=active]:z-10"
+                >
+                  AI Components
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="research" 
+                  className="relative bg-white text-gray-700 border border-l-0 border-gray-300 rounded-r-lg px-8 py-4 text-lg font-medium hover:bg-gray-50 data-[state=active]:bg-cyan-500 data-[state=active]:text-white data-[state=active]:border-cyan-500 data-[state=active]:shadow-sm data-[state=active]:z-10"
+                >
+                  AI Research and Projects
+                </TabsTrigger>
+              </TabsList>
+            </div>
+            
+            {/* Small dot indicator */}
+            <div className="flex justify-center mb-16">
+              <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+            </div>
 
             <TabsContent value="components" className="space-y-8">
               {/* Challenge Section */}
