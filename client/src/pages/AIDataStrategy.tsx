@@ -175,10 +175,12 @@ export default function AIDataStrategy() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Making the right decisions on developing and deploying AI products
-              is crucial if you want to stay competitive in a fast-moving
-              market. We will guide you through this process and ensure complete
-              support.
+              Making informed decisions when developing and deploying AI
+              solutions is essential to remain competitive in today’s rapidly
+              evolving market. We’re here to guide you through the entire
+              journey, offering end-to-end support to help drive your success.
+              Our mission is to empower your business through expert consulting
+              in Big Data, Data Science, AI, and Machine Learning.
             </motion.p>
 
             <motion.p
@@ -187,9 +189,10 @@ export default function AIDataStrategy() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-lg text-blue-200 mb-12 leading-relaxed max-w-4xl"
             >
-              In short, it's our goal to make your business successful by
-              providing Big Data, Data Science, AI and Machine Learning
-              consulting.
+              Our AI consultants follow industry best practices, assess and
+              optimize your current data science initiatives, work closely with
+              your subject matter experts (SMEs), and provide full support
+              across all data-driven activities.
             </motion.p>
 
             {/* Badge */}
@@ -284,18 +287,15 @@ export default function AIDataStrategy() {
           >
             {/* Image Section */}
             <div className="relative">
-              <div className="relative h-80 lg:h-96 overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src="./assets/Data-Governance.png"
-                  alt="Data Governance"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "./assets/data-governance.png";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
+              <img
+                src="./assets/Data-Governance.png"
+                alt="Data Governance"
+                className="w-full h-80 lg:h-96 object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "./assets/data-governance.png";
+                }}
+              />
             </div>
 
             {/* Content Section */}
