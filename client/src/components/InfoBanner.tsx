@@ -29,11 +29,9 @@ export default function InfoBanner() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="flex-1">
             <h3 className="text-3xl font-bold text-white mb-3 pl-6 border-l-4 border-gradient-to-r from-cyan-400 to-blue-500" style={{ borderLeftColor: '#0080FF' }}>
-              For Further Information And To Learn More About Our AI Solutions
-              Along With How We Can Support Your Organisation In Harnessing The
-              Full Potential Of AI{" "}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Make Contact</span> With Our
-              Experienced IT Staff.
+              Transform Your Business with AI Solutions
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Contact Our Expert Team Today</span>
             </h3>
             <p className="text-gray-300">
               We're available for 8 hours a day! Contact us to request a
