@@ -377,7 +377,8 @@ export default function Navbar({
                                     return (
                                       <div key={idx} className="group">
                                         {/* Check if category has items or is directly clickable */}
-                                        {category.items && category.items.length > 0 ? (
+                                        {category.items &&
+                                        category.items.length > 0 ? (
                                           <>
                                             <div
                                               className="relative cursor-pointer select-none"
@@ -391,7 +392,9 @@ export default function Navbar({
                                               <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-slate-900/95 to-slate-800/90 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 backdrop-blur-md shadow-lg hover:shadow-xl hover:shadow-cyan-400/10 hover:bg-gradient-to-r hover:from-slate-800/95 hover:to-slate-700/90">
                                                 <div className="flex items-center gap-3">
                                                   <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 shadow-sm">
-                                                    {getCategoryIcon(category.name)}
+                                                    {getCategoryIcon(
+                                                      category.name,
+                                                    )}
                                                   </div>
                                                   <div>
                                                     <h3 className="text-white font-semibold text-base group-hover:text-cyan-300 transition-colors whitespace-nowrap">
@@ -418,9 +421,13 @@ export default function Navbar({
                                                       onClick={(e) => {
                                                         e.preventDefault();
                                                         if (
-                                                          item.href.startsWith("/")
+                                                          item.href.startsWith(
+                                                            "/",
+                                                          )
                                                         ) {
-                                                          setLocation(item.href);
+                                                          setLocation(
+                                                            item.href,
+                                                          );
                                                           handleLinkClick();
                                                         } else {
                                                           scrollToSection(
@@ -447,7 +454,10 @@ export default function Navbar({
                                             className="block cursor-pointer select-none"
                                             onClick={(e) => {
                                               e.preventDefault();
-                                              if (category.href && category.href.startsWith("/")) {
+                                              if (
+                                                category.href &&
+                                                category.href.startsWith("/")
+                                              ) {
                                                 setLocation(category.href);
                                                 handleLinkClick();
                                               }
@@ -456,7 +466,9 @@ export default function Navbar({
                                             <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-slate-900/95 to-slate-800/90 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 backdrop-blur-md shadow-lg hover:shadow-xl hover:shadow-cyan-400/10 hover:bg-gradient-to-r hover:from-slate-800/95 hover:to-slate-700/90">
                                               <div className="flex items-center gap-3">
                                                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 shadow-sm">
-                                                  {getCategoryIcon(category.name)}
+                                                  {getCategoryIcon(
+                                                    category.name,
+                                                  )}
                                                 </div>
                                                 <div>
                                                   <h3 className="text-white font-semibold text-base group-hover:text-cyan-300 transition-colors whitespace-nowrap">
@@ -464,7 +476,6 @@ export default function Navbar({
                                                   </h3>
                                                 </div>
                                               </div>
-
                                             </div>
                                           </a>
                                         )}
@@ -597,7 +608,10 @@ export default function Navbar({
                                   className="block px-3 py-2 text-sm text-gray-600 hover:text-primary"
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    if (category.href && category.href.startsWith("/")) {
+                                    if (
+                                      category.href &&
+                                      category.href.startsWith("/")
+                                    ) {
                                       setLocation(category.href);
                                       handleLinkClick();
                                     }
