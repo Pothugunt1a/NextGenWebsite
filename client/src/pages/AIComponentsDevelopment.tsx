@@ -116,7 +116,7 @@ const stats = [
 
 export default function AIComponentsDevelopment() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-light text-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 text-white">
         <div className="absolute inset-0 bg-black/20" />
@@ -145,7 +145,7 @@ export default function AIComponentsDevelopment() {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -154,10 +154,11 @@ export default function AIComponentsDevelopment() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               AI Superior's Value Proposition
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
               Our value proposition is about effective success and risk management for our clients in AI projects. 
               With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria.
             </p>
@@ -173,20 +174,23 @@ export default function AIComponentsDevelopment() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50">
+                <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 group">
                   <CardContent className="p-0">
                     <div
-                      className={`w-16 h-16 rounded-full bg-gradient-to-r ${stat.color} flex items-center justify-center mx-auto mb-4 text-white`}
+                      className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                    />
+                    <div
+                      className={`w-16 h-16 rounded-full bg-gradient-to-r ${stat.color} flex items-center justify-center mx-auto mb-4 text-white relative z-10`}
                     >
                       {stat.icon}
                     </div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-3xl font-bold text-white mb-2 relative z-10">
                       {stat.title}
                     </h3>
-                    <p className="text-lg font-semibold text-gray-700 mb-1">
+                    <p className="text-lg font-semibold text-gray-300 mb-1 relative z-10">
                       {stat.subtitle}
                     </p>
-                    <p className="text-gray-600">{stat.description}</p>
+                    <p className="text-gray-400 relative z-10">{stat.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -196,7 +200,7 @@ export default function AIComponentsDevelopment() {
       </section>
 
       {/* Main Content Tabs */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="components" className="w-full">
             {/* Custom Tab Design */}
@@ -204,13 +208,13 @@ export default function AIComponentsDevelopment() {
               <TabsList className="bg-transparent p-0 h-auto flex items-center gap-0 border-0">
                 <TabsTrigger 
                   value="components" 
-                  className="relative bg-white text-gray-700 border border-gray-300 rounded-l-lg px-8 py-4 text-lg font-medium hover:bg-gray-50 data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:border-gray-400 data-[state=active]:shadow-sm data-[state=active]:z-10"
+                  className="relative bg-white/10 text-white border border-white/20 rounded-l-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-white/20 data-[state=active]:text-white data-[state=active]:border-white/40 data-[state=active]:shadow-sm data-[state=active]:z-10 backdrop-blur-sm"
                 >
                   AI Components
                 </TabsTrigger>
                 <TabsTrigger 
                   value="research" 
-                  className="relative bg-white text-gray-700 border border-l-0 border-gray-300 rounded-r-lg px-8 py-4 text-lg font-medium hover:bg-gray-50 data-[state=active]:bg-cyan-500 data-[state=active]:text-white data-[state=active]:border-cyan-500 data-[state=active]:shadow-sm data-[state=active]:z-10"
+                  className="relative bg-white/10 text-white border border-l-0 border-white/20 rounded-r-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-cyan-500 data-[state=active]:text-white data-[state=active]:border-cyan-500 data-[state=active]:shadow-sm data-[state=active]:z-10 backdrop-blur-sm"
                 >
                   AI Research and Projects
                 </TabsTrigger>
@@ -231,17 +235,18 @@ export default function AIComponentsDevelopment() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                   Face your challenges!
                 </h2>
+                <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
                 <div className="max-w-4xl mx-auto space-y-4">
-                  <p className="text-xl text-gray-600">
+                  <p className="text-xl text-gray-300">
                     Do you want to introduce a new data-driven service that turns your data into business insights while optimizing your company processes?
                   </p>
-                  <p className="text-xl text-gray-600">
+                  <p className="text-xl text-gray-300">
                     Probably, you want to ensure this new framework meets all expectations, along with clear-cut performance.
                   </p>
-                  <p className="text-xl font-semibold text-blue-600">
+                  <p className="text-xl font-semibold text-cyan-400">
                     We will manage your success and risk properly!
                   </p>
                 </div>
@@ -257,27 +262,30 @@ export default function AIComponentsDevelopment() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-white">
-                      <CardContent className="p-8">
-                        <div className="flex items-start gap-4 mb-4">
+                    <Card className="h-full hover:shadow-xl transition-all duration-300 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 group">
+                      <CardContent className="p-8 relative">
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-br ${component.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-lg`}
+                        />
+                        <div className="flex items-start gap-4 mb-4 relative z-10">
                           <div
                             className={`w-16 h-16 rounded-full bg-gradient-to-r ${component.color} flex items-center justify-center text-white flex-shrink-0`}
                           >
                             {component.icon}
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                            <h3 className="text-2xl font-bold text-white mb-2">
                               {component.title}
                             </h3>
-                            <Badge variant="secondary" className="mb-4">
+                            <Badge variant="outline" className="mb-4 border-cyan-500/50 text-cyan-400 bg-cyan-500/10">
                               {component.duration}
                             </Badge>
                           </div>
                         </div>
-                        <p className="text-gray-700 mb-4 leading-relaxed">
+                        <p className="text-gray-300 mb-4 leading-relaxed relative z-10">
                           {component.description}
                         </p>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-400 text-sm leading-relaxed relative z-10">
                           {component.details}
                         </p>
                       </CardContent>
@@ -292,12 +300,12 @@ export default function AIComponentsDevelopment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8"
+                className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   The Proof of Concept is the main part of our Value Proposition
                 </h3>
-                <p className="text-gray-700 max-w-3xl mx-auto">
+                <p className="text-gray-300 max-w-3xl mx-auto">
                   Our systematic approach ensures that every project phase builds upon the previous one, 
                   minimizing risks and maximizing success rates for your AI initiatives.
                 </p>
@@ -312,10 +320,11 @@ export default function AIComponentsDevelopment() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                   AI Research and Projects
                 </h2>
-                <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+                <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+                <p className="text-xl text-gray-300 max-w-4xl mx-auto">
                   Machine Learning research is crucial for going forward with AI development and you are often required to answer research questions. 
                   While they might be theoretical or practical, they still need to be addressed scientifically.
                 </p>
@@ -327,22 +336,22 @@ export default function AIComponentsDevelopment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg mb-12"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300 mb-12"
               >
                 <div className="flex items-start gap-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white flex-shrink-0">
                     <BookOpen className="h-8 w-8" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-2xl font-bold text-white mb-4">
                       Scientific Research Excellence
                     </h3>
-                    <p className="text-gray-700 mb-6 leading-relaxed">
+                    <p className="text-gray-300 mb-6 leading-relaxed">
                       As a team of data scientists and machine learning experts, we continuously conduct scientific research 
                       to answer some of the most challenging questions that arise in the community. We publish our results, 
                       attend conferences and participate in workshops.
                     </p>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed">
                       Our team will help you perform research activities or take over the entire coordination and research itself. 
                       We have solid experience writing papers for scientific journals, conferences and workshops, approaching 
                       many types of machine learning and AI problems. We work closely with our partners from leading universities 
@@ -358,9 +367,9 @@ export default function AIComponentsDevelopment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                <h3 className="text-2xl font-bold text-white mb-8 text-center">
                   Why AI Scientific Research Activities?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -373,8 +382,8 @@ export default function AIComponentsDevelopment() {
                       viewport={{ once: true }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle2 className="h-6 w-6 text-green-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700">{benefit}</p>
+                      <CheckCircle2 className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-gray-300">{benefit}</p>
                     </motion.div>
                   ))}
                 </div>
