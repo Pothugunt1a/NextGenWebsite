@@ -341,9 +341,15 @@ export default function ProcessOptimization() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Our Comprehensive Solutions Section */}
+      <section className="py-16 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
+          <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
+        </div>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -356,26 +362,10 @@ export default function ProcessOptimization() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Streamline your operations, drive intelligent automation, and
-              enhance your business capabilities through AI-powered process
-              optimization. By strategically integrating AI technologies, you
-              can unlock new opportunities, improve operational efficiency, and
-              uncover unique advantages that fuel sustainable growth and
-              innovation.
+              AI Superior presents a blend of skilled AI software developmental resources, proven techniques, and tools that enables our team to lead you through this digital journey.
             </p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Process Excellence Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
-          <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl opacity-25"></div>
-        </div>
-
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content Section */}
             <motion.div
@@ -386,17 +376,18 @@ export default function ProcessOptimization() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
+                Streamline your operations, drive intelligent automation, and
+                enhance your business capabilities through AI-powered process
+                optimization. By strategically integrating AI technologies, you
+                can unlock new opportunities, improve operational efficiency, and
+                uncover unique advantages that fuel sustainable growth and
+                innovation.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
                 Harnessing AI to optimize your business processes can unlock
                 substantial global opportunities, and it is imperative to be
                 strategically positioned to fully capitalize on these
                 advancements.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                AI Superior offers a comprehensive suite of capabilities,
-                combining highly skilled AI software development expertise with
-                proven methodologies and advanced tools. This enables our team
-                to effectively guide your organization through its digital
-                transformation journey.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 We assist businesses in designing and implementing innovative
