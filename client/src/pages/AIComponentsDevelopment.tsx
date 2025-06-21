@@ -179,9 +179,54 @@ export default function AIComponentsDevelopment() {
             </div>
           </motion.div>
         </div>
+
+        {/* Stats Section */}
+        <div className="absolute bottom-8 left-0 right-0">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
+                  whileHover={{ y: -5, scale: 1.05 }}
+                  className="group"
+                >
+                  <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                    />
+                    <div className="relative z-10">
+                      <div
+                        className={`inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br ${stat.color} mb-3`}
+                      >
+                        <div className="text-white">{stat.icon}</div>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">
+                        {stat.title}
+                      </h3>
+                      <p className="text-sm md:text-base font-semibold text-blue-300 mb-1">
+                        {stat.subtitle}
+                      </p>
+                      <p className="text-xs md:text-sm text-gray-400">
+                        {stat.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </section>
 
-      {/* Value Proposition Section */}
+      {/* AI Components Development Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -192,46 +237,44 @@ export default function AIComponentsDevelopment() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              AI Superior's Value Proposition
+              Development of Artificial Intelligence components
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Our value proposition is about effective success and risk management for our clients in AI projects. 
-              With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria.
-            </p>
           </motion.div>
 
-          {/* Statistics */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 group">
-                  <CardContent className="p-0">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                    />
-                    <div
-                      className={`w-16 h-16 rounded-full bg-gradient-to-r ${stat.color} flex items-center justify-center mx-auto mb-4 text-white relative z-10`}
-                    >
-                      {stat.icon}
-                    </div>
-                    <h3 className="text-3xl font-bold text-white mb-2 relative z-10">
-                      {stat.title}
-                    </h3>
-                    <p className="text-lg font-semibold text-gray-300 mb-1 relative z-10">
-                      {stat.subtitle}
-                    </p>
-                    <p className="text-gray-400 relative z-10">{stat.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src="./assets/AI-Components.gif"
+                alt="AI Components Development"
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+
+            {/* Content Section */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+                  Our end-to-end products and design solutions are based on artificial intelligence modules, machine learning, and data science. Our team will build you a fully compliant solution with your requirements in mind while ensuring flexibility for future evolution.
+                </p>
+                
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  AI Superior's Value Proposition is about effective success and risk management for our clients in AI Projects. With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria. The framework has several stages presented in the following graphic.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -240,27 +283,28 @@ export default function AIComponentsDevelopment() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="components" className="w-full">
-            {/* Custom Tab Design */}
-            <div className="flex justify-center mb-8">
-              <TabsList className="bg-transparent p-0 h-auto flex items-center gap-0 border-0">
+            {/* Custom Tab Design with Vertical Line */}
+            <div className="flex flex-col items-center mb-16">
+              <TabsList className="bg-transparent p-0 h-auto flex items-center gap-8 border-0 mb-8">
                 <TabsTrigger 
                   value="components" 
-                  className="relative bg-white/10 text-white border border-white/20 rounded-l-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-white/20 data-[state=active]:text-white data-[state=active]:border-white/40 data-[state=active]:shadow-sm data-[state=active]:z-10 backdrop-blur-sm"
+                  className="relative bg-white/10 text-white border border-white/20 rounded-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-white/20 data-[state=active]:text-white data-[state=active]:border-white/40 data-[state=active]:shadow-sm backdrop-blur-sm"
                 >
                   AI Components
                 </TabsTrigger>
                 <TabsTrigger 
                   value="research" 
-                  className="relative bg-white/10 text-white border border-l-0 border-white/20 rounded-r-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-cyan-500 data-[state=active]:text-white data-[state=active]:border-cyan-500 data-[state=active]:shadow-sm data-[state=active]:z-10 backdrop-blur-sm"
+                  className="relative bg-white/10 text-white border border-white/20 rounded-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-cyan-500 data-[state=active]:text-white data-[state=active]:border-cyan-500 data-[state=active]:shadow-sm backdrop-blur-sm"
                 >
                   AI Research and Projects
                 </TabsTrigger>
               </TabsList>
-            </div>
-            
-            {/* Small dot indicator */}
-            <div className="flex justify-center mb-16">
-              <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+              
+              {/* Vertical line with dot */}
+              <div className="flex flex-col items-center">
+                <div className="w-px h-16 bg-gradient-to-b from-cyan-500 to-blue-500"></div>
+                <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
+              </div>
             </div>
 
             <TabsContent value="components" className="space-y-8">
