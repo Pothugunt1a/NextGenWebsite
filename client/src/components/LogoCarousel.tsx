@@ -25,7 +25,11 @@ export default function LogoCarousel() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-10 md:h-12 w-auto object-contain"
+                  className={`w-auto object-contain ${
+                    logo.alt === 'Wipro' 
+                      ? 'h-12 md:h-16' 
+                      : 'h-10 md:h-12'
+                  }`}
                 />
               </div>
             ))}
@@ -39,7 +43,11 @@ export default function LogoCarousel() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-10 md:h-12 w-auto object-contain"
+                  className={`w-auto object-contain ${
+                    logo.alt === 'Wipro' 
+                      ? 'h-12 md:h-16' 
+                      : 'h-10 md:h-12'
+                  }`}
                 />
               </div>
             ))}
