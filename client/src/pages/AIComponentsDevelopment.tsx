@@ -298,16 +298,7 @@ export default function AIComponentsDevelopment() {
                 alt="AI Components Development"
                 className="w-full h-80 lg:h-96 object-cover rounded-lg"
               />
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <h4 className="text-xl font-bold text-white mb-4 text-center">
-                  AI Project Life Cycle Framework
-                </h4>
-                <img
-                  src="/assets/AI-Lifecycle.png"
-                  alt="AI Project Life Cycle Framework"
-                  className="w-full h-auto object-contain rounded-lg"
-                />
-              </div>
+              
             </motion.div>
 
             {/* Content Section */}
@@ -333,6 +324,90 @@ export default function AIComponentsDevelopment() {
                 framework encompasses multiple stages, as illustrated in the
                 accompanying diagram.
               </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Project Life Cycle Framework Section */}
+      <section className="py-16 bg-light relative">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              AI Project Life Cycle Framework
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Content Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our AI Project Life Cycle Framework provides a systematic approach to AI development that ensures successful project delivery from conception to deployment. This proven methodology minimizes risks while maximizing the value and impact of your AI initiatives.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                The framework encompasses four distinct phases: Proof of Concept (PoC), Working Prototype, Pilot Implementation, and Full Production System. Each phase builds upon the previous one, allowing for iterative refinement and validation of your AI solution.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                This structured approach enables organizations to make informed decisions at each stage, ensuring that resources are allocated efficiently and that the final solution meets all business requirements and performance expectations.
+              </p>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <h4 className="text-xl font-bold text-white mb-4">
+                  Framework Benefits
+                </h4>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Risk mitigation through phased approach
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Continuous validation and feedback loops
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Scalable development methodology
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Clear milestone-based progress tracking
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Image Section */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex justify-center"
+            >
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 max-w-lg w-full">
+                <img
+                  src="/assets/AI-Lifecycle.png"
+                  alt="AI Project Life Cycle Framework"
+                  className="w-full h-auto object-contain rounded-lg"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
