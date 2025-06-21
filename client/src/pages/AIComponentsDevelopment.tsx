@@ -315,12 +315,6 @@ export default function AIComponentsDevelopment() {
                   </div>
                 </TabsTrigger>
               </TabsList>
-              
-              {/* Additional vertical line with dot for visual separation */}
-              <div className="flex flex-col items-center mt-16">
-                <div className="w-px h-16 bg-gradient-to-b from-blue-500 to-cyan-500"></div>
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
-              </div>
             </div>
 
             <TabsContent value="components" className="space-y-8">
