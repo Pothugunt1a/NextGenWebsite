@@ -11,16 +11,15 @@ export default function ContactInfo() {
       className="relative min-h-screen"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900/30"
-          style={{
-            backgroundImage: 'url("/assets/contact.jpg")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-            opacity: 0.15,
-          }}
-        />
+        <div className="absolute inset-0">
+          <img
+            src="/assets/contact.jpg"
+            alt="Contact Background"
+            className="w-full h-full object-cover"
+            style={{ opacity: 0.15 }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900/30" />
+        </div>
       </div>
       <div className="relative z-10 pt-24 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

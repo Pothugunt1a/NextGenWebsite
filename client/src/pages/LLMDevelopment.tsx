@@ -28,84 +28,90 @@ const services = [
   {
     icon: <Brain className="h-8 w-8" />,
     title: "Custom LLM Development",
-    description: "Build tailored Large Language Models designed specifically for your business needs and domain expertise.",
+    description:
+      "Build tailored Large Language Models designed specifically for your business needs and domain expertise.",
     color: "from-blue-500 to-cyan-500",
     features: [
       "Domain-specific training",
       "Custom architecture design",
       "Performance optimization",
-      "Scalable deployment"
-    ]
+      "Scalable deployment",
+    ],
   },
   {
     icon: <MessageSquare className="h-8 w-8" />,
     title: "LLM Fine-tuning",
-    description: "Enhance existing models with your proprietary data to achieve superior performance in your specific use cases.",
+    description:
+      "Enhance existing models with your proprietary data to achieve superior performance in your specific use cases.",
     color: "from-green-500 to-emerald-500",
     features: [
       "Task-specific fine-tuning",
       "Data preprocessing",
       "Model evaluation",
-      "Continuous improvement"
-    ]
+      "Continuous improvement",
+    ],
   },
   {
     icon: <Code className="h-8 w-8" />,
     title: "LLM Integration",
-    description: "Seamlessly integrate Large Language Models into your existing systems and workflows.",
+    description:
+      "Seamlessly integrate Large Language Models into your existing systems and workflows.",
     color: "from-purple-500 to-violet-500",
     features: [
       "API development",
       "System integration",
       "Real-time processing",
-      "Security implementation"
-    ]
+      "Security implementation",
+    ],
   },
   {
     icon: <Settings className="h-8 w-8" />,
     title: "LLM Optimization",
-    description: "Optimize model performance, reduce costs, and improve efficiency while maintaining quality.",
+    description:
+      "Optimize model performance, reduce costs, and improve efficiency while maintaining quality.",
     color: "from-orange-500 to-red-500",
     features: [
       "Performance tuning",
       "Cost optimization",
       "Latency reduction",
-      "Resource management"
-    ]
-  }
+      "Resource management",
+    ],
+  },
 ];
 
 const capabilities = [
   {
     icon: <Cpu className="h-6 w-6" />,
     title: "Model Architecture Design",
-    description: "Custom neural network architectures optimized for your specific requirements"
+    description:
+      "Custom neural network architectures optimized for your specific requirements",
   },
   {
     icon: <Database className="h-6 w-6" />,
     title: "Data Pipeline Development",
-    description: "Robust data processing pipelines for training and inference"
+    description: "Robust data processing pipelines for training and inference",
   },
   {
     icon: <GitBranch className="h-6 w-6" />,
     title: "Model Versioning & Management",
-    description: "Complete MLOps solutions for model lifecycle management"
+    description: "Complete MLOps solutions for model lifecycle management",
   },
   {
     icon: <Shield className="h-6 w-6" />,
     title: "Security & Compliance",
-    description: "Enterprise-grade security and regulatory compliance implementation"
+    description:
+      "Enterprise-grade security and regulatory compliance implementation",
   },
   {
     icon: <BarChart3 className="h-6 w-6" />,
     title: "Performance Monitoring",
-    description: "Real-time monitoring and analytics for deployed models"
+    description: "Real-time monitoring and analytics for deployed models",
   },
   {
     icon: <Globe className="h-6 w-6" />,
     title: "Multi-language Support",
-    description: "Global deployment with multi-language model capabilities"
-  }
+    description: "Global deployment with multi-language model capabilities",
+  },
 ];
 
 const stats = [
@@ -142,24 +148,28 @@ const stats = [
 const useCases = [
   {
     title: "Customer Service Automation",
-    description: "Intelligent chatbots and virtual assistants that understand context and provide human-like responses.",
-    icon: <MessageSquare className="h-6 w-6" />
+    description:
+      "Intelligent chatbots and virtual assistants that understand context and provide human-like responses.",
+    icon: <MessageSquare className="h-6 w-6" />,
   },
   {
     title: "Content Generation",
-    description: "Automated content creation for marketing, documentation, and creative writing applications.",
-    icon: <Lightbulb className="h-6 w-6" />
+    description:
+      "Automated content creation for marketing, documentation, and creative writing applications.",
+    icon: <Lightbulb className="h-6 w-6" />,
   },
   {
     title: "Code Assistant",
-    description: "AI-powered coding assistance for faster development and improved code quality.",
-    icon: <Code className="h-6 w-6" />
+    description:
+      "AI-powered coding assistance for faster development and improved code quality.",
+    icon: <Code className="h-6 w-6" />,
   },
   {
     title: "Document Analysis",
-    description: "Intelligent document processing, summarization, and information extraction.",
-    icon: <Database className="h-6 w-6" />
-  }
+    description:
+      "Intelligent document processing, summarization, and information extraction.",
+    icon: <Database className="h-6 w-6" />,
+  },
 ];
 
 export default function LLMDevelopment() {
@@ -229,7 +239,8 @@ export default function LLMDevelopment() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Transform your business with cutting-edge Large Language Models tailored to your specific needs
+              Transform your business with cutting-edge Large Language Models
+              tailored to your specific needs
             </motion.p>
 
             {/* Badge */}
@@ -343,16 +354,19 @@ export default function LLMDevelopment() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Large Language Models (LLMs) represent the cutting edge of artificial intelligence, 
-                capable of understanding and generating human-like text with unprecedented accuracy 
-                and context awareness. Our expert team specializes in developing custom LLM solutions 
-                that transform how businesses communicate, automate processes, and deliver value to customers.
+                Large Language Models (LLMs) represent the cutting edge of
+                artificial intelligence, capable of understanding and generating
+                human-like text with unprecedented accuracy and context
+                awareness. Our expert team specializes in developing custom LLM
+                solutions that transform how businesses communicate, automate
+                processes, and deliver value to customers.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Whether you need a specialized chatbot, content generation system, or complex 
-                document analysis tool, we provide end-to-end LLM development services that 
-                integrate seamlessly with your existing infrastructure while delivering 
-                measurable business results.
+                Whether you need a specialized chatbot, content generation
+                system, or complex document analysis tool, we provide end-to-end
+                LLM development services that integrate seamlessly with your
+                existing infrastructure while delivering measurable business
+                results.
               </p>
             </motion.div>
           </div>
@@ -382,7 +396,8 @@ export default function LLMDevelopment() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive LLM solutions designed to meet your specific business requirements
+              Comprehensive LLM solutions designed to meet your specific
+              business requirements
             </p>
           </motion.div>
 
@@ -399,7 +414,9 @@ export default function LLMDevelopment() {
               >
                 <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
                   <div className="mb-6">
-                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.color} group-hover:scale-110 transition-transform duration-300 mb-4`}>
+                    <div
+                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.color} group-hover:scale-110 transition-transform duration-300 mb-4`}
+                    >
                       <div className="text-white">{service.icon}</div>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
@@ -552,7 +569,7 @@ export default function LLMDevelopment() {
               className="text-4xl md:text-5xl font-bold mb-8"
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-400 bg-clip-text text-transparent">
-                Ready to Transform Your Business with 
+                Ready to Transform Your Business with
               </span>
               <br />
               <span className="text-white">Custom LLM Solutions?</span>
@@ -564,8 +581,9 @@ export default function LLMDevelopment() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Let's discuss how our LLM development and consulting services can accelerate 
-              your AI transformation and deliver unprecedented business value
+              Let's discuss how our LLM development and consulting services can
+              accelerate your AI transformation and deliver unprecedented
+              business value
             </motion.p>
 
             <motion.div
@@ -576,15 +594,21 @@ export default function LLMDevelopment() {
             >
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
                 <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">Free LLM Strategy Session</span>
+                <span className="text-white font-semibold">
+                  Free LLM Strategy Session
+                </span>
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
                 <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">Expert LLM Guidance</span>
+                <span className="text-white font-semibold">
+                  Expert LLM Guidance
+                </span>
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
                 <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">Proven LLM Results</span>
+                <span className="text-white font-semibold">
+                  Proven LLM Results
+                </span>
               </div>
             </motion.div>
 
