@@ -47,6 +47,12 @@ const aiComponents = [
     duration: "Several days to several weeks",
     icon: <Lightbulb className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
+    services: [
+      "Business idea validation",
+      "Small-scale data analysis",
+      "Feasibility assessment",
+      "Risk evaluation",
+    ],
   },
   {
     title: "The Working Prototype",
@@ -54,7 +60,13 @@ const aiComponents = [
     details: "Additionally, this allows you to go forward with a version that requires more data samples or so-called sources to enrich functionality. Creating a prototype is tedious work! It can usually go from several weeks to three months.",
     duration: "Several weeks to three months",
     icon: <Settings className="h-8 w-8" />,
-    color: "from-green-500 to-emerald-500",
+    color: "from-blue-500 to-cyan-500",
+    services: [
+      "Functional prototype development",
+      "Enhanced data integration",
+      "User interface design",
+      "Performance optimization",
+    ],
   },
   {
     title: "The Pilot",
@@ -62,7 +74,13 @@ const aiComponents = [
     details: "By building a pilot, we create a running system that allows you to evidence how your data-driven service works in production, though with a limited audience. It already brings you the power to take action based on data's insight. At this point, you can still make minor modifications.",
     duration: "30 days to several months",
     icon: <Target className="h-8 w-8" />,
-    color: "from-purple-500 to-violet-500",
+    color: "from-blue-500 to-cyan-500",
+    services: [
+      "Limited production deployment",
+      "Real-world testing",
+      "User feedback collection",
+      "Performance monitoring",
+    ],
   },
   {
     title: "The Running Data-Driven System",
@@ -70,7 +88,13 @@ const aiComponents = [
     details: "Such a system might be running online or by demand and be stored on the cloud or on-premises. It usually takes a couple of months to create analytical software.",
     duration: "Couple of months",
     icon: <Monitor className="h-8 w-8" />,
-    color: "from-orange-500 to-red-500",
+    color: "from-blue-500 to-cyan-500",
+    services: [
+      "Full-scale deployment",
+      "Cloud or on-premises hosting",
+      "Automated insights generation",
+      "Continuous optimization",
+    ],
   },
 ];
 
@@ -344,7 +368,7 @@ export default function AIComponentsDevelopment() {
               </motion.div>
 
               {/* AI Components Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {aiComponents.map((component, index) => (
                   <motion.div
                     key={index}
@@ -353,34 +377,30 @@ export default function AIComponentsDevelopment() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full hover:shadow-xl transition-all duration-300 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 group">
-                      <CardContent className="p-8 relative">
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-br ${component.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-lg`}
-                        />
-                        <div className="flex items-start gap-4 mb-4 relative z-10">
-                          <div
-                            className={`w-16 h-16 rounded-full bg-gradient-to-r ${component.color} flex items-center justify-center text-white flex-shrink-0`}
-                          >
-                            {component.icon}
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-2xl font-bold text-white mb-2">
-                              {component.title}
-                            </h3>
-                            <Badge variant="outline" className="mb-4 border-cyan-500/50 text-cyan-400 bg-cyan-500/10">
-                              {component.duration}
-                            </Badge>
-                          </div>
+                    <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 group cursor-pointer h-full">
+                      <div className="mb-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <div className="text-white">{component.icon}</div>
                         </div>
-                        <p className="text-gray-300 mb-4 leading-relaxed relative z-10">
+                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {component.title}
+                        </h3>
+                        <Badge variant="outline" className="mb-6 border-cyan-500/50 text-cyan-400 bg-cyan-500/10">
+                          {component.duration}
+                        </Badge>
+                        <p className="text-gray-300 mb-6">
                           {component.description}
                         </p>
-                        <p className="text-gray-400 text-sm leading-relaxed relative z-10">
-                          {component.details}
-                        </p>
-                      </CardContent>
-                    </Card>
+                      </div>
+                      <ul className="space-y-2 text-gray-300">
+                        {component.services.map((service, serviceIndex) => (
+                          <li key={serviceIndex} className="flex items-center">
+                            <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                            {service}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -427,29 +447,45 @@ export default function AIComponentsDevelopment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300 mb-12"
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 group mb-12"
               >
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white flex-shrink-0">
-                    <BookOpen className="h-8 w-8" />
+                <div className="mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <BookOpen className="h-8 w-8 text-white" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-4">
-                      Scientific Research Excellence
-                    </h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      As a team of data scientists and machine learning experts, we continuously conduct scientific research 
-                      to answer some of the most challenging questions that arise in the community. We publish our results, 
-                      attend conferences and participate in workshops.
-                    </p>
-                    <p className="text-gray-300 leading-relaxed">
-                      Our team will help you perform research activities or take over the entire coordination and research itself. 
-                      We have solid experience writing papers for scientific journals, conferences and workshops, approaching 
-                      many types of machine learning and AI problems. We work closely with our partners from leading universities 
-                      and research centers to continually provide quality and valuable research.
-                    </p>
-                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    Scientific Research Excellence
+                  </h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    As a team of data scientists and machine learning experts, we continuously conduct scientific research 
+                    to answer some of the most challenging questions that arise in the community. We publish our results, 
+                    attend conferences and participate in workshops.
+                  </p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    Our team will help you perform research activities or take over the entire coordination and research itself. 
+                    We have solid experience writing papers for scientific journals, conferences and workshops, approaching 
+                    many types of machine learning and AI problems. We work closely with our partners from leading universities 
+                    and research centers to continually provide quality and valuable research.
+                  </p>
                 </div>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Scientific paper writing and publication
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Conference participation and workshops
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    University and research center partnerships
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                    Machine learning problem solving
+                  </li>
+                </ul>
               </motion.div>
 
               {/* Research Benefits */}
