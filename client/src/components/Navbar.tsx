@@ -109,6 +109,20 @@ export default function Navbar({
     setActiveDesktopSubmenu(null);
   };
 
+  const handleNavigationClick = (href: string) => {
+    if (href.startsWith("/")) {
+      setLocation(href);
+      // Scroll to top when navigating to a new page
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    handleLinkClick();
+  };
+
+  const handleDropdownMouseLeave = () => {
+    setActiveDropdown(null);
+    setActiveDesktopSubmenu(null);
+  };
+
   const toggleDropdown = (linkId: number, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveDropdown(activeDropdown === linkId ? null : linkId);
@@ -183,7 +197,10 @@ export default function Navbar({
                       </a>
 
                       {activeDropdown === link.id && (
-                        <div className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5">
+                        <div 
+                          className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
+                          onMouseLeave={handleDropdownMouseLeave}
+                        >
                           <div className="container mx-auto relative flex max-w-none min-h-[320px]">
                             {/* Dynamic Image on the right with gradient overlay */}
                             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
@@ -425,10 +442,9 @@ export default function Navbar({
                                                             "/",
                                                           )
                                                         ) {
-                                                          setLocation(
+                                                          handleNavigationClick(
                                                             item.href,
                                                           );
-                                                          handleLinkClick();
                                                         } else {
                                                           scrollToSection(
                                                             e,
@@ -458,8 +474,7 @@ export default function Navbar({
                                                 category.href &&
                                                 category.href.startsWith("/")
                                               ) {
-                                                setLocation(category.href);
-                                                handleLinkClick();
+                                                handleNavigationClick(category.href);
                                               }
                                             }}
                                           >
@@ -500,9 +515,9 @@ export default function Navbar({
                       onClick={(e) => {
                         e.preventDefault();
                         if (link.href === "#home") {
-                          setLocation("/");
+                          handleNavigationClick("/");
                         } else if (link.href.startsWith("/")) {
-                          setLocation(link.href);
+                          handleNavigationClick(link.href);
                         } else {
                           scrollToSection(e, link.href);
                         }
@@ -520,7 +535,7 @@ export default function Navbar({
                 variant="outline"
                 size="sm"
                 className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:from-blue-600 hover:to-cyan-600"
-                onClick={() => setLocation("/contact")}
+                onClick={() => handleNavigationClick("/contact")}
               >
                 Contact
               </Button>
@@ -588,8 +603,7 @@ export default function Navbar({
                                           onClick={(e) => {
                                             e.preventDefault();
                                             if (item.href.startsWith("/")) {
-                                              setLocation(item.href);
-                                              handleLinkClick();
+                                              handleNavigationClick(item.href);
                                             } else {
                                               scrollToSection(e, item.href);
                                             }
@@ -612,8 +626,7 @@ export default function Navbar({
                                       category.href &&
                                       category.href.startsWith("/")
                                     ) {
-                                      setLocation(category.href);
-                                      handleLinkClick();
+                                      handleNavigationClick(category.href);
                                     }
                                   }}
                                 >
@@ -632,11 +645,9 @@ export default function Navbar({
                       onClick={(e) => {
                         e.preventDefault();
                         if (link.href === "#home") {
-                          setLocation("/");
-                          handleLinkClick();
+                          handleNavigationClick("/");
                         } else if (link.href.startsWith("/")) {
-                          setLocation(link.href);
-                          handleLinkClick();
+                          handleNavigationClick(link.href);
                         } else {
                           scrollToSection(e, link.href);
                         }
@@ -653,8 +664,7 @@ export default function Navbar({
                   size="sm"
                   className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:from-blue-600 hover:to-cyan-600"
                   onClick={() => {
-                    setLocation("/contact");
-                    handleLinkClick();
+                    handleNavigationClick("/contact");
                   }}
                 >
                   Contact
