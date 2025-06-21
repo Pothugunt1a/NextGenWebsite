@@ -291,12 +291,23 @@ export default function AIComponentsDevelopment() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="space-y-6"
             >
               <img
                 src="/assets/AI-Components.gif"
                 alt="AI Components Development"
-                className="w-full h-80 lg:h-96 object-cover"
+                className="w-full h-80 lg:h-96 object-cover rounded-lg"
               />
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <h4 className="text-xl font-bold text-white mb-4 text-center">
+                  AI Project Life Cycle Framework
+                </h4>
+                <img
+                  src="/assets/AI-Lifecycle.png"
+                  alt="AI Project Life Cycle Framework"
+                  className="w-full h-auto object-contain rounded-lg"
+                />
+              </div>
             </motion.div>
 
             {/* Content Section */}
