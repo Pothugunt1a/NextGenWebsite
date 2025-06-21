@@ -416,12 +416,9 @@ export default function AIComponentsDevelopment() {
                         <p className="text-gray-300 mb-6">
                           {component.description}
                         </p>
-                        <div className="mb-6 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
-                          <h4 className="text-lg font-semibold text-cyan-400 mb-2">Details:</h4>
-                          <p className="text-gray-300 text-sm leading-relaxed">
-                            {component.details}
-                          </p>
-                        </div>
+                        <p className="text-gray-300 mb-6">
+                          {component.details}
+                        </p>
                       </div>
                       <ul className="space-y-2 text-gray-300">
                         {component.services.map((service, serviceIndex) => (
