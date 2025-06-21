@@ -231,53 +231,55 @@ export default function AIComponentsDevelopment() {
       </section>
 
       {/* AI Components Development Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-light relative">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Development of Artificial Intelligence components
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
 
-          <div className="text-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image Section */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-8"
             >
-              <div className="max-w-4xl mx-auto space-y-6">
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  Our end-to-end products and design solutions are based on artificial intelligence modules, machine learning, and data science. Our team will build you a fully compliant solution with your requirements in mind while ensuring flexibility for future evolution.
-                </p>
-                
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  AI Superior's Value Proposition is about effective success and risk management for our clients in AI Projects. With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria. The framework has several stages presented in the following graphic.
-                </p>
-              </div>
+              <img
+                src="./assets/AI-Components.gif"
+                alt="AI Components Development"
+                className="w-full h-80 lg:h-96 object-cover"
+              />
+            </motion.div>
 
-              {/* AI Components GIF */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="flex justify-center mt-12"
-              >
-                <img
-                  src="./assets/AI-Components.gif"
-                  alt="AI Components Development"
-                  className="w-full max-w-4xl h-auto"
-                />
-              </motion.div>
+            {/* Content Section */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our end-to-end products and design solutions are based on artificial intelligence modules, machine learning, and data science. Our team will build you a fully compliant solution with your requirements in mind while ensuring flexibility for future evolution.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                AI Superior's Value Proposition is about effective success and risk management for our clients in AI Projects. With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria. The framework has several stages presented in the following graphic.
+              </p>
             </motion.div>
           </div>
         </div>
