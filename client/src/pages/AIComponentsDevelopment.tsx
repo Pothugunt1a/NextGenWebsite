@@ -401,13 +401,11 @@ export default function AIComponentsDevelopment() {
               viewport={{ once: true }}
               className="flex justify-center"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 max-w-lg w-full">
-                <img
-                  src="/assets/AI-Lifecycle.png"
-                  alt="AI Project Life Cycle Framework"
-                  className="w-full h-auto object-contain rounded-lg"
-                />
-              </div>
+              <img
+                src="/assets/AI-Lifecycle.png"
+                alt="AI Project Life Cycle Framework"
+                className="w-full h-auto object-contain max-w-lg"
+              />
             </motion.div>
           </div>
         </div>
