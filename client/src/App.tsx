@@ -16,6 +16,7 @@ import ITConsulting from "./pages/ITConsulting";
 import AIDataStrategy from "./pages/AIDataStrategy";
 import ProcessOptimization from "./pages/ProcessOptimization";
 import AIComponentsDevelopment from "./pages/AIComponentsDevelopment";
+import LLMDevelopment from "./pages/LLMDevelopment";
 
 function Router() {
   return (
@@ -32,6 +33,7 @@ function Router() {
         <Route path="/ai-data-strategy" component={AIDataStrategy} />
         <Route path="/process-optimization" component={ProcessOptimization} />
         <Route path="/ai-components-development" component={AIComponentsDevelopment} />
+        <Route path="/llm-development" component={LLMDevelopment} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
