@@ -183,45 +183,49 @@ export default function AIComponentsDevelopment() {
         {/* Stats Section */}
         <div className="absolute bottom-8 left-0 right-0">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  className="group"
-                >
-                  <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                    />
-                    <div className="relative z-10">
+            <div className="flex justify-center md:justify-start">
+              <motion.div
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl w-full"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+              >
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
+                    className="group relative"
+                  >
+                    <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
                       <div
-                        className={`inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br ${stat.color} mb-3`}
-                      >
-                        <div className="text-white">{stat.icon}</div>
+                        className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                      />
+
+                      <div className="relative z-10">
+                        <div className="flex justify-center mb-3 md:mb-4">
+                          <div
+                            className={`inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br ${stat.color}`}
+                          >
+                            <div className="text-white">{stat.icon}</div>
+                          </div>
+                        </div>
+                        <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">
+                          {stat.title}
+                        </div>
+                        <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">
+                          {stat.subtitle}
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          {stat.description}
+                        </div>
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">
-                        {stat.title}
-                      </h3>
-                      <p className="text-sm md:text-base font-semibold text-blue-300 mb-1">
-                        {stat.subtitle}
-                      </p>
-                      <p className="text-xs md:text-sm text-gray-400">
-                        {stat.description}
-                      </p>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
