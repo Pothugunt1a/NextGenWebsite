@@ -7,6 +7,8 @@ const logos = [
   { src: "/assets/google-2015-new-seeklogo.png", alt: "Google" },
   { src: "/assets/envato-seeklogo.png", alt: "Envato" },
   { src: "/assets/deloitte-seeklogo.png", alt: "Deloitte" },
+  { src: "/assets/wipro-new-seeklogo.png", alt: "Wipro" },
+  { src: "/assets/yahoo-seeklogo.png", alt: "Yahoo" },
 ];
 
 export default function LogoCarousel() {
