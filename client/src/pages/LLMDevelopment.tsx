@@ -341,7 +341,7 @@ export default function LLMDevelopment() {
               <img
                 src="/assets/LLM.png"
                 alt="LLM Development"
-                className="w-full h-80 lg:h-96 object-cover"
+                className="w-full h-80 lg:h-96 object-cover rounded-2xl"
               />
             </motion.div>
 
