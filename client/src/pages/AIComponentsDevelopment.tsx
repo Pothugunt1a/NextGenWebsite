@@ -91,9 +91,7 @@ const aiComponents = [
   {
     title: "The Running Data-Driven System",
     description:
-      "Operational data-driven systems—such as analytical software—are fully scaled software solutions designed to operate seamlessly while continuously generating valuable insights.
-
-",
+      "Operational data-driven systems—such as analytical software—are fully scaled software solutions designed to operate seamlessly while continuously generating valuable insights.",
     details:
       "Such a system might be running online or by demand and be stored on the cloud or on-premises. It usually takes a couple of months to create analytical software.",
     duration: "Couple of months",
