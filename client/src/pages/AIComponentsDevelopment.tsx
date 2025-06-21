@@ -246,31 +246,16 @@ export default function AIComponentsDevelopment() {
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image Section */}
+          <div className="text-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="space-y-8"
             >
-              <img
-                src="./assets/AI-Components.gif"
-                alt="AI Components Development"
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
-            </motion.div>
-
-            {/* Content Section */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+              <div className="max-w-4xl mx-auto space-y-6">
+                <p className="text-xl text-gray-300 leading-relaxed">
                   Our end-to-end products and design solutions are based on artificial intelligence modules, machine learning, and data science. Our team will build you a fully compliant solution with your requirements in mind while ensuring flexibility for future evolution.
                 </p>
                 
@@ -278,6 +263,21 @@ export default function AIComponentsDevelopment() {
                   AI Superior's Value Proposition is about effective success and risk management for our clients in AI Projects. With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria. The framework has several stages presented in the following graphic.
                 </p>
               </div>
+
+              {/* AI Components GIF */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="flex justify-center mt-12"
+              >
+                <img
+                  src="./assets/AI-Components.gif"
+                  alt="AI Components Development"
+                  className="w-full max-w-4xl h-auto"
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -292,22 +292,32 @@ export default function AIComponentsDevelopment() {
               <TabsList className="bg-transparent p-0 h-auto flex items-center gap-8 border-0 mb-8">
                 <TabsTrigger 
                   value="components" 
-                  className="relative bg-white/10 text-white border border-white/20 rounded-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-white/20 data-[state=active]:text-white data-[state=active]:border-white/40 data-[state=active]:shadow-sm backdrop-blur-sm"
+                  className="relative bg-white/10 text-white border border-white/20 rounded-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:border-transparent data-[state=active]:shadow-sm backdrop-blur-sm"
                 >
                   AI Components
+                  {/* Vertical line with dot for AI Components */}
+                  <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                    <div className="w-px h-8 bg-gradient-to-b from-blue-500 to-cyan-500"></div>
+                    <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                  </div>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="research" 
-                  className="relative bg-white/10 text-white border border-white/20 rounded-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-cyan-500 data-[state=active]:text-white data-[state=active]:border-cyan-500 data-[state=active]:shadow-sm backdrop-blur-sm"
+                  className="relative bg-white/10 text-white border border-white/20 rounded-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:border-transparent data-[state=active]:shadow-sm backdrop-blur-sm"
                 >
                   AI Research and Projects
+                  {/* Vertical line with dot for AI Research and Projects */}
+                  <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                    <div className="w-px h-8 bg-gradient-to-b from-blue-500 to-cyan-500"></div>
+                    <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                  </div>
                 </TabsTrigger>
               </TabsList>
               
-              {/* Vertical line with dot */}
-              <div className="flex flex-col items-center">
-                <div className="w-px h-16 bg-gradient-to-b from-cyan-500 to-blue-500"></div>
-                <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
+              {/* Additional vertical line with dot for visual separation */}
+              <div className="flex flex-col items-center mt-16">
+                <div className="w-px h-16 bg-gradient-to-b from-blue-500 to-cyan-500"></div>
+                <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
               </div>
             </div>
 
