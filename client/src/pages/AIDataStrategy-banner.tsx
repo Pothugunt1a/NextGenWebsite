@@ -137,7 +137,7 @@ export default function AIDataStrategy() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="/assets/AI-DataStatergy.png"
+            src="/assets/AI-DataStatergy-banner.png"
             alt="AI and Data Strategy"
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -315,7 +315,7 @@ export default function AIDataStrategy() {
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
           <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
         </div>
-        
+
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
