@@ -246,40 +246,84 @@ export default function AIComponentsDevelopment() {
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
 
-          <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <div className="max-w-4xl mx-auto space-y-6">
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  Our end-to-end products and design solutions are based on artificial intelligence modules, machine learning, and data science. Our team will build you a fully compliant solution with your requirements in mind while ensuring flexibility for future evolution.
-                </p>
-                
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  AI Superior's Value Proposition is about effective success and risk management for our clients in AI Projects. With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria. The framework has several stages presented in the following graphic.
-                </p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              {/* Left Side - AI Components GIF */}
+              <div className="lg:col-span-5">
+                <div className="relative group">
+                  <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm">
+                    <img
+                      src="./assets/AI-Components.gif"
+                      alt="AI Components Development"
+                      className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        AI Component Framework
+                      </h3>
+                      <p className="text-gray-200 text-sm">
+                        Comprehensive AI development lifecycle from concept to production
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* AI Components GIF */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="flex justify-center mt-12"
-              >
-                <img
-                  src="./assets/AI-Components.gif"
-                  alt="AI Components Development"
-                  className="w-full max-w-4xl h-auto"
-                />
-              </motion.div>
-            </motion.div>
-          </div>
+              {/* Right Side - Content */}
+              <div className="lg:col-span-7">
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold text-white">
+                    Our Comprehensive Approach
+                  </h3>
+                  <p className="text-xl text-gray-300 leading-relaxed">
+                    Our end-to-end products and design solutions are based on artificial intelligence modules, machine learning, and data science. Our team will build you a fully compliant solution with your requirements in mind while ensuring flexibility for future evolution.
+                  </p>
+                  
+                  <p className="text-xl text-gray-300 leading-relaxed">
+                    AI Superior's Value Proposition is about effective success and risk management for our clients in AI Projects. With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria. The framework has several stages presented in the following graphic.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Risk Management</h4>
+                        <p className="text-gray-300 text-sm">Comprehensive risk assessment and mitigation strategies throughout the project lifecycle.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Success Optimization</h4>
+                        <p className="text-gray-300 text-sm">Proven methodologies to ensure project success and maximum ROI.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Scalable Solutions</h4>
+                        <p className="text-gray-300 text-sm">Future-ready architecture that grows with your business needs.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Expert Team</h4>
+                        <p className="text-gray-300 text-sm">Data scientists and ML experts with proven industry experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
