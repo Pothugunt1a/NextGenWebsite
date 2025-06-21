@@ -1,14 +1,14 @@
 import React from "react";
 
 const logos = [
-  { src: "/assets/microsoft-seeklogo.png", alt: "Microsoft" },
-  { src: "/assets/infosys-limited-seeklogo.png", alt: "Infosys" },
-  { src: "/assets/ibm-logo.png", alt: "IBM" },
-  { src: "/assets/google-2015-new-seeklogo.png", alt: "Google" },
-  { src: "/assets/envato-seeklogo.png", alt: "Envato" },
-  { src: "/assets/deloitte-seeklogo.png", alt: "Deloitte" },
-  { src: "/assets/wipro-new-seeklogo.png", alt: "Wipro" },
-  { src: "/assets/yahoo-seeklogo.png", alt: "Yahoo" },
+  { src: "./assets/microsoft-seeklogo.png", alt: "Microsoft" },
+  { src: "./assets/infosys-limited-seeklogo.png", alt: "Infosys" },
+  { src: "./assets/ibm-logo.png", alt: "IBM" },
+  { src: "./assets/google-2015-new-seeklogo.png", alt: "Google" },
+  { src: "./assets/envato-seeklogo.png", alt: "Envato" },
+  { src: "./assets/deloitte-seeklogo.png", alt: "Deloitte" },
+  { src: "./assets/wipro-new-seeklogo.png", alt: "Wipro" },
+  { src: "./assets/yahoo-seeklogo.png", alt: "Yahoo" },
 ];
 
 export default function LogoCarousel() {
