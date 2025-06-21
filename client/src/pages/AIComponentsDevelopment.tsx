@@ -298,7 +298,6 @@ export default function AIComponentsDevelopment() {
                 alt="AI Components Development"
                 className="w-full h-80 lg:h-96 object-cover rounded-lg"
               />
-              
             </motion.div>
 
             {/* Content Section */}
@@ -317,7 +316,7 @@ export default function AIComponentsDevelopment() {
                 adaptability necessary for future advancements.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                AI Superior delivers value through a strategic focus on both
+                RTNextGenAI delivers value through a strategic focus on both
                 success and risk management in AI initiatives. Guided by our
                 proven AI Project Life Cycle Framework, we ensure the efficient
                 and effective execution of these critical dimensions. The
@@ -360,13 +359,24 @@ export default function AIComponentsDevelopment() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Our AI Project Life Cycle Framework provides a systematic approach to AI development that ensures successful project delivery from conception to deployment. This proven methodology minimizes risks while maximizing the value and impact of your AI initiatives.
+                Our AI Project Life Cycle Framework provides a systematic
+                approach to AI development that ensures successful project
+                delivery from conception to deployment. This proven methodology
+                minimizes risks while maximizing the value and impact of your AI
+                initiatives.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                The framework encompasses four distinct phases: Proof of Concept (PoC), Working Prototype, Pilot Implementation, and Full Production System. Each phase builds upon the previous one, allowing for iterative refinement and validation of your AI solution.
+                The framework encompasses four distinct phases: Proof of Concept
+                (PoC), Working Prototype, Pilot Implementation, and Full
+                Production System. Each phase builds upon the previous one,
+                allowing for iterative refinement and validation of your AI
+                solution.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                This structured approach enables organizations to make informed decisions at each stage, ensuring that resources are allocated efficiently and that the final solution meets all business requirements and performance expectations.
+                This structured approach enables organizations to make informed
+                decisions at each stage, ensuring that resources are allocated
+                efficiently and that the final solution meets all business
+                requirements and performance expectations.
               </p>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <h4 className="text-xl font-bold text-white mb-4">
@@ -696,7 +706,9 @@ export default function AIComponentsDevelopment() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Join hundreds of companies who trust RT NextGenAI for their AI components and research needs. Our experts are ready to accelerate your innovation journey with cutting-edge solutions.
+              Join hundreds of companies who trust RT NextGenAI for their AI
+              components and research needs. Our experts are ready to accelerate
+              your innovation journey with cutting-edge solutions.
             </motion.p>
 
             {/* Benefits Grid */}
