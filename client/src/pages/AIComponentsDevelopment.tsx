@@ -385,9 +385,6 @@ export default function AIComponentsDevelopment() {
                         <h3 className="text-2xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                           {component.title}
                         </h3>
-                        <Badge variant="outline" className="mb-6 border-cyan-500/50 text-cyan-400 bg-cyan-500/10">
-                          {component.duration}
-                        </Badge>
                         <p className="text-gray-300 mb-6">
                           {component.description}
                         </p>
