@@ -396,16 +396,20 @@ export default function AIComponentsDevelopment() {
             {/* Image Section */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               className="flex justify-center"
             >
-              <img
-                src="/assets/AI-Lifecycle.png"
-                alt="AI Project Life Cycle Framework"
-                className="w-full h-auto object-contain max-w-lg"
-              />
+              <div className="relative group">
+                <img
+                  src="/assets/AI-Lifecycle.png"
+                  alt="AI Project Life Cycle Framework"
+                  className="w-full h-auto object-contain max-w-lg transition-all duration-500 group-hover:scale-105 opacity-90 hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
             </motion.div>
           </div>
         </div>
