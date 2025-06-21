@@ -6,9 +6,9 @@ export default function AboutPage() {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
   
   const bannerImages = [
-    "./assets/ai-brain-banner.png",
-    "./assets/About-Banner.png", 
-    "./assets/validation-banner.png"
+    "/assets/ai-brain-banner.png",
+    "/assets/About-Banner.png", 
+    "/assets/validation-banner.png"
   ];
 
   // Auto-rotate banner images

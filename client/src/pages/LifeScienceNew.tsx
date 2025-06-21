@@ -98,12 +98,12 @@ export default function LifeScience() {
         {/* Background for life science page */}
         <div className="absolute inset-0">
           <img
-            src="./assets/Life-Science-banner.png"
+            src="/assets/Life-Science-banner.png"
             alt="Life Science Solutions"
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "./assets/Lifescience_banner.jpg";
+              target.src = "/assets/Lifescience_banner.jpg";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>

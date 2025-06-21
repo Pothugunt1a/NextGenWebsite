@@ -115,12 +115,12 @@ export default function ProcessOptimization() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="./assets/Process-Optimization-banner.png"
+            src="/assets/Process-Optimization-banner.png"
             alt="Process Optimization with AI"
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "./assets/process-optimization-banner.png";
+              target.src = "/assets/process-optimization-banner.png";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
@@ -252,12 +252,12 @@ export default function ProcessOptimization() {
               viewport={{ once: true }}
             >
               <img
-                src="./assets/Process-Optimization.png"
+                src="/assets/Process-Optimization.png"
                 alt="Process Optimization"
                 className="w-full h-80 lg:h-96 object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = "./assets/process-optimization.png";
+                  target.src = "/assets/process-optimization.png";
                 }}
               />
             </motion.div>
@@ -433,12 +433,12 @@ export default function ProcessOptimization() {
               viewport={{ once: true }}
             >
               <img
-                src="./assets/Process-optimization.png"
+                src="/assets/Process-optimization.png"
                 alt="Process Optimization Solutions"
                 className="w-full h-80 lg:h-96 object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = "./assets/process-optimization.png";
+                  target.src = "/assets/process-optimization.png";
                 }}
               />
             </motion.div>

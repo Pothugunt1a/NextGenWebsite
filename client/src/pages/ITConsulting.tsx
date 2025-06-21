@@ -142,7 +142,7 @@ export default function ITConsulting() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <img
-              src="./assets/IT-Consulting-banner.png"
+              src="/assets/IT-Consulting-banner.png"
               alt="IT Consulting Services Banner"
               className="w-full h-full object-cover object-right"
               style={{ objectPosition: "right center" }}

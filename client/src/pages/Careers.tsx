@@ -85,7 +85,7 @@ export default function Careers() {
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="./assets/Careers-banner.png"
+            src="/assets/Careers-banner.png"
             alt="Careers at RT NextGen AI"
             className="w-full h-full object-cover object-center"
           />
@@ -186,7 +186,7 @@ export default function Careers() {
             >
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <img
-                  src="./assets/Career1.png"
+                  src="/assets/Career1.png"
                   alt="Team collaboration and innovation"
                   className="w-full h-[400px] object-cover"
                 />
@@ -235,7 +235,7 @@ export default function Careers() {
             >
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <img
-                  src="./assets/Career2.png"
+                  src="/assets/Career2.png"
                   alt="Innovation and technology workspace"
                   className="w-full h-[350px] object-cover"
                 />
@@ -294,7 +294,7 @@ export default function Careers() {
             >
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <img
-                  src="./assets/Career3.png"
+                  src="/assets/Career3.png"
                   alt="AI technology and development teams"
                   className="w-full h-[400px] object-cover"
                 />
@@ -651,7 +651,7 @@ export default function Careers() {
             <div className="relative bg-gradient-to-br from-slate-800/40 to-blue-900/40 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-12 mb-12 overflow-hidden">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <img
-                  src="./assets/Career4.png"
+                  src="/assets/Career4.png"
                   alt="Professional application background"
                   className="w-full h-full object-cover opacity-60 brightness-125"
                 />

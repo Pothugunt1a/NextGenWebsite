@@ -143,7 +143,7 @@ export default function Navbar({
           <div className="flex items-center">
             <a href="#" className="flex items-center">
               <img
-                src="./assets/3dgifmaker34062.gif"
+                src="/assets/3dgifmaker34062.gif"
                 alt="RT NextGenAI Logo"
                 className="h-16 w-auto"
               />

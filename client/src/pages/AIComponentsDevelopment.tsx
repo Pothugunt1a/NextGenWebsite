@@ -45,7 +45,7 @@ const aiComponents = [
     description:
       "Through the development of a Proof of Concept (PoC), Prototype, or Pilot project, we assist your organization in implementing innovative data-driven solutions designed to transform and enhance your business operations.",
     details:
-      "Proof-of-concept (PoC) projects generally last from several days to several weeks, with the primary goal of validating a business idea (sometimes incomplete) or an assumption. Such feasibility study is performed at a relatively small scale often by utilizing a small data sample, proving that the solution is viable.",
+      "Proof-of-Concept (PoC) projects typically span from a few days to several weeks, with the primary objective of validating a business concept—often still in development—or testing a key assumption. This type of feasibility assessment is conducted on a limited scale, frequently using a small data sample, to demonstrate the viability of the proposed solution.",
     duration: "Several days to several weeks",
     icon: <Lightbulb className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
@@ -61,7 +61,7 @@ const aiComponents = [
     description:
       "Following the completion of a Proof of Concept (PoC), the development of a functional prototype is typically the next logical step. Prototypes enable the refinement of initial concepts or hypotheses and help address any uncertainties regarding the system’s functionality, design, and user experience.",
     details:
-      "Additionally, this allows you to go forward with a version that requires more data samples or so-called sources to enrich functionality. Creating a prototype is tedious work! It can usually go from several weeks to three months.",
+      "Moreover, this stage enables progression toward a more advanced version that incorporates additional data samples or sources, thereby enhancing the system’s functionality. Developing a prototype is a meticulous process that typically spans from several weeks to up to three months.",
     duration: "Several weeks to three months",
     icon: <Settings className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
@@ -77,7 +77,7 @@ const aiComponents = [
     description:
       "At the pilot stage, the solution is considered both feasible and viable; however, the focus shifts to evaluating its performance and effectiveness under real-world conditions.",
     details:
-      "By building a pilot, we create a running system that allows you to evidence how your data-driven service works in production, though with a limited audience. It already brings you the power to take action based on data's insight. At this point, you can still make minor modifications.",
+      "By developing a pilot, we deliver a functional system that demonstrates how your data-driven service operates in a production environment, albeit with a limited user base. This stage empowers you to begin making informed decisions based on data-driven insights, while still allowing for minor adjustments and refinements as needed.",
     duration: "30 days to several months",
     icon: <Target className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
@@ -93,7 +93,7 @@ const aiComponents = [
     description:
       "Operational data-driven systems—such as analytical software—are fully scaled software solutions designed to operate seamlessly while continuously generating valuable insights.",
     details:
-      "Such a system might be running online or by demand and be stored on the cloud or on-premises. It usually takes a couple of months to create analytical software.",
+      "Such a system can operate either online or on-demand and may be hosted in the cloud or deployed on-premises. The development of analytical software typically requires several months to complete.",
     duration: "Couple of months",
     icon: <Monitor className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
@@ -107,12 +107,12 @@ const aiComponents = [
 ];
 
 const researchBenefits = [
-  "Understand what are the alternative solutions to your problem",
-  "Solve a problem that was never addressed before",
-  "Perform extensive validation of existing approaches and possibly develop your own to obtain a competitive advantage",
-  "Share knowledge or the way you approach the problem with the community",
-  "Discover new ways of addressing your current or future problems",
-  "Stay on top of your research community to attract talent and partnerships",
+  "Identify and evaluate alternative solutions applicable to your specific challenge",
+  "Address a previously unexplored problem with a novel and tailored solution",
+  "Conduct thorough validation of existing methodologies and, where appropriate, develop proprietary solutions to gain a competitive edge",
+  "Disseminate insights or methodologies related to your problem-solving approach with the broader community",
+  "Explore innovative approaches to effectively address your current challenges and anticipate future needs",
+  "Maintain a strong presence within the research community to attract top talent and foster strategic partnerships.",
 ];
 
 const stats = [
@@ -154,12 +154,12 @@ export default function AIComponentsDevelopment() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="./assets/AI-Components-banner.png"
+            src="/assets/AI-Components-banner.png"
             alt="AI Components Development"
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "./assets/ai-components-banner.png";
+              target.src = "/assets/ai-components-banner.png";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
@@ -293,7 +293,7 @@ export default function AIComponentsDevelopment() {
               viewport={{ once: true }}
             >
               <img
-                src="./assets/AI-Components.gif"
+                src="/assets/AI-Components.gif"
                 alt="AI Components Development"
                 className="w-full h-80 lg:h-96 object-cover"
               />
@@ -488,20 +488,23 @@ export default function AIComponentsDevelopment() {
                     Scientific Research Excellence
                   </h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    As a team of data scientists and machine learning experts,
-                    we continuously conduct scientific research to answer some
-                    of the most challenging questions that arise in the
-                    community. We publish our results, attend conferences and
-                    participate in workshops.
+                    As a dedicated team of data scientists and machine learning
+                    specialists, we actively engage in scientific research to
+                    address some of the most complex and pressing questions
+                    within the field. We regularly publish our findings,
+                    participate in industry conferences, and contribute to
+                    professional workshops.
                   </p>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    Our team will help you perform research activities or take
-                    over the entire coordination and research itself. We have
-                    solid experience writing papers for scientific journals,
-                    conferences and workshops, approaching many types of machine
-                    learning and AI problems. We work closely with our partners
-                    from leading universities and research centers to
-                    continually provide quality and valuable research.
+                    Our team can support your research initiatives by either
+                    assisting with specific activities or managing the entire
+                    research process end-to-end. We possess extensive experience
+                    in authoring publications for scientific journals,
+                    conferences, and workshops, addressing a wide range of
+                    challenges in machine learning and artificial intelligence.
+                    In collaboration with esteemed partners from leading
+                    universities and research institutions, we are committed to
+                    delivering high-quality, impactful research.
                   </p>
                 </div>
                 <ul className="space-y-2 text-gray-300">

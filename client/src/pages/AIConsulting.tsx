@@ -284,7 +284,7 @@ export default function AIConsulting() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="./assets/AI-Consulting.png"
+            src="/assets/AI-Consulting.png"
             alt="AI Consulting Services"
             className="w-full h-full object-cover"
           />

@@ -137,12 +137,12 @@ export default function AIDataStrategy() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="./assets/AI-DataStatergy.png"
+            src="/assets/AI-DataStatergy.png"
             alt="AI and Data Strategy"
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "./assets/ai-datastatergy.png";
+              target.src = "/assets/ai-datastatergy.png";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
@@ -269,12 +269,12 @@ export default function AIDataStrategy() {
               viewport={{ once: true }}
             >
               <img
-                src="./assets/Data-Governance.png"
+                src="/assets/Data-Governance.png"
                 alt="Data Governance"
                 className="w-full h-80 lg:h-96 object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = "./assets/data-governance.png";
+                  target.src = "/assets/data-governance.png";
                 }}
               />
             </motion.div>

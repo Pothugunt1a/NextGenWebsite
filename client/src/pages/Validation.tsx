@@ -296,12 +296,12 @@ export default function Validation() {
         {/* Background for validation page */}
         <div className="absolute inset-0">
           <img
-            src="./assets/Validation-banner.png"
+            src="/assets/Validation-banner.png"
             alt="Validation Services"
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "./assets/validation-banner.png";
+              target.src = "/assets/validation-banner.png";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>

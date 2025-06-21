@@ -12,7 +12,7 @@ export default function InfoBanner() {
     <div className="relative bg-gradient-to-br from-gray-900 via-slate-900 to-black py-12">
       <div className="absolute inset-0">
         <img
-          src="./assets/contact-banner.png"
+          src="/assets/contact-banner.png"
           alt="Contact Banner"
           className="w-full h-full object-cover opacity-20"
         />
