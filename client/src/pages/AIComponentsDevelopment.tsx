@@ -42,8 +42,10 @@ import {
 const aiComponents = [
   {
     title: "The Proof of Concept (PoC)",
-    description: "By creating a Proof of Concept (PoC), a Prototype, or a Pilot project, we will help your company establish new data-driven solutions that will transform your business operations.",
-    details: "Proof-of-concept (PoC) projects generally last from several days to several weeks, with the primary goal of validating a business idea (sometimes incomplete) or an assumption. Such feasibility study is performed at a relatively small scale often by utilizing a small data sample, proving that the solution is viable.",
+    description:
+      "Through the development of a Proof of Concept (PoC), Prototype, or Pilot project, we assist your organization in implementing innovative data-driven solutions designed to transform and enhance your business operations.",
+    details:
+      "Proof-of-concept (PoC) projects generally last from several days to several weeks, with the primary goal of validating a business idea (sometimes incomplete) or an assumption. Such feasibility study is performed at a relatively small scale often by utilizing a small data sample, proving that the solution is viable.",
     duration: "Several days to several weeks",
     icon: <Lightbulb className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
@@ -56,8 +58,10 @@ const aiComponents = [
   },
   {
     title: "The Working Prototype",
-    description: "Typically, building a working prototype is the next step after executing a PoC. Prototypes allow you to refine your initial idea or hypothesis and resolve uncertainties about how it operates, looks and feels.",
-    details: "Additionally, this allows you to go forward with a version that requires more data samples or so-called sources to enrich functionality. Creating a prototype is tedious work! It can usually go from several weeks to three months.",
+    description:
+      "Following the completion of a Proof of Concept (PoC), the development of a functional prototype is typically the next logical step. Prototypes enable the refinement of initial concepts or hypotheses and help address any uncertainties regarding the system’s functionality, design, and user experience.",
+    details:
+      "Additionally, this allows you to go forward with a version that requires more data samples or so-called sources to enrich functionality. Creating a prototype is tedious work! It can usually go from several weeks to three months.",
     duration: "Several weeks to three months",
     icon: <Settings className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
@@ -70,8 +74,10 @@ const aiComponents = [
   },
   {
     title: "The Pilot",
-    description: "In a pilot stage, you believe the solution is realistic and acceptable, but you want to understand how it works in reality.",
-    details: "By building a pilot, we create a running system that allows you to evidence how your data-driven service works in production, though with a limited audience. It already brings you the power to take action based on data's insight. At this point, you can still make minor modifications.",
+    description:
+      "At the pilot stage, the solution is considered both feasible and viable; however, the focus shifts to evaluating its performance and effectiveness under real-world conditions.",
+    details:
+      "By building a pilot, we create a running system that allows you to evidence how your data-driven service works in production, though with a limited audience. It already brings you the power to take action based on data's insight. At this point, you can still make minor modifications.",
     duration: "30 days to several months",
     icon: <Target className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
@@ -84,8 +90,12 @@ const aiComponents = [
   },
   {
     title: "The Running Data-Driven System",
-    description: "Running data-driven systems (analytical software) are the software products that seamlessly run and generate insights on the full scale.",
-    details: "Such a system might be running online or by demand and be stored on the cloud or on-premises. It usually takes a couple of months to create analytical software.",
+    description:
+      "Operational data-driven systems—such as analytical software—are fully scaled software solutions designed to operate seamlessly while continuously generating valuable insights.
+
+",
+    details:
+      "Such a system might be running online or by demand and be stored on the cloud or on-premises. It usually takes a couple of months to create analytical software.",
     duration: "Couple of months",
     icon: <Monitor className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
@@ -183,7 +193,8 @@ export default function AIComponentsDevelopment() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              End-to-end products and design solutions based on artificial intelligence modules, machine learning, and data science
+              End-to-end products and design solutions based on artificial
+              intelligence modules, machine learning, and data science
             </motion.p>
 
             {/* Badge */}
@@ -299,10 +310,19 @@ export default function AIComponentsDevelopment() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Our end-to-end products and design solutions are based on artificial intelligence modules, machine learning, and data science. Our team will build you a fully compliant solution with your requirements in mind while ensuring flexibility for future evolution.
+                Our comprehensive products and design solutions are built upon
+                advanced artificial intelligence, machine learning, and data
+                science technologies. We develop fully compliant systems
+                tailored to your specific requirements, while maintaining the
+                adaptability necessary for future advancements.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                AI Superior's Value Proposition is about effective success and risk management for our clients in AI Projects. With our established AI Project Life Cycle Framework, we ensure the effective implementation of these two criteria. The framework has several stages presented in the following graphic.
+                AI Superior delivers value through a strategic focus on both
+                success and risk management in AI initiatives. Guided by our
+                proven AI Project Life Cycle Framework, we ensure the efficient
+                and effective execution of these critical dimensions. The
+                framework encompasses multiple stages, as illustrated in the
+                accompanying diagram.
               </p>
             </motion.div>
           </div>
@@ -316,8 +336,8 @@ export default function AIComponentsDevelopment() {
             {/* Custom Tab Design with Vertical Line */}
             <div className="flex flex-col items-center mb-16">
               <TabsList className="bg-transparent p-0 h-auto flex items-center gap-8 border-0 mb-8">
-                <TabsTrigger 
-                  value="components" 
+                <TabsTrigger
+                  value="components"
                   className="relative bg-white/10 text-white border border-white/20 rounded-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:border-transparent data-[state=active]:shadow-sm backdrop-blur-sm"
                 >
                   AI Components
@@ -327,8 +347,8 @@ export default function AIComponentsDevelopment() {
                     <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
                   </div>
                 </TabsTrigger>
-                <TabsTrigger 
-                  value="research" 
+                <TabsTrigger
+                  value="research"
                   className="relative bg-white/10 text-white border border-white/20 rounded-lg px-8 py-4 text-lg font-medium hover:bg-white/20 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:border-transparent data-[state=active]:shadow-sm backdrop-blur-sm"
                 >
                   AI Research and Projects
@@ -356,10 +376,14 @@ export default function AIComponentsDevelopment() {
                 <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
                 <div className="max-w-4xl mx-auto space-y-4">
                   <p className="text-xl text-gray-300">
-                    Do you want to introduce a new data-driven service that turns your data into business insights while optimizing your company processes?
+                    Are you looking to launch a new data-driven service that
+                    transforms your data into actionable business insights while
+                    streamlining your organizational processes?
                   </p>
                   <p className="text-xl text-gray-300">
-                    Probably, you want to ensure this new framework meets all expectations, along with clear-cut performance.
+                    It is likely that you also aim to ensure this new framework
+                    not only meets all defined expectations but also delivers
+                    consistently measurable performance.
                   </p>
                   <p className="text-xl font-semibold text-cyan-400">
                     We will manage your success and risk properly!
@@ -385,7 +409,10 @@ export default function AIComponentsDevelopment() {
                         <h3 className="text-2xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                           {component.title}
                         </h3>
-                        <Badge variant="outline" className="mb-6 border-cyan-500/50 text-cyan-400 bg-cyan-500/10">
+                        <Badge
+                          variant="outline"
+                          className="mb-6 border-cyan-500/50 text-cyan-400 bg-cyan-500/10"
+                        >
                           {component.duration}
                         </Badge>
                         <p className="text-gray-300 mb-6">
@@ -417,8 +444,9 @@ export default function AIComponentsDevelopment() {
                   The Proof of Concept is the main part of our Value Proposition
                 </h3>
                 <p className="text-gray-300 max-w-3xl mx-auto">
-                  Our systematic approach ensures that every project phase builds upon the previous one, 
-                  minimizing risks and maximizing success rates for your AI initiatives.
+                  Our systematic approach ensures that every project phase
+                  builds upon the previous one, minimizing risks and maximizing
+                  success rates for your AI initiatives.
                 </p>
               </motion.div>
             </TabsContent>
@@ -436,8 +464,10 @@ export default function AIComponentsDevelopment() {
                 </h2>
                 <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
                 <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                  Machine Learning research is crucial for going forward with AI development and you are often required to answer research questions. 
-                  While they might be theoretical or practical, they still need to be addressed scientifically.
+                  Machine Learning research is crucial for going forward with AI
+                  development and you are often required to answer research
+                  questions. While they might be theoretical or practical, they
+                  still need to be addressed scientifically.
                 </p>
               </motion.div>
 
@@ -457,15 +487,20 @@ export default function AIComponentsDevelopment() {
                     Scientific Research Excellence
                   </h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    As a team of data scientists and machine learning experts, we continuously conduct scientific research 
-                    to answer some of the most challenging questions that arise in the community. We publish our results, 
-                    attend conferences and participate in workshops.
+                    As a team of data scientists and machine learning experts,
+                    we continuously conduct scientific research to answer some
+                    of the most challenging questions that arise in the
+                    community. We publish our results, attend conferences and
+                    participate in workshops.
                   </p>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    Our team will help you perform research activities or take over the entire coordination and research itself. 
-                    We have solid experience writing papers for scientific journals, conferences and workshops, approaching 
-                    many types of machine learning and AI problems. We work closely with our partners from leading universities 
-                    and research centers to continually provide quality and valuable research.
+                    Our team will help you perform research activities or take
+                    over the entire coordination and research itself. We have
+                    solid experience writing papers for scientific journals,
+                    conferences and workshops, approaching many types of machine
+                    learning and AI problems. We work closely with our partners
+                    from leading universities and research centers to
+                    continually provide quality and valuable research.
                   </p>
                 </div>
                 <ul className="space-y-2 text-gray-300">
@@ -533,7 +568,8 @@ export default function AIComponentsDevelopment() {
               Ready to Transform Your Business with AI?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Let's discuss how our AI components and research expertise can drive your next breakthrough innovation.
+              Let's discuss how our AI components and research expertise can
+              drive your next breakthrough innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
