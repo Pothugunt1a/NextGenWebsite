@@ -137,7 +137,7 @@ export default function AIDataStrategy() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="/assets/AI-DataStatergy-banner.png"
+            src="/assets/AI-DataStratergy-banner.png"
             alt="AI and Data Strategy"
             className="w-full h-full object-cover"
             onError={(e) => {
