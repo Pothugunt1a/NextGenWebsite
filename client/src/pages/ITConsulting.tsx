@@ -13,6 +13,7 @@ import {
   Target,
   ArrowRight,
   Brain,
+  TrendingDown,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import Layout from "../components/Layout";
@@ -90,25 +91,25 @@ export default function ITConsulting() {
 
   const benefits: Benefit[] = [
     {
-      icon: <img src="/assets/reduced-cost.png" alt="Reduced Costs" className="h-6 w-6" />,
+      icon: <TrendingDown className="h-6 w-6 text-white" />,
       title: "Reduced Costs",
       description:
         "Cloud computing eliminates the capital expense of building a server infrastructure, shifts support costs, and permits you to pay incrementally just for services used.",
     },
     {
-      icon: <Zap className="h-6 w-6 text-yellow-400" />,
+      icon: <Zap className="h-6 w-6 text-white" />,
       title: "Increased Efficiency",
       description:
         "Utilizing cloud services considerably reduces operational and system administration problems, permitting staff to target projects that move your business forward.",
     },
     {
-      icon: <BarChart3 className="h-6 w-6 text-blue-400" />,
+      icon: <BarChart3 className="h-6 w-6 text-white" />,
       title: "Enhanced Responsiveness",
       description:
         "Shorten project timelines and build more foreseeable time-to-market by eliminating server and code provisioning, supplying you with the competitive advantage you need.",
     },
     {
-      icon: <Shield className="h-6 w-6 text-purple-400" />,
+      icon: <Shield className="h-6 w-6 text-white" />,
       title: "Biometric Security",
       description:
         "Biometrics to fight fraud and permit customers to seamlessly authenticate in their channel of choice, providing advanced security solutions.",
