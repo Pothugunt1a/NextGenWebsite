@@ -29,27 +29,27 @@ export default function ITConsulting() {
   const coreServices: Service[] = [
     {
       icon: <Cloud className="h-8 w-8 text-cyan-400" />,
-      title: "Cloud Implementation & Migration",
+      title: "Cloud AI and IT Consultation Services",
       description:
-        "Seamless integration of cloud technologies to enhance operational efficiency and scalability.",
+        "We focus on the delivery of sales and repair cloud implementation services, reworking heritage applications to Force.com applications, services that alter enterprise quality and collaboration, and custom cloud app development exploitation the Force.com platform as a service.",
     },
     {
       icon: <Code className="h-8 w-8 text-blue-400" />,
-      title: "Legacy App Modernization",
+      title: "IT Consultation",
       description:
-        "Transform outdated applications into high-performing solutions.",
-    },
-    {
-      icon: <Users className="h-8 w-8 text-purple-400" />,
-      title: "Enterprise Collaboration Solutions",
-      description:
-        "Tools and platforms that drive team productivity and streamline communication.",
+        "AI Technologies, LLC's capability in developing very large-scale, multi-million dollar client applications and supporting them established a sturdy Application Development & Support practice in conjunction with successful execution of many fixed-price/fixed-outcome projects.",
     },
     {
       icon: <Database className="h-8 w-8 text-green-400" />,
-      title: "Custom Development",
+      title: "Big Data & Enterprise Intelligence",
       description:
-        "Bespoke applications built on the platform to meet your unique business needs.",
+        "We help clients catch the big data wave that is sweeping enterprise thinking. These services are designed to help customers produce competitive differentiation and discover new business opportunities.",
+    },
+    {
+      icon: <Users className="h-8 w-8 text-purple-400" />,
+      title: "Consulting Solutions",
+      description:
+        "Today, we are operating with clients to drive AI innovations throughout the customer lifecycle through our target prediction, spoken communication and analytics backed by cognitive engines and human help.",
     },
   ];
 
@@ -57,27 +57,27 @@ export default function ITConsulting() {
     {
       title: "Business Process Automation",
       description:
-        "Efficient, scalable solutions designed to streamline operations and improve organizational effectiveness for public and private sector organizations.",
+        "AI Technologies, LLC's Business Process Automation services supply customers economical alternatives for improving business operations and increasing organizational effectiveness. Our solutions are designed to streamline operations and improve efficiency for public and private sector organizations.",
     },
     {
-      title: "Public Sector Solutions",
+      title: "Application Development & Support",
       description:
-        "Advanced case management solutions tailored for public sector organizations to improve service delivery, enhance transparency, and achieve compliance.",
+        "Our capability in developing very large-scale, multi-million dollar client applications and supporting them established a robust Application Development & Support practice with successful execution of many fixed-price/fixed-outcome projects.",
     },
     {
-      title: "Cloud and Mobility Services",
+      title: "Cloud and Enterprise Solutions",
       description:
-        "End-to-end services from design and development to deployment and ongoing support, built for scalability, security, and performance.",
+        "For customers looking to leverage quality and Cloud for enterprise adoption, AI Technologies, LLC offers an array of services from design, development, deployment, and support. We help organizations build scalable, secure solutions.",
     },
     {
-      title: "Application Testing Innovation",
+      title: "On-Demand Testing Services",
       description:
-        "On-Demand Testing Services with complete cloud-based testing environment, including test design, automation toolkits, execution strategies, and reporting.",
+        "AI Technologies, LLC's practice in Application Testing is an innovative approach to On-Demand Testing Services – a utility model which provides testing in cloud complete with test environment (provision and de-provision on the fly) and enhancing efficiency with integrated testing.",
     },
     {
-      title: "Big Data & Enterprise Intelligence",
+      title: "Big Data Implementation",
       description:
-        "Data-driven strategies using our proven Discover, Design, Develop, and Deploy methodology to turn complex information into actionable business intelligence.",
+        "AI Technologies, LLC has developed skills and experience to implement big data technologies for enterprise. With our distinctive Discover, Design, Develop and Deploy services, we help customers discover and implement new use cases to create competitive differentiation.",
     },
   ];
 
@@ -86,26 +86,33 @@ export default function ITConsulting() {
       icon: <Target className="h-6 w-6 text-green-400" />,
       title: "Reduced Costs",
       description:
-        "Cloud computing eliminates capital expenses of server infrastructure and shifts to a flexible, pay-as-you-go model.",
+        "Cloud computing eliminates the capital expense of building a server infrastructure, shifts support prices, and permits you to pay incrementally just for services used.",
     },
     {
       icon: <Zap className="h-6 w-6 text-yellow-400" />,
-      title: "Increased Operational Efficiency",
+      title: "Increased Efficiency",
       description:
-        "Reduce administrative overhead, allowing your teams to focus on strategic initiatives that drive growth.",
+        "Utilizing cloud services considerably reduces operational and system administration problems, permitting staff to target projects that move your business forward.",
     },
     {
       icon: <BarChart3 className="h-6 w-6 text-blue-400" />,
       title: "Enhanced Responsiveness",
       description:
-        "Accelerate time-to-market by removing delays from hardware or software provisioning and giving teams tools to act faster.",
+        "Shorten project timelines and build more foreseeable time-to-market by eliminating server and code provisioning, supplying you with the competitive advantage you need.",
+    },
+    {
+      icon: <Shield className="h-6 w-6 text-purple-400" />,
+      title: "Biometric Security",
+      description:
+        "Biometrics to fight fraud and permit customers to seamlessly authenticate in their channel of choice, providing advanced security solutions.",
     },
   ];
 
   const predictiveCapabilities = [
-    "Next-Best-Action Recommendations: Optimal path suggestions through IVRs, virtual assistants, or live agents",
-    "Churn Reduction: Early signal identification through sentiment, tone, or online behavior analysis",
-    "Proactive Engagement: Personalized, timely notifications for offers, support, or relevant assistance",
+    "Recommending next best action to meet a consumer's want through IVR, virtual assistant or live agent",
+    "Minimizing churn by identifying and pursuing signals that a client may be near purchasing a product or managing their service supported net activity, words, tone or sentiment",
+    "Proactive notifications for relevant, helpful assistance or customized deals",
+    "Predictive, conversational and analytic AI solutions for enterprise customer lifecycle management",
   ];
 
   const containerVariants = {
@@ -176,11 +183,7 @@ export default function ITConsulting() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-4xl"
               >
-                At RT NextGen AI, we specialize in delivering comprehensive IT
-                consultation services that empower businesses to succeed in the
-                cloud-first era. Our expertise spans across cloud
-                implementation, legacy application modernization, and custom
-                cloud application development.
+                Our Salesforce.com consultants bring depth and breadth of expertise across varied industries to function as trusted partners for our customers. We provide effective planning and execution in the delivery of Salesforce.com solutions and leverage the platform to help maximize return on investment. By combining our best-in-class agile preparation methodologies with deep market experience, we enable our clients to meet their most advanced business and technology challenges.
               </motion.p>
 
               <motion.div
@@ -261,9 +264,7 @@ export default function ITConsulting() {
                 <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mt-2 mx-auto"></div>
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                We help organizations unlock the power of AI-driven innovation
-                across the entire customer lifecycle through comprehensive
-                consulting solutions.
+                Today, we are operating with clients to drive AI innovations throughout the customer lifecycle through our target prediction, spoken communication and analytics backed by cognitive engines and human help. For large organizations that field billions of client interactions annually, the power to anticipate and resolve client wants before they arise has enormous potential to drive client satisfaction up and prices down.
               </p>
             </motion.div>
 
@@ -309,10 +310,7 @@ export default function ITConsulting() {
                   <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mt-2 mx-auto"></div>
                 </h2>
                 <p className="text-lg text-gray-300 max-w-4xl mx-auto">
-                  For large enterprises managing billions of customer
-                  interactions annually, our predictive solutions analyze
-                  customer profile data and past interactions across all
-                  channels to detect intent and personalize engagement.
+                  Predictive solutions utilize client profile information for insights into organizations' requirements and preferences from previous interactions across all channels to see intent and choose the simplest agent or resource to service their wants.
                 </p>
               </div>
 
@@ -370,13 +368,12 @@ export default function ITConsulting() {
                 <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mt-2 mx-auto"></div>
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Our IT consulting solutions are designed to drive efficiency,
-                agility, and innovation in your organization.
+                With our stress on coaching and certification, you can be certain that AI Technologies, LLC employs solely the most qualified Salesforce.com-certified professionals with intensive expertise in Force.com business cloud application development.
               </p>
             </motion.div>
 
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
