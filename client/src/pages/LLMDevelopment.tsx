@@ -145,30 +145,31 @@ const stats = [
   },
 ];
 
-const useCases = [
+const processSteps = [
   {
-    title: "Customer Service Automation",
-    description:
-      "Intelligent chatbots and virtual assistants that understand context and provide human-like responses.",
-    icon: <MessageSquare className="h-6 w-6" />,
+    number: "1.",
+    title: "Identify Target User Groups",
+    color: "from-blue-500 to-cyan-500",
   },
   {
-    title: "Content Generation",
-    description:
-      "Automated content creation for marketing, documentation, and creative writing applications.",
-    icon: <Lightbulb className="h-6 w-6" />,
+    number: "2.",
+    title: "Define Goals and Objectives",
+    color: "from-green-500 to-emerald-500",
   },
   {
-    title: "Code Assistant",
-    description:
-      "AI-powered coding assistance for faster development and improved code quality.",
-    icon: <Code className="h-6 w-6" />,
+    number: "3.",
+    title: "Create Wireframes or Prototypes",
+    color: "from-purple-500 to-violet-500",
   },
   {
-    title: "Document Analysis",
-    description:
-      "Intelligent document processing, summarization, and information extraction.",
-    icon: <Database className="h-6 w-6" />,
+    number: "4.",
+    title: "List Actions and Scenarios",
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    number: "5.",
+    title: "Conduct Usability Testing",
+    color: "from-pink-500 to-rose-500",
   },
 ];
 
@@ -441,13 +442,9 @@ export default function LLMDevelopment() {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-16 bg-light relative">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-        </div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* LLM Development Process Section */}
+      <section className="py-16 bg-gray-50 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -455,38 +452,62 @@ export default function LLMDevelopment() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
               LLM Use Cases & Applications
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {useCases.map((useCase, index) => (
+          {/* Process Steps Flow */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-0 max-w-6xl mx-auto">
+            {processSteps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.3, duration: 0.8 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.6 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                className="group"
+                className="flex items-center"
               >
-                <div className="h-full bg-gradient-to-br from-slate-800/60 to-blue-900/60 backdrop-blur-xl border border-emerald-500/20 rounded-3xl p-8 hover:border-cyan-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
-                  <div className="flex items-center mb-6">
-                    <div className="p-4 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-400/30 group-hover:scale-110 transition-transform duration-300">
-                      <div className="text-blue-400 group-hover:text-cyan-300 transition-colors">
-                        {useCase.icon}
-                      </div>
+                {/* Step Box */}
+                <div className="relative">
+                  <div className="bg-white border-2 border-gray-300 rounded-2xl p-6 w-48 h-32 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-400 group">
+                    <div className={`text-2xl font-bold mb-2 bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
+                      {step.number}
+                    </div>
+                    <div className="text-gray-800 font-semibold text-sm leading-tight">
+                      {step.title}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-blue-400 transition-all">
-                    {useCase.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed text-lg">
-                    {useCase.description}
-                  </p>
                 </div>
+
+                {/* Arrow */}
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:flex items-center mx-2">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ delay: index * 0.2 + 0.3, duration: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <ArrowRight className="h-8 w-8 text-gray-400" />
+                    </motion.div>
+                  </div>
+                )}
+
+                {/* Mobile Arrow (Vertical) */}
+                {index < processSteps.length - 1 && (
+                  <div className="lg:hidden flex justify-center my-2">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ delay: index * 0.2 + 0.3, duration: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <ArrowRight className="h-8 w-8 text-gray-400 rotate-90" />
+                    </motion.div>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
