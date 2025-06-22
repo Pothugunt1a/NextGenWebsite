@@ -30,44 +30,53 @@ const serviceAreaData = [
     id: "cloud-ai-consultation",
     name: "Cloud AI & IT Consultation",
     image: "/assets/AI-Consulting.png",
-    content:
-      "We focus on the delivery of sales and repair cloud implementation services, reworking heritage applications to Force.com applications, services that alter enterprise quality and collaboration, and custom cloud app development exploitation the Force.com platform as a service. Our Salesforce.com consultants bring depth and breadth of expertise across varied industries to function as trusted partners for our customers. They provide effective planning and execution in the delivery of Salesforce.com solutions and leverage the platform to help maximize return on investment.",
-  },
-  {
-    id: "application-development",
-    name: "Application Development & Support",
-    image: "/assets/AI-Components.gif",
-    content:
-      "AI Technologies, LLC's capability in developing very large-scale, multi-million dollar client applications and supporting them established a sturdy Application Development & Support practice in conjunction with successful execution of many fixed-price/fixed-outcome projects. Our Business Process Automation services supply customers economical alternatives for improving business operations and increasing organizational effectiveness.",
-  },
-  {
-    id: "cloud-enterprise",
-    name: "Cloud & Enterprise Solutions",
-    image: "/assets/IT-Consulting-banner.png",
-    content:
-      "For customers looking to leverage quality and Cloud for enterprise adoption, AI Technologies, LLC offers an array of services from design, development, deployment, and support. Our practice in Application Testing is an innovative approach to On-Demand Testing Services – a utility model which provides testing in cloud complete with test environment (provision and de-provision on the fly) and enhancing efficiency with integrated testing.",
+    content: "At RT NextGen AI, we specialize in delivering comprehensive IT consultation services that empower businesses to succeed in the cloud-first era. Our expertise spans across cloud implementation, legacy application modernization, and custom cloud application development.",
+    features: [
+      "Cloud Implementation & Migration: Seamless integration of cloud technologies to enhance operational efficiency and scalability",
+      "Legacy App Modernization: Transform outdated applications into high-performing solutions",
+      "Enterprise Collaboration Solutions: Tools and platforms that drive team productivity and streamline communication",
+      "Custom Development: Bespoke applications built on robust platforms to meet your unique business needs"
+    ],
+    additionalInfo: "Our team of certified consultants brings a wealth of experience from diverse industries. They serve as trusted partners in delivering effective, scalable, and ROI-driven AWS, AZURE, and Salesforce DevOps solutions. We combine best-in-class agile and JIRA, ServiceNow deployment methodologies with deep industry insight."
   },
   {
     id: "big-data-intelligence",
     name: "Big Data & Enterprise Intelligence",
     image: "/assets/AI-DataStratergy-banner.png",
-    content:
-      "AI Technologies, LLC's IT Consulting Services will assist you catch the big data wave that is sweeping enterprise thinking. These services are designed to help customers produce competitive differentiation and discover new business opportunities. We have developed skills and experience to implement big data technologies for enterprise with our distinctive Discover, Design, Develop and Deploy services.",
+    content: "Catch the Big Data wave with RT NextGen AI. Our IT Consulting Services help enterprises uncover new business opportunities and gain competitive advantage through data-driven strategies.",
+    features: [
+      "Identify high-impact use cases",
+      "Design scalable big data solutions", 
+      "Develop enterprise-grade architectures",
+      "Deploy actionable insights for smarter decisions"
+    ],
+    additionalInfo: "With our proven Discover, Design, Develop, and Deploy methodology, RT NextGen AI has the expertise and tools to bring your data strategy to life—turning complex information into business intelligence that drives growth."
   },
   {
-    id: "ai-consulting-solutions",
-    name: "AI-Powered Consulting Solutions",
+    id: "consulting-solutions",
+    name: "Consulting Solutions",
     image: "/assets/AI-brain-banner.png",
-    content:
-      "Today, we are operating with clients to drive AI innovations throughout the customer lifecycle through our target prediction, spoken communication and analytics backed by cognitive engines and human help. For large organizations that field billions of client interactions annually, the power to anticipate and resolve client needs before they arise has enormous potential to drive client satisfaction up and costs down.",
+    content: "At RT NextGen AI, we help organizations unlock the power of AI-driven innovation across the entire customer lifecycle. Our consulting solutions combine predictive analytics, natural language processing, and cognitive engines—backed by human expertise.",
+    features: [
+      "Next-Best-Action Recommendations: Suggesting the optimal path forward through IVRs, virtual assistants, or live agents",
+      "Churn Reduction: Identifying early signals—like sentiment, tone, or online behavior—that indicate potential churn or purchase intent",
+      "Proactive Engagement: Sending personalized, timely notifications for offers, support, or relevant assistance"
+    ],
+    additionalInfo: "For large enterprises managing billions of customer interactions annually, the ability to anticipate and address customer needs before they arise delivers transformative benefits. These capabilities enable businesses to evolve from reactive to predictive."
   },
   {
-    id: "fraud-prevention",
-    name: "Fraud Prevention & Security",
-    image: "/assets/Process-Optimization.png",
-    content:
-      "Biometrics to fight fraud and permit customers to seamlessly authenticate in their channel of choice. Our security solutions provide advanced protection mechanisms that help organizations maintain secure operations while ensuring smooth user experiences across all touchpoints.",
-  },
+    id: "application-development",
+    name: "Application Development & Support",
+    image: "/assets/AI-Components.gif",
+    content: "At RT NextGen AI, we bring cutting-edge capabilities to the development of large-scale, multi-million-dollar enterprise applications. Our success in executing numerous fixed-price, fixed-outcome projects has enabled us to build a robust Application Development & Support practice.",
+    features: [
+      "Business Process Automation (BPA) services for streamlined operations and improved organizational effectiveness",
+      "Advanced case management solutions tailored for public sector organizations",
+      "End-to-end cloud and mobility services—from design and development to deployment and ongoing support",
+      "On-Demand Testing Services with complete cloud-based testing environment"
+    ],
+    additionalInfo: "Our integrated testing framework includes test design, automation toolkits, execution strategies, and comprehensive metrics reporting. This ensures faster delivery cycles and higher software quality at reduced costs."
+  }
 ];
 
 export default function ITConsulting() {
@@ -267,10 +276,45 @@ export default function ITConsulting() {
                     </div>
 
                     {/* Service Area Content */}
-                    <div className="p-6">
+                    <div className="p-6 space-y-6">
                       <p className="text-gray-300 leading-relaxed text-lg">
                         {selectedServiceArea.content}
                       </p>
+
+                      {/* Features List */}
+                      {selectedServiceArea.features && (
+                        <div className="space-y-4">
+                          <h4 className="text-xl font-semibold text-white mb-4">
+                            {selectedServiceArea.id === 'cloud-ai-consultation' ? 'Our Core Services Include:' : 
+                             selectedServiceArea.id === 'big-data-intelligence' ? 'Our Methodology:' :
+                             selectedServiceArea.id === 'consulting-solutions' ? 'Key Capabilities:' :
+                             'Key Features:'}
+                          </h4>
+                          <div className="grid gap-3">
+                            {selectedServiceArea.features.map((feature, index) => (
+                              <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="flex items-start space-x-3"
+                              >
+                                <CheckCircle className="h-5 w-5 text-cyan-400 mt-1 flex-shrink-0" />
+                                <p className="text-gray-300 text-sm leading-relaxed">{feature}</p>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Additional Information */}
+                      {selectedServiceArea.additionalInfo && (
+                        <div className="mt-6 p-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg">
+                          <p className="text-gray-300 text-sm leading-relaxed">
+                            {selectedServiceArea.additionalInfo}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 </div>
