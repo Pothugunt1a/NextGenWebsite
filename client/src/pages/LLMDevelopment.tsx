@@ -145,46 +145,50 @@ const stats = [
   },
 ];
 
-const useCases = [
+const processSteps = [
   {
-    step: "1.",
-    title: "Natural Language Processing",
-    subtitle: "Text Understanding & Generation",
-    description: "Advanced text analysis, sentiment detection, language translation, and human-like content generation for various business applications.",
-    icon: <MessageSquare className="h-8 w-8" />,
+    step: "1",
+    title: "Identify Target User Groups",
+    description: "Define and analyze your specific user personas and their unique requirements for LLM implementation.",
+    icon: <Users className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
+    details: ["User persona mapping", "Requirement analysis", "Use case identification", "Stakeholder interviews"]
   },
   {
-    step: "2.", 
-    title: "Conversational AI",
-    subtitle: "Intelligent Chatbots & Assistants",
-    description: "Smart customer service bots, virtual assistants, and interactive AI agents that provide contextual responses and problem-solving capabilities.",
-    icon: <Brain className="h-8 w-8" />,
+    step: "2", 
+    title: "Define Goals and Objectives",
+    subtitle: "Strategic Planning",
+    description: "Establish clear, measurable objectives and success criteria for your LLM deployment.",
+    icon: <Target className="h-8 w-8" />,
     color: "from-green-500 to-emerald-500",
+    details: ["Business objective setting", "KPI definition", "Success metrics", "ROI planning"]
   },
   {
-    step: "3.",
-    title: "Content Intelligence",
-    subtitle: "Automated Content Creation",
-    description: "AI-powered content generation for marketing materials, technical documentation, creative writing, and personalized communications.",
-    icon: <Lightbulb className="h-8 w-8" />,
+    step: "3",
+    title: "Create Wireframes or Prototypes",
+    subtitle: "Design & Architecture",
+    description: "Develop detailed wireframes and prototypes to visualize the LLM integration workflow.",
+    icon: <Cog className="h-8 w-8" />,
     color: "from-purple-500 to-violet-500",
+    details: ["System architecture", "UI/UX wireframes", "Data flow design", "Integration mapping"]
   },
   {
-    step: "4.",
-    title: "Code Intelligence",
-    subtitle: "AI-Powered Development",
-    description: "Intelligent code completion, bug detection, code review automation, and development assistance for faster software delivery.",
-    icon: <Code className="h-8 w-8" />,
+    step: "4",
+    title: "List Actions and Scenarios",
+    subtitle: "Implementation Planning",
+    description: "Document all possible user interactions, edge cases, and system responses for comprehensive coverage.",
+    icon: <Settings className="h-8 w-8" />,
     color: "from-orange-500 to-red-500",
+    details: ["Action mapping", "Scenario planning", "Edge case analysis", "Response templates"]
   },
   {
-    step: "5.",
-    title: "Document Intelligence", 
-    subtitle: "Information Extraction & Analysis",
-    description: "Automated document processing, data extraction, summarization, and intelligent analysis of complex business documents.",
-    icon: <Database className="h-8 w-8" />,
+    step: "5",
+    title: "Conduct Usability Testing",
+    subtitle: "Validation & Optimization",
+    description: "Perform thorough testing with real users to validate performance and optimize user experience.",
+    icon: <CheckCircle2 className="h-8 w-8" />,
     color: "from-teal-500 to-blue-500",
+    details: ["User testing", "Performance validation", "Feedback integration", "Continuous optimization"]
   },
 ];
 
@@ -457,8 +461,12 @@ export default function LLMDevelopment() {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-20 bg-white relative">
+      {/* LLM Implementation Process Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-cyan-200 rounded-full blur-3xl opacity-30"></div>
+        
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -467,118 +475,153 @@ export default function LLMDevelopment() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              LLM Use Cases & Applications
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              LLM Implementation Process
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover how our LLM solutions transform business processes across various industries
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Our proven step-by-step methodology ensures successful LLM deployment and optimal business outcomes
             </p>
           </motion.div>
 
-          {/* Process Flow - Desktop */}
+          {/* Wizard Interface - Desktop */}
           <div className="hidden lg:block">
-            <motion.div
-              className="flex items-center justify-between"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              {useCases.map((useCase, index) => (
-                <div key={index} className="flex items-center">
+            <div className="relative">
+              {/* Progress Line */}
+              <div className="absolute top-20 left-0 right-0 h-1 bg-gray-200 z-0">
+                <motion.div 
+                  className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"
+                  initial={{ width: "0%" }}
+                  whileInView={{ width: "100%" }}
+                  transition={{ duration: 2, delay: 0.5 }}
+                  viewport={{ once: true }}
+                />
+              </div>
+
+              <div className="flex justify-between items-start relative z-10">
+                {processSteps.map((step, index) => (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.3, duration: 0.8 }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.05, y: -10 }}
-                    className="group relative"
+                    className="flex flex-col items-center max-w-xs group"
                   >
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 w-80 h-64 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-300">
-                      {/* Step Number */}
-                      <div className="absolute -top-4 -left-4">
-                        <div className={`w-12 h-12 bg-gradient-to-r ${useCase.color} text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg`}>
-                          {useCase.step}
-                        </div>
-                      </div>
-                      
-                      {/* Icon */}
-                      <div className={`p-4 rounded-2xl bg-gradient-to-r ${useCase.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <div className="text-white">
-                          {useCase.icon}
-                        </div>
-                      </div>
-                      
-                      {/* Content */}
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
-                        {useCase.title}
-                      </h3>
-                      <p className="text-sm font-semibold text-gray-600 mb-3">
-                        {useCase.subtitle}
-                      </p>
-                      <p className="text-sm text-gray-500 leading-relaxed">
-                        {useCase.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                  
-                  {/* Arrow between steps */}
-                  {index < useCases.length - 1 && (
+                    {/* Step Circle */}
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.2 + 0.3, duration: 0.6 }}
-                      viewport={{ once: true }}
-                      className="mx-4"
+                      className={`relative w-16 h-16 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300`}
+                      whileHover={{ y: -5 }}
                     >
-                      <ArrowRight className="h-8 w-8 text-gray-400" />
+                      <span className="text-white font-bold text-xl">{step.step}</span>
+                      {/* Pulse animation */}
+                      <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${step.color} animate-ping opacity-20`}></div>
                     </motion.div>
-                  )}
-                </div>
-              ))}
-            </motion.div>
+
+                    {/* Content Card */}
+                    <motion.div 
+                      className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 group-hover:border-blue-200 min-h-[320px] w-full"
+                      whileHover={{ y: -10, scale: 1.02 }}
+                    >
+                      {/* Icon */}
+                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${step.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                        <div className="text-white">
+                          {step.icon}
+                        </div>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                        {step.title}
+                      </h3>
+
+                      {/* Subtitle */}
+                      {step.subtitle && (
+                        <p className="text-sm font-semibold text-blue-600 mb-3">
+                          {step.subtitle}
+                        </p>
+                      )}
+
+                      {/* Description */}
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        {step.description}
+                      </p>
+
+                      {/* Details List */}
+                      <ul className="space-y-2">
+                        {step.details.map((detail, detailIndex) => (
+                          <li key={detailIndex} className="flex items-center text-sm text-gray-500">
+                            <div className={`w-2 h-2 bg-gradient-to-r ${step.color} rounded-full mr-3 flex-shrink-0`}></div>
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Process Flow - Mobile */}
+          {/* Wizard Interface - Mobile */}
           <div className="lg:hidden">
             <div className="space-y-8">
-              {useCases.map((useCase, index) => (
+              {processSteps.map((step, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.2, duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="group"
+                  className="relative"
                 >
-                  <div className="bg-white border-2 border-gray-200 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-300 relative">
-                    {/* Step Number */}
-                    <div className="absolute -top-4 -left-4">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${useCase.color} text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg`}>
-                        {useCase.step}
-                      </div>
-                    </div>
-                    
+                  {/* Connecting Line */}
+                  {index < processSteps.length - 1 && (
+                    <div className="absolute left-8 top-16 w-0.5 h-20 bg-gradient-to-b from-blue-300 to-cyan-300 z-0"></div>
+                  )}
+
+                  <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 relative z-10">
                     <div className="flex items-start gap-4">
-                      {/* Icon */}
-                      <div className={`p-3 rounded-xl bg-gradient-to-r ${useCase.color} group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                        <div className="text-white">
-                          {useCase.icon}
-                        </div>
+                      {/* Step Circle */}
+                      <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center shadow-lg flex-shrink-0`}>
+                        <span className="text-white font-bold text-xl">{step.step}</span>
                       </div>
-                      
+
                       {/* Content */}
                       <div className="flex-1">
+                        {/* Icon */}
+                        <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${step.color} mb-3`}>
+                          <div className="text-white">
+                            {step.icon}
+                          </div>
+                        </div>
+
+                        {/* Title */}
                         <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {useCase.title}
+                          {step.title}
                         </h3>
-                        <p className="text-sm font-semibold text-gray-600 mb-3">
-                          {useCase.subtitle}
+
+                        {/* Subtitle */}
+                        {step.subtitle && (
+                          <p className="text-sm font-semibold text-blue-600 mb-2">
+                            {step.subtitle}
+                          </p>
+                        )}
+
+                        {/* Description */}
+                        <p className="text-gray-600 mb-4 leading-relaxed">
+                          {step.description}
                         </p>
-                        <p className="text-sm text-gray-500 leading-relaxed">
-                          {useCase.description}
-                        </p>
+
+                        {/* Details List */}
+                        <ul className="space-y-2">
+                          {step.details.map((detail, detailIndex) => (
+                            <li key={detailIndex} className="flex items-center text-sm text-gray-500">
+                              <div className={`w-2 h-2 bg-gradient-to-r ${step.color} rounded-full mr-3 flex-shrink-0`}></div>
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -586,6 +629,31 @@ export default function LLMDevelopment() {
               ))}
             </div>
           </div>
+
+          {/* Call to Action */}
+          <motion.div
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Ready to Start Your LLM Journey?
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Let our experts guide you through each step of the implementation process
+              </p>
+              <Button
+                size="lg"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border-0"
+              >
+                Begin Process Assessment
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
