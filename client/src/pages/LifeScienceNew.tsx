@@ -278,7 +278,7 @@ export default function LifeScience() {
                   transition={{ duration: 1, type: "spring" }}
                   className="relative group"
                 >
-                  <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                  <div className="relative h-80 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="absolute inset-0">
                       <img
                         src="/assets/Life-science-solution.jpg"
@@ -327,7 +327,7 @@ export default function LifeScience() {
                   transition={{ duration: 0.8, delay: 0.3 }}
                   className="group cursor-pointer w-full"
                 >
-                  <div className="flex flex-col items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
                         src={services[2].backgroundImage}
@@ -340,8 +340,8 @@ export default function LifeScience() {
                         <Beaker className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                    <div className="text-center">
-                      <div className="flex items-center justify-center gap-3 mb-2">
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
                         <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                           03
                         </div>
