@@ -219,10 +219,15 @@ export default function Navbar({
 
                       {activeDropdown === link.id && (
                         <div 
-                          className="fixed left-0 right-0 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
+                          className="absolute left-0 right-0 top-full mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
                           onMouseEnter={handleDropdownMouseEnter}
                           onMouseLeave={handleDropdownMouseLeave}
-                          style={{ top: 'calc(100% + 4px)' }}
+                          style={{ 
+                            position: 'fixed',
+                            left: 0,
+                            right: 0,
+                            top: scrolled ? '70px' : '80px'
+                          }}
                         >
                           {/* Invisible bridge to prevent dropdown from closing */}
                           <div className="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
