@@ -162,7 +162,7 @@ const processSteps = [
     number: "2.",
     title: "AI-Powered Virtual Assistants",
     description: "Custom LLMs enhance chatbots and virtual assistants with superior conversational abilities, enabling businesses to deliver intelligent customer interactions.",
-    icon: <img src={sentimentAnalysisIcon} alt="AI-Powered Virtual Assistants" className="h-8 w-8" />,
+    icon: <img src={chatbotIntegrationIcon} alt="AI-Powered Virtual Assistants" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
   },
   {
@@ -176,7 +176,7 @@ const processSteps = [
     number: "4.",
     title: "Document Summarization and Analysis",
     description: "LLMs simplify complex information by summarizing legal, financial, or research documents, helping businesses extract key insights effortlessly.",
-    icon: <img src={chatbotIntegrationIcon} alt="Document Summarization and Analysis" className="h-8 w-8" />,
+    icon: <img src={sentimentAnalysisIcon} alt="Document Summarization and Analysis" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
   },
   {
