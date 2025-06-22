@@ -70,8 +70,8 @@ export default function Hero() {
     >
       <div className="absolute inset-0 w-full h-full">
         <img
-          src="/assets/ai-brain-banner.png"
-          alt="AI Brain Banner"
+          src="/assets/Home-banner.gif"
+          alt="Home Banner"
           className="w-full h-full object-cover opacity-60 brightness-125"
         />
       </div>
