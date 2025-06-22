@@ -42,6 +42,7 @@ export default function Navbar({
   const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<
     string | null
   >(null);
+  const [dropdownHoverTimeout, setDropdownHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
@@ -77,8 +78,12 @@ export default function Navbar({
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      // Cleanup timeout on unmount
+      if (dropdownHoverTimeout) {
+        clearTimeout(dropdownHoverTimeout);
+      }
     };
-  }, []);
+  }, [dropdownHoverTimeout]);
 
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -119,8 +124,20 @@ export default function Navbar({
   };
 
   const handleDropdownMouseLeave = () => {
-    setActiveDropdown(null);
-    setActiveDesktopSubmenu(null);
+    // Add a delay before closing dropdown to prevent accidental closure
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+      setActiveDesktopSubmenu(null);
+    }, 200); // 200ms delay
+    setDropdownHoverTimeout(timeout);
+  };
+
+  const handleDropdownMouseEnter = () => {
+    // Clear any pending timeout when mouse re-enters
+    if (dropdownHoverTimeout) {
+      clearTimeout(dropdownHoverTimeout);
+      setDropdownHoverTimeout(null);
+    }
   };
 
   const toggleDropdown = (linkId: number, e: React.MouseEvent) => {
@@ -169,7 +186,11 @@ export default function Navbar({
               {navLinks.map((link) => (
                 <div key={link.id} className="relative group mx-1">
                   {link.hasDropdown ? (
-                    <div className="relative">
+                    <div 
+                      className="relative"
+                      onMouseEnter={handleDropdownMouseEnter}
+                      onMouseLeave={handleDropdownMouseLeave}
+                    >
                       <a
                         href={link.href}
                         className={`nav-link font-medium transition-colors px-2 py-2 text-sm inline-flex items-center ${
@@ -198,9 +219,13 @@ export default function Navbar({
 
                       {activeDropdown === link.id && (
                         <div 
-                          className="fixed left-0 right-0 mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
+                          className="fixed left-0 right-0 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
+                          onMouseEnter={handleDropdownMouseEnter}
                           onMouseLeave={handleDropdownMouseLeave}
+                          style={{ top: 'calc(100% + 4px)' }}
                         >
+                          {/* Invisible bridge to prevent dropdown from closing */}
+                          <div className="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
                           <div className="container mx-auto relative flex max-w-none min-h-[320px]">
                             {/* Dynamic Image on the right with gradient overlay */}
                             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
