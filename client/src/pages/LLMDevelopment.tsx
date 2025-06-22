@@ -459,57 +459,56 @@ export default function LLMDevelopment() {
           </motion.div>
 
           {/* Process Steps Flow */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-0 max-w-6xl mx-auto">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex items-center"
-              >
-                {/* Step Box */}
-                <div className="relative">
-                  <div className="bg-white border-2 border-gray-300 rounded-2xl p-6 w-48 h-32 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-400 group">
-                    <div className={`text-2xl font-bold mb-2 bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
-                      {step.number}
+          <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto overflow-x-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-center min-w-fit">
+              {processSteps.map((step, index) => (
+                <div key={index} className="flex items-center">
+                  {/* Step Box */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="relative"
+                  >
+                    <div className="bg-white border-2 border-gray-400 rounded-2xl p-4 w-44 h-28 flex flex-col items-center justify-center text-center shadow-md hover:shadow-lg transition-all duration-300 hover:border-blue-500 group">
+                      <div className="text-blue-500 text-xl font-bold mb-1">
+                        {step.number}
+                      </div>
+                      <div className="text-gray-800 font-semibold text-xs leading-tight px-2">
+                        {step.title}
+                      </div>
                     </div>
-                    <div className="text-gray-800 font-semibold text-sm leading-tight">
-                      {step.title}
-                    </div>
-                  </div>
+                  </motion.div>
+
+                  {/* Arrow connecting to next step */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 + 0.2, duration: 0.3 }}
+                      viewport={{ once: true }}
+                      className="hidden lg:block mx-2"
+                    >
+                      <ArrowRight className="h-6 w-6 text-gray-500" />
+                    </motion.div>
+                  )}
+
+                  {/* Mobile vertical arrow */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 + 0.2, duration: 0.3 }}
+                      viewport={{ once: true }}
+                      className="lg:hidden my-3"
+                    >
+                      <ArrowRight className="h-6 w-6 text-gray-500 rotate-90" />
+                    </motion.div>
+                  )}
                 </div>
-
-                {/* Arrow */}
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:flex items-center mx-2">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      transition={{ delay: index * 0.2 + 0.3, duration: 0.3 }}
-                      viewport={{ once: true }}
-                    >
-                      <ArrowRight className="h-8 w-8 text-gray-400" />
-                    </motion.div>
-                  </div>
-                )}
-
-                {/* Mobile Arrow (Vertical) */}
-                {index < processSteps.length - 1 && (
-                  <div className="lg:hidden flex justify-center my-2">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      transition={{ delay: index * 0.2 + 0.3, duration: 0.3 }}
-                      viewport={{ once: true }}
-                    >
-                      <ArrowRight className="h-8 w-8 text-gray-400 rotate-90" />
-                    </motion.div>
-                  </div>
-                )}
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
