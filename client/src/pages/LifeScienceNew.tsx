@@ -98,7 +98,7 @@ export default function LifeScience() {
         {/* Background for life science page */}
         <div className="absolute inset-0">
           <img
-            src="/assets/Lifescience-banner.png"
+            src="/assets/Life-Science-banner.png"
             alt="Life Science Solutions"
             className="w-full h-full object-cover"
             onError={(e) => {
