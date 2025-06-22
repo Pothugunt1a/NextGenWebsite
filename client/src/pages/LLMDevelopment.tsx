@@ -498,7 +498,7 @@ export default function LLMDevelopment() {
                     whileHover={{ y: -5, scale: 1.02 }}
                     className="group"
                   >
-                    <div className={`flex flex-col items-center justify-center p-4 w-56 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 shadow-2xl hover:border-blue-400/40 hover:shadow-2xl hover:shadow-blue-500/20 ${
+                    <div className={`flex flex-col items-center justify-center p-4 w-56 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-500/30 shadow-2xl hover:border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/20 ${
                       index === 0 ? 'rounded-l-2xl border-r-0' : 
                       index === processSteps.length - 1 ? 'rounded-r-2xl border-l-0' : 
                       'border-l-0 border-r-0'
