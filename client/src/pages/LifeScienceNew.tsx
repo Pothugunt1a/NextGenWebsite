@@ -187,98 +187,20 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          {/* Custom Layout with Components Around Image */}
+          {/* Unique Spiral Layout */}
           <div className="max-w-8xl mx-auto relative">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-              
-              {/* Top Row - Clinical Operations and Biometrics */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Clinical Operations */}
+            <div className="flex flex-col lg:flex-row gap-16 items-center">
+              {/* Left Side - Main Life Science Hub */}
+              <div className="lg:w-1/2">
                 <motion.div
-                  initial={{ opacity: 0, y: -50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-y-2">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={services[0].backgroundImage}
-                        alt={services[0].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Stethoscope className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          01
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {services[0].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {services[0].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Biometrics */}
-                <motion.div
-                  initial={{ opacity: 0, y: -50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.15 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-y-2">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={services[1].backgroundImage}
-                        alt={services[1].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <TrendingUp className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          02
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {services[1].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {services[1].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Middle Row - Image and Pharmacovigilance */}
-              <div className="lg:col-span-2">
-                {/* Main Life Science Hub Image */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, type: "spring" }}
                   className="relative group"
                 >
-                  <div className="relative h-80 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                  {/* Main Feature Card */}
+                  <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="absolute inset-0">
                       <img
                         src="/assets/Life-science-solution.jpg"
@@ -287,6 +209,8 @@ export default function LifeScience() {
                         style={{ backgroundAttachment: "fixed" }}
                       />
                     </div>
+
+                    {/* Floating Elements */}
                     <div className="absolute top-8 right-8 flex flex-col gap-4">
                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
                         <Target className="h-8 w-8 text-white" />
@@ -295,6 +219,8 @@ export default function LifeScience() {
                         Hub
                       </div>
                     </div>
+
+                    {/* Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-8">
                       <div className="mb-4">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
@@ -318,120 +244,65 @@ export default function LifeScience() {
                 </motion.div>
               </div>
 
-              {/* Right Side - Pharmacovigilance / Drug Safety */}
-              <div className="lg:col-span-1 flex items-center">
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  className="group cursor-pointer w-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={services[2].backgroundImage}
-                        alt={services[2].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Beaker className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          03
+              {/* Right Side - All Service Cards */}
+              <div className="lg:w-1/2 space-y-6">
+                {services.map((service, index) => (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15, duration: 0.8 }}
+                    className="group cursor-pointer"
+                  >
+                    <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
+                      {/* Image Preview */}
+                      <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                        <img
+                          src={service.backgroundImage}
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          style={{ backgroundAttachment: "fixed" }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          {index === 0 && (
+                            <Stethoscope className="h-6 w-6 text-white" />
+                          )}
+                          {index === 1 && (
+                            <TrendingUp className="h-6 w-6 text-white" />
+                          )}
+                          {index === 2 && (
+                            <Beaker className="h-6 w-6 text-white" />
+                          )}
+                          {index === 3 && (
+                            <ScrollText className="h-6 w-6 text-white" />
+                          )}
+                          {index === 4 && (
+                            <Shield className="h-6 w-6 text-white" />
+                          )}
                         </div>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {services[2].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {services[2].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
 
-              {/* Bottom Row - Regulatory Affairs and Quality and Compliance */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                {/* Regulatory Affairs */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.45 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-y-2">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={services[3].backgroundImage}
-                        alt={services[3].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <ScrollText className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          04
+                      {/* Content */}
+                      <div className="flex-grow">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
                         </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {services[3].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {services[3].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
 
-                {/* Quality and Compliance */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-y-2">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={services[4].backgroundImage}
-                        alt={services[4].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Shield className="h-6 w-6 text-white" />
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {service.title}
+                        </h4>
+
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                          {service.description}
+                        </p>
                       </div>
                     </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          05
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {services[4].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {services[4].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                ))}
               </div>
             </div>
 
