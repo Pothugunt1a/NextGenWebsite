@@ -498,11 +498,11 @@ export default function LLMDevelopment() {
                     whileHover={{ y: -5, scale: 1.02 }}
                     className="group"
                   >
-                    <div className={`flex flex-col items-center justify-center p-4 w-56 h-52 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-cyan-500/30 shadow-2xl hover:border-blue-400/60 hover:shadow-cyan-500/30 ${
+                    <div className={`flex flex-col items-center justify-center p-4 w-56 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-cyan-500/30 shadow-2xl hover:border-blue-400/60 hover:shadow-cyan-500/30 ${
                       index === 0 ? 'rounded-l-2xl border-r-0' : 
                       index === processSteps.length - 1 ? 'rounded-r-2xl border-l-0' : 
                       'border-l-0 border-r-0'
-                    }`}>
+                    }`} style={{ height: '15rem' }}>
                       {/* Icon */}
                       <div className={`p-2 rounded-xl bg-gradient-to-br ${step.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
                         <div className="text-white">
