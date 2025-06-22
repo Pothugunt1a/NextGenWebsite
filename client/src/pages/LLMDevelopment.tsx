@@ -494,9 +494,9 @@ export default function LLMDevelopment() {
                     className="group"
                   >
                     <div className={`flex flex-col items-center justify-center p-6 w-48 h-36 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-cyan-500/30 shadow-2xl hover:border-blue-400/60 hover:shadow-cyan-500/30 ${
-                      index === 0 ? 'rounded-l-3xl' : 
-                      index === processSteps.length - 1 ? 'rounded-r-3xl' : 
-                      'border-l-0 rounded-none'
+                      index === 0 ? 'rounded-l-2xl border-r-0' : 
+                      index === processSteps.length - 1 ? 'rounded-r-2xl border-l-0' : 
+                      'border-l-0 border-r-0'
                     }`}>
                       {/* Icon */}
                       <div className={`p-3 rounded-xl bg-gradient-to-br ${step.color} mb-3 group-hover:scale-110 transition-transform duration-300`}>
@@ -504,12 +504,12 @@ export default function LLMDevelopment() {
                           {step.icon}
                         </div>
                       </div>
-                      
+
                       {/* Number */}
                       <div className="text-cyan-400 text-lg font-bold mb-1 group-hover:text-blue-300 transition-colors">
                         {step.number}
                       </div>
-                      
+
                       {/* Title */}
                       <div className="text-white font-semibold text-sm leading-tight px-2 group-hover:text-gray-100 transition-colors">
                         {step.title}
