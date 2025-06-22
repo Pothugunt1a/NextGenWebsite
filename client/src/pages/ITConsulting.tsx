@@ -91,7 +91,7 @@ export default function ITConsulting() {
 
   const benefits: Benefit[] = [
     {
-      icon: <Target className="h-6 w-6 text-green-400" />,
+      icon: <img src="/assets/reduced-cost.png" alt="Reduced Costs" className="h-6 w-6" />,
       title: "Reduced Costs",
       description:
         "Cloud computing eliminates the capital expense of building a server infrastructure, shifts support costs, and permits you to pay incrementally just for services used.",
