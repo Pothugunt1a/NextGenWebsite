@@ -460,26 +460,57 @@ export default function LLMDevelopment() {
 
           {/* Process Steps Flow */}
           <div className="flex flex-col lg:flex-row items-center justify-center max-w-6xl mx-auto overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-center bg-white rounded-3xl border-2 border-gray-300 shadow-lg p-2">
+            <div className="flex flex-col lg:flex-row items-center justify-center bg-white rounded-3xl border-2 border-gray-300 shadow-lg p-2 relative">
               {processSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className={`flex flex-col items-center justify-center p-4 w-44 h-28 text-center transition-all duration-300 hover:bg-gray-50 ${
-                    index === 0 ? 'rounded-l-3xl' : 
-                    index === processSteps.length - 1 ? 'rounded-r-3xl' : ''
-                  } ${index < processSteps.length - 1 ? 'border-r border-gray-300' : ''}`}
-                >
-                  <div className="text-blue-500 text-xl font-bold mb-1">
-                    {step.number}
-                  </div>
-                  <div className="text-gray-800 font-semibold text-xs leading-tight px-2">
-                    {step.title}
-                  </div>
-                </motion.div>
+                <div key={index} className="relative flex items-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className={`flex flex-col items-center justify-center p-4 w-44 h-28 text-center transition-all duration-300 hover:bg-gray-50 ${
+                      index === 0 ? 'rounded-l-3xl' : 
+                      index === processSteps.length - 1 ? 'rounded-r-3xl' : ''
+                    }`}
+                  >
+                    <div className="text-blue-500 text-xl font-bold mb-1">
+                      {step.number}
+                    </div>
+                    <div className="text-gray-800 font-semibold text-xs leading-tight px-2">
+                      {step.title}
+                    </div>
+                  </motion.div>
+
+                  {/* Arrow separator between steps */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 + 0.2, duration: 0.3 }}
+                      viewport={{ once: true }}
+                      className="hidden lg:block absolute -right-3 top-1/2 transform -translate-y-1/2 z-10"
+                    >
+                      <div className="bg-white border border-gray-300 rounded-full p-1">
+                        <ArrowRight className="h-4 w-4 text-gray-600" />
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {/* Mobile vertical separator */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 + 0.2, duration: 0.3 }}
+                      viewport={{ once: true }}
+                      className="lg:hidden absolute -bottom-3 left-1/2 transform -translate-x-1/2 z-10"
+                    >
+                      <div className="bg-white border border-gray-300 rounded-full p-1">
+                        <ArrowRight className="h-4 w-4 text-gray-600 rotate-90" />
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
