@@ -1,0 +1,131 @@
+
+Update icons to better represent AI component titles on the website
+
+2 messages & 7 actions
+I'm migrating your project from Replit Agent to the standard Replit environment. This ensures better compatibility, security, and performance. The process may take a few minutes while I verify everything works correctly.
+Can you change the icons of this that should perfectly matches with these titles The Proof of Concept (PoC), The Working Prototype, The Pilot, The Running Data-Driven System, Scientific Research Excellence
+
+take icons refernece from process optimization page i.e RTNextGenAI Can Work With Your Business To: component
+
+30 minutes ago
+EE
+
+elev91299
+
+4 messages & 16 actions
+I need to look at the specific component that shows the business services with icons, and then find where the titles you mentioned are used to update their icons.
+Checkpoint made
+28 minutes ago
+Update icons to better represent AI component titles on the website
+Screenshot
+Load preview
+3 minutes of work & 11 lines of code changed
+Perfect! I've successfully updated the icons for your AI Components Development page to better match the concepts:
+
+✓ The Proof of Concept (PoC) - Now uses Flask/Beaker icon (FlaskConical) to represent experimentation and testing
+✓ The Working Prototype - Now uses Gear icon (Cog) to represent building and engineering
+✓ The Pilot - Now uses Rocket icon to represent launching and deployment
+✓ The Running Data-Driven System - Now uses Factory icon to represent full-scale production operations
+✓ Scientific Research Excellence - Now uses Award icon to represent achievement and excellence in research
+
+The icons now better visually represent each stage of development - from initial experimentation (flask) through engineering (gear), launching (rocket), production (factory), to research excellence (award). These icons create a clear visual progression that matches the development lifecycle described in each section.
+
+The migration is now complete and all checklist items are marked as done. Your application is running smoothly on Replit with the updated icons that perfectly match the concepts you requested.
+
+Checkpoint made
+18 minutes ago
+Add supporting documents that describe IT consultation and AI capabilities
+Screenshot
+Load preview
+10s of work
+I need you to edit the IT Consulting page with this content i.e
+
+Cloud AI and IT Consultation Services
+We focus on the delivery of sales and repair cloud implementation comes, reworking heritage applications to Force.com applications, services that alter enterprise quality and collaboration, and custom cloud app development exploitation the Force.com platform as a service. Our Salesforce.com consultants bring depth and breadth of expertise across varied industries to function sure partners for our customers. They additionally give effective coming up with and execution within the delivery of Salesforce.com solutions and advantage the Salesforce.com platform to assist maximize come on investment. By combining our best-in-class agile preparation methodologies with a deep market experience, we alter our preferences to satisfy our consumers’ most advanced business and technology challenges. With our stress on coaching and certification, you willbe certain that AI Technologies, LLC employs solely the foremost-qualified Salesforce.com-certified professionals with intensive expertise effective.com business cloud application development.
+
+IT Consultation
+Artificial Intelligence Technologies, LLC’s capability in developing terribly large-scale, multi-million dollar client applications and supporting them established a sturdy Application Development & Support follow in conjunction with triple-crown execution of many fixed-price/fixed-outcome comes. Artificial Intelligence Technologies, LLC’s Business method Automation services supply customer’s economical alternative for up business and increasing organization effectiveness. Public sector customers will reap advantages from AI Technologies, LLC’s expertise in building case management solutions with deep domain experience.
+
+For customers trying to leverage quality and Cloud for enterprise adoption, AI Technologies, LLC offers an array of services from style, development, deployment, and support. Artificial Intelligence Technologies, LLC’s follow in Application Testing is innovative approach to On-Demand Testing Services – a utility model which will give checking in cloud complete with check setting (provision and de-provision on the fly) and enhancing potency with integrated checking (test style + toolkit + test execution + test metrics)
+
+Artificial Intelligence Technologies, LLC’s IT Consulting Services will assist you catch the large information wave that is sweeping enterprise thinking. These services are designed to assist consumersproduce competitive differentiation and find out new business opportunities.
+
+AI Technologies, LLC has designed skills and experience to implement huge information technologies for enterprise. With distinctive Discover, Design, Develop and Deploy services, AI Technologies, LLC will facilitate customers discover and implement new use cases.
+
+The Big information wave is sweeping enterprise thinking to form competitive differentiation and find out new business opportunities. AI Technologies, LLC has designed skills and experience to implement huge information technologies for enterprise. With distinctive Discover, Design, Develop and Deploy services, AI Technologies, LLC will facilitate customers discover and implement new use cases.
+
+Big Data & Enterprise Intelligence
+
+Consulting Solutions
+Today, we are operating with clients to drive AI innovations throughout the customer lifecycle through our target prediction, spoken communication and analytics backed by psychological feature engines and human help. Prediction - for large organizations that field billions of client interactions annually, the power to anticipate and resolve client wants before they arise has monumental potential to drive client satisfaction up and prices down.
+Predictive solutions utilize client profile information for insights into organizations’ requirements and preferences from previous interactions across all channels to see intent and choose the simplest agent or resource to service their wants, including: Recommending succeeding best action to satisfy a consumer’s want through IVR, virtual assistant or live agent
+Minimizing churn by distinctive and pursuit signals that a client is also near shopping for a product or managing their service supported net activity, words, tone or sentiment Proactive notifications for relevant, helpful help or customised deals Predictive, colloquial and analytic AI infographic
+
+Benefits of our IT Consulting Services
+Reduced value - Cloud computing eliminates the capital expense of building a server infrastructure, shifts support prices, and permits you to pay incrementally just for services used. Increased potency - Utilizing cloud services considerably reduces operational and system administration problems, permitting staff to target comes that move your business forward. Enhanced responsiveness - Shorten project timelines and build a lot of foreseeable time-to-market by eliminating server and code provisioning, supplying you with the competitive advantage you would like. Biometrics to fight fraud and permit customers to seamlessly evidence in their channel of alternative
+same as How we implement artificial intelligence across multiple industries component
+
+12 minutes ago
+EE
+
+elev91299
+Checkpoint made
+12 minutes ago
+Checkpoint before pausing
+Screenshot
+Load preview
+1s of work
+I need to restart the application first to fix the current failure, then update the IT Consulting page with your new content.
+
+
+Restarted Start application
+
+Opened client/src/pages/ITConsulting.tsx
+
+Opened client/src/pages/ITConsulting.tsx
+Now I'll update the IT Consulting page with the new content you provided. Let me replace the existing content with your structured sections.
+
+
+Edited client/src/pages/ITConsulting.tsx
+
+Edited client/src/pages/ITConsulting.tsx
+Now I'll update the hero section and main descriptions to better reflect the comprehensive content you provided.
+
+
+Edited client/src/pages/ITConsulting.tsx
+
+Edited client/src/pages/ITConsulting.tsx
+Now I'll update the benefits section to better match the grid layout since we now have 4 benefits instead of 3.
+
+
+Edited client/src/pages/ITConsulting.tsx
+
+Restarted Start application
+
+Took a screenshot
+Checkpoint made
+9 minutes ago
+Update IT consulting page to reflect updated service offerings and descriptions
+Screenshot
+Load preview
+2 minutes of work & 83 lines of code changed
+✓ Updated IT Consulting page with new content structure
+✓ Added Cloud AI and IT Consultation Services section
+✓ Updated IT Consultation details with enterprise-scale capabilities
+✓ Added Big Data & Enterprise Intelligence section
+✓ Enhanced Consulting Solutions with predictive AI features
+✓ Updated Benefits section with 4 key advantages including biometric security
+
+The IT Consulting page now includes all the content you requested, organized into clear sections. How does the updated page look?
+
+
+Scroll to latest
+Agent is waiting for your response
+Add a database to store user data
+
+Or continue working without a database…
+Chats
+Archived
+AI Implementation Across Different Industry Sectors
+6 minutes ago
+I need this content same as the How we implement artificial intelligence across multiple industries component in AI Consulting page
