@@ -430,14 +430,16 @@ export default function Navbar({
                                             <div
                                               className="relative cursor-pointer select-none"
                                               onClick={(e) => {
-                                                // For AI Consulting, navigate to page and toggle submenu
+                                                // For AI Consulting, navigate to page but keep dropdown open
                                                 if (category.name === "AI Consulting") {
-                                                  handleNavigationClick("/ai-consulting");
+                                                  e.preventDefault();
+                                                  setLocation("/ai-consulting");
+                                                  window.scrollTo({ top: 0, behavior: "smooth" });
+                                                  // Don't close dropdowns, just toggle submenu
+                                                  toggleDesktopSubmenu(category.name, e);
+                                                } else {
+                                                  toggleDesktopSubmenu(category.name, e);
                                                 }
-                                                toggleDesktopSubmenu(
-                                                  category.name,
-                                                  e,
-                                                );
                                               }}
                                             >
                                               <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-slate-900/95 to-slate-800/90 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 backdrop-blur-md shadow-lg hover:shadow-xl hover:shadow-cyan-400/10 hover:bg-gradient-to-r hover:from-slate-800/95 hover:to-slate-700/90">
