@@ -145,50 +145,30 @@ const stats = [
   },
 ];
 
-const processSteps = [
+const useCases = [
   {
-    step: "1",
-    title: "Identify Target User Groups",
-    description: "Define and analyze your specific user personas and their unique requirements for LLM implementation.",
-    icon: <Users className="h-8 w-8" />,
-    color: "from-blue-500 to-cyan-500",
-    details: ["User persona mapping", "Requirement analysis", "Use case identification", "Stakeholder interviews"]
+    title: "Customer Service Automation",
+    description:
+      "Intelligent chatbots and virtual assistants that understand context and provide human-like responses.",
+    icon: <MessageSquare className="h-6 w-6" />,
   },
   {
-    step: "2", 
-    title: "Define Goals and Objectives",
-    subtitle: "Strategic Planning",
-    description: "Establish clear, measurable objectives and success criteria for your LLM deployment.",
-    icon: <Target className="h-8 w-8" />,
-    color: "from-green-500 to-emerald-500",
-    details: ["Business objective setting", "KPI definition", "Success metrics", "ROI planning"]
+    title: "Content Generation",
+    description:
+      "Automated content creation for marketing, documentation, and creative writing applications.",
+    icon: <Lightbulb className="h-6 w-6" />,
   },
   {
-    step: "3",
-    title: "Create Wireframes or Prototypes",
-    subtitle: "Design & Architecture",
-    description: "Develop detailed wireframes and prototypes to visualize the LLM integration workflow.",
-    icon: <Cog className="h-8 w-8" />,
-    color: "from-purple-500 to-violet-500",
-    details: ["System architecture", "UI/UX wireframes", "Data flow design", "Integration mapping"]
+    title: "Code Assistant",
+    description:
+      "AI-powered coding assistance for faster development and improved code quality.",
+    icon: <Code className="h-6 w-6" />,
   },
   {
-    step: "4",
-    title: "List Actions and Scenarios",
-    subtitle: "Implementation Planning",
-    description: "Document all possible user interactions, edge cases, and system responses for comprehensive coverage.",
-    icon: <Settings className="h-8 w-8" />,
-    color: "from-orange-500 to-red-500",
-    details: ["Action mapping", "Scenario planning", "Edge case analysis", "Response templates"]
-  },
-  {
-    step: "5",
-    title: "Conduct Usability Testing",
-    subtitle: "Validation & Optimization",
-    description: "Perform thorough testing with real users to validate performance and optimize user experience.",
-    icon: <CheckCircle2 className="h-8 w-8" />,
-    color: "from-teal-500 to-blue-500",
-    details: ["User testing", "Performance validation", "Feedback integration", "Continuous optimization"]
+    title: "Document Analysis",
+    description:
+      "Intelligent document processing, summarization, and information extraction.",
+    icon: <Database className="h-6 w-6" />,
   },
 ];
 
@@ -461,12 +441,12 @@ export default function LLMDevelopment() {
         </div>
       </section>
 
-      {/* LLM Implementation Process Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
-        {/* Background decorations */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-cyan-200 rounded-full blur-3xl opacity-30"></div>
-        
+      {/* Use Cases Section */}
+      <section className="py-16 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -475,185 +455,41 @@ export default function LLMDevelopment() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              LLM Implementation Process
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              LLM Use Cases & Applications
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Our proven step-by-step methodology ensures successful LLM deployment and optimal business outcomes
-            </p>
           </motion.div>
 
-          {/* Wizard Interface - Desktop */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              {/* Progress Line */}
-              <div className="absolute top-20 left-0 right-0 h-1 bg-gray-200 z-0">
-                <motion.div 
-                  className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"
-                  initial={{ width: "0%" }}
-                  whileInView={{ width: "100%" }}
-                  transition={{ duration: 2, delay: 0.5 }}
-                  viewport={{ once: true }}
-                />
-              </div>
-
-              <div className="flex justify-between items-start relative z-10">
-                {processSteps.map((step, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.3, duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="flex flex-col items-center max-w-xs group"
-                  >
-                    {/* Step Circle */}
-                    <motion.div
-                      className={`relative w-16 h-16 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300`}
-                      whileHover={{ y: -5 }}
-                    >
-                      <span className="text-white font-bold text-xl">{step.step}</span>
-                      {/* Pulse animation */}
-                      <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${step.color} animate-ping opacity-20`}></div>
-                    </motion.div>
-
-                    {/* Content Card */}
-                    <motion.div 
-                      className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 group-hover:border-blue-200 min-h-[320px] w-full"
-                      whileHover={{ y: -10, scale: 1.02 }}
-                    >
-                      {/* Icon */}
-                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${step.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <div className="text-white">
-                          {step.icon}
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
-                        {step.title}
-                      </h3>
-
-                      {/* Subtitle */}
-                      {step.subtitle && (
-                        <p className="text-sm font-semibold text-blue-600 mb-3">
-                          {step.subtitle}
-                        </p>
-                      )}
-
-                      {/* Description */}
-                      <p className="text-gray-600 mb-4 leading-relaxed">
-                        {step.description}
-                      </p>
-
-                      {/* Details List */}
-                      <ul className="space-y-2">
-                        {step.details.map((detail, detailIndex) => (
-                          <li key={detailIndex} className="flex items-center text-sm text-gray-500">
-                            <div className={`w-2 h-2 bg-gradient-to-r ${step.color} rounded-full mr-3 flex-shrink-0`}></div>
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Wizard Interface - Mobile */}
-          <div className="lg:hidden">
-            <div className="space-y-8">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  {/* Connecting Line */}
-                  {index < processSteps.length - 1 && (
-                    <div className="absolute left-8 top-16 w-0.5 h-20 bg-gradient-to-b from-blue-300 to-cyan-300 z-0"></div>
-                  )}
-
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 relative z-10">
-                    <div className="flex items-start gap-4">
-                      {/* Step Circle */}
-                      <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center shadow-lg flex-shrink-0`}>
-                        <span className="text-white font-bold text-xl">{step.step}</span>
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1">
-                        {/* Icon */}
-                        <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${step.color} mb-3`}>
-                          <div className="text-white">
-                            {step.icon}
-                          </div>
-                        </div>
-
-                        {/* Title */}
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {step.title}
-                        </h3>
-
-                        {/* Subtitle */}
-                        {step.subtitle && (
-                          <p className="text-sm font-semibold text-blue-600 mb-2">
-                            {step.subtitle}
-                          </p>
-                        )}
-
-                        {/* Description */}
-                        <p className="text-gray-600 mb-4 leading-relaxed">
-                          {step.description}
-                        </p>
-
-                        {/* Details List */}
-                        <ul className="space-y-2">
-                          {step.details.map((detail, detailIndex) => (
-                            <li key={detailIndex} className="flex items-center text-sm text-gray-500">
-                              <div className={`w-2 h-2 bg-gradient-to-r ${step.color} rounded-full mr-3 flex-shrink-0`}></div>
-                              {detail}
-                            </li>
-                          ))}
-                        </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {useCases.map((useCase, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.3, duration: 0.8 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group"
+              >
+                <div className="h-full bg-gradient-to-br from-slate-800/60 to-blue-900/60 backdrop-blur-xl border border-emerald-500/20 rounded-3xl p-8 hover:border-cyan-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
+                  <div className="flex items-center mb-6">
+                    <div className="p-4 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-400/30 group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-blue-400 group-hover:text-cyan-300 transition-colors">
+                        {useCase.icon}
                       </div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-blue-400 transition-all">
+                    {useCase.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed text-lg">
+                    {useCase.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-
-          {/* Call to Action */}
-          <motion.div
-            className="text-center mt-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to Start Your LLM Journey?
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Let our experts guide you through each step of the implementation process
-              </p>
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border-0"
-              >
-                Begin Process Assessment
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-          </motion.div>
         </div>
       </section>
 
