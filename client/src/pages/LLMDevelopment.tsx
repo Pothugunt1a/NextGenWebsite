@@ -498,30 +498,30 @@ export default function LLMDevelopment() {
                     whileHover={{ y: -5, scale: 1.02 }}
                     className="group"
                   >
-                    <div className={`flex flex-col items-center justify-center p-6 w-80 min-h-64 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-cyan-500/30 shadow-2xl hover:border-blue-400/60 hover:shadow-cyan-500/30 ${
+                    <div className={`flex flex-col items-center justify-center p-4 w-56 h-52 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-cyan-500/30 shadow-2xl hover:border-blue-400/60 hover:shadow-cyan-500/30 ${
                       index === 0 ? 'rounded-l-2xl border-r-0' : 
                       index === processSteps.length - 1 ? 'rounded-r-2xl border-l-0' : 
                       'border-l-0 border-r-0'
                     }`}>
                       {/* Icon */}
-                      <div className={`p-3 rounded-xl bg-gradient-to-br ${step.color} mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`p-2 rounded-xl bg-gradient-to-br ${step.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
                         <div className="text-white">
                           {step.icon}
                         </div>
                       </div>
 
                       {/* Number */}
-                      <div className="text-cyan-400 text-lg font-bold mb-2 group-hover:text-blue-300 transition-colors">
+                      <div className="text-cyan-400 text-sm font-bold mb-1 group-hover:text-blue-300 transition-colors">
                         {step.number}
                       </div>
 
                       {/* Title */}
-                      <div className="text-white font-bold text-base leading-tight px-2 mb-3 group-hover:text-gray-100 transition-colors">
+                      <div className="text-white font-bold text-xs leading-tight px-1 mb-2 group-hover:text-gray-100 transition-colors">
                         {step.title}
                       </div>
 
                       {/* Description */}
-                      <div className="text-gray-300 text-xs leading-relaxed px-2 group-hover:text-gray-200 transition-colors">
+                      <div className="text-gray-300 text-[10px] leading-tight px-1 group-hover:text-gray-200 transition-colors overflow-hidden">
                         {step.description}
                       </div>
                     </div>
