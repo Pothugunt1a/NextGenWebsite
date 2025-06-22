@@ -37,6 +37,7 @@ import {
   Beaker,
   Heart,
   Pill,
+  Rocket,
 } from "lucide-react";
 
 const aiComponents = [
@@ -47,7 +48,7 @@ const aiComponents = [
     details:
       "Proof-of-Concept (PoC) projects typically span from a few days to several weeks, with the primary objective of validating a business concept—often still in development—or testing a key assumption. This type of feasibility assessment is conducted on a limited scale, frequently using a small data sample, to demonstrate the viability of the proposed solution.",
     duration: "Several days to several weeks",
-    icon: <Lightbulb className="h-8 w-8" />,
+    icon: <FlaskConical className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
     services: [
       "Business idea validation",
@@ -63,7 +64,7 @@ const aiComponents = [
     details:
       "Moreover, this stage enables progression toward a more advanced version that incorporates additional data samples or sources, thereby enhancing the system’s functionality. Developing a prototype is a meticulous process that typically spans from several weeks to up to three months.",
     duration: "Several weeks to three months",
-    icon: <Settings className="h-8 w-8" />,
+    icon: <Cog className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
     services: [
       "Functional prototype development",
@@ -79,7 +80,7 @@ const aiComponents = [
     details:
       "By developing a pilot, we deliver a functional system that demonstrates how your data-driven service operates in a production environment, albeit with a limited user base. This stage empowers you to begin making informed decisions based on data-driven insights, while still allowing for minor adjustments and refinements as needed.",
     duration: "30 days to several months",
-    icon: <Target className="h-8 w-8" />,
+    icon: <Rocket className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
     services: [
       "Limited production deployment",
@@ -95,7 +96,7 @@ const aiComponents = [
     details:
       "Such a system can operate either online or on-demand and may be hosted in the cloud or deployed on-premises. The development of analytical software typically requires several months to complete.",
     duration: "Couple of months",
-    icon: <Monitor className="h-8 w-8" />,
+    icon: <Factory className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
     services: [
       "Full-scale deployment",
@@ -576,7 +577,7 @@ export default function AIComponentsDevelopment() {
               >
                 <div className="mb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <BookOpen className="h-8 w-8 text-white" />
+                    <Award className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                     Scientific Research Excellence
