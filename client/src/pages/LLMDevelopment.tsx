@@ -150,36 +150,36 @@ const stats = [
   },
 ];
 
-const llmUseCases = [
+const processSteps = [
   {
+    number: "1.",
     title: "Natural Language Processing",
     icon: <img src={naturalLanguageProcessingIcon} alt="Natural Language Processing" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
-    description: "Advanced text understanding and generation capabilities"
   },
   {
+    number: "2.",
     title: "Chatbot Integration",
     icon: <img src={chatbotIntegrationIcon} alt="Chatbot Integration" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
-    description: "Seamless conversational AI integration"
   },
   {
+    number: "3.",
     title: "Sentiment Analysis",
     icon: <img src={sentimentAnalysisIcon} alt="Sentiment Analysis" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
-    description: "Understand emotions and opinions in text"
   },
   {
+    number: "4.",
     title: "AI Consultation",
     icon: <img src={chatbotConsultationIcon} alt="AI Consultation" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
-    description: "Expert guidance for AI implementation"
   },
   {
+    number: "5.",
     title: "Multi-Language Support",
     icon: <img src={multiLanguageSupportIcon} alt="Multi-Language Support" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
-    description: "Global communication across languages"
   },
 ];
 
@@ -479,38 +479,72 @@ export default function LLMDevelopment() {
             </p>
           </motion.div>
 
-          {/* Use Cases Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
-            {llmUseCases.map((useCase, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group"
-              >
-                <div className="flex flex-col items-center justify-center p-6 h-full text-center transition-all duration-500 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-cyan-500/30 rounded-2xl shadow-2xl hover:border-blue-400/60 hover:shadow-cyan-500/20 hover:shadow-xl">
-                  {/* Icon */}
-                  <div className={`p-4 rounded-xl bg-gradient-to-br ${useCase.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">
-                      {useCase.icon}
+          {/* Process Steps Flow */}
+          <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto overflow-x-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-center relative">
+              {processSteps.map((step, index) => (
+                <div key={index} className="flex items-center">
+                  {/* Step Box */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ delay: index * 0.15, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    className="group"
+                  >
+                    <div className={`flex flex-col items-center justify-center p-6 w-48 h-36 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-cyan-500/30 shadow-2xl hover:border-blue-400/60 hover:shadow-cyan-500/30 ${
+                      index === 0 ? 'rounded-l-3xl' : 
+                      index === processSteps.length - 1 ? 'rounded-r-3xl' : 
+                      'border-l-0 rounded-none'
+                    }`}>
+                      {/* Icon */}
+                      <div className={`p-3 rounded-xl bg-gradient-to-br ${step.color} mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                        <div className="text-white">
+                          {step.icon}
+                        </div>
+                      </div>
+                      
+                      {/* Number */}
+                      <div className="text-cyan-400 text-lg font-bold mb-1 group-hover:text-blue-300 transition-colors">
+                        {step.number}
+                      </div>
+                      
+                      {/* Title */}
+                      <div className="text-white font-semibold text-sm leading-tight px-2 group-hover:text-gray-100 transition-colors">
+                        {step.title}
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-white font-bold text-lg mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                    {useCase.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">
-                    {useCase.description}
-                  </p>
+                  </motion.div>
+
+                  {/* Arrow between sections */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.15 + 0.4, duration: 0.4 }}
+                      viewport={{ once: true }}
+                      className="relative z-10 -mx-1"
+                    >
+                      <div className="w-0 h-0 border-l-[15px] border-l-cyan-400/80 border-t-[18px] border-t-transparent border-b-[18px] border-b-transparent shadow-lg"></div>
+                    </motion.div>
+                  )}
+
+                  {/* Mobile vertical arrow */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.15 + 0.4, duration: 0.4 }}
+                      viewport={{ once: true }}
+                      className="lg:hidden my-4 flex justify-center"
+                    >
+                      <div className="w-0 h-0 border-t-[15px] border-t-cyan-400/80 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent shadow-lg"></div>
+                    </motion.div>
+                  )}
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
