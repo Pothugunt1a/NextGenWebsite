@@ -153,33 +153,38 @@ const stats = [
 const processSteps = [
   {
     number: "1.",
-    title: "Natural Language Processing",
-    icon: <img src={naturalLanguageProcessingIcon} alt="Natural Language Processing" className="h-8 w-8" />,
+    title: "Domain-Specific AI Solutions",
+    icon: <img src={naturalLanguageProcessingIcon} alt="Domain-Specific AI Solutions" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
+    description: "We create specialized LLMs tailored to industries such as finance, healthcare, and legal, ensuring precise and context-aware language understanding."
   },
   {
     number: "2.",
-    title: "Chatbot Integration",
-    icon: <img src={chatbotIntegrationIcon} alt="Chatbot Integration" className="h-8 w-8" />,
+    title: "Automated Content Generation",
+    icon: <img src={chatbotIntegrationIcon} alt="Automated Content Generation" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
+    description: "Our LLMs produce high-quality content for blogs, reports, and marketing materials, automating creative processes and improving efficiency."
   },
   {
     number: "3.",
-    title: "Sentiment Analysis",
-    icon: <img src={sentimentAnalysisIcon} alt="Sentiment Analysis" className="h-8 w-8" />,
+    title: "Real-Time Translation and Localization",
+    icon: <img src={sentimentAnalysisIcon} alt="Real-Time Translation and Localization" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
+    description: "We develop multilingual models that provide real-time, contextually accurate translations, improving global communication and market expansion."
   },
   {
     number: "4.",
-    title: "AI Consultation",
-    icon: <img src={chatbotConsultationIcon} alt="AI Consultation" className="h-8 w-8" />,
+    title: "AI-Powered Virtual Assistants",
+    icon: <img src={chatbotConsultationIcon} alt="AI-Powered Virtual Assistants" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
+    description: "Custom LLMs enhance chatbots and virtual assistants with superior conversational abilities, enabling businesses to deliver intelligent customer interactions."
   },
   {
     number: "5.",
-    title: "Multi-Language Support",
-    icon: <img src={multiLanguageSupportIcon} alt="Multi-Language Support" className="h-8 w-8" />,
+    title: "Document Summarization and Analysis",
+    icon: <img src={multiLanguageSupportIcon} alt="Document Summarization and Analysis" className="h-8 w-8" />,
     color: "from-blue-500 to-cyan-500",
+    description: "LLMs simplify complex information by summarizing legal, financial, or research documents, helping businesses extract key insights effortlessly."
   },
 ];
 
@@ -543,6 +548,42 @@ export default function LLMDevelopment() {
                     </motion.div>
                   )}
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Detailed Descriptions Section */}
+          <div className="mt-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="group"
+                >
+                  <div className="h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className={`p-3 rounded-xl bg-gradient-to-br ${step.color} group-hover:scale-110 transition-transform duration-300`}>
+                        <div className="text-white">
+                          {step.icon}
+                        </div>
+                      </div>
+                      <div>
+                        <span className="text-cyan-400 text-lg font-bold">{step.number}</span>
+                        <h3 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {step.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
