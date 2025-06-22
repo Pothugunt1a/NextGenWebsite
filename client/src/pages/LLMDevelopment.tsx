@@ -460,26 +460,42 @@ export default function LLMDevelopment() {
 
           {/* Process Steps Flow */}
           <div className="flex flex-col lg:flex-row items-center justify-center max-w-6xl mx-auto overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-center bg-white rounded-3xl border-2 border-gray-300 shadow-lg p-2">
+            <div className="flex flex-col lg:flex-row items-center justify-center relative">
               {processSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className={`flex flex-col items-center justify-center p-4 w-44 h-28 text-center transition-all duration-300 hover:bg-gray-50 ${
-                    index === 0 ? 'rounded-l-3xl' : 
-                    index === processSteps.length - 1 ? 'rounded-r-3xl' : ''
-                  } ${index < processSteps.length - 1 ? 'border-r border-gray-300' : ''}`}
-                >
-                  <div className="text-blue-500 text-xl font-bold mb-1">
-                    {step.number}
-                  </div>
-                  <div className="text-gray-800 font-semibold text-xs leading-tight px-2">
-                    {step.title}
-                  </div>
-                </motion.div>
+                <div key={index} className="flex items-center">
+                  {/* Step Box */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className={`flex flex-col items-center justify-center p-4 w-44 h-28 text-center transition-all duration-300 hover:bg-gray-50 bg-white border-2 border-gray-300 shadow-lg ${
+                      index === 0 ? 'rounded-l-3xl' : 
+                      index === processSteps.length - 1 ? 'rounded-r-3xl' : 
+                      'border-l-0'
+                    }`}
+                  >
+                    <div className="text-blue-500 text-xl font-bold mb-1">
+                      {step.number}
+                    </div>
+                    <div className="text-gray-800 font-semibold text-xs leading-tight px-2">
+                      {step.title}
+                    </div>
+                  </motion.div>
+
+                  {/* Arrow between sections */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 + 0.3, duration: 0.3 }}
+                      viewport={{ once: true }}
+                      className="relative z-10 -mx-1"
+                    >
+                      <div className="w-0 h-0 border-l-[12px] border-l-gray-400 border-t-[14px] border-t-transparent border-b-[14px] border-b-transparent bg-white shadow-md"></div>
+                    </motion.div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
