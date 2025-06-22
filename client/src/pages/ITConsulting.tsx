@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -386,20 +385,20 @@ export default function ITConsulting() {
         </section>
 
         {/* Benefits Section */}
-        <section className="relative py-16 overflow-hidden">
+        <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Benefits of Our IT Consulting Services
-                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mt-2 mx-auto"></div>
               </h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 With our focus on training and certification, you can be certain that AI Technologies, LLC employs only the most qualified Salesforce.com-certified professionals with extensive expertise in Force.com business cloud application development.
               </p>
             </motion.div>
@@ -409,21 +408,28 @@ export default function ITConsulting() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-xl p-8 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 text-center"
                   variants={itemVariants}
+                  whileHover={{ y: -10, scale: 1.05 }}
+                  className="group"
                 >
-                  <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-xl mb-6 mx-auto border border-green-500/30">
-                    {benefit.icon}
+                  <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                    <div className="flex justify-center mb-6">
+                      <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                        <div className="text-white">{benefit.icon}</div>
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      {benefit.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-white">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-400">{benefit.description}</p>
                 </motion.div>
               ))}
             </motion.div>
