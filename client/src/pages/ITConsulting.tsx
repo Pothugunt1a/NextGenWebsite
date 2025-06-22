@@ -333,7 +333,7 @@ export default function ITConsulting() {
         </div>
       </section>
 
-      {/* Interactive Services Section */}
+      {/* Interactive Services Section - FIXED COMPONENT */}
       <section className="py-16 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
