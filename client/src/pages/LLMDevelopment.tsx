@@ -498,7 +498,7 @@ export default function LLMDevelopment() {
                     whileHover={{ y: -5, scale: 1.02 }}
                     className="group"
                   >
-                    <div className={`flex flex-col items-center justify-center p-4 w-56 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-cyan-500/30 shadow-2xl hover:border-blue-400/60 hover:shadow-cyan-500/30 ${
+                    <div className={`flex flex-col items-center justify-center p-4 w-56 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 shadow-2xl hover:border-blue-400/40 hover:shadow-2xl hover:shadow-blue-500/20 ${
                       index === 0 ? 'rounded-l-2xl border-r-0' : 
                       index === processSteps.length - 1 ? 'rounded-r-2xl border-l-0' : 
                       'border-l-0 border-r-0'
@@ -536,7 +536,7 @@ export default function LLMDevelopment() {
                       viewport={{ once: true }}
                       className="relative z-10 -mx-1"
                     >
-                      <div className="w-0 h-0 border-l-[15px] border-l-cyan-400/80 border-t-[18px] border-t-transparent border-b-[18px] border-b-transparent shadow-lg"></div>
+                      <div className="w-0 h-0 border-l-[15px] border-l-blue-500 border-t-[18px] border-t-transparent border-b-[18px] border-b-transparent shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500"></div>
                     </motion.div>
                   )}
 
@@ -549,7 +549,7 @@ export default function LLMDevelopment() {
                       viewport={{ once: true }}
                       className="lg:hidden my-4 flex justify-center"
                     >
-                      <div className="w-0 h-0 border-t-[15px] border-t-cyan-400/80 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent shadow-lg"></div>
+                      <div className="w-0 h-0 border-t-[15px] border-t-blue-500 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500"></div>
                     </motion.div>
                   )}
                 </div>
