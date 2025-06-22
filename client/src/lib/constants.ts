@@ -149,8 +149,11 @@ export const navLinks = [
     dropdownItems: [
       {
         name: "AI Consulting",
-        href: "/ai-consulting",
-        items: [],
+        items: [
+          { name: "AI and Data Strategy", href: "/ai-data-strategy" },
+          { name: "Process Optimization with AI", href: "/process-optimization" },
+          { name: "AI Usecase Discovery & Identification", href: "/ai-usecase-discovery" },
+        ],
       },
       {
         name: "AI Software Development",

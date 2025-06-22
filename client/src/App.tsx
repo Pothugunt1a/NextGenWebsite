@@ -17,6 +17,7 @@ import AIDataStrategy from "./pages/AIDataStrategy";
 import ProcessOptimization from "./pages/ProcessOptimization";
 import AIComponentsDevelopment from "./pages/AIComponentsDevelopment";
 import LLMDevelopment from "./pages/LLMDevelopment";
+import AIUsecase from "./pages/AIUsecase";
 
 function Router() {
   return (
@@ -34,6 +35,7 @@ function Router() {
         <Route path="/process-optimization" component={ProcessOptimization} />
         <Route path="/ai-components-development" component={AIComponentsDevelopment} />
         <Route path="/llm-development" component={LLMDevelopment} />
+        <Route path="/ai-usecase-discovery" component={AIUsecase} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
