@@ -271,7 +271,7 @@ export default function LifeScience() {
               {/* Middle Row - Central Image with side components */}
               <div className="lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                 
-                {/* Left Column - Regulatory Affairs */}
+                {/* Left Column - Pharmacovigilance / Drug Safety */}
                 <motion.div
                   initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -282,14 +282,14 @@ export default function LifeScience() {
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
-                        src={services[3].backgroundImage}
-                        alt={services[3].title}
+                        src={services[2].backgroundImage}
+                        alt={services[2].title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         style={{ backgroundAttachment: "fixed" }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <ScrollText className="h-6 w-6 text-white" />
+                        <Beaker className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -299,10 +299,10 @@ export default function LifeScience() {
                         </div>
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {services[3].title}
+                        {services[2].title}
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
-                        {services[3].description}
+                        {services[2].description}
                       </p>
                     </div>
                   </div>
@@ -360,7 +360,7 @@ export default function LifeScience() {
                   </div>
                 </motion.div>
 
-                {/* Right Column - Pharmacovigilance / Drug Safety */}
+                {/* Right Column - Regulatory Affairs */}
                 <motion.div
                   initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -371,14 +371,14 @@ export default function LifeScience() {
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
-                        src={services[2].backgroundImage}
-                        alt={services[2].title}
+                        src={services[3].backgroundImage}
+                        alt={services[3].title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         style={{ backgroundAttachment: "fixed" }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Beaker className="h-6 w-6 text-white" />
+                        <ScrollText className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -388,10 +388,10 @@ export default function LifeScience() {
                         </div>
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {services[2].title}
+                        {services[3].title}
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
-                        {services[2].description}
+                        {services[3].description}
                       </p>
                     </div>
                   </div>
