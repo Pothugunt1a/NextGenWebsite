@@ -612,7 +612,9 @@ export default function AIChatbotDevelopment() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">AI Chatbot FAQs</h2>
+              <h2 className="text-4xl font-bold text-white mb-6">
+                AI Chatbot FAQs
+              </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300">
                 Common questions about our AI chatbot development services
@@ -625,7 +627,7 @@ export default function AIChatbotDevelopment() {
                 <div className="relative group">
                   <div className="relative overflow-hidden rounded-2xl">
                     <img
-                      src="/assets/AI-chatbot.gif"
+                      src="/assets/AI-Chatbot.gif"
                       alt="AI Chatbot Technology"
                       className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -635,7 +637,8 @@ export default function AIChatbotDevelopment() {
                         AI-Powered Chatbots
                       </h3>
                       <p className="text-gray-200 text-sm">
-                        Transforming customer interactions through intelligent conversational AI
+                        Transforming customer interactions through intelligent
+                        conversational AI
                       </p>
                     </div>
                   </div>
