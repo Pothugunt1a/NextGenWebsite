@@ -624,24 +624,12 @@ export default function AIChatbotDevelopment() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               {/* Left Side - AI Chatbot Image */}
               <div className="lg:col-span-5">
-                <div className="relative group">
-                  <div className="relative overflow-hidden rounded-2xl">
-                    <img
-                      src="/assets/AI-Chatbot.gif"
-                      alt="AI Chatbot Technology"
-                      className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">
-                        AI-Powered Chatbots
-                      </h3>
-                      <p className="text-gray-200 text-sm">
-                        Transforming customer interactions through intelligent
-                        conversational AI
-                      </p>
-                    </div>
-                  </div>
+                <div className="relative">
+                  <img
+                    src="/assets/AI-Chatbot.gif"
+                    alt="AI Chatbot Technology"
+                    className="w-full h-[500px] object-cover"
+                  />
                 </div>
               </div>
 
