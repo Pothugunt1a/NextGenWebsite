@@ -304,7 +304,7 @@ export default function AIChatbotDevelopment() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="/assets/AI-chatbot-banner.png"
+            src="/assets/AI-Chatbot-banner.png"
             alt="AI Chatbot Development"
             className="w-full h-full object-cover"
           />
@@ -337,7 +337,9 @@ export default function AIChatbotDevelopment() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Leverage the power of AI chatbots to improve customer satisfaction and take your business to new heights with intelligent conversational solutions
+              Leverage the power of AI chatbots to improve customer satisfaction
+              and take your business to new heights with intelligent
+              conversational solutions
             </motion.p>
 
             {/* Badge */}
@@ -603,41 +605,59 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* FAQs Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              AI Chatbot FAQs
-            </h2>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left side - Image */}
-            <div className="flex justify-center">
-              <img
-                src="/assets/AI-chatbot.gif"
-                alt="AI Chatbot Animation"
-                className="max-w-full h-auto rounded-lg"
-              />
+      <section className="py-16 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">AI Chatbot FAQs</h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300">
+                Common questions about our AI chatbot development services
+              </p>
             </div>
 
-            {/* Right side - FAQs */}
-            <div>
-              <Accordion type="single" collapsible className="space-y-4">
-                {faqs.map((faq, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="bg-gray-800 rounded-lg px-6 border border-gray-700"
-                  >
-                    <AccordionTrigger className="text-left font-semibold text-white">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-gray-300 pt-4">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              {/* Left Side - AI Chatbot Image */}
+              <div className="lg:col-span-5">
+                <div className="relative group">
+                  <div className="relative overflow-hidden rounded-2xl">
+                    <img
+                      src="/assets/AI-chatbot.gif"
+                      alt="AI Chatbot Technology"
+                      className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        AI-Powered Chatbots
+                      </h3>
+                      <p className="text-gray-200 text-sm">
+                        Transforming customer interactions through intelligent conversational AI
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - FAQ Content */}
+              <div className="lg:col-span-7">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <AccordionItem
+                      key={index}
+                      value={`item-${index}`}
+                      className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 overflow-hidden"
+                    >
+                      <AccordionTrigger className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors text-lg font-semibold text-white pr-4">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-6 text-gray-400 leading-relaxed">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
             </div>
           </div>
         </div>
