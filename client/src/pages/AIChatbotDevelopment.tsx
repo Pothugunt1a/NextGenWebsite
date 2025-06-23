@@ -596,92 +596,288 @@ export default function AIChatbotDevelopment() {
         </div>
       </section>
 
-      {/* Development Flow Section - Updated to match "How we work" style */}
-      <section className="py-16 bg-light relative">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-        </div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Our AI Chatbot Development Flow
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We follow a systematic approach for all AI projects. So when you choose us, here's what you can expect
-            </p>
-          </motion.div>
-
+      {/* Development Flow Section */}
+      <section className="py-16 text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              {/* Left side - Process steps */}
-              <motion.div
-                className="space-y-8"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                {developmentFlow.map((step, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex gap-6 group"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    {/* Step number */}
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-white font-bold text-lg">
-                          {step.step}
-                        </span>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Our AI Chatbot Development Flow
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We follow a systematic approach for all AI chatbot projects. So when you choose us, here's what you can expect
+              </p>
+            </div>
+
+            {/* Circular Process Layout */}
+            <div className="relative flex items-center justify-center min-h-[800px] lg:min-h-[900px] px-8">
+              {/* Central Circle */}
+              <div className="relative z-20">
+                <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl">
+                  <div className="w-40 h-40 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex flex-col items-center justify-center border-4 border-blue-400/20">
+                    <div className="text-white mb-2">
+                      <Bot className="w-12 h-12" />
+                    </div>
+                    <div className="text-center">
+                      <div className="text-white font-bold text-lg">CHATBOT</div>
+                      <div className="text-white font-bold text-lg">
+                        PROCESS
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
 
-                    {/* Step content */}
-                    <div className="flex-1 pt-2">
-                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                        {step.title}
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        {step.description}
+              {/* Dotted Circle Path */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                style={{ zIndex: 1 }}
+              >
+                <defs>
+                  <linearGradient
+                    id="chatbotProcessGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.7" />
+                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.7" />
+                  </linearGradient>
+                </defs>
+
+                {/* Dotted circle that connects all process steps */}
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="180"
+                  stroke="url(#chatbotProcessGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray="8,6"
+                  className="opacity-80"
+                />
+              </svg>
+
+              {/* Process Steps - Positioned clockwise starting from top-left */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Step 1 - Top Left (10 o'clock) - Validation Stage */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "calc(50% - 127px)",
+                    left: "calc(50% - 127px)",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "12rem", marginBottom: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <CheckCircle className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Validation stage
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Understand and analyze your challenges, identify project scope, objectives, and goals, develop a strategy to incorporate AI chatbots
                       </p>
                     </div>
                   </motion.div>
-                ))}
-              </motion.div>
-
-              {/* Right side - Image */}
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 p-1">
-                  <div className="bg-gray-900/50 rounded-3xl p-8 backdrop-blur-sm">
-                    <img
-                      src="/assets/AI-Chatbot.gif"
-                      alt="AI Chatbot Development Process"
-                      className="w-full h-80 lg:h-96 object-cover rounded-2xl"
-                    />
-                  </div>
                 </div>
 
-                {/* Floating elements */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
-                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-              </motion.div>
+                {/* Step 2 - Top Right (2 o'clock) - Selecting Technology */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "calc(50% - 127px)",
+                    right: "calc(50% - 127px)",
+                    transform: "translate(50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "12rem", marginBottom: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Settings className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Selecting technology
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Decide between rule-based and AI chatbot models, evaluate and choose communication channels, explore integration options with existing systems
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 3 - Right Side (3 o'clock) - Designing Conversations */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "50%",
+                    right: "calc(50% - 180px)",
+                    transform: "translate(50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "14rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <MessageSquare className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Designing conversations
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Map user journeys and possible dialogue paths, design conversational flows that mimic human interactions, personalize conversations to enhance user engagement
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 4 - Bottom Right (4 o'clock) - Training Models */}
+                <div
+                  className="absolute"
+                  style={{
+                    bottom: "calc(50% - 127px)",
+                    right: "calc(50% - 127px)",
+                    transform: "translate(50%, 50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "12rem", marginTop: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Bot className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Training models
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Gather and pre-process data to train the chatbot, fine-tune the AI model to understand industry jargon, maximize accuracy and improve performance
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 5 - Bottom Left (8 o'clock) - Testing */}
+                <div
+                  className="absolute"
+                  style={{
+                    bottom: "calc(50% - 127px)",
+                    left: "calc(50% - 127px)",
+                    transform: "translate(-50%, 50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "12rem", marginTop: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Shield className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Testing
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Gather feedback by conducting usability testing, ensure context-aware and accurate responses in different scenarios, refine the chatbot's responses depending on user interactions
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 6 - Left Side (9 o'clock) - Deployment & Maintenance */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "50%",
+                    left: "calc(50% - 180px)",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "14rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Zap className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Deployment & maintenance
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Launch the chatbot on the chosen platforms, monitor real-time performance and user engagement, continuously optimize the chatbot based on user feedback
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
