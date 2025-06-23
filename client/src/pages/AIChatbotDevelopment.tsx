@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -7,6 +8,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -229,31 +236,37 @@ export default function AIChatbotDevelopment() {
 
   const developmentFlow = [
     {
+      step: "01",
       title: "Validation stage",
       description:
         "Understand and analyze your challenges, identify project scope, objectives, and goals, develop a strategy to incorporate AI chatbots",
     },
     {
+      step: "02",
       title: "Selecting technology",
       description:
         "Decide between rule-based and AI chatbot models, evaluate and choose communication channels, explore integration options with existing systems",
     },
     {
+      step: "03",
       title: "Designing conversations",
       description:
         "Map user journeys and possible dialogue paths, design conversational flows that mimic human interactions, personalize conversations to enhance user engagement",
     },
     {
+      step: "04",
       title: "Training models",
       description:
         "Gather and pre-process data to train the chatbot, fine-tune the AI model to understand industry jargon, maximize accuracy and improve performance",
     },
     {
+      step: "05",
       title: "Testing",
       description:
         "Gather feedback by conducting usability testing, ensure context-aware and accurate responses in different scenarios, refine the chatbot's responses depending on user interactions",
     },
     {
+      step: "06",
       title: "Deployment & maintenance",
       description:
         "Launch the chatbot on the chosen platforms, monitor real-time performance and user engagement, continuously optimize the chatbot based on user feedback",
@@ -412,8 +425,12 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our AI Chatbot Development Services
@@ -428,7 +445,7 @@ export default function AIChatbotDevelopment() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-colors">
+                <Card className="p-6 bg-gray-800/80 border-gray-700 hover:bg-gray-750/80 transition-colors backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center gap-4 mb-4">
                       <div className="text-blue-400">{service.icon}</div>
@@ -450,8 +467,12 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Advantages Section */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Advantages of Integrating AI-Powered Chatbots Into Your Business
@@ -467,7 +488,7 @@ export default function AIChatbotDevelopment() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-6 bg-gray-700 border-gray-600 hover:bg-gray-650 transition-colors">
+                <Card className="p-6 bg-gray-700/80 border-gray-600 hover:bg-gray-650/80 transition-colors backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-xl mb-4 text-white">
                       {advantage.title}
@@ -486,8 +507,12 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Why Choose Us as Your AI Chatbot Development Company?
@@ -508,7 +533,7 @@ export default function AIChatbotDevelopment() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-6 text-center bg-gray-800 border-gray-700 hover:bg-gray-750 transition-colors">
+                <Card className="p-6 text-center bg-gray-800/80 border-gray-700 hover:bg-gray-750/80 transition-colors backdrop-blur-sm">
                   <CardHeader>
                     <div className="mx-auto text-blue-400 mb-4">
                       {item.icon}
@@ -530,8 +555,12 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               How Our Chatbot Can Help Businesses in Different Industries
@@ -546,7 +575,7 @@ export default function AIChatbotDevelopment() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-6 text-center bg-gray-700 border-gray-600 hover:bg-gray-650 transition-colors">
+                <Card className="p-6 text-center bg-gray-700/80 border-gray-600 hover:bg-gray-650/80 transition-colors backdrop-blur-sm">
                   <CardHeader>
                     <div className="mx-auto text-blue-400 mb-4">
                       {industry.icon}
@@ -567,49 +596,104 @@ export default function AIChatbotDevelopment() {
         </div>
       </section>
 
-      {/* Development Flow Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      {/* Development Flow Section - Updated to match "How we work" style */}
+      <section className="py-16 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Our AI Chatbot Development Flow
             </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Are you looking for a Chatbot development company that can elevate
-              your customer engagement, unlock business potential, and provide
-              tailored multi-platform solutions?
+              We follow a systematic approach for all AI projects. So when you choose us, here's what you can expect
             </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              {developmentFlow.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-6"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                    {index + 1}
+          </motion.div>
+
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              {/* Left side - Process steps */}
+              <motion.div
+                className="space-y-8"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                {developmentFlow.map((step, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex gap-6 group"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {/* Step number */}
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white font-bold text-lg">
+                          {step.step}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Step content */}
+                    <div className="flex-1 pt-2">
+                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Right side - Image */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 p-1">
+                  <div className="bg-gray-900/50 rounded-3xl p-8 backdrop-blur-sm">
+                    <img
+                      src="/assets/AI-Chatbot.gif"
+                      alt="AI Chatbot Development Process"
+                      className="w-full h-80 lg:h-96 object-cover rounded-2xl"
+                    />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-300">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+                </div>
+
+                {/* Floating elements */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQs Section */}
-      <section className="py-16 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 text-white bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
@@ -635,35 +719,26 @@ export default function AIChatbotDevelopment() {
 
               {/* Right Side - FAQ Content */}
               <div className="lg:col-span-7">
-                <div className="space-y-4">
+                <Accordion type="single" collapsible className="space-y-4">
                   {faqs.map((faq, index) => (
-                    <div
+                    <AccordionItem
                       key={index}
-                      className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 overflow-hidden"
+                      value={`item-${index}`}
+                      className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-xl border border-gray-700 overflow-hidden backdrop-blur-sm"
                     >
-                      <button
-                        className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors"
-                        onClick={() => toggleFaq(index)}
-                      >
+                      <AccordionTrigger className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors">
                         <h3 className="text-lg font-semibold text-white pr-4">
                           {faq.question}
                         </h3>
-                        {openFaq === index ? (
-                          <ChevronUp className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                        ) : (
-                          <ChevronDown className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                        )}
-                      </button>
-                      {openFaq === index && (
-                        <div className="px-6 pb-6">
-                          <p className="text-gray-400 leading-relaxed">
-                            {faq.answer}
-                          </p>
-                        </div>
-                      )}
-                    </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-6">
+                        <p className="text-gray-400 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
                   ))}
-                </div>
+                </Accordion>
               </div>
             </div>
           </div>
@@ -671,8 +746,12 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
