@@ -355,7 +355,7 @@ export default function LLMDevelopment() {
               viewport={{ once: true }}
             >
               <img
-                src="/assets/LLM.png"
+                src="./assets/LLM.png"
                 alt="LLM Development"
                 className="w-full h-80 lg:h-96 object-cover rounded-2xl"
               />
