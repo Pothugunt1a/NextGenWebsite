@@ -320,7 +320,7 @@ export default function AIChatbotDevelopment() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="/assets/AI-Chatbot-banner.png"
+            src="./assets/AI-Chatbot-banner.png"
             alt="AI Chatbot Development"
             className="w-full h-full object-cover"
           />
@@ -906,7 +906,7 @@ export default function AIChatbotDevelopment() {
               <div className="lg:col-span-5">
                 <div className="relative">
                   <img
-                    src="/assets/AI-Chatbot.gif"
+                    src="./assets/AI-Chatbot.gif"
                     alt="AI Chatbot Technology"
                     className="w-full h-[500px] object-cover"
                   />
