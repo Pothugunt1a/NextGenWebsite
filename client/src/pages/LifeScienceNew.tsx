@@ -187,52 +187,104 @@ export default function LifeScience() {
             </p>
           </motion.div>
 
-          {/* Unique Spiral Layout */}
+          {/* Restructured Layout */}
           <div className="max-w-8xl mx-auto relative">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div className="grid grid-cols-1 gap-8">
               
-              {/* Top Row - Clinical Operations and Biometrics */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Clinical Operations */}
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={services[0].backgroundImage}
-                        alt={services[0].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Stethoscope className="h-6 w-6 text-white" />
+              {/* First Row - Clinical Operations */}
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="group cursor-pointer"
+              >
+                <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                    <img
+                      src={services[0].backgroundImage}
+                      alt={services[0].title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={{ backgroundAttachment: "fixed" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Stethoscope className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        01
                       </div>
                     </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          01
-                        </div>
+                    <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {services[0].title}
+                    </h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {services[0].description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Second Row - Main Feature Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, type: "spring" }}
+                className="relative group"
+              >
+                {/* Main Feature Card */}
+                <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                  <div className="absolute inset-0">
+                    <img
+                      src="/assets/Life-science-solution.jpg"
+                      alt="Life Science Innovation"
+                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                      style={{ backgroundAttachment: "fixed" }}
+                    />
+                  </div>
+
+                  {/* Floating Elements */}
+                  <div className="absolute top-8 right-8 flex flex-col gap-4">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                      <Target className="h-8 w-8 text-white" />
+                    </div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                      Hub
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="mb-4">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span className="text-blue-200 text-sm font-medium">
+                          Innovation Hub
+                        </span>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {services[0].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {services[0].description}
+                      <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                        Life Science Solutions
+                      </h3>
+                      <p className="text-blue-100 leading-relaxed mb-6">
+                        Comprehensive suite of advanced life science solutions
+                        powered by cutting-edge technology and regulatory
+                        expertise to accelerate your research and development
+                        processes.
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
+              {/* Third Row - All Four Cards with Same Size */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Biometrics */}
                 <motion.div
-                  initial={{ opacity: 0, x: 100 }}
+                  initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
@@ -266,73 +318,17 @@ export default function LifeScience() {
                     </div>
                   </div>
                 </motion.div>
-              </div>
 
-              {/* Middle Row with Image (Left) and Pharmacovigilance (Right) */}
-              <div className="lg:col-span-2">
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, type: "spring" }}
-                  className="relative group"
-                >
-                  {/* Main Feature Card */}
-                  <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
-                    <div className="absolute inset-0">
-                      <img
-                        src="/assets/Life-science-solution.jpg"
-                        alt="Life Science Innovation"
-                        className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                    </div>
-
-                    {/* Floating Elements */}
-                    <div className="absolute top-8 right-8 flex flex-col gap-4">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                        <Target className="h-8 w-8 text-white" />
-                      </div>
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                        Hub
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="mb-4">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">
-                            Innovation Hub
-                          </span>
-                        </div>
-                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
-                          Life Science Solutions
-                        </h3>
-                        <p className="text-blue-100 leading-relaxed mb-6">
-                          Comprehensive suite of advanced life science solutions
-                          powered by cutting-edge technology and regulatory
-                          expertise to accelerate your research and development
-                          processes.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Pharmacovigilance / Drug Safety - Right side next to image */}
-              <div className="lg:col-span-1 flex items-center">
+                {/* Pharmacovigilance / Drug Safety */}
                 <motion.div
                   initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="group cursor-pointer w-full"
+                  className="group cursor-pointer"
                 >
-                  <div className="flex flex-col gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden mx-auto">
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
                         src={services[2].backgroundImage}
                         alt={services[2].title}
@@ -344,8 +340,8 @@ export default function LifeScience() {
                         <Beaker className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                    <div className="text-center">
-                      <div className="flex justify-center mb-2">
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
                         <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                           03
                         </div>
@@ -359,10 +355,7 @@ export default function LifeScience() {
                     </div>
                   </div>
                 </motion.div>
-              </div>
 
-              {/* Bottom Row - Regulatory Affairs and Quality and Compliance */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 {/* Regulatory Affairs */}
                 <motion.div
                   initial={{ opacity: 0, y: 100 }}
