@@ -18,6 +18,7 @@ import ProcessOptimization from "./pages/ProcessOptimization";
 import AIComponentsDevelopment from "./pages/AIComponentsDevelopment";
 import LLMDevelopment from "./pages/LLMDevelopment";
 import AIUsecase from "./pages/AIUsecase";
+import AIChatbotDevelopment from "./pages/AIChatbotDevelopment";
 
 function Router() {
   return (
@@ -36,6 +37,7 @@ function Router() {
         <Route path="/ai-components-development" component={AIComponentsDevelopment} />
         <Route path="/llm-development" component={LLMDevelopment} />
         <Route path="/ai-usecase-discovery" component={AIUsecase} />
+        <Route path="/ai-chatbot-development" component={AIChatbotDevelopment} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
