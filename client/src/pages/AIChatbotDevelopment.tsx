@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -8,12 +9,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import {
   CheckCircle,
   MessageSquare,
@@ -35,9 +30,17 @@ import {
   Sparkles,
   Clock,
   TrendingUp,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 export default function AIChatbotDevelopment() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   const stats = [
     {
       icon: <Target className="h-8 w-8" />,
@@ -641,22 +644,35 @@ export default function AIChatbotDevelopment() {
 
               {/* Right Side - FAQ Content */}
               <div className="lg:col-span-7">
-                <Accordion type="single" collapsible className="space-y-4">
+                <div className="space-y-4">
                   {faqs.map((faq, index) => (
-                    <AccordionItem
+                    <div
                       key={index}
-                      value={`item-${index}`}
                       className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 overflow-hidden"
                     >
-                      <AccordionTrigger className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors text-lg font-semibold text-white pr-4">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-6 text-gray-400 leading-relaxed">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
+                      <button
+                        className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors"
+                        onClick={() => toggleFaq(index)}
+                      >
+                        <h3 className="text-lg font-semibold text-white pr-4">
+                          {faq.question}
+                        </h3>
+                        {openFaq === index ? (
+                          <ChevronUp className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                        ) : (
+                          <ChevronDown className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                        )}
+                      </button>
+                      {openFaq === index && (
+                        <div className="px-6 pb-6">
+                          <p className="text-gray-400 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   ))}
-                </Accordion>
+                </div>
               </div>
             </div>
           </div>
