@@ -283,7 +283,7 @@ export default function AIConsulting() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div className="relatiCapabilitiesngifner mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -652,7 +652,7 @@ export default function AIConsulting() {
                       <img
                         src="/assets/AI-Capabilities.gif"
                         alt="AI Consulting Capabilities"
-                        className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
