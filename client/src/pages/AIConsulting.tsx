@@ -630,12 +630,12 @@ export default function AIConsulting() {
                   className="relative group"
                 >
                   {/* Main Feature Card */}
-                  <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
-                    <div className="absolute inset-0">
+                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="relative w-full">
                       <img
                         src="/assets/AI-Capabilities.gif"
                         alt="AI Consulting Capabilities"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
