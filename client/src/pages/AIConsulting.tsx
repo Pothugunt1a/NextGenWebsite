@@ -133,9 +133,9 @@ const capabilities = [
         <Brain className="h-8 w-8 text-white" />
       </div>
     ),
-    title: "AI Strategy & Roadmap",
+    title: "AI and Data Strategy",
     description:
-      "Comprehensive AI strategy development aligned with your business objectives, including technology assessment and implementation roadmaps.",
+      "Data is often referred to as digital gold due to its potential to generate meaningful insights. However, to extract real value, the quality of data is critical. Our AI and data strategy includes comprehensive auditing, validation, verification, and cleansing processes to ensure only high-quality data is used. We also strictly adhere to data privacy regulations such as HIPAA and GDPR when managing sensitive information, ensuring compliance and security throughout.",
   },
   {
     icon: (
@@ -143,9 +143,9 @@ const capabilities = [
         <Lightbulb className="h-8 w-8 text-white" />
       </div>
     ),
-    title: "Use Case Identification",
+    title: "Process Optimization with AI",
     description:
-      "Systematic identification and prioritization of AI opportunities across your organization to maximize ROI and business impact.",
+      "Enhance and streamline your business operations through intelligent AI integration. At AI Superior, we help identify inefficiencies and implement AI-driven solutions to increase productivity and operational effectiveness. Our experts guide you in discovering the potential of AI within your unique business environment, developing and deploying tailored strategies that support sustainable growth and efficiency.",
   },
   {
     icon: (
@@ -153,9 +153,9 @@ const capabilities = [
         <Target className="h-8 w-8 text-white" />
       </div>
     ),
-    title: "Proof of Concept Development",
+    title: "AI Use Case Discovery & Identification",
     description:
-      "Rapid prototyping and validation of AI solutions to demonstrate value and feasibility before full-scale implementation.",
+      "We evaluate your business processes to uncover where AI can drive the most value—improving efficiency, enhancing customer experience, and supporting strategic goals. By assessing your organization’s AI readiness, we help prioritize high-impact use cases and create a roadmap for implementation, including validation and prototyping. Whether you're exploring AI for the first time or refining your current approach, we provide expert support at every stage.",
   },
   {
     icon: (
@@ -163,9 +163,9 @@ const capabilities = [
         <Users className="h-8 w-8 text-white" />
       </div>
     ),
-    title: "Team Training & Enablement",
+    title: "AI Training",
     description:
-      "Comprehensive training programs to upskill your team and ensure successful adoption of AI technologies.",
+      "Our workshops and training programs are designed to empower your team with the knowledge needed to effectively leverage AI. From understanding foundational concepts to applying AI in practical business contexts, our training ensures your organization stays ahead in a competitive, tech-driven landscape. We focus on delivering value through knowledge, helping stakeholders and teams make informed decisions about AI adoption.",
   },
   {
     icon: (
@@ -173,20 +173,11 @@ const capabilities = [
         <Zap className="h-8 w-8 text-white" />
       </div>
     ),
-    title: "Process Optimization",
+    title: "Generative AI Development",
     description:
-      "AI-powered process analysis and optimization to improve efficiency, reduce costs, and enhance decision-making.",
+      "Leverage the latest in AI innovation with our custom Generative AI development services. Our team specializes in building advanced Large Language Models (LLMs) and generative systems inspired by technologies like ChatGPT and DALL·E. Every solution is tailored to your business goals, ensuring a seamless fit with your operations while delivering powerful, creative AI capabilities.",
   },
-  {
-    icon: (
-      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-        <Shield className="h-8 w-8 text-white" />
-      </div>
-    ),
-    title: "AI Governance & Ethics",
-    description:
-      "Establishing responsible AI frameworks, bias detection, and compliance systems to ensure ethical AI deployment.",
-  },
+
 ];
 
 const techStack = [
@@ -340,8 +331,6 @@ export default function AIConsulting() {
           </motion.div>
         </div>
       </section>
-
-
 
       {/* Why Work With Us Section */}
       <section className="py-16 text-white relative overflow-hidden">
@@ -538,35 +527,397 @@ export default function AIConsulting() {
         </div>
       </section>
 
-      {/* Main AI Consulting Capabilities */}
-      <section className="py-16 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Our main AI consulting capabilities
-              </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {capabilities.map((capability, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20"
+      {/* Main AI Consulting Capabilities - Life Science Style */}
+      <div className="py-20 bg-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl font-bold mb-6 text-white">
+              Our main AI consulting capabilities
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive AI consulting solutions designed to accelerate your
+              digital transformation and innovation
+            </p>
+          </motion.div>
+
+          {/* 2x2 Grid Layout with Central Image */}
+          <div className="max-w-8xl mx-auto relative">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* Top Row - AI and Data Strategy and Process Optimization */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* AI and Data Strategy */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
                 >
-                  <div className="mb-6">{capability.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-4">
-                    {capability.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {capability.description}
-                  </p>
-                </div>
-              ))}
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={capabilities[0].backgroundImage}
+                        alt={capabilities[0].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Brain className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          01
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {capabilities[0].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {capabilities[0].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Process Optimization */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={capabilities[1].backgroundImage}
+                        alt={capabilities[1].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Lightbulb className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          02
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {capabilities[1].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {capabilities[1].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Second Row - Central Image with AI Use Case Discovery */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Central Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, type: "spring" }}
+                  className="relative group"
+                >
+                  {/* Main Feature Card */}
+                  <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="absolute inset-0">
+                      <img
+                        src="/assets/AI-Capabilities.gif"
+                        alt="AI Consulting Capabilities"
+                        className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                        style={{ backgroundAttachment: "fixed" }}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/assets/AI-Consulting.png";
+                        }}
+                      />
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 flex flex-col gap-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Brain className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        AI
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-sm font-medium">
+                            AI Innovation Hub
+                          </span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                          AI Consulting Capabilities
+                        </h3>
+                        <p className="text-blue-100 leading-relaxed mb-6">
+                          Comprehensive suite of advanced AI consulting solutions
+                          powered by cutting-edge technology and strategic expertise to accelerate your
+                          digital transformation processes.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* AI Use Case Discovery */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={capabilities[2].backgroundImage}
+                        alt={capabilities[2].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Target className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          03
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {capabilities[2].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {capabilities[2].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Third Row - AI Training and Generative AI Development */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* AI Training */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={capabilities[3].backgroundImage}
+                        alt={capabilities[3].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Users className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          04
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {capabilities[3].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {capabilities[3].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Generative AI Development */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={capabilities[4].backgroundImage}
+                        alt={capabilities[4].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Zap className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          05
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {capabilities[4].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {capabilities[4].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+              {/* Flowing Lines */}
+              <svg className="w-full h-full opacity-10">
+                <defs>
+                  <linearGradient
+                    id="flowGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="50%" stopColor="#06B6D4" />
+                    <stop offset="100%" stopColor="#3B82F6" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M0,200 Q300,100 600,200 T1200,200"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray="10,5"
+                  opacity="0.6"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;15"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+                <path
+                  d="M0,400 Q400,300 800,400 T1600,400"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="8,4"
+                  opacity="0.4"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;12"
+                    dur="3s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+              </svg>
+
+              {/* Floating Particles */}
+              <div className="absolute top-20 left-1/4 w-3 h-3 bg-blue-400 rounded-full opacity-60 animate-bounce"></div>
+              <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-cyan-400 rounded-full opacity-40 animate-pulse delay-1000"></div>
+              <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-blue-300 rounded-full opacity-30 animate-ping delay-500"></div>
+              <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-cyan-300 rounded-full opacity-50 animate-bounce delay-2000"></div>
+            </div>
+
+            {/* Connecting Lines */}
+            <div className="absolute inset-0 pointer-events-none">
+              <svg className="w-full h-full opacity-20">
+                <defs>
+                  <linearGradient
+                    id="aiConnectGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="100%" stopColor="#06B6D4" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Connecting lines between elements */}
+                <path
+                  d="M300,150 Q500,200 700,150"
+                  stroke="url(#aiConnectGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="5,5"
+                  opacity="0.6"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;10"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+                
+                <path
+                  d="M200,300 Q400,250 600,300"
+                  stroke="url(#aiConnectGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="5,5"
+                  opacity="0.4"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;10"
+                    dur="3s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+              </svg>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* How We Work */}
       <section className="py-16 text-white relative overflow-hidden">
