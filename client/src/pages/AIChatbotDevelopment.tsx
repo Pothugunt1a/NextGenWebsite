@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -460,7 +459,8 @@ export default function AIChatbotDevelopment() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive AI chatbot development solutions designed to enhance customer engagement and streamline business operations
+              Comprehensive AI chatbot development solutions designed to enhance
+              customer engagement and streamline business operations
             </p>
           </motion.div>
 
@@ -558,7 +558,7 @@ export default function AIChatbotDevelopment() {
                   <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="relative w-full">
                       <img
-                        src="/assets/AI-ChatbotDevlopment.gif"
+                        src="/assets/AI-ChatbotDevelopment.gif"
                         alt="AI Chatbot Development Services"
                         className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
@@ -589,12 +589,10 @@ export default function AIChatbotDevelopment() {
                           </span>
                         </div>
                         <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
-                          AI Chatbot Development Services
+                          Intelligent Chatbot Solutions
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Comprehensive suite of advanced AI chatbot development
-                          solutions powered by cutting-edge technology and
-                          strategic expertise to enhance customer engagement.
+                          Advanced conversational AI solutions that transform customer interactions.
                         </p>
                       </div>
                     </div>
@@ -848,7 +846,8 @@ export default function AIChatbotDevelopment() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We follow a systematic approach for all AI chatbot projects. So when you choose us, here's what you can expect
+                We follow a systematic approach for all AI chatbot projects. So
+                when you choose us, here's what you can expect
               </p>
             </div>
 
@@ -862,7 +861,9 @@ export default function AIChatbotDevelopment() {
                       <Bot className="w-12 h-12" />
                     </div>
                     <div className="text-center">
-                      <div className="text-white font-bold text-lg">CHATBOT</div>
+                      <div className="text-white font-bold text-lg">
+                        CHATBOT
+                      </div>
                       <div className="text-white font-bold text-lg">
                         PROCESS
                       </div>
@@ -934,7 +935,9 @@ export default function AIChatbotDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Understand and analyze your challenges, identify project scope, objectives, and goals, develop a strategy to incorporate AI chatbots
+                        Understand and analyze your challenges, identify project
+                        scope, objectives, and goals, develop a strategy to
+                        incorporate AI chatbots
                       </p>
                     </div>
                   </motion.div>
@@ -970,7 +973,9 @@ export default function AIChatbotDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Decide between rule-based and AI chatbot models, evaluate and choose communication channels, explore integration options with existing systems
+                        Decide between rule-based and AI chatbot models,
+                        evaluate and choose communication channels, explore
+                        integration options with existing systems
                       </p>
                     </div>
                   </motion.div>
@@ -1006,7 +1011,9 @@ export default function AIChatbotDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Map user journeys and possible dialogue paths, design conversational flows that mimic human interactions, personalize conversations to enhance user engagement
+                        Map user journeys and possible dialogue paths, design
+                        conversational flows that mimic human interactions,
+                        personalize conversations to enhance user engagement
                       </p>
                     </div>
                   </motion.div>
@@ -1042,7 +1049,9 @@ export default function AIChatbotDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Gather and pre-process data to train the chatbot, fine-tune the AI model to understand industry jargon, maximize accuracy and improve performance
+                        Gather and pre-process data to train the chatbot,
+                        fine-tune the AI model to understand industry jargon,
+                        maximize accuracy and improve performance
                       </p>
                     </div>
                   </motion.div>
@@ -1078,7 +1087,10 @@ export default function AIChatbotDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Gather feedback by conducting usability testing, ensure context-aware and accurate responses in different scenarios, refine the chatbot's responses depending on user interactions
+                        Gather feedback by conducting usability testing, ensure
+                        context-aware and accurate responses in different
+                        scenarios, refine the chatbot's responses depending on
+                        user interactions
                       </p>
                     </div>
                   </motion.div>
@@ -1114,7 +1126,9 @@ export default function AIChatbotDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Launch the chatbot on the chosen platforms, monitor real-time performance and user engagement, continuously optimize the chatbot based on user feedback
+                        Launch the chatbot on the chosen platforms, monitor
+                        real-time performance and user engagement, continuously
+                        optimize the chatbot based on user feedback
                       </p>
                     </div>
                   </motion.div>
