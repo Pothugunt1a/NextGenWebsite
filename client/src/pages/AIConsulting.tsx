@@ -356,17 +356,17 @@ export default function AIConsulting() {
 
             {/* Auto Carousel - 2x2 Grid */}
             <div className="relative max-w-6xl mx-auto">
-              {/* Left Arrow - Go to Previous Slide */}
+              {/* Left Arrow */}
               <button
-                onClick={() => setCurrentSlide((prev) => (prev - 1 + 2) % 2)}
+                onClick={() => setCurrentSlide(currentSlide === 0 ? 1 : 0)}
                 className="absolute left-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 transition-all duration-300 group hover:shadow-lg hover:shadow-cyan-400/20 backdrop-blur-sm"
               >
                 <ChevronLeft className="h-6 w-6 text-cyan-400 group-hover:text-white transition-colors" />
               </button>
 
-              {/* Right Arrow - Go to Next Slide */}
+              {/* Right Arrow */}
               <button
-                onClick={() => setCurrentSlide((prev) => (prev + 1) % 2)}
+                onClick={() => setCurrentSlide(currentSlide === 1 ? 0 : 1)}
                 className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 transition-all duration-300 group hover:shadow-lg hover:shadow-cyan-400/20 backdrop-blur-sm"
               >
                 <ChevronRight className="h-6 w-6 text-cyan-400 group-hover:text-white transition-colors" />
