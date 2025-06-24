@@ -644,36 +644,7 @@ export default function AIConsulting() {
                       />
                     </div>
 
-                    {/* Floating Elements */}
-                    <div className="absolute top-8 right-8 flex flex-col gap-4">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                        <Brain className="h-8 w-8 text-white" />
-                      </div>
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                        AI
-                      </div>
-                    </div>
 
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="mb-4">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">
-                            AI Innovation Hub
-                          </span>
-                        </div>
-                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
-                          AI Consulting Capabilities
-                        </h3>
-                        <p className="text-blue-100 leading-relaxed mb-6">
-                          Comprehensive suite of advanced AI consulting
-                          solutions powered by cutting-edge technology and
-                          strategic expertise to accelerate your digital
-                          transformation processes.
-                        </p>
-                      </div>
-                    </div>
                   </div>
                 </motion.div>
 
