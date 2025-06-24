@@ -165,31 +165,45 @@ export default function AIChatbotDevelopment() {
   const whyChooseUs = [
     {
       icon: <Award className="h-10 w-10" />,
-      title: "Experts in chatbot development",
+      title: "Expert Development",
       description:
-        "We take pride in creating intelligent chatbots that perfectly cater to your needs. Our seasoned professionals have in-depth knowledge and hands-on experience in creating AI chatbots that understand user intent well and provide valuable interactions.",
+        "Seasoned professionals with deep AI chatbot expertise delivering intelligent solutions.",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Zap className="h-10 w-10" />,
-      title: "Deliver scalable solutions",
+      title: "Scalable Solutions",
       description:
-        "We design chatbots that grow alongside your business and adapt to the evolving needs and increased user demands while maintaining excellent performance to improve customer engagement.",
+        "Chatbots that grow with your business and adapt to evolving demands.",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <Settings className="h-10 w-10" />,
-      title: "Provide endless customization options",
+      title: "Full Customization",
       description:
-        "We offer customization options that align with your brand identity and meet your business requirements. Regardless of your objective, whether it's lead generation or better customer support, our tailored solutions can help.",
+        "Tailored solutions aligned with your brand identity and business objectives.",
       color: "from-purple-500 to-violet-500",
     },
     {
       icon: <Shield className="h-10 w-10" />,
-      title: "Deliver seamless integration",
+      title: "Seamless Integration",
       description:
-        "Beyond chatbot creation, we can also help you seamlessly integrate the chatbot with your existing systems and tools, such as social media platforms or CRMs, to provide a cohesive and efficient user experience.",
+        "Easy integration with existing systems, CRMs, and social media platforms.",
       color: "from-orange-500 to-red-500",
+    },
+    {
+      icon: <Users className="h-10 w-10" />,
+      title: "Latest Technology",
+      description:
+        "Cutting-edge AI, ML, and NLP advancements for superior performance.",
+      color: "from-pink-500 to-rose-500",
+    },
+    {
+      icon: <Headphones className="h-10 w-10" />,
+      title: "24/7 Support",
+      description:
+        "Continuous support and maintenance to keep your chatbot optimized.",
+      color: "from-indigo-500 to-purple-500",
     },
   ];
 
@@ -767,7 +781,7 @@ export default function AIChatbotDevelopment() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -780,16 +794,16 @@ export default function AIChatbotDevelopment() {
                 whileHover={{ y: -10, scale: 1.05 }}
                 className="group"
               >
-                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
-                  <div className="flex justify-center mb-6">
-                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}>
+                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                  <div className="flex justify-center mb-4">
+                    <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}>
                       <div className="text-white">{item.icon}</div>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                  <h3 className="text-lg font-bold mb-3 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed text-sm">
                     {item.description}
                   </p>
                 </div>
