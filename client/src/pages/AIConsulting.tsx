@@ -132,7 +132,7 @@ const capabilities = [
     title: "AI and Data Strategy",
     description:
       "Data is often referred to as digital gold due to its potential to generate meaningful insights. However, to extract real value, the quality of data is critical. Our AI and data strategy includes comprehensive auditing, validation, verification, and cleansing processes to ensure only high-quality data is used. We also strictly adhere to data privacy regulations such as HIPAA and GDPR when managing sensitive information, ensuring compliance and security throughout.",
-    backgroundImage: "/assets/AI-Consulting.png",
+    backgroundImage: "/assets/AI-Consulting1.png",
   },
   {
     icon: <Lightbulb className="h-8 w-8 text-white" />,
@@ -146,6 +146,7 @@ const capabilities = [
     title: "AI Use Case Discovery & Identification",
     description:
       "We evaluate your business processes to uncover where AI can drive the most value—improving efficiency, enhancing customer experience, and supporting strategic goals. By assessing your organization’s AI readiness, we help prioritize high-impact use cases and create a roadmap for implementation, including validation and prototyping. Whether you're exploring AI for the first time or refining your current approach, we provide expert support at every stage.",
+    backgroundImage: "/assets/AI-Consulting3.png",
   },
   {
     icon: <Users className="h-8 w-8 text-white" />,
@@ -161,7 +162,6 @@ const capabilities = [
       "Leverage the latest in AI innovation with our custom Generative AI development services. Our team specializes in building advanced Large Language Models (LLMs) and generative systems inspired by technologies like ChatGPT and DALL·E. Every solution is tailored to your business goals, ensuring a seamless fit with your operations while delivering powerful, creative AI capabilities.",
     backgroundImage: "/assets/AI-Consulting5.png",
   },
-
 ];
 
 const techStack = [
@@ -259,7 +259,7 @@ export default function AIConsulting() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/assets/AI-Consulting.png"
+            src="/assets/AI-Consulting-banner.png"
             alt="AI Consulting Services"
             className="w-full h-full object-cover"
           />
@@ -542,7 +542,6 @@ export default function AIConsulting() {
           {/* 2x2 Grid Layout with Central Image */}
           <div className="max-w-8xl mx-auto relative">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              
               {/* Top Row - AI and Data Strategy and Process Optimization */}
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {/* AI and Data Strategy */}
@@ -668,9 +667,10 @@ export default function AIConsulting() {
                           AI Consulting Capabilities
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Comprehensive suite of advanced AI consulting solutions
-                          powered by cutting-edge technology and strategic expertise to accelerate your
-                          digital transformation processes.
+                          Comprehensive suite of advanced AI consulting
+                          solutions powered by cutting-edge technology and
+                          strategic expertise to accelerate your digital
+                          transformation processes.
                         </p>
                       </div>
                     </div>
@@ -864,7 +864,7 @@ export default function AIConsulting() {
                     <stop offset="100%" stopColor="#06B6D4" />
                   </linearGradient>
                 </defs>
-                
+
                 {/* Connecting lines between elements */}
                 <path
                   d="M300,150 Q500,200 700,150"
@@ -881,7 +881,7 @@ export default function AIConsulting() {
                     repeatCount="indefinite"
                   />
                 </path>
-                
+
                 <path
                   d="M200,300 Q400,250 600,300"
                   stroke="url(#aiConnectGradient)"
