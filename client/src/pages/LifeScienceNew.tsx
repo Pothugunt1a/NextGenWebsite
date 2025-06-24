@@ -284,7 +284,7 @@ export default function LifeScience() {
                       <img
                         src="/assets/Life-science-solution.jpg"
                         alt="Life Science Innovation"
-                        className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
                       />
                     </div>
