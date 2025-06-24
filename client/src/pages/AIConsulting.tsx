@@ -355,7 +355,7 @@ export default function AIConsulting() {
             </motion.div>
 
             {/* Auto Carousel - 2x2 Grid */}
-            <div className="relative max-w-6xl mx-auto">
+            <div className="relative max-w-6xl mx-auto px-4">
               {/* Left Arrow */}
               <button
                 onClick={() => setCurrentSlide(currentSlide === 0 ? 1 : 0)}
@@ -372,7 +372,7 @@ export default function AIConsulting() {
                 <ChevronRight className="h-6 w-6 text-cyan-400 group-hover:text-white transition-colors" />
               </button>
 
-              <div className="overflow-hidden">
+              <div className="overflow-hidden mx-8">
                 <motion.div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -390,9 +390,10 @@ export default function AIConsulting() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.05 }}
                             className="group"
                           >
-                            <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 h-full hover:border-cyan-400/30 transition-all duration-500 group-hover:transform group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-cyan-500/10">
+                            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 m-2 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
                               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
 
                               <div className="flex items-start gap-6 mb-6">
@@ -443,9 +444,10 @@ export default function AIConsulting() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.05 }}
                             className="group"
                           >
-                            <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 h-full hover:border-cyan-400/30 transition-all duration-500 group-hover:transform group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-cyan-500/10">
+                            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 m-2 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
                               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
 
                               <div className="flex items-start gap-6 mb-6">
