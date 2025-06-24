@@ -425,12 +425,8 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-light relative">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-        </div>
-        <div className="relative container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our AI Chatbot Development Services
@@ -467,12 +463,8 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Advantages Section */}
-      <section className="py-20 bg-light relative">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-        </div>
-        <div className="relative container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Advantages of Integrating AI-Powered Chatbots Into Your Business
@@ -507,12 +499,8 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-light relative">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-        </div>
-        <div className="relative container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Why Choose Us as Your AI Chatbot Development Company?
@@ -555,12 +543,8 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 bg-light relative">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-        </div>
-        <div className="relative container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               How Our Chatbot Can Help Businesses in Different Industries
@@ -884,12 +868,8 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* FAQs Section */}
-      <section className="py-16 text-white bg-light relative">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-        </div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 text-white relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
