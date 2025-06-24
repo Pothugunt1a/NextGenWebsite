@@ -146,6 +146,7 @@ const capabilities = [
     title: "AI Use Case Discovery & Identification",
     description:
       "We evaluate your business processes to uncover where AI can drive the most value—improving efficiency, enhancing customer experience, and supporting strategic goals. By assessing your organization’s AI readiness, we help prioritize high-impact use cases and create a roadmap for implementation, including validation and prototyping. Whether you're exploring AI for the first time or refining your current approach, we provide expert support at every stage.",
+    backgroundImage: "/assets/AI-Usecase.png",
   },
   {
     icon: <Users className="h-8 w-8 text-white" />,
