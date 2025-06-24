@@ -425,9 +425,10 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 text-white relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
         <div className="relative container mx-auto px-4">
           <div className="text-center mb-16">
@@ -466,9 +467,10 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Advantages Section */}
-      <section className="py-20 text-white relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
         <div className="relative container mx-auto px-4">
           <div className="text-center mb-16">
@@ -505,9 +507,10 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 text-white relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
         <div className="relative container mx-auto px-4">
           <div className="text-center mb-16">
@@ -552,9 +555,10 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 text-white relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
         <div className="relative container mx-auto px-4">
           <div className="text-center mb-16">
@@ -594,9 +598,6 @@ export default function AIChatbotDevelopment() {
 
       {/* Development Flow Section */}
       <section className="py-16 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
-        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -883,9 +884,10 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* FAQs Section */}
-      <section className="py-16 text-white relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+      <section className="py-16 text-white bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
