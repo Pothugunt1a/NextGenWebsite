@@ -164,46 +164,40 @@ export default function AIChatbotDevelopment() {
 
   const whyChooseUs = [
     {
-      icon: <Award className="h-10 w-10" />,
-      title: "Expert Development",
+      icon: <Bot className="h-12 w-12" />,
+      title: "Experts in chatbot development",
       description:
-        "Seasoned professionals with deep AI chatbot expertise delivering intelligent solutions.",
-      color: "from-blue-500 to-cyan-500",
+        "We take pride in creating intelligent chatbots that perfectly cater to your needs. Our seasoned professionals have in-depth knowledge and hands-on experience in creating AI chatbots that understand user intent well and provide valuable interactions.",
     },
     {
-      icon: <Zap className="h-10 w-10" />,
-      title: "Scalable Solutions",
+      icon: <Zap className="h-12 w-12" />,
+      title: "Deliver scalable solutions",
       description:
-        "Chatbots that grow with your business and adapt to evolving demands.",
-      color: "from-green-500 to-emerald-500",
+        "We design chatbots that grow alongside your business and adapt to the evolving needs and increased user demands while maintaining excellent performance to improve customer engagement.",
     },
     {
-      icon: <Settings className="h-10 w-10" />,
-      title: "Full Customization",
+      icon: <Settings className="h-12 w-12" />,
+      title: "Provide endless customization options",
       description:
-        "Tailored solutions aligned with your brand identity and business objectives.",
-      color: "from-purple-500 to-violet-500",
+        "We offer customization options that align with your brand identity and meet your business requirements. Regardless of your objective, whether it's lead generation or better customer support, our tailored solutions can help.",
     },
     {
-      icon: <Shield className="h-10 w-10" />,
-      title: "Seamless Integration",
+      icon: <Shield className="h-12 w-12" />,
+      title: "Deliver seamless integration",
       description:
-        "Easy integration with existing systems, CRMs, and social media platforms.",
-      color: "from-orange-500 to-red-500",
+        "Beyond chatbot creation, we can also help you seamlessly integrate the chatbot with your existing systems and tools, such as social media platforms or CRMs, to provide a cohesive and efficient user experience.",
     },
     {
-      icon: <Users className="h-10 w-10" />,
-      title: "Latest Technology",
+      icon: <Users className="h-12 w-12" />,
+      title: "Stay on top of recent technologies",
       description:
-        "Cutting-edge AI, ML, and NLP advancements for superior performance.",
-      color: "from-pink-500 to-rose-500",
+        "We stay updated with the latest AI advancements, such as AI, ML, and NLP, to offer cutting-edge solutions that keep you ahead of the curve.",
     },
     {
-      icon: <Headphones className="h-10 w-10" />,
-      title: "24/7 Support",
+      icon: <Headphones className="h-12 w-12" />,
+      title: "Provide support & maintenance services",
       description:
-        "Continuous support and maintenance to keep your chatbot optimized.",
-      color: "from-indigo-500 to-purple-500",
+        "We offer continuous support and maintenance to make sure your chatbot stays optimized and effective. You can rely on us to handle issues and implement updates when needed.",
     },
   ];
 
@@ -761,55 +755,47 @@ export default function AIChatbotDevelopment() {
         </div>
       </section>
 
-      {/* Why Choose Us Section - Same design as Validation page */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why Choose RT NextGenAI?
+      {/* Why Choose Us Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Us as Your AI Chatbot Development Company?
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Partner with industry leaders in AI chatbot development services
+              Choosing AI Superior as your AI chatbot development company
+              ensures a partnership with a dependable and creative team that
+              takes pride in delivering high-performance chatbots that drive
+              impactful business outcomes.
             </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseUs.map((item, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.05 }}
-                className="group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
               >
-                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
-                  <div className="flex justify-center mb-4">
-                    <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}>
-                      <div className="text-white">{item.icon}</div>
+                <Card className="p-6 text-center bg-gray-800/80 border-gray-700 hover:bg-gray-750/80 transition-colors backdrop-blur-sm">
+                  <CardHeader>
+                    <div className="mx-auto text-blue-400 mb-4">
+                      {item.icon}
                     </div>
-                  </div>
-                  <h3 className="text-lg font-bold mb-3 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed text-sm">
-                    {item.description}
-                  </p>
-                </div>
+                    <CardTitle className="text-xl text-white">
+                      {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base text-gray-300">
+                      {item.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
