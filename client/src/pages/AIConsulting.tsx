@@ -132,35 +132,35 @@ const capabilities = [
     title: "AI and Data Strategy",
     description:
       "Data is often referred to as digital gold due to its potential to generate meaningful insights. However, to extract real value, the quality of data is critical. Our AI and data strategy includes comprehensive auditing, validation, verification, and cleansing processes to ensure only high-quality data is used. We also strictly adhere to data privacy regulations such as HIPAA and GDPR when managing sensitive information, ensuring compliance and security throughout.",
-    backgroundImage: "/assets/AI-Consulting1.png",
+    backgroundImage: "/assets/AI&Data.png",
   },
   {
     icon: <Lightbulb className="h-8 w-8 text-white" />,
     title: "Process Optimization with AI",
     description:
       "Enhance and streamline your business operations through intelligent AI integration. At AI Superior, we help identify inefficiencies and implement AI-driven solutions to increase productivity and operational effectiveness. Our experts guide you in discovering the potential of AI within your unique business environment, developing and deploying tailored strategies that support sustainable growth and efficiency.",
-    backgroundImage: "/assets/AI-Consulting2.png",
+    backgroundImage: "/assets/AI-ProcessOptimization.png",
   },
   {
     icon: <Target className="h-8 w-8 text-white" />,
     title: "AI Use Case Discovery & Identification",
     description:
       "We evaluate your business processes to uncover where AI can drive the most value—improving efficiency, enhancing customer experience, and supporting strategic goals. By assessing your organization’s AI readiness, we help prioritize high-impact use cases and create a roadmap for implementation, including validation and prototyping. Whether you're exploring AI for the first time or refining your current approach, we provide expert support at every stage.",
-    backgroundImage: "/assets/AI-Consulting3.png",
+    backgroundImage: "/assets/AI-Usecase.png",
   },
   {
     icon: <Users className="h-8 w-8 text-white" />,
     title: "AI Training",
     description:
       "Our workshops and training programs are designed to empower your team with the knowledge needed to effectively leverage AI. From understanding foundational concepts to applying AI in practical business contexts, our training ensures your organization stays ahead in a competitive, tech-driven landscape. We focus on delivering value through knowledge, helping stakeholders and teams make informed decisions about AI adoption.",
-    backgroundImage: "/assets/AI-Consulting4.png",
+    backgroundImage: "/assets/AI-Training.png",
   },
   {
     icon: <Zap className="h-8 w-8 text-white" />,
     title: "Generative AI Development",
     description:
       "Leverage the latest in AI innovation with our custom Generative AI development services. Our team specializes in building advanced Large Language Models (LLMs) and generative systems inspired by technologies like ChatGPT and DALL·E. Every solution is tailored to your business goals, ensuring a seamless fit with your operations while delivering powerful, creative AI capabilities.",
-    backgroundImage: "/assets/AI-Consulting5.png",
+    backgroundImage: "/assets/GenerativeAI.png",
   },
 ];
 
@@ -639,7 +639,7 @@ export default function AIConsulting() {
                         style={{ backgroundAttachment: "fixed" }}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = "/assets/AI-Consulting.png";
+                          target.src = "/assets/AI-Usecase.png";
                         }}
                       />
                     </div>
