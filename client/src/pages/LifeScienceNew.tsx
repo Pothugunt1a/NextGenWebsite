@@ -190,7 +190,6 @@ export default function LifeScience() {
           {/* 2x2 Grid Layout with Central Image */}
           <div className="max-w-8xl mx-auto relative">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              
               {/* Top Row - Clinical Operations and Biometrics */}
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {/* Clinical Operations */}
@@ -551,7 +550,7 @@ export default function LifeScience() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold mb-6 text-white">
-              Why Choose Us
+              Why Choose Us?
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
           </motion.div>

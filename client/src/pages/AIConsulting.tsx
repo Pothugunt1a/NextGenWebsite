@@ -337,7 +337,7 @@ export default function AIConsulting() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-400/20 mb-6">
                 <Award className="h-4 w-4 text-cyan-400" />
                 <span className="text-cyan-300 text-sm font-medium">
-                  Why Choose RTNextGenAI
+                  Why Choose RTNextGenAI?
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -534,7 +534,8 @@ export default function AIConsulting() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Strategic AI solutions that accelerate digital transformation and innovation
+              Strategic AI solutions that accelerate digital transformation and
+              innovation
             </p>
           </motion.div>
 
@@ -666,7 +667,8 @@ export default function AIConsulting() {
                           AI Consulting Capabilities
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Advanced AI consulting solutions that transform business operations.
+                          Advanced AI consulting solutions that transform
+                          business operations.
                         </p>
                       </div>
                     </div>

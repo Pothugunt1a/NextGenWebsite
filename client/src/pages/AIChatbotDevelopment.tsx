@@ -164,40 +164,32 @@ export default function AIChatbotDevelopment() {
 
   const whyChooseUs = [
     {
-      icon: <Bot className="h-12 w-12" />,
+      icon: <Award className="h-10 w-10" />,
       title: "Experts in chatbot development",
       description:
         "We take pride in creating intelligent chatbots that perfectly cater to your needs. Our seasoned professionals have in-depth knowledge and hands-on experience in creating AI chatbots that understand user intent well and provide valuable interactions.",
+      color: "from-blue-500 to-cyan-500",
     },
     {
-      icon: <Zap className="h-12 w-12" />,
+      icon: <Zap className="h-10 w-10" />,
       title: "Deliver scalable solutions",
       description:
         "We design chatbots that grow alongside your business and adapt to the evolving needs and increased user demands while maintaining excellent performance to improve customer engagement.",
+      color: "from-green-500 to-emerald-500",
     },
     {
-      icon: <Settings className="h-12 w-12" />,
+      icon: <Settings className="h-10 w-10" />,
       title: "Provide endless customization options",
       description:
         "We offer customization options that align with your brand identity and meet your business requirements. Regardless of your objective, whether it's lead generation or better customer support, our tailored solutions can help.",
+      color: "from-purple-500 to-violet-500",
     },
     {
-      icon: <Shield className="h-12 w-12" />,
+      icon: <Shield className="h-10 w-10" />,
       title: "Deliver seamless integration",
       description:
         "Beyond chatbot creation, we can also help you seamlessly integrate the chatbot with your existing systems and tools, such as social media platforms or CRMs, to provide a cohesive and efficient user experience.",
-    },
-    {
-      icon: <Users className="h-12 w-12" />,
-      title: "Stay on top of recent technologies",
-      description:
-        "We stay updated with the latest AI advancements, such as AI, ML, and NLP, to offer cutting-edge solutions that keep you ahead of the curve.",
-    },
-    {
-      icon: <Headphones className="h-12 w-12" />,
-      title: "Provide support & maintenance services",
-      description:
-        "We offer continuous support and maintenance to make sure your chatbot stays optimized and effective. You can rely on us to handle issues and implement updates when needed.",
+      color: "from-orange-500 to-red-500",
     },
   ];
 
@@ -755,47 +747,55 @@ export default function AIChatbotDevelopment() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose Us as Your AI Chatbot Development Company?
+      {/* Why Choose Us Section - Same design as Validation page */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Why Choose RT NextGenAI?
             </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choosing AI Superior as your AI chatbot development company
-              ensures a partnership with a dependable and creative team that
-              takes pride in delivering high-performance chatbots that drive
-              impactful business outcomes.
+              Partner with industry leaders in AI chatbot development services
             </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             {whyChooseUs.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="group"
               >
-                <Card className="p-6 text-center bg-gray-800/80 border-gray-700 hover:bg-gray-750/80 transition-colors backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="mx-auto text-blue-400 mb-4">
-                      {item.icon}
+                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                  <div className="flex justify-center mb-6">
+                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}>
+                      <div className="text-white">{item.icon}</div>
                     </div>
-                    <CardTitle className="text-xl text-white">
-                      {item.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base text-gray-300">
-                      {item.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
