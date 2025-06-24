@@ -13,8 +13,18 @@ const logos = [
 
 export default function LogoCarousel() {
   return (
-    <section className="py-12 overflow-hidden">
-      <div className="w-full">
+    <section className="py-12 overflow-hidden relative">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="./assets/Logos-banner.png"
+          alt="Company Logos Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+      
+      <div className="w-full relative z-10">
         <div className="relative flex overflow-x-hidden">
           <div className="animate-marquee whitespace-nowrap flex items-center">
             {logos.map((logo, index) => (
