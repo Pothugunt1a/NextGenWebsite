@@ -15,6 +15,13 @@ The application uses the following key technologies:
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+- **June 24, 2025**: Successfully migrated project from Replit Agent to standard Replit environment
+- **June 24, 2025**: Fixed AI-Capabilities.gif display on AI Consulting page - removed cropping and sky blue background overlay to show complete image
+- **June 24, 2025**: All project dependencies installed and configured properly
+- **June 24, 2025**: Express server and frontend confirmed working with proper client-server separation
+
 ## System Architecture
 
 ### Frontend Architecture
