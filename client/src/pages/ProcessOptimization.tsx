@@ -254,6 +254,7 @@ export default function ProcessOptimization() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="relative overflow-hidden rounded-2xl"
             >
               <img
                 src="/assets/Process-Optimization.png"
@@ -264,6 +265,11 @@ export default function ProcessOptimization() {
                   target.src = "/assets/process-optimization.png";
                 }}
               />
+              {/* Gradient overlay for seamless blending */}
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-slate-900/60 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-transparent to-transparent"></div>
             </motion.div>
 
             {/* Content Section */}
@@ -435,6 +441,7 @@ export default function ProcessOptimization() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
+              className="relative overflow-hidden rounded-2xl"
             >
               <img
                 src="/assets/Process-optimization.png"
@@ -445,6 +452,11 @@ export default function ProcessOptimization() {
                   target.src = "/assets/process-optimization.png";
                 }}
               />
+              {/* Gradient overlay for seamless blending */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-900/80"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-slate-900/60 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-transparent to-transparent"></div>
             </motion.div>
           </div>
         </div>
