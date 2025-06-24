@@ -138,7 +138,7 @@ const capabilities = [
     icon: <Lightbulb className="h-8 w-8 text-white" />,
     title: "Process Optimization with AI",
     description:
-      "Enhance and streamline your business operations through intelligent AI integration. At AI Superior, we help identify inefficiencies and implement AI-driven solutions to increase productivity and operational effectiveness. Our experts guide you in discovering the potential of AI within your unique business environment, developing and deploying tailored strategies that support sustainable growth and efficiency.",
+      "Enhance and streamline your business operations through intelligent AI integration. At RTNextGenAI, we help identify inefficiencies and implement AI-driven solutions to increase productivity and operational effectiveness. Our experts guide you in discovering the potential of AI within your unique business environment, developing and deploying tailored strategies that support sustainable growth and efficiency.",
     backgroundImage: "/assets/AI-ProcessOptimization.png",
   },
   {
@@ -534,8 +534,7 @@ export default function AIConsulting() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive AI consulting solutions designed to accelerate your
-              digital transformation and innovation
+              Strategic AI solutions that accelerate digital transformation and innovation
             </p>
           </motion.div>
 
@@ -667,10 +666,7 @@ export default function AIConsulting() {
                           AI Consulting Capabilities
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Comprehensive suite of advanced AI consulting
-                          solutions powered by cutting-edge technology and
-                          strategic expertise to accelerate your digital
-                          transformation processes.
+                          Advanced AI consulting solutions that transform business operations.
                         </p>
                       </div>
                     </div>

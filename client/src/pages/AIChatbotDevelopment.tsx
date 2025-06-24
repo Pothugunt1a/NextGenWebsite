@@ -106,28 +106,28 @@ export default function AIChatbotDevelopment() {
       icon: <Bot className="h-8 w-8 text-white" />,
       title: "GPT-based AI chatbot development",
       description:
-        "Take advantage of the power of GPT-3 and beyond, including ChatGPT, with our GPT-based AI chatbot development services. Our experts create conversational agents that easily understand and effectively respond to user queries, whether it's for personalized recommendations, content generation, or customer support.",
+        "Leverage the capabilities of GPT-3 and its successors, including ChatGPT, through our advanced GPT-powered chatbot development services. Our team of experts builds intelligent conversational agents designed to accurately interpret and respond to user inquiries—delivering seamless experiences across personalized recommendations, content creation, and customer support.",
       backgroundImage: "/assets/AI-GPTChatbot.png",
     },
     {
       icon: <Headphones className="h-8 w-8 text-white" />,
       title: "Customer service & CRM-based chatbots",
       description:
-        "Provide better customer service with AI chatbots trained on your unique product data and customer interactions. By harnessing data from CRM systems, we ensure that our solutions answer all customer queries accurately, enhancing customer loyalty and satisfaction.",
+        "Deliver exceptional customer service through AI chatbots tailored to your specific product data and customer interactions. By leveraging insights from CRM systems, our solutions provide precise and context-aware responses, driving improved customer satisfaction and fostering long-term loyalty.",
       backgroundImage: "/assets/AI-Customer.png",
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-white" />,
       title: "Social media bots engineering",
       description:
-        "Expand your online presence with social media AI chatbots. Whether for Facebook, Instagram, or LinkedIn, AI Superior can create customized chatbots for your business that captivate your target audience, drive conversations, and foster brand growth.",
+        "Enhance your digital reach with AI-powered social media chatbots. At AI Superior, we develop tailored chatbot solutions for platforms like Facebook, Instagram, and LinkedIn—designed to engage your target audience, stimulate meaningful interactions, and support long-term brand development.",
       backgroundImage: "/assets/AI-SocialMedia.png",
     },
     {
       icon: <Settings className="h-8 w-8 text-white" />,
       title: "AI-based virtual assistants programming",
       description:
-        "Streamline business processes with AI-based virtual assistants. We can help you integrate virtual assistants into your workflow that can provide information, manage schedules, and handle tasks while learning from user interactions.",
+        "Enhance operational efficiency with AI-powered virtual assistants. Our team can seamlessly integrate intelligent assistants into your workflow to deliver information, manage schedules, and execute tasks—while continuously learning and improving through user interactions.",
       backgroundImage: "/assets/AI-VirtualAssistant.png",
     },
     {
@@ -135,7 +135,7 @@ export default function AIChatbotDevelopment() {
       title: "Conversational AI development",
       description:
         "Build sophisticated conversational AI systems that understand context, maintain dialogue flow, and provide intelligent responses. Our solutions leverage advanced NLP techniques to create more human-like interactions and improve user engagement across all touchpoints.",
-      backgroundImage: "/assets/Conversational-AI.png",
+      backgroundImage: "/assets/AI-Conversational.png",
     },
   ];
 
@@ -592,7 +592,8 @@ export default function AIChatbotDevelopment() {
                           Intelligent Chatbot Solutions
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Advanced conversational AI solutions that transform customer interactions.
+                          Advanced conversational AI solutions that transform
+                          customer interactions.
                         </p>
                       </div>
                     </div>

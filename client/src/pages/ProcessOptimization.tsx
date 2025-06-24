@@ -25,28 +25,52 @@ import customSolutionsIcon from "../assets/custom-solutions.svg";
 
 const benefits = [
   {
-    icon: <img src={accelerateProcessesIcon} alt="Accelerate Processes" className="h-8 w-8" />,
+    icon: (
+      <img
+        src={accelerateProcessesIcon}
+        alt="Accelerate Processes"
+        className="h-8 w-8"
+      />
+    ),
     title: "Accelerate Business Processes",
     description:
       "Speed up operations with intelligent automation and AI-powered workflows.",
     color: "from-blue-500 to-cyan-500",
   },
   {
-    icon: <img src={optimizePerformanceIcon} alt="Optimize Performance" className="h-8 w-8" />,
+    icon: (
+      <img
+        src={optimizePerformanceIcon}
+        alt="Optimize Performance"
+        className="h-8 w-8"
+      />
+    ),
     title: "Optimize Performance",
     description:
       "Unlock new potential through data-driven process optimization strategies.",
     color: "from-green-500 to-emerald-500",
   },
   {
-    icon: <img src={identifyProspectsIcon} alt="Identify Prospects" className="h-8 w-8" />,
+    icon: (
+      <img
+        src={identifyProspectsIcon}
+        alt="Identify Prospects"
+        className="h-8 w-8"
+      />
+    ),
     title: "Identify Unique Prospects",
     description:
       "Discover unique opportunities that AI integration presents for your business.",
     color: "from-purple-500 to-violet-500",
   },
   {
-    icon: <img src={customSolutionsIcon} alt="Custom Solutions" className="h-8 w-8" />,
+    icon: (
+      <img
+        src={customSolutionsIcon}
+        alt="Custom Solutions"
+        className="h-8 w-8"
+      />
+    ),
     title: "Custom Solutions",
     description:
       "Tailored AI solutions designed specifically for your business processes.",
@@ -423,8 +447,8 @@ export default function ProcessOptimization() {
                 Our team delivers tailored AI solutions, modernizes existing
                 systems, and strengthens overall business capabilities. Whether
                 your goal is to deploy a chatbot to enhance customer engagement
-                or to derive actionable insights from complex datasets, AI
-                Superior is equipped to elevate your business operations.
+                or to derive actionable insights from complex datasets,
+                RTNextGenAI is equipped to elevate your business operations.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 We deliver end-to-end solutions tailored to your organization’s
