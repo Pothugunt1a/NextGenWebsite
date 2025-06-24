@@ -108,28 +108,28 @@ export default function AIChatbotDevelopment() {
       title: "GPT-based AI chatbot development",
       description:
         "Take advantage of the power of GPT-3 and beyond, including ChatGPT, with our GPT-based AI chatbot development services. Our experts create conversational agents that easily understand and effectively respond to user queries, whether it's for personalized recommendations, content generation, or customer support.",
-      backgroundImage: "/assets/GPT-Chatbot.png",
+      backgroundImage: "/assets/AI-GPTChatbot.png",
     },
     {
       icon: <Headphones className="h-8 w-8 text-white" />,
       title: "Customer service & CRM-based chatbots",
       description:
         "Provide better customer service with AI chatbots trained on your unique product data and customer interactions. By harnessing data from CRM systems, we ensure that our solutions answer all customer queries accurately, enhancing customer loyalty and satisfaction.",
-      backgroundImage: "/assets/Customer-Service-Chatbot.png",
+      backgroundImage: "/assets/AI-Customer.png",
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-white" />,
       title: "Social media bots engineering",
       description:
         "Expand your online presence with social media AI chatbots. Whether for Facebook, Instagram, or LinkedIn, AI Superior can create customized chatbots for your business that captivate your target audience, drive conversations, and foster brand growth.",
-      backgroundImage: "/assets/Social-Media-Bot.png",
+      backgroundImage: "/assets/AI-SocialMedia.png",
     },
     {
       icon: <Settings className="h-8 w-8 text-white" />,
       title: "AI-based virtual assistants programming",
       description:
         "Streamline business processes with AI-based virtual assistants. We can help you integrate virtual assistants into your workflow that can provide information, manage schedules, and handle tasks while learning from user interactions.",
-      backgroundImage: "/assets/Virtual-Assistant.png",
+      backgroundImage: "/assets/AI-VirtualAssistant.png",
     },
     {
       icon: <Brain className="h-8 w-8 text-white" />,
@@ -558,7 +558,7 @@ export default function AIChatbotDevelopment() {
                   <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="relative w-full">
                       <img
-                        src="/assets/AI-Chatbot-Services.gif"
+                        src="/assets/AI-ChatbotDevelopment.gif"
                         alt="AI Chatbot Development Services"
                         className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
