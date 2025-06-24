@@ -39,6 +39,8 @@ import {
   TrendingUp,
   ChevronDown,
   ChevronUp,
+  Brain,
+  Award,
 } from "lucide-react";
 
 export default function AIChatbotDevelopment() {
@@ -100,30 +102,41 @@ export default function AIChatbotDevelopment() {
     },
   };
 
-  const services = [
+  const chatbotServices = [
     {
+      icon: <Bot className="h-8 w-8 text-white" />,
       title: "GPT-based AI chatbot development",
       description:
         "Take advantage of the power of GPT-3 and beyond, including ChatGPT, with our GPT-based AI chatbot development services. Our experts create conversational agents that easily understand and effectively respond to user queries, whether it's for personalized recommendations, content generation, or customer support.",
-      icon: <Bot className="h-8 w-8" />,
+      backgroundImage: "/assets/GPT-Chatbot.png",
     },
     {
+      icon: <Headphones className="h-8 w-8 text-white" />,
       title: "Customer service & CRM-based chatbots",
       description:
         "Provide better customer service with AI chatbots trained on your unique product data and customer interactions. By harnessing data from CRM systems, we ensure that our solutions answer all customer queries accurately, enhancing customer loyalty and satisfaction.",
-      icon: <Headphones className="h-8 w-8" />,
+      backgroundImage: "/assets/Customer-Service-Chatbot.png",
     },
     {
+      icon: <MessageSquare className="h-8 w-8 text-white" />,
       title: "Social media bots engineering",
       description:
         "Expand your online presence with social media AI chatbots. Whether for Facebook, Instagram, or LinkedIn, AI Superior can create customized chatbots for your business that captivate your target audience, drive conversations, and foster brand growth.",
-      icon: <MessageSquare className="h-8 w-8" />,
+      backgroundImage: "/assets/Social-Media-Bot.png",
     },
     {
+      icon: <Settings className="h-8 w-8 text-white" />,
       title: "AI-based virtual assistants programming",
       description:
         "Streamline business processes with AI-based virtual assistants. We can help you integrate virtual assistants into your workflow that can provide information, manage schedules, and handle tasks while learning from user interactions.",
-      icon: <Settings className="h-8 w-8" />,
+      backgroundImage: "/assets/Virtual-Assistant.png",
+    },
+    {
+      icon: <Brain className="h-8 w-8 text-white" />,
+      title: "Conversational AI development",
+      description:
+        "Build sophisticated conversational AI systems that understand context, maintain dialogue flow, and provide intelligent responses. Our solutions leverage advanced NLP techniques to create more human-like interactions and improve user engagement across all touchpoints.",
+      backgroundImage: "/assets/Conversational-AI.png",
     },
   ];
 
@@ -424,43 +437,288 @@ export default function AIChatbotDevelopment() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      {/* Our AI Chatbot Development Services - Same as AI Consulting Capabilities Layout */}
+      <div className="py-20 bg-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl font-bold mb-6 text-white">
               Our AI Chatbot Development Services
             </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6 bg-gray-800/80 border-gray-700 hover:bg-gray-750/80 transition-colors backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="text-blue-400">{service.icon}</div>
-                      <CardTitle className="text-xl text-white">
-                        {service.title}
-                      </CardTitle>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive AI chatbot development solutions designed to enhance customer engagement and streamline business operations
+            </p>
+          </motion.div>
+
+          {/* 2x2 Grid Layout with Central Image */}
+          <div className="max-w-8xl mx-auto relative">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Top Row - GPT-based and Customer Service chatbots */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* GPT-based AI chatbot development */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={chatbotServices[0].backgroundImage}
+                        alt={chatbotServices[0].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Bot className="h-6 w-6 text-white" />
+                      </div>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base text-gray-300">
-                      {service.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          01
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {chatbotServices[0].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {chatbotServices[0].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Customer service & CRM-based chatbots */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={chatbotServices[1].backgroundImage}
+                        alt={chatbotServices[1].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Headphones className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          02
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {chatbotServices[1].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {chatbotServices[1].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Second Row - Central Image with Social Media Bots */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Central Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, type: "spring" }}
+                  className="relative group"
+                >
+                  {/* Main Feature Card */}
+                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="relative w-full">
+                      <img
+                        src="/assets/AI-Chatbot-Services.gif"
+                        alt="AI Chatbot Development Services"
+                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
+                        style={{ backgroundAttachment: "fixed" }}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/assets/AI-Chatbot-banner.png";
+                        }}
+                      />
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 flex flex-col gap-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Bot className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        AI
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-sm font-medium">
+                            AI Chatbot Hub
+                          </span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                          AI Chatbot Development Services
+                        </h3>
+                        <p className="text-blue-100 leading-relaxed mb-6">
+                          Comprehensive suite of advanced AI chatbot development
+                          solutions powered by cutting-edge technology and
+                          strategic expertise to enhance customer engagement.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Social media bots engineering */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={chatbotServices[2].backgroundImage}
+                        alt={chatbotServices[2].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <MessageSquare className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          03
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {chatbotServices[2].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {chatbotServices[2].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Third Row - Virtual Assistants and Conversational AI */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* AI-based virtual assistants programming */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={chatbotServices[3].backgroundImage}
+                        alt={chatbotServices[3].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Settings className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          04
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {chatbotServices[3].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {chatbotServices[3].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Conversational AI development */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={chatbotServices[4].backgroundImage}
+                        alt={chatbotServices[4].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Brain className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          05
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {chatbotServices[4].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {chatbotServices[4].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Advantages Section */}
       <section className="py-20 relative">
