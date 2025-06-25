@@ -979,7 +979,7 @@ export default function AIChatbotDevelopment() {
                   className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl overflow-hidden"
                 >
                   {/* Industry Image */}
-                  <div className="relative overflow-hidden group cursor-pointer" style={{ width: '798px', height: '532px' }}>
+                  <div className="relative h-64 overflow-hidden group cursor-pointer">
                     <img
                       src={selectedIndustryData.image}
                       alt={selectedIndustryData.name}
