@@ -306,7 +306,7 @@ export const contactInfo = [
     id: 1,
     icon: "map-marker-alt",
     title: "Location",
-    detail: "Bridgewater DrArgyle, TX 76226",
+    detail: "Bridgewater Dr, Argyle, TX 76226",
   },
   {
     id: 2,
