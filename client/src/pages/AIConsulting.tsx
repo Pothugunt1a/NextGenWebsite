@@ -379,7 +379,7 @@ export default function AIConsulting() {
                 >
                   {/* First slide - items 0,1 */}
                   <div className="w-full flex-shrink-0">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       {whyChooseUsItems.slice(0, 2).map((item, index) => {
                         const IconComponent = item.icon;
                         const SecondaryIconComponent = item.secondaryIcon;
@@ -390,36 +390,40 @@ export default function AIConsulting() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                            className="group p-2"
+                            whileHover={{ y: -10, scale: 1.05 }}
+                            className="group"
                           >
-                            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/20 h-full">
-                              {/* Background Icon */}
-                              <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-                                <SecondaryIconComponent className="h-16 w-16 text-cyan-400" />
-                              </div>
+                            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 m-2 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
+                              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
 
-                              {/* Badge */}
-                              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full border border-cyan-400/20 mb-6">
-                                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                                <span className="text-cyan-300 text-xs font-medium">
-                                  {item.badge}
-                                </span>
-                              </div>
+                              <div className="flex items-start gap-6 mb-6">
+                                <div className="relative">
+                                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                                    <IconComponent className="h-10 w-10 text-white" />
+                                  </div>
+                                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                                    <SecondaryIconComponent className="h-4 w-4 text-white" />
+                                  </div>
+                                </div>
 
-                              {/* Main Icon */}
-                              <div className="mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                                  <IconComponent className="h-8 w-8" />
+                                <div className="flex-1">
+                                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                    {item.title}
+                                  </h3>
+                                  <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
                                 </div>
                               </div>
 
-                              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
-                                {item.title}
-                              </h3>
-                              <p className="text-gray-400 leading-relaxed">
+                              <p className="text-gray-300 leading-relaxed text-lg mb-6">
                                 {item.description}
                               </p>
+
+                              <div className="flex items-center gap-2 text-cyan-400">
+                                <CheckCircle className="h-4 w-4" />
+                                <span className="text-sm font-medium">
+                                  {item.badge}
+                                </span>
+                              </div>
                             </div>
                           </motion.div>
                         );
@@ -429,7 +433,7 @@ export default function AIConsulting() {
 
                   {/* Second slide - items 2,3 */}
                   <div className="w-full flex-shrink-0">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       {whyChooseUsItems.slice(2, 4).map((item, index) => {
                         const IconComponent = item.icon;
                         const SecondaryIconComponent = item.secondaryIcon;
@@ -440,36 +444,40 @@ export default function AIConsulting() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                            className="group p-2"
+                            whileHover={{ y: -10, scale: 1.05 }}
+                            className="group"
                           >
-                            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/20 h-full">
-                              {/* Background Icon */}
-                              <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-                                <SecondaryIconComponent className="h-16 w-16 text-cyan-400" />
-                              </div>
+                            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 m-2 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
+                              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
 
-                              {/* Badge */}
-                              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full border border-cyan-400/20 mb-6">
-                                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                                <span className="text-cyan-300 text-xs font-medium">
-                                  {item.badge}
-                                </span>
-                              </div>
+                              <div className="flex items-start gap-6 mb-6">
+                                <div className="relative">
+                                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                                    <IconComponent className="h-10 w-10 text-white" />
+                                  </div>
+                                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                                    <SecondaryIconComponent className="h-4 w-4 text-white" />
+                                  </div>
+                                </div>
 
-                              {/* Main Icon */}
-                              <div className="mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                                  <IconComponent className="h-8 w-8" />
+                                <div className="flex-1">
+                                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                    {item.title}
+                                  </h3>
+                                  <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
                                 </div>
                               </div>
 
-                              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
-                                {item.title}
-                              </h3>
-                              <p className="text-gray-400 leading-relaxed">
+                              <p className="text-gray-300 leading-relaxed text-lg mb-6">
                                 {item.description}
                               </p>
+
+                              <div className="flex items-center gap-2 text-cyan-400">
+                                <CheckCircle className="h-4 w-4" />
+                                <span className="text-sm font-medium">
+                                  {item.badge}
+                                </span>
+                              </div>
                             </div>
                           </motion.div>
                         );
