@@ -800,8 +800,8 @@ export default function AIChatbotDevelopment() {
               <CarouselContent className="-ml-2 md:-ml-4">
                 {/* First slide - items 0,1,2 */}
                 <CarouselItem className="pl-2 md:pl-4">
-                  <div className="p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                       {whyChooseUs.slice(0, 3).map((item, index) => (
                         <motion.div
                           key={index}
@@ -833,8 +833,8 @@ export default function AIChatbotDevelopment() {
 
                 {/* Second slide - items 3,4,5 */}
                 <CarouselItem className="pl-2 md:pl-4">
-                  <div className="p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                       {whyChooseUs.slice(3, 6).map((item, index) => (
                         <motion.div
                           key={index + 3}
