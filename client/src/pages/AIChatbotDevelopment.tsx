@@ -728,49 +728,33 @@ export default function AIChatbotDevelopment() {
       </div>
 
       {/* Advantages Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose AI Chatbots for Your Business?
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Advantages of Integrating AI-Powered Chatbots Into Your Business
+              Operations
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover the transformative benefits of integrating AI chatbots into your business operations
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
             {advantages.map((advantage, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative"
+                viewport={{ once: true }}
               >
-                <Card className="h-full bg-gray-800/60 border-gray-700 hover:border-blue-500/50 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/20">
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                          {advantage.title}
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed">
-                          {advantage.description}
-                        </p>
-                      </div>
-                    </div>
+                <Card className="p-6 bg-gray-700/80 border-gray-600 hover:bg-gray-650/80 transition-colors backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl mb-4 text-white">
+                      {advantage.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base text-gray-300">
+                      {advantage.description}
+                    </CardDescription>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -779,96 +763,145 @@ export default function AIChatbotDevelopment() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-light">
+      {/* Why Choose Us Section - Same as Validation Page */}
+      <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Why Choose RT NextGenAI
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience excellence in AI chatbot development with our proven expertise and innovative solutions
+              Partner with industry leaders in AI chatbot development services
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyChooseUs.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative"
-              >
-                <Card className="h-full bg-gray-800/60 border-gray-700 hover:border-blue-500/50 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/20">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <div className="text-white">{item.icon}</div>
+          <div className="relative max-w-6xl mx-auto">
+            <Carousel
+              className="w-full"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 5000,
+                  stopOnInteraction: true,
+                  stopOnMouseEnter: true,
+                })
+              ]}
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {/* First slide - items 0,1,2 */}
+                <CarouselItem className="pl-2 md:pl-4">
+                  <div className="p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                      {whyChooseUs.slice(0, 3).map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: index * 0.1 }}
+                          whileHover={{ y: -10, scale: 1.05 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                            <div className="flex justify-center mb-6">
+                              <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                                <div className="text-white">{item.icon}</div>
+                              </div>
+                            </div>
+                            <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                              {item.title}
+                            </h3>
+                            <p className="text-gray-300 leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                  </div>
+                </CarouselItem>
+
+                {/* Second slide - items 3,4,5 */}
+                <CarouselItem className="pl-2 md:pl-4">
+                  <div className="p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                      {whyChooseUs.slice(3, 6).map((item, index) => (
+                        <motion.div
+                          key={index + 3}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: index * 0.1 }}
+                          whileHover={{ y: -10, scale: 1.05 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                            <div className="flex justify-center mb-6">
+                              <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                                <div className="text-white">{item.icon}</div>
+                              </div>
+                            </div>
+                            <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                              {item.title}
+                            </h3>
+                            <p className="text-gray-300 leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              
+              <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+              <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+            </Carousel>
           </div>
         </div>
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Industries We Serve
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              How Our Chatbot Can Help Businesses in Different Industries
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Delivering specialized AI chatbot solutions across diverse industries with tailored approaches
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative cursor-pointer"
+                viewport={{ once: true }}
               >
-                <Card className="h-full bg-gradient-to-br from-gray-800/80 to-gray-900/80 border-gray-700 hover:border-blue-500/50 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/20 group-hover:scale-105">
-                  <CardContent className="p-6 text-center h-full flex flex-col justify-between">
-                    <div>
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <div className="text-white">{industry.icon}</div>
-                      </div>
-                      <h3 className="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                        {industry.title}
-                      </h3>
+                <Card className="p-6 text-center bg-gray-700/80 border-gray-600 hover:bg-gray-650/80 transition-colors backdrop-blur-sm">
+                  <CardHeader>
+                    <div className="mx-auto text-blue-400 mb-4">
+                      {industry.icon}
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <CardTitle className="text-xl text-white">
+                      {industry.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base text-gray-300">
                       {industry.description}
-                    </p>
+                    </CardDescription>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -878,135 +911,388 @@ export default function AIChatbotDevelopment() {
       </section>
 
       {/* Development Flow Section */}
-      <section className="py-20 bg-light">
+      <section className="py-16 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Development Process
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A systematic approach to delivering high-quality AI chatbot solutions from concept to deployment
-            </p>
-          </motion.div>
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Our AI Chatbot Development Flow
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We follow a systematic approach for all AI chatbot projects. So
+                when you choose us, here's what you can expect
+              </p>
+            </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full hidden lg:block"></div>
-
-            <div className="space-y-12">
-              {developmentFlow.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  } flex-col lg:gap-12 gap-6`}
-                >
-                  <div className="flex-1 lg:max-w-md">
-                    <Card className="bg-gray-800/60 border-gray-700 hover:border-blue-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-blue-500/20">
-                      <CardContent className="p-8">
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                            {step.step}
-                          </div>
-                          <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                            {step.title}
-                          </h3>
-                        </div>
-                        <p className="text-gray-300 leading-relaxed">
-                          {step.description}
-                        </p>
-                      </CardContent>
-                    </Card>
+            {/* Circular Process Layout */}
+            <div className="relative flex items-center justify-center min-h-[800px] lg:min-h-[900px] px-8">
+              {/* Central Circle */}
+              <div className="relative z-20">
+                <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl">
+                  <div className="w-40 h-40 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex flex-col items-center justify-center border-4 border-blue-400/20">
+                    <div className="text-white mb-2">
+                      <Bot className="w-12 h-12" />
+                    </div>
+                    <div className="text-center">
+                      <div className="text-white font-bold text-lg">
+                        CHATBOT
+                      </div>
+                      <div className="text-white font-bold text-lg">
+                        PROCESS
+                      </div>
+                    </div>
                   </div>
+                </div>
+              </div>
 
-                  {/* Timeline dot */}
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full border-4 border-gray-900 z-10 hidden lg:block"></div>
+              {/* Dotted Circle Path */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                style={{ zIndex: 1 }}
+              >
+                <defs>
+                  <linearGradient
+                    id="chatbotProcessGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.7" />
+                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.7" />
+                  </linearGradient>
+                </defs>
 
-                  <div className="flex-1 lg:max-w-md lg:block hidden"></div>
-                </motion.div>
-              ))}
+                {/* Dotted circle that connects all process steps */}
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="180"
+                  stroke="url(#chatbotProcessGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray="8,6"
+                  className="opacity-80"
+                />
+              </svg>
+
+              {/* Process Steps - Positioned clockwise starting from top-left */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Step 1 - Top Left (10 o'clock) - Validation Stage */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "calc(50% - 127px)",
+                    left: "calc(50% - 127px)",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "12rem", marginBottom: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <CheckCircle className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Validation stage
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Understand and analyze your challenges, identify project
+                        scope, objectives, and goals, develop a strategy to
+                        incorporate AI chatbots
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 2 - Top Right (2 o'clock) - Selecting Technology */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "calc(50% - 127px)",
+                    right: "calc(50% - 127px)",
+                    transform: "translate(50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "12rem", marginBottom: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Settings className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Selecting technology
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Decide between rule-based and AI chatbot models,
+                        evaluate and choose communication channels, explore
+                        integration options with existing systems
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 3 - Right Side (3 o'clock) - Designing Conversations */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "50%",
+                    right: "calc(50% - 180px)",
+                    transform: "translate(50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "14rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <MessageSquare className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Designing conversations
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Map user journeys and possible dialogue paths, design
+                        conversational flows that mimic human interactions,
+                        personalize conversations to enhance user engagement
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 4 - Bottom Right (4 o'clock) - Training Models */}
+                <div
+                  className="absolute"
+                  style={{
+                    bottom: "calc(50% - 127px)",
+                    right: "calc(50% - 127px)",
+                    transform: "translate(50%, 50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "12rem", marginTop: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Bot className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Training models
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Gather and pre-process data to train the chatbot,
+                        fine-tune the AI model to understand industry jargon,
+                        maximize accuracy and improve performance
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 5 - Bottom Left (8 o'clock) - Testing */}
+                <div
+                  className="absolute"
+                  style={{
+                    bottom: "calc(50% - 127px)",
+                    left: "calc(50% - 127px)",
+                    transform: "translate(-50%, 50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "12rem", marginTop: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Shield className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Testing
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Gather feedback by conducting usability testing, ensure
+                        context-aware and accurate responses in different
+                        scenarios, refine the chatbot's responses depending on
+                        user interactions
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 6 - Left Side (9 o'clock) - Deployment & Maintenance */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "50%",
+                    left: "calc(50% - 180px)",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "14rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Zap className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Deployment & maintenance
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Launch the chatbot on the chosen platforms, monitor
+                        real-time performance and user engagement, continuously
+                        optimize the chatbot based on user feedback
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-900">
+      {/* FAQs Section */}
+      <section className="py-16 text-white relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Frequently Asked Questions
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get answers to common questions about AI chatbot development and implementation
-            </p>
-          </motion.div>
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                AI Chatbot FAQs
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300">
+                Common questions about our AI chatbot development services
+              </p>
+            </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <AccordionItem value={`item-${index}`} className="border-gray-700">
-                    <AccordionTrigger className="text-white hover:text-blue-400 text-left font-medium text-lg py-6">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-gray-300 leading-relaxed pb-6">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
-              ))}
-            </Accordion>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              {/* Left Side - AI Chatbot Image */}
+              <div className="lg:col-span-5">
+                <div className="relative">
+                  <img
+                    src="./assets/AI-Chatbot.gif"
+                    alt="AI Chatbot Technology"
+                    className="w-full h-[500px] object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Right Side - FAQ Content */}
+              <div className="lg:col-span-7">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <AccordionItem
+                      key={index}
+                      value={`item-${index}`}
+                      className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-xl border border-gray-700 overflow-hidden backdrop-blur-sm"
+                    >
+                      <AccordionTrigger className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors">
+                        <h3 className="text-lg font-semibold text-white pr-4">
+                          {faq.question}
+                        </h3>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-6">
+                        <p className="text-gray-400 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business with AI Chatbots?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Let's discuss how our AI chatbot solutions can enhance your customer engagement and streamline your operations.
-            </p>
-            <Button
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105"
+      <section className="py-20 bg-light relative">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              Start Your AI Chatbot Project
-            </Button>
-          </motion.div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Transform Your Business with AI Chatbots?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Let's discuss how our AI chatbot development services can help
+                you improve customer engagement and drive business growth.
+              </p>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                Let's Talk
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </section>
     </motion.div>
