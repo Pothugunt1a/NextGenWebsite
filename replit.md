@@ -86,6 +86,15 @@ The backend is minimalistic but extensible, currently providing an API endpoint 
    - `shared/schema.ts`: Drizzle ORM schema definitions for database tables
    - Validation schemas using Zod
 
+## Recent Changes
+
+**June 25, 2025:**
+- Fixed critical cpanel deployment issue: Image files (.png, .gif, .jpg) not displaying
+- Root cause: Build process created files with restrictive 600 permissions preventing web server access
+- Solution: Updated fix-banner-permissions.sh script to automatically set proper 644 permissions
+- Applied fix to both source and built assets, now ready for cpanel deployment
+- All carousel components now use consistent Embla Carousel with proper spacing for shadow visibility
+
 ## Data Flow
 
 1. **Contact Form Submission Flow**:
@@ -101,6 +110,11 @@ The backend is minimalistic but extensible, currently providing an API endpoint 
    - Pages and components are pre-rendered
    - Animation triggers as user scrolls through the page
    - Interactive elements like navigation work client-side
+
+3. **Asset Serving Flow**:
+   - Images served from `/assets/` path in production
+   - All image files have 644 permissions for proper web server access
+   - Automatic permission fixing via fix-banner-permissions.sh script
 
 ## External Dependencies
 

@@ -117,10 +117,17 @@ Verify that uploaded file names match exactly (case-sensitive) with the referenc
 - Check file extensions match (.png, .jpg, etc.)
 
 ## Quick Fix Script
-Run this command before deployment to ensure all permissions are correct:
+**CRITICAL: Run this command after building to fix image permissions:**
 ```bash
 ./fix-banner-permissions.sh
 ```
+
+**Complete deployment process:**
+1. Build the project: `npm run build`
+2. Fix image permissions: `./fix-banner-permissions.sh`
+3. Upload the `dist/public/` contents to your cpanel public_html folder
+
+**The script automatically fixes permissions for all .png, .gif, .jpg, .jpeg, and .svg files to 644 (readable by web server).**
 
 ## Validation Checklist
 Before uploading to cpanel, verify:
