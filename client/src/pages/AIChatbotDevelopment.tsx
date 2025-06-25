@@ -62,7 +62,7 @@ export default function AIChatbotDevelopment() {
     {
       id: "ecommerce",
       name: "E-commerce",
-      image: "/assets/Finance.png",
+      image: "/assets/Ecommerce.png",
       content:
         "Enhance user experiences by providing personalized product recommendations and real-time suggestions, and streamlining order tracking to improve customer satisfaction and drive conversions. AI chatbots can handle customer inquiries 24/7, provide instant product information, assist with checkout processes, and reduce cart abandonment rates through proactive engagement.",
     },
@@ -110,7 +110,9 @@ export default function AIChatbotDevelopment() {
     },
   ];
 
-  const [selectedIndustryData, setSelectedIndustryData] = useState(industryData[0]);
+  const [selectedIndustryData, setSelectedIndustryData] = useState(
+    industryData[0],
+  );
 
   const stats = [
     {
@@ -849,7 +851,7 @@ export default function AIChatbotDevelopment() {
                   delay: 5000,
                   stopOnInteraction: true,
                   stopOnMouseEnter: true,
-                })
+                }),
               ]}
             >
               <CarouselContent className="-ml-2 md:-ml-4">
@@ -919,7 +921,7 @@ export default function AIChatbotDevelopment() {
                   </div>
                 </CarouselItem>
               </CarouselContent>
-              
+
               <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
               <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
             </Carousel>
