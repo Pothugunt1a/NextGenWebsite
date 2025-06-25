@@ -390,21 +390,34 @@ export default function AIConsulting() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ y: -10, scale: 1.05 }}
+                            whileHover={{ y: -10 }}
                             className="group p-2"
                           >
-                            <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
-                              <div className="flex justify-center mb-6">
-                                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
-                                  <div className="text-white">
-                                    <IconComponent className="h-10 w-10" />
-                                  </div>
+                            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/20 h-full">
+                              {/* Background Icon */}
+                              <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                                <SecondaryIconComponent className="h-16 w-16 text-cyan-400" />
+                              </div>
+
+                              {/* Badge */}
+                              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full border border-cyan-400/20 mb-6">
+                                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                                <span className="text-cyan-300 text-xs font-medium">
+                                  {item.badge}
+                                </span>
+                              </div>
+
+                              {/* Main Icon */}
+                              <div className="mb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                                  <IconComponent className="h-8 w-8" />
                                 </div>
                               </div>
-                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+
+                              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
                                 {item.title}
                               </h3>
-                              <p className="text-gray-300 leading-relaxed">
+                              <p className="text-gray-400 leading-relaxed">
                                 {item.description}
                               </p>
                             </div>
@@ -427,21 +440,34 @@ export default function AIConsulting() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ y: -10, scale: 1.05 }}
+                            whileHover={{ y: -10 }}
                             className="group p-2"
                           >
-                            <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
-                              <div className="flex justify-center mb-6">
-                                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
-                                  <div className="text-white">
-                                    <IconComponent className="h-10 w-10" />
-                                  </div>
+                            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/20 h-full">
+                              {/* Background Icon */}
+                              <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                                <SecondaryIconComponent className="h-16 w-16 text-cyan-400" />
+                              </div>
+
+                              {/* Badge */}
+                              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full border border-cyan-400/20 mb-6">
+                                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                                <span className="text-cyan-300 text-xs font-medium">
+                                  {item.badge}
+                                </span>
+                              </div>
+
+                              {/* Main Icon */}
+                              <div className="mb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                                  <IconComponent className="h-8 w-8" />
                                 </div>
                               </div>
-                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+
+                              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
                                 {item.title}
                               </h3>
-                              <p className="text-gray-300 leading-relaxed">
+                              <p className="text-gray-400 leading-relaxed">
                                 {item.description}
                               </p>
                             </div>
