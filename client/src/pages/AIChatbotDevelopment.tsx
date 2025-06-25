@@ -57,6 +57,61 @@ export default function AIChatbotDevelopment() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  // Industry data for the interactive section
+  const industryData = [
+    {
+      id: "ecommerce",
+      name: "E-commerce",
+      image: "/assets/Finance.png",
+      content:
+        "Enhance user experiences by providing personalized product recommendations and real-time suggestions, and streamlining order tracking to improve customer satisfaction and drive conversions. AI chatbots can handle customer inquiries 24/7, provide instant product information, assist with checkout processes, and reduce cart abandonment rates through proactive engagement.",
+    },
+    {
+      id: "marketing-sales",
+      name: "Marketing & Sales",
+      image: "/assets/Internet-Tech-Startup.png",
+      content:
+        "Boost lead generation and conversion rates with intelligent chatbots that qualify prospects, provide product information, and guide customers through the sales funnel. Our chatbots can capture leads, schedule appointments, provide instant quotes, and nurture prospects with personalized content, significantly improving your sales team's efficiency.",
+    },
+    {
+      id: "banking",
+      name: "Banking",
+      image: "/assets/Finance.png",
+      content:
+        "Provide secure, 24/7 customer support for account inquiries, transaction history, loan applications, and financial advice while maintaining strict security protocols. Banking chatbots can handle routine transactions, provide balance information, assist with loan applications, and offer financial planning advice, all while ensuring compliance with financial regulations.",
+    },
+    {
+      id: "healthcare",
+      name: "Healthcare",
+      image: "/assets/Pharmaceuticals.png",
+      content:
+        "Streamline patient interactions with appointment scheduling, symptom checking, medication reminders, and health information while ensuring HIPAA compliance. Healthcare chatbots can triage patients, provide health education, send medication reminders, and facilitate telemedicine consultations, improving patient care while reducing administrative burden.",
+    },
+    {
+      id: "insurance",
+      name: "Insurance",
+      image: "/assets/Finance.png",
+      content:
+        "Simplify policy management, claims processing, and customer inquiries with intelligent chatbots that understand complex insurance terminology and procedures. Insurance chatbots can help customers file claims, check policy details, get quotes, and understand coverage options, making insurance services more accessible and efficient.",
+    },
+    {
+      id: "travel",
+      name: "Travel",
+      image: "/assets/Media.png",
+      content:
+        "Enhance travel experiences with chatbots that assist with booking, itinerary planning, real-time updates, and customer support throughout the journey. Travel chatbots can handle flight bookings, hotel reservations, provide destination information, send travel alerts, and assist with travel-related issues, creating seamless travel experiences.",
+    },
+    {
+      id: "supply-chain",
+      name: "Supply Chain",
+      image: "/assets/Oil-Gas.png",
+      content:
+        "Optimize logistics and inventory management with chatbots that track shipments, manage supplier communications, and provide real-time supply chain insights. Supply chain chatbots can monitor delivery status, handle vendor inquiries, manage inventory alerts, and provide analytics on supply chain performance, improving operational efficiency.",
+    },
+  ];
+
+  const [selectedIndustryData, setSelectedIndustryData] = useState(industryData[0]);
+
   const stats = [
     {
       icon: <Target className="h-8 w-8" />,
@@ -872,40 +927,89 @@ export default function AIChatbotDevelopment() {
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              How Our Chatbot Can Help Businesses in Different Industries
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6 text-center bg-gray-700/80 border-gray-600 hover:bg-gray-650/80 transition-colors backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="mx-auto text-blue-400 mb-4">
-                      {industry.icon}
+      {/* Industries Section - Interactive Layout */}
+      <section className="py-20 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                How Our Chatbot Can Help Businesses in Different Industries
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Left Navigation */}
+              <div className="lg:col-span-4">
+                <div className="grid grid-cols-1 gap-4">
+                  {industryData.map((industry) => (
+                    <Button
+                      key={industry.id}
+                      variant={
+                        selectedIndustryData.id === industry.id
+                          ? "default"
+                          : "outline"
+                      }
+                      className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
+                        selectedIndustryData.id === industry.id
+                          ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
+                          : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
+                      }`}
+                      onClick={() => {
+                        setSelectedIndustryData(industry);
+                      }}
+                    >
+                      <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
+                        {industry.name}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Content Display */}
+              <div className="lg:col-span-8">
+                <motion.div
+                  key={selectedIndustryData.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl overflow-hidden"
+                >
+                  {/* Industry Image */}
+                  <div className="relative h-64 overflow-hidden group cursor-pointer">
+                    <img
+                      src={selectedIndustryData.image}
+                      alt={selectedIndustryData.name}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        console.error(
+                          `Failed to load image: ${selectedIndustryData.image}`,
+                        );
+                      }}
+                      onLoad={() => {
+                        console.log(
+                          `Successfully loaded image: ${selectedIndustryData.image}`,
+                        );
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent group-hover:from-gray-900/60 transition-all duration-300"></div>
+                    <div className="absolute bottom-4 left-6">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                        {selectedIndustryData.name}
+                      </h3>
                     </div>
-                    <CardTitle className="text-xl text-white">
-                      {industry.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base text-gray-300">
-                      {industry.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                  </div>
+
+                  {/* Industry Content */}
+                  <div className="p-6">
+                    <p className="text-gray-300 leading-relaxed text-lg">
+                      {selectedIndustryData.content}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
