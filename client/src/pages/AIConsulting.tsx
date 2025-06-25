@@ -378,8 +378,8 @@ export default function AIConsulting() {
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 >
                   {/* First slide - items 0,1 */}
-                  <div className="w-full flex-shrink-0 p-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="w-full flex-shrink-0 p-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                       {whyChooseUsItems.slice(0, 2).map((item, index) => {
                         const IconComponent = item.icon;
                         const SecondaryIconComponent = item.secondaryIcon;
@@ -432,8 +432,8 @@ export default function AIConsulting() {
                   </div>
 
                   {/* Second slide - items 2,3 */}
-                  <div className="w-full flex-shrink-0 p-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="w-full flex-shrink-0 p-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                       {whyChooseUsItems.slice(2, 4).map((item, index) => {
                         const IconComponent = item.icon;
                         const SecondaryIconComponent = item.secondaryIcon;
