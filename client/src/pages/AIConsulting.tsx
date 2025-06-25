@@ -483,7 +483,7 @@ export default function AIConsulting() {
                     </div>
                   </CarouselItem>
                 </CarouselContent>
-                
+
                 <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
                 <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
               </Carousel>
@@ -1196,7 +1196,7 @@ export default function AIConsulting() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        We begin with a small-scale implementation using the
+                        Webegin with a small-scale implementation using the
                         available dataset to validate the feasibility of our
                         concept. This step-by-step approach helps us assess the
                         effectiveness of the idea and whether it justifies
