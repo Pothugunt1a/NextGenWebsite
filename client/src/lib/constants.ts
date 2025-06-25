@@ -166,7 +166,10 @@ export const navLinks = [
       {
         name: "Generative AI",
         items: [
-          { name: "Generative AI Development", href: "#generative-ai" },
+          {
+              name: "Generative AI Development",
+              href: "/generative-ai-development",
+            },
           { name: "AI Chatbot Development", href: "/ai-chatbot-development" },
           { name: "LLM Development and Consulting", href: "/llm-development" },
         ],
