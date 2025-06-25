@@ -19,14 +19,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 interface FAQ {
   question: string;
@@ -240,11 +232,21 @@ const industryData = [
 
 export default function AIConsulting() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedIndustry, setSelectedIndustry] = useState(industryData[0]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
+  // Auto carousel effect for 2x2 grid (2 slides total)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % 2); // 2 slides: first shows items 0,1 and second shows items 2,3
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <motion.div
@@ -352,77 +354,138 @@ export default function AIConsulting() {
               </p>
             </motion.div>
 
-            {/* Embla Carousel */}
-            <div className="relative max-w-6xl mx-auto">
-              <Carousel
-                className="w-full"
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                plugins={[
-                  Autoplay({
-                    delay: 5000,
-                    stopOnInteraction: true,
-                    stopOnMouseEnter: true,
-                  })
-                ]}
+            {/* Auto Carousel - 2x2 Grid */}
+            <div className="relative max-w-6xl mx-auto px-4">
+              {/* Left Arrow */}
+              <button
+                onClick={() => setCurrentSlide(currentSlide === 0 ? 1 : 0)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 transition-all duration-300 group hover:shadow-lg hover:shadow-cyan-400/20 backdrop-blur-sm"
               >
-                <CarouselContent className="-ml-4 md:-ml-8">
-                  {whyChooseUsItems.map((item, index) => {
-                    const IconComponent = item.icon;
-                    const SecondaryIconComponent = item.secondaryIcon;
+                <ChevronLeft className="h-6 w-6 text-cyan-400 group-hover:text-white transition-colors" />
+              </button>
 
-                    return (
-                      <CarouselItem key={index} className="pl-4 md:pl-8 md:basis-1/2">
-                        <motion.div
-                          initial={{ opacity: 0, y: 30 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.6, delay: index * 0.1 }}
-                          whileHover={{ y: -10, scale: 1.05 }}
-                          className="group p-4"
-                        >
-                          <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
+              {/* Right Arrow */}
+              <button
+                onClick={() => setCurrentSlide(currentSlide === 1 ? 0 : 1)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 transition-all duration-300 group hover:shadow-lg hover:shadow-cyan-400/20 backdrop-blur-sm"
+              >
+                <ChevronRight className="h-6 w-6 text-cyan-400 group-hover:text-white transition-colors" />
+              </button>
 
-                            <div className="flex items-start gap-6 mb-6">
-                              <div className="relative">
-                                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                                  <IconComponent className="h-10 w-10 text-white" />
+              <div className="overflow-hidden mx-8">
+                <motion.div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {/* First slide - items 0,1 */}
+                  <div className="w-full flex-shrink-0 p-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      {whyChooseUsItems.slice(0, 2).map((item, index) => {
+                        const IconComponent = item.icon;
+                        const SecondaryIconComponent = item.secondaryIcon;
+
+                        return (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.05 }}
+                            className="group"
+                          >
+                            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 m-2 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
+                              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
+
+                              <div className="flex items-start gap-6 mb-6">
+                                <div className="relative">
+                                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                                    <IconComponent className="h-10 w-10 text-white" />
+                                  </div>
+                                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                                    <SecondaryIconComponent className="h-4 w-4 text-white" />
+                                  </div>
                                 </div>
-                                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                                  <SecondaryIconComponent className="h-4 w-4 text-white" />
+
+                                <div className="flex-1">
+                                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                    {item.title}
+                                  </h3>
+                                  <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
                                 </div>
                               </div>
 
-                              <div className="flex-1">
-                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                  {item.title}
-                                </h3>
-                                <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
+                              <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                                {item.description}
+                              </p>
+
+                              <div className="flex items-center gap-2 text-cyan-400">
+                                <CheckCircle className="h-4 w-4" />
+                                <span className="text-sm font-medium">
+                                  {item.badge}
+                                </span>
                               </div>
                             </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
 
-                            <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                              {item.description}
-                            </p>
+                  {/* Second slide - items 2,3 */}
+                  <div className="w-full flex-shrink-0 p-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      {whyChooseUsItems.slice(2, 4).map((item, index) => {
+                        const IconComponent = item.icon;
+                        const SecondaryIconComponent = item.secondaryIcon;
 
-                            <div className="flex items-center gap-2 text-cyan-400">
-                              <CheckCircle className="h-4 w-4" />
-                              <span className="text-sm font-medium">
-                                {item.badge}
-                              </span>
+                        return (
+                          <motion.div
+                            key={index + 2}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.05 }}
+                            className="group"
+                          >
+                            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 m-2 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
+                              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
+
+                              <div className="flex items-start gap-6 mb-6">
+                                <div className="relative">
+                                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                                    <IconComponent className="h-10 w-10 text-white" />
+                                  </div>
+                                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                                    <SecondaryIconComponent className="h-4 w-4 text-white" />
+                                  </div>
+                                </div>
+
+                                <div className="flex-1">
+                                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                    {item.title}
+                                  </h3>
+                                  <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
+                                </div>
+                              </div>
+
+                              <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                                {item.description}
+                              </p>
+
+                              <div className="flex items-center gap-2 text-cyan-400">
+                                <CheckCircle className="h-4 w-4" />
+                                <span className="text-sm font-medium">
+                                  {item.badge}
+                                </span>
+                              </div>
                             </div>
-                          </div>
-                        </motion.div>
-                      </CarouselItem>
-                    );
-                  })}
-                </CarouselContent>
-                
-                <CarouselPrevious className="left-4 bg-white/10 border-white/30 hover:bg-white/20 text-white" />
-                <CarouselNext className="right-4 bg-white/10 border-white/30 hover:bg-white/20 text-white" />
-              </Carousel>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
 
             {/* Call to Action */}
