@@ -19,6 +19,14 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface FAQ {
   question: string;
@@ -232,21 +240,11 @@ const industryData = [
 
 export default function AIConsulting() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedIndustry, setSelectedIndustry] = useState(industryData[0]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
-
-  // Auto carousel effect for 2x2 grid (2 slides total)
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 2); // 2 slides: first shows items 0,1 and second shows items 2,3
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <motion.div
