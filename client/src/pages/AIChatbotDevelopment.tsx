@@ -69,21 +69,21 @@ export default function AIChatbotDevelopment() {
     {
       id: "marketing-sales",
       name: "Marketing & Sales",
-      image: "/assets/Internet-Tech-Startup.png",
+      image: "/assets/Marketing.png",
       content:
         "Boost lead generation and conversion rates with intelligent chatbots that qualify prospects, provide product information, and guide customers through the sales funnel. Our chatbots can capture leads, schedule appointments, provide instant quotes, and nurture prospects with personalized content, significantly improving your sales team's efficiency.",
     },
     {
       id: "banking",
       name: "Banking",
-      image: "/assets/Finance.png",
+      image: "/assets/Banking.png",
       content:
         "Provide secure, 24/7 customer support for account inquiries, transaction history, loan applications, and financial advice while maintaining strict security protocols. Banking chatbots can handle routine transactions, provide balance information, assist with loan applications, and offer financial planning advice, all while ensuring compliance with financial regulations.",
     },
     {
       id: "healthcare",
       name: "Healthcare",
-      image: "/assets/Pharmaceuticals.png",
+      image: "/assets/Healthcare.png",
       content:
         "Streamline patient interactions with appointment scheduling, symptom checking, medication reminders, and health information while ensuring HIPAA compliance. Healthcare chatbots can triage patients, provide health education, send medication reminders, and facilitate telemedicine consultations, improving patient care while reducing administrative burden.",
     },
@@ -97,7 +97,7 @@ export default function AIChatbotDevelopment() {
     {
       id: "travel",
       name: "Travel",
-      image: "/assets/Media.png",
+      image: "/assets/Travel.png",
       content:
         "Enhance travel experiences with chatbots that assist with booking, itinerary planning, real-time updates, and customer support throughout the journey. Travel chatbots can handle flight bookings, hotel reservations, provide destination information, send travel alerts, and assist with travel-related issues, creating seamless travel experiences.",
     },
