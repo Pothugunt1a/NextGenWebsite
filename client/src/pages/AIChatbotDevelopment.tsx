@@ -90,7 +90,7 @@ export default function AIChatbotDevelopment() {
     {
       id: "insurance",
       name: "Insurance",
-      image: "/assets/Finance.png",
+      image: "/assets/Insurance.png",
       content:
         "Simplify policy management, claims processing, and customer inquiries with intelligent chatbots that understand complex insurance terminology and procedures. Insurance chatbots can help customers file claims, check policy details, get quotes, and understand coverage options, making insurance services more accessible and efficient.",
     },
