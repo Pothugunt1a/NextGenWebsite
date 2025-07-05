@@ -254,53 +254,76 @@ export default function AIConsulting() {
       className="text-white"
     >
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/assets/AI-Consulting-banner.png"
             alt="AI Consulting Services"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
 
-        <div className="relatiCapabilitiesngifner mx-auto px-4 sm:px-6 lg:px-8 text-left">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-5xl"
-          >
-            <motion.h1
-              initial={{ y: 30, opacity: 0 }}
+        <div className="relative flex items-center h-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-              style={{ fontWeight: 700 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-5xl"
             >
-              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                AI Consulting Services
-              </span>
-            </motion.h1>
+              <motion.h1
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
+              >
+                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                  AI Consulting Services
+                </span>
+              </motion.h1>
 
-            <motion.p
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
-            >
-              Transform your business with strategic AI implementation, expert
-              guidance, and comprehensive solutions that drive innovation and
-              competitive advantage
-            </motion.p>
+              <motion.p
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+              >
+                Transform your business with strategic AI implementation, expert
+                guidance, and comprehensive solutions that drive innovation and
+                competitive advantage
+              </motion.p>
 
-            {/* Badge below description */}
-            <div className="mb-32">
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 mb-8"
+              >
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white border-0 px-8 py-6 text-lg"
+                  onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg"
+                  onClick={() => document.getElementById('capabilities-section')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Learn More
+                </Button>
+              </motion.div>
+
+              {/* Badge below description */}
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                transition={{ delay: 0.6, type: "spring" }}
+                transition={{ delay: 0.8, type: "spring" }}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
                 <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
@@ -309,10 +332,10 @@ export default function AIConsulting() {
                 </span>
                 <Award className="h-4 w-4 text-blue-400 fill-current" />
               </motion.div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* Why Work With Us Section */}
       <section className="py-16 text-white relative overflow-hidden">
@@ -515,7 +538,7 @@ export default function AIConsulting() {
       </section>
 
       {/* Main AI Consulting Capabilities - Life Science Style */}
-      <div className="py-20 bg-light relative overflow-hidden">
+      <div id="capabilities-section" className="py-20 bg-light relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
@@ -1495,6 +1518,43 @@ export default function AIConsulting() {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact-section" className="py-20 bg-dark text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+              Let's discuss how our AI consulting services can help you achieve your business goals
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white border-0 px-8 py-6 text-lg"
+                onClick={() => window.location.href = '/contact'}
+              >
+                Contact Us Today
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg"
+                onClick={() => window.location.href = 'tel:+14696660019'}
+              >
+                Call Now: (469) 666-0019
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>

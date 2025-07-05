@@ -104,7 +104,7 @@ export default function AIChatbotDevelopment() {
     {
       id: "supply-chain",
       name: "Supply Chain",
-      image: "/assets/Oil-Gas.png",
+      image: "/assets/Supplychain.png",
       content:
         "Optimize logistics and inventory management with chatbots that track shipments, manage supplier communications, and provide real-time supply chain insights. Supply chain chatbots can monitor delivery status, handle vendor inquiries, manage inventory alerts, and provide analytics on supply chain performance, improving operational efficiency.",
     },
