@@ -277,7 +277,8 @@ export default function AIConsulting() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
+                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+                style={{ fontWeight: 700 }}
               >
                 <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
                   AI Consulting Services
@@ -295,43 +296,21 @@ export default function AIConsulting() {
                 competitive advantage
               </motion.p>
 
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 mb-8"
-              >
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white border-0 px-8 py-6 text-lg"
-                  onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg"
-                  onClick={() => document.getElementById('capabilities-section')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Learn More
-                </Button>
-              </motion.div>
-
               {/* Badge below description */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.8, type: "spring" }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
-              >
-                <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
-                <span className="text-white font-medium">
-                  Strategic AI Transformation Solutions
-                </span>
-                <Award className="h-4 w-4 text-blue-400 fill-current" />
-              </motion.div>
+              <div className="mb-32">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.6, type: "spring" }}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+                >
+                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
+                  <span className="text-white font-medium">
+                    Strategic AI Transformation Solutions
+                  </span>
+                  <Award className="h-4 w-4 text-blue-400 fill-current" />
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
