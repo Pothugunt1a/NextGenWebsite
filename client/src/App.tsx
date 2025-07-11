@@ -18,6 +18,7 @@ import ProcessOptimization from "./pages/ProcessOptimization";
 import AIComponentsDevelopment from "./pages/AIComponentsDevelopment";
 import LLMDevelopment from "./pages/LLMDevelopment";
 import AIUsecase from "./pages/AIUsecase";
+import AIUsecaseDiscovery from "./pages/AIUsecaseDiscovery";
 import AIChatbotDevelopment from "./pages/AIChatbotDevelopment";
 import GenerativeAIDevelopment from "./pages/GenerativeAIDevelopment";
 
@@ -38,6 +39,7 @@ function Router() {
         <Route path="/ai-components-development" component={AIComponentsDevelopment} />
         <Route path="/llm-development" component={LLMDevelopment} />
         <Route path="/ai-usecase-discovery" component={AIUsecase} />
+        <Route path="/ai-usecase-discovery-identification" component={AIUsecaseDiscovery} />
         <Route path="/ai-chatbot-development" component={AIChatbotDevelopment} />
         <Route path="/generative-ai-development" component={GenerativeAIDevelopment} />
         <Route component={NotFound} />
