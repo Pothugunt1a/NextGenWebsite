@@ -1039,11 +1039,11 @@ export default function AIUsecaseDiscovery() {
                       ]}
                     >
                       <CarouselContent className="-ml-2 md:-ml-4">
-                        {/* First slide - items 0,1 */}
+                        {/* First slide - items 0,1,2 */}
                         <CarouselItem className="pl-2 md:pl-4">
                           <div className="p-6">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                              {capabilities.slice(0, 2).map((capability, index) => {
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                              {capabilities.slice(0, 3).map((capability, index) => {
                                 const IconComponent = capability.icon;
 
                                 return (
@@ -1116,93 +1116,16 @@ export default function AIUsecaseDiscovery() {
                           </div>
                         </CarouselItem>
 
-                        {/* Second slide - items 2,3 */}
+                        {/* Second slide - items 3,4,5 */}
                         <CarouselItem className="pl-2 md:pl-4">
                           <div className="p-6">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                              {capabilities.slice(2, 4).map((capability, index) => {
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                              {capabilities.slice(3, 6).map((capability, index) => {
                                 const IconComponent = capability.icon;
 
                                 return (
                                   <motion.div
-                                    key={index + 2}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    whileHover={{ y: -10, scale: 1.05 }}
-                                    viewport={{ once: true }}
-                                    className="group"
-                                  >
-                                    <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden">
-                                      {/* Background Image */}
-                                      {capability.backgroundImage && (
-                                        <div className="absolute inset-0 opacity-10">
-                                          <img
-                                            src={capability.backgroundImage}
-                                            alt={capability.title}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                          />
-                                          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60"></div>
-                                        </div>
-                                      )}
-
-                                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
-
-                                      <div className="relative z-10">
-                                        <div className="flex items-start gap-6 mb-6">
-                                          <div className="relative">
-                                            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                                              <IconComponent className="h-10 w-10 text-white" />
-                                            </div>
-                                          </div>
-
-                                          <div className="flex-1">
-                                            <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                              {capability.title}
-                                            </h3>
-                                            <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                                          </div>
-                                        </div>
-
-                                        <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                                          {capability.description}
-                                        </p>
-
-                                        <div>
-                                          <h4 className="text-lg font-medium text-white mb-3">
-                                            Applications:
-                                          </h4>
-                                          <div className="space-y-2">
-                                            {capability.applications.map((app, appIdx) => (
-                                              <div
-                                                key={appIdx}
-                                                className="flex items-center space-x-3"
-                                              >
-                                                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                                                <span className="text-gray-300">{app}</span>
-                                              </div>
-                                            ))}
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </motion.div>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        </CarouselItem>
-
-                        {/* Third slide - items 4,5 */}
-                        <CarouselItem className="pl-2 md:pl-4">
-                          <div className="p-6">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                              {capabilities.slice(4, 6).map((capability, index) => {
-                                const IconComponent = capability.icon;
-
-                                return (
-                                  <motion.div
-                                    key={index + 4}
+                                    key={index + 3}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: index * 0.1 }}
