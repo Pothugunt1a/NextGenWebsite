@@ -11,14 +11,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import {
   Search,
   Target,
   Users,
@@ -52,175 +44,297 @@ import {
   DollarSign,
   Briefcase,
   Mail,
+  Server,
+  AlertTriangle,
+  Code,
+  Lock,
+  Monitor,
+  Settings,
+  Activity,
+  Layers,
+  CloudLightning,
+  Workflow,
 } from "lucide-react";
 
 export default function AIUsecaseDiscovery() {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>("operational");
 
   const toggleFAQ = (id: string) => {
     setOpenFAQ(openFAQ === id ? null : id);
   };
 
-  // Enhanced Service Deliverables with icons and better descriptions
+  // Enhanced Service Deliverables
   const serviceDeliverables = [
     {
-      icon: <Target className="h-12 w-12 text-blue-400" />,
-      title: "AI Strategy Clarity",
+      icon: <Target className="h-12 w-12" />,
+      title: "Strategic Clarity",
       description:
-        "Comprehensive AI roadmap with clear implementation priorities and expected outcomes for maximum business impact.",
+        "Comprehensive AI roadmap with clear implementation priorities, ROI projections, and measurable business outcomes for maximum strategic impact.",
       color: "from-blue-500 to-cyan-500",
+      features: ["Business Alignment", "ROI Analysis", "Strategic Roadmap", "Success Metrics"]
     },
     {
-      icon: <Eye className="h-12 w-12 text-purple-400" />,
+      icon: <Eye className="h-12 w-12" />,
       title: "Opportunity Focus",
       description:
-        "Detailed analysis of high-value AI use cases with implementation feasibility and ROI projections.",
+        "Detailed analysis of high-value AI use cases with feasibility assessments, impact matrices, and prioritization frameworks.",
       color: "from-purple-500 to-pink-500",
+      features: ["Use Case Identification", "Feasibility Analysis", "Impact Assessment", "Value Matrix"]
     },
     {
-      icon: <Rocket className="h-12 w-12 text-green-400" />,
-      title: "Actionable Insights",
+      icon: <Rocket className="h-12 w-12" />,
+      title: "Implementation Roadmap",
       description:
-        "Concrete next steps with resource requirements, timelines, and success metrics for each identified opportunity.",
+        "Actionable next steps with resource requirements, timelines, governance models, and cross-functional team structures.",
       color: "from-green-500 to-emerald-500",
+      features: ["Action Plan", "Resource Planning", "Timeline Definition", "Team Structure"]
     },
   ];
 
-  // Enhanced Benefits with better visual design
+  // Enhanced IT-Focused Use Case Categories
+  const useCaseCategories = [
+    {
+      id: "operations",
+      title: "IT Operations & Monitoring",
+      icon: <Server className="h-10 w-10" />,
+      color: "from-blue-500 to-cyan-500",
+      description: "AI-powered infrastructure and operations management",
+      useCases: [
+        "Predictive Maintenance of Servers & Infrastructure",
+        "Intelligent Alert Correlation & Root Cause Analysis",
+        "AIOps for Incident Pattern Recognition",
+        "Automated Capacity Planning & Resource Optimization",
+        "Performance Anomaly Detection & Prevention",
+      ],
+      tools: ["Dynatrace", "Splunk", "Moogsoft", "Azure Monitor"],
+      benefits: ["Reduced Downtime", "Faster Resolution", "Proactive Monitoring"]
+    },
+    {
+      id: "service",
+      title: "Service Management",
+      icon: <MessageSquare className="h-10 w-10" />,
+      color: "from-purple-500 to-pink-500",
+      description: "Intelligent IT service delivery and support",
+      useCases: [
+        "AI Chatbots for Tier 1 Support Automation",
+        "Automated Ticket Triage & Smart Routing",
+        "NLP-based Knowledge Base Search & Recommendations",
+        "Predictive Issue Resolution & Self-Healing",
+        "Customer Sentiment Analysis & Satisfaction Prediction",
+      ],
+      tools: ["ServiceNow", "Microsoft Bot Framework", "Zendesk"],
+      benefits: ["24/7 Support", "Faster Response", "Cost Reduction"]
+    },
+    {
+      id: "security",
+      title: "Security & Compliance",
+      icon: <Lock className="h-10 w-10" />,
+      color: "from-red-500 to-orange-500",
+      description: "AI-driven cybersecurity and compliance automation",
+      useCases: [
+        "AI-driven Threat Detection & Response",
+        "Intelligent Log Analysis for Security Anomalies",
+        "Automated Compliance Document Processing",
+        "Behavioral Analysis for Insider Threat Detection",
+        "Vulnerability Assessment & Risk Scoring",
+      ],
+      tools: ["Splunk Security", "CrowdStrike", "IBM QRadar"],
+      benefits: ["Enhanced Security", "Automated Compliance", "Risk Reduction"]
+    },
+    {
+      id: "devops",
+      title: "DevOps & Development",
+      icon: <Code className="h-10 w-10" />,
+      color: "from-green-500 to-emerald-500",
+      description: "AI-enhanced development and deployment processes",
+      useCases: [
+        "AI-Assisted Code Review & Quality Analysis",
+        "Predictive Deployment Risk Assessment",
+        "CI/CD Pipeline Optimization & Automation",
+        "Intelligent Testing & Bug Detection",
+        "Code Generation & Documentation Automation",
+      ],
+      tools: ["GitHub Copilot", "SonarQube", "Jenkins", "Azure DevOps"],
+      benefits: ["Faster Development", "Higher Quality", "Reduced Errors"]
+    },
+    {
+      id: "data",
+      title: "Data & Asset Management",
+      icon: <Database className="h-10 w-10" />,
+      color: "from-indigo-500 to-blue-500",
+      description: "Intelligent data governance and asset optimization",
+      useCases: [
+        "Automated Asset Discovery & Classification",
+        "Smart Data Governance & Quality Management",
+        "AI-powered Data Cataloging & Lineage Tracking",
+        "Intelligent Backup & Recovery Optimization",
+        "Predictive Storage & Resource Planning",
+      ],
+      tools: ["Collibra", "Informatica", "Talend", "AWS Glue"],
+      benefits: ["Better Data Quality", "Compliance", "Cost Optimization"]
+    },
+  ];
+
+  // Discovery Framework Steps
+  const discoverySteps = [
+    {
+      step: "01",
+      title: "Assessment & Analysis",
+      description: "Comprehensive evaluation of current IT landscape, pain points, and strategic objectives",
+      icon: <Search className="h-8 w-8" />,
+      activities: ["Stakeholder Interviews", "Process Mapping", "Technology Audit", "Gap Analysis"]
+    },
+    {
+      step: "02",
+      title: "Opportunity Identification",
+      description: "Systematic discovery of AI use cases using top-down and bottom-up approaches",
+      icon: <Lightbulb className="h-8 w-8" />,
+      activities: ["Use Case Workshops", "Impact Assessment", "Feasibility Analysis", "Value Modeling"]
+    },
+    {
+      step: "03",
+      title: "Prioritization & Planning",
+      description: "Strategic prioritization using impact vs. feasibility matrix and ROI analysis",
+      icon: <Target className="h-8 w-8" />,
+      activities: ["Priority Matrix", "ROI Calculation", "Risk Assessment", "Timeline Planning"]
+    },
+    {
+      step: "04",
+      title: "Roadmap Development",
+      description: "Creation of actionable implementation roadmap with governance and success metrics",
+      icon: <Rocket className="h-8 w-8" />,
+      activities: ["Roadmap Creation", "Governance Framework", "KPI Definition", "Team Structure"]
+    },
+  ];
+
+  // Enhanced Key Benefits
   const keyBenefits = [
     {
       icon: <Award className="h-8 w-8" />,
       title: "Competitive Advantage",
-      description: "Identify unique AI opportunities before competitors",
+      description: "Identify unique AI opportunities before competitors and establish market leadership",
+      metrics: "15-30% efficiency gains",
       color: "from-yellow-500 to-orange-500",
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,
       title: "ROI Maximization",
-      description: "Focus resources on highest-impact AI initiatives",
+      description: "Focus resources on highest-impact AI initiatives with proven value propositions",
+      metrics: "10-25% cost reduction",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Shield className="h-8 w-8" />,
       title: "Risk Mitigation",
-      description: "Avoid costly AI implementation mistakes",
+      description: "Avoid costly AI implementation mistakes through systematic evaluation",
+      metrics: "50% faster implementation",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <Clock className="h-8 w-8" />,
-      title: "Faster Time-to-Value",
-      description: "Accelerate AI adoption with clear priorities",
+      title: "Accelerated Adoption",
+      description: "Streamline AI adoption with clear priorities and structured approach",
+      metrics: "3x faster time-to-value",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Team Alignment",
-      description: "Unite stakeholders around AI vision and goals",
+      title: "Cross-Functional Alignment",
+      description: "Unite stakeholders around shared AI vision and strategic objectives",
+      metrics: "90% stakeholder buy-in",
       color: "from-indigo-500 to-blue-500",
     },
     {
       icon: <Sparkles className="h-8 w-8" />,
       title: "Innovation Culture",
-      description: "Foster data-driven decision making across teams",
+      description: "Foster data-driven innovation and continuous improvement mindset",
+      metrics: "2x innovation pipeline",
       color: "from-pink-500 to-rose-500",
     },
   ];
 
-  // Enhanced Use Case Categories with modern design
-  const useCaseCategories = [
+  // Enhanced AI Capabilities
+  const aiCapabilities = [
     {
-      id: "operational",
-      title: "Operational Excellence",
-      icon: <Cog className="h-10 w-10" />,
-      color: "from-blue-500 to-cyan-500",
-      description: "Streamline processes and boost efficiency",
-      useCases: [
-        "Predictive Maintenance Systems",
-        "Supply Chain Optimization",
-        "Quality Control Automation",
-        "Resource Allocation Intelligence",
-        "Workflow Optimization",
-      ],
+      icon: <Brain className="h-8 w-8" />,
+      title: "Machine Learning & Predictive Analytics",
+      description: "Advanced algorithms for pattern recognition, forecasting, and decision support",
+      applications: ["Predictive Maintenance", "Demand Forecasting", "Risk Assessment"]
     },
     {
-      id: "customer",
-      title: "Customer Experience",
-      icon: <Heart className="h-10 w-10" />,
-      color: "from-purple-500 to-pink-500",
-      description: "Enhance customer satisfaction and engagement",
-      useCases: [
-        "Personalized Recommendation Engines",
-        "Intelligent Chatbots & Virtual Assistants",
-        "Customer Sentiment Analysis",
-        "Predictive Customer Support",
-        "Dynamic Pricing Optimization",
-      ],
+      icon: <MessageSquare className="h-8 w-8" />,
+      title: "Natural Language Processing",
+      description: "Text analysis, sentiment detection, and conversational AI capabilities",
+      applications: ["Chatbots", "Document Analysis", "Knowledge Extraction"]
     },
     {
-      id: "analytics",
-      title: "Analytics & Insights",
-      icon: <BarChart3 className="h-10 w-10" />,
-      color: "from-green-500 to-emerald-500",
-      description: "Transform data into actionable intelligence",
-      useCases: [
-        "Real-time Business Intelligence",
-        "Predictive Analytics Platforms",
-        "Market Trend Analysis",
-        "Performance Optimization",
-        "Risk Assessment Models",
-      ],
+      icon: <Bot className="h-8 w-8" />,
+      title: "Robotic Process Automation",
+      description: "Intelligent automation of repetitive tasks and business processes",
+      applications: ["Data Entry", "Report Generation", "Workflow Automation"]
     },
     {
-      id: "automation",
-      title: "Process Automation",
-      icon: <Bot className="h-10 w-10" />,
-      color: "from-orange-500 to-red-500",
-      description: "Automate repetitive tasks and workflows",
-      useCases: [
-        "Document Processing Automation",
-        "Intelligent Data Entry",
-        "Automated Compliance Monitoring",
-        "Smart Contract Management",
-        "Workflow Orchestration",
-      ],
+      icon: <Sparkles className="h-8 w-8" />,
+      title: "Generative AI",
+      description: "Content creation, code generation, and creative problem-solving",
+      applications: ["Code Generation", "Documentation", "Creative Content"]
+    },
+    {
+      icon: <Eye className="h-8 w-8" />,
+      title: "Anomaly Detection",
+      description: "Intelligent monitoring and early warning systems for critical operations",
+      applications: ["Security Monitoring", "Performance Tracking", "Quality Control"]
+    },
+    {
+      icon: <Search className="h-8 w-8" />,
+      title: "Intelligent Search & Discovery",
+      description: "Advanced search capabilities with semantic understanding and context",
+      applications: ["Knowledge Management", "Asset Discovery", "Information Retrieval"]
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState(useCaseCategories[0]);
-
-  // Enhanced FAQ with better content
+  // Enhanced FAQ
   const faqs = [
     {
       id: "what-is-discovery",
-      question: "What exactly is AI Use Case Discovery?",
+      question: "What is AI Use Case Discovery and why is it essential?",
       answer:
-        "AI Use Case Discovery is a systematic process where we analyze your business operations, challenges, and opportunities to identify specific areas where AI can create maximum value. We examine your data, processes, and strategic goals to pinpoint the most impactful AI implementations for your organization.",
+        "AI Use Case Discovery is a strategic process that systematically identifies, evaluates, and prioritizes AI opportunities within your organization. It's essential because it prevents scattered AI efforts, ensures alignment with business objectives, and maximizes ROI by focusing on high-impact initiatives that deliver measurable outcomes.",
     },
     {
       id: "how-long",
-      question: "How long does the discovery process take?",
+      question: "What's the typical timeline for the discovery process?",
       answer:
-        "The timeline varies based on your organization's complexity and scope. Typically, a comprehensive discovery process takes 2-4 weeks, including stakeholder interviews, data assessment, process analysis, and final recommendations. We can also provide expedited assessments for urgent initiatives.",
+        "The discovery process typically takes 4-8 weeks depending on organizational complexity. This includes stakeholder interviews (1-2 weeks), process analysis and data assessment (2-3 weeks), use case identification and evaluation (1-2 weeks), and final roadmap development (1 week). We can accelerate this for urgent initiatives.",
     },
     {
       id: "what-deliverables",
-      question: "What deliverables will we receive?",
+      question: "What specific deliverables will we receive?",
       answer:
-        "You'll receive a comprehensive AI strategy document including identified use cases, implementation roadmap, ROI projections, resource requirements, risk assessments, and next-step recommendations. We also provide executive summaries and technical specifications tailored to different stakeholder groups.",
+        "You'll receive a comprehensive AI strategy document including: prioritized use case recommendations with ROI projections, detailed feasibility assessments, implementation roadmap with timelines, governance framework, success metrics and KPIs, risk analysis, resource requirements, and executive summary for leadership presentation.",
     },
     {
-      id: "prerequisites",
-      question: "What do we need to prepare beforehand?",
+      id: "industry-focus",
+      question: "Do you work with specific industries or IT functions?",
       answer:
-        "We'll need access to key stakeholders, process documentation, sample data sets, and information about your current technology infrastructure. We provide a detailed preparation checklist once you engage our services to ensure maximum efficiency.",
+        "We work across all industries and IT functions, with particular expertise in IT operations, service management, security, DevOps, and data management. Our methodology is adaptable to any sector's unique requirements, whether you're in healthcare, finance, manufacturing, or technology services.",
     },
     {
-      id: "cost-structure",
-      question: "How is the discovery process priced?",
+      id: "roi-expectations",
+      question: "What ROI can we expect from AI initiatives?",
       answer:
-        "Our pricing is based on the scope and complexity of your organization. We offer flexible engagement models including fixed-price packages for standard assessments and custom pricing for enterprise-wide evaluations. Contact us for a personalized quote based on your specific needs.",
+        "ROI varies by use case and implementation approach. Our clients typically see 15-30% efficiency improvements, 10-25% cost reductions, and 50% faster incident resolution within the first year. We provide detailed ROI projections and success metrics for each recommended use case to ensure measurable outcomes.",
+    },
+    {
+      id: "team-requirements",
+      question: "What team involvement is required during discovery?",
+      answer:
+        "We need access to key stakeholders including IT leadership, operations teams, security personnel, and business users. The process involves workshops, interviews, and collaborative sessions. We provide a detailed preparation checklist and work around your team's schedule to minimize disruption to daily operations.",
     },
   ];
+
+  const selectedCategoryData = useCaseCategories.find(cat => cat.id === selectedCategory) || useCaseCategories[0];
 
   return (
     <motion.div
@@ -268,7 +382,7 @@ export default function AIUsecaseDiscovery() {
               >
                 <Badge className="mb-6 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-cyan-400 border-cyan-400/30 px-6 py-3 text-lg">
                   <Search className="mr-2 h-5 w-5" />
-                  AI Use Case Discovery & Identification
+                  AI Use Case Discovery & Opportunity Identification
                 </Badge>
               </motion.div>
 
@@ -280,10 +394,10 @@ export default function AIUsecaseDiscovery() {
                 style={{ fontWeight: 700 }}
               >
                 <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Unlock Your AI
+                  Reveal What's Possible.
                 </span>
                 <br />
-                <span className="text-white">Potential Today</span>
+                <span className="text-white">Prioritize What Matters.</span>
               </motion.h1>
 
               <motion.p
@@ -292,7 +406,7 @@ export default function AIUsecaseDiscovery() {
                 transition={{ delay: 0.7, duration: 0.8 }}
                 className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-4xl"
               >
-                Transform your business with our comprehensive AI Use Case Discovery service. We identify high-impact opportunities, prioritize implementation strategies, and create actionable roadmaps that deliver measurable results.
+                In a world increasingly driven by data and intelligent systems, knowing where and how to apply AI is critical to gaining competitive edge. Unlock transformational value by pinpointing the most impactful areas for AI deployment.
               </motion.p>
 
               <motion.div
@@ -316,7 +430,7 @@ export default function AIUsecaseDiscovery() {
                   className="border-white/30 text-white hover:bg-white/10 px-12 py-8 text-xl font-semibold"
                 >
                   <FileText className="mr-3 h-7 w-7" />
-                  Download Guide
+                  Download Framework
                 </Button>
               </motion.div>
             </motion.div>
@@ -340,11 +454,11 @@ export default function AIUsecaseDiscovery() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              What You'll Receive
+              What This Service Delivers
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our comprehensive discovery process delivers actionable insights and strategic guidance to accelerate your AI transformation journey.
+              Comprehensive AI strategy with clarity, focus, and actionable insights to transform your organization's potential into measurable outcomes.
             </p>
           </motion.div>
 
@@ -360,18 +474,26 @@ export default function AIUsecaseDiscovery() {
                 className="group"
               >
                 <Card className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-gray-700/50 hover:border-blue-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                  <CardContent className="p-8 text-center">
+                  <CardContent className="p-8">
                     <div className="flex justify-center mb-6">
-                      <div className={`p-4 rounded-2xl bg-gradient-to-r ${deliverable.color} group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`p-4 rounded-2xl bg-gradient-to-r ${deliverable.color} group-hover:scale-110 transition-transform duration-300 text-white`}>
                         {deliverable.icon}
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 text-center">
                       {deliverable.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed mb-6 text-center">
                       {deliverable.description}
                     </p>
+                    <div className="space-y-2">
+                      {deliverable.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-sm text-gray-400">
+                          <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -380,7 +502,7 @@ export default function AIUsecaseDiscovery() {
         </div>
       </section>
 
-      {/* Enhanced Key Benefits */}
+      {/* Discovery Framework Steps */}
       <section className="py-20 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -391,11 +513,272 @@ export default function AIUsecaseDiscovery() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Why Choose Our Discovery Process?
+              Our Discovery Framework
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Systematic approach combining top-down strategic alignment with bottom-up opportunity identification for comprehensive AI transformation.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {discoverySteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2, duration: 0.8 }}
+                className="relative"
+              >
+                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 h-full hover:border-green-400/50 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                      {step.step}
+                    </div>
+                    <div className="p-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-lg text-green-400">
+                      {step.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{step.description}</p>
+                  <div className="space-y-1">
+                    {step.activities.map((activity, idx) => (
+                      <div key={idx} className="flex items-center text-sm text-gray-400">
+                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></div>
+                        {activity}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {index < discoverySteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                    <ArrowRight className="h-6 w-6 text-gray-600" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced IT Use Case Categories */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-40 left-40 w-56 h-56 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-40 w-64 h-64 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              High-Value AI Use Cases in IT
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover transformational AI opportunities across critical IT functions with proven ROI and implementation success.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Category Selection */}
+            <div className="space-y-4">
+              {useCaseCategories.map((category) => (
+                <motion.div
+                  key={category.id}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className={`cursor-pointer transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? "scale-105"
+                      : "hover:scale-102"
+                  }`}
+                  onClick={() => setSelectedCategory(category.id)}
+                >
+                  <div
+                    className={`p-6 rounded-xl border-2 transition-all duration-300 ${
+                      selectedCategory === category.id
+                        ? "bg-gradient-to-r from-slate-800/90 to-slate-900/90 border-blue-400/60 shadow-xl shadow-blue-500/20"
+                        : "bg-slate-800/60 border-gray-700/50 hover:border-gray-600/70"
+                    }`}
+                  >
+                    <div className="flex items-center space-x-4">
+                      <div
+                        className={`p-3 rounded-xl bg-gradient-to-r ${category.color} ${
+                          selectedCategory === category.id ? "scale-110" : ""
+                        } transition-transform duration-300 text-white`}
+                      >
+                        {category.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-white mb-1">
+                          {category.title}
+                        </h3>
+                        <p className="text-gray-300 text-sm">
+                          {category.description}
+                        </p>
+                      </div>
+                      <ChevronRight
+                        className={`h-6 w-6 text-gray-400 transition-transform duration-300 ${
+                          selectedCategory === category.id ? "rotate-90" : ""
+                        }`}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Selected Category Details */}
+            <motion.div
+              key={selectedCategory}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8"
+            >
+              <div className="flex items-center mb-6">
+                <div className={`p-4 rounded-xl bg-gradient-to-r ${selectedCategoryData.color} text-white`}>
+                  {selectedCategoryData.icon}
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-2xl font-bold text-white">
+                    {selectedCategoryData.title}
+                  </h3>
+                  <p className="text-gray-300">{selectedCategoryData.description}</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-4">
+                    Key Use Cases:
+                  </h4>
+                  <div className="space-y-3">
+                    {selectedCategoryData.useCases.map((useCase, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.4 }}
+                        className="flex items-start p-3 bg-slate-700/50 rounded-lg hover:bg-slate-700/70 transition-colors duration-200"
+                      >
+                        <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{useCase}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="text-sm font-semibold text-white mb-3">Tools & Platforms:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedCategoryData.tools.map((tool, index) => (
+                        <Badge key={index} variant="secondary" className="bg-slate-700/50 text-gray-300">
+                          {tool}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-white mb-3">Key Benefits:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedCategoryData.benefits.map((benefit, index) => (
+                        <Badge key={index} variant="outline" className="border-green-400/50 text-green-400">
+                          {benefit}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Capabilities Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              AI Capabilities Relevant to IT
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Transform uncertainty into opportunity with our proven methodology that identifies and prioritizes the most impactful AI use cases for your business.
+              Advanced AI technologies that power intelligent IT operations and drive digital transformation across your organization.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {aiCapabilities.map((capability, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="group"
+              >
+                <div className="h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-gray-700/30 hover:border-purple-400/50 rounded-xl p-6 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/20">
+                  <div className="flex items-center mb-4">
+                    <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 group-hover:scale-110 transition-transform duration-300 text-white">
+                      {capability.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-white ml-4 group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {capability.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    {capability.description}
+                  </p>
+                  <div className="space-y-1">
+                    {capability.applications.map((app, idx) => (
+                      <div key={idx} className="flex items-center text-sm text-gray-400">
+                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></div>
+                        {app}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Key Benefits */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Key Benefits of AI Discovery
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Transform uncertainty into opportunity with our proven methodology that delivers measurable business outcomes and competitive advantages.
             </p>
           </motion.div>
 
@@ -410,14 +793,17 @@ export default function AIUsecaseDiscovery() {
                 whileHover={{ y: -5, scale: 1.05 }}
                 className="group"
               >
-                <div className="h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-gray-700/30 hover:border-purple-400/50 rounded-xl p-6 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/20">
+                <div className="h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-gray-700/30 hover:border-yellow-400/50 rounded-xl p-6 transition-all duration-500 hover:shadow-xl hover:shadow-yellow-500/20">
                   <div className="flex items-center mb-4">
-                    <div className={`p-3 rounded-xl bg-gradient-to-r ${benefit.color} group-hover:scale-110 transition-transform duration-300`}>
-                      <div className="text-white">{benefit.icon}</div>
+                    <div className={`p-3 rounded-xl bg-gradient-to-r ${benefit.color} group-hover:scale-110 transition-transform duration-300 text-white`}>
+                      {benefit.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-white ml-4 group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {benefit.title}
-                    </h3>
+                    <div className="ml-4 flex-1">
+                      <h3 className="text-lg font-bold text-white group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {benefit.title}
+                      </h3>
+                      <div className="text-sm text-yellow-400 font-semibold">{benefit.metrics}</div>
+                    </div>
                   </div>
                   <p className="text-gray-300 leading-relaxed">
                     {benefit.description}
@@ -425,123 +811,6 @@ export default function AIUsecaseDiscovery() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced Use Case Categories */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-40 left-40 w-56 h-56 bg-gradient-to-r from-green-500/15 to-emerald-500/15 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-40 w-64 h-64 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              AI Use Case Categories
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore the diverse range of AI applications across different business functions and discover opportunities tailored to your industry.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Category Selection */}
-            <div className="space-y-4">
-              {useCaseCategories.map((category) => (
-                <motion.div
-                  key={category.id}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    selectedCategory.id === category.id
-                      ? "scale-105"
-                      : "hover:scale-102"
-                  }`}
-                  onClick={() => setSelectedCategory(category)}
-                >
-                  <div
-                    className={`p-6 rounded-xl border-2 transition-all duration-300 ${
-                      selectedCategory.id === category.id
-                        ? "bg-gradient-to-r from-slate-800/90 to-slate-900/90 border-blue-400/60 shadow-xl shadow-blue-500/20"
-                        : "bg-slate-800/60 border-gray-700/50 hover:border-gray-600/70"
-                    }`}
-                  >
-                    <div className="flex items-center space-x-4">
-                      <div
-                        className={`p-3 rounded-xl bg-gradient-to-r ${category.color} ${
-                          selectedCategory.id === category.id ? "scale-110" : ""
-                        } transition-transform duration-300`}
-                      >
-                        <div className="text-white">{category.icon}</div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-1">
-                          {category.title}
-                        </h3>
-                        <p className="text-gray-300 text-sm">
-                          {category.description}
-                        </p>
-                      </div>
-                      <ChevronRight
-                        className={`h-6 w-6 text-gray-400 transition-transform duration-300 ${
-                          selectedCategory.id === category.id ? "rotate-90" : ""
-                        }`}
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Selected Category Details */}
-            <motion.div
-              key={selectedCategory.id}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8"
-            >
-              <div className="flex items-center mb-6">
-                <div className={`p-4 rounded-xl bg-gradient-to-r ${selectedCategory.color}`}>
-                  <div className="text-white">{selectedCategory.icon}</div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-2xl font-bold text-white">
-                    {selectedCategory.title}
-                  </h3>
-                  <p className="text-gray-300">{selectedCategory.description}</p>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-white mb-4">
-                  Key Use Cases:
-                </h4>
-                {selectedCategory.useCases.map((useCase, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.4 }}
-                    className="flex items-center p-3 bg-slate-700/50 rounded-lg hover:bg-slate-700/70 transition-colors duration-200"
-                  >
-                    <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0" />
-                    <span className="text-gray-300">{useCase}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -559,9 +828,9 @@ export default function AIUsecaseDiscovery() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Frequently Asked Questions
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 mx-auto mb-8"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get answers to common questions about our AI Use Case Discovery process and how it can benefit your organization.
+              Get answers to common questions about our AI Use Case Discovery process and how it transforms your organization.
             </p>
           </motion.div>
 
@@ -627,12 +896,12 @@ export default function AIUsecaseDiscovery() {
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Ready to{" "}
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Transform
+                Discover
               </span>{" "}
-              Your Business?
+              Your AI Potential?
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
-              Join hundreds of companies that have discovered their AI potential with our comprehensive use case identification process.
+              Join hundreds of IT leaders who have transformed their operations through strategic AI discovery and implementation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -642,7 +911,7 @@ export default function AIUsecaseDiscovery() {
                 onClick={() => window.location.href = '/contact'}
               >
                 <Mail className="mr-3 h-7 w-7" />
-                Get Started Today
+                Start Discovery Process
                 <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
@@ -660,15 +929,15 @@ export default function AIUsecaseDiscovery() {
               <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-6 w-6 text-green-400" />
-                  <span className="text-gray-300">Free Initial Consultation</span>
+                  <span className="text-gray-300">Free Initial Assessment</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-6 w-6 text-green-400" />
-                  <span className="text-gray-300">Custom ROI Analysis</span>
+                  <span className="text-gray-300">Custom Use Case Analysis</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-6 w-6 text-green-400" />
-                  <span className="text-gray-300">Strategic Implementation Plan</span>
+                  <span className="text-gray-300">Strategic Implementation Roadmap</span>
                 </div>
               </div>
             </div>
