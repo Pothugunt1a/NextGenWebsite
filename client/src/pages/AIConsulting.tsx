@@ -367,7 +367,7 @@ export default function AIConsulting() {
                     delay: 5000,
                     stopOnInteraction: true,
                     stopOnMouseEnter: true,
-                  })
+                  }),
                 ]}
               >
                 <CarouselContent className="-ml-2 md:-ml-4">
@@ -485,7 +485,7 @@ export default function AIConsulting() {
                     </div>
                   </CarouselItem>
                 </CarouselContent>
-                
+
                 <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
                 <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
               </Carousel>
@@ -517,7 +517,10 @@ export default function AIConsulting() {
       </section>
 
       {/* Main AI Consulting Capabilities - Life Science Style */}
-      <div id="capabilities-section" className="py-20 bg-light relative overflow-hidden">
+      <div
+        id="capabilities-section"
+        className="py-20 bg-light relative overflow-hidden"
+      >
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
@@ -539,7 +542,8 @@ export default function AIConsulting() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Strategic AI solutions that accelerate digital transformation and innovation
+              Strategic AI solutions that accelerate digital transformation and
+              innovation
             </p>
           </motion.div>
 
@@ -671,7 +675,8 @@ export default function AIConsulting() {
                           AI Consulting Capabilities
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Advanced AI consulting solutions that transform business operations.
+                          Advanced AI consulting solutions that transform
+                          business operations.
                         </p>
                       </div>
                     </div>
@@ -1476,9 +1481,7 @@ export default function AIConsulting() {
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
                 <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Proven ROI Results
-                </span>
+                <span className="text-white font-semibold">Proven Results</span>
               </div>
             </motion.div>
 
@@ -1500,8 +1503,6 @@ export default function AIConsulting() {
           </motion.div>
         </div>
       </section>
-
-
     </motion.div>
   );
 }
