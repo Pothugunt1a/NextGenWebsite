@@ -208,7 +208,7 @@ const useCases = [
     effort: "Medium",
     icon: Settings,
     color: "from-teal-500 to-green-500",
-    backgroundImage: "",
+    backgroundImage: "/Usecase15.png",
   },
 ];
 
