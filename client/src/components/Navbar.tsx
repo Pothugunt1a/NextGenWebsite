@@ -645,24 +645,22 @@ export default function Navbar({
                                             }
                                           }}
                                         >
-                                          {item.name}
+                                          {item.title}
                                         </a>
                                       ))}
                                     </div>
                                   )}
                                 </>
                               ) : (
-                                /* Direct clickable category without dropdown */
                                 <a
                                   href={category.href}
                                   className="block px-3 py-2 text-sm text-white hover:bg-black hover:text-cyan-400 rounded-lg transition-all duration-300"
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    if (
-                                      category.href &&
-                                      category.href.startsWith("/")
-                                    ) {
+                                    if (category.href?.startsWith("/")) {
                                       handleNavigationClick(category.href);
+                                    } else {
+                                      scrollToSection(e, category.href || "");
                                     }
                                   }}
                                 >
@@ -694,14 +692,12 @@ export default function Navbar({
                   )}
                 </div>
               ))}
-              <div className="pt-4">
+              <div className="px-3 py-2">
                 <Button
                   variant="outline"
                   size="sm"
                   className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:from-blue-600 hover:to-cyan-600"
-                  onClick={() => {
-                    handleNavigationClick("/contact");
-                  }}
+                  onClick={() => handleNavigationClick("/contact")}
                 >
                   Contact
                 </Button>
