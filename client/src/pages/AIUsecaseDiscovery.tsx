@@ -298,24 +298,28 @@ const capabilities = [
       "Capacity planning",
       "Performance optimization",
     ],
+    backgroundImage: "/assets/AI-Training.png",
   },
   {
     title: "Natural Language Processing (NLP)",
     description: "Process and understand human language for automation",
     icon: MessageSquare,
     applications: ["Chatbots", "Document analysis", "Knowledge base search"],
+    backgroundImage: "/assets/AI-Lifecycle.png",
   },
   {
     title: "Robotic Process Automation (RPA)",
     description: "Automate repetitive tasks and workflows",
     icon: Cog,
     applications: ["Data entry", "Report generation", "System integration"],
+    backgroundImage: "/assets/AI-ProcessOptimization.png",
   },
   {
     title: "Generative AI",
     description: "Generate text, code, and content for various IT applications",
     icon: Lightbulb,
     applications: ["Code generation", "Documentation", "Content creation"],
+    backgroundImage: "/assets/GenerativeAI.png",
   },
   {
     title: "Anomaly Detection",
@@ -326,6 +330,7 @@ const capabilities = [
       "Performance monitoring",
       "Quality assurance",
     ],
+    backgroundImage: "/assets/AI-Components.gif",
   },
   {
     title: "Intelligent Search & Chatbots",
@@ -333,6 +338,7 @@ const capabilities = [
       "Provide intelligent information retrieval and conversational interfaces",
     icon: Bot,
     applications: ["IT support", "Knowledge management", "User assistance"],
+    backgroundImage: "/assets/AI-Chatbot.gif",
   },
 ];
 
@@ -627,7 +633,6 @@ export default function AIUsecaseDiscovery() {
                 { id: "overview", label: "Overview", icon: FileText },
                 { id: "benefits", label: "Benefits", icon: Award },
                 { id: "landscape", label: "IT Landscape", icon: Server },
-                { id: "process", label: "Process", icon: Workflow },
                 { id: "usecases", label: "Use Cases", icon: Lightbulb },
                 { id: "capabilities", label: "AI Capabilities", icon: Brain },
                 { id: "framework", label: "Framework", icon: PieChart },
@@ -854,62 +859,7 @@ export default function AIUsecaseDiscovery() {
             </section>
           )}
 
-          {/* Process Section */}
-          {activeTab === "process" && (
-            <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-              <div className="max-w-7xl mx-auto">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  <motion.div
-                    variants={itemVariants}
-                    className="text-center mb-12"
-                  >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                      Discovery Process
-                    </h2>
-                    <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
-                      Our systematic approach to identifying and prioritizing AI
-                      opportunities
-                    </p>
-                  </motion.div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {process.map((step, idx) => (
-                      <motion.div
-                        key={idx}
-                        variants={itemVariants}
-                        className="relative"
-                      >
-                        <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 h-full">
-                          <div className="flex items-center justify-between mb-4">
-                            <span className="text-3xl font-bold text-blue-400">
-                              {step.step}
-                            </span>
-                            <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30">
-                              <step.icon className="w-6 h-6 text-blue-400" />
-                            </div>
-                          </div>
-                          <h3 className="text-xl font-semibold mb-3 text-white">
-                            {step.title}
-                          </h3>
-                          <p className="text-gray-400">{step.description}</p>
-                        </div>
-
-                        {idx < process.length - 1 && (
-                          <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                            <ChevronRight className="w-8 h-8 text-blue-400" />
-                          </div>
-                        )}
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            </section>
-          )}
+          
 
           {/* Use Cases Section */}
           {activeTab === "usecases" && (
@@ -1064,44 +1014,258 @@ export default function AIUsecaseDiscovery() {
                     </p>
                   </motion.div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {capabilities.map((capability, idx) => (
-                      <motion.div
-                        key={idx}
-                        variants={itemVariants}
-                        className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300"
-                      >
-                        <div className="flex items-center mb-6">
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 mr-4">
-                            <capability.icon className="w-6 h-6 text-blue-400" />
-                          </div>
-                          <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                            {capability.title}
-                          </h3>
-                        </div>
+                  {/* Embla Carousel - Same as AI Consulting page */}
+                  <div className="relative max-w-6xl mx-auto">
+                    <Carousel
+                      className="w-full"
+                      opts={{
+                        align: "start",
+                        loop: true,
+                      }}
+                      plugins={[
+                        Autoplay({
+                          delay: 5000,
+                          stopOnInteraction: true,
+                          stopOnMouseEnter: true,
+                        }),
+                      ]}
+                    >
+                      <CarouselContent className="-ml-2 md:-ml-4">
+                        {/* First slide - items 0,1 */}
+                        <CarouselItem className="pl-2 md:pl-4">
+                          <div className="p-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                              {capabilities.slice(0, 2).map((capability, index) => {
+                                const IconComponent = capability.icon;
 
-                        <p className="text-gray-400 mb-6">
-                          {capability.description}
-                        </p>
+                                return (
+                                  <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    whileHover={{ y: -10, scale: 1.05 }}
+                                    viewport={{ once: true }}
+                                    className="group"
+                                  >
+                                    <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden">
+                                      {/* Background Image */}
+                                      {capability.backgroundImage && (
+                                        <div className="absolute inset-0 opacity-10">
+                                          <img
+                                            src={capability.backgroundImage}
+                                            alt={capability.title}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                          />
+                                          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60"></div>
+                                        </div>
+                                      )}
 
-                        <div>
-                          <h4 className="text-lg font-medium text-white mb-3">
-                            Applications:
-                          </h4>
-                          <div className="space-y-2">
-                            {capability.applications.map((app, appIdx) => (
-                              <div
-                                key={appIdx}
-                                className="flex items-center space-x-3"
-                              >
-                                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                                <span className="text-gray-300">{app}</span>
-                              </div>
-                            ))}
+                                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
+
+                                      <div className="relative z-10">
+                                        <div className="flex items-start gap-6 mb-6">
+                                          <div className="relative">
+                                            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                                              <IconComponent className="h-10 w-10 text-white" />
+                                            </div>
+                                          </div>
+
+                                          <div className="flex-1">
+                                            <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                              {capability.title}
+                                            </h3>
+                                            <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
+                                          </div>
+                                        </div>
+
+                                        <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                                          {capability.description}
+                                        </p>
+
+                                        <div>
+                                          <h4 className="text-lg font-medium text-white mb-3">
+                                            Applications:
+                                          </h4>
+                                          <div className="space-y-2">
+                                            {capability.applications.map((app, appIdx) => (
+                                              <div
+                                                key={appIdx}
+                                                className="flex items-center space-x-3"
+                                              >
+                                                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                                                <span className="text-gray-300">{app}</span>
+                                              </div>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </motion.div>
+                                );
+                              })}
+                            </div>
                           </div>
-                        </div>
-                      </motion.div>
-                    ))}
+                        </CarouselItem>
+
+                        {/* Second slide - items 2,3 */}
+                        <CarouselItem className="pl-2 md:pl-4">
+                          <div className="p-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                              {capabilities.slice(2, 4).map((capability, index) => {
+                                const IconComponent = capability.icon;
+
+                                return (
+                                  <motion.div
+                                    key={index + 2}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    whileHover={{ y: -10, scale: 1.05 }}
+                                    viewport={{ once: true }}
+                                    className="group"
+                                  >
+                                    <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden">
+                                      {/* Background Image */}
+                                      {capability.backgroundImage && (
+                                        <div className="absolute inset-0 opacity-10">
+                                          <img
+                                            src={capability.backgroundImage}
+                                            alt={capability.title}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                          />
+                                          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60"></div>
+                                        </div>
+                                      )}
+
+                                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
+
+                                      <div className="relative z-10">
+                                        <div className="flex items-start gap-6 mb-6">
+                                          <div className="relative">
+                                            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                                              <IconComponent className="h-10 w-10 text-white" />
+                                            </div>
+                                          </div>
+
+                                          <div className="flex-1">
+                                            <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                              {capability.title}
+                                            </h3>
+                                            <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
+                                          </div>
+                                        </div>
+
+                                        <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                                          {capability.description}
+                                        </p>
+
+                                        <div>
+                                          <h4 className="text-lg font-medium text-white mb-3">
+                                            Applications:
+                                          </h4>
+                                          <div className="space-y-2">
+                                            {capability.applications.map((app, appIdx) => (
+                                              <div
+                                                key={appIdx}
+                                                className="flex items-center space-x-3"
+                                              >
+                                                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                                                <span className="text-gray-300">{app}</span>
+                                              </div>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </motion.div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </CarouselItem>
+
+                        {/* Third slide - items 4,5 */}
+                        <CarouselItem className="pl-2 md:pl-4">
+                          <div className="p-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                              {capabilities.slice(4, 6).map((capability, index) => {
+                                const IconComponent = capability.icon;
+
+                                return (
+                                  <motion.div
+                                    key={index + 4}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    whileHover={{ y: -10, scale: 1.05 }}
+                                    viewport={{ once: true }}
+                                    className="group"
+                                  >
+                                    <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden">
+                                      {/* Background Image */}
+                                      {capability.backgroundImage && (
+                                        <div className="absolute inset-0 opacity-10">
+                                          <img
+                                            src={capability.backgroundImage}
+                                            alt={capability.title}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                          />
+                                          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60"></div>
+                                        </div>
+                                      )}
+
+                                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
+
+                                      <div className="relative z-10">
+                                        <div className="flex items-start gap-6 mb-6">
+                                          <div className="relative">
+                                            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                                              <IconComponent className="h-10 w-10 text-white" />
+                                            </div>
+                                          </div>
+
+                                          <div className="flex-1">
+                                            <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                              {capability.title}
+                                            </h3>
+                                            <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
+                                          </div>
+                                        </div>
+
+                                        <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                                          {capability.description}
+                                        </p>
+
+                                        <div>
+                                          <h4 className="text-lg font-medium text-white mb-3">
+                                            Applications:
+                                          </h4>
+                                          <div className="space-y-2">
+                                            {capability.applications.map((app, appIdx) => (
+                                              <div
+                                                key={appIdx}
+                                                className="flex items-center space-x-3"
+                                              >
+                                                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                                                <span className="text-gray-300">{app}</span>
+                                              </div>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </motion.div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </CarouselItem>
+                      </CarouselContent>
+
+                      <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+                      <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+                    </Carousel>
                   </div>
                 </motion.div>
               </div>
