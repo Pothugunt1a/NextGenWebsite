@@ -1092,38 +1092,110 @@ export default function AIUsecaseDiscovery() {
                   </p>
                 </motion.div>
 
-                {/* Custom Roadmap Component matching the screenshot */}
+                {/* Custom Roadmap Component matching the new screenshot */}
                 <motion.div variants={itemVariants} className="mb-12">
                   <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-                    <div className="mb-8">
-                      <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-lg text-center font-semibold">
-                        Insert your desired text here.
-                      </div>
-                    </div>
-                    
-                    <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-                      {/* Roadmap Steps */}
-                      <div className="flex items-center bg-[#1e3a8a] text-white px-6 py-4 rounded-l-lg font-semibold min-w-[120px] justify-center">
-                        Roadmap
-                      </div>
+                    <div className="relative max-w-6xl mx-auto">
+                      {/* Vertical dotted lines */}
+                      <div className="absolute left-1/4 top-0 bottom-0 w-px border-l-2 border-dotted border-gray-500/50"></div>
+                      <div className="absolute right-1/4 top-0 bottom-0 w-px border-l-2 border-dotted border-gray-500/50"></div>
                       
-                      <div className="flex items-center bg-[#2563eb] text-white px-6 py-4 font-semibold min-w-[160px] justify-center relative">
-                        <div className="absolute -right-4 w-0 h-0 border-t-[24px] border-b-[24px] border-l-[16px] border-l-[#2563eb] border-t-transparent border-b-transparent"></div>
-                        Insert your desired text here.
-                      </div>
-                      
-                      <div className="flex items-center bg-[#1d4ed8] text-white px-6 py-4 font-semibold min-w-[160px] justify-center relative">
-                        <div className="absolute -right-4 w-0 h-0 border-t-[24px] border-b-[24px] border-l-[16px] border-l-[#1d4ed8] border-t-transparent border-b-transparent"></div>
-                        Insert your desired text here.
-                      </div>
-                      
-                      <div className="flex items-center bg-[#059669] text-white px-6 py-4 font-semibold min-w-[160px] justify-center relative">
-                        <div className="absolute -right-4 w-0 h-0 border-t-[24px] border-b-[24px] border-l-[16px] border-l-[#059669] border-t-transparent border-b-transparent"></div>
-                        Insert your desired text here.
-                      </div>
-                      
-                      <div className="flex items-center bg-[#16a34a] text-white px-6 py-4 rounded-r-lg font-semibold min-w-[160px] justify-center">
-                        Insert your desired text here.
+                      {/* Q1 - CONCEPT */}
+                      <div className="relative mb-16">
+                        <div className="flex items-center justify-between">
+                          <div className="w-1/4 text-center">
+                            <div className="w-20 h-20 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mb-4 mx-auto">
+                              <Lightbulb className="w-10 h-10 text-white" />
+                            </div>
+                            <div className="bg-indigo-500 text-white px-4 py-2 rounded font-semibold">
+                              Q1
+                            </div>
+                            <div className="mt-4 text-left">
+                              <h3 className="text-lg font-semibold text-indigo-300 mb-2">IDEATION:</h3>
+                              <p className="text-sm text-gray-300 mb-2">
+                                <strong>Use case ideation:</strong><br />
+                                Stakeholder interviews, workshops, pain point analysis
+                              </p>
+                              <p className="text-sm text-gray-300 mb-2">
+                                <strong>Competitor research</strong>
+                              </p>
+                              <p className="text-sm text-gray-300">
+                                <strong>Market sounding</strong>
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div className="w-1/4 text-center">
+                            <div className="bg-blue-600 text-white px-4 py-2 rounded font-semibold">
+                              Q2
+                            </div>
+                            <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center mb-4 mx-auto mt-4">
+                              <Target className="w-10 h-10 text-white" />
+                            </div>
+                          </div>
+                          
+                          <div className="w-1/4 text-center">
+                            <div className="bg-teal-600 text-white px-4 py-2 rounded font-semibold">
+                              Q3
+                            </div>
+                            <div className="w-20 h-20 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full flex items-center justify-center mb-4 mx-auto mt-4">
+                              <Settings className="w-10 h-10 text-white" />
+                            </div>
+                          </div>
+                          
+                          <div className="w-1/4 text-center">
+                            <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full flex items-center justify-center mb-4 mx-auto">
+                              <TrendingUp className="w-10 h-10 text-white" />
+                            </div>
+                            <div className="bg-cyan-600 text-white px-4 py-2 rounded font-semibold">
+                              Q4
+                            </div>
+                            <div className="mt-4 text-left">
+                              <h3 className="text-lg font-semibold text-cyan-300 mb-2">TESTING:</h3>
+                              <p className="text-sm text-gray-300 mb-2">
+                                <strong>Concept production and testing:</strong><br />
+                                Test performance, scalability, functionality
+                              </p>
+                              <p className="text-sm text-gray-300">
+                                <strong>Market analysis:</strong><br />
+                                ROI validation, success metrics, campaign planning
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Top descriptions */}
+                        <div className="absolute -top-32 left-0 right-0 flex justify-between">
+                          <div className="w-1/4 text-center">
+                            <h3 className="text-lg font-semibold text-indigo-300 mb-2">CONCEPT:</h3>
+                            <p className="text-sm text-gray-300 mb-2">
+                              <strong>Use case ideation continued</strong>
+                            </p>
+                            <p className="text-sm text-gray-300 mb-2">
+                              <strong>Use case concept:</strong><br />
+                              Feasibility? Business value? Target implementation?
+                            </p>
+                            <p className="text-sm text-gray-300">
+                              <strong>AI implementation strategy concepts, technology development</strong>
+                            </p>
+                          </div>
+                          
+                          <div className="w-1/4"></div>
+                          
+                          <div className="w-1/4 text-center">
+                            <h3 className="text-lg font-semibold text-teal-300 mb-2">RELEASE:</h3>
+                            <p className="text-sm text-gray-300 mb-2">
+                              <strong>Pilot testing continued:</strong><br />
+                              Reiterate, optimize, finalize
+                            </p>
+                            <p className="text-sm text-gray-300">
+                              <strong>End of Q4:</strong><br />
+                              Full deployment, release strategy, prepare for scaling
+                            </p>
+                          </div>
+                          
+                          <div className="w-1/4"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
