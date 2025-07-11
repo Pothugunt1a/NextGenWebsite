@@ -460,72 +460,84 @@ export default function AIUsecaseDiscovery() {
   const [selectedUseCase, setSelectedUseCase] = useState(null);
 
   return (
-    <div className="min-h-screen bg-light text-white">
-      {/* Banner Section */}
-      <div className="relative h-screen overflow-hidden">
-        {/* Background Image */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="text-white"
+    >
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background */}
         <div className="absolute inset-0">
           <img
             src="/assets/AI-Usecase-banner.png"
-            alt="AI Use Case Discovery Banner"
-            className="w-full h-full object-cover object-center"
+            alt="AI Use Case Discovery"
+            className="w-full h-full object-cover"
             onError={(e) => {
-              console.error("Failed to load banner image");
-              e.currentTarget.style.display = "none";
+              const target = e.target as HTMLImageElement;
+              target.src = "/assets/ai-usecase-banner.png";
             }}
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="space-y-8"
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-sm font-medium mb-6">
-                <Search className="w-4 h-4 mr-2" />
-                Discovery & Identification
-              </div>
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                AI Use Case Discovery
+              </span>
+              <br />
+              <span className="text-white">& Opportunity Identification</span>
+            </motion.h1>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
-                AI Use Case Discovery &
-                <br />
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Opportunity Identification
-                </span>
-              </h1>
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
+            >
+              Reveal What's Possible. Prioritize What Matters.
+            </motion.p>
 
-              <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 max-w-4xl mx-auto mb-8">
-                Reveal What's Possible. Prioritize What Matters.
-              </p>
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="text-lg text-gray-300 mb-12 max-w-4xl leading-relaxed"
+            >
+              In a world increasingly driven by data and intelligent systems, knowing where and how to apply Artificial Intelligence is critical to gaining a competitive edge. Our AI Use Case Discovery & Opportunity Identification service empowers organizations to unlock transformational value by pinpointing the most impactful areas for AI deployment.
+            </motion.p>
 
-              <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-10">
-                In a world increasingly driven by data and intelligent systems, knowing where and how to apply 
-                Artificial Intelligence is critical to gaining a competitive edge. Our AI Use Case Discovery & 
-                Opportunity Identification service empowers organizations to unlock transformational value by 
-                pinpointing the most impactful areas for AI deployment.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105">
-                  Start Discovery Process
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" className="border-blue-500/50 hover:bg-blue-500/10 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+            <div className="mb-32">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.8, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+              >
+                <Search className="h-5 w-5 text-cyan-400" />
+                <span className="text-white font-medium">Strategic AI Discovery & Implementation</span>
+                <TrendingUp className="h-4 w-4 text-blue-400 fill-current" />
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
 
       {/* Main Content */}
       <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
@@ -761,8 +773,20 @@ export default function AIUsecaseDiscovery() {
 
         {/* Use Cases Section */}
         {activeTab === "usecases" && (
-          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            {/* Background Images */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-2xl"></div>
+              <div className="absolute top-40 right-20 w-40 h-40 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-2xl"></div>
+              {/* Additional geometric patterns */}
+              <div className="absolute top-1/3 left-1/3 w-20 h-20 border border-blue-500/10 rounded-lg rotate-45"></div>
+              <div className="absolute bottom-1/3 right-1/4 w-24 h-24 border border-purple-500/10 rounded-full"></div>
+              <div className="absolute top-1/2 right-1/2 w-16 h-16 bg-cyan-500/5 rounded-full"></div>
+            </div>
+            
+            <div className="max-w-7xl mx-auto relative z-10">
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -1068,6 +1092,44 @@ export default function AIUsecaseDiscovery() {
                   </p>
                 </motion.div>
 
+                {/* Custom Roadmap Component matching the screenshot */}
+                <motion.div variants={itemVariants} className="mb-12">
+                  <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+                    <div className="mb-8">
+                      <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-lg text-center font-semibold">
+                        Insert your desired text here.
+                      </div>
+                    </div>
+                    
+                    <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                      {/* Roadmap Steps */}
+                      <div className="flex items-center bg-[#1e3a8a] text-white px-6 py-4 rounded-l-lg font-semibold min-w-[120px] justify-center">
+                        Roadmap
+                      </div>
+                      
+                      <div className="flex items-center bg-[#2563eb] text-white px-6 py-4 font-semibold min-w-[160px] justify-center relative">
+                        <div className="absolute -right-4 w-0 h-0 border-t-[24px] border-b-[24px] border-l-[16px] border-l-[#2563eb] border-t-transparent border-b-transparent"></div>
+                        Insert your desired text here.
+                      </div>
+                      
+                      <div className="flex items-center bg-[#1d4ed8] text-white px-6 py-4 font-semibold min-w-[160px] justify-center relative">
+                        <div className="absolute -right-4 w-0 h-0 border-t-[24px] border-b-[24px] border-l-[16px] border-l-[#1d4ed8] border-t-transparent border-b-transparent"></div>
+                        Insert your desired text here.
+                      </div>
+                      
+                      <div className="flex items-center bg-[#059669] text-white px-6 py-4 font-semibold min-w-[160px] justify-center relative">
+                        <div className="absolute -right-4 w-0 h-0 border-t-[24px] border-b-[24px] border-l-[16px] border-l-[#059669] border-t-transparent border-b-transparent"></div>
+                        Insert your desired text here.
+                      </div>
+                      
+                      <div className="flex items-center bg-[#16a34a] text-white px-6 py-4 rounded-r-lg font-semibold min-w-[160px] justify-center">
+                        Insert your desired text here.
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Detailed Steps */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
                   {roadmapSteps.map((step, idx) => (
                     <motion.div
@@ -1234,6 +1296,6 @@ export default function AIUsecaseDiscovery() {
         </div>
       </section>
       </div>
-    </div>
+    </motion.div>
   );
 }
