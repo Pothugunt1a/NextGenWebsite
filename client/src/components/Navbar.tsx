@@ -596,14 +596,14 @@ export default function Navbar({
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-600 bg-black/95 backdrop-blur-sm rounded-lg mx-2">
             <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <div key={link.id}>
                   {link.hasDropdown ? (
                     <div>
                       <button
-                        className="w-full text-left px-3 py-2 text-gray-700 hover:text-primary flex items-center justify-between"
+                        className="w-full text-left px-3 py-2 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white rounded-lg transition-all duration-300 flex items-center justify-between"
                         onClick={() => toggleMobileDropdown(link.id)}
                       >
                         {link.name}
@@ -619,7 +619,7 @@ export default function Navbar({
                               {category.items && category.items.length > 0 ? (
                                 <>
                                   <button
-                                    className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-primary flex items-center justify-between"
+                                    className="w-full text-left px-3 py-2 text-sm text-gray-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white rounded-lg transition-all duration-300 flex items-center justify-between"
                                     onClick={() =>
                                       toggleMobileSubmenu(category.name)
                                     }
@@ -635,7 +635,7 @@ export default function Navbar({
                                         <a
                                           key={itemIdx}
                                           href={item.href}
-                                          className="block px-3 py-2 text-sm text-gray-500 hover:text-primary"
+                                          className="block px-3 py-2 text-sm text-gray-400 hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white rounded-lg transition-all duration-300"
                                           onClick={(e) => {
                                             e.preventDefault();
                                             if (item.href.startsWith("/")) {
@@ -645,24 +645,22 @@ export default function Navbar({
                                             }
                                           }}
                                         >
-                                          {item.name}
+                                          {item.title}
                                         </a>
                                       ))}
                                     </div>
                                   )}
                                 </>
                               ) : (
-                                /* Direct clickable category without dropdown */
                                 <a
                                   href={category.href}
-                                  className="block px-3 py-2 text-sm text-gray-600 hover:text-primary"
+                                  className="block px-3 py-2 text-sm text-gray-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white rounded-lg transition-all duration-300"
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    if (
-                                      category.href &&
-                                      category.href.startsWith("/")
-                                    ) {
+                                    if (category.href?.startsWith("/")) {
                                       handleNavigationClick(category.href);
+                                    } else {
+                                      scrollToSection(e, category.href || "");
                                     }
                                   }}
                                 >
@@ -677,7 +675,7 @@ export default function Navbar({
                   ) : (
                     <a
                       href={link.href}
-                      className="block px-3 py-2 text-gray-700 hover:text-primary"
+                      className="block px-3 py-2 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white rounded-lg transition-all duration-300"
                       onClick={(e) => {
                         e.preventDefault();
                         if (link.href === "#home") {
@@ -694,14 +692,12 @@ export default function Navbar({
                   )}
                 </div>
               ))}
-              <div className="pt-4">
+              <div className="px-3 py-2">
                 <Button
                   variant="outline"
                   size="sm"
                   className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:from-blue-600 hover:to-cyan-600"
-                  onClick={() => {
-                    handleNavigationClick("/contact");
-                  }}
+                  onClick={() => handleNavigationClick("/contact")}
                 >
                   Contact
                 </Button>
