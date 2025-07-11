@@ -616,15 +616,37 @@ export default function AIUsecaseDiscovery() {
                         icon: Zap,
                       },
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30">
-                          <item.icon className="w-6 h-6 text-blue-400" />
+                      <motion.div
+                        key={idx}
+                        className="flex items-start"
+                        custom={idx}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={{
+                          hidden: { opacity: 0, x: -20 },
+                          visible: (custom) => ({
+                            opacity: 1,
+                            x: 0,
+                            transition: {
+                              delay: 0.3 + custom * 0.2,
+                              duration: 0.5,
+                            },
+                          }),
+                        }}
+                      >
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="p-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500">
+                            <item.icon className="text-xl text-white" />
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
-                          <p className="text-gray-400">{item.description}</p>
+                        <div className="ml-4">
+                          <h4 className="text-xl font-semibold mb-2 text-white">
+                            {item.title}
+                          </h4>
+                          <p className="text-gray-300">{item.description}</p>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </motion.div>
@@ -1347,28 +1369,110 @@ export default function AIUsecaseDiscovery() {
         )}
       </div>
 
-      {/* CTA Section */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-900/20 to-cyan-900/20">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Enhanced CTA Section */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+            className="text-center p-16 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/20 shadow-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Ready to Discover Your AI Opportunities?
+            {/* Top Badge */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
+            >
+              <Target className="h-5 w-5 text-cyan-400" />
+              <span className="text-white font-medium">
+                Strategic AI Discovery & Implementation
+              </span>
+              <Award className="h-4 w-4 text-blue-400 fill-current" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold mb-6"
+            >
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Ready to Discover Your
+              </span>
+              <br />
+              <span className="text-white">AI Opportunities?</span>
             </motion.h2>
-            <motion.p variants={itemVariants} className="text-lg sm:text-xl text-gray-400 mb-8">
-              Let's identify the AI initiatives that will drive the most value for your organization.
+
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
+              Let's identify the AI initiatives that will drive the most value for your organization and transform your business operations with strategic AI implementation.
             </motion.p>
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105">
+
+            {/* Benefits Grid */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Strategic AI Discovery
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Implementation Roadmap
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Measurable ROI
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button
+                size="lg"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+              >
+                <Users className="mr-2 h-5 w-5" />
                 Schedule Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" className="border-blue-500/50 hover:bg-blue-500/10 px-8 py-4 text-lg rounded-xl">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-blue-500/50 hover:bg-blue-500/10 px-10 py-6 text-lg font-semibold"
+              >
+                <FileText className="mr-2 h-5 w-5" />
                 Download Framework
-                <FileText className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
           </motion.div>
