@@ -620,9 +620,13 @@ export default function Navbar({
                                 <>
                                   <button
                                     className="w-full text-left px-3 py-2 text-sm text-white hover:bg-black hover:text-cyan-400 rounded-lg transition-all duration-300 flex items-center justify-between"
-                                    onClick={() =>
-                                      toggleMobileSubmenu(category.name)
-                                    }
+                                    onClick={() => {
+                                      // For AI Consulting, navigate to page and toggle submenu
+                                      if (category.name === "AI Consulting") {
+                                        handleNavigationClick("/ai-consulting");
+                                      }
+                                      toggleMobileSubmenu(category.name);
+                                    }}
                                   >
                                     {category.name}
                                     <ChevronDown
