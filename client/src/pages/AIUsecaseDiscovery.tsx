@@ -208,7 +208,7 @@ const useCases = [
     effort: "Medium",
     icon: Settings,
     color: "from-teal-500 to-green-500",
-    backgroundImage: "https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    backgroundImage: "",
   },
 ];
 
