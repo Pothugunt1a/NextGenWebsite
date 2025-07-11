@@ -34,14 +34,6 @@ import {
   Eye,
   RefreshCw,
 } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -267,6 +259,113 @@ const benefits = [
   },
 ];
 
+const process = [
+  {
+    step: "01",
+    title: "Understanding the IT Landscape",
+    description: "Analyze core IT functions and identify common pain points",
+    icon: Search,
+  },
+  {
+    step: "02",
+    title: "Use Case Discovery Framework",
+    description:
+      "Apply top-down and bottom-up approaches with impact vs. feasibility matrix",
+    icon: Target,
+  },
+  {
+    step: "03",
+    title: "Opportunity Evaluation",
+    description:
+      "Assess business impact, technical feasibility, and strategic alignment",
+    icon: BarChart3,
+  },
+  {
+    step: "04",
+    title: "Roadmap & Next Steps",
+    description: "Create structured implementation plan with governance model",
+    icon: Workflow,
+  },
+];
+
+const capabilities = [
+  {
+    title: "Machine Learning & Predictive Analytics",
+    description: "Forecast trends, predict failures, and optimize performance",
+    icon: Brain,
+    applications: [
+      "Predictive maintenance",
+      "Capacity planning",
+      "Performance optimization",
+    ],
+  },
+  {
+    title: "Natural Language Processing (NLP)",
+    description: "Process and understand human language for automation",
+    icon: MessageSquare,
+    applications: ["Chatbots", "Document analysis", "Knowledge base search"],
+  },
+  {
+    title: "Robotic Process Automation (RPA)",
+    description: "Automate repetitive tasks and workflows",
+    icon: Cog,
+    applications: ["Data entry", "Report generation", "System integration"],
+  },
+  {
+    title: "Generative AI",
+    description: "Generate text, code, and content for various IT applications",
+    icon: Lightbulb,
+    applications: ["Code generation", "Documentation", "Content creation"],
+  },
+  {
+    title: "Anomaly Detection",
+    description: "Identify unusual patterns and potential security threats",
+    icon: Eye,
+    applications: [
+      "Security monitoring",
+      "Performance monitoring",
+      "Quality assurance",
+    ],
+  },
+  {
+    title: "Intelligent Search & Chatbots",
+    description:
+      "Provide intelligent information retrieval and conversational interfaces",
+    icon: Bot,
+    applications: ["IT support", "Knowledge management", "User assistance"],
+  },
+];
+
+const frameworks = [
+  {
+    title: "Top-Down Approach",
+    description: "Align AI initiatives with strategic business goals",
+    features: [
+      "Cost reduction targets",
+      "Faster incident resolution",
+      "Digital transformation goals",
+    ],
+  },
+  {
+    title: "Bottom-Up Approach",
+    description: "Identify opportunities through team collaboration",
+    features: [
+      "IT team member interviews",
+      "Workshop sessions",
+      "Pain point analysis",
+    ],
+  },
+  {
+    title: "Impact vs. Feasibility Matrix",
+    description: "Prioritize opportunities based on value and complexity",
+    features: [
+      "Business value assessment",
+      "Technical readiness",
+      "Resource requirements",
+    ],
+  },
+];
+
 const itLandscape = [
   {
     title: "Infrastructure Management",
@@ -420,96 +519,6 @@ const riskConsiderations = [
   },
 ];
 
-const capabilities = [
-  {
-    title: "Machine Learning & Predictive Analytics",
-    description: "Forecast trends, predict failures, and optimize performance",
-    icon: Brain,
-    applications: [
-      "Predictive maintenance",
-      "Capacity planning",
-      "Performance optimization",
-    ],
-    backgroundImage:
-      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Natural Language Processing (NLP)",
-    description: "Process and understand human language for automation",
-    icon: MessageSquare,
-    applications: ["Chatbots", "Document analysis", "Knowledge base search"],
-    backgroundImage:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Robotic Process Automation (RPA)",
-    description: "Automate repetitive tasks and workflows",
-    icon: Cog,
-    applications: ["Data entry", "Report generation", "System integration"],
-    backgroundImage:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Generative AI",
-    description: "Generate text, code, and content for various IT applications",
-    icon: Lightbulb,
-    applications: ["Code generation", "Documentation", "Content creation"],
-    backgroundImage:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Anomaly Detection",
-    description: "Identify unusual patterns and potential security threats",
-    icon: Eye,
-    applications: [
-      "Security monitoring",
-      "Performance monitoring",
-      "Quality assurance",
-    ],
-    backgroundImage:
-      "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Intelligent Search & Chatbots",
-    description:
-      "Provide intelligent information retrieval and conversational interfaces",
-    icon: Bot,
-    applications: ["IT support", "Knowledge management", "User assistance"],
-    backgroundImage:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  },
-];
-
-const frameworks = [
-  {
-    title: "Top-Down Approach",
-    description: "Align AI initiatives with strategic business goals",
-    features: [
-      "Cost reduction targets",
-      "Faster incident resolution",
-      "Digital transformation goals",
-    ],
-  },
-  {
-    title: "Bottom-Up Approach",
-    description: "Identify opportunities through team collaboration",
-    features: [
-      "IT team member interviews",
-      "Workshop sessions",
-      "Pain point analysis",
-    ],
-  },
-  {
-    title: "Impact vs. Feasibility Matrix",
-    description: "Prioritize opportunities based on value and complexity",
-    features: [
-      "Business value assessment",
-      "Technical readiness",
-      "Resource requirements",
-    ],
-  },
-];
-
 export default function AIUsecaseDiscovery() {
   const [activeTab, setActiveTab] = useState("overview");
   const [selectedUseCase, setSelectedUseCase] = useState(null);
@@ -618,7 +627,7 @@ export default function AIUsecaseDiscovery() {
                 { id: "overview", label: "Overview", icon: FileText },
                 { id: "benefits", label: "Benefits", icon: Award },
                 { id: "landscape", label: "IT Landscape", icon: Server },
-                // { id: "process", label: "Process", icon: Workflow },
+                { id: "process", label: "Process", icon: Workflow },
                 { id: "usecases", label: "Use Cases", icon: Lightbulb },
                 { id: "capabilities", label: "AI Capabilities", icon: Brain },
                 { id: "framework", label: "Framework", icon: PieChart },
@@ -845,6 +854,63 @@ export default function AIUsecaseDiscovery() {
             </section>
           )}
 
+          {/* Process Section */}
+          {activeTab === "process" && (
+            <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+              <div className="max-w-7xl mx-auto">
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <motion.div
+                    variants={itemVariants}
+                    className="text-center mb-12"
+                  >
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                      Discovery Process
+                    </h2>
+                    <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+                      Our systematic approach to identifying and prioritizing AI
+                      opportunities
+                    </p>
+                  </motion.div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {process.map((step, idx) => (
+                      <motion.div
+                        key={idx}
+                        variants={itemVariants}
+                        className="relative"
+                      >
+                        <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 h-full">
+                          <div className="flex items-center justify-between mb-4">
+                            <span className="text-3xl font-bold text-blue-400">
+                              {step.step}
+                            </span>
+                            <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30">
+                              <step.icon className="w-6 h-6 text-blue-400" />
+                            </div>
+                          </div>
+                          <h3 className="text-xl font-semibold mb-3 text-white">
+                            {step.title}
+                          </h3>
+                          <p className="text-gray-400">{step.description}</p>
+                        </div>
+
+                        {idx < process.length - 1 && (
+                          <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                            <ChevronRight className="w-8 h-8 text-blue-400" />
+                          </div>
+                        )}
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </section>
+          )}
+
           {/* Use Cases Section */}
           {activeTab === "usecases" && (
             <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -997,66 +1063,46 @@ export default function AIUsecaseDiscovery() {
                       Advanced technologies that power intelligent IT operations
                     </p>
                   </motion.div>
-                  <Carousel
-                    opts={{
-                      loop: true,
-                    }}
-                    plugins={[
-                      Autoplay({
-                        delay: 2000,
-                        stopOnInteraction: true,
-                      }),
-                    ]}
-                    className="w-full max-w-md"
-                  >
-                    <CarouselContent>
-                      {capabilities.map((capability, idx) => (
-                        <CarouselItem key={idx} className="md:basis-1/2 lg:basis-1/3">
-                          <motion.div
-                            variants={itemVariants}
-                            className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300"
-                            style={{
-                              backgroundImage: `url(${capability.backgroundImage})`,
-                              backgroundSize: "cover",
-                              backgroundPosition: "center",
-                            }}
-                          >
-                            <div className="flex items-center mb-6">
-                              <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 mr-4">
-                                <capability.icon className="w-6 h-6 text-blue-400" />
-                              </div>
-                              <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                                {capability.title}
-                              </h3>
-                            </div>
 
-                            <p className="text-gray-400 mb-6">
-                              {capability.description}
-                            </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {capabilities.map((capability, idx) => (
+                      <motion.div
+                        key={idx}
+                        variants={itemVariants}
+                        className="bg-white/5 backdrop-blur-lg rounded-xl p-6 sm:p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                      >
+                        <div className="flex items-center mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 mr-4">
+                            <capability.icon className="w-6 h-6 text-blue-400" />
+                          </div>
+                          <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                            {capability.title}
+                          </h3>
+                        </div>
 
-                            <div>
-                              <h4 className="text-lg font-medium text-white mb-3">
-                                Applications:
-                              </h4>
-                              <div className="space-y-2">
-                                {capability.applications.map((app, appIdx) => (
-                                  <div
-                                    key={appIdx}
-                                    className="flex items-center space-x-3"
-                                  >
-                                    <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                                    <span className="text-gray-300">{app}</span>
-                                  </div>
-                                ))}
+                        <p className="text-gray-400 mb-6">
+                          {capability.description}
+                        </p>
+
+                        <div>
+                          <h4 className="text-lg font-medium text-white mb-3">
+                            Applications:
+                          </h4>
+                          <div className="space-y-2">
+                            {capability.applications.map((app, appIdx) => (
+                              <div
+                                key={appIdx}
+                                className="flex items-center space-x-3"
+                              >
+                                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                                <span className="text-gray-300">{app}</span>
                               </div>
-                            </div>
-                          </motion.div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                  </Carousel>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </motion.div>
               </div>
             </section>
@@ -1611,7 +1657,7 @@ export default function AIUsecaseDiscovery() {
         </div>
 
         {/* Enhanced CTA Section */}
-        <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#0b0b0b' }}>
+        <section className="py-16 relative overflow-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />

@@ -79,7 +79,7 @@ export default function Careers() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm text-white"
+      className="min-h-screen bg-light text-white"
     >
       {/* Hero Section */}
       <div className="relative h-screen overflow-hidden">

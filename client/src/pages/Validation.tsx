@@ -289,7 +289,7 @@ export default function Validation() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm text-white"
+      className="text-white"
     >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
