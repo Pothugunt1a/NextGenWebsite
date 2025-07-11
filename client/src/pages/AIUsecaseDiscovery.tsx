@@ -51,6 +51,7 @@ const itemVariants = {
 };
 
 const useCases = [
+  // IT Operations & Monitoring
   {
     title: "Predictive Maintenance of Servers",
     category: "IT Operations & Monitoring",
@@ -65,10 +66,21 @@ const useCases = [
     category: "IT Operations & Monitoring",
     description: "Reduce alert fatigue with smart filtering and root cause identification",
     impact: "70% reduction in false alerts",
-    effort: "Low",
+    effort: "Medium",
     icon: AlertTriangle,
     color: "from-green-500 to-teal-500",
   },
+  {
+    title: "AIOps for Incident Pattern Recognition",
+    category: "IT Operations & Monitoring",
+    description: "Advanced pattern recognition for incident prediction and resolution",
+    impact: "65% faster incident resolution",
+    effort: "High",
+    icon: Monitor,
+    color: "from-purple-500 to-blue-500",
+  },
+  
+  // Service Management
   {
     title: "AI Chatbots for Tier 1 Support",
     category: "Service Management",
@@ -88,6 +100,17 @@ const useCases = [
     color: "from-purple-500 to-pink-500",
   },
   {
+    title: "NLP-based Knowledge Base Search",
+    category: "Service Management",
+    description: "Intelligent search and knowledge retrieval for IT teams",
+    impact: "75% faster information retrieval",
+    effort: "Low",
+    icon: Search,
+    color: "from-teal-500 to-cyan-500",
+  },
+  
+  // Security & Compliance
+  {
     title: "AI-driven Threat Detection",
     category: "Security & Compliance",
     description: "Advanced threat detection using AI pattern recognition",
@@ -97,6 +120,26 @@ const useCases = [
     color: "from-red-500 to-pink-500",
   },
   {
+    title: "Intelligent Log Analysis for Anomaly Detection",
+    category: "Security & Compliance",
+    description: "Automated log analysis to identify security anomalies and threats",
+    impact: "85% reduction in false positives",
+    effort: "Medium",
+    icon: Eye,
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    title: "Compliance Document Parsing",
+    category: "Security & Compliance",
+    description: "AI-powered parsing and analysis of compliance documents",
+    impact: "70% faster compliance reporting",
+    effort: "Low",
+    icon: FileText,
+    color: "from-indigo-500 to-purple-500",
+  },
+  
+  // DevOps & Automation
+  {
     title: "Code Review with AI Assistants",
     category: "DevOps & Automation",
     description: "AI-powered code review and quality assessment",
@@ -104,6 +147,35 @@ const useCases = [
     effort: "Medium",
     icon: Code,
     color: "from-orange-500 to-red-500",
+  },
+  {
+    title: "Predictive Deployment Risk Scoring",
+    category: "DevOps & Automation",
+    description: "AI-driven risk assessment for deployments",
+    impact: "40% reduction in deployment failures",
+    effort: "High",
+    icon: TrendingUp,
+    color: "from-blue-500 to-green-500",
+  },
+  {
+    title: "CI/CD Pipeline Optimization",
+    category: "DevOps & Automation",
+    description: "Optimize continuous integration and deployment pipelines",
+    impact: "35% faster deployment cycles",
+    effort: "Medium",
+    icon: Workflow,
+    color: "from-purple-500 to-cyan-500",
+  },
+  
+  // Data & Asset Management
+  {
+    title: "Asset Discovery using AI",
+    category: "Data & Asset Management",
+    description: "Automated discovery and classification of IT assets",
+    impact: "90% accuracy in asset tracking",
+    effort: "Low",
+    icon: Database,
+    color: "from-green-500 to-blue-500",
   },
   {
     title: "Smart Capacity Planning",
@@ -115,13 +187,13 @@ const useCases = [
     color: "from-indigo-500 to-blue-500",
   },
   {
-    title: "NLP-based Knowledge Base Search",
-    category: "Service Management",
-    description: "Intelligent search and knowledge retrieval for IT teams",
-    impact: "75% faster information retrieval",
-    effort: "Low",
-    icon: Search,
-    color: "from-teal-500 to-cyan-500",
+    title: "AI-powered Data Classification",
+    category: "Data & Asset Management",
+    description: "Intelligent classification and tagging of enterprise data",
+    impact: "80% improvement in data organization",
+    effort: "Medium",
+    icon: Settings,
+    color: "from-teal-500 to-green-500",
   },
 ];
 
@@ -155,26 +227,26 @@ const benefits = [
 const process = [
   {
     step: "01",
-    title: "Current State Assessment",
-    description: "Analyze existing IT landscape and identify pain points",
+    title: "Understanding the IT Landscape",
+    description: "Analyze core IT functions and identify common pain points",
     icon: Search,
   },
   {
     step: "02",
-    title: "Opportunity Identification",
-    description: "Map AI capabilities to business challenges",
+    title: "Use Case Discovery Framework",
+    description: "Apply top-down and bottom-up approaches with impact vs. feasibility matrix",
     icon: Target,
   },
   {
     step: "03",
-    title: "Use Case Prioritization",
-    description: "Evaluate impact vs. feasibility for each opportunity",
+    title: "Opportunity Evaluation",
+    description: "Assess business impact, technical feasibility, and strategic alignment",
     icon: BarChart3,
   },
   {
     step: "04",
-    title: "Implementation Roadmap",
-    description: "Create detailed action plan with timelines and resources",
+    title: "Roadmap & Next Steps",
+    description: "Create structured implementation plan with governance model",
     icon: Workflow,
   },
 ];
@@ -187,10 +259,22 @@ const capabilities = [
     applications: ["Predictive maintenance", "Capacity planning", "Performance optimization"],
   },
   {
-    title: "Natural Language Processing",
+    title: "Natural Language Processing (NLP)",
     description: "Process and understand human language for automation",
     icon: MessageSquare,
-    applications: ["Chatbots", "Document analysis", "Sentiment analysis"],
+    applications: ["Chatbots", "Document analysis", "Knowledge base search"],
+  },
+  {
+    title: "Robotic Process Automation (RPA)",
+    description: "Automate repetitive tasks and workflows",
+    icon: Cog,
+    applications: ["Data entry", "Report generation", "System integration"],
+  },
+  {
+    title: "Generative AI",
+    description: "Generate text, code, and content for various IT applications",
+    icon: Lightbulb,
+    applications: ["Code generation", "Documentation", "Content creation"],
   },
   {
     title: "Anomaly Detection",
@@ -199,10 +283,10 @@ const capabilities = [
     applications: ["Security monitoring", "Performance monitoring", "Quality assurance"],
   },
   {
-    title: "Robotic Process Automation",
-    description: "Automate repetitive tasks and workflows",
-    icon: Cog,
-    applications: ["Data entry", "Report generation", "System integration"],
+    title: "Intelligent Search & Chatbots",
+    description: "Provide intelligent information retrieval and conversational interfaces",
+    icon: Bot,
+    applications: ["IT support", "Knowledge management", "User assistance"],
   },
 ];
 
@@ -210,17 +294,164 @@ const frameworks = [
   {
     title: "Top-Down Approach",
     description: "Align AI initiatives with strategic business goals",
-    features: ["Cost reduction targets", "Efficiency improvements", "Digital transformation goals"],
+    features: ["Cost reduction targets", "Faster incident resolution", "Digital transformation goals"],
   },
   {
     title: "Bottom-Up Approach",
     description: "Identify opportunities through team collaboration",
-    features: ["Stakeholder interviews", "Workshop sessions", "Pain point analysis"],
+    features: ["IT team member interviews", "Workshop sessions", "Pain point analysis"],
   },
   {
     title: "Impact vs. Feasibility Matrix",
     description: "Prioritize opportunities based on value and complexity",
     features: ["Business value assessment", "Technical readiness", "Resource requirements"],
+  },
+];
+
+const itLandscape = [
+  {
+    title: "Infrastructure Management",
+    description: "Core system administration and hardware management",
+    icon: Server,
+    painPoints: ["Manual processes", "Resource inefficiencies"],
+  },
+  {
+    title: "IT Operations (ITOps)",
+    description: "Day-to-day operational activities and monitoring",
+    icon: Monitor,
+    painPoints: ["Alert fatigue", "Manual monitoring"],
+  },
+  {
+    title: "Service Desk & Support",
+    description: "User support and incident management",
+    icon: Bot,
+    painPoints: ["High ticket volume", "Repetitive queries"],
+  },
+  {
+    title: "Security & Compliance",
+    description: "Information security and regulatory compliance",
+    icon: Shield,
+    painPoints: ["Complex threat landscape", "Manual compliance checks"],
+  },
+  {
+    title: "DevOps & Application Management",
+    description: "Development operations and application lifecycle",
+    icon: Code,
+    painPoints: ["Deployment risks", "Manual code reviews"],
+  },
+  {
+    title: "Data Management",
+    description: "Data governance, storage, and analytics",
+    icon: Database,
+    painPoints: ["Data silos", "Manual classification"],
+  },
+];
+
+const toolsPlatforms = [
+  {
+    category: "AI/ML Toolkits",
+    tools: ["Azure ML", "AWS SageMaker", "Google Vertex AI"],
+    icon: Brain,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    category: "AIOps Platforms",
+    tools: ["Dynatrace", "Splunk", "Moogsoft"],
+    icon: Monitor,
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    category: "Automation Tools",
+    tools: ["UiPath", "ServiceNow", "Ansible", "Terraform"],
+    icon: Cog,
+    color: "from-purple-500 to-violet-500",
+  },
+];
+
+const roadmapSteps = [
+  {
+    step: "01",
+    title: "Shortlist Top Opportunities",
+    description: "Identify and prioritize the most promising AI use cases",
+    icon: Target,
+  },
+  {
+    step: "02",
+    title: "Conduct POCs",
+    description: "Execute proof of concepts for selected use cases",
+    icon: Play,
+  },
+  {
+    step: "03",
+    title: "Establish AI Governance",
+    description: "Create frameworks for AI implementation and oversight",
+    icon: Shield,
+  },
+  {
+    step: "04",
+    title: "Build AI Task Force",
+    description: "Form cross-functional teams for AI initiative execution",
+    icon: Users,
+  },
+  {
+    step: "05",
+    title: "Define Success Metrics",
+    description: "Establish KPIs and measurement frameworks",
+    icon: BarChart3,
+  },
+];
+
+const evaluationCriteria = [
+  {
+    title: "Business Impact",
+    description: "Cost reduction, speed improvements, quality enhancements",
+    icon: TrendingUp,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "Technical Feasibility",
+    description: "Data availability, model complexity, integration requirements",
+    icon: Settings,
+    color: "from-green-500 to-teal-500",
+  },
+  {
+    title: "Strategic Alignment",
+    description: "Alignment with digital transformation goals and business strategy",
+    icon: Target,
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    title: "User Adoption Potential",
+    description: "Ease of adoption, user acceptance, change management requirements",
+    icon: Users,
+    color: "from-orange-500 to-red-500",
+  },
+];
+
+const riskConsiderations = [
+  {
+    title: "Data Privacy & Security",
+    description: "Ensure compliance with data protection regulations and security standards",
+    icon: Shield,
+    color: "from-red-500 to-pink-500",
+  },
+  {
+    title: "Change Management",
+    description: "Address organizational resistance and manage cultural transformation",
+    icon: Users,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "Talent & Skill Gaps",
+    description: "Identify and address AI expertise and training requirements",
+    icon: Brain,
+    color: "from-green-500 to-teal-500",
+  },
+  {
+    title: "Integration Complexity",
+    description: "Manage technical integration challenges and system compatibility",
+    icon: Settings,
+    color: "from-purple-500 to-violet-500",
   },
 ];
 
@@ -312,10 +543,15 @@ export default function AIUsecaseDiscovery() {
             {[
               { id: "overview", label: "Overview", icon: FileText },
               { id: "benefits", label: "Benefits", icon: Award },
+              { id: "landscape", label: "IT Landscape", icon: Server },
               { id: "process", label: "Process", icon: Workflow },
               { id: "usecases", label: "Use Cases", icon: Lightbulb },
               { id: "capabilities", label: "AI Capabilities", icon: Brain },
               { id: "framework", label: "Framework", icon: PieChart },
+              { id: "evaluation", label: "Evaluation", icon: BarChart3 },
+              { id: "roadmap", label: "Roadmap", icon: Target },
+              { id: "tools", label: "Tools & Platforms", icon: Settings },
+              { id: "risks", label: "Risks", icon: AlertTriangle },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -716,6 +952,250 @@ export default function AIUsecaseDiscovery() {
                         </div>
                         <h4 className="text-lg font-semibold mb-2">Outcome</h4>
                         <p className="text-gray-400 text-sm">Define expected deliverables (e.g., AI use case shortlist, value matrix, roadmap)</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* IT Landscape Section */}
+        {activeTab === "landscape" && (
+          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div variants={itemVariants} className="text-center mb-12">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    Understanding the IT Landscape
+                  </h2>
+                  <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Core IT functions and their common pain points that AI can address
+                  </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                  {itLandscape.map((area, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 mr-4">
+                          <area.icon className="w-6 h-6 text-blue-400" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-white">{area.title}</h3>
+                      </div>
+                      <p className="text-gray-400 mb-4">{area.description}</p>
+                      <div className="space-y-2">
+                        <h4 className="text-sm font-medium text-gray-300">Common Pain Points:</h4>
+                        {area.painPoints.map((point, pointIdx) => (
+                          <div key={pointIdx} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-red-400 rounded-full flex-shrink-0"></div>
+                            <span className="text-sm text-gray-400">{point}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* Evaluation Criteria Section */}
+        {activeTab === "evaluation" && (
+          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div variants={itemVariants} className="text-center mb-12">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    Opportunity Evaluation Criteria
+                  </h2>
+                  <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Key factors for assessing and prioritizing AI use cases
+                  </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                  {evaluationCriteria.map((criteria, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                    >
+                      <div className={`w-12 h-12 bg-gradient-to-r ${criteria.color} rounded-xl flex items-center justify-center mb-4`}>
+                        <criteria.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3 text-white">{criteria.title}</h3>
+                      <p className="text-gray-400">{criteria.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* Roadmap Section */}
+        {activeTab === "roadmap" && (
+          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div variants={itemVariants} className="text-center mb-12">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    Roadmap & Next Steps
+                  </h2>
+                  <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Strategic implementation path for AI initiatives
+                  </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
+                  {roadmapSteps.map((step, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={itemVariants}
+                      className="relative"
+                    >
+                      <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
+                        <div className="flex items-center mb-4">
+                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                            {step.step}
+                          </div>
+                          <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30">
+                            <step.icon className="w-5 h-5 text-blue-400" />
+                          </div>
+                        </div>
+                        <h3 className="text-lg font-semibold mb-3 text-white">{step.title}</h3>
+                        <p className="text-gray-400 text-sm">{step.description}</p>
+                      </div>
+                      {idx < roadmapSteps.length - 1 && (
+                        <div className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
+                          <ArrowRight className="w-6 h-6 text-blue-400" />
+                        </div>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* Tools & Platforms Section */}
+        {activeTab === "tools" && (
+          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div variants={itemVariants} className="text-center mb-12">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    Tools & Platforms
+                  </h2>
+                  <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Essential platforms and tools for AI implementation
+                  </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                  {toolsPlatforms.map((platform, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                    >
+                      <div className={`w-12 h-12 bg-gradient-to-r ${platform.color} rounded-xl flex items-center justify-center mb-4`}>
+                        <platform.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-4 text-white">{platform.category}</h3>
+                      <div className="space-y-2">
+                        {platform.tools.map((tool, toolIdx) => (
+                          <div key={toolIdx} className="flex items-center space-x-3">
+                            <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-300">{tool}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* Risks & Considerations Section */}
+        {activeTab === "risks" && (
+          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div variants={itemVariants} className="text-center mb-12">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    Risks & Considerations
+                  </h2>
+                  <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Key challenges and mitigation strategies for AI implementation
+                  </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                  {riskConsiderations.map((risk, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-red-500/50 transition-all duration-300"
+                    >
+                      <div className={`w-12 h-12 bg-gradient-to-r ${risk.color} rounded-xl flex items-center justify-center mb-4`}>
+                        <risk.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3 text-white">{risk.title}</h3>
+                      <p className="text-gray-400">{risk.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <motion.div variants={itemVariants} className="mt-12">
+                  <div className="bg-gradient-to-r from-red-900/50 to-orange-900/50 backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-red-500/30">
+                    <h3 className="text-2xl font-bold mb-6 text-center">Conclusion & Call to Action</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                      <div>
+                        <h4 className="text-lg font-semibold mb-2 text-white">Strategic Value</h4>
+                        <p className="text-gray-400 text-sm">Recap the strategic value of AI in IT operations and business transformation</p>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold mb-2 text-white">Proactive Exploration</h4>
+                        <p className="text-gray-400 text-sm">Encourage organizations to actively explore AI opportunities</p>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold mb-2 text-white">Cross-Departmental Collaboration</h4>
+                        <p className="text-gray-400 text-sm">Recommend building bridges between business and technical teams</p>
                       </div>
                     </div>
                   </div>
