@@ -42,7 +42,8 @@ export default function Navbar({
   const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<
     string | null
   >(null);
-  const [dropdownHoverTimeout, setDropdownHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [dropdownHoverTimeout, setDropdownHoverTimeout] =
+    useState<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
@@ -114,7 +115,10 @@ export default function Navbar({
     setActiveDesktopSubmenu(null);
   };
 
-  const handleNavigationClick = (href: string, preserveMobileSubmenu = false) => {
+  const handleNavigationClick = (
+    href: string,
+    preserveMobileSubmenu = false,
+  ) => {
     if (href.startsWith("/")) {
       setLocation(href);
       // Scroll to top when navigating to a new page
@@ -188,7 +192,7 @@ export default function Navbar({
               {navLinks.map((link) => (
                 <div key={link.id} className="relative group mx-1">
                   {link.hasDropdown ? (
-                    <div 
+                    <div
                       className="relative"
                       onMouseEnter={handleDropdownMouseEnter}
                       onMouseLeave={handleDropdownMouseLeave}
@@ -220,15 +224,15 @@ export default function Navbar({
                       </a>
 
                       {activeDropdown === link.id && (
-                        <div 
+                        <div
                           className="absolute left-0 right-0 top-full mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
                           onMouseEnter={handleDropdownMouseEnter}
                           onMouseLeave={handleDropdownMouseLeave}
-                          style={{ 
-                            position: 'fixed',
+                          style={{
+                            position: "fixed",
                             left: 0,
                             right: 0,
-                            top: scrolled ? '70px' : '80px'
+                            top: scrolled ? "70px" : "80px",
                           }}
                         >
                           {/* Invisible bridge to prevent dropdown from closing */}
@@ -240,7 +244,7 @@ export default function Navbar({
                                 <img
                                   src={
                                     link.name === "IT Services"
-                                      ? "./assets/IT-Services-dropdown.png"
+                                      ? "./assets/IT-Services-dropdown.gif"
                                       : "./assets/AI-dropdown.png"
                                   }
                                   alt={
@@ -433,14 +437,26 @@ export default function Navbar({
                                               className="relative cursor-pointer select-none"
                                               onClick={(e) => {
                                                 // For AI Consulting, navigate to page but keep dropdown open
-                                                if (category.name === "AI Consulting") {
+                                                if (
+                                                  category.name ===
+                                                  "AI Consulting"
+                                                ) {
                                                   e.preventDefault();
                                                   setLocation("/ai-consulting");
-                                                  window.scrollTo({ top: 0, behavior: "smooth" });
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
                                                   // Don't close dropdowns, just toggle submenu
-                                                  toggleDesktopSubmenu(category.name, e);
+                                                  toggleDesktopSubmenu(
+                                                    category.name,
+                                                    e,
+                                                  );
                                                 } else {
-                                                  toggleDesktopSubmenu(category.name, e);
+                                                  toggleDesktopSubmenu(
+                                                    category.name,
+                                                    e,
+                                                  );
                                                 }
                                               }}
                                             >
@@ -512,7 +528,9 @@ export default function Navbar({
                                                 category.href &&
                                                 category.href.startsWith("/")
                                               ) {
-                                                handleNavigationClick(category.href);
+                                                handleNavigationClick(
+                                                  category.href,
+                                                );
                                               }
                                             }}
                                           >
@@ -624,7 +642,10 @@ export default function Navbar({
                                     onClick={() => {
                                       // For AI Consulting, navigate to page first and keep menu open
                                       if (category.name === "AI Consulting") {
-                                        handleNavigationClick("/ai-consulting", true);
+                                        handleNavigationClick(
+                                          "/ai-consulting",
+                                          true,
+                                        );
                                         // Toggle submenu to show the dropdown items
                                         toggleMobileSubmenu(category.name);
                                       } else {

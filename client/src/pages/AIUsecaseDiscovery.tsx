@@ -53,7 +53,7 @@ const itemVariants = {
 const useCases = [
   {
     title: "Predictive Maintenance of Servers",
-    category: "IT Operations",
+    category: "IT Operations & Monitoring",
     description: "AI-powered monitoring to predict server failures before they occur",
     impact: "85% reduction in downtime",
     effort: "Medium",
@@ -61,26 +61,44 @@ const useCases = [
     color: "from-blue-500 to-cyan-500",
   },
   {
-    title: "Intelligent Alert Management",
-    category: "IT Operations",
-    description: "Reduce alert fatigue with smart filtering and prioritization",
+    title: "Intelligent Alert Correlation & Root Cause Analysis",
+    category: "IT Operations & Monitoring",
+    description: "Reduce alert fatigue with smart filtering and root cause identification",
     impact: "70% reduction in false alerts",
     effort: "Low",
     icon: AlertTriangle,
     color: "from-green-500 to-teal-500",
   },
   {
-    title: "Automated Incident Response",
-    category: "DevOps",
-    description: "AI-driven incident detection and automated resolution workflows",
+    title: "AI Chatbots for Tier 1 Support",
+    category: "Service Management",
+    description: "Intelligent chatbot for first-level IT support and troubleshooting",
+    impact: "80% query resolution without human intervention",
+    effort: "Low",
+    icon: Bot,
+    color: "from-cyan-500 to-blue-500",
+  },
+  {
+    title: "Automated Ticket Triage & Routing",
+    category: "Service Management",
+    description: "AI-driven ticket classification and automated routing to appropriate teams",
     impact: "60% faster response times",
-    effort: "High",
+    effort: "Medium",
     icon: RefreshCw,
     color: "from-purple-500 to-pink-500",
   },
   {
-    title: "Code Quality Analysis",
-    category: "Development",
+    title: "AI-driven Threat Detection",
+    category: "Security & Compliance",
+    description: "Advanced threat detection using AI pattern recognition",
+    impact: "90% improvement in threat detection accuracy",
+    effort: "High",
+    icon: Shield,
+    color: "from-red-500 to-pink-500",
+  },
+  {
+    title: "Code Review with AI Assistants",
+    category: "DevOps & Automation",
     description: "AI-powered code review and quality assessment",
     impact: "50% fewer bugs in production",
     effort: "Medium",
@@ -88,48 +106,48 @@ const useCases = [
     color: "from-orange-500 to-red-500",
   },
   {
-    title: "Infrastructure Optimization",
-    category: "Cloud Management",
-    description: "Optimize cloud costs and resource allocation with AI insights",
+    title: "Smart Capacity Planning",
+    category: "Data & Asset Management",
+    description: "AI-driven capacity forecasting and resource optimization",
     impact: "40% cost reduction",
     effort: "Medium",
     icon: Cloud,
     color: "from-indigo-500 to-blue-500",
   },
   {
-    title: "IT Helpdesk Chatbot",
-    category: "Support",
-    description: "Intelligent chatbot for first-level IT support and troubleshooting",
-    impact: "80% query resolution without human intervention",
+    title: "NLP-based Knowledge Base Search",
+    category: "Service Management",
+    description: "Intelligent search and knowledge retrieval for IT teams",
+    impact: "75% faster information retrieval",
     effort: "Low",
-    icon: Bot,
-    color: "from-cyan-500 to-blue-500",
+    icon: Search,
+    color: "from-teal-500 to-cyan-500",
   },
 ];
 
 const benefits = [
   {
     icon: TrendingUp,
-    title: "Efficiency Gains",
-    description: "Automate routine tasks and optimize workflows",
+    title: "Identify Quick Wins",
+    description: "Discover immediate AI opportunities that deliver fast results",
     color: "from-blue-500 to-cyan-500",
   },
   {
-    icon: DollarSign,
-    title: "Cost Savings",
-    description: "Reduce operational costs through intelligent automation",
+    icon: Target,
+    title: "Long-term Strategic AI Plays",
+    description: "Build a scalable pipeline of high-impact AI initiatives",
     color: "from-green-500 to-teal-500",
   },
   {
-    icon: Shield,
-    title: "Risk Mitigation",
-    description: "Proactively identify and address potential issues",
+    icon: Users,
+    title: "Cross-functional Collaboration",
+    description: "Enable collaboration between business and technical teams",
     color: "from-purple-500 to-pink-500",
   },
   {
-    icon: Award,
-    title: "Innovation",
-    description: "Enable new capabilities and competitive advantages",
+    icon: BarChart3,
+    title: "Align AI with Business Priorities",
+    description: "Connect AI efforts with core business objectives and digital transformation goals",
     color: "from-orange-500 to-red-500",
   },
 ];
@@ -211,64 +229,83 @@ export default function AIUsecaseDiscovery() {
   const [selectedUseCase, setSelectedUseCase] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
-      {/* Animated Background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/2 -left-40 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute -bottom-40 right-1/3 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-      </div>
+    <div className="min-h-screen bg-light text-white">
+      {/* Banner Section */}
+      <div className="relative h-screen overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/assets/AI-Usecase-banner.png"
+            alt="AI Use Case Discovery Banner"
+            className="w-full h-full object-cover object-center"
+            onError={(e) => {
+              console.error("Failed to load banner image");
+              e.currentTarget.style.display = "none";
+            }}
+          />
+        </div>
 
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-center"
-          >
-            <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-sm font-medium">
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="space-y-8"
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-sm font-medium mb-6">
                 <Search className="w-4 h-4 mr-2" />
                 Discovery & Identification
-              </span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
+                AI Use Case Discovery &
+                <br />
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Opportunity Identification
+                </span>
+              </h1>
+
+              <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 max-w-4xl mx-auto mb-8">
+                Reveal What's Possible. Prioritize What Matters.
+              </p>
+
+              <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-10">
+                In a world increasingly driven by data and intelligent systems, knowing where and how to apply 
+                Artificial Intelligence is critical to gaining a competitive edge. Our AI Use Case Discovery & 
+                Opportunity Identification service empowers organizations to unlock transformational value by 
+                pinpointing the most impactful areas for AI deployment.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105">
+                  Start Discovery Process
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" className="border-blue-500/50 hover:bg-blue-500/10 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl">
+                  <Play className="mr-2 h-5 w-5" />
+                  Watch Demo
+                </Button>
+              </div>
             </motion.div>
-
-            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
-              AI Use Case Discovery &
-              <br />
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Opportunity Identification
-              </span>
-            </motion.h1>
-
-            <motion.p variants={itemVariants} className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-              Reveal What's Possible. Prioritize What Matters.
-            </motion.p>
-
-            <motion.p variants={itemVariants} className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto mb-10">
-              In a world increasingly driven by data and intelligent systems, knowing where and how to apply 
-              Artificial Intelligence is critical to gaining a competitive edge. Our AI Use Case Discovery & 
-              Opportunity Identification service empowers organizations to unlock transformational value by 
-              pinpointing the most impactful areas for AI deployment.
-            </motion.p>
-
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105">
-                Start Discovery Process
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" className="border-blue-500/50 hover:bg-blue-500/10 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Demo
-              </Button>
-            </motion.div>
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </div>
 
-      {/* Navigation Tabs */}
+      {/* Main Content */}
+      <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+        {/* Animated Background */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/2 -left-40 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute -bottom-40 right-1/3 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        </div>
+
+        {/* Navigation Tabs */}
       <section className="sticky top-20 z-40 bg-black/80 backdrop-blur-lg border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto scrollbar-hide">
@@ -345,6 +382,19 @@ export default function AIUsecaseDiscovery() {
                 </motion.div>
 
                 <motion.div variants={itemVariants} className="relative">
+                  {/* AI Use Case Discovery Image */}
+                  <div className="mb-8">
+                    <img
+                      src="/assets/AI-UsecaseDiscovery.png"
+                      alt="AI Use Case Discovery Process"
+                      className="w-full h-auto object-contain rounded-2xl shadow-2xl"
+                      onError={(e) => {
+                        console.error("Failed to load AI Use Case Discovery image");
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  </div>
+
                   <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-blue-500/30">
                     <h3 className="text-2xl font-bold mb-6 text-center">Ideal For</h3>
                     <div className="space-y-4">
@@ -703,6 +753,7 @@ export default function AIUsecaseDiscovery() {
           </motion.div>
         </div>
       </section>
+      </div>
     </div>
   );
 }
