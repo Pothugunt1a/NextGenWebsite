@@ -343,66 +343,83 @@ export default function AIUsecaseDiscovery() {
       className="min-h-screen bg-light text-white"
     >
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/assets/AI-Usecase-banner.png"
             alt="AI Use Case Discovery Banner"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             onError={(e) => {
               console.error("Failed to load banner image");
               e.currentTarget.style.display = "none";
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
         </div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+
+        <div className="relative flex items-center h-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
+              className="max-w-5xl"
             >
-              <Badge className="mb-6 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-cyan-400 border-cyan-400/30">
-                <Search className="mr-2 h-4 w-4" />
-                AI Use Case Discovery
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <motion.h1
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+                style={{ fontWeight: 700 }}
+              >
                 <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
                   Reveal What's Possible.
                 </span>
                 <br />
                 <span className="text-white">Prioritize What Matters.</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+              </motion.h1>
+
+              <motion.p
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="text-xl md:text-2xl text-white mb-8 leading-relaxed max-w-3xl"
+              >
                 In a world increasingly driven by data and intelligent systems, knowing where and how to apply Artificial Intelligence is critical to gaining a competitive edge. Our AI Use Case Discovery & Opportunity Identification service empowers organizations to unlock transformational value by pinpointing the most impactful areas for AI deployment.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              </motion.p>
+
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.9, duration: 0.8 }}
+                className="flex flex-col sm:flex-row gap-6 justify-start items-center"
+              >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-6 text-lg font-semibold"
+                  className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-bold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  <Search className="mr-2 h-5 w-5" />
+                  <Search className="mr-3 h-6 w-6" />
                   Start Discovery Process
+                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold"
+                  className="border-white/30 text-white hover:bg-white/10 px-10 py-6 text-lg font-semibold"
                 >
-                  <FileText className="mr-2 h-5 w-5" />
+                  <FileText className="mr-3 h-6 w-6" />
                   Download Framework
                 </Button>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Service Deliverables */}
-      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
+      <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -444,7 +461,7 @@ export default function AIUsecaseDiscovery() {
       </section>
 
       {/* Key Benefits */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -485,7 +502,7 @@ export default function AIUsecaseDiscovery() {
       </section>
 
       {/* Ideal For Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
+      <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -543,7 +560,7 @@ export default function AIUsecaseDiscovery() {
       </section>
 
       {/* AI Capabilities */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -587,7 +604,7 @@ export default function AIUsecaseDiscovery() {
       </section>
 
       {/* High-Value AI Use Cases */}
-      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
+      <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -662,7 +679,7 @@ export default function AIUsecaseDiscovery() {
       </section>
 
       {/* Evaluation Criteria */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -719,7 +736,7 @@ export default function AIUsecaseDiscovery() {
       </section>
 
       {/* Tools & Platforms */}
-      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
+      <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -771,7 +788,7 @@ export default function AIUsecaseDiscovery() {
       </section>
 
       {/* Roadmap */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -820,7 +837,7 @@ export default function AIUsecaseDiscovery() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-800/50">
+      <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
