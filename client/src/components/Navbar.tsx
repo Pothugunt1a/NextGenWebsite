@@ -615,18 +615,22 @@ export default function Navbar({
                         <div className="ml-4 mt-2 space-y-2">
                           {link.dropdownItems?.map((category, idx) => (
                             <div key={idx}>
-                              {/* Check if category has items or is directly clickable */}
                               {category.items && category.items.length > 0 ? (
                                 <>
                                   <button
-                                    className="w-full text-left px-3 py-2 text-sm text-white hover:bg-black hover:text-cyan-400 rounded-lg transition-all duration-300 flex items-center justify-between"
-                                    onClick={() =>
-                                      toggleMobileSubmenu(category.name)
-                                    }
+                                    className="w-full text-left px-3 py-2 text-sm text-white hover:bg-gray-800 hover:text-cyan-400 rounded-lg transition-all duration-300 flex items-center justify-between"
+                                    onClick={() => {
+                                      // For AI Consulting, navigate to page first
+                                      if (category.name === "AI Consulting") {
+                                        handleNavigationClick("/ai-consulting");
+                                      }
+                                      // Then toggle submenu
+                                      toggleMobileSubmenu(category.name);
+                                    }}
                                   >
                                     {category.name}
                                     <ChevronDown
-                                      className={`h-3 w-3 transition-transform ${activeMobileSubmenu === category.name ? "rotate-180" : ""}`}
+                                      className={`h-3 w-3 text-white transition-transform ${activeMobileSubmenu === category.name ? "rotate-180" : ""}`}
                                     />
                                   </button>
                                   {activeMobileSubmenu === category.name && (
@@ -635,7 +639,7 @@ export default function Navbar({
                                         <a
                                           key={itemIdx}
                                           href={item.href}
-                                          className="block px-3 py-2 text-sm text-white hover:bg-black hover:text-cyan-400 rounded-lg transition-all duration-300"
+                                          className="block px-3 py-2 text-sm text-white hover:bg-gray-800 hover:text-cyan-400 rounded-lg transition-all duration-300"
                                           onClick={(e) => {
                                             e.preventDefault();
                                             if (item.href.startsWith("/")) {
@@ -645,7 +649,7 @@ export default function Navbar({
                                             }
                                           }}
                                         >
-                                          {item.title}
+                                          {item.name}
                                         </a>
                                       ))}
                                     </div>
@@ -654,7 +658,7 @@ export default function Navbar({
                               ) : (
                                 <a
                                   href={category.href}
-                                  className="block px-3 py-2 text-sm text-white hover:bg-black hover:text-cyan-400 rounded-lg transition-all duration-300"
+                                  className="block px-3 py-2 text-sm text-white hover:bg-gray-800 hover:text-cyan-400 rounded-lg transition-all duration-300"
                                   onClick={(e) => {
                                     e.preventDefault();
                                     if (category.href?.startsWith("/")) {
