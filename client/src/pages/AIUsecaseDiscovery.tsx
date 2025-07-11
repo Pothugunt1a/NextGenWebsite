@@ -1202,32 +1202,39 @@ export default function AIUsecaseDiscovery() {
                 </motion.div>
 
                 {/* Detailed Steps */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
-                  {roadmapSteps.map((step, idx) => (
-                    <motion.div
-                      key={idx}
-                      variants={itemVariants}
-                      className="relative"
-                    >
-                      <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
-                        <div className="flex items-center mb-4">
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
-                            {step.step}
-                          </div>
-                          <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30">
-                            <step.icon className="w-5 h-5 text-blue-400" />
+                <div className="relative">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
+                    {roadmapSteps.map((step, idx) => (
+                      <motion.div
+                        key={idx}
+                        variants={itemVariants}
+                        className="relative"
+                      >
+                        <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 h-full">
+                          <div className="flex flex-col items-center text-center">
+                            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4">
+                              {step.step}
+                            </div>
+                            <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 mb-4">
+                              <step.icon className="w-6 h-6 text-blue-400" />
+                            </div>
+                            <h3 className="text-lg font-semibold mb-3 text-white">{step.title}</h3>
+                            <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
                           </div>
                         </div>
-                        <h3 className="text-lg font-semibold mb-3 text-white">{step.title}</h3>
-                        <p className="text-gray-400 text-sm">{step.description}</p>
-                      </div>
-                      {idx < roadmapSteps.length - 1 && (
-                        <div className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
-                          <ArrowRight className="w-6 h-6 text-blue-400" />
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
+                        {idx < roadmapSteps.length - 1 && (
+                          <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                            <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                              <ArrowRight className="w-4 h-4 text-white" />
+                            </div>
+                          </div>
+                        )}
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  {/* Connection Line for Large Screens */}
+                  <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/30 via-cyan-500/30 to-blue-500/30 -translate-y-1/2 -z-10"></div>
                 </div>
               </motion.div>
             </div>
