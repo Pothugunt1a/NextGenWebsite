@@ -60,7 +60,6 @@ const useCases = [
     effort: "Medium",
     icon: Server,
     color: "from-blue-500 to-cyan-500",
-    backgroundImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Intelligent Alert Correlation & Root Cause Analysis",
@@ -70,7 +69,6 @@ const useCases = [
     effort: "Medium",
     icon: AlertTriangle,
     color: "from-green-500 to-teal-500",
-    backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "AIOps for Incident Pattern Recognition",
@@ -80,7 +78,6 @@ const useCases = [
     effort: "High",
     icon: Monitor,
     color: "from-purple-500 to-blue-500",
-    backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   
   // Service Management
@@ -92,7 +89,6 @@ const useCases = [
     effort: "Low",
     icon: Bot,
     color: "from-cyan-500 to-blue-500",
-    backgroundImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Automated Ticket Triage & Routing",
@@ -102,7 +98,6 @@ const useCases = [
     effort: "Medium",
     icon: RefreshCw,
     color: "from-purple-500 to-pink-500",
-    backgroundImage: "https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "NLP-based Knowledge Base Search",
@@ -112,7 +107,6 @@ const useCases = [
     effort: "Low",
     icon: Search,
     color: "from-teal-500 to-cyan-500",
-    backgroundImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   
   // Security & Compliance
@@ -124,7 +118,6 @@ const useCases = [
     effort: "High",
     icon: Shield,
     color: "from-red-500 to-pink-500",
-    backgroundImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Intelligent Log Analysis for Anomaly Detection",
@@ -134,7 +127,6 @@ const useCases = [
     effort: "Medium",
     icon: Eye,
     color: "from-orange-500 to-red-500",
-    backgroundImage: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Compliance Document Parsing",
@@ -144,7 +136,6 @@ const useCases = [
     effort: "Low",
     icon: FileText,
     color: "from-indigo-500 to-purple-500",
-    backgroundImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   
   // DevOps & Automation
@@ -156,7 +147,6 @@ const useCases = [
     effort: "Medium",
     icon: Code,
     color: "from-orange-500 to-red-500",
-    backgroundImage: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Predictive Deployment Risk Scoring",
@@ -166,7 +156,6 @@ const useCases = [
     effort: "High",
     icon: TrendingUp,
     color: "from-blue-500 to-green-500",
-    backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "CI/CD Pipeline Optimization",
@@ -176,7 +165,6 @@ const useCases = [
     effort: "Medium",
     icon: Workflow,
     color: "from-purple-500 to-cyan-500",
-    backgroundImage: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   
   // Data & Asset Management
@@ -188,7 +176,6 @@ const useCases = [
     effort: "Low",
     icon: Database,
     color: "from-green-500 to-blue-500",
-    backgroundImage: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Smart Capacity Planning",
@@ -198,7 +185,6 @@ const useCases = [
     effort: "Medium",
     icon: Cloud,
     color: "from-indigo-500 to-blue-500",
-    backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "AI-powered Data Classification",
@@ -208,7 +194,6 @@ const useCases = [
     effort: "Medium",
     icon: Settings,
     color: "from-teal-500 to-green-500",
-    backgroundImage: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -844,68 +829,50 @@ export default function AIUsecaseDiscovery() {
                       key={idx}
                       variants={itemVariants}
                       whileHover={{ scale: 1.02 }}
-                      className="relative bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 cursor-pointer overflow-hidden"
+                      className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 cursor-pointer"
                       onClick={() => setSelectedUseCase(selectedUseCase === idx ? null : idx)}
                     >
-                      {/* Background Image */}
-                      {useCase.backgroundImage && (
-                        <div className="absolute inset-0 opacity-20">
-                          <img
-                            src={useCase.backgroundImage}
-                            alt={useCase.title}
-                            className="w-full h-full object-cover rounded-xl"
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.style.display = 'none';
-                            }}
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl"></div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className={`w-12 h-12 bg-gradient-to-r ${useCase.color} rounded-xl flex items-center justify-center`}>
+                          <useCase.icon className="w-6 h-6 text-white" />
                         </div>
-                      )}
-                      
-                      <div className="relative z-10">
-                        <div className="flex items-center justify-between mb-4">
-                          <div className={`w-12 h-12 bg-gradient-to-r ${useCase.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                            <useCase.icon className="w-6 h-6 text-white" />
-                          </div>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            useCase.effort === "Low" 
-                              ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                              : useCase.effort === "Medium"
-                              ? "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                              : "bg-red-500/20 text-red-400 border border-red-500/30"
-                          }`}>
-                            {useCase.effort} Effort
-                          </span>
-                        </div></div>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          useCase.effort === "Low" 
+                            ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                            : useCase.effort === "Medium"
+                            ? "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                            : "bg-red-500/20 text-red-400 border border-red-500/30"
+                        }`}>
+                          {useCase.effort} Effort
+                        </span>
+                      </div>
 
                       <div className="mb-3">
-                          <span className="text-sm text-blue-400 font-medium">{useCase.category}</span>
-                        </div>
-
-                        <h3 className="text-xl font-semibold mb-3 text-white">{useCase.title}</h3>
-                        <p className="text-gray-400 mb-4">{useCase.description}</p>
-
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-green-400 font-medium">{useCase.impact}</span>
-                          <ChevronRight className={`w-4 h-4 text-gray-400 transition-transform ${selectedUseCase === idx ? "rotate-90" : ""}`} />
-                        </div>
-
-                        {selectedUseCase === idx && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="mt-4 pt-4 border-t border-gray-700"
-                          >
-                            <div className="space-y-2 text-sm text-gray-300">
-                              <div><strong>Implementation:</strong> 2-4 weeks</div>
-                              <div><strong>ROI Timeline:</strong> 3-6 months</div>
-                              <div><strong>Key Technologies:</strong> ML, Predictive Analytics</div>
-                            </div>
-                          </motion.div>
-                        )}
+                        <span className="text-sm text-blue-400 font-medium">{useCase.category}</span>
                       </div>
+
+                      <h3 className="text-xl font-semibold mb-3 text-white">{useCase.title}</h3>
+                      <p className="text-gray-400 mb-4">{useCase.description}</p>
+
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-green-400 font-medium">{useCase.impact}</span>
+                        <ChevronRight className={`w-4 h-4 text-gray-400 transition-transform ${selectedUseCase === idx ? "rotate-90" : ""}`} />
+                      </div>
+
+                      {selectedUseCase === idx && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="mt-4 pt-4 border-t border-gray-700"
+                        >
+                          <div className="space-y-2 text-sm text-gray-300">
+                            <div><strong>Implementation:</strong> 2-4 weeks</div>
+                            <div><strong>ROI Timeline:</strong> 3-6 months</div>
+                            <div><strong>Key Technologies:</strong> ML, Predictive Analytics</div>
+                          </div>
+                        </motion.div>
+                      )}
                     </motion.div>
                   ))}
                 </div>
@@ -1489,7 +1456,7 @@ export default function AIUsecaseDiscovery() {
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Button
                 size="lg"
@@ -1498,6 +1465,14 @@ export default function AIUsecaseDiscovery() {
                 <Users className="mr-2 h-5 w-5" />
                 Schedule Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-blue-500/50 hover:bg-blue-500/10 px-10 py-6 text-lg font-semibold"
+              >
+                <FileText className="mr-2 h-5 w-5" />
+                Download Framework
               </Button>
             </motion.div>
           </motion.div>
