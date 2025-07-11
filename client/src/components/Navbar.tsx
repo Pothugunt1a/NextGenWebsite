@@ -596,8 +596,8 @@ export default function Navbar({
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute left-0 right-0 top-full bg-black border-t border-gray-600 shadow-lg">
-            <div className="flex flex-col space-y-2 pt-4 pb-4 px-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-600 bg-black rounded-lg mx-2">
+            <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <div key={link.id}>
                   {link.hasDropdown ? (
@@ -620,13 +620,9 @@ export default function Navbar({
                                 <>
                                   <button
                                     className="w-full text-left px-3 py-2 text-sm text-white hover:bg-black hover:text-cyan-400 rounded-lg transition-all duration-300 flex items-center justify-between"
-                                    onClick={() => {
-                                      // For AI Consulting, navigate to page and toggle submenu
-                                      if (category.name === "AI Consulting") {
-                                        handleNavigationClick("/ai-consulting");
-                                      }
-                                      toggleMobileSubmenu(category.name);
-                                    }}
+                                    onClick={() =>
+                                      toggleMobileSubmenu(category.name)
+                                    }
                                   >
                                     {category.name}
                                     <ChevronDown
