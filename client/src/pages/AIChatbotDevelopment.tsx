@@ -879,6 +879,26 @@ export default function AIChatbotDevelopment() {
                 opacity="0.9"
               />
 
+              {/* Semicircle from top right to bottom right around the circle */}
+              <path
+                d="M 55% 20% A 250 250 0 0 1 55% 80%"
+                stroke="#1e40af"
+                strokeWidth="8"
+                fill="none"
+                opacity="0.7"
+                strokeDasharray="15,10"
+              />
+              
+              {/* Outer decorative arc */}
+              <path
+                d="M 58% 15% A 290 290 0 0 1 58% 85%"
+                stroke="#60a5fa"
+                strokeWidth="4"
+                fill="none"
+                opacity="0.5"
+                strokeDasharray="12,8"
+              />
+
               {/* 4 small circles on the right part of the ring */}
               <circle cx="65%" cy="20%" r="8" fill="white" opacity="1" />
               <circle cx="65%" cy="20%" r="4" fill="url(#circleGradient)" opacity="1" />
