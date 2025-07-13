@@ -852,24 +852,24 @@ export default function AIChatbotDevelopment() {
 
               {/* Semi-circle arc on the left side of main circle */}
               <path
-                d="M 55% 15% A 20 20 0 0 0 55% 85%"
+                d="M 35% 20% A 100 100 0 0 0 35% 80%"
                 stroke="#9333ea"
-                strokeWidth="4"
+                strokeWidth="5"
                 fill="none"
-                className="opacity-80"
+                className="opacity-90"
               />
               
               {/* Connection points on the semi-circle */}
-              <circle cx="50%" cy="20%" r="4" fill="#9333ea" className="opacity-80" />
-              <circle cx="45%" cy="35%" r="4" fill="#9333ea" className="opacity-80" />
-              <circle cx="45%" cy="55%" r="4" fill="#9333ea" className="opacity-80" />
-              <circle cx="50%" cy="75%" r="4" fill="#9333ea" className="opacity-80" />
+              <circle cx="35%" cy="20%" r="5" fill="#9333ea" className="opacity-90" />
+              <circle cx="30%" cy="35%" r="5" fill="#9333ea" className="opacity-90" />
+              <circle cx="30%" cy="55%" r="5" fill="#9333ea" className="opacity-90" />
+              <circle cx="35%" cy="80%" r="5" fill="#9333ea" className="opacity-90" />
               
               {/* Dotted lines connecting to numbered elements */}
-              <line x1="50%" y1="20%" x2="85%" y2="15%" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-60" />
-              <line x1="45%" y1="35%" x2="95%" y2="35%" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-60" />
-              <line x1="45%" y1="55%" x2="95%" y2="55%" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-60" />
-              <line x1="50%" y1="75%" x2="85%" y2="75%" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-60" />
+              <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="#9333ea" strokeWidth="3" strokeDasharray="6,6" className="opacity-70" />
+              <line x1="30%" y1="35%" x2="95%" y2="35%" stroke="#9333ea" strokeWidth="3" strokeDasharray="6,6" className="opacity-70" />
+              <line x1="30%" y1="55%" x2="95%" y2="55%" stroke="#9333ea" strokeWidth="3" strokeDasharray="6,6" className="opacity-70" />
+              <line x1="35%" y1="80%" x2="85%" y2="75%" stroke="#9333ea" strokeWidth="3" strokeDasharray="6,6" className="opacity-70" />
             </svg>
 
             {/* Advantage Items positioned around the circle */}
