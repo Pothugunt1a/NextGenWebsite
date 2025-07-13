@@ -868,25 +868,17 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Semi-circle arc on the left side of main circle */}
-              <path
-                d="M 35% 20% A 100 100 0 0 0 35% 80%"
-                stroke="url(#lineGradient)"
-                strokeWidth="6"
-                fill="none"
-                opacity="1"
-              />
-              
-              {/* Semi-circle arc on the right side of main circle */}
+              {/* Semi-circle arc on the right side of main circle - made more visible */}
               <path
                 d="M 65% 20% A 100 100 0 0 1 65% 80%"
                 stroke="url(#lineGradient)"
-                strokeWidth="6"
+                strokeWidth="8"
                 fill="none"
                 opacity="1"
+                strokeDasharray="none"
               />
               
-              {/* Connection points on the left semi-circle */}
+              {/* Connection points on the left side (small circles only) */}
               <circle cx="35%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
               <circle cx="30%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
               <circle cx="30%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
