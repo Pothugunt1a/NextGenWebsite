@@ -815,7 +815,7 @@ export default function AIChatbotDevelopment() {
                 />
                 {/* Fallback gradient circle */}
                 <div
-                  className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl"
+                  className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl"
                   style={{ display: "none" }}
                 >
                   <div className="text-center px-8">
