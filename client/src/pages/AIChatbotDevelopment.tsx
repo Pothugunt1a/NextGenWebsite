@@ -827,60 +827,94 @@ export default function AIChatbotDevelopment() {
               </div>
             </div>
 
-            {/* Curved Connection Lines */}
+            {/* Half Circle with Dots and Connection Lines */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               style={{ zIndex: 1 }}
             >
               <defs>
                 <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.8" />
+                  <stop offset="0%" stopColor="#6b7280" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#9ca3af" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
               
-              {/* Curved lines connecting center to each advantage point */}
-              <path
-                d="M 50% 50% Q 25% 25% 15% 15%"
-                stroke="url(#lineGradient)"
+              {/* Half circle dotted line around the center circle */}
+              <circle
+                cx="50%"
+                cy="50%"
+                r="200"
+                stroke="#6b7280"
                 strokeWidth="3"
                 fill="none"
-                strokeDasharray="8,4"
+                strokeDasharray="8,6"
+                className="opacity-60"
+                strokeDashoffset="0"
+                pathLength="1"
+                style={{
+                  strokeDasharray: "2, 8",
+                  transform: "rotate(-90deg)",
+                  transformOrigin: "50% 50%"
+                }}
+              />
+              
+              {/* Connection dots on the circle */}
+              <circle cx="50%" cy="calc(50% - 200px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(50% + 141px)" cy="calc(50% - 141px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(50% + 200px)" cy="50%" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(50% + 141px)" cy="calc(50% + 141px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="50%" cy="calc(50% + 200px)" r="4" fill="#6b7280" className="opacity-80" />
+              
+              {/* Dotted lines from circle to advantage points */}
+              <line
+                x1="calc(50% + 141px)"
+                y1="calc(50% - 141px)"
+                x2="calc(50% + 300px)"
+                y2="calc(50% - 180px)"
+                stroke="#6b7280"
+                strokeWidth="2"
+                strokeDasharray="4,4"
                 className="opacity-60"
               />
-              <path
-                d="M 50% 50% Q 75% 25% 85% 15%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="8,4"
+              <line
+                x1="calc(50% + 200px)"
+                y1="50%"
+                x2="calc(50% + 300px)"
+                y2="calc(50% - 40px)"
+                stroke="#6b7280"
+                strokeWidth="2"
+                strokeDasharray="4,4"
                 className="opacity-60"
               />
-              <path
-                d="M 50% 50% Q 75% 75% 85% 85%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="8,4"
+              <line
+                x1="calc(50% + 141px)"
+                y1="calc(50% + 141px)"
+                x2="calc(50% + 300px)"
+                y2="calc(50% + 100px)"
+                stroke="#6b7280"
+                strokeWidth="2"
+                strokeDasharray="4,4"
                 className="opacity-60"
               />
-              <path
-                d="M 50% 50% Q 25% 75% 15% 85%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="8,4"
+              <line
+                x1="50%"
+                y1="calc(50% + 200px)"
+                x2="calc(50% + 300px)"
+                y2="calc(50% + 240px)"
+                stroke="#6b7280"
+                strokeWidth="2"
+                strokeDasharray="4,4"
                 className="opacity-60"
               />
             </svg>
 
-            {/* Advantage Items positioned around the circle */}
+            {/* Advantage Items positioned on the right side */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Top right
-                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Right
-                { bottom: "25%", right: "5%", transform: "translate(0, 0)" }, // Bottom right
-                { bottom: "5%", left: "15%", transform: "translate(0, 0)" }, // Bottom left
+                { top: "15%", right: "5%", transform: "translate(0, 0)" }, // Top right
+                { top: "35%", right: "5%", transform: "translate(0, 0)" }, // Upper middle right
+                { top: "55%", right: "5%", transform: "translate(0, 0)" }, // Lower middle right
+                { top: "75%", right: "5%", transform: "translate(0, 0)" }, // Bottom right
               ];
 
               return (
@@ -894,22 +928,22 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-center gap-4 max-w-xs">
+                  <div className="flex items-start gap-4 max-w-md">
                     {/* Numbered Circle */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
+                      <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
                         {/* Dotted border */}
-                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-blue-400 animate-pulse"></div>
-                        <span className="text-white font-bold text-lg z-10">{advantage.number}</span>
+                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-blue-400"></div>
+                        <span className="text-white font-bold text-base z-10">{advantage.number}</span>
                       </div>
                     </div>
                     
                     {/* Content */}
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-white mb-1 leading-tight">
+                    <div className="flex-1 pt-1">
+                      <h4 className="text-base font-bold text-white mb-2 leading-tight">
                         {advantage.title}
                       </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
+                      <p className="text-gray-300 text-xs leading-relaxed">
                         {advantage.description}
                       </p>
                     </div>
