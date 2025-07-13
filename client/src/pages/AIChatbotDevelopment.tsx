@@ -868,27 +868,41 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Semi-circle arc on the right side of main circle - made more visible */}
+              {/* Concentric semi-circle rings on the right side - matching the attached image */}
               <path
-                d="M 65% 20% A 100 100 0 0 1 65% 80%"
-                stroke="white"
-                strokeWidth="8"
+                d="M 50% 25% A 120 120 0 0 1 50% 75%"
+                stroke="url(#lineGradient)"
+                strokeWidth="6"
                 fill="none"
-                opacity="1"
-                strokeDasharray="none"
+                opacity="0.8"
+                strokeDasharray="12,8"
+              />
+              <path
+                d="M 50% 18% A 160 160 0 0 1 50% 82%"
+                stroke="url(#lineGradient)"
+                strokeWidth="4"
+                fill="none"
+                opacity="0.6"
+                strokeDasharray="10,6"
+              />
+              <path
+                d="M 50% 12% A 200 200 0 0 1 50% 88%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                opacity="0.4"
+                strokeDasharray="8,4"
               />
               
-              {/* Connection points on the left side (small circles only) */}
-              <circle cx="35%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="30%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="30%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="35%" cy="80%" r="6" fill="url(#circleGradient)" opacity="1" />
-              
-              {/* Connection points on the right semi-circle */}
-              <circle cx="65%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="70%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="70%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="65%" cy="80%" r="6" fill="url(#circleGradient)" opacity="1" />
+              {/* Connection points on the semi-circle arcs */}
+              <circle cx="65%" cy="20%" r="8" fill="white" opacity="1" />
+              <circle cx="65%" cy="20%" r="4" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="70%" cy="35%" r="8" fill="white" opacity="1" />
+              <circle cx="70%" cy="35%" r="4" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="70%" cy="55%" r="8" fill="white" opacity="1" />
+              <circle cx="70%" cy="55%" r="4" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="65%" cy="80%" r="8" fill="white" opacity="1" />
+              <circle cx="65%" cy="80%" r="4" fill="url(#circleGradient)" opacity="1" />
               
               {/* Dotted lines connecting to numbered elements */}
               <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
