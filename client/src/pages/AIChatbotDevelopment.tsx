@@ -788,7 +788,7 @@ export default function AIChatbotDevelopment() {
         </div>
       </div>
 
-      {/* Advantages Section - Semi-Circle Design with Rings */}
+      {/* Advantages Section - Circular Design */}
       <section className="py-20 relative overflow-visible">
         <div className="w-full max-w-none px-4 overflow-visible">
           <div className="text-center mb-16">
@@ -798,32 +798,48 @@ export default function AIChatbotDevelopment() {
             </h2>
           </div>
 
-          {/* Semi-Circle Layout Container */}
-          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px] max-w-6xl mx-auto overflow-visible">
-            {/* Central Circle */}
-            <div className="relative z-20">
-              <div className="w-80 h-80 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl">
-                <div className="text-center px-8">
-                  <div className="text-white font-bold text-7xl mb-4">4</div>
-                  <div className="text-white text-xl font-semibold leading-tight">
-                    Advantages
-                    <br />
-                    Of Integrating In
-                    <br />
-                    AI Chatbots
+          {/* Circular Layout Container */}
+          <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
+            {/* Central Image - Moved 20rem to the right */}
+            <div className="relative z-20" style={{ marginLeft: '20rem' }}>
+              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+                <img
+                  src="/assets/chatbot-advantages-center.png"
+                  alt="AI Chatbot Advantages"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to gradient circle if image not found
+                    e.currentTarget.style.display = "none";
+                    e.currentTarget.nextElementSibling.style.display = "flex";
+                  }}
+                />
+                {/* Fallback gradient circle */}
+                <div
+                  className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl"
+                  style={{ display: "none" }}
+                >
+                  <div className="text-center px-8">
+                    <div className="text-white font-bold text-7xl mb-4">5</div>
+                    <div className="text-white text-xl font-semibold leading-tight">
+                      Advantages
+                      <br />
+                      Of Investing In
+                      <br />
+                      AI Chatbots
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Semi-Circle with Rings and Connection Lines */}
+            {/* Curved Connection Lines */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               style={{ zIndex: 1 }}
             >
               <defs>
                 <linearGradient
-                  id="advantageGradient"
+                  id="lineGradient"
                   x1="0%"
                   y1="0%"
                   x2="100%"
@@ -834,55 +850,35 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Main semi-circle arc on the right side */}
+              {/* Semi-circle arc on the left side of main circle */}
               <path
-                d="M 50% 20% A 120 120 0 0 1 50% 80%"
+                d="M 35% 20% A 100 100 0 0 0 35% 80%"
                 stroke="#7c3aed"
-                strokeWidth="4"
+                strokeWidth="6"
                 fill="none"
-                opacity="0.8"
+                opacity="1"
               />
               
-              {/* Outer ring */}
-              <path
-                d="M 50% 15% A 140 140 0 0 1 50% 85%"
-                stroke="#9333ea"
-                strokeWidth="2"
-                fill="none"
-                strokeDasharray="8,4"
-                opacity="0.6"
-              />
-              
-              {/* Inner ring */}
-              <path
-                d="M 50% 25% A 100 100 0 0 1 50% 75%"
-                stroke="#a855f7"
-                strokeWidth="2"
-                fill="none"
-                strokeDasharray="4,4"
-                opacity="0.5"
-              />
-              
-              {/* Connection points on the main semi-circle */}
-              <circle cx="58%" cy="28%" r="8" fill="#7c3aed" opacity="1" />
-              <circle cx="65%" cy="42%" r="8" fill="#7c3aed" opacity="1" />
-              <circle cx="65%" cy="58%" r="8" fill="#7c3aed" opacity="1" />
-              <circle cx="58%" cy="72%" r="8" fill="#7c3aed" opacity="1" />
+              {/* Connection points on the semi-circle */}
+              <circle cx="35%" cy="20%" r="6" fill="#7c3aed" opacity="1" />
+              <circle cx="30%" cy="35%" r="6" fill="#7c3aed" opacity="1" />
+              <circle cx="30%" cy="55%" r="6" fill="#7c3aed" opacity="1" />
+              <circle cx="35%" cy="80%" r="6" fill="#7c3aed" opacity="1" />
               
               {/* Dotted lines connecting to numbered elements */}
-              <line x1="58%" y1="28%" x2="85%" y2="20%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="65%" y1="42%" x2="90%" y2="38%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="65%" y1="58%" x2="90%" y2="62%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="58%" y1="72%" x2="85%" y2="80%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="30%" y1="35%" x2="95%" y2="35%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="30%" y1="55%" x2="95%" y2="55%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="35%" y1="80%" x2="85%" y2="75%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
             </svg>
 
-            {/* Advantage Items positioned on the right side */}
+            {/* Advantage Items positioned around the circle */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "12%", right: "8%", transform: "translate(0, 0)" }, // Element 1 - Top right
-                { top: "30%", right: "2%", transform: "translate(0, 0)" }, // Element 2 - Upper middle right
-                { top: "54%", right: "2%", transform: "translate(0, 0)" }, // Element 3 - Lower middle right
-                { top: "72%", right: "8%", transform: "translate(0, 0)" }, // Element 4 - Bottom right
+                { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Element 1 - Top right
+                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper
+                { top: "45%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower
+                { top: "65%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right (consistent spacing)
               ];
 
               return (
@@ -896,16 +892,14 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-center gap-4 max-w-sm lg:max-w-md">
-                    {/* Numbered Circle with Rings */}
+                  <div className="flex items-center gap-4 max-w-sm lg:max-w-lg xl:max-w-xl">
+                    {/* Numbered Circle */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center relative shadow-lg">
-                        {/* Outer dotted ring */}
-                        <div className="absolute inset-0 w-20 h-20 -translate-x-2 -translate-y-2 rounded-full border-2 border-dotted border-purple-400 opacity-60"></div>
-                        {/* Inner dotted ring */}
-                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-purple-300 animate-pulse opacity-80"></div>
+                      <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center relative">
+                        {/* Dotted border */}
+                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-purple-400 animate-pulse"></div>
                         <span className="text-white font-bold text-lg z-10">
-                          0{index + 1}
+                          {advantage.number}
                         </span>
                       </div>
                     </div>
