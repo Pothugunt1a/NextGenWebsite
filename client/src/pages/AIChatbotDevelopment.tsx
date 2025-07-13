@@ -870,7 +870,7 @@ export default function AIChatbotDevelopment() {
 
               {/* Solid ring around the big circle */}
               <circle
-                cx="50%"
+                cx="40%"
                 cy="50%"
                 r="200"
                 stroke="url(#lineGradient)"
