@@ -799,9 +799,9 @@ export default function AIChatbotDevelopment() {
           </div>
           
           {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
+          <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] pl-20">
             {/* Central Image - Replace this with your uploaded image */}
-            <div className="relative z-20">
+            <div className="relative z-20 mr-32">
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img 
                   src="/assets/chatbot-advantages-center.png" 
@@ -841,7 +841,7 @@ export default function AIChatbotDevelopment() {
               
               {/* Half circle dotted line around the center circle */}
               <circle
-                cx="50%"
+                cx="35%"
                 cy="50%"
                 r="200"
                 stroke="#6b7280"
@@ -854,22 +854,22 @@ export default function AIChatbotDevelopment() {
                 style={{
                   strokeDasharray: "2, 8",
                   transform: "rotate(-90deg)",
-                  transformOrigin: "50% 50%"
+                  transformOrigin: "35% 50%"
                 }}
               />
               
               {/* Connection dots on the circle */}
-              <circle cx="50%" cy="calc(50% - 200px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(50% + 141px)" cy="calc(50% - 141px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(50% + 200px)" cy="50%" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(50% + 141px)" cy="calc(50% + 141px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="50%" cy="calc(50% + 200px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="35%" cy="calc(50% - 200px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(35% + 141px)" cy="calc(50% - 141px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(35% + 200px)" cy="50%" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(35% + 141px)" cy="calc(50% + 141px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="35%" cy="calc(50% + 200px)" r="4" fill="#6b7280" className="opacity-80" />
               
               {/* Dotted lines from circle to advantage points */}
               <line
-                x1="calc(50% + 141px)"
+                x1="calc(35% + 141px)"
                 y1="calc(50% - 141px)"
-                x2="calc(50% + 280px)"
+                x2="calc(35% + 320px)"
                 y2="calc(50% - 200px)"
                 stroke="#6b7280"
                 strokeWidth="2"
@@ -877,9 +877,9 @@ export default function AIChatbotDevelopment() {
                 className="opacity-60"
               />
               <line
-                x1="calc(50% + 200px)"
+                x1="calc(35% + 200px)"
                 y1="50%"
-                x2="calc(50% + 320px)"
+                x2="calc(35% + 360px)"
                 y2="calc(50% - 70px)"
                 stroke="#6b7280"
                 strokeWidth="2"
@@ -887,9 +887,9 @@ export default function AIChatbotDevelopment() {
                 className="opacity-60"
               />
               <line
-                x1="calc(50% + 141px)"
+                x1="calc(35% + 141px)"
                 y1="calc(50% + 141px)"
-                x2="calc(50% + 320px)"
+                x2="calc(35% + 360px)"
                 y2="calc(50% + 80px)"
                 stroke="#6b7280"
                 strokeWidth="2"
@@ -897,9 +897,9 @@ export default function AIChatbotDevelopment() {
                 className="opacity-60"
               />
               <line
-                x1="50%"
+                x1="35%"
                 y1="calc(50% + 200px)"
-                x2="calc(50% + 280px)"
+                x2="calc(35% + 320px)"
                 y2="calc(50% + 250px)"
                 stroke="#6b7280"
                 strokeWidth="2"
@@ -911,10 +911,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned on the right side */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "10%", right: "15%", transform: "translate(0, 0)" }, // Top right
-                { top: "30%", right: "10%", transform: "translate(0, 0)" }, // Upper middle right
-                { top: "55%", right: "10%", transform: "translate(0, 0)" }, // Lower middle right
-                { top: "75%", right: "15%", transform: "translate(0, 0)" }, // Bottom right
+                { top: "10%", right: "8%", transform: "translate(0, 0)" }, // Top right
+                { top: "30%", right: "5%", transform: "translate(0, 0)" }, // Upper middle right
+                { top: "55%", right: "5%", transform: "translate(0, 0)" }, // Lower middle right
+                { top: "75%", right: "8%", transform: "translate(0, 0)" }, // Bottom right
               ];
 
               return (
