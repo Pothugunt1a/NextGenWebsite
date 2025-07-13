@@ -812,11 +812,11 @@ export default function AIChatbotDevelopment() {
             <div className="relative z-20" style={{ marginLeft: '10rem' }}>
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img
-                  src="/assets/chatbot-advantages-center.png"
+                  src="/Bot1.gif"
                   alt="AI Chatbot Advantages"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    // Fallback to gradient circle if image not found
+                    // Fallback to gradient circle if gif not found
                     e.currentTarget.style.display = "none";
                     e.currentTarget.nextElementSibling.style.display = "flex";
                   }}
