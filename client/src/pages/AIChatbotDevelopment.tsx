@@ -868,7 +868,7 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Hollow ring around the big circle */}
+              {/* Solid ring around the big circle */}
               <circle
                 cx="50%"
                 cy="50%"
@@ -876,37 +876,10 @@ export default function AIChatbotDevelopment() {
                 stroke="url(#lineGradient)"
                 strokeWidth="8"
                 fill="none"
-                opacity="0.6"
-                strokeDasharray="15,10"
+                opacity="0.8"
               />
 
-              {/* Concentric semi-circle rings on the right side - matching the attached image */}
-              <path
-                d="M 50% 25% A 120 120 0 0 1 50% 75%"
-                stroke="url(#lineGradient)"
-                strokeWidth="6"
-                fill="none"
-                opacity="0.8"
-                strokeDasharray="12,8"
-              />
-              <path
-                d="M 50% 18% A 160 160 0 0 1 50% 82%"
-                stroke="url(#lineGradient)"
-                strokeWidth="4"
-                fill="none"
-                opacity="0.6"
-                strokeDasharray="10,6"
-              />
-              <path
-                d="M 50% 12% A 200 200 0 0 1 50% 88%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                opacity="0.4"
-                strokeDasharray="8,4"
-              />
-              
-              {/* Connection points on the semi-circle arcs */}
+              {/* 4 small circles on the right part of the ring */}
               <circle cx="65%" cy="20%" r="8" fill="white" opacity="1" />
               <circle cx="65%" cy="20%" r="4" fill="url(#circleGradient)" opacity="1" />
               <circle cx="70%" cy="35%" r="8" fill="white" opacity="1" />
