@@ -868,6 +868,18 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
+              {/* Hollow ring around the big circle */}
+              <circle
+                cx="50%"
+                cy="50%"
+                r="170"
+                stroke="url(#lineGradient)"
+                strokeWidth="8"
+                fill="none"
+                opacity="0.6"
+                strokeDasharray="15,10"
+              />
+
               {/* Concentric semi-circle rings on the right side - matching the attached image */}
               <path
                 d="M 50% 25% A 120 120 0 0 1 50% 75%"
