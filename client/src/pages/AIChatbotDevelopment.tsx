@@ -788,9 +788,9 @@ export default function AIChatbotDevelopment() {
         </div>
       </div>
 
-      {/* Advantages Section - Circular Design */}
+      {/* Advantages Section - Semi-Circle Design with Rings */}
       <section className="py-20 relative overflow-visible">
-        <div className="w-full max-w-none px-4 overflow-visible">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Advantages of Integrating AI-Powered Chatbots Into Your Business
@@ -798,48 +798,41 @@ export default function AIChatbotDevelopment() {
             </h2>
           </div>
 
-          {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
-            {/* Central Image - Moved 20rem to the right */}
-            <div className="relative z-20" style={{ marginLeft: '20rem' }}>
-              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
-                <img
-                  src="/assets/chatbot-advantages-center.png"
-                  alt="AI Chatbot Advantages"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback to gradient circle if image not found
-                    e.currentTarget.style.display = "none";
-                    e.currentTarget.nextElementSibling.style.display = "flex";
-                  }}
-                />
-                {/* Fallback gradient circle */}
-                <div
-                  className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl"
-                  style={{ display: "none" }}
-                >
-                  <div className="text-center px-8">
-                    <div className="text-white font-bold text-7xl mb-4">5</div>
-                    <div className="text-white text-xl font-semibold leading-tight">
-                      Advantages
-                      <br />
-                      Of Investing In
-                      <br />
-                      AI Chatbots
-                    </div>
+          {/* Semi-Circle Layout Container */}
+          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px] max-w-6xl mx-auto overflow-visible">
+            {/* Central Circle */}
+            <div className="relative z-20">
+              <div className="w-80 h-80 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl relative">
+                {/* Outer dotted ring */}
+                <div className="absolute inset-0 w-80 h-80 rounded-full border-4 border-dotted border-purple-400/50 animate-pulse"></div>
+                {/* Middle ring */}
+                <div className="absolute inset-2 w-76 h-76 rounded-full border-2 border-solid border-purple-300/30"></div>
+                {/* Inner ring */}
+                <div className="absolute inset-4 w-72 h-72 rounded-full border border-solid border-purple-200/20"></div>
+                
+                {/* Center content */}
+                <div className="text-center px-8 relative z-10">
+                  <div className="text-white font-bold text-7xl mb-4">4</div>
+                  <div className="text-white text-xl font-semibold leading-tight">
+                    Advantages
+                    <br />
+                    Of Investing In
+                    <br />
+                    AI Chatbots
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Curved Connection Lines */}
+            {/* Semi-circle path with connection points */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               style={{ zIndex: 1 }}
+              viewBox="0 0 800 600"
             >
               <defs>
                 <linearGradient
-                  id="lineGradient"
+                  id="pathGradient"
                   x1="0%"
                   y1="0%"
                   x2="100%"
@@ -850,35 +843,35 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Semi-circle arc on the left side of main circle */}
+              {/* Semi-circle arc path */}
               <path
-                d="M 35% 20% A 100 100 0 0 0 35% 80%"
-                stroke="#9333ea"
-                strokeWidth="5"
+                d="M 200 100 A 200 200 0 0 0 200 500"
+                stroke="url(#pathGradient)"
+                strokeWidth="4"
                 fill="none"
-                className="opacity-90"
+                className="opacity-80"
               />
               
               {/* Connection points on the semi-circle */}
-              <circle cx="35%" cy="20%" r="5" fill="#9333ea" className="opacity-90" />
-              <circle cx="30%" cy="35%" r="5" fill="#9333ea" className="opacity-90" />
-              <circle cx="30%" cy="55%" r="5" fill="#9333ea" className="opacity-90" />
-              <circle cx="35%" cy="80%" r="5" fill="#9333ea" className="opacity-90" />
+              <circle cx="200" cy="100" r="6" fill="#9333ea" className="opacity-90" />
+              <circle cx="118" cy="180" r="6" fill="#9333ea" className="opacity-90" />
+              <circle cx="118" cy="420" r="6" fill="#9333ea" className="opacity-90" />
+              <circle cx="200" cy="500" r="6" fill="#9333ea" className="opacity-90" />
               
               {/* Dotted lines connecting to numbered elements */}
-              <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="#9333ea" strokeWidth="3" strokeDasharray="6,6" className="opacity-70" />
-              <line x1="30%" y1="35%" x2="95%" y2="35%" stroke="#9333ea" strokeWidth="3" strokeDasharray="6,6" className="opacity-70" />
-              <line x1="30%" y1="55%" x2="95%" y2="55%" stroke="#9333ea" strokeWidth="3" strokeDasharray="6,6" className="opacity-70" />
-              <line x1="35%" y1="80%" x2="85%" y2="75%" stroke="#9333ea" strokeWidth="3" strokeDasharray="6,6" className="opacity-70" />
+              <line x1="200" y1="100" x2="550" y2="80" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-70" />
+              <line x1="118" y1="180" x2="550" y2="200" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-70" />
+              <line x1="118" y1="420" x2="550" y2="400" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-70" />
+              <line x1="200" y1="500" x2="550" y2="520" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-70" />
             </svg>
 
-            {/* Advantage Items positioned around the circle */}
+            {/* Advantage Items positioned around the semi-circle */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Element 1 - Top right
-                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper
-                { top: "45%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower
-                { top: "65%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right (consistent spacing)
+                { top: "8%", right: "10%", transform: "translate(0, 0)" }, // Top position
+                { top: "25%", right: "10%", transform: "translate(0, 0)" }, // Upper middle
+                { top: "58%", right: "10%", transform: "translate(0, 0)" }, // Lower middle
+                { top: "80%", right: "10%", transform: "translate(0, 0)" }, // Bottom position
               ];
 
               return (
@@ -888,25 +881,28 @@ export default function AIChatbotDevelopment() {
                   style={positions[index]}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-center gap-4 max-w-sm lg:max-w-lg xl:max-w-xl">
-                    {/* Numbered Circle */}
+                  <div className="flex items-center gap-6 max-w-md">
+                    {/* Numbered Circle with rings */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center relative">
-                        {/* Dotted border */}
-                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-purple-400 animate-pulse"></div>
-                        <span className="text-white font-bold text-lg z-10">
-                          {advantage.number}
+                      <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center relative shadow-lg">
+                        {/* Outer dotted border */}
+                        <div className="absolute inset-0 w-20 h-20 rounded-full border-2 border-dotted border-purple-400 animate-pulse"></div>
+                        {/* Inner ring */}
+                        <div className="absolute inset-1 w-18 h-18 rounded-full border border-solid border-purple-300/40"></div>
+                        
+                        <span className="text-white font-bold text-xl z-10">
+                          {String(index + 1).padStart(2, '0')}
                         </span>
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1">
-                      <h4 className="text-lg font-bold text-white mb-1 leading-tight">
+                      <h4 className="text-xl font-bold text-white mb-2 leading-tight">
                         {advantage.title}
                       </h4>
                       <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
