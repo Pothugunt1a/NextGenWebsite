@@ -796,33 +796,51 @@ export default function AIChatbotDevelopment() {
         </div>
       </div>
 
-      {/* Advantages Section - Circular Design like Screenshot */}
-      <section className="py-20 relative overflow-visible bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Advantages Section - Circular Design */}
+      <section className="py-20 relative overflow-visible">
+        <div className="w-full max-w-none px-4 overflow-visible">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Advantages of Integrating AI-Powered Chatbots Into Your Business
               Operations
             </h2>
           </div>
 
           {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[800px] max-w-7xl mx-auto overflow-visible">
-            {/* Central Circle with "KEY FEATURES" */}
-            <div className="relative z-20">
-              <div className="w-72 h-72 rounded-full bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 flex items-center justify-center shadow-2xl border-8 border-blue-500">
-                <div className="text-center">
-                  <div className="text-white mb-4">
-                    <DollarSign className="h-12 w-12 mx-auto mb-2" />
-                  </div>
-                  <div className="text-white text-2xl font-bold leading-tight">
-                    KEY FEATURES
+          <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
+            {/* Central Image - Moved 15rem to the right (moved left from previous 20rem) */}
+            <div className="relative z-20" style={{ marginLeft: '15rem' }}>
+              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+                <img
+                  src="/assets/chatbot-advantages-center.png"
+                  alt="AI Chatbot Advantages"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to gradient circle if image not found
+                    e.currentTarget.style.display = "none";
+                    e.currentTarget.nextElementSibling.style.display = "flex";
+                  }}
+                />
+                {/* Fallback gradient circle */}
+                <div
+                  className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl"
+                  style={{ display: "none" }}
+                >
+                  <div className="text-center px-8">
+                    <div className="text-white font-bold text-7xl mb-4">5</div>
+                    <div className="text-white text-xl font-semibold leading-tight">
+                      Advantages
+                      <br />
+                      Of Investing In
+                      <br />
+                      AI Chatbots
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Curved Connection Lines with Dots */}
+            {/* Curved Connection Lines */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               style={{ zIndex: 1 }}
@@ -835,41 +853,57 @@ export default function AIChatbotDevelopment() {
                   x2="100%"
                   y2="0%"
                 >
-                  <stop offset="0%" stopColor="#1e40af" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.8" />
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.8" />
+                </linearGradient>
+                <linearGradient
+                  id="circleGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor="#3b82f6" />
+                  <stop offset="100%" stopColor="#06b6d4" />
                 </linearGradient>
               </defs>
 
-              {/* Curved connection arc around the circle */}
+              {/* Semi-circle arc on the right side of main circle - made more visible */}
               <path
-                d="M 60% 15% A 200 200 0 0 1 60% 85%"
-                stroke="#1e40af"
-                strokeWidth="4"
+                d="M 65% 20% A 100 100 0 0 1 65% 80%"
+                stroke="white"
+                strokeWidth="8"
                 fill="none"
-                opacity="0.6"
-                strokeDasharray="8,8"
+                opacity="1"
+                strokeDasharray="none"
               />
               
-              {/* Connection points on the arc */}
-              <circle cx="60%" cy="15%" r="8" fill="white" stroke="#1e40af" strokeWidth="3" />
-              <circle cx="65%" cy="35%" r="8" fill="white" stroke="#1e40af" strokeWidth="3" />
-              <circle cx="65%" cy="55%" r="8" fill="white" stroke="#1e40af" strokeWidth="3" />
-              <circle cx="60%" cy="75%" r="8" fill="white" stroke="#1e40af" strokeWidth="3" />
+              {/* Connection points on the left side (small circles only) */}
+              <circle cx="35%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="30%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="30%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="35%" cy="80%" r="6" fill="url(#circleGradient)" opacity="1" />
               
-              {/* Dotted lines connecting to feature cards */}
-              <line x1="60%" y1="15%" x2="80%" y2="10%" stroke="#1e40af" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-              <line x1="65%" y1="35%" x2="85%" y2="30%" stroke="#1e40af" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-              <line x1="65%" y1="55%" x2="85%" y2="50%" stroke="#1e40af" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-              <line x1="60%" y1="75%" x2="80%" y2="70%" stroke="#1e40af" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
+              {/* Connection points on the right semi-circle */}
+              <circle cx="65%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="70%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="70%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="65%" cy="80%" r="6" fill="url(#circleGradient)" opacity="1" />
+              
+              {/* Dotted lines connecting to numbered elements */}
+              <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="30%" y1="35%" x2="95%" y2="35%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="30%" y1="55%" x2="95%" y2="55%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="35%" y1="80%" x2="85%" y2="75%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
             </svg>
 
-            {/* Feature Cards positioned around the circle */}
+            {/* Advantage Items positioned around the circle */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "5%", right: "10%", transform: "translate(0, 0)" }, // Top right
-                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Right middle upper
-                { top: "45%", right: "5%", transform: "translate(0, 0)" }, // Right middle lower
-                { top: "65%", right: "10%", transform: "translate(0, 0)" }, // Bottom right
+                { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Element 1 - Top right
+                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper
+                { top: "45%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower
+                { top: "65%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right (consistent spacing)
               ];
 
               return (
@@ -883,17 +917,22 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="max-w-sm lg:max-w-md">
-                    {/* Feature Card - Similar to screenshot */}
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-4 shadow-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 bg-white/20 rounded-lg">
-                          <advantage.icon className="h-6 w-6 text-white" />
-                        </div>
-                        <div className="text-white text-sm font-medium leading-tight">
-                          {advantage.title}
-                        </div>
+                  <div className="flex items-start gap-4 max-w-sm lg:max-w-lg xl:max-w-xl">
+                    {/* Icon with gradient background - matching About page style */}
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="p-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500">
+                        <advantage.icon className="h-6 w-6 text-white" />
                       </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-white mb-2 leading-tight">
+                        {advantage.title}
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
+                        {advantage.description}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
