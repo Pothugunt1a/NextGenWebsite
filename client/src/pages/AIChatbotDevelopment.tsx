@@ -889,8 +889,8 @@ export default function AIChatbotDevelopment() {
               const positions = [
                 { top: "2%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 1 - Top right
                 { top: "27%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 2 - Right middle upper
-                { top: "52%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 3 - Right middle lower
-                { top: "77%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 4 - Bottom right
+                { top: "58%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 3 - Right middle lower
+                { top: "89%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 4 - Bottom right
               ];
 
               return (
