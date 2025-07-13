@@ -872,9 +872,9 @@ export default function AIChatbotDevelopment() {
               <circle
                 cx="50%"
                 cy="50%"
-                r="170"
+                r="200"
                 stroke="url(#lineGradient)"
-                strokeWidth="8"
+                strokeWidth="6"
                 fill="none"
                 opacity="0.8"
               />
