@@ -879,15 +879,21 @@ export default function AIChatbotDevelopment() {
                 opacity="0.9"
               />
 
-              {/* 4 small circles on the right part of the ring */}
-              <circle cx="65%" cy="20%" r="8" fill="white" opacity="1" />
-              <circle cx="65%" cy="20%" r="4" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="70%" cy="35%" r="8" fill="white" opacity="1" />
-              <circle cx="70%" cy="35%" r="4" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="70%" cy="55%" r="8" fill="white" opacity="1" />
-              <circle cx="70%" cy="55%" r="4" fill="url(#circleGradient)" opacity="1" />
-              <circle cx="65%" cy="80%" r="8" fill="white" opacity="1" />
-              <circle cx="65%" cy="80%" r="4" fill="url(#circleGradient)" opacity="1" />
+              {/* 4 small circles on the ring - moved left */}
+              <circle cx="55%" cy="25%" r="8" fill="white" opacity="1" />
+              <circle cx="55%" cy="25%" r="4" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="60%" cy="40%" r="8" fill="white" opacity="1" />
+              <circle cx="60%" cy="40%" r="4" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="60%" cy="60%" r="8" fill="white" opacity="1" />
+              <circle cx="60%" cy="60%" r="4" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="55%" cy="75%" r="8" fill="white" opacity="1" />
+              <circle cx="55%" cy="75%" r="4" fill="url(#circleGradient)" opacity="1" />
+              
+              {/* Semicircle connecting lines from ring to components */}
+              <path d="M 55 25 Q 75 25 85 15" stroke="url(#lineGradient)" strokeWidth="3" fill="none" opacity="0.8" />
+              <path d="M 60 40 Q 80 40 95 35" stroke="url(#lineGradient)" strokeWidth="3" fill="none" opacity="0.8" />
+              <path d="M 60 60 Q 80 60 95 55" stroke="url(#lineGradient)" strokeWidth="3" fill="none" opacity="0.8" />
+              <path d="M 55 75 Q 75 75 85 75" stroke="url(#lineGradient)" strokeWidth="3" fill="none" opacity="0.8" />
               
 
             </svg>
