@@ -811,29 +811,41 @@ export default function AIChatbotDevelopment() {
             {/* Central Image - Aligned with hollow ring at 30% position */}
             <div className="relative z-20" style={{ marginLeft: '10rem' }}>
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden relative">
-                {/* Curved border line on the right */}
+                {/* Curved border line on the right - matching reference image */}
                 <div className="absolute inset-0 pointer-events-none">
                   <svg
-                    className="absolute -right-8 top-0 w-96 h-80"
-                    viewBox="0 0 200 320"
+                    className="absolute -right-2 top-0 w-80 h-80"
+                    viewBox="0 0 160 320"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    {/* Semi-circle arc */}
+                    {/* Semi-circle arc matching the reference design */}
                     <path
-                      d="M 20 20 A 140 140 0 0 1 20 300"
+                      d="M 20 32 A 128 128 0 0 1 20 288"
                       stroke="#64748b"
-                      strokeWidth="3"
+                      strokeWidth="2"
                       fill="none"
-                      opacity="0.7"
-                      strokeDasharray="none"
+                      opacity="0.8"
+                      strokeDasharray="4,4"
                     />
-                    {/* Connection points on the arc */}
-                    <circle cx="20" cy="44" r="4" fill="#6366f1" opacity="0.8" />
-                    <circle cx="20" cy="100" r="4" fill="#6366f1" opacity="0.8" />
-                    <circle cx="20" cy="160" r="4" fill="#6366f1" opacity="0.8" />
-                    <circle cx="20" cy="220" r="4" fill="#6366f1" opacity="0.8" />
-                    <circle cx="20" cy="276" r="4" fill="#6366f1" opacity="0.8" />
+                    {/* Connection dots with lines to advantage items */}
+                    <g>
+                      {/* Dot 1 - connects to advantage 1 */}
+                      <circle cx="20" cy="48" r="3" fill="#6366f1" />
+                      <line x1="20" y1="48" x2="50" y2="48" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                      
+                      {/* Dot 2 - connects to advantage 2 */}
+                      <circle cx="20" cy="96" r="3" fill="#6366f1" />
+                      <line x1="20" y1="96" x2="50" y2="96" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                      
+                      {/* Dot 3 - connects to advantage 3 */}
+                      <circle cx="20" cy="160" r="3" fill="#6366f1" />
+                      <line x1="20" y1="160" x2="50" y2="160" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                      
+                      {/* Dot 4 - connects to advantage 4 */}
+                      <circle cx="20" cy="224" r="3" fill="#6366f1" />
+                      <line x1="20" y1="224" x2="50" y2="224" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                    </g>
                   </svg>
                 </div>
                 
@@ -857,10 +869,7 @@ export default function AIChatbotDevelopment() {
                     <div className="text-white text-xl font-semibold leading-tight">
                       Advantages
                       <br />
-                      Of</div>
-                </div>
-              </div>
-            </div> Investing In
+                      Of Investing In
                       <br />
                       AI Chatbots
                     </div>
