@@ -877,11 +877,26 @@ export default function AIChatbotDevelopment() {
                 opacity="1"
               />
               
-              {/* Connection points on the semi-circle */}
+              {/* Semi-circle arc on the right side of main circle */}
+              <path
+                d="M 65% 20% A 100 100 0 0 1 65% 80%"
+                stroke="url(#lineGradient)"
+                strokeWidth="6"
+                fill="none"
+                opacity="1"
+              />
+              
+              {/* Connection points on the left semi-circle */}
               <circle cx="35%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
               <circle cx="30%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
               <circle cx="30%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
               <circle cx="35%" cy="80%" r="6" fill="url(#circleGradient)" opacity="1" />
+              
+              {/* Connection points on the right semi-circle */}
+              <circle cx="65%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="70%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="70%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="65%" cy="80%" r="6" fill="url(#circleGradient)" opacity="1" />
               
               {/* Dotted lines connecting to numbered elements */}
               <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
