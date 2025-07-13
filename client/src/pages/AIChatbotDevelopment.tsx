@@ -800,8 +800,8 @@ export default function AIChatbotDevelopment() {
 
           {/* Circular Layout Container */}
           <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
-            {/* Central Image - Moved to the left */}
-            <div className="relative z-20 ml-0 lg:ml-16">
+            {/* Central Image - Moved slightly more to the right */}
+            <div className="relative z-20 ml-8 lg:ml-24">
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img
                   src="/assets/chatbot-advantages-center.png"
@@ -896,10 +896,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned around the circle */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "5%", right: "2%", transform: "translate(0, 0)" }, // Element 1 - Top right
-                { top: "25%", right: "-8%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper
-                { top: "55%", right: "-8%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower  
-                { bottom: "5%", right: "2%", transform: "translate(0, 0)" }, // Element 4 - Bottom right
+                { top: "5%", right: "8%", transform: "translate(0, 0)" }, // Element 1 - Top right (moved left)
+                { top: "25%", right: "-2%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper (moved left)
+                { top: "55%", right: "-2%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower (moved left)
+                { bottom: "5%", right: "8%", transform: "translate(0, 0)" }, // Element 4 - Bottom right (moved left)
               ];
 
               return (
