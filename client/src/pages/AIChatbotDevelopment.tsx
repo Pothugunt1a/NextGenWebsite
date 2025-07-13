@@ -917,10 +917,10 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-start gap-4 max-w-sm lg:max-w-lg xl:max-w-xl">
+                  <div className="flex items-start gap-4 max-w-sm lg:max-w-lg xl:max-w-xl bg-gradient-to-r from-blue-500/90 to-cyan-500/90 p-4 rounded-tl-none rounded-tr-2xl rounded-bl-lg rounded-br-lg shadow-lg">
                     {/* Icon with gradient background - matching About page style */}
                     <div className="flex-shrink-0 mt-1">
-                      <div className="p-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500">
+                      <div className="p-3 rounded-xl bg-white/20 backdrop-blur-sm">
                         <advantage.icon className="h-6 w-6 text-white" />
                       </div>
                     </div>
