@@ -814,14 +814,14 @@ export default function AIChatbotDevelopment() {
                 {/* Curved border line on the right - matching reference image */}
                 <div className="absolute inset-0 pointer-events-none">
                   <svg
-                    className="absolute right-2 top-0 w-80 h-80"
+                    className="absolute -right-8 top-0 w-80 h-80"
                     viewBox="0 0 200 320"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     {/* Semi-circle arc matching the reference design */}
                     <path
-                      d="M 92 32 A 128 128 0 0 1 92 288"
+                      d="M 112 32 A 128 128 0 0 1 112 288"
                       stroke="#64748b"
                       strokeWidth="3"
                       fill="none"
@@ -831,20 +831,20 @@ export default function AIChatbotDevelopment() {
                     {/* Connection dots with lines to advantage items */}
                     <g>
                       {/* Dot 1 - connects to advantage 1 */}
-                      <circle cx="92" cy="48" r="4" fill="#6366f1" opacity="0.9" />
-                      <line x1="92" y1="48" x2="132" y2="48" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
+                      <circle cx="112" cy="48" r="4" fill="#6366f1" opacity="0.9" />
+                      <line x1="112" y1="48" x2="152" y2="48" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
                       
                       {/* Dot 2 - connects to advantage 2 */}
-                      <circle cx="92" cy="96" r="4" fill="#6366f1" opacity="0.9" />
-                      <line x1="92" y1="96" x2="132" y2="96" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
+                      <circle cx="112" cy="96" r="4" fill="#6366f1" opacity="0.9" />
+                      <line x1="112" y1="96" x2="152" y2="96" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
                       
                       {/* Dot 3 - connects to advantage 3 */}
-                      <circle cx="92" cy="160" r="4" fill="#6366f1" opacity="0.9" />
-                      <line x1="92" y1="160" x2="132" y2="160" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
+                      <circle cx="112" cy="160" r="4" fill="#6366f1" opacity="0.9" />
+                      <line x1="112" y1="160" x2="152" y2="160" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
                       
                       {/* Dot 4 - connects to advantage 4 */}
-                      <circle cx="92" cy="224" r="4" fill="#6366f1" opacity="0.9" />
-                      <line x1="92" y1="224" x2="132" y2="224" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
+                      <circle cx="112" cy="224" r="4" fill="#6366f1" opacity="0.9" />
+                      <line x1="112" y1="224" x2="152" y2="224" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
                     </g>
                   </svg>
                 </div>
