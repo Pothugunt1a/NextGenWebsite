@@ -901,10 +901,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned around the circle */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "2%", right: "15%", transform: "translate(0, 0)" }, // Element 1 - Top right
-                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper
-                { top: "48%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower
-                { top: "71%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right
+                { top: "2%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 1 - Top right
+                { top: "27%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 2 - Right middle upper
+                { top: "52%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 3 - Right middle lower
+                { top: "77%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 4 - Bottom right
               ];
 
               return (
@@ -918,7 +918,7 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-tl-2xl rounded-tr-3xl rounded-bl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300" style={{ padding: '1.0rem', width: '40rem' }}>
+                  <div className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-tl-2xl rounded-tr-3xl rounded-bl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300" style={{ padding: '1.0rem', width: '38rem', marginBottom: '2rem' }}>
                     <div className="flex items-center mb-3">
                       <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
                         <advantage.icon className="h-6 w-6 text-white" />
