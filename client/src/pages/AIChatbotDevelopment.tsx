@@ -799,10 +799,10 @@ export default function AIChatbotDevelopment() {
           </div>
           
           {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] pl-20">
+          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
             {/* Central Image - Replace this with your uploaded image */}
-            <div className="relative z-20 mr-32">
-              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+            <div className="relative z-20" style={{ marginLeft: "-150px" }}>
+              <div className="w-72 h-72 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img 
                   src="/assets/chatbot-advantages-center.png" 
                   alt="AI Chatbot Advantages" 
@@ -815,9 +815,9 @@ export default function AIChatbotDevelopment() {
                 />
                 {/* Fallback gradient circle */}
                 <div className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl" style={{display: 'none'}}>
-                  <div className="text-center px-8">
-                    <div className="text-white font-bold text-7xl mb-4">4</div>
-                    <div className="text-white text-xl font-semibold leading-tight">
+                  <div className="text-center px-6">
+                    <div className="text-white font-bold text-6xl mb-3">4</div>
+                    <div className="text-white text-lg font-semibold leading-tight">
                       Advantages<br />
                       Of Investing In<br />
                       AI Chatbots
@@ -841,9 +841,9 @@ export default function AIChatbotDevelopment() {
               
               {/* Half circle dotted line around the center circle */}
               <circle
-                cx="35%"
+                cx="calc(50% - 150px)"
                 cy="50%"
-                r="200"
+                r="180"
                 stroke="#6b7280"
                 strokeWidth="3"
                 fill="none"
@@ -854,53 +854,53 @@ export default function AIChatbotDevelopment() {
                 style={{
                   strokeDasharray: "2, 8",
                   transform: "rotate(-90deg)",
-                  transformOrigin: "35% 50%"
+                  transformOrigin: "calc(50% - 150px) 50%"
                 }}
               />
               
               {/* Connection dots on the circle */}
-              <circle cx="35%" cy="calc(50% - 200px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(35% + 141px)" cy="calc(50% - 141px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(35% + 200px)" cy="50%" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(35% + 141px)" cy="calc(50% + 141px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="35%" cy="calc(50% + 200px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(50% - 150px)" cy="calc(50% - 180px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(50% - 150px + 127px)" cy="calc(50% - 127px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(50% - 150px + 180px)" cy="50%" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(50% - 150px + 127px)" cy="calc(50% + 127px)" r="4" fill="#6b7280" className="opacity-80" />
+              <circle cx="calc(50% - 150px)" cy="calc(50% + 180px)" r="4" fill="#6b7280" className="opacity-80" />
               
               {/* Dotted lines from circle to advantage points */}
               <line
-                x1="calc(35% + 141px)"
-                y1="calc(50% - 141px)"
-                x2="calc(35% + 320px)"
-                y2="calc(50% - 200px)"
+                x1="calc(50% - 150px + 127px)"
+                y1="calc(50% - 127px)"
+                x2="calc(50% + 200px)"
+                y2="calc(50% - 150px)"
                 stroke="#6b7280"
                 strokeWidth="2"
                 strokeDasharray="4,4"
                 className="opacity-60"
               />
               <line
-                x1="calc(35% + 200px)"
+                x1="calc(50% - 150px + 180px)"
                 y1="50%"
-                x2="calc(35% + 360px)"
-                y2="calc(50% - 70px)"
+                x2="calc(50% + 200px)"
+                y2="calc(50% - 50px)"
                 stroke="#6b7280"
                 strokeWidth="2"
                 strokeDasharray="4,4"
                 className="opacity-60"
               />
               <line
-                x1="calc(35% + 141px)"
-                y1="calc(50% + 141px)"
-                x2="calc(35% + 360px)"
-                y2="calc(50% + 80px)"
+                x1="calc(50% - 150px + 127px)"
+                y1="calc(50% + 127px)"
+                x2="calc(50% + 200px)"
+                y2="calc(50% + 50px)"
                 stroke="#6b7280"
                 strokeWidth="2"
                 strokeDasharray="4,4"
                 className="opacity-60"
               />
               <line
-                x1="35%"
-                y1="calc(50% + 200px)"
-                x2="calc(35% + 320px)"
-                y2="calc(50% + 250px)"
+                x1="calc(50% - 150px)"
+                y1="calc(50% + 180px)"
+                x2="calc(50% + 200px)"
+                y2="calc(50% + 150px)"
                 stroke="#6b7280"
                 strokeWidth="2"
                 strokeDasharray="4,4"
@@ -911,10 +911,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned on the right side */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "10%", right: "8%", transform: "translate(0, 0)" }, // Top right
-                { top: "30%", right: "5%", transform: "translate(0, 0)" }, // Upper middle right
-                { top: "55%", right: "5%", transform: "translate(0, 0)" }, // Lower middle right
-                { top: "75%", right: "8%", transform: "translate(0, 0)" }, // Bottom right
+                { top: "15%", right: "10%", transform: "translate(0, 0)" }, // Top right
+                { top: "35%", right: "10%", transform: "translate(0, 0)" }, // Upper middle right
+                { top: "55%", right: "10%", transform: "translate(0, 0)" }, // Lower middle right
+                { top: "75%", right: "10%", transform: "translate(0, 0)" }, // Bottom right
               ];
 
               return (
@@ -928,24 +928,21 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-start gap-6 max-w-lg">
+                  <div className="flex items-start gap-4 max-w-sm">
                     {/* Numbered Circle */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
+                      <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
                         {/* Dotted border */}
                         <div className="absolute inset-0 rounded-full border-2 border-dotted border-blue-400"></div>
-                        <span className="text-white font-bold text-lg z-10">{advantage.number}</span>
+                        <span className="text-white font-bold text-base z-10">{advantage.number}</span>
                       </div>
                     </div>
                     
                     {/* Content */}
-                    <div className="flex-1 pt-2">
-                      <h4 className="text-lg font-bold text-white mb-3 leading-tight">
+                    <div className="flex-1 pt-1">
+                      <h4 className="text-base font-bold text-white mb-1 leading-tight">
                         {advantage.title}
                       </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        {advantage.description}
-                      </p>
                     </div>
                   </div>
                 </motion.div>
