@@ -810,41 +810,42 @@ export default function AIChatbotDevelopment() {
           <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
             {/* Central Image - Aligned with hollow ring at 30% position */}
             <div className="relative z-20" style={{ marginLeft: '10rem' }}>
-              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden relative">
+              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-visible relative">
                 {/* Curved border line on the right - matching reference image */}
-                <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute inset-0 pointer-events-none overflow-visible">
                   <svg
-                    className="absolute -right-2 top-0 w-80 h-80"
-                    viewBox="0 0 160 320"
+                    className="absolute right-0 top-0 w-96 h-80"
+                    viewBox="0 0 200 320"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    style={{ overflow: 'visible' }}
                   >
                     {/* Semi-circle arc matching the reference design */}
                     <path
-                      d="M 20 32 A 128 128 0 0 1 20 288"
+                      d="M 40 40 A 120 120 0 0 1 40 280"
                       stroke="#64748b"
-                      strokeWidth="2"
+                      strokeWidth="3"
                       fill="none"
-                      opacity="0.8"
-                      strokeDasharray="4,4"
+                      opacity="0.9"
+                      strokeDasharray="6,4"
                     />
                     {/* Connection dots with lines to advantage items */}
                     <g>
                       {/* Dot 1 - connects to advantage 1 */}
-                      <circle cx="20" cy="48" r="3" fill="#6366f1" />
-                      <line x1="20" y1="48" x2="50" y2="48" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                      <circle cx="40" cy="60" r="4" fill="#6366f1" opacity="0.9" />
+                      <line x1="40" y1="60" x2="80" y2="60" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
                       
                       {/* Dot 2 - connects to advantage 2 */}
-                      <circle cx="20" cy="96" r="3" fill="#6366f1" />
-                      <line x1="20" y1="96" x2="50" y2="96" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                      <circle cx="40" cy="110" r="4" fill="#6366f1" opacity="0.9" />
+                      <line x1="40" y1="110" x2="80" y2="110" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
                       
                       {/* Dot 3 - connects to advantage 3 */}
-                      <circle cx="20" cy="160" r="3" fill="#6366f1" />
-                      <line x1="20" y1="160" x2="50" y2="160" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                      <circle cx="40" cy="160" r="4" fill="#6366f1" opacity="0.9" />
+                      <line x1="40" y1="160" x2="80" y2="160" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
                       
                       {/* Dot 4 - connects to advantage 4 */}
-                      <circle cx="20" cy="224" r="3" fill="#6366f1" />
-                      <line x1="20" y1="224" x2="50" y2="224" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                      <circle cx="40" cy="210" r="4" fill="#6366f1" opacity="0.9" />
+                      <line x1="40" y1="210" x2="80" y2="210" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
                     </g>
                   </svg>
                 </div>
