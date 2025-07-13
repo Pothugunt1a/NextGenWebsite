@@ -800,8 +800,8 @@ export default function AIChatbotDevelopment() {
 
           {/* Circular Layout Container */}
           <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
-            {/* Central Image - Moved back to the left */}
-            <div className="relative z-20 ml-4 lg:ml-12">
+            {/* Central Image - Moved 10 points to the right */}
+            <div className="relative z-20 ml-6 lg:ml-16">
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img
                   src="/assets/chatbot-advantages-center.png"
@@ -853,7 +853,7 @@ export default function AIChatbotDevelopment() {
               {/* Semi-circle rings connecting center to numbered elements */}
               {/* Ring for Element 1 - Top right */}
               <path
-                d="M 35% 50% Q 60% 20% 85% 15%"
+                d="M 40% 50% Q 65% 20% 85% 15%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
@@ -862,7 +862,7 @@ export default function AIChatbotDevelopment() {
               />
               {/* Ring for Element 2 - Right middle upper */}
               <path
-                d="M 35% 50% Q 70% 35% 95% 35%"
+                d="M 40% 50% Q 75% 35% 95% 35%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
@@ -871,7 +871,7 @@ export default function AIChatbotDevelopment() {
               />
               {/* Ring for Element 3 - Right middle lower */}
               <path
-                d="M 35% 50% Q 70% 55% 95% 55%"
+                d="M 40% 50% Q 75% 55% 95% 55%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
@@ -880,7 +880,7 @@ export default function AIChatbotDevelopment() {
               />
               {/* Ring for Element 4 - Bottom right */}
               <path
-                d="M 35% 50% Q 60% 75% 85% 75%"
+                d="M 40% 50% Q 65% 75% 85% 75%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
