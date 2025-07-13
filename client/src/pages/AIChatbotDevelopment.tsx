@@ -812,7 +812,7 @@ export default function AIChatbotDevelopment() {
             <div className="relative z-20" style={{ marginLeft: '10rem' }}>
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img
-                  src="/Bot1.gif"
+                  src="/assets/Bot1.gif"
                   alt="AI Chatbot Advantages"
                   className="w-full h-full object-cover"
                   onError={(e) => {
