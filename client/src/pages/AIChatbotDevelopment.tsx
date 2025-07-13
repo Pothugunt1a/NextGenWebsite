@@ -810,7 +810,33 @@ export default function AIChatbotDevelopment() {
           <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
             {/* Central Image - Aligned with hollow ring at 30% position */}
             <div className="relative z-20" style={{ marginLeft: '10rem' }}>
-              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden relative">
+                {/* Curved border line on the right */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <svg
+                    className="absolute -right-8 top-0 w-96 h-80"
+                    viewBox="0 0 200 320"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    {/* Semi-circle arc */}
+                    <path
+                      d="M 20 20 A 140 140 0 0 1 20 300"
+                      stroke="#64748b"
+                      strokeWidth="3"
+                      fill="none"
+                      opacity="0.7"
+                      strokeDasharray="none"
+                    />
+                    {/* Connection points on the arc */}
+                    <circle cx="20" cy="44" r="4" fill="#6366f1" opacity="0.8" />
+                    <circle cx="20" cy="100" r="4" fill="#6366f1" opacity="0.8" />
+                    <circle cx="20" cy="160" r="4" fill="#6366f1" opacity="0.8" />
+                    <circle cx="20" cy="220" r="4" fill="#6366f1" opacity="0.8" />
+                    <circle cx="20" cy="276" r="4" fill="#6366f1" opacity="0.8" />
+                  </svg>
+                </div>
+                
                 <img
                   src="/assets/Bot1.gif"
                   alt="AI Chatbot Advantages"
@@ -831,7 +857,10 @@ export default function AIChatbotDevelopment() {
                     <div className="text-white text-xl font-semibold leading-tight">
                       Advantages
                       <br />
-                      Of Investing In
+                      Of</div>
+                </div>
+              </div>
+            </div> Investing In
                       <br />
                       AI Chatbots
                     </div>
