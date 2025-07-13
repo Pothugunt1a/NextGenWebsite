@@ -819,10 +819,16 @@ export default function AIChatbotDevelopment() {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <defs>
+                      <linearGradient id="curvedLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#06b6d4" />
+                      </linearGradient>
+                    </defs>
                     {/* Semi-circle arc matching the reference design */}
                     <path
                       d="M 132 32 A 128 128 0 0 1 132 288"
-                      stroke="#64748b"
+                      stroke="url(#curvedLineGradient)"
                       strokeWidth="3"
                       fill="none"
                       opacity="0.9"
@@ -831,20 +837,20 @@ export default function AIChatbotDevelopment() {
                     {/* Connection dots with lines to advantage items */}
                     <g>
                       {/* Dot 1 - connects to advantage 1 */}
-                      <circle cx="132" cy="48" r="4" fill="#6366f1" opacity="0.9" />
-                      <line x1="132" y1="48" x2="172" y2="48" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
+                      <circle cx="132" cy="48" r="4" fill="url(#curvedLineGradient)" opacity="0.9" />
+                      <line x1="132" y1="48" x2="172" y2="48" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
                       
                       {/* Dot 2 - connects to advantage 2 */}
-                      <circle cx="132" cy="96" r="4" fill="#6366f1" opacity="0.9" />
-                      <line x1="132" y1="96" x2="172" y2="96" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
+                      <circle cx="132" cy="96" r="4" fill="url(#curvedLineGradient)" opacity="0.9" />
+                      <line x1="132" y1="96" x2="172" y2="96" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
                       
                       {/* Dot 3 - connects to advantage 3 */}
-                      <circle cx="132" cy="160" r="4" fill="#6366f1" opacity="0.9" />
-                      <line x1="132" y1="160" x2="172" y2="160" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
+                      <circle cx="132" cy="160" r="4" fill="url(#curvedLineGradient)" opacity="0.9" />
+                      <line x1="132" y1="160" x2="172" y2="160" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
                       
                       {/* Dot 4 - connects to advantage 4 */}
-                      <circle cx="132" cy="224" r="4" fill="#6366f1" opacity="0.9" />
-                      <line x1="132" y1="224" x2="172" y2="224" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" opacity="0.7" />
+                      <circle cx="132" cy="224" r="4" fill="url(#curvedLineGradient)" opacity="0.9" />
+                      <line x1="132" y1="224" x2="172" y2="224" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
                     </g>
                   </svg>
                 </div>
