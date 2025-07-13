@@ -789,8 +789,8 @@ export default function AIChatbotDevelopment() {
       </div>
 
       {/* Advantages Section - Circular Design */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-visible">
+        <div className="container mx-auto px-4 overflow-visible">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Advantages of Integrating AI-Powered Chatbots Into Your Business
@@ -799,7 +799,7 @@ export default function AIChatbotDevelopment() {
           </div>
 
           {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
+          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px] max-w-7xl mx-auto overflow-visible">
             {/* Central Image - Replace this with your uploaded image */}
             <div className="relative z-20">
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
@@ -896,11 +896,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned around the circle */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Top right
-                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Right
-                { bottom: "25%", right: "5%", transform: "translate(0, 0)" }, // Bottom right
-                { bottom: "5%", right: "15%", transform: "translate(0, 0)" }, // Bottom right
-                { bottom: "5%", left: "15%", transform: "translate(0, 0)" }, // Bottom left
+                { top: "10%", right: "5%", transform: "translate(0, 0)" }, // Top right
+                { top: "35%", right: "-5%", transform: "translate(0, 0)" }, // Right middle (extends beyond container)
+                { bottom: "35%", right: "-5%", transform: "translate(0, 0)" }, // Right bottom (extends beyond container)
+                { bottom: "10%", right: "5%", transform: "translate(0, 0)" }, // Bottom right
               ];
 
               return (
@@ -914,7 +913,7 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-center gap-4 max-w-xs">
+                  <div className="flex items-center gap-4 max-w-sm lg:max-w-md">
                     {/* Numbered Circle */}
                     <div className="relative flex-shrink-0">
                       <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center relative">
