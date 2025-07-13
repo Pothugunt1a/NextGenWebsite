@@ -800,8 +800,8 @@ export default function AIChatbotDevelopment() {
 
           {/* Circular Layout Container */}
           <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
-            {/* Central Image - Moved slightly more to the right */}
-            <div className="relative z-20 ml-8 lg:ml-24">
+            {/* Central Image - Moved back to the left */}
+            <div className="relative z-20 ml-4 lg:ml-12">
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img
                   src="/assets/chatbot-advantages-center.png"
@@ -850,41 +850,37 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Curved lines connecting center to each advantage point */}
+              {/* Semi-circle rings connecting center to numbered elements */}
+              {/* Ring for Element 1 - Top right */}
               <path
-                d="M 50% 50% Q 25% 25% 15% 15%"
+                d="M 35% 50% Q 60% 20% 85% 15%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
                 strokeDasharray="8,4"
                 className="opacity-60"
               />
+              {/* Ring for Element 2 - Right middle upper */}
               <path
-                d="M 50% 50% Q 75% 25% 85% 15%"
+                d="M 35% 50% Q 70% 35% 95% 35%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
                 strokeDasharray="8,4"
                 className="opacity-60"
               />
+              {/* Ring for Element 3 - Right middle lower */}
               <path
-                d="M 50% 50% Q 90% 50% 95% 50%"
+                d="M 35% 50% Q 70% 55% 95% 55%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
                 strokeDasharray="8,4"
                 className="opacity-60"
               />
+              {/* Ring for Element 4 - Bottom right */}
               <path
-                d="M 50% 50% Q 75% 75% 85% 85%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="8,4"
-                className="opacity-60"
-              />
-              <path
-                d="M 50% 50% Q 25% 75% 15% 85%"
+                d="M 35% 50% Q 60% 75% 85% 75%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
@@ -898,8 +894,8 @@ export default function AIChatbotDevelopment() {
               const positions = [
                 { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Element 1 - Top right
                 { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper
-                { top: "45%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower (adjusted spacing)
-                { bottom: "5%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right
+                { top: "45%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower
+                { top: "65%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right (consistent spacing)
               ];
 
               return (
