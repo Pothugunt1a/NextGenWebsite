@@ -871,7 +871,7 @@ export default function AIChatbotDevelopment() {
               {/* Semi-circle arc on the right side of main circle - made more visible */}
               <path
                 d="M 65% 20% A 100 100 0 0 1 65% 80%"
-                stroke="url(#lineGradient)"
+                stroke="white"
                 strokeWidth="8"
                 fill="none"
                 opacity="1"
