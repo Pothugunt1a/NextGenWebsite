@@ -210,25 +210,29 @@ export default function AIChatbotDevelopment() {
 
   const advantages = [
     {
-      icon: <Target className="h-8 w-8 text-white" />,
+      number: "01",
+      icon: DollarSign,
       title: "Optimize core business operations to save costs",
       description:
         "Our AI chatbots boost productivity and streamline resources by offering 24/7 support, automating routine tasks, and managing complex processes like analysis and content generation—reducing costs and freeing teams for strategic work.",
     },
     {
-      icon: <Bot className="h-8 w-8 text-white" />,
+      number: "02",
+      icon: UserCheck,
       title: "Provide faster responses and personalized experience",
       description:
         "AI chatbots support customers throughout the sales process by offering 24/7 assistance, prompt responses, and personalized recommendations based on past interactions and preferences. This enhances the customer experience, fostering loyalty and improving retention.",
     },
     {
-      icon: <Lightbulb className="h-8 w-8 text-white" />,
+      number: "03",
+      icon: MousePointer,
       title: "Improve engagement rate of your app and web products",
       description:
         "Utilize our AI chatbot development service to enhance user experience and boost engagement. Powered by NLP and machine learning, our chatbots understand user intent, respond accurately, and promote your services—driving brand loyalty and encouraging longer website visits.",
     },
     {
-      icon: <TrendingUp className="h-8 w-8 text-white" />,
+      number: "04",
+      icon: ShoppingBag,
       title: "Increase sales by engaging your customers better",
       description:
         "Transform conversations into conversions with AI chatbots that engage users from form submission to checkout. By offering real-time support and personalized recommendations, you can reduce drop-offs and turn hesitant visitors into customers—leading to stronger engagement, increased sales, and higher revenue.",
@@ -872,13 +876,13 @@ export default function AIChatbotDevelopment() {
                 fill="none"
                 opacity="1"
               />
-
+              
               {/* Connection points on the semi-circle */}
               <circle cx="35%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
               <circle cx="30%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
               <circle cx="30%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
               <circle cx="35%" cy="80%" r="6" fill="url(#circleGradient)" opacity="1" />
-
+              
               {/* Dotted lines connecting to numbered elements */}
               <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
               <line x1="30%" y1="35%" x2="95%" y2="35%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
@@ -916,6 +920,12 @@ export default function AIChatbotDevelopment() {
 
                     {/* Content */}
                     <div className="flex-1">
+                      {/* Number badge */}
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="inline-flex items-center justify-center w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white text-xs font-bold">
+                          {advantage.number}
+                        </span>
+                      </div>
                       <h4 className="text-lg font-bold text-white mb-2 leading-tight">
                         {advantage.title}
                       </h4>
