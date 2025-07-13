@@ -800,8 +800,8 @@ export default function AIChatbotDevelopment() {
 
           {/* Circular Layout Container */}
           <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
-            {/* Central Image - Moved 10 points to the right */}
-            <div className="relative z-20 ml-6 lg:ml-16">
+            {/* Central Image - Moved 20rem to the right */}
+            <div className="relative z-20" style={{ marginLeft: '20rem' }}>
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img
                   src="/assets/chatbot-advantages-center.png"
@@ -850,43 +850,26 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Semi-circle rings connecting center to numbered elements */}
-              {/* Ring for Element 1 - Top right */}
+              {/* Semi-circle arc on the left side of main circle */}
               <path
-                d="M 40% 50% Q 65% 20% 85% 15%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
+                d="M 55% 15% A 20 20 0 0 0 55% 85%"
+                stroke="#9333ea"
+                strokeWidth="4"
                 fill="none"
-                strokeDasharray="8,4"
-                className="opacity-60"
+                className="opacity-80"
               />
-              {/* Ring for Element 2 - Right middle upper */}
-              <path
-                d="M 40% 50% Q 75% 35% 95% 35%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="8,4"
-                className="opacity-60"
-              />
-              {/* Ring for Element 3 - Right middle lower */}
-              <path
-                d="M 40% 50% Q 75% 55% 95% 55%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="8,4"
-                className="opacity-60"
-              />
-              {/* Ring for Element 4 - Bottom right */}
-              <path
-                d="M 40% 50% Q 65% 75% 85% 75%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="8,4"
-                className="opacity-60"
-              />
+              
+              {/* Connection points on the semi-circle */}
+              <circle cx="50%" cy="20%" r="4" fill="#9333ea" className="opacity-80" />
+              <circle cx="45%" cy="35%" r="4" fill="#9333ea" className="opacity-80" />
+              <circle cx="45%" cy="55%" r="4" fill="#9333ea" className="opacity-80" />
+              <circle cx="50%" cy="75%" r="4" fill="#9333ea" className="opacity-80" />
+              
+              {/* Dotted lines connecting to numbered elements */}
+              <line x1="50%" y1="20%" x2="85%" y2="15%" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-60" />
+              <line x1="45%" y1="35%" x2="95%" y2="35%" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-60" />
+              <line x1="45%" y1="55%" x2="95%" y2="55%" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-60" />
+              <line x1="50%" y1="75%" x2="85%" y2="75%" stroke="#9333ea" strokeWidth="2" strokeDasharray="4,4" className="opacity-60" />
             </svg>
 
             {/* Advantage Items positioned around the circle */}
