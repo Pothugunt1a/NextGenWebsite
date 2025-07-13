@@ -868,14 +868,7 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Semicircular component on the right side of the circle */}
-              <path
-                d="M 30 30 A 200 200 0 0 1 30 70"
-                stroke="#3b82f6"
-                strokeWidth="20"
-                fill="none"
-                opacity="0.9"
-              />
+
 
 
               
