@@ -207,27 +207,33 @@ export default function AIChatbotDevelopment() {
   const advantages = [
     {
       number: "01",
-      title: "Optimize core business operations to save costs",
+      title: "Enhanced User Satisfaction",
       description:
-        "Our AI-powered chatbots can help you improve business productivity and streamline resource allocation. By managing inquiries 24/7, automating routine tasks, and performing time-consuming tasks such as large-scale analysis, summarization, and text generation, our chatbots can help you cut down on operational costs and free up valuable human resources for more innovative tasks.",
+        "Our AI-powered chatbots deliver personalized experiences that significantly improve customer satisfaction through intelligent responses and 24/7 availability.",
     },
     {
       number: "02", 
-      title: "Provide faster responses and personalized experience",
+      title: "Increased User Engagement",
       description:
-        "AI chatbots can help guide your customers along the sales process. These conversational assistants are available for your customers 24/7, can quickly answer whatever question they have, and provide tailored recommendations and solutions depending on historical interactions and user preferences. Providing a more personalized experience fosters loyalty and improves customer retention.",
+        "Drive higher engagement rates with interactive conversational AI that keeps users interested and actively participating with your brand.",
     },
     {
       number: "03",
-      title: "Improve engagement rate of your app and web products", 
+      title: "Competitive Advantage", 
       description:
-        "Leverage our AI chatbot development service to provide a better user experience and drive interactive engagements. Using NLP, machine learning, and conversational AI, you can use chatbots to answer questions, look into user intent, analyze their answers, and spark an interest in your services to increase brand loyalty and prolonged visits to your website.",
+        "Stay ahead of competitors by implementing cutting-edge AI chatbot technology that sets your business apart in the market.",
     },
     {
       number: "04",
-      title: "Increase sales by engaging your customers better",
+      title: "Cost Savings",
       description:
-        "Turn conversations into conversions by using AI chatbots to keep your users engaged right from form submission to checkout. Prevent them from leaving unattended and convert hesitant buyers into customers by providing real-time information about your services and personalized recommendations. Better customer engagement translates to improved sales and revenue.",
+        "Reduce operational costs significantly by automating customer support and routine tasks while maintaining high-quality service standards.",
+    },
+    {
+      number: "05",
+      title: "Improved Conversion Rates",
+      description:
+        "Convert more visitors into customers through intelligent conversation flows and personalized recommendations that guide users to purchase decisions.",
     },
   ];
 
@@ -801,8 +807,8 @@ export default function AIChatbotDevelopment() {
           {/* Circular Layout Container */}
           <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
             {/* Central Image - Replace this with your uploaded image */}
-            <div className="relative z-20" style={{ marginLeft: "-150px" }}>
-              <div className="w-72 h-72 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+            <div className="relative z-20">
+              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img 
                   src="/assets/chatbot-advantages-center.png" 
                   alt="AI Chatbot Advantages" 
@@ -814,10 +820,10 @@ export default function AIChatbotDevelopment() {
                   }}
                 />
                 {/* Fallback gradient circle */}
-                <div className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl" style={{display: 'none'}}>
-                  <div className="text-center px-6">
-                    <div className="text-white font-bold text-6xl mb-3">4</div>
-                    <div className="text-white text-lg font-semibold leading-tight">
+                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl" style={{display: 'none'}}>
+                  <div className="text-center px-8">
+                    <div className="text-white font-bold text-7xl mb-4">5</div>
+                    <div className="text-white text-xl font-semibold leading-tight">
                       Advantages<br />
                       Of Investing In<br />
                       AI Chatbots
@@ -827,94 +833,69 @@ export default function AIChatbotDevelopment() {
               </div>
             </div>
 
-            {/* Half Circle with Dots and Connection Lines */}
+            {/* Curved Connection Lines */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               style={{ zIndex: 1 }}
             >
               <defs>
                 <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#6b7280" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#9ca3af" stopOpacity="0.6" />
+                  <stop offset="0%" stopColor="#9333ea" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#6b21a8" stopOpacity="0.8" />
                 </linearGradient>
               </defs>
               
-              {/* Half circle dotted line around the center circle */}
-              <circle
-                cx="calc(50% - 150px)"
-                cy="50%"
-                r="180"
-                stroke="#6b7280"
+              {/* Curved lines connecting center to each advantage point */}
+              <path
+                d="M 50% 50% Q 25% 25% 15% 15%"
+                stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
-                strokeDasharray="8,6"
-                className="opacity-60"
-                strokeDashoffset="0"
-                pathLength="1"
-                style={{
-                  strokeDasharray: "2, 8",
-                  transform: "rotate(-90deg)",
-                  transformOrigin: "calc(50% - 150px) 50%"
-                }}
-              />
-              
-              {/* Connection dots on the circle */}
-              <circle cx="calc(50% - 150px)" cy="calc(50% - 180px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(50% - 150px + 127px)" cy="calc(50% - 127px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(50% - 150px + 180px)" cy="50%" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(50% - 150px + 127px)" cy="calc(50% + 127px)" r="4" fill="#6b7280" className="opacity-80" />
-              <circle cx="calc(50% - 150px)" cy="calc(50% + 180px)" r="4" fill="#6b7280" className="opacity-80" />
-              
-              {/* Dotted lines from circle to advantage points */}
-              <line
-                x1="calc(50% - 150px + 127px)"
-                y1="calc(50% - 127px)"
-                x2="calc(50% + 200px)"
-                y2="calc(50% - 150px)"
-                stroke="#6b7280"
-                strokeWidth="2"
-                strokeDasharray="4,4"
+                strokeDasharray="8,4"
                 className="opacity-60"
               />
-              <line
-                x1="calc(50% - 150px + 180px)"
-                y1="50%"
-                x2="calc(50% + 200px)"
-                y2="calc(50% - 50px)"
-                stroke="#6b7280"
-                strokeWidth="2"
-                strokeDasharray="4,4"
+              <path
+                d="M 50% 50% Q 75% 25% 85% 15%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
                 className="opacity-60"
               />
-              <line
-                x1="calc(50% - 150px + 127px)"
-                y1="calc(50% + 127px)"
-                x2="calc(50% + 200px)"
-                y2="calc(50% + 50px)"
-                stroke="#6b7280"
-                strokeWidth="2"
-                strokeDasharray="4,4"
+              <path
+                d="M 50% 50% Q 90% 50% 95% 50%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
                 className="opacity-60"
               />
-              <line
-                x1="calc(50% - 150px)"
-                y1="calc(50% + 180px)"
-                x2="calc(50% + 200px)"
-                y2="calc(50% + 150px)"
-                stroke="#6b7280"
-                strokeWidth="2"
-                strokeDasharray="4,4"
+              <path
+                d="M 50% 50% Q 75% 75% 85% 85%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                className="opacity-60"
+              />
+              <path
+                d="M 50% 50% Q 25% 75% 15% 85%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
                 className="opacity-60"
               />
             </svg>
 
-            {/* Advantage Items positioned on the right side */}
+            {/* Advantage Items positioned around the circle */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "15%", right: "10%", transform: "translate(0, 0)" }, // Top right
-                { top: "35%", right: "10%", transform: "translate(0, 0)" }, // Upper middle right
-                { top: "55%", right: "10%", transform: "translate(0, 0)" }, // Lower middle right
-                { top: "75%", right: "10%", transform: "translate(0, 0)" }, // Bottom right
+                { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Top right
+                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Right
+                { bottom: "25%", right: "5%", transform: "translate(0, 0)" }, // Bottom right
+                { bottom: "5%", right: "15%", transform: "translate(0, 0)" }, // Bottom right
+                { bottom: "5%", left: "15%", transform: "translate(0, 0)" }, // Bottom left
               ];
 
               return (
@@ -928,21 +909,24 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-start gap-4 max-w-sm">
+                  <div className="flex items-center gap-4 max-w-xs">
                     {/* Numbered Circle */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
+                      <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center relative">
                         {/* Dotted border */}
-                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-blue-400"></div>
-                        <span className="text-white font-bold text-base z-10">{advantage.number}</span>
+                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-purple-400 animate-pulse"></div>
+                        <span className="text-white font-bold text-lg z-10">{advantage.number}</span>
                       </div>
                     </div>
                     
                     {/* Content */}
-                    <div className="flex-1 pt-1">
-                      <h4 className="text-base font-bold text-white mb-1 leading-tight">
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-white mb-1 leading-tight">
                         {advantage.title}
                       </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
+                        {advantage.description}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
