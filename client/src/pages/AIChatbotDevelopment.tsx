@@ -207,33 +207,27 @@ export default function AIChatbotDevelopment() {
   const advantages = [
     {
       number: "01",
-      title: "Enhanced User Satisfaction",
+      title: "Optimize core business operations to save costs",
       description:
-        "Our AI-powered chatbots deliver personalized experiences that significantly improve customer satisfaction through intelligent responses and 24/7 availability.",
+        "Our AI-powered chatbots can help you improve business productivity and streamline resource allocation. By managing inquiries 24/7, automating routine tasks, and performing time-consuming tasks such as large-scale analysis, summarization, and text generation, our chatbots can help you cut down on operational costs and free up valuable human resources for more innovative tasks.",
     },
     {
       number: "02", 
-      title: "Increased User Engagement",
+      title: "Provide faster responses and personalized experience",
       description:
-        "Drive higher engagement rates with interactive conversational AI that keeps users interested and actively participating with your brand.",
+        "AI chatbots can help guide your customers along the sales process. These conversational assistants are available for your customers 24/7, can quickly answer whatever question they have, and provide tailored recommendations and solutions depending on historical interactions and user preferences. Providing a more personalized experience fosters loyalty and improves customer retention.",
     },
     {
       number: "03",
-      title: "Competitive Advantage", 
+      title: "Improve engagement rate of your app and web products", 
       description:
-        "Stay ahead of competitors by implementing cutting-edge AI chatbot technology that sets your business apart in the market.",
+        "Leverage our AI chatbot development service to provide a better user experience and drive interactive engagements. Using NLP, machine learning, and conversational AI, you can use chatbots to answer questions, look into user intent, analyze their answers, and spark an interest in your services to increase brand loyalty and prolonged visits to your website.",
     },
     {
       number: "04",
-      title: "Cost Savings",
+      title: "Increase sales by engaging your customers better",
       description:
-        "Reduce operational costs significantly by automating customer support and routine tasks while maintaining high-quality service standards.",
-    },
-    {
-      number: "05",
-      title: "Improved Conversion Rates",
-      description:
-        "Convert more visitors into customers through intelligent conversation flows and personalized recommendations that guide users to purchase decisions.",
+        "Turn conversations into conversions by using AI chatbots to keep your users engaged right from form submission to checkout. Prevent them from leaving unattended and convert hesitant buyers into customers by providing real-time information about your services and personalized recommendations. Better customer engagement translates to improved sales and revenue.",
     },
   ];
 
@@ -820,9 +814,9 @@ export default function AIChatbotDevelopment() {
                   }}
                 />
                 {/* Fallback gradient circle */}
-                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl" style={{display: 'none'}}>
+                <div className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl" style={{display: 'none'}}>
                   <div className="text-center px-8">
-                    <div className="text-white font-bold text-7xl mb-4">5</div>
+                    <div className="text-white font-bold text-7xl mb-4">4</div>
                     <div className="text-white text-xl font-semibold leading-tight">
                       Advantages<br />
                       Of Investing In<br />
@@ -840,8 +834,8 @@ export default function AIChatbotDevelopment() {
             >
               <defs>
                 <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#9333ea" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#6b21a8" stopOpacity="0.8" />
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.8" />
                 </linearGradient>
               </defs>
               
@@ -856,14 +850,6 @@ export default function AIChatbotDevelopment() {
               />
               <path
                 d="M 50% 50% Q 75% 25% 85% 15%"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="8,4"
-                className="opacity-60"
-              />
-              <path
-                d="M 50% 50% Q 90% 50% 95% 50%"
                 stroke="url(#lineGradient)"
                 strokeWidth="3"
                 fill="none"
@@ -894,7 +880,6 @@ export default function AIChatbotDevelopment() {
                 { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Top right
                 { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Right
                 { bottom: "25%", right: "5%", transform: "translate(0, 0)" }, // Bottom right
-                { bottom: "5%", right: "15%", transform: "translate(0, 0)" }, // Bottom right
                 { bottom: "5%", left: "15%", transform: "translate(0, 0)" }, // Bottom left
               ];
 
@@ -912,9 +897,9 @@ export default function AIChatbotDevelopment() {
                   <div className="flex items-center gap-4 max-w-xs">
                     {/* Numbered Circle */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center relative">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
                         {/* Dotted border */}
-                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-purple-400 animate-pulse"></div>
+                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-blue-400 animate-pulse"></div>
                         <span className="text-white font-bold text-lg z-10">{advantage.number}</span>
                       </div>
                     </div>
