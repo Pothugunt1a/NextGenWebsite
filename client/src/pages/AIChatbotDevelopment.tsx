@@ -808,8 +808,8 @@ export default function AIChatbotDevelopment() {
 
           {/* Circular Layout Container */}
           <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
-            {/* Central Image - Moved 15rem to the right (moved left from previous 20rem) */}
-            <div className="relative z-20" style={{ marginLeft: '15rem' }}>
+            {/* Central Image - Aligned with hollow ring at 30% position */}
+            <div className="relative z-20" style={{ marginLeft: '10rem' }}>
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <img
                   src="/assets/chatbot-advantages-center.png"
@@ -870,7 +870,7 @@ export default function AIChatbotDevelopment() {
 
               {/* Solid ring around the big circle - matching the image design */}
               <circle
-                cx="33%"
+                cx="30%"
                 cy="50%"
                 r="200"
                 stroke="#3b82f6"
@@ -889,11 +889,7 @@ export default function AIChatbotDevelopment() {
               <circle cx="65%" cy="80%" r="8" fill="white" opacity="1" />
               <circle cx="65%" cy="80%" r="4" fill="url(#circleGradient)" opacity="1" />
               
-              {/* Dotted lines connecting to numbered elements */}
-              <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="30%" y1="35%" x2="95%" y2="35%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="30%" y1="55%" x2="95%" y2="55%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="35%" y1="80%" x2="85%" y2="75%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+
             </svg>
 
             {/* Advantage Items positioned around the circle */}
