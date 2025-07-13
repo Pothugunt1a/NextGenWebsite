@@ -917,23 +917,18 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-start gap-4 max-w-sm lg:max-w-lg xl:max-w-xl bg-gradient-to-r from-blue-500/90 to-cyan-500/90 p-4 rounded-tl-none rounded-tr-2xl rounded-bl-lg rounded-br-lg shadow-lg">
-                    {/* Icon with gradient background - matching About page style */}
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="p-3 rounded-xl bg-white/20 backdrop-blur-sm">
+                  <div className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300">
+                    <div className="flex items-center mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
                         <advantage.icon className="h-6 w-6 text-white" />
                       </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-white mb-2 leading-tight">
+                      <h3 className="text-white font-semibold text-lg">
                         {advantage.title}
-                      </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
-                        {advantage.description}
-                      </p>
+                      </h3>
                     </div>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {advantage.description}
+                    </p>
                   </div>
                 </motion.div>
               );
