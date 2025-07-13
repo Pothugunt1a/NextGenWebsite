@@ -869,8 +869,8 @@ export default function AIChatbotDevelopment() {
               <line
                 x1="calc(50% + 141px)"
                 y1="calc(50% - 141px)"
-                x2="calc(50% + 300px)"
-                y2="calc(50% - 180px)"
+                x2="calc(50% + 280px)"
+                y2="calc(50% - 200px)"
                 stroke="#6b7280"
                 strokeWidth="2"
                 strokeDasharray="4,4"
@@ -879,8 +879,8 @@ export default function AIChatbotDevelopment() {
               <line
                 x1="calc(50% + 200px)"
                 y1="50%"
-                x2="calc(50% + 300px)"
-                y2="calc(50% - 40px)"
+                x2="calc(50% + 320px)"
+                y2="calc(50% - 70px)"
                 stroke="#6b7280"
                 strokeWidth="2"
                 strokeDasharray="4,4"
@@ -889,8 +889,8 @@ export default function AIChatbotDevelopment() {
               <line
                 x1="calc(50% + 141px)"
                 y1="calc(50% + 141px)"
-                x2="calc(50% + 300px)"
-                y2="calc(50% + 100px)"
+                x2="calc(50% + 320px)"
+                y2="calc(50% + 80px)"
                 stroke="#6b7280"
                 strokeWidth="2"
                 strokeDasharray="4,4"
@@ -899,8 +899,8 @@ export default function AIChatbotDevelopment() {
               <line
                 x1="50%"
                 y1="calc(50% + 200px)"
-                x2="calc(50% + 300px)"
-                y2="calc(50% + 240px)"
+                x2="calc(50% + 280px)"
+                y2="calc(50% + 250px)"
                 stroke="#6b7280"
                 strokeWidth="2"
                 strokeDasharray="4,4"
@@ -911,10 +911,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned on the right side */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "15%", right: "5%", transform: "translate(0, 0)" }, // Top right
-                { top: "35%", right: "5%", transform: "translate(0, 0)" }, // Upper middle right
-                { top: "55%", right: "5%", transform: "translate(0, 0)" }, // Lower middle right
-                { top: "75%", right: "5%", transform: "translate(0, 0)" }, // Bottom right
+                { top: "10%", right: "15%", transform: "translate(0, 0)" }, // Top right
+                { top: "30%", right: "10%", transform: "translate(0, 0)" }, // Upper middle right
+                { top: "55%", right: "10%", transform: "translate(0, 0)" }, // Lower middle right
+                { top: "75%", right: "15%", transform: "translate(0, 0)" }, // Bottom right
               ];
 
               return (
@@ -928,22 +928,22 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-start gap-4 max-w-md">
+                  <div className="flex items-start gap-6 max-w-lg">
                     {/* Numbered Circle */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
                         {/* Dotted border */}
                         <div className="absolute inset-0 rounded-full border-2 border-dotted border-blue-400"></div>
-                        <span className="text-white font-bold text-base z-10">{advantage.number}</span>
+                        <span className="text-white font-bold text-lg z-10">{advantage.number}</span>
                       </div>
                     </div>
                     
                     {/* Content */}
-                    <div className="flex-1 pt-1">
-                      <h4 className="text-base font-bold text-white mb-2 leading-tight">
+                    <div className="flex-1 pt-2">
+                      <h4 className="text-lg font-bold text-white mb-3 leading-tight">
                         {advantage.title}
                       </h4>
-                      <p className="text-gray-300 text-xs leading-relaxed">
+                      <p className="text-gray-300 text-sm leading-relaxed">
                         {advantage.description}
                       </p>
                     </div>
