@@ -845,31 +845,41 @@ export default function AIChatbotDevelopment() {
                   x2="100%"
                   y2="0%"
                 >
-                  <stop offset="0%" stopColor="#9333ea" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#6b21a8" stopOpacity="0.8" />
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.8" />
+                </linearGradient>
+                <linearGradient
+                  id="circleGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor="#3b82f6" />
+                  <stop offset="100%" stopColor="#06b6d4" />
                 </linearGradient>
               </defs>
 
               {/* Semi-circle arc on the left side of main circle */}
               <path
                 d="M 35% 20% A 100 100 0 0 0 35% 80%"
-                stroke="#7c3aed"
+                stroke="url(#lineGradient)"
                 strokeWidth="6"
                 fill="none"
                 opacity="1"
               />
               
               {/* Connection points on the semi-circle */}
-              <circle cx="35%" cy="20%" r="6" fill="#7c3aed" opacity="1" />
-              <circle cx="30%" cy="35%" r="6" fill="#7c3aed" opacity="1" />
-              <circle cx="30%" cy="55%" r="6" fill="#7c3aed" opacity="1" />
-              <circle cx="35%" cy="80%" r="6" fill="#7c3aed" opacity="1" />
+              <circle cx="35%" cy="20%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="30%" cy="35%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="30%" cy="55%" r="6" fill="url(#circleGradient)" opacity="1" />
+              <circle cx="35%" cy="80%" r="6" fill="url(#circleGradient)" opacity="1" />
               
               {/* Dotted lines connecting to numbered elements */}
-              <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="30%" y1="35%" x2="95%" y2="35%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="30%" y1="55%" x2="95%" y2="55%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
-              <line x1="35%" y1="80%" x2="85%" y2="75%" stroke="#7c3aed" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="35%" y1="20%" x2="85%" y2="15%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="30%" y1="35%" x2="95%" y2="35%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="30%" y1="55%" x2="95%" y2="55%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
+              <line x1="35%" y1="80%" x2="85%" y2="75%" stroke="url(#lineGradient)" strokeWidth="3" strokeDasharray="6,6" opacity="0.8" />
             </svg>
 
             {/* Advantage Items positioned around the circle */}
@@ -895,9 +905,9 @@ export default function AIChatbotDevelopment() {
                   <div className="flex items-center gap-4 max-w-sm lg:max-w-lg xl:max-w-xl">
                     {/* Numbered Circle */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
                         {/* Dotted border */}
-                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-purple-400 animate-pulse"></div>
+                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-blue-400 animate-pulse"></div>
                         <span className="text-white font-bold text-lg z-10">
                           {advantage.number}
                         </span>
