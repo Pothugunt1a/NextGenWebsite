@@ -868,15 +868,15 @@ export default function AIChatbotDevelopment() {
                 </linearGradient>
               </defs>
 
-              {/* Solid ring around the big circle */}
+              {/* Solid ring around the big circle - matching the image design */}
               <circle
-                cx="37%"
+                cx="35%"
                 cy="50%"
                 r="200"
-                stroke="url(#lineGradient)"
-                strokeWidth="6"
+                stroke="#3b82f6"
+                strokeWidth="20"
                 fill="none"
-                opacity="0.8"
+                opacity="0.9"
               />
 
               {/* 4 small circles on the right part of the ring */}
