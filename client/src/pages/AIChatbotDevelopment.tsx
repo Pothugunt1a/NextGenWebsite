@@ -896,10 +896,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned around the circle */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "5%", right: "8%", transform: "translate(0, 0)" }, // Element 1 - Top right (moved left)
-                { top: "25%", right: "-2%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper (moved left)
-                { top: "55%", right: "-2%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower (moved left)
-                { bottom: "5%", right: "8%", transform: "translate(0, 0)" }, // Element 4 - Bottom right (moved left)
+                { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Element 1 - Top right (moved further left)
+                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper (moved further left)
+                { top: "55%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower (moved further left)
+                { bottom: "5%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right (moved further left)
               ];
 
               return (
