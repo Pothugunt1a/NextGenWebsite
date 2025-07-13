@@ -896,9 +896,9 @@ export default function AIChatbotDevelopment() {
             {advantages.map((advantage, index) => {
               const positions = [
                 { top: "2%", right: "15%", transform: "translate(0, 0)" }, // Element 1 - Top right
-                { top: "22%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper
+                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Right middle upper
                 { top: "48%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Right middle lower
-                { top: "72%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right
+                { top: "71%", right: "15%", transform: "translate(0, 0)" }, // Element 4 - Bottom right
               ];
 
               return (
