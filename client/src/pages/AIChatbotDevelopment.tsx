@@ -795,10 +795,10 @@ export default function AIChatbotDevelopment() {
       </div>
 
       {/* Advantages Section - Circular Design */}
-      <section className="py-20 relative bg-gray-100 text-black">
+      <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Advantages of Integrating AI-Powered Chatbots Into Your Business
               Operations
             </h2>
@@ -806,15 +806,28 @@ export default function AIChatbotDevelopment() {
           
           {/* Circular Layout Container */}
           <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
-            {/* Central Circle */}
+            {/* Central Image - Replace this with your uploaded image */}
             <div className="relative z-20">
-              <div className="w-80 h-80 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl">
-                <div className="text-center px-8">
-                  <div className="text-white font-bold text-7xl mb-4">5</div>
-                  <div className="text-white text-xl font-semibold leading-tight">
-                    Advantages<br />
-                    Of Investing In<br />
-                    AI Chatbots
+              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+                <img 
+                  src="/assets/chatbot-advantages-center.png" 
+                  alt="AI Chatbot Advantages" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to gradient circle if image not found
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback gradient circle */}
+                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl" style={{display: 'none'}}>
+                  <div className="text-center px-8">
+                    <div className="text-white font-bold text-7xl mb-4">5</div>
+                    <div className="text-white text-xl font-semibold leading-tight">
+                      Advantages<br />
+                      Of Investing In<br />
+                      AI Chatbots
+                    </div>
                   </div>
                 </div>
               </div>
@@ -908,10 +921,10 @@ export default function AIChatbotDevelopment() {
                     
                     {/* Content */}
                     <div className="flex-1">
-                      <h4 className="text-lg font-bold text-black mb-1 leading-tight">
+                      <h4 className="text-lg font-bold text-white mb-1 leading-tight">
                         {advantage.title}
                       </h4>
-                      <p className="text-gray-700 text-sm leading-relaxed hidden lg:block">
+                      <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
                         {advantage.description}
                       </p>
                     </div>
