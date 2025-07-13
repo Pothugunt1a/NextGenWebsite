@@ -206,24 +206,34 @@ export default function AIChatbotDevelopment() {
 
   const advantages = [
     {
-      title: "Optimize core business operations to save costs",
+      number: "01",
+      title: "Enhanced User Satisfaction",
       description:
-        "Our AI-powered chatbots can help you improve business productivity and streamline resource allocation. By managing inquiries 24/7, automating routine tasks, and performing time-consuming tasks such as large-scale analysis, summarization, and text generation, our chatbots can help you cut down on operational costs and free up valuable human resources for more innovative tasks.",
+        "Our AI-powered chatbots deliver personalized experiences that significantly improve customer satisfaction through intelligent responses and 24/7 availability.",
     },
     {
-      title: "Provide faster responses and personalized experience",
+      number: "02", 
+      title: "Increased User Engagement",
       description:
-        "AI chatbots can help guide your customers along the sales process. These conversational assistants are available for your customers 24/7, can quickly answer whatever question they have, and provide tailored recommendations and solutions depending on historical interactions and user preferences. Providing a more personalized experience fosters loyalty and improves customer retention.",
+        "Drive higher engagement rates with interactive conversational AI that keeps users interested and actively participating with your brand.",
     },
     {
-      title: "Improve engagement rate of your app and web products",
+      number: "03",
+      title: "Competitive Advantage", 
       description:
-        "Leverage our AI chatbot development service to provide a better user experience and drive interactive engagements. Using NLP, machine learning, and conversational AI, you can use chatbots to answer questions, look into user intent, analyze their answers, and spark an interest in your services to increase brand loyalty and prolonged visits to your website.",
+        "Stay ahead of competitors by implementing cutting-edge AI chatbot technology that sets your business apart in the market.",
     },
     {
-      title: "Increase sales by engaging your customers better",
+      number: "04",
+      title: "Cost Savings",
       description:
-        "Turn conversations into conversions by using AI chatbots to keep your users engaged right from form submission to checkout. Prevent them from leaving unattended and convert hesitant buyers into customers by providing real-time information about your services and personalized recommendations. Better customer engagement translates to improved sales and revenue.",
+        "Reduce operational costs significantly by automating customer support and routine tasks while maintaining high-quality service standards.",
+    },
+    {
+      number: "05",
+      title: "Improved Conversion Rates",
+      description:
+        "Convert more visitors into customers through intelligent conversation flows and personalized recommendations that guide users to purchase decisions.",
     },
   ];
 
@@ -784,38 +794,131 @@ export default function AIChatbotDevelopment() {
         </div>
       </div>
 
-      {/* Advantages Section */}
-      <section className="py-20 relative">
+      {/* Advantages Section - Circular Design */}
+      <section className="py-20 relative bg-gray-100 text-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Advantages of Integrating AI-Powered Chatbots Into Your Business
               Operations
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {advantages.map((advantage, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6 bg-gray-700/80 border-gray-600 hover:bg-gray-650/80 transition-colors backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="text-xl mb-4 text-white">
-                      {advantage.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base text-gray-300">
-                      {advantage.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+          
+          {/* Circular Layout Container */}
+          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
+            {/* Central Circle */}
+            <div className="relative z-20">
+              <div className="w-80 h-80 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl">
+                <div className="text-center px-8">
+                  <div className="text-white font-bold text-7xl mb-4">5</div>
+                  <div className="text-white text-xl font-semibold leading-tight">
+                    Advantages<br />
+                    Of Investing In<br />
+                    AI Chatbots
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Curved Connection Lines */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              style={{ zIndex: 1 }}
+            >
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#9333ea" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#6b21a8" stopOpacity="0.8" />
+                </linearGradient>
+              </defs>
+              
+              {/* Curved lines connecting center to each advantage point */}
+              <path
+                d="M 50% 50% Q 25% 25% 15% 15%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                className="opacity-60"
+              />
+              <path
+                d="M 50% 50% Q 75% 25% 85% 15%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                className="opacity-60"
+              />
+              <path
+                d="M 50% 50% Q 90% 50% 95% 50%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                className="opacity-60"
+              />
+              <path
+                d="M 50% 50% Q 75% 75% 85% 85%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                className="opacity-60"
+              />
+              <path
+                d="M 50% 50% Q 25% 75% 15% 85%"
+                stroke="url(#lineGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                className="opacity-60"
+              />
+            </svg>
+
+            {/* Advantage Items positioned around the circle */}
+            {advantages.map((advantage, index) => {
+              const positions = [
+                { top: "5%", right: "15%", transform: "translate(0, 0)" }, // Top right
+                { top: "25%", right: "5%", transform: "translate(0, 0)" }, // Right
+                { bottom: "25%", right: "5%", transform: "translate(0, 0)" }, // Bottom right
+                { bottom: "5%", right: "15%", transform: "translate(0, 0)" }, // Bottom right
+                { bottom: "5%", left: "15%", transform: "translate(0, 0)" }, // Bottom left
+              ];
+
+              return (
+                <motion.div
+                  key={index}
+                  className="absolute"
+                  style={positions[index]}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="flex items-center gap-4 max-w-xs">
+                    {/* Numbered Circle */}
+                    <div className="relative flex-shrink-0">
+                      <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center relative">
+                        {/* Dotted border */}
+                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-purple-400 animate-pulse"></div>
+                        <span className="text-white font-bold text-lg z-10">{advantage.number}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-black mb-1 leading-tight">
+                        {advantage.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed hidden lg:block">
+                        {advantage.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
