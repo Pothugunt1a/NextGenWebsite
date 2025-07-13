@@ -48,10 +48,6 @@ import {
   ChevronUp,
   Brain,
   Award,
-  DollarSign,
-  UserCheck,
-  MousePointer,
-  ShoppingBag,
 } from "lucide-react";
 
 export default function AIChatbotDevelopment() {
@@ -211,28 +207,24 @@ export default function AIChatbotDevelopment() {
   const advantages = [
     {
       number: "01",
-      icon: DollarSign,
       title: "Optimize core business operations to save costs",
       description:
         "Our AI chatbots boost productivity and streamline resources by offering 24/7 support, automating routine tasks, and managing complex processes like analysis and content generation—reducing costs and freeing teams for strategic work.",
     },
     {
       number: "02",
-      icon: UserCheck,
       title: "Provide faster responses and personalized experience",
       description:
         "AI chatbots support customers throughout the sales process by offering 24/7 assistance, prompt responses, and personalized recommendations based on past interactions and preferences. This enhances the customer experience, fostering loyalty and improving retention.",
     },
     {
       number: "03",
-      icon: MousePointer,
       title: "Improve engagement rate of your app and web products",
       description:
         "Utilize our AI chatbot development service to enhance user experience and boost engagement. Powered by NLP and machine learning, our chatbots understand user intent, respond accurately, and promote your services—driving brand loyalty and encouraging longer website visits.",
     },
     {
       number: "04",
-      icon: ShoppingBag,
       title: "Increase sales by engaging your customers better",
       description:
         "Transform conversations into conversions with AI chatbots that engage users from form submission to checkout. By offering real-time support and personalized recommendations, you can reduce drop-offs and turn hesitant visitors into customers—leading to stronger engagement, increased sales, and higher revenue.",
@@ -910,23 +902,21 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-start gap-4 max-w-sm lg:max-w-lg xl:max-w-xl">
-                    {/* Icon with gradient background - matching About page style */}
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="p-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500">
-                        <advantage.icon className="text-xl text-white" />
+                  <div className="flex items-center gap-4 max-w-sm lg:max-w-lg xl:max-w-xl">
+                    {/* Numbered Circle */}
+                    <div className="relative flex-shrink-0">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center relative">
+                        {/* Dotted border */}
+                        <div className="absolute inset-0 rounded-full border-2 border-dotted border-blue-400 animate-pulse"></div>
+                        <span className="text-white font-bold text-lg z-10">
+                          {advantage.number}
+                        </span>
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1">
-                      {/* Number badge */}
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="inline-flex items-center justify-center w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white text-xs font-bold">
-                          {advantage.number}
-                        </span>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 leading-tight">
+                      <h4 className="text-lg font-bold text-white mb-1 leading-tight">
                         {advantage.title}
                       </h4>
                       <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
