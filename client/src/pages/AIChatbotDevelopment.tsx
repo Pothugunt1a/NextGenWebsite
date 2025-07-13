@@ -837,19 +837,19 @@ export default function AIChatbotDevelopment() {
                     {/* Connection dots with lines to advantage items */}
                     <g>
                       {/* Dot 1 - connects to advantage 1 */}
-                      <circle cx="132" cy="48" r="4" fill="url(#curvedLineGradient)" opacity="0.9" />
+                      <circle cx="132" cy="48" r="4" fill="#3b82f6" opacity="0.9" />
                       <line x1="132" y1="48" x2="172" y2="48" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
                       
                       {/* Dot 2 - connects to advantage 2 */}
-                      <circle cx="132" cy="96" r="4" fill="url(#curvedLineGradient)" opacity="0.9" />
+                      <circle cx="132" cy="96" r="4" fill="#06b6d4" opacity="0.9" />
                       <line x1="132" y1="96" x2="172" y2="96" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
                       
                       {/* Dot 3 - connects to advantage 3 */}
-                      <circle cx="132" cy="160" r="4" fill="url(#curvedLineGradient)" opacity="0.9" />
+                      <circle cx="132" cy="160" r="4" fill="#3b82f6" opacity="0.9" />
                       <line x1="132" y1="160" x2="172" y2="160" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
                       
                       {/* Dot 4 - connects to advantage 4 */}
-                      <circle cx="132" cy="224" r="4" fill="url(#curvedLineGradient)" opacity="0.9" />
+                      <circle cx="132" cy="224" r="4" fill="#06b6d4" opacity="0.9" />
                       <line x1="132" y1="224" x2="172" y2="224" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
                     </g>
                   </svg>
