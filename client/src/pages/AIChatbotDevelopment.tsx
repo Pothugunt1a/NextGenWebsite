@@ -207,33 +207,27 @@ export default function AIChatbotDevelopment() {
   const advantages = [
     {
       number: "01",
-      title: "Enhanced User Satisfaction",
+      title: "Optimize core business operations to save costs",
       description:
-        "Our AI-powered chatbots deliver personalized experiences that significantly improve customer satisfaction through intelligent responses and 24/7 availability.",
+        "Our AI chatbots boost productivity and streamline resources by offering 24/7 support, automating routine tasks, and managing complex processes like analysis and content generation—reducing costs and freeing teams for strategic work.",
     },
     {
-      number: "02", 
-      title: "Increased User Engagement",
+      number: "02",
+      title: "Provide faster responses and personalized experience",
       description:
-        "Drive higher engagement rates with interactive conversational AI that keeps users interested and actively participating with your brand.",
+        "AI chatbots support customers throughout the sales process by offering 24/7 assistance, prompt responses, and personalized recommendations based on past interactions and preferences. This enhances the customer experience, fostering loyalty and improving retention.",
     },
     {
       number: "03",
-      title: "Competitive Advantage", 
+      title: "Improve engagement rate of your app and web products",
       description:
-        "Stay ahead of competitors by implementing cutting-edge AI chatbot technology that sets your business apart in the market.",
+        "Utilize our AI chatbot development service to enhance user experience and boost engagement. Powered by NLP and machine learning, our chatbots understand user intent, respond accurately, and promote your services—driving brand loyalty and encouraging longer website visits.",
     },
     {
       number: "04",
-      title: "Cost Savings",
+      title: "Increase sales by engaging your customers better",
       description:
-        "Reduce operational costs significantly by automating customer support and routine tasks while maintaining high-quality service standards.",
-    },
-    {
-      number: "05",
-      title: "Improved Conversion Rates",
-      description:
-        "Convert more visitors into customers through intelligent conversation flows and personalized recommendations that guide users to purchase decisions.",
+        "Transform conversations into conversions with AI chatbots that engage users from form submission to checkout. By offering real-time support and personalized recommendations, you can reduce drop-offs and turn hesitant visitors into customers—leading to stronger engagement, increased sales, and higher revenue.",
     },
   ];
 
@@ -803,29 +797,34 @@ export default function AIChatbotDevelopment() {
               Operations
             </h2>
           </div>
-          
+
           {/* Circular Layout Container */}
           <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
             {/* Central Image - Replace this with your uploaded image */}
             <div className="relative z-20">
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
-                <img 
-                  src="/assets/chatbot-advantages-center.png" 
-                  alt="AI Chatbot Advantages" 
+                <img
+                  src="/assets/chatbot-advantages-center.png"
+                  alt="AI Chatbot Advantages"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // Fallback to gradient circle if image not found
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                    e.currentTarget.style.display = "none";
+                    e.currentTarget.nextElementSibling.style.display = "flex";
                   }}
                 />
                 {/* Fallback gradient circle */}
-                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl" style={{display: 'none'}}>
+                <div
+                  className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center shadow-2xl"
+                  style={{ display: "none" }}
+                >
                   <div className="text-center px-8">
                     <div className="text-white font-bold text-7xl mb-4">5</div>
                     <div className="text-white text-xl font-semibold leading-tight">
-                      Advantages<br />
-                      Of Investing In<br />
+                      Advantages
+                      <br />
+                      Of Investing In
+                      <br />
                       AI Chatbots
                     </div>
                   </div>
@@ -839,12 +838,18 @@ export default function AIChatbotDevelopment() {
               style={{ zIndex: 1 }}
             >
               <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <linearGradient
+                  id="lineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
                   <stop offset="0%" stopColor="#9333ea" stopOpacity="0.8" />
                   <stop offset="100%" stopColor="#6b21a8" stopOpacity="0.8" />
                 </linearGradient>
               </defs>
-              
+
               {/* Curved lines connecting center to each advantage point */}
               <path
                 d="M 50% 50% Q 25% 25% 15% 15%"
@@ -915,10 +920,12 @@ export default function AIChatbotDevelopment() {
                       <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center relative">
                         {/* Dotted border */}
                         <div className="absolute inset-0 rounded-full border-2 border-dotted border-purple-400 animate-pulse"></div>
-                        <span className="text-white font-bold text-lg z-10">{advantage.number}</span>
+                        <span className="text-white font-bold text-lg z-10">
+                          {advantage.number}
+                        </span>
                       </div>
                     </div>
-                    
+
                     {/* Content */}
                     <div className="flex-1">
                       <h4 className="text-lg font-bold text-white mb-1 leading-tight">
@@ -1542,7 +1549,10 @@ export default function AIChatbotDevelopment() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Join thousands of businesses who trust RT NextGenAI for intelligent chatbot solutions. Our experts are ready to revolutionize your customer engagement with AI-powered conversations.
+              Join thousands of businesses who trust RT NextGenAI for
+              intelligent chatbot solutions. Our experts are ready to
+              revolutionize your customer engagement with AI-powered
+              conversations.
             </motion.p>
 
             {/* Benefits Grid */}
@@ -1581,7 +1591,7 @@ export default function AIChatbotDevelopment() {
               <Button
                 size="lg"
                 className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-                onClick={() => window.location.href = '/contact'}
+                onClick={() => (window.location.href = "/contact")}
               >
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Start Your Chatbot Journey
