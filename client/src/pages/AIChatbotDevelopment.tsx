@@ -965,12 +965,12 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 p-4 w-80">
+                  <div className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-tl-2xl rounded-tr-3xl rounded-bl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300" style={{ padding: '1.0rem', width: '38rem', marginBottom: '2rem' }}>
                     <div className="flex items-center mb-3">
                       <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
                         <advantage.icon className="h-6 w-6 text-white" />
                       </div>
-                      <h3 className="text-white font-semibold text-base">
+                      <h3 className="text-white font-semibold text-lg">
                         {advantage.title}
                       </h3>
                     </div>
