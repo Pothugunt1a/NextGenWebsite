@@ -807,9 +807,9 @@ export default function AIChatbotDevelopment() {
           </div>
 
           {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-center min-h-[800px] lg:min-h-[900px] max-w-none mx-auto overflow-visible px-8">
-            {/* Central Image with Semi-circle Timeline */}
-            <div className="relative z-20">
+          <div className="relative flex items-center justify-start min-h-[800px] lg:min-h-[900px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
+            {/* Central Image with Semi-circle Timeline - Moved to left */}
+            <div className="relative z-20" style={{ marginLeft: '10rem' }}>
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden relative">
                 {/* Semi-circle Timeline - matching reference image exactly */}
                 <div className="absolute inset-0 pointer-events-none">
