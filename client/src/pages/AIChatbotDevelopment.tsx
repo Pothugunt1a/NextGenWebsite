@@ -807,7 +807,7 @@ export default function AIChatbotDevelopment() {
           </div>
 
           {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px] max-w-7xl mx-auto overflow-visible px-8">
+          <div className="relative flex items-center justify-center min-h-[800px] lg:min-h-[900px] max-w-none mx-auto overflow-visible px-8">
             {/* Central Image with Semi-circle Timeline */}
             <div className="relative z-20">
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden relative">
@@ -948,10 +948,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned to align with timeline dots */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "8%", right: "8%", transform: "translate(0, 0)" }, // Element 1 - Aligned with top dot
-                { top: "28%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Aligned with upper middle dot
-                { top: "52%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Aligned with lower middle dot
-                { top: "76%", right: "8%", transform: "translate(0, 0)" }, // Element 4 - Aligned with bottom dot
+                { top: "2%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 1 - Top right with spacing
+                { top: "27%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 2 - Right middle upper with spacing
+                { top: "55%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 3 - Right middle lower with spacing
+                { top: "83%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 4 - Bottom right with spacing
               ];
 
               return (
