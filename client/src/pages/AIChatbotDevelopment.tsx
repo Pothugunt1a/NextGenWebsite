@@ -212,35 +212,28 @@ export default function AIChatbotDevelopment() {
     {
       number: "01",
       icon: DollarSign,
-      title: "Enhanced User Satisfaction",
+      title: "Optimize core business operations to save costs",
       description:
         "Our AI chatbots boost productivity and streamline resources by offering 24/7 support, automating routine tasks, and managing complex processes like analysis and content generation—reducing costs and freeing teams for strategic work.",
     },
     {
       number: "02",
       icon: UserCheck,
-      title: "Increased User Engagement",
+      title: "Provide faster responses and personalized experience",
       description:
         "AI chatbots support customers throughout the sales process by offering 24/7 assistance, prompt responses, and personalized recommendations based on past interactions and preferences. This enhances the customer experience, fostering loyalty and improving retention.",
     },
     {
       number: "03",
       icon: MousePointer,
-      title: "Competitive Advantage",
+      title: "Improve engagement rate of your app and web products",
       description:
         "Utilize our AI chatbot development service to enhance user experience and boost engagement. Powered by NLP and machine learning, our chatbots understand user intent, respond accurately, and promote your services—driving brand loyalty and encouraging longer website visits.",
     },
     {
       number: "04",
       icon: ShoppingBag,
-      title: "Cost Savings",
-      description:
-        "Transform conversations into conversions with AI chatbots that engage users from form submission to checkout. By offering real-time support and personalized recommendations, you can reduce drop-offs and turn hesitant visitors into customers—leading to stronger engagement, increased sales, and higher revenue.",
-    },
-    {
-      number: "05",
-      icon: TrendingUp,
-      title: "Improved Conversion Rates",
+      title: "Increase sales by engaging your customers better",
       description:
         "Transform conversations into conversions with AI chatbots that engage users from form submission to checkout. By offering real-time support and personalized recommendations, you can reduce drop-offs and turn hesitant visitors into customers—leading to stronger engagement, increased sales, and higher revenue.",
     },
@@ -804,137 +797,164 @@ export default function AIChatbotDevelopment() {
       </div>
 
       {/* Advantages Section - Circular Design */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-visible">
+        <div className="w-full max-w-none px-4 overflow-visible">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Advantages of Integrating AI-Powered Chatbots Into Your Business Operations
+              Advantages of Integrating AI-Powered Chatbots Into Your Business
+              Operations
             </h2>
           </div>
 
-          {/* Circular Layout Container - Clean Design */}
-          <div className="relative flex items-center justify-center min-h-[600px] max-w-6xl mx-auto">
-            {/* Central Circle */}
-            <div className="relative z-20">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center shadow-2xl relative">
-                {/* Outer dotted circle */}
-                <div className="absolute inset-0">
-                  <svg className="w-full h-full" viewBox="0 0 320 320">
-                    <circle 
-                      cx="160" 
-                      cy="160" 
-                      r="155" 
-                      fill="none" 
-                      stroke="url(#dotGradient)" 
-                      strokeWidth="2" 
-                      strokeDasharray="8,8"
-                      opacity="0.7"
-                    />
+          {/* Circular Layout Container */}
+          <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
+            {/* Central Image - Aligned with hollow ring at 30% position */}
+            <div className="relative z-20" style={{ marginLeft: '10rem' }}>
+              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden relative">
+                {/* Curved border line on the right - matching reference image */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <svg
+                    className="absolute -right-16 top-0 w-80 h-80"
+                    viewBox="0 0 200 320"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <defs>
-                      <linearGradient id="dotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#7c3aed" />
-                        <stop offset="100%" stopColor="#a855f7" />
+                      <linearGradient id="curvedLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#06b6d4" />
                       </linearGradient>
                     </defs>
+                    {/* Semi-circle arc matching the reference design */}
+                    <path
+                      d="M 132 32 A 128 128 0 0 1 132 288"
+                      stroke="url(#curvedLineGradient)"
+                      strokeWidth="3"
+                      fill="none"
+                      opacity="0.9"
+                      strokeDasharray="6,4"
+                    />
+                    {/* Connection dots with lines to advantage items */}
+                    <g>
+                      {/* Dot 1 - connects to advantage 1 */}
+                      <circle cx="132" cy="48" r="4" fill="url(#curvedLineGradient)" opacity="1" />
+                      <line x1="132" y1="48" x2="172" y2="48" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
+                      
+                      {/* Dot 2 - connects to advantage 2 */}
+                      <circle cx="132" cy="96" r="4" fill="url(#curvedLineGradient)" opacity="1" />
+                      <line x1="132" y1="96" x2="172" y2="96" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
+                      
+                      {/* Dot 3 - connects to advantage 3 */}
+                      <circle cx="132" cy="160" r="4" fill="url(#curvedLineGradient)" opacity="1" />
+                      <line x1="132" y1="160" x2="172" y2="160" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
+                      
+                      {/* Dot 4 - connects to advantage 4 */}
+                      <circle cx="132" cy="224" r="4" fill="url(#curvedLineGradient)" opacity="1" />
+                      <line x1="132" y1="224" x2="172" y2="224" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
+                    </g>
                   </svg>
                 </div>
-
-                {/* Central Content */}
-                <div className="text-center px-8">
-                  <div className="text-white font-bold text-7xl mb-4">5</div>
-                  <div className="text-white text-xl font-semibold leading-tight">
-                    Advantages
-                    <br />
-                    Of Investing In
-                    <br />
-                    AI Chatbots
+                
+                <img
+                  src="/assets/Bot1.gif"
+                  alt="AI Chatbot Advantages"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to gradient circle if gif not found
+                    e.currentTarget.style.display = "none";
+                    e.currentTarget.nextElementSibling.style.display = "flex";
+                  }}
+                />
+                {/* Fallback gradient circle */}
+                <div
+                  className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl"
+                  style={{ display: "none" }}
+                >
+                  <div className="text-center px-8">
+                    <div className="text-white font-bold text-7xl mb-4">5</div>
+                    <div className="text-white text-xl font-semibold leading-tight">
+                      Advantages
+                      <br />
+                      Of Investing In
+                      <br />
+                      AI Chatbots
+                    </div>
                   </div>
                 </div>
               </div>
-
-              {/* Curved Connection Line */}
-              <svg className="absolute -right-20 top-0 w-96 h-80" viewBox="0 0 200 320">
-                <defs>
-                  <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#7c3aed" />
-                    <stop offset="100%" stopColor="#a855f7" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M 140 40 A 120 120 0 0 1 140 280"
-                  stroke="url(#connectionGradient)"
-                  strokeWidth="3"
-                  fill="none"
-                  opacity="0.8"
-                />
-                
-                {/* Connection points with dotted lines */}
-                <circle cx="140" cy="64" r="4" fill="url(#connectionGradient)" />
-                <line x1="140" y1="64" x2="180" y2="64" stroke="url(#connectionGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-                
-                <circle cx="140" cy="120" r="4" fill="url(#connectionGradient)" />
-                <line x1="140" y1="120" x2="180" y2="120" stroke="url(#connectionGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-                
-                <circle cx="140" cy="160" r="4" fill="url(#connectionGradient)" />
-                <line x1="140" y1="160" x2="180" y2="160" stroke="url(#connectionGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-                
-                <circle cx="140" cy="200" r="4" fill="url(#connectionGradient)" />
-                <line x1="140" y1="200" x2="180" y2="200" stroke="url(#connectionGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-                
-                <circle cx="140" cy="256" r="4" fill="url(#connectionGradient)" />
-                <line x1="140" y1="256" x2="180" y2="256" stroke="url(#connectionGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-              </svg>
             </div>
 
-            {/* Advantage Items positioned on the right side */}
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 space-y-8">
-              {advantages.map((advantage, index) => (
+            {/* Curved Connection Lines */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              style={{ zIndex: 1 }}
+            >
+              <defs>
+                <linearGradient
+                  id="lineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.8" />
+                </linearGradient>
+                <linearGradient
+                  id="circleGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor="#3b82f6" />
+                  <stop offset="100%" stopColor="#06b6d4" />
+                </linearGradient>
+              </defs>
+
+
+
+
+              
+
+            </svg>
+
+            {/* Advantage Items positioned around the circle */}
+            {advantages.map((advantage, index) => {
+              const positions = [
+                { top: "2%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 1 - Top right
+                { top: "27%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 2 - Right middle upper
+                { top: "55%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 3 - Right middle lower
+                { top: "83%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 4 - Bottom right
+              ];
+
+              return (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-4"
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  className="absolute"
+                  style={positions[index]}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  {/* Number Circle */}
-                  <div className="relative">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center shadow-lg">
-                      <span className="text-white font-bold text-lg">{advantage.number}</span>
+                  <div className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-tl-2xl rounded-tr-3xl rounded-bl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300" style={{ padding: '1.0rem', width: '38rem', marginBottom: '2rem' }}>
+                    <div className="flex items-center mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                        <advantage.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-white font-semibold text-lg">
+                        {advantage.title}
+                      </h3>
                     </div>
-                    {/* Dotted border */}
-                    <div className="absolute inset-0">
-                      <svg className="w-full h-full" viewBox="0 0 64 64">
-                        <circle 
-                          cx="32" 
-                          cy="32" 
-                          r="30" 
-                          fill="none" 
-                          stroke="url(#itemGradient)" 
-                          strokeWidth="2" 
-                          strokeDasharray="4,4"
-                          opacity="0.6"
-                        />
-                        <defs>
-                          <linearGradient id="itemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#7c3aed" />
-                            <stop offset="100%" stopColor="#a855f7" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Advantage Text */}
-                  <div className="max-w-xs">
-                    <h3 className="text-white font-bold text-lg mb-1 leading-tight italic">
-                      {advantage.title}
-                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
+                      {advantage.description}
+                    </p>
                   </div>
                 </motion.div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
