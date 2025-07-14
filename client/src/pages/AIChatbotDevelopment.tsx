@@ -948,10 +948,10 @@ export default function AIChatbotDevelopment() {
             {/* Advantage Items positioned to align with timeline dots */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "2%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 1 - Top right with spacing
-                { top: "27%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 2 - Right middle upper with spacing
-                { top: "55%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 3 - Right middle lower with spacing
-                { top: "83%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 4 - Bottom right with spacing
+                { top: "8%", right: "15%", transform: "translate(0, 0)", marginBottom: "1rem" }, // Element 1 - Top right with reduced spacing
+                { top: "30%", right: "5%", transform: "translate(0, 0)", marginBottom: "1rem" }, // Element 2 - Right middle upper with reduced spacing
+                { top: "52%", right: "5%", transform: "translate(0, 0)", marginBottom: "1rem" }, // Element 3 - Right middle lower with reduced spacing
+                { top: "74%", right: "15%", transform: "translate(0, 0)", marginBottom: "1rem" }, // Element 4 - Bottom right with reduced spacing
               ];
 
               return (
