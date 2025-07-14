@@ -807,77 +807,103 @@ export default function AIChatbotDevelopment() {
           </div>
 
           {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-start min-h-[600px] lg:min-h-[700px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
-            {/* Central Image - Aligned with hollow ring at 30% position */}
-            <div className="relative z-20" style={{ marginLeft: '10rem' }}>
+          <div className="relative flex items-center justify-center min-h-[600px] lg:min-h-[700px] max-w-7xl mx-auto overflow-visible px-8">
+            {/* Central Image with Semi-circle Timeline */}
+            <div className="relative z-20">
               <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden relative">
-                {/* Curved border line on the right - matching reference image */}
+                {/* Semi-circle Timeline - matching reference image exactly */}
                 <div className="absolute inset-0 pointer-events-none">
                   <svg
-                    className="absolute -right-16 top-0 w-80 h-80"
-                    viewBox="0 0 200 320"
+                    className="absolute -inset-8 w-96 h-96"
+                    viewBox="0 0 384 384"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <defs>
-                      <linearGradient id="curvedLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#3b82f6" />
+                      <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#1e40af" />
+                        <stop offset="50%" stopColor="#3b82f6" />
                         <stop offset="100%" stopColor="#06b6d4" />
                       </linearGradient>
                     </defs>
-                    {/* Semi-circle arc matching the reference design */}
+                    
+                    {/* Main semi-circle arc - positioned on the right side */}
                     <path
-                      d="M 132 32 A 128 128 0 0 1 132 288"
-                      stroke="url(#curvedLineGradient)"
-                      strokeWidth="3"
+                      d="M 290 80 A 110 110 0 0 1 290 304"
+                      stroke="url(#timelineGradient)"
+                      strokeWidth="4"
                       fill="none"
                       opacity="0.9"
-                      strokeDasharray="6,4"
+                      strokeDasharray="8,6"
                     />
-                    {/* Connection dots with lines to advantage items */}
+                    
+                    {/* Extending dashed lines at the ends */}
+                    <path
+                      d="M 270 65 Q 285 75 290 80"
+                      stroke="url(#timelineGradient)"
+                      strokeWidth="4"
+                      fill="none"
+                      opacity="0.7"
+                      strokeDasharray="8,6"
+                    />
+                    <path
+                      d="M 290 304 Q 285 309 270 319"
+                      stroke="url(#timelineGradient)"
+                      strokeWidth="4"
+                      fill="none"
+                      opacity="0.7"
+                      strokeDasharray="8,6"
+                    />
+                    
+                    {/* Connection dots and lines to advantage items */}
                     <g>
-                      {/* Dot 1 - connects to advantage 1 */}
-                      <circle cx="132" cy="48" r="4" fill="url(#curvedLineGradient)" opacity="1" />
-                      <line x1="132" y1="48" x2="172" y2="48" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
+                      {/* Dot 1 - Top position */}
+                      <circle cx="290" cy="110" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
+                      <line x1="290" y1="110" x2="340" y2="110" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
                       
-                      {/* Dot 2 - connects to advantage 2 */}
-                      <circle cx="132" cy="96" r="4" fill="url(#curvedLineGradient)" opacity="1" />
-                      <line x1="132" y1="96" x2="172" y2="96" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
+                      {/* Dot 2 - Upper middle position */}
+                      <circle cx="290" cy="160" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
+                      <line x1="290" y1="160" x2="340" y2="160" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
                       
-                      {/* Dot 3 - connects to advantage 3 */}
-                      <circle cx="132" cy="160" r="4" fill="url(#curvedLineGradient)" opacity="1" />
-                      <line x1="132" y1="160" x2="172" y2="160" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
+                      {/* Dot 3 - Lower middle position */}
+                      <circle cx="290" cy="220" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
+                      <line x1="290" y1="220" x2="340" y2="220" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
                       
-                      {/* Dot 4 - connects to advantage 4 */}
-                      <circle cx="132" cy="224" r="4" fill="url(#curvedLineGradient)" opacity="1" />
-                      <line x1="132" y1="224" x2="172" y2="224" stroke="url(#curvedLineGradient)" strokeWidth="2" strokeDasharray="3,3" opacity="0.8" />
+                      {/* Dot 4 - Bottom position */}
+                      <circle cx="290" cy="274" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
+                      <line x1="290" y1="274" x2="340" y2="274" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
                     </g>
                   </svg>
                 </div>
                 
-                <img
-                  src="/assets/Bot1.gif"
-                  alt="AI Chatbot Advantages"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback to gradient circle if gif not found
-                    e.currentTarget.style.display = "none";
-                    e.currentTarget.nextElementSibling.style.display = "flex";
-                  }}
-                />
-                {/* Fallback gradient circle */}
-                <div
-                  className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl"
-                  style={{ display: "none" }}
-                >
-                  <div className="text-center px-8">
-                    <div className="text-white font-bold text-7xl mb-4">5</div>
-                    <div className="text-white text-xl font-semibold leading-tight">
-                      Advantages
-                      <br />
-                      Of Investing In
-                      <br />
-                      AI Chatbots
+                {/* Blue gradient ring around the image */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 p-4">
+                  <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden">
+                    <img
+                      src="/assets/Bot1.gif"
+                      alt="AI Chatbot Advantages"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback to gradient circle if gif not found
+                        e.currentTarget.style.display = "none";
+                        e.currentTarget.nextElementSibling.style.display = "flex";
+                      }}
+                    />
+                    {/* Fallback gradient circle with "KEY FEATURES" text */}
+                    <div
+                      className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center shadow-2xl"
+                      style={{ display: "none" }}
+                    >
+                      <div className="text-center px-8">
+                        <div className="text-white mb-4">
+                          <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                          </svg>
+                        </div>
+                        <div className="text-white font-bold text-2xl leading-tight">
+                          KEY FEATURES
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -919,13 +945,13 @@ export default function AIChatbotDevelopment() {
 
             </svg>
 
-            {/* Advantage Items positioned around the circle */}
+            {/* Advantage Items positioned to align with timeline dots */}
             {advantages.map((advantage, index) => {
               const positions = [
-                { top: "2%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 1 - Top right
-                { top: "27%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 2 - Right middle upper
-                { top: "55%", right: "5%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 3 - Right middle lower
-                { top: "83%", right: "15%", transform: "translate(0, 0)", marginBottom: "2rem" }, // Element 4 - Bottom right
+                { top: "8%", right: "8%", transform: "translate(0, 0)" }, // Element 1 - Aligned with top dot
+                { top: "28%", right: "5%", transform: "translate(0, 0)" }, // Element 2 - Aligned with upper middle dot
+                { top: "52%", right: "5%", transform: "translate(0, 0)" }, // Element 3 - Aligned with lower middle dot
+                { top: "76%", right: "8%", transform: "translate(0, 0)" }, // Element 4 - Aligned with bottom dot
               ];
 
               return (
@@ -939,12 +965,12 @@ export default function AIChatbotDevelopment() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-tl-2xl rounded-tr-3xl rounded-bl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300" style={{ padding: '1.0rem', width: '38rem', marginBottom: '2rem' }}>
+                  <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 p-4 w-80">
                     <div className="flex items-center mb-3">
                       <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
                         <advantage.icon className="h-6 w-6 text-white" />
                       </div>
-                      <h3 className="text-white font-semibold text-lg">
+                      <h3 className="text-white font-semibold text-base">
                         {advantage.title}
                       </h3>
                     </div>
