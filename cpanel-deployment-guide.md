@@ -127,6 +127,8 @@ Verify that uploaded file names match exactly (case-sensitive) with the referenc
 2. Fix image permissions: `./fix-banner-permissions.sh`
 3. Upload the `dist/public/` contents to your cpanel public_html folder
 
+**Note**: The script now also fixes permissions for images in the root directory and attached_assets folder, ensuring all PNG, JPG, GIF, and SVG files have proper 644 permissions for web server access.
+
 **The script automatically fixes permissions for all .png, .gif, .jpg, .jpeg, and .svg files to 644 (readable by web server).**
 
 ## Validation Checklist
