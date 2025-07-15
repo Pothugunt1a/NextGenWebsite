@@ -811,10 +811,10 @@ export default function AIChatbotDevelopment() {
             </p>
           </div>
 
-          {/* Main Layout: 2 Columns */}
+          {/* Main Layout: 3 Columns */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              {/* Left Column - Image */}
+            <div className="grid lg:grid-cols-3 gap-8 items-start">
+              {/* First Column - Image (60% width) */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -825,20 +825,67 @@ export default function AIChatbotDevelopment() {
                   <img
                     src="/assets/AI-chatbot.gif"
                     alt="AI Chatbot Advantages"
-                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                    className="w-[60%] h-full object-cover rounded-2xl shadow-2xl mx-auto"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                 </div>
               </motion.div>
 
-              {/* Right Column - All Advantages */}
+              {/* Second Column - Advantages 01 & 02 */}
               <div className="space-y-6">
-                {advantages.map((advantage, index) => (
+                {advantages.slice(0, 2).map((advantage, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className="relative"
+                  >
+                    {/* Step Arrow Shape */}
+                    <div
+                      className="relative bg-gradient-to-br from-blue-500/30 to-cyan-500/40 text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4"
+                      style={{
+                        clipPath:
+                          "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)",
+                        height: "80px",
+                      }}
+                    >
+                      <div className="flex items-center h-full px-4">
+                        {/* Step Number */}
+                        <div className="text-2xl font-bold mr-3 opacity-90">
+                          {advantage.number}
+                        </div>
+
+                        {/* Icon in white shield */}
+                        <div className="bg-white rounded-lg p-2 flex items-center justify-center text-gray-800">
+                          <div className="scale-75">
+                            <advantage.icon className="h-8 w-8" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-2">
+                        {advantage.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {advantage.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Third Column - Advantages 03 & 04 */}
+              <div className="space-y-6">
+                {advantages.slice(2, 4).map((advantage, index) => (
+                  <motion.div
+                    key={index + 2}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: (index + 2) * 0.1 }}
                     className="relative"
                   >
                     {/* Step Arrow Shape */}
