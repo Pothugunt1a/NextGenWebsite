@@ -81,12 +81,14 @@ const whyChooseUsItems = [
 
 const faqs: FAQ[] = [
   {
-    question: "What makes intelligent systems different from traditional automation?",
+    question:
+      "What makes intelligent systems different from traditional automation?",
     answer:
       "Intelligent systems learn from data, adapt to new situations, and make autonomous decisions. Unlike traditional automation that follows pre-programmed rules, our systems use AI to understand context, recognize patterns, and continuously improve their performance.",
   },
   {
-    question: "How long does it take to develop and deploy intelligent systems?",
+    question:
+      "How long does it take to develop and deploy intelligent systems?",
     answer:
       "Development timelines vary based on complexity. Simple computer vision systems take 4-8 weeks, while comprehensive intelligent automation platforms require 3-6 months. We provide detailed project timelines during our consultation phase.",
   },
@@ -101,7 +103,8 @@ const faqs: FAQ[] = [
       "Different systems require different data types: computer vision uses image/video data, NLP systems need text data, and predictive models use historical operational data. We help assess your data readiness and quality during the feasibility phase.",
   },
   {
-    question: "How do you ensure intelligent systems remain accurate over time?",
+    question:
+      "How do you ensure intelligent systems remain accurate over time?",
     answer:
       "We implement continuous monitoring, model retraining capabilities, and performance tracking. Our systems include feedback loops that allow them to learn from new data and maintain accuracy as business conditions change.",
   },
@@ -187,13 +190,11 @@ const developmentFramework = [
 const industries = [
   {
     name: "Manufacturing & Automation",
-    description:
-      "Visual inspection, predictive maintenance, robotics.",
+    description: "Visual inspection, predictive maintenance, robotics.",
   },
   {
     name: "Healthcare & Life Sciences",
-    description:
-      "Diagnostic image analysis, clinical workflow automation.",
+    description: "Diagnostic image analysis, clinical workflow automation.",
   },
   {
     name: "FinTech",
@@ -207,8 +208,7 @@ const industries = [
   },
   {
     name: "Logistics & Supply Chain",
-    description:
-      "Route optimization, inventory management, anomaly detection.",
+    description: "Route optimization, inventory management, anomaly detection.",
   },
 ];
 
@@ -304,7 +304,11 @@ export default function IntelligentSystemsDevelopment() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
               >
-                At RT NextGen AI, we develop intelligent systems that learn from data, understand their environment, and make autonomous decisions. Our solutions—spanning computer vision, NLP, predictive analytics, and robotics—optimize workflows, boost efficiency, and enable real-time responsiveness.
+                At RT NextGen AI, we develop intelligent systems that learn from
+                data, understand their environment, and make autonomous
+                decisions. Our solutions—spanning computer vision, NLP,
+                predictive analytics, and robotics—optimize workflows, boost
+                efficiency, and enable real-time responsiveness.
               </motion.p>
 
               {/* Badge below description */}
@@ -342,7 +346,8 @@ export default function IntelligentSystemsDevelopment() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Advanced AI-driven systems that transform business operations through intelligent automation
+              Advanced AI-driven systems that transform business operations
+              through intelligent automation
             </p>
           </motion.div>
 
@@ -474,7 +479,8 @@ export default function IntelligentSystemsDevelopment() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Advanced intelligent systems that drive innovation and operational excellence
+              Advanced intelligent systems that drive innovation and operational
+              excellence
             </p>
           </motion.div>
 
@@ -514,7 +520,9 @@ export default function IntelligentSystemsDevelopment() {
                         Computer Vision & Visual Analytics
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
-                        Object detection, image segmentation, video analytics, facial recognition, and real-time visual monitoring systems.
+                        Object detection, image segmentation, video analytics,
+                        facial recognition, and real-time visual monitoring
+                        systems.
                       </p>
                     </div>
                   </div>
@@ -551,7 +559,9 @@ export default function IntelligentSystemsDevelopment() {
                         Natural Language & Conversational AI
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
-                        Intelligent chatbots, virtual assistants, text classification, summarization, and multilingual support systems.
+                        Intelligent chatbots, virtual assistants, text
+                        classification, summarization, and multilingual support
+                        systems.
                       </p>
                     </div>
                   </div>
@@ -572,13 +582,13 @@ export default function IntelligentSystemsDevelopment() {
                   <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="relative w-full">
                       <img
-                        src="/assets/IntelligentSystemsDevelopment-banner.png"
+                        src="/assets/AI-Capabilities.gif"
                         alt="Intelligent Systems Capabilities"
                         className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = "/assets/AI-Capabilities.gif";
+                          target.src = "/assets/IntelligentSystemsDevelopment-banner.png";
                         }}
                       />
                     </div>
@@ -606,7 +616,8 @@ export default function IntelligentSystemsDevelopment() {
                           Intelligent Systems Capabilities
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Advanced intelligent systems that transform business operations through automation and AI.
+                          Advanced intelligent systems that transform business
+                          operations through automation and AI.
                         </p>
                       </div>
                     </div>
@@ -644,7 +655,8 @@ export default function IntelligentSystemsDevelopment() {
                         Predictive Modeling & Anomaly Detection
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
-                        Time‑series forecasting, root‑cause identification, and automated alerting based on real‑time data.
+                        Time‑series forecasting, root‑cause identification, and
+                        automated alerting based on real‑time data.
                       </p>
                     </div>
                   </div>
@@ -684,7 +696,8 @@ export default function IntelligentSystemsDevelopment() {
                         Robotic Process Automation (RPA)
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
-                        End‑to‑end automation of routine tasks—from invoice processing to data entry and workflow orchestration.
+                        End‑to‑end automation of routine tasks—from invoice
+                        processing to data entry and workflow orchestration.
                       </p>
                     </div>
                   </div>
@@ -721,7 +734,9 @@ export default function IntelligentSystemsDevelopment() {
                         Intelligent Automation
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
-                        Combining RPA with machine learning to build self‑learning processes that adapt to new data and evolving business needs.
+                        Combining RPA with machine learning to build
+                        self‑learning processes that adapt to new data and
+                        evolving business needs.
                       </p>
                     </div>
                   </div>
@@ -747,7 +762,8 @@ export default function IntelligentSystemsDevelopment() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Systematic approach to building intelligent systems that deliver measurable business value
+              Systematic approach to building intelligent systems that deliver
+              measurable business value
             </p>
           </motion.div>
 
@@ -763,7 +779,7 @@ export default function IntelligentSystemsDevelopment() {
               >
                 <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
                   <div className="absolute top-4 right-4 text-6xl font-bold text-blue-500/10">
-                    {String(index + 1).padStart(2, '0')}
+                    {String(index + 1).padStart(2, "0")}
                   </div>
 
                   <div className="flex items-center gap-4 mb-6">
@@ -790,7 +806,7 @@ export default function IntelligentSystemsDevelopment() {
       {/* Industry Applications - Same as multiple industries component */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -804,7 +820,8 @@ export default function IntelligentSystemsDevelopment() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Intelligent systems transforming operations across diverse industries
+              Intelligent systems transforming operations across diverse
+              industries
             </p>
           </motion.div>
 
@@ -824,7 +841,8 @@ export default function IntelligentSystemsDevelopment() {
                       {selectedIndustry.name}
                     </h3>
                     <p className="text-gray-200 text-sm">
-                      Advanced intelligent systems driving industry transformation
+                      Advanced intelligent systems driving industry
+                      transformation
                     </p>
                   </div>
                 </div>
@@ -849,9 +867,14 @@ export default function IntelligentSystemsDevelopment() {
                         : "bg-gray-800/40 border-gray-700 text-gray-300 hover:border-blue-500/30 hover:bg-gray-800/60"
                     }`}
                   >
-                    <h4 className="font-semibold text-sm mb-2">{industry.name}</h4>
+                    <h4 className="font-semibold text-sm mb-2">
+                      {industry.name}
+                    </h4>
                     <p className="text-xs opacity-75">
-                      {industries.find(ind => ind.name === industry.name)?.description}
+                      {
+                        industries.find((ind) => ind.name === industry.name)
+                          ?.description
+                      }
                     </p>
                   </motion.button>
                 ))}
@@ -882,7 +905,7 @@ export default function IntelligentSystemsDevelopment() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-700/20 to-cyan-600/20"></div>
         <div className="absolute inset-0 bg-light/80"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -897,7 +920,9 @@ export default function IntelligentSystemsDevelopment() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed">
-              Let's build intelligent systems that do more than automate—systems that learn, reason, adapt, and truly partner with your business strategy.
+              Let's build intelligent systems that do more than automate—systems
+              that learn, reason, adapt, and truly partner with your business
+              strategy.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link href="/contact">
@@ -906,7 +931,10 @@ export default function IntelligentSystemsDevelopment() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg">
+              <Button
+                variant="outline"
+                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg"
+              >
                 Learn More
               </Button>
             </div>
@@ -929,7 +957,8 @@ export default function IntelligentSystemsDevelopment() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get answers to common questions about intelligent systems development
+              Get answers to common questions about intelligent systems
+              development
             </p>
           </motion.div>
 
