@@ -222,8 +222,8 @@ export default function GenerativeAIDevelopment() {
       subtitle: "Reduce time-to-market significantly",
       description: "Our generative AI solutions dramatically reduce content creation time by automating writing, design, and multimedia production processes. Generate high-quality content in minutes rather than hours.",
       icon: <Clock className="h-8 w-8" />,
-      bgColor: "from-blue-500/20 to-blue-600/30",
-      arrowColor: "bg-blue-500/20"
+      bgColor: "from-blue-500/30 to-cyan-500/40",
+      arrowColor: "bg-blue-500/30"
     },
     {
       number: "02", 
@@ -231,8 +231,8 @@ export default function GenerativeAIDevelopment() {
       subtitle: "Scale across all customer touchpoints",
       description: "Create personalized experiences at unprecedented scale with AI-generated content tailored to individual customer preferences, behaviors, and demographics for increased engagement.",
       icon: <Users className="h-8 w-8" />,
-      bgColor: "from-blue-500/20 to-blue-600/30",
-      arrowColor: "bg-blue-500/20"
+      bgColor: "from-blue-500/30 to-cyan-500/40",
+      arrowColor: "bg-blue-500/30"
     },
     {
       number: "03",
@@ -240,8 +240,8 @@ export default function GenerativeAIDevelopment() {
       subtitle: "Augment creativity and capabilities",
       description: "Augment human creativity with AI-powered ideation, design exploration, and content variation generation. Break creative blocks and explore new concepts while maintaining brand consistency.",
       icon: <Lightbulb className="h-8 w-8" />,
-      bgColor: "from-blue-500/20 to-blue-600/30",
-      arrowColor: "bg-blue-500/20"
+      bgColor: "from-blue-500/30 to-cyan-500/40",
+      arrowColor: "bg-blue-500/30"
     },
     {
       number: "04",
@@ -249,8 +249,8 @@ export default function GenerativeAIDevelopment() {
       subtitle: "Optimize resource allocation",
       description: "Reduce content creation costs by up to 70% while maintaining quality standards. Automate repetitive tasks and reallocate human resources to strategic initiatives.",
       icon: <TrendingUp className="h-8 w-8" />,
-      bgColor: "from-blue-500/20 to-blue-600/30",
-      arrowColor: "bg-blue-500/20"
+      bgColor: "from-blue-500/30 to-cyan-500/40",
+      arrowColor: "bg-blue-500/30"
     }
   ];
 
@@ -824,7 +824,7 @@ export default function GenerativeAIDevelopment() {
                   className="flex items-center gap-8 relative"
                 >
                   {/* Step Arrow Shape */}
-                  <div className={`relative flex-shrink-0 bg-gradient-to-br ${step.bgColor} text-white rounded-l-lg`} 
+                  <div className={`relative flex-shrink-0 bg-gradient-to-br ${step.bgColor} text-white rounded-l-lg backdrop-blur-sm border border-white/10`} 
                        style={{
                          clipPath: 'polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%)',
                          width: '280px',
