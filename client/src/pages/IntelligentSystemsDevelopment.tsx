@@ -300,10 +300,10 @@ export default function IntelligentSystemsDevelopment() {
             src="/assets/IntelligentSystemsDevelopment-banner.png"
             alt="Intelligent Systems Development"
             className="w-full h-full object-cover object-center"
-            style={{ 
-              imageRendering: 'crisp-edges',
-              filter: 'contrast(1.1) saturate(1.1) brightness(1.05)',
-              transform: 'translateZ(0)'
+            style={{
+              imageRendering: "crisp-edges",
+              filter: "contrast(1.1) saturate(1.1) brightness(1.05)",
+              transform: "translateZ(0)",
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
@@ -325,7 +325,7 @@ export default function IntelligentSystemsDevelopment() {
               style={{ fontWeight: 700 }}
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Intelligent Systems Development
+                Transforming Data into Actionable Intelligence
               </span>
             </motion.h1>
 
@@ -335,7 +335,9 @@ export default function IntelligentSystemsDevelopment() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
             >
-              Empower Your Business with Next-Gen AI‑Driven Systems
+              RT NextGen AI builds intelligent systems that learn, adapt, and
+              act autonomously—enhancing efficiency through computer vision,
+              NLP, analytics, and robotics.
             </motion.p>
 
             {/* Badge */}
@@ -382,9 +384,15 @@ export default function IntelligentSystemsDevelopment() {
                           </div>
                         </div>
                       </div>
-                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">95%</div>
-                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">Success Rate</div>
-                      <div className="text-xs text-gray-400">System deployment</div>
+                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">
+                        95%
+                      </div>
+                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">
+                        Success Rate
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        System deployment
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -405,9 +413,15 @@ export default function IntelligentSystemsDevelopment() {
                           </div>
                         </div>
                       </div>
-                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">150+</div>
-                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">Intelligent Systems</div>
-                      <div className="text-xs text-gray-400">Successfully deployed</div>
+                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">
+                        150+
+                      </div>
+                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">
+                        Intelligent Systems
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        Successfully deployed
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -428,9 +442,15 @@ export default function IntelligentSystemsDevelopment() {
                           </div>
                         </div>
                       </div>
-                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">70%</div>
-                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">Efficiency Gain</div>
-                      <div className="text-xs text-gray-400">Process optimization</div>
+                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">
+                        70%
+                      </div>
+                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">
+                        Efficiency Gain
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        Process optimization
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -451,9 +471,15 @@ export default function IntelligentSystemsDevelopment() {
                           </div>
                         </div>
                       </div>
-                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">40+</div>
-                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">Industries Served</div>
-                      <div className="text-xs text-gray-400">Across all sectors</div>
+                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">
+                        40+
+                      </div>
+                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">
+                        Industries Served
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        Across all sectors
+                      </div>
                     </div>
                   </div>
                 </motion.div>
