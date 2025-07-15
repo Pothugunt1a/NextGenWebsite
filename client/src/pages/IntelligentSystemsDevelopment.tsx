@@ -536,7 +536,7 @@ export default function IntelligentSystemsDevelopment() {
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
-                        src="/assets/AI-Vision.png"
+                        src="/assets/AI-ComputerVision.png"
                         alt="Computer Vision"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         style={{ backgroundAttachment: "fixed" }}
@@ -712,7 +712,7 @@ export default function IntelligentSystemsDevelopment() {
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
-                        src="/assets/AI-Training.png"
+                        src="/assets/AI-Robotic.png"
                         alt="RPA Automation"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         style={{ backgroundAttachment: "fixed" }}
@@ -750,7 +750,7 @@ export default function IntelligentSystemsDevelopment() {
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
-                        src="/assets/AI-ProcessOptimization.png"
+                        src="/assets/AI-Intelligent.png"
                         alt="Intelligent Automation"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         style={{ backgroundAttachment: "fixed" }}
