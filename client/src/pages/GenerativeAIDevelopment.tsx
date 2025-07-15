@@ -821,7 +821,7 @@ export default function GenerativeAIDevelopment() {
       </section>
 
       {/* Generative AI Use Cases - Same as LLM Use Cases Layout */}
-      <section className="py-16 bg-light relative">
+      <section className="py-16 relative">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
