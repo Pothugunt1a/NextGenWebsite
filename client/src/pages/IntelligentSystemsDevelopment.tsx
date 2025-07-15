@@ -293,69 +293,175 @@ export default function IntelligentSystemsDevelopment() {
       className="text-white"
     >
       {/* Hero Section */}
-      <div className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background */}
         <div className="absolute inset-0">
           <img
             src="/assets/IntelligentSystemsDevelopment-banner.png"
             alt="Intelligent Systems Development"
             className="w-full h-full object-cover object-center"
+            style={{ 
+              imageRendering: 'crisp-edges',
+              filter: 'contrast(1.1) saturate(1.1) brightness(1.05)',
+              transform: 'translateZ(0)'
+            }}
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
 
-        <div className="relative flex items-center h-full">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-5xl"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
             >
-              <motion.h1
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-                style={{ fontWeight: 700 }}
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Intelligent Systems Development
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
+            >
+              Empower Your Business with Next-Gen AI‑Driven Systems
+            </motion.p>
+
+            {/* Badge */}
+            <div className="mb-32">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.8, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Empower Your Business with Next-Gen AI‑Driven Systems
+                <CheckCircle className="h-5 w-5 text-cyan-400" />
+                <span className="text-white font-medium">
+                  Intelligent Systems Excellence
                 </span>
-              </motion.h1>
+                <Award className="h-4 w-4 text-blue-400 fill-current" />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
 
-              <motion.p
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+        {/* Stats Section */}
+        <div className="absolute bottom-8 left-0 right-0">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-center md:justify-start">
+              <motion.div
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl w-full"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
               >
-                At RT NextGen AI, we develop intelligent systems that learn from
-                data, understand their environment, and make autonomous
-                decisions. Our solutions—spanning computer vision, NLP,
-                predictive analytics, and robotics—optimize workflows, boost
-                efficiency, and enable real-time responsiveness.
-              </motion.p>
-
-              {/* Badge below description */}
-              <div className="mb-32">
                 <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.6, type: "spring" }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 1.4, duration: 0.6 }}
+                  className="group relative"
                 >
-                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
-                  <span className="text-white font-medium">
-                    Next-Generation Intelligent Systems
-                  </span>
-                  <Award className="h-4 w-4 text-blue-400 fill-current" />
+                  <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    <div className="relative z-10">
+                      <div className="flex justify-center mb-3 md:mb-4">
+                        <div className="inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
+                          <div className="text-white">
+                            <Target className="h-6 w-6 md:h-8 md:w-8" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">95%</div>
+                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">Success Rate</div>
+                      <div className="text-xs text-gray-400">System deployment</div>
+                    </div>
+                  </div>
                 </motion.div>
-              </div>
-            </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 1.5, duration: 0.6 }}
+                  className="group relative"
+                >
+                  <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    <div className="relative z-10">
+                      <div className="flex justify-center mb-3 md:mb-4">
+                        <div className="inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500">
+                          <div className="text-white">
+                            <Brain className="h-6 w-6 md:h-8 md:w-8" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">150+</div>
+                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">Intelligent Systems</div>
+                      <div className="text-xs text-gray-400">Successfully deployed</div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 1.6, duration: 0.6 }}
+                  className="group relative"
+                >
+                  <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-violet-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    <div className="relative z-10">
+                      <div className="flex justify-center mb-3 md:mb-4">
+                        <div className="inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br from-purple-500 to-violet-500">
+                          <div className="text-white">
+                            <Zap className="h-6 w-6 md:h-8 md:w-8" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">70%</div>
+                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">Efficiency Gain</div>
+                      <div className="text-xs text-gray-400">Process optimization</div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 1.7, duration: 0.6 }}
+                  className="group relative"
+                >
+                  <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    <div className="relative z-10">
+                      <div className="flex justify-center mb-3 md:mb-4">
+                        <div className="inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br from-orange-500 to-red-500">
+                          <div className="text-white">
+                            <Users className="h-6 w-6 md:h-8 md:w-8" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">40+</div>
+                      <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">Industries Served</div>
+                      <div className="text-xs text-gray-400">Across all sectors</div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Our Technical Capabilities - Same as AI Consulting main capabilities */}
       <div
