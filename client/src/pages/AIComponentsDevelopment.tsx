@@ -764,6 +764,6 @@ export default function AIComponentsDevelopment() {
           </motion.div>
         </div>
       </section>
-    
-  );
+      </motion.div>
+    );
 }
