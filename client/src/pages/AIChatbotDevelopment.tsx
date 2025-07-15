@@ -796,9 +796,9 @@ export default function AIChatbotDevelopment() {
         </div>
       </div>
 
-      {/* Advantages Section - Circular Design */}
-      <section className="py-20 relative overflow-visible">
-        <div className="w-full max-w-none px-4 overflow-visible">
+      {/* Advantages Section - Vertical Steps Layout */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Advantages of Integrating AI-Powered Chatbots Into Your Business
@@ -806,181 +806,120 @@ export default function AIChatbotDevelopment() {
             </h2>
           </div>
 
-          {/* Circular Layout Container */}
-          <div className="relative flex items-center justify-start min-h-[800px] lg:min-h-[900px] max-w-none mx-auto overflow-visible pl-8 lg:pl-20 pr-8 lg:pr-80">
-            {/* Central Image with Semi-circle Timeline - Moved to left */}
-            <div className="relative z-20" style={{ marginLeft: '10rem' }}>
-              <div className="w-80 h-80 rounded-full flex items-center justify-center shadow-2xl overflow-hidden relative">
-                {/* Semi-circle Timeline - matching reference image exactly */}
-                <div className="absolute inset-0 pointer-events-none">
-                  <svg
-                    className="absolute -inset-8 w-96 h-96"
-                    viewBox="0 0 384 384"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#1e40af" />
-                        <stop offset="50%" stopColor="#3b82f6" />
-                        <stop offset="100%" stopColor="#06b6d4" />
-                      </linearGradient>
-                    </defs>
-
-                    {/* Main semi-circle arc - positioned on the right side */}
-                    <path
-                      d="M 290 80 A 110 110 0 0 1 290 304"
-                      stroke="url(#timelineGradient)"
-                      strokeWidth="4"
-                      fill="none"
-                      opacity="0.9"
-                      strokeDasharray="8,6"
-                    />
-
-                    {/* Extending dashed lines at the ends */}
-                    <path
-                      d="M 270 65 Q 285 75 290 80"
-                      stroke="url(#timelineGradient)"
-                      strokeWidth="4"
-                      fill="none"
-                      opacity="0.7"
-                      strokeDasharray="8,6"
-                    />
-                    <path
-                      d="M 290 304 Q 285 309 270 319"
-                      stroke="url(#timelineGradient)"
-                      strokeWidth="4"
-                      fill="none"
-                      opacity="0.7"
-                      strokeDasharray="8,6"
-                    />
-
-                    {/* Connection dots and lines to advantage items */}
-                    <g>
-                      {/* Dot 1 - Top position */}
-                      <circle cx="290" cy="110" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
-                      <line x1="290" y1="110" x2="340" y2="110" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-
-                      {/* Dot 2 - Upper middle position */}
-                      <circle cx="290" cy="160" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
-                      <line x1="290" y1="160" x2="340" y2="160" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-
-                      {/* Dot 3 - Lower middle position */}
-                      <circle cx="290" cy="220" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
-                      <line x1="290" y1="220" x2="340" y2="220" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-
-                      {/* Dot 4 - Bottom position */}
-                      <circle cx="290" cy="274" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
-                      <line x1="290" y1="274" x2="340" y2="274" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-                    </g>
-                  </svg>
+          {/* Main Layout: 3 Equal Columns */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* First Column - Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="relative rounded-2xl overflow-hidden h-full">
+                  <img
+                    src="/assets/Bot1.gif"
+                    alt="AI Chatbot Advantages"
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                 </div>
+              </motion.div>
 
-                {/* Blue gradient ring around the image */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 p-4">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden">
-                    <img
-                      src="/assets/Bot1.gif"
-                      alt="AI Chatbot Advantages"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        // Fallback to gradient circle if gif not found
-                        e.currentTarget.style.display = "none";
-                        e.currentTarget.nextElementSibling.style.display = "flex";
-                      }}
-                    />
-                    {/* Fallback gradient circle with "KEY FEATURES" text */}
+              {/* Second Column - Advantages 01 & 02 */}
+              <div className="space-y-6">
+                {advantages.slice(0, 2).map((advantage, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className="relative"
+                  >
+                    {/* Step Arrow Shape */}
                     <div
-                      className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center shadow-2xl"
-                      style={{ display: "none" }}
+                      className="relative bg-gradient-to-br from-blue-500/30 to-cyan-500/40 text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4"
+                      style={{
+                        clipPath:
+                          "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)",
+                        height: "80px",
+                      }}
                     >
-                      <div className="text-center px-8">
-                        <div className="text-white mb-4">
-                          <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                          </svg>
+                      <div className="flex items-center h-full px-4">
+                        {/* Step Number */}
+                        <div className="text-2xl font-bold mr-3 opacity-90">
+                          {advantage.number}
                         </div>
-                        <div className="text-white font-bold text-2xl leading-tight">
-                          KEY FEATURES
+
+                        {/* Icon in white shield */}
+                        <div className="bg-white rounded-lg p-2 flex items-center justify-center text-gray-800">
+                          <div className="scale-75">
+                            <advantage.icon className="h-8 w-8" />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Curved Connection Lines */}
-            <svg
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              style={{ zIndex: 1 }}
-            >
-              <defs>
-                <linearGradient
-                  id="lineGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="0%"
-                >
-                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.8" />
-                </linearGradient>
-                <linearGradient
-                  id="circleGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#3b82f6" />
-                  <stop offset="100%" stopColor="#06b6d4" />
-                </linearGradient>
-              </defs>
-
-
-
-
-
-
-            </svg>
-
-            {/* Advantage Items positioned to align with timeline dots */}
-            {advantages.map((advantage, index) => {
-              const positions = [
-                { top: "8%", right: "15%", transform: "translate(0, 0)", marginBottom: "1rem" }, // Element 1 - Top right with reduced spacing
-                { top: "30%", right: "5%", transform: "translate(0, 0)", marginBottom: "1rem" }, // Element 2 - Right middle upper with reduced spacing
-                { top: "52%", right: "5%", transform: "translate(0, 0)", marginBottom: "1rem" }, // Element 3 - Right middle lower with reduced spacing
-                { top: "74%", right: "15%", transform: "translate(0, 0)", marginBottom: "1rem" }, // Element 4 - Bottom right with reduced spacing
-              ];
-
-              return (
-                <motion.div
-                  key={index}
-                  className="absolute"
-                  style={positions[index]}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-tl-2xl rounded-tr-3xl rounded-bl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300" style={{ padding: '1.0rem', width: '38rem', marginBottom: '2rem' }}>
-                    <div className="flex items-center mb-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
-                        <advantage.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-white font-semibold text-lg">
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-2">
                         {advantage.title}
                       </h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {advantage.description}
+                      </p>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed hidden lg:block">
-                      {advantage.description}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Third Column - Advantages 03 & 04 */}
+              <div className="space-y-6">
+                {advantages.slice(2, 4).map((advantage, index) => (
+                  <motion.div
+                    key={index + 2}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: (index + 2) * 0.1 }}
+                    className="relative"
+                  >
+                    {/* Step Arrow Shape */}
+                    <div
+                      className="relative bg-gradient-to-br from-blue-500/30 to-cyan-500/40 text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4"
+                      style={{
+                        clipPath:
+                          "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)",
+                        height: "80px",
+                      }}
+                    >
+                      <div className="flex items-center h-full px-4">
+                        {/* Step Number */}
+                        <div className="text-2xl font-bold mr-3 opacity-90">
+                          {advantage.number}
+                        </div>
+
+                        {/* Icon in white shield */}
+                        <div className="bg-white rounded-lg p-2 flex items-center justify-center text-gray-800">
+                          <div className="scale-75">
+                            <advantage.icon className="h-8 w-8" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-2">
+                        {advantage.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {advantage.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
