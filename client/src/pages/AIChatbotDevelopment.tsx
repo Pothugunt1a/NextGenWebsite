@@ -818,7 +818,7 @@ export default function AIChatbotDevelopment() {
               >
                 <div className="relative rounded-2xl overflow-hidden h-full">
                   <img
-                    src="/assets/Bot1.gif"
+                    src="/assets/AI-chatbot.gif"
                     alt="AI Chatbot Advantages"
                     className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   />
