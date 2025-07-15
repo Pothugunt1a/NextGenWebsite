@@ -31,8 +31,6 @@ import {
 } from "../components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-
-
 const whyChooseUsItems = [
   {
     icon: Eye,
@@ -75,8 +73,6 @@ const whyChooseUsItems = [
     badge: "Enterprise-Grade Security",
   },
 ];
-
-
 
 const capabilities = [
   {
@@ -184,33 +180,63 @@ const industries = [
 const industryApplications = [
   {
     name: "Manufacturing & Automation",
-    image: "/assets/Manufacturing.png",
-    description: "Transform manufacturing with intelligent systems for visual quality inspection, predictive equipment maintenance, and robotics automation. Our solutions include real-time defect detection, production optimization, and autonomous manufacturing processes that increase efficiency while maintaining quality standards.",
-    useCases: ["Visual Quality Inspection", "Predictive Maintenance", "Robotics Automation", "Production Optimization"]
+    image: "/assets/Manufacturing&Automation.png",
+    description:
+      "Transform manufacturing with intelligent systems for visual quality inspection, predictive equipment maintenance, and robotics automation. Our solutions include real-time defect detection, production optimization, and autonomous manufacturing processes that increase efficiency while maintaining quality standards.",
+    useCases: [
+      "Visual Quality Inspection",
+      "Predictive Maintenance",
+      "Robotics Automation",
+      "Production Optimization",
+    ],
   },
   {
     name: "Healthcare & Life Sciences",
-    image: "/assets/Healthcare.png", 
-    description: "Revolutionize healthcare delivery with diagnostic image analysis, clinical workflow automation, and intelligent patient monitoring. We develop systems for medical image interpretation, treatment recommendation engines, and automated clinical documentation that improve patient outcomes while reducing administrative burden.",
-    useCases: ["Diagnostic Image Analysis", "Clinical Workflow Automation", "Patient Monitoring", "Treatment Recommendations"]
+    image: "/assets/Healthcare&LifeScience.png",
+    description:
+      "Revolutionize healthcare delivery with diagnostic image analysis, clinical workflow automation, and intelligent patient monitoring. We develop systems for medical image interpretation, treatment recommendation engines, and automated clinical documentation that improve patient outcomes while reducing administrative burden.",
+    useCases: [
+      "Diagnostic Image Analysis",
+      "Clinical Workflow Automation",
+      "Patient Monitoring",
+      "Treatment Recommendations",
+    ],
   },
   {
     name: "FinTech",
-    image: "/assets/Finance.png",
-    description: "Enhance financial services with intelligent fraud detection, risk analysis systems, and customer support automation. Our solutions include real-time transaction monitoring, automated compliance checking, and intelligent investment advisory systems that protect assets while improving customer experience.",
-    useCases: ["Fraud Detection", "Risk Analysis", "Customer Support", "Compliance Automation"]
+    image: "/assets/Fintech.png",
+    description:
+      "Enhance financial services with intelligent fraud detection, risk analysis systems, and customer support automation. Our solutions include real-time transaction monitoring, automated compliance checking, and intelligent investment advisory systems that protect assets while improving customer experience.",
+    useCases: [
+      "Fraud Detection",
+      "Risk Analysis",
+      "Customer Support",
+      "Compliance Automation",
+    ],
   },
   {
-    name: "E‑commerce & Retail", 
+    name: "E‑commerce & Retail",
     image: "/assets/Ecommerce.png",
-    description: "Optimize retail operations with personalized recommendation engines, demand forecasting systems, and intelligent customer service chatbots. We create solutions for dynamic pricing, inventory optimization, and customer behavior prediction that drive sales while improving operational efficiency.",
-    useCases: ["Personalized Recommendations", "Demand Forecasting", "Dynamic Pricing", "Inventory Optimization"]
+    description:
+      "Optimize retail operations with personalized recommendation engines, demand forecasting systems, and intelligent customer service chatbots. We create solutions for dynamic pricing, inventory optimization, and customer behavior prediction that drive sales while improving operational efficiency.",
+    useCases: [
+      "Personalized Recommendations",
+      "Demand Forecasting",
+      "Dynamic Pricing",
+      "Inventory Optimization",
+    ],
   },
   {
     name: "Logistics & Supply Chain",
-    image: "/assets/Supplychain.png", 
-    description: "Streamline logistics with intelligent route optimization, inventory management systems, and anomaly detection. Our solutions include predictive supply chain analytics, automated warehouse management, and real-time shipment tracking that reduce costs while improving delivery performance.",
-    useCases: ["Route Optimization", "Inventory Management", "Anomaly Detection", "Predictive Analytics"]
+    image: "/assets/Logistics&SupplyChain.png",
+    description:
+      "Streamline logistics with intelligent route optimization, inventory management systems, and anomaly detection. Our solutions include predictive supply chain analytics, automated warehouse management, and real-time shipment tracking that reduce costs while improving delivery performance.",
+    useCases: [
+      "Route Optimization",
+      "Inventory Management",
+      "Anomaly Detection",
+      "Predictive Analytics",
+    ],
   },
 ];
 
@@ -255,7 +281,9 @@ const industryData = [
 
 export default function IntelligentSystemsDevelopment() {
   const [selectedIndustry, setSelectedIndustry] = useState(industryData[0]);
-  const [selectedIndustryApp, setSelectedIndustryApp] = useState(industryApplications[0]);
+  const [selectedIndustryApp, setSelectedIndustryApp] = useState(
+    industryApplications[0],
+  );
 
   return (
     <motion.div
@@ -328,8 +356,6 @@ export default function IntelligentSystemsDevelopment() {
           </div>
         </div>
       </div>
-
-      
 
       {/* Our Technical Capabilities - Same as AI Consulting main capabilities */}
       <div
@@ -631,11 +657,12 @@ export default function IntelligentSystemsDevelopment() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
-                How we work
+                Our Development Framework
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our structured development framework ensures intelligent systems that deliver measurable business value through every phase
+                Our structured development framework ensures intelligent systems
+                that deliver measurable business value through every phase
               </p>
             </div>
 
@@ -723,7 +750,8 @@ export default function IntelligentSystemsDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Understand your needs, envision KPIs, and align intelligent systems with your business goals.
+                        Understand your needs, envision KPIs, and align
+                        intelligent systems with your business goals.
                       </p>
                     </div>
                   </motion.div>
@@ -759,7 +787,8 @@ export default function IntelligentSystemsDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Audit your data, evaluate availability and quality, and determine feasibility.
+                        Audit your data, evaluate availability and quality, and
+                        determine feasibility.
                       </p>
                     </div>
                   </motion.div>
@@ -795,7 +824,8 @@ export default function IntelligentSystemsDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Build proof‑of‑concepts of vision, NLP, or predictive systems to validate approach.
+                        Build proof‑of‑concepts of vision, NLP, or predictive
+                        systems to validate approach.
                       </p>
                     </div>
                   </motion.div>
@@ -831,7 +861,8 @@ export default function IntelligentSystemsDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Train models and deploy via APIs or microservices, embedding them into your infrastructure.
+                        Train models and deploy via APIs or microservices,
+                        embedding them into your infrastructure.
                       </p>
                     </div>
                   </motion.div>
@@ -867,7 +898,8 @@ export default function IntelligentSystemsDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Launch on your preferred environment (cloud or on-premise) with real‑time performance tracking.
+                        Launch on your preferred environment (cloud or
+                        on-premise) with real‑time performance tracking.
                       </p>
                     </div>
                   </motion.div>
@@ -903,7 +935,8 @@ export default function IntelligentSystemsDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Ongoing model refinement and feature scaling to keep systems ahead of evolving business needs.
+                        Ongoing model refinement and feature scaling to keep
+                        systems ahead of evolving business needs.
                       </p>
                     </div>
                   </motion.div>
@@ -1234,8 +1267,6 @@ export default function IntelligentSystemsDevelopment() {
           </motion.div>
         </div>
       </section>
-
-      
     </motion.div>
   );
 }
