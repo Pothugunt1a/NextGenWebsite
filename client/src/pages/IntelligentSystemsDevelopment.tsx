@@ -212,6 +212,40 @@ const industries = [
   },
 ];
 
+// Industry applications for the multiple industries component
+const industryApplications = [
+  {
+    name: "Manufacturing & Automation",
+    image: "/assets/Manufacturing.png",
+    description: "Transform manufacturing with intelligent systems for visual quality inspection, predictive equipment maintenance, and robotics automation. Our solutions include real-time defect detection, production optimization, and autonomous manufacturing processes that increase efficiency while maintaining quality standards.",
+    useCases: ["Visual Quality Inspection", "Predictive Maintenance", "Robotics Automation", "Production Optimization"]
+  },
+  {
+    name: "Healthcare & Life Sciences",
+    image: "/assets/Healthcare.png", 
+    description: "Revolutionize healthcare delivery with diagnostic image analysis, clinical workflow automation, and intelligent patient monitoring. We develop systems for medical image interpretation, treatment recommendation engines, and automated clinical documentation that improve patient outcomes while reducing administrative burden.",
+    useCases: ["Diagnostic Image Analysis", "Clinical Workflow Automation", "Patient Monitoring", "Treatment Recommendations"]
+  },
+  {
+    name: "FinTech",
+    image: "/assets/Finance.png",
+    description: "Enhance financial services with intelligent fraud detection, risk analysis systems, and customer support automation. Our solutions include real-time transaction monitoring, automated compliance checking, and intelligent investment advisory systems that protect assets while improving customer experience.",
+    useCases: ["Fraud Detection", "Risk Analysis", "Customer Support", "Compliance Automation"]
+  },
+  {
+    name: "E‑commerce & Retail", 
+    image: "/assets/Ecommerce.png",
+    description: "Optimize retail operations with personalized recommendation engines, demand forecasting systems, and intelligent customer service chatbots. We create solutions for dynamic pricing, inventory optimization, and customer behavior prediction that drive sales while improving operational efficiency.",
+    useCases: ["Personalized Recommendations", "Demand Forecasting", "Dynamic Pricing", "Inventory Optimization"]
+  },
+  {
+    name: "Logistics & Supply Chain",
+    image: "/assets/Supplychain.png", 
+    description: "Streamline logistics with intelligent route optimization, inventory management systems, and anomaly detection. Our solutions include predictive supply chain analytics, automated warehouse management, and real-time shipment tracking that reduce costs while improving delivery performance.",
+    useCases: ["Route Optimization", "Inventory Management", "Anomaly Detection", "Predictive Analytics"]
+  },
+];
+
 // Industry data for the interactive section
 const industryData = [
   {
@@ -254,6 +288,7 @@ const industryData = [
 export default function IntelligentSystemsDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState(industryData[0]);
+  const [selectedIndustryApp, setSelectedIndustryApp] = useState(industryApplications[0]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -747,7 +782,7 @@ export default function IntelligentSystemsDevelopment() {
         </div>
       </div>
 
-      {/* Our Development Framework - Same as How we work component */}
+      {/* Our Development Framework - Same as How we work component from AI Consulting */}
       <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -758,12 +793,11 @@ export default function IntelligentSystemsDevelopment() {
             className="text-center mb-20"
           >
             <h2 className="text-5xl font-bold mb-6 text-white">
-              Our Development Framework
+              How we work
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Systematic approach to building intelligent systems that deliver
-              measurable business value
+              Our structured development framework ensures intelligent systems that deliver measurable business value through every phase
             </p>
           </motion.div>
 
@@ -803,99 +837,98 @@ export default function IntelligentSystemsDevelopment() {
         </div>
       </section>
 
-      {/* Industry Applications - Same as multiple industries component */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"></div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-5xl font-bold mb-6 text-white">
-              Industry Applications
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Intelligent systems transforming operations across diverse
-              industries
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Side - AI Image */}
-            <div className="lg:col-span-5">
-              <div className="relative group">
-                <div className="relative overflow-hidden rounded-2xl">
-                  <img
-                    src={selectedIndustry.image}
-                    alt={selectedIndustry.name}
-                    className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      {selectedIndustry.name}
-                    </h3>
-                    <p className="text-gray-200 text-sm">
-                      Advanced intelligent systems driving industry
-                      transformation
-                    </p>
-                  </div>
-                </div>
-              </div>
+      {/* Industry Applications Section - Same as AI Consulting */}
+      <section className="py-16 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                How we implement intelligent systems across multiple industries
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             </div>
 
-            {/* Right Side - Industry Buttons and Content */}
-            <div className="lg:col-span-7">
-              {/* Industry Selection Buttons */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                {industryData.map((industry) => (
-                  <motion.button
-                    key={industry.id}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                    onClick={() => setSelectedIndustry(industry)}
-                    className={`p-4 rounded-xl text-left transition-all duration-300 border ${
-                      selectedIndustry.id === industry.id
-                        ? "bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-blue-400/40 text-white"
-                        : "bg-gray-800/40 border-gray-700 text-gray-300 hover:border-blue-500/30 hover:bg-gray-800/60"
-                    }`}
-                  >
-                    <h4 className="font-semibold text-sm mb-2">
-                      {industry.name}
-                    </h4>
-                    <p className="text-xs opacity-75">
-                      {
-                        industries.find((ind) => ind.name === industry.name)
-                          ?.description
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Left Navigation */}
+              <div className="lg:col-span-4">
+                <div className="grid grid-cols-1 gap-4">
+                  {industryApplications.map((industry, index) => (
+                    <Button
+                      key={index}
+                      variant={
+                        selectedIndustryApp?.name === industry.name
+                          ? "default"
+                          : "outline"
                       }
-                    </p>
-                  </motion.button>
-                ))}
+                      className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
+                        selectedIndustryApp?.name === industry.name
+                          ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
+                          : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
+                      }`}
+                      onClick={() => {
+                        setSelectedIndustryApp(industry);
+                      }}
+                    >
+                      <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
+                        {industry.name}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
               </div>
 
-              {/* Selected Industry Content */}
-              <motion.div
-                key={selectedIndustry.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8"
-              >
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {selectedIndustry.name}
-                </h3>
-                <div className="w-16 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-6"></div>
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  {selectedIndustry.content}
-                </p>
-              </motion.div>
+              {/* Right Content Display */}
+              <div className="lg:col-span-8">
+                <motion.div
+                  key={selectedIndustryApp?.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl overflow-hidden"
+                >
+                  {/* Industry Image */}
+                  <div className="relative h-64 overflow-hidden group cursor-pointer">
+                    <img
+                      src={selectedIndustryApp?.image}
+                      alt={selectedIndustryApp?.name}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        console.error(
+                          `Failed to load image: ${selectedIndustryApp?.image}`,
+                        );
+                      }}
+                      onLoad={() => {
+                        console.log(
+                          `Successfully loaded image: ${selectedIndustryApp?.image}`,
+                        );
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent group-hover:from-gray-900/60 transition-all duration-300"></div>
+                    <div className="absolute bottom-4 left-6">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                        {selectedIndustryApp?.name}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Industry Content */}
+                  <div className="p-6">
+                    <p className="text-gray-300 leading-relaxed text-lg mb-4">
+                      {selectedIndustryApp?.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedIndustryApp?.useCases.map((useCase, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs text-blue-200"
+                        >
+                          {useCase}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
