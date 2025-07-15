@@ -806,27 +806,10 @@ export default function AIChatbotDevelopment() {
             </h2>
           </div>
 
-          {/* Main Layout: 3 Equal Columns */}
+          {/* Main Layout: 2 Equal Columns */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-8">
-              {/* First Column - Image */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="relative rounded-2xl overflow-hidden h-full">
-                  <img
-                    src="/assets/AI-chatbot.gif"
-                    alt="AI Chatbot Advantages"
-                    className="w-[60%] h-full object-cover rounded-2xl shadow-2xl mx-auto"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-                </div>
-              </motion.div>
-
-              {/* Second Column - Advantages 01 & 02 */}
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* First Column - Advantages 01 & 02 */}
               <div className="space-y-6">
                 {advantages.slice(0, 2).map((advantage, index) => (
                   <motion.div
@@ -873,7 +856,7 @@ export default function AIChatbotDevelopment() {
                 ))}
               </div>
 
-              {/* Third Column - Advantages 03 & 04 */}
+              {/* Second Column - Advantages 03 & 04 */}
               <div className="space-y-6">
                 {advantages.slice(2, 4).map((advantage, index) => (
                   <motion.div
