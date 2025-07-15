@@ -120,6 +120,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/intelligent-systems-development" className="text-slate-400 hover:text-primary transition-colors flex items-center group">
+                  Intelligent Systems Development
+                  <ExternalLink className="h-4 w-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
                 <Link to="/ai-data-strategy" className="text-slate-400 hover:text-primary transition-colors flex items-center group">
                   AI Data Strategy
                   <ExternalLink className="h-4 w-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />

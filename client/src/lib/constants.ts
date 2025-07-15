@@ -160,7 +160,7 @@ export const navLinks = [
         items: [
           { name: "AI Components Development", href: "/ai-components-development" },
           { name: "AI Application Development", href: "/ai-application-development" },
-          { name: "Intelligent Systems Development", href: "#intelligent-systems" },
+          { name: "Intelligent Systems Development", href: "/intelligent-systems-development" },
         ],
       },
       {

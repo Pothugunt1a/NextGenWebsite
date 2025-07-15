@@ -21,6 +21,7 @@ import AIUsecaseDiscovery from "./pages/AIUsecaseDiscovery";
 import AIChatbotDevelopment from "./pages/AIChatbotDevelopment";
 import GenerativeAIDevelopment from "./pages/GenerativeAIDevelopment";
 import AIApplicationDevelopment from "./pages/AIApplicationDevelopment";
+import IntelligentSystemsDevelopment from "./pages/IntelligentSystemsDevelopment";
 
 function Router() {
   return (
@@ -42,6 +43,7 @@ function Router() {
         <Route path="/ai-chatbot-development" component={AIChatbotDevelopment} />
         <Route path="/generative-ai-development" component={GenerativeAIDevelopment} />
         <Route path="/ai-application-development" component={AIApplicationDevelopment} />
+        <Route path="/intelligent-systems-development" component={IntelligentSystemsDevelopment} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
