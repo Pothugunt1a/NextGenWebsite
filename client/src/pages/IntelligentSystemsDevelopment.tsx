@@ -80,7 +80,7 @@ const capabilities = [
     title: "Computer Vision & Visual Analytics",
     description:
       "Object detection, image segmentation, video analytics, facial recognition, and real-time visual monitoring systems.",
-    backgroundImage: "/assets/computer-vision.png",
+    backgroundImage: "/assets/AI-ComputerVision.png",
   },
   {
     icon: <MessageSquare className="h-8 w-8 text-white" />,
@@ -101,14 +101,14 @@ const capabilities = [
     title: "Robotic Process Automation (RPA)",
     description:
       "End‑to‑end automation of routine tasks—from invoice processing to data entry and workflow orchestration.",
-    backgroundImage: "/assets/AI-automation.png",
+    backgroundImage: "/assets/AI-Robotic.png",
   },
   {
     icon: <Settings className="h-8 w-8 text-white" />,
     title: "Intelligent Automation",
     description:
       "Combining RPA with machine learning to build self‑learning processes that adapt to new data and evolving business needs.",
-    backgroundImage: "/assets/AI-intelligent-automation.png",
+    backgroundImage: "/assets/AI-Intelligent.png",
   },
 ];
 
