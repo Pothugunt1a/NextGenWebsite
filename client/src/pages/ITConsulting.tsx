@@ -531,6 +531,6 @@ export default function ITConsulting() {
           </div>
         </section>
       </motion.div>
-    </motion.div>
+    </Layout>
   );
 }
