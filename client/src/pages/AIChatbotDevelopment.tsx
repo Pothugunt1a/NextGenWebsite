@@ -398,7 +398,7 @@ export default function AIChatbotDevelopment() {
   ];
 
   return (
-    
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -1184,7 +1184,7 @@ export default function AIChatbotDevelopment() {
         </section>
 
         {/* Development Flow Section */}
-        
+
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
@@ -1192,7 +1192,7 @@ export default function AIChatbotDevelopment() {
             <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
             <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
           </div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
@@ -1327,7 +1327,6 @@ export default function AIChatbotDevelopment() {
                             Selecting technology
                           </h3>
                         </div>
-```python
 
                         <p className="text-gray-300 text-sm leading-relaxed">
                           Decide between rule-based and AI chatbot models,
@@ -1656,6 +1655,6 @@ export default function AIChatbotDevelopment() {
           </div>
         </section>
       </motion.div>
-    
+    </motion.div>
   );
 }

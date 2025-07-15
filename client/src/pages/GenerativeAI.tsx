@@ -386,7 +386,7 @@ export default function GenerativeAI() {
   ];
 
   return (
-    
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -394,7 +394,7 @@ export default function GenerativeAI() {
         transition={{ duration: 0.5 }}
         className="min-h-screen bg-light text-white"
       >
-        
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
@@ -505,9 +505,9 @@ export default function GenerativeAI() {
       </section>
 
       {/* Our Generative AI Development Services - Same as AI Chatbot Services Layout */}
-      
+
         {/* Background Pattern */}
-        
+
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -780,7 +780,7 @@ export default function GenerativeAI() {
             </div>
           </div>
         </div>
-      
+
 
       {/* Benefits Section - Same as Advantages in AIChatbotDevelopment */}
       <section className="py-20 relative">
@@ -1506,6 +1506,7 @@ export default function GenerativeAI() {
           </div>
         </div>
       </section>
-    
+      </motion.div>
+    </motion.div>
   );
 }
