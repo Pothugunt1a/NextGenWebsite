@@ -149,14 +149,7 @@ const stats = [
 
 export default function AIComponentsDevelopment() {
   return (
-    
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="min-h-screen bg-light text-white"
-      >
+    <div className="min-h-screen bg-light text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
@@ -764,6 +757,6 @@ export default function AIComponentsDevelopment() {
           </motion.div>
         </div>
       </section>
-      </motion.div>
-    );
+    </div>
+  );
 }

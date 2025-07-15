@@ -180,13 +180,7 @@ export default function AIApplicationDevelopment() {
   ];
 
   return (
-    
-      
-        
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="min-h-screen bg-light text-white"
-      >
+    <div className="min-h-screen bg-light text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
@@ -302,15 +296,14 @@ export default function AIApplicationDevelopment() {
       </section>
 
       {/* Our AI Development Services - Same as AI Chatbot Services Layout */}
-      
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
-            <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
-            <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
-            <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
-          </div>
-        
+      <div className="py-20 bg-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -583,7 +576,7 @@ export default function AIApplicationDevelopment() {
             </div>
           </div>
         </div>
-      
+      </div>
 
       {/* Industries Section - Interactive Layout matching AI Consulting */}
       <section className="py-16 text-white">
@@ -653,8 +646,7 @@ export default function AIApplicationDevelopment() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent group-hover:from-gray-900/60 transition-all duration-300"></div>
                     <div className="absolute bottom-4 left-6">
-                      <h3```python
- className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
                         {selectedIndustry.name}
                       </h3>
                     </div>
@@ -887,6 +879,6 @@ export default function AIApplicationDevelopment() {
           </motion.div>
         </div>
       </section>
-    
+    </div>
   );
 }

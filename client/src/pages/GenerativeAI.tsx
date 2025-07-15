@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -386,15 +387,12 @@ export default function GenerativeAI() {
   ];
 
   return (
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="min-h-screen bg-light text-white"
-      >
-
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-light text-white"
+    >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
@@ -505,9 +503,14 @@ export default function GenerativeAI() {
       </section>
 
       {/* Our Generative AI Development Services - Same as AI Chatbot Services Layout */}
-
+      <div className="py-20 bg-light relative overflow-hidden">
         {/* Background Pattern */}
-
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -780,7 +783,7 @@ export default function GenerativeAI() {
             </div>
           </div>
         </div>
-
+      </div>
 
       {/* Benefits Section - Same as Advantages in AIChatbotDevelopment */}
       <section className="py-20 relative">
@@ -1506,7 +1509,6 @@ export default function GenerativeAI() {
           </div>
         </div>
       </section>
-      </motion.div>
     </motion.div>
   );
 }

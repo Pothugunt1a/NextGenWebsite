@@ -144,7 +144,6 @@ export default function ITConsulting() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="min-h-screen bg-light text-white"
       >
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
