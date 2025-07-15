@@ -822,142 +822,155 @@ export default function GenerativeAIDevelopment() {
           
           {/* Quarterly Timeline Grid */}
           <div className="max-w-6xl mx-auto relative">
-            {/* Desktop Grid Layout */}
-            <div className="hidden lg:block relative">
-              {/* Connecting Lines */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* Horizontal dotted lines */}
-                <div className="absolute top-1/4 left-1/4 right-1/4 h-px border-t-2 border-dotted border-gray-400"></div>
-                <div className="absolute bottom-1/4 left-1/4 right-1/4 h-px border-t-2 border-dotted border-gray-400"></div>
-                {/* Vertical dotted lines */}
-                <div className="absolute left-1/2 top-1/4 bottom-1/4 w-px border-l-2 border-dotted border-gray-400"></div>
-                <div className="absolute left-1/4 top-1/4 bottom-1/4 w-px border-l-2 border-dotted border-gray-400"></div>
-                <div className="absolute right-1/4 top-1/4 bottom-1/4 w-px border-l-2 border-dotted border-gray-400"></div>
-              </div>
+            {/* Desktop Timeline Layout */}
+            <div className="hidden lg:block relative py-20">
+              {/* Horizontal timeline with connecting lines */}
+              <div className="relative">
+                {/* Main horizontal line */}
+                <div className="absolute top-1/2 left-0 right-0 h-px border-t-2 border-dotted border-gray-400 z-0"></div>
+                
+                {/* Vertical connecting lines for each quarter */}
+                <div className="absolute top-0 bottom-0 w-px border-l-2 border-dotted border-gray-400 z-0" style={{left: '12.5%'}}></div>
+                <div className="absolute top-0 bottom-0 w-px border-l-2 border-dotted border-gray-400 z-0" style={{left: '37.5%'}}></div>
+                <div className="absolute top-0 bottom-0 w-px border-l-2 border-dotted border-gray-400 z-0" style={{left: '62.5%'}}></div>
+                <div className="absolute top-0 bottom-0 w-px border-l-2 border-dotted border-gray-400 z-0" style={{left: '87.5%'}}></div>
 
-              {/* Quarter Sections */}
-              <div className="grid grid-cols-2 gap-16 py-16">
-                {/* Q1 - Top Left */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="relative text-right"
-                >
-                  <div className="mb-8">
-                    <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br ${quarterlyBenefits[0].bgColor} text-white mb-6`}>
-                      {quarterlyBenefits[0].icon}
+                {/* Quarter sections in horizontal row */}
+                <div className="grid grid-cols-4 gap-8 relative z-10">
+                  {/* Q1 - Top alignment */}
+                  <motion.div
+                    initial={{ opacity: 0, y: -50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* Icon and content above timeline */}
+                    <div className="mb-16 text-center">
+                      <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${quarterlyBenefits[0].bgColor} text-white mb-6 mx-auto`}>
+                        {quarterlyBenefits[0].icon}
+                      </div>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4 min-h-[200px]">
+                        <h4 className="text-lg font-bold text-purple-300 mb-2">CONCEPT:</h4>
+                        <h5 className="font-semibold text-white mb-2 text-sm">Product ideation continued</h5>
+                        <p className="text-xs text-gray-300 mb-2">
+                          <span className="font-medium text-purple-200">Product concept:</span><br />
+                          Designs? Features?<br />
+                          Target Market?
+                        </p>
+                        <p className="text-xs text-gray-300">
+                          Marketing campaign concepts, brand development
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white px-6 py-4 rounded-lg mb-4">
-                    <h3 className="text-2xl font-bold">Q1</h3>
-                  </div>
-                  <div className="text-left bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                    <h4 className="text-lg font-bold text-purple-300 mb-2">CONCEPT:</h4>
-                    <h5 className="font-semibold text-white mb-2">Product ideation continued</h5>
-                    <p className="text-sm text-gray-300 mb-2">
-                      <span className="font-medium text-purple-200">Product concept:</span><br />
-                      Designs? Features?<br />
-                      Target Market?
-                    </p>
-                    <p className="text-sm text-gray-300">
-                      <span className="font-medium text-purple-200">Marketing campaign concepts, brand development</span>
-                    </p>
-                  </div>
-                </motion.div>
+                    
+                    {/* Quarter badge on timeline */}
+                    <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white px-6 py-3 rounded-lg">
+                      <h3 className="text-xl font-bold">Q1</h3>
+                    </div>
+                  </motion.div>
 
-                {/* Q3 - Top Right */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="relative text-left"
-                >
-                  <div className="mb-8">
-                    <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br ${quarterlyBenefits[2].bgColor} text-white mb-6`}>
-                      {quarterlyBenefits[2].icon}
+                  {/* Q2 - Bottom alignment */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* Quarter badge on timeline */}
+                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg mb-16">
+                      <h3 className="text-xl font-bold">Q2</h3>
                     </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-teal-500 to-cyan-500 text-white px-6 py-4 rounded-lg mb-4">
-                    <h3 className="text-2xl font-bold">Q3</h3>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                    <h4 className="text-lg font-bold text-cyan-300 mb-2">TESTING:</h4>
-                    <h5 className="font-semibold text-white mb-2">Concept production and testing:</h5>
-                    <p className="text-sm text-gray-300 mb-2">
-                      Test comfort, durability,<br />
-                      functionality, fashion
-                    </p>
-                    <p className="text-sm text-gray-300">
-                      <span className="font-medium text-cyan-200">Market analysis:</span><br />
-                      Branding, naming,<br />
-                      campaign planning
-                    </p>
-                  </div>
-                </motion.div>
+                    
+                    {/* Icon and content below timeline */}
+                    <div className="text-center">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4 min-h-[200px]">
+                        <h4 className="text-lg font-bold text-blue-300 mb-2">IDEATION:</h4>
+                        <h5 className="font-semibold text-white mb-2 text-sm">Product ideation:</h5>
+                        <p className="text-xs text-gray-300 mb-2">
+                          Materials, features,<br />
+                          purposes, alternatives
+                        </p>
+                        <p className="text-xs text-gray-300 mb-2">
+                          <span className="font-medium text-blue-200">Competitor research</span>
+                        </p>
+                        <p className="text-xs text-gray-300">
+                          <span className="font-medium text-blue-200">Market sounding</span>
+                        </p>
+                      </div>
+                      <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${quarterlyBenefits[1].bgColor} text-white mx-auto`}>
+                        {quarterlyBenefits[1].icon}
+                      </div>
+                    </div>
+                  </motion.div>
 
-                {/* Q2 - Bottom Left */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="relative text-right"
-                >
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-4">
-                    <h4 className="text-lg font-bold text-blue-300 mb-2">IDEATION:</h4>
-                    <h5 className="font-semibold text-white mb-2">Product ideation:</h5>
-                    <p className="text-sm text-gray-300 mb-2">
-                      Materials, features,<br />
-                      purposes, alternatives
-                    </p>
-                    <p className="text-sm text-gray-300 mb-2">
-                      <span className="font-medium text-blue-200">Competitor research</span>
-                    </p>
-                    <p className="text-sm text-gray-300">
-                      <span className="font-medium text-blue-200">Market sounding</span>
-                    </p>
-                  </div>
-                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white px-6 py-4 rounded-lg mb-4">
-                    <h3 className="text-2xl font-bold">Q2</h3>
-                  </div>
-                  <div className="mb-8">
-                    <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br ${quarterlyBenefits[1].bgColor} text-white`}>
-                      {quarterlyBenefits[1].icon}
+                  {/* Q3 - Top alignment */}
+                  <motion.div
+                    initial={{ opacity: 0, y: -50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* Icon and content above timeline */}
+                    <div className="mb-16 text-center">
+                      <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${quarterlyBenefits[2].bgColor} text-white mb-6 mx-auto`}>
+                        {quarterlyBenefits[2].icon}
+                      </div>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4 min-h-[200px]">
+                        <h4 className="text-lg font-bold text-cyan-300 mb-2">TESTING:</h4>
+                        <h5 className="font-semibold text-white mb-2 text-sm">Concept production and testing:</h5>
+                        <p className="text-xs text-gray-300 mb-2">
+                          Test comfort, durability,<br />
+                          functionality, fashion
+                        </p>
+                        <p className="text-xs text-gray-300">
+                          <span className="font-medium text-cyan-200">Market analysis:</span><br />
+                          Branding, naming,<br />
+                          campaign planning
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
+                    
+                    {/* Quarter badge on timeline */}
+                    <div className="bg-gradient-to-br from-teal-500 to-cyan-500 text-white px-6 py-3 rounded-lg">
+                      <h3 className="text-xl font-bold">Q3</h3>
+                    </div>
+                  </motion.div>
 
-                {/* Q4 - Bottom Right */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="relative text-left"
-                >
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-4">
-                    <h4 className="text-lg font-bold text-teal-300 mb-2">RELEASE:</h4>
-                    <h5 className="font-semibold text-white mb-2">Product testing continued:</h5>
-                    <p className="text-sm text-gray-300 mb-2">
-                      Reiterate, optimize,<br />
-                      finalize
-                    </p>
-                    <p className="text-sm text-gray-300">
-                      <span className="font-medium text-teal-200">End of Q4:</span><br />
-                      Open pre-order,<br />
-                      release marketing<br />
-                      campaign, prepare<br />
-                      for retail launch
-                    </p>
-                  </div>
-                  <div className="bg-gradient-to-br from-cyan-400 to-teal-400 text-white px-6 py-4 rounded-lg mb-4">
-                    <h3 className="text-2xl font-bold">Q4</h3>
-                  </div>
-                  <div className="mb-8">
-                    <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br ${quarterlyBenefits[3].bgColor} text-white`}>
-                      {quarterlyBenefits[3].icon}
+                  {/* Q4 - Bottom alignment */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* Quarter badge on timeline */}
+                    <div className="bg-gradient-to-br from-cyan-400 to-teal-400 text-white px-6 py-3 rounded-lg mb-16">
+                      <h3 className="text-xl font-bold">Q4</h3>
                     </div>
-                  </div>
-                </motion.div>
+                    
+                    {/* Icon and content below timeline */}
+                    <div className="text-center">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4 min-h-[200px]">
+                        <h4 className="text-lg font-bold text-teal-300 mb-2">RELEASE:</h4>
+                        <h5 className="font-semibold text-white mb-2 text-sm">Product testing continued:</h5>
+                        <p className="text-xs text-gray-300 mb-2">
+                          Reiterate, optimize,<br />
+                          finalize
+                        </p>
+                        <p className="text-xs text-gray-300">
+                          <span className="font-medium text-teal-200">End of Q4:</span><br />
+                          Open pre-order,<br />
+                          release marketing<br />
+                          campaign, prepare<br />
+                          for retail launch
+                        </p>
+                      </div>
+                      <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${quarterlyBenefits[3].bgColor} text-white mx-auto`}>
+                        {quarterlyBenefits[3].icon}
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
 
