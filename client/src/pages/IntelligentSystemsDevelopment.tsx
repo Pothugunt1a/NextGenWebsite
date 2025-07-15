@@ -31,10 +31,7 @@ import {
 } from "../components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-interface FAQ {
-  question: string;
-  answer: string;
-}
+
 
 const whyChooseUsItems = [
   {
@@ -79,36 +76,7 @@ const whyChooseUsItems = [
   },
 ];
 
-const faqs: FAQ[] = [
-  {
-    question:
-      "What makes intelligent systems different from traditional automation?",
-    answer:
-      "Intelligent systems learn from data, adapt to new situations, and make autonomous decisions. Unlike traditional automation that follows pre-programmed rules, our systems use AI to understand context, recognize patterns, and continuously improve their performance.",
-  },
-  {
-    question:
-      "How long does it take to develop and deploy intelligent systems?",
-    answer:
-      "Development timelines vary based on complexity. Simple computer vision systems take 4-8 weeks, while comprehensive intelligent automation platforms require 3-6 months. We provide detailed project timelines during our consultation phase.",
-  },
-  {
-    question: "Can intelligent systems work with our existing infrastructure?",
-    answer:
-      "Yes, we design our systems for seamless integration with existing ERP, CRM, manufacturing, and cloud platforms. Our solutions can work alongside current systems while gradually expanding automation capabilities.",
-  },
-  {
-    question: "What types of data do intelligent systems need to function?",
-    answer:
-      "Different systems require different data types: computer vision uses image/video data, NLP systems need text data, and predictive models use historical operational data. We help assess your data readiness and quality during the feasibility phase.",
-  },
-  {
-    question:
-      "How do you ensure intelligent systems remain accurate over time?",
-    answer:
-      "We implement continuous monitoring, model retraining capabilities, and performance tracking. Our systems include feedback loops that allow them to learn from new data and maintain accuracy as business conditions change.",
-  },
-];
+
 
 const capabilities = [
   {
@@ -286,13 +254,8 @@ const industryData = [
 ];
 
 export default function IntelligentSystemsDevelopment() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState(industryData[0]);
   const [selectedIndustryApp, setSelectedIndustryApp] = useState(industryApplications[0]);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   return (
     <motion.div
@@ -662,57 +625,291 @@ export default function IntelligentSystemsDevelopment() {
         </div>
       </div>
 
-      {/* Our Development Framework - Same as How we work component from AI Consulting */}
-      <section className="py-20 bg-light relative overflow-hidden">
+      {/* Our Development Framework - Same as AI Chatbot Development Flow */}
+      <section className="py-16 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-5xl font-bold mb-6 text-white">
-              How we work
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our structured development framework ensures intelligent systems that deliver measurable business value through every phase
-            </p>
-          </motion.div>
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                How we work
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our structured development framework ensures intelligent systems that deliver measurable business value through every phase
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {developmentFramework.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                  <div className="absolute top-4 right-4 text-6xl font-bold text-blue-500/10">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                      {step.icon}
+            {/* Circular Process Layout */}
+            <div className="relative flex items-center justify-center min-h-[800px] lg:min-h-[900px] px-8">
+              {/* Central Circle */}
+              <div className="relative z-20">
+                <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl">
+                  <div className="w-40 h-40 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex flex-col items-center justify-center border-4 border-blue-400/20">
+                    <div className="text-white mb-2">
+                      <Brain className="w-12 h-12" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {step.title}
-                      </h3>
+                    <div className="text-center">
+                      <div className="text-white font-bold text-lg">
+                        INTELLIGENT
+                      </div>
+                      <div className="text-white font-bold text-lg">
+                        SYSTEMS
+                      </div>
                     </div>
                   </div>
-
-                  <p className="text-gray-300 leading-relaxed">
-                    {step.description}
-                  </p>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+
+              {/* Dotted Circle Path */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                style={{ zIndex: 1 }}
+              >
+                <defs>
+                  <linearGradient
+                    id="systemsProcessGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.7" />
+                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.7" />
+                  </linearGradient>
+                </defs>
+
+                {/* Dotted circle that connects all process steps */}
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="180"
+                  stroke="url(#systemsProcessGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray="8,6"
+                  className="opacity-80"
+                />
+              </svg>
+
+              {/* Process Steps - Positioned clockwise starting from top-left */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Step 1 - Top Left (10 o'clock) - Consultation & Strategy */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "calc(50% - 127px)",
+                    left: "calc(50% - 127px)",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "12rem", marginBottom: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Lightbulb className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Consultation & Strategy
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Understand your needs, envision KPIs, and align intelligent systems with your business goals.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 2 - Top Right (2 o'clock) - Data & Feasibility Analysis */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "calc(50% - 127px)",
+                    right: "calc(50% - 127px)",
+                    transform: "translate(50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "12rem", marginBottom: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Brain className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Data & Feasibility Analysis
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Audit your data, evaluate availability and quality, and determine feasibility.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 3 - Right Side (3 o'clock) - Prototype & Design */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "50%",
+                    right: "calc(50% - 180px)",
+                    transform: "translate(50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "14rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Target className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Prototype & Design
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Build proof‑of‑concepts of vision, NLP, or predictive systems to validate approach.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 4 - Bottom Right (4 o'clock) - Development & Integration */}
+                <div
+                  className="absolute"
+                  style={{
+                    bottom: "calc(50% - 127px)",
+                    right: "calc(50% - 127px)",
+                    transform: "translate(50%, 50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginLeft: "12rem", marginTop: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Settings className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Development & Integration
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Train models and deploy via APIs or microservices, embedding them into your infrastructure.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 5 - Bottom Left (8 o'clock) - Deployment & Monitoring */}
+                <div
+                  className="absolute"
+                  style={{
+                    bottom: "calc(50% - 127px)",
+                    left: "calc(50% - 127px)",
+                    transform: "translate(-50%, 50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "12rem", marginTop: "18rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <Network className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Deployment & Monitoring
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Launch on your preferred environment (cloud or on-premise) with real‑time performance tracking.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Step 6 - Left Side (9 o'clock) - Optimization & Continuous Improvement */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "50%",
+                    left: "calc(50% - 180px)",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div
+                      className="bg-slate-800/60 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 max-w-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                      style={{ marginRight: "14rem" }}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                          <TrendingUp className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg">
+                          Optimization & Continuous Improvement
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Ongoing model refinement and feature scaling to keep systems ahead of evolving business needs.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1038,69 +1235,7 @@ export default function IntelligentSystemsDevelopment() {
         </div>
       </section>
 
-      {/* FAQ Section - Same as AI Consulting */}
-      <section className="py-20 bg-light">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Frequently Asked Questions
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get answers to common questions about intelligent systems
-              development
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="mb-4"
-              >
-                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl overflow-hidden">
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-slate-700/30 transition-colors"
-                  >
-                    <span className="text-lg font-semibold text-white pr-8">
-                      {faq.question}
-                    </span>
-                    {openFaq === index ? (
-                      <ChevronUp className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                    )}
-                  </button>
-                  {openFaq === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="px-8 pb-6"
-                    >
-                      <p className="text-gray-300 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
     </motion.div>
   );
 }
