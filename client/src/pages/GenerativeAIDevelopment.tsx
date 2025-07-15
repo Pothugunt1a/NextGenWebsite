@@ -821,29 +821,29 @@ export default function GenerativeAIDevelopment() {
             </h2>
           </div>
 
-          {/* Main Layout: Image Left + Grid Right */}
+          {/* Main Layout: 3 Equal Columns */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Hero Image */}
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* First Column - Image */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 className="relative"
               >
-                <div className="relative rounded-2xl overflow-hidden">
+                <div className="relative rounded-2xl overflow-hidden h-full">
                   <img 
                     src="/assets/GenerativeAI.png" 
                     alt="Generative AI Benefits"
-                    className="w-full h-auto object-cover rounded-2xl shadow-2xl"
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                 </div>
               </motion.div>
 
-              {/* Right Side - 2x2 Grid of Benefits */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {benefitSteps.map((step, index) => (
+              {/* Second Column - Benefits 01 & 02 */}
+              <div className="space-y-6">
+                {benefitSteps.slice(0, 2).map((step, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 30 }}
@@ -851,7 +851,56 @@ export default function GenerativeAIDevelopment() {
                     transition={{ duration: 0.8, delay: index * 0.1 }}
                     className="relative"
                   >
-                    {/* Step Arrow Shape - Smaller Size */}
+                    {/* Step Arrow Shape */}
+                    <div 
+                      className={`relative bg-gradient-to-br ${step.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`} 
+                      style={{
+                        clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)',
+                        height: '80px'
+                      }}
+                    >
+                      <div className="flex items-center h-full px-4">
+                        {/* Step Number */}
+                        <div className="text-2xl font-bold mr-3 opacity-90">
+                          {step.number}
+                        </div>
+                        
+                        {/* Icon in white shield */}
+                        <div className="bg-white rounded-lg p-2 flex items-center justify-center text-gray-800">
+                          <div className="scale-75">
+                            {step.icon}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-2">
+                        {step.title}
+                      </h3>
+                      <h4 className="text-sm text-gray-300 mb-2">
+                        {step.subtitle}
+                      </h4>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Third Column - Benefits 03 & 04 */}
+              <div className="space-y-6">
+                {benefitSteps.slice(2, 4).map((step, index) => (
+                  <motion.div
+                    key={index + 2}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: (index + 2) * 0.1 }}
+                    className="relative"
+                  >
+                    {/* Step Arrow Shape */}
                     <div 
                       className={`relative bg-gradient-to-br ${step.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`} 
                       style={{
