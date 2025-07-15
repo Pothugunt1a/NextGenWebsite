@@ -256,49 +256,287 @@ export default function AIApplicationDevelopment() {
         </div>
       </section>
 
-      {/* AI Development Services Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      {/* Our AI Development Services - Same as AI Chatbot Services Layout */}
+      <div className="py-20 bg-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl font-bold mb-6 text-white">
               Our AI Development Services
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive AI solutions designed to transform your business operations and drive innovation
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {aiServices.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <Card className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                  <CardContent className="p-8 text-center h-full flex flex-col">
-                    <div className="flex justify-center mb-6">
-                      <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
-                        {service.icon}
+          {/* 2x2 Grid Layout with Central Image */}
+          <div className="max-w-8xl mx-auto relative">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Top Row - Custom AI Solutions and Machine Learning */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Custom AI Solutions */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={aiServices[0].backgroundImage}
+                        alt={aiServices[0].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Bot className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed flex-grow">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          01
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {aiServices[0].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {aiServices[0].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Machine Learning & Predictive Analytics */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={aiServices[1].backgroundImage}
+                        alt={aiServices[1].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <TrendingUp className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          02
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {aiServices[1].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {aiServices[1].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Second Row - Central Image with Natural Language Processing */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Central Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, type: "spring" }}
+                  className="relative group"
+                >
+                  {/* Main Feature Card */}
+                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="relative w-full">
+                      <img
+                        src="/assets/AI-ChatbotDevelopment.gif"
+                        alt="AI Application Development Services"
+                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
+                        style={{ backgroundAttachment: "fixed" }}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/assets/AIApplication-banner.png";
+                        }}
+                      />
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 flex flex-col gap-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Bot className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        AI
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-sm font-medium">
+                            AI Development Hub
+                          </span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                          Intelligent AI Solutions
+                        </h3>
+                        <p className="text-blue-100 leading-relaxed mb-6">
+                          Advanced AI development solutions that transform
+                          business operations.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Natural Language Processing (NLP) */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={aiServices[2].backgroundImage}
+                        alt={aiServices[2].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <MessageSquare className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          03
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {aiServices[2].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {aiServices[2].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Third Row - Computer Vision and AI Integration */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Computer Vision */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={aiServices[3].backgroundImage}
+                        alt={aiServices[3].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Eye className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          04
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {aiServices[3].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {aiServices[3].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* AI Integration & Automation */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={aiServices[4].backgroundImage}
+                        alt={aiServices[4].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Settings className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          05
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {aiServices[4].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {aiServices[4].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Industries Section - Interactive Layout matching AI Consulting */}
       <section className="py-16 text-white">
@@ -496,40 +734,109 @@ export default function AIApplicationDevelopment() {
         </div>
       </section>
 
-      {/* CTA Section - Same as AI Consulting */}
-      <section className="py-20 bg-gradient-to-r from-blue-900/20 to-cyan-900/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+      {/* Enhanced CTA Section */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="text-center p-16 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/20 shadow-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Top Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Build Your AI-Powered Future?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Whether you're looking to automate tasks, uncover insights, or deliver smarter customer experiences, we can help turn your AI vision into reality.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105"
-                >
-                  Start Your AI Journey
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300"
-                >
-                  Schedule Free Consultation
-                </Button>
+              <Bot className="h-5 w-5 text-cyan-400" />
+              <span className="text-white font-medium">
+                Leading AI Application Solutions
+              </span>
+              <Star className="h-4 w-4 text-blue-400 fill-current" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold mb-6"
+            >
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Ready to Build Your
+              </span>
+              <br />
+              <span className="text-white">AI-Powered Future?</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
+              Join thousands of businesses who trust RT NextGenAI for
+              intelligent AI application solutions. Our experts are ready to
+              revolutionize your business operations with cutting-edge
+              artificial intelligence.
+            </motion.p>
+
+            {/* Benefits Grid */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Free Demo & Consultation
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  24/7 Technical Support
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Custom AI Development
+                </span>
               </div>
             </motion.div>
-          </div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex justify-center"
+            >
+              <Button
+                size="lg"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                onClick={() => (window.location.href = "/contact")}
+              >
+                <MessageSquare className="mr-2 h-5 w-5" />
+                Start Your AI Journey
+                <Zap className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>
