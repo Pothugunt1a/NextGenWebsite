@@ -210,7 +210,7 @@ export default function GenerativeAIDevelopment() {
       title: "Creative Content Generation",
       description:
         "Unleash creativity with AI-generated designs, artwork, music, and creative writing. Develop unique brand assets, marketing materials, and creative content that stands out in competitive markets while maintaining artistic integrity and brand alignment.",
-      backgroundImage: "/assets/GenerativeAI.png",
+      backgroundImage: "/assets/GenerativeAI.gif",
     },
   ];
 
@@ -832,8 +832,8 @@ export default function GenerativeAIDevelopment() {
                 className="relative"
               >
                 <div className="relative rounded-2xl overflow-hidden h-full">
-                  <img 
-                    src="/assets/GenerativeAI.png" 
+                  <img
+                    src="/assets/GenerativeAI.png"
                     alt="Generative AI Benefits"
                     className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   />
@@ -852,11 +852,12 @@ export default function GenerativeAIDevelopment() {
                     className="relative"
                   >
                     {/* Step Arrow Shape */}
-                    <div 
-                      className={`relative bg-gradient-to-br ${step.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`} 
+                    <div
+                      className={`relative bg-gradient-to-br ${step.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`}
                       style={{
-                        clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)',
-                        height: '80px'
+                        clipPath:
+                          "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)",
+                        height: "80px",
                       }}
                     >
                       <div className="flex items-center h-full px-4">
@@ -864,16 +865,14 @@ export default function GenerativeAIDevelopment() {
                         <div className="text-2xl font-bold mr-3 opacity-90">
                           {step.number}
                         </div>
-                        
+
                         {/* Icon in white shield */}
                         <div className="bg-white rounded-lg p-2 flex items-center justify-center text-gray-800">
-                          <div className="scale-75">
-                            {step.icon}
-                          </div>
+                          <div className="scale-75">{step.icon}</div>
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Content */}
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">
@@ -901,11 +900,12 @@ export default function GenerativeAIDevelopment() {
                     className="relative"
                   >
                     {/* Step Arrow Shape */}
-                    <div 
-                      className={`relative bg-gradient-to-br ${step.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`} 
+                    <div
+                      className={`relative bg-gradient-to-br ${step.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`}
                       style={{
-                        clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)',
-                        height: '80px'
+                        clipPath:
+                          "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)",
+                        height: "80px",
                       }}
                     >
                       <div className="flex items-center h-full px-4">
@@ -913,16 +913,14 @@ export default function GenerativeAIDevelopment() {
                         <div className="text-2xl font-bold mr-3 opacity-90">
                           {step.number}
                         </div>
-                        
+
                         {/* Icon in white shield */}
                         <div className="bg-white rounded-lg p-2 flex items-center justify-center text-gray-800">
-                          <div className="scale-75">
-                            {step.icon}
-                          </div>
+                          <div className="scale-75">{step.icon}</div>
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Content */}
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">
