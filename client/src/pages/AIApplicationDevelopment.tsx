@@ -1,6 +1,24 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Bot, Brain, Eye, MessageSquare, Settings, Database, Shield, Zap, Users, TrendingUp, Award, Clock, CheckCircle, Star, Sparkles, Target } from "lucide-react";
+import {
+  ArrowRight,
+  Bot,
+  Brain,
+  Eye,
+  MessageSquare,
+  Settings,
+  Database,
+  Shield,
+  Zap,
+  Users,
+  TrendingUp,
+  Award,
+  Clock,
+  CheckCircle,
+  Star,
+  Sparkles,
+  Target,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -17,31 +35,36 @@ export default function AIApplicationDevelopment() {
     {
       icon: <Bot className="h-8 w-8 text-white" />,
       title: "Custom AI Solutions",
-      description: "We build AI applications from the ground up, tailored to solve your specific business challenges — whether it's automating processes, enhancing customer experiences, or unlocking insights from your data.",
+      description:
+        "We build AI applications from the ground up, tailored to solve your specific business challenges — whether it's automating processes, enhancing customer experiences, or unlocking insights from your data.",
       backgroundImage: "/assets/AI-Custom.png",
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-white" />,
       title: "Machine Learning & Predictive Analytics",
-      description: "Harness the power of data. We develop machine learning models that learn from your data and provide accurate predictions, recommendations, and real-time decision-making support.",
+      description:
+        "Harness the power of data. We develop machine learning models that learn from your data and provide accurate predictions, recommendations, and real-time decision-making support.",
       backgroundImage: "/assets/AI-ML.png",
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-white" />,
       title: "Natural Language Processing (NLP)",
-      description: "From chatbots and voice assistants to text analytics and sentiment analysis, we build NLP solutions that understand and interact in human language.",
+      description:
+        "From chatbots and voice assistants to text analytics and sentiment analysis, we build NLP solutions that understand and interact in human language.",
       backgroundImage: "/assets/AI-NLP.png",
     },
     {
       icon: <Eye className="h-8 w-8 text-white" />,
       title: "Computer Vision",
-      description: "Empower your applications to see and understand the world. We integrate computer vision capabilities for image recognition, object detection, facial recognition, and more.",
+      description:
+        "Empower your applications to see and understand the world. We integrate computer vision capabilities for image recognition, object detection, facial recognition, and more.",
       backgroundImage: "/assets/AI-Vision.png",
     },
     {
       icon: <Settings className="h-8 w-8 text-white" />,
       title: "AI Integration & Automation",
-      description: "We help integrate AI into your existing systems or workflows—be it CRM, ERP, or cloud platforms—streamlining operations and increasing productivity.",
+      description:
+        "We help integrate AI into your existing systems or workflows—be it CRM, ERP, or cloud platforms—streamlining operations and increasing productivity.",
       backgroundImage: "/assets/AI-Integration.png",
     },
   ];
@@ -82,31 +105,36 @@ export default function AIApplicationDevelopment() {
       id: "healthcare",
       name: "Healthcare",
       image: "/assets/Healthcare.png",
-      content: "Transform healthcare delivery with AI-powered diagnostic tools, medical imaging analysis, patient monitoring systems, and personalized treatment recommendations. Our AI applications improve patient outcomes through predictive analytics, automated clinical documentation, and intelligent drug discovery platforms that accelerate medical research and enhance care quality."
+      content:
+        "Transform healthcare delivery with AI-powered diagnostic tools, medical imaging analysis, patient monitoring systems, and personalized treatment recommendations. Our AI applications improve patient outcomes through predictive analytics, automated clinical documentation, and intelligent drug discovery platforms that accelerate medical research and enhance care quality.",
     },
     {
       id: "retail",
       name: "Retail & E-commerce",
       image: "/assets/Ecommerce.png",
-      content: "Revolutionize retail experiences with AI-driven recommendation engines, dynamic pricing optimization, inventory management, and virtual shopping assistants. Our applications enable personalized customer journeys, demand forecasting, supply chain optimization, and automated customer service that drives sales growth and customer satisfaction."
+      content:
+        "Revolutionize retail experiences with AI-driven recommendation engines, dynamic pricing optimization, inventory management, and virtual shopping assistants. Our applications enable personalized customer journeys, demand forecasting, supply chain optimization, and automated customer service that drives sales growth and customer satisfaction.",
     },
     {
       id: "finance",
       name: "Finance & Banking",
       image: "/assets/Banking.png",
-      content: "Secure financial operations with AI applications for fraud detection, risk assessment, algorithmic trading, and regulatory compliance. We develop intelligent systems for credit scoring, portfolio management, automated financial advisory services, and real-time transaction monitoring that enhance security while improving customer experiences."
+      content:
+        "Secure financial operations with AI applications for fraud detection, risk assessment, algorithmic trading, and regulatory compliance. We develop intelligent systems for credit scoring, portfolio management, automated financial advisory services, and real-time transaction monitoring that enhance security while improving customer experiences.",
     },
     {
       id: "manufacturing",
       name: "Manufacturing",
       image: "/assets/Manufacturing.png",
-      content: "Optimize manufacturing processes with AI applications for predictive maintenance, quality control, supply chain optimization, and production planning. Our solutions include computer vision for defect detection, IoT-integrated monitoring systems, and intelligent automation that reduces costs while improving operational efficiency and product quality."
+      content:
+        "Optimize manufacturing processes with AI applications for predictive maintenance, quality control, supply chain optimization, and production planning. Our solutions include computer vision for defect detection, IoT-integrated monitoring systems, and intelligent automation that reduces costs while improving operational efficiency and product quality.",
     },
     {
       id: "customer-service",
       name: "Customer Service",
       image: "/assets/Marketing.png",
-      content: "Enhance customer experiences with AI-powered chatbots, sentiment analysis, intelligent ticket routing, and automated response systems. Our applications provide 24/7 customer support, multi-language communication, predictive customer insights, and personalized service recommendations that improve satisfaction and reduce operational costs."
+      content:
+        "Enhance customer experiences with AI-powered chatbots, sentiment analysis, intelligent ticket routing, and automated response systems. Our applications provide 24/7 customer support, multi-language communication, predictive customer insights, and personalized service recommendations that improve satisfaction and reduce operational costs.",
     },
   ];
 
@@ -116,32 +144,38 @@ export default function AIApplicationDevelopment() {
     {
       icon: <Zap className="h-8 w-8" />,
       title: "End-to-End Expertise",
-      description: "From ideation and prototyping to deployment and support, we guide you through the entire AI development lifecycle."
+      description:
+        "From ideation and prototyping to deployment and support, we guide you through the entire AI development lifecycle.",
     },
     {
       icon: <Database className="h-8 w-8" />,
       title: "Cutting-edge Technologies",
-      description: "We work with the latest AI frameworks and tools, including TensorFlow, PyTorch, OpenAI, Hugging Face, and AWS/GCP/Azure AI services."
+      description:
+        "We work with the latest AI frameworks and tools, including TensorFlow, PyTorch, OpenAI, Hugging Face, and AWS/GCP/Azure AI services.",
     },
     {
       icon: <Shield className="h-8 w-8" />,
       title: "Data Privacy & Ethics Focused",
-      description: "Our AI solutions are designed with fairness, transparency, and data protection in mind."
+      description:
+        "Our AI solutions are designed with fairness, transparency, and data protection in mind.",
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,
       title: "Scalable & Future-Ready",
-      description: "We build AI solutions that grow with your business and adapt to evolving challenges."
+      description:
+        "We build AI solutions that grow with your business and adapt to evolving challenges.",
     },
     {
       icon: <Award className="h-8 w-8" />,
       title: "Proven Track Record",
-      description: "Successfully delivered AI solutions across various industries with measurable business impact."
+      description:
+        "Successfully delivered AI solutions across various industries with measurable business impact.",
     },
     {
       icon: <Clock className="h-8 w-8" />,
       title: "Rapid Deployment",
-      description: "Agile development methodologies ensure faster time-to-market for your AI applications."
+      description:
+        "Agile development methodologies ensure faster time-to-market for your AI applications.",
     },
   ];
 
@@ -279,7 +313,8 @@ export default function AIApplicationDevelopment() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive AI solutions designed to transform your business operations and drive innovation
+              Comprehensive AI solutions designed to transform your business
+              operations and drive innovation
             </p>
           </motion.div>
 
@@ -377,7 +412,7 @@ export default function AIApplicationDevelopment() {
                   <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="relative w-full">
                       <img
-                        src="/assets/AI-ChatbotDevelopment.gif"
+                        src="/assets/AI-ApplicationDevelopment.webp"
                         alt="AI Application Development Services"
                         className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
