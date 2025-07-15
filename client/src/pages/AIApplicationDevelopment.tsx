@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Bot, Brain, Eye, MessageSquare, Settings, Database, Shield, Zap, Users, TrendingUp, Award, Clock, CheckCircle, Star, Sparkles, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -81,33 +82,35 @@ export default function AIApplicationDevelopment() {
       id: "healthcare",
       name: "Healthcare",
       image: "/assets/Healthcare.png",
-      content: "AI diagnostics, medical imaging, patient monitoring"
+      content: "Transform healthcare delivery with AI-powered diagnostic tools, medical imaging analysis, patient monitoring systems, and personalized treatment recommendations. Our AI applications improve patient outcomes through predictive analytics, automated clinical documentation, and intelligent drug discovery platforms that accelerate medical research and enhance care quality."
     },
     {
       id: "retail",
       name: "Retail & E-commerce",
       image: "/assets/Ecommerce.png",
-      content: "Recommendation engines, demand forecasting, virtual shopping assistants"
+      content: "Revolutionize retail experiences with AI-driven recommendation engines, dynamic pricing optimization, inventory management, and virtual shopping assistants. Our applications enable personalized customer journeys, demand forecasting, supply chain optimization, and automated customer service that drives sales growth and customer satisfaction."
     },
     {
       id: "finance",
-      name: "Finance",
+      name: "Finance & Banking",
       image: "/assets/Banking.png",
-      content: "Fraud detection, algorithmic trading, risk modeling"
+      content: "Secure financial operations with AI applications for fraud detection, risk assessment, algorithmic trading, and regulatory compliance. We develop intelligent systems for credit scoring, portfolio management, automated financial advisory services, and real-time transaction monitoring that enhance security while improving customer experiences."
     },
     {
       id: "manufacturing",
       name: "Manufacturing",
       image: "/assets/Manufacturing.png",
-      content: "Predictive maintenance, quality control, process optimization"
+      content: "Optimize manufacturing processes with AI applications for predictive maintenance, quality control, supply chain optimization, and production planning. Our solutions include computer vision for defect detection, IoT-integrated monitoring systems, and intelligent automation that reduces costs while improving operational efficiency and product quality."
     },
     {
       id: "customer-service",
       name: "Customer Service",
-      image: "/assets/Customer-Service.png",
-      content: "AI chatbots, sentiment analysis, ticket triage"
+      image: "/assets/Marketing.png",
+      content: "Enhance customer experiences with AI-powered chatbots, sentiment analysis, intelligent ticket routing, and automated response systems. Our applications provide 24/7 customer support, multi-language communication, predictive customer insights, and personalized service recommendations that improve satisfaction and reduce operational costs."
     },
   ];
+
+  const [selectedIndustry, setSelectedIndustry] = useState(industryData[0]);
 
   const whyChooseUs = [
     {
@@ -302,53 +305,88 @@ export default function AIApplicationDevelopment() {
         </div>
       </section>
 
-      {/* Industries Section - Same as AI Consulting Page */}
+      {/* Industries Section - Interactive Layout matching AI Consulting */}
       <section className="py-16 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
-                Industries We Serve
+                How we implement AI applications across multiple industries
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Delivering specialized AI solutions across diverse industries
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {industryData.map((industry, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group"
-                >
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-gray-700/50 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 h-64">
-                    {/* Background Image */}
-                    <div className="absolute inset-0">
-                      <img
-                        src={industry.image}
-                        alt={industry.name}
-                        className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-800/50 to-slate-900/60"></div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="relative z-10 p-6 h-full flex flex-col justify-end">
-                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Left Navigation */}
+              <div className="lg:col-span-4">
+                <div className="grid grid-cols-1 gap-4">
+                  {industryData.map((industry) => (
+                    <Button
+                      key={industry.id}
+                      variant={
+                        selectedIndustry.id === industry.id
+                          ? "default"
+                          : "outline"
+                      }
+                      className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
+                        selectedIndustry.id === industry.id
+                          ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
+                          : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
+                      }`}
+                      onClick={() => {
+                        setSelectedIndustry(industry);
+                      }}
+                    >
+                      <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
                         {industry.name}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Content Display */}
+              <div className="lg:col-span-8">
+                <motion.div
+                  key={selectedIndustry.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl overflow-hidden"
+                >
+                  {/* Industry Image */}
+                  <div className="relative h-64 overflow-hidden group cursor-pointer">
+                    <img
+                      src={selectedIndustry.image}
+                      alt={selectedIndustry.name}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        console.error(
+                          `Failed to load image: ${selectedIndustry.image}`,
+                        );
+                      }}
+                      onLoad={() => {
+                        console.log(
+                          `Successfully loaded image: ${selectedIndustry.image}`,
+                        );
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent group-hover:from-gray-900/60 transition-all duration-300"></div>
+                    <div className="absolute bottom-4 left-6">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                        {selectedIndustry.name}
                       </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        {industry.content}
-                      </p>
                     </div>
                   </div>
+
+                  {/* Industry Content */}
+                  <div className="p-6">
+                    <p className="text-gray-300 leading-relaxed text-lg">
+                      {selectedIndustry.content}
+                    </p>
+                  </div>
                 </motion.div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
