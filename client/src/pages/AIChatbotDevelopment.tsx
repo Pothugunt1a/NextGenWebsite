@@ -792,6 +792,25 @@ export default function AIChatbotDevelopment() {
                 </motion.div>
               </div>
             </div>
+
+            {/* Centered Image between columns */}
+            <div className="mt-12 flex justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative max-w-2xl w-full"
+              >
+                <div className="relative rounded-2xl overflow-hidden">
+                  <img
+                    src="/assets/AI-chatbot.gif"
+                    alt="AI Chatbot Advantages"
+                    className="w-full h-auto object-cover rounded-2xl shadow-2xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
