@@ -829,7 +829,7 @@ export default function GenerativeAIDevelopment() {
                 {/* Main horizontal line */}
                 <div className="absolute top-1/2 left-0 right-0 h-px border-t-2 border-dotted border-gray-400 z-0"></div>
                 
-                {/* Vertical connecting lines for each quarter */}
+                {/* Vertical connecting lines for each quarter - centered in each column */}
                 <div className="absolute top-0 bottom-0 w-px border-l-2 border-dotted border-gray-400 z-0" style={{left: '12.5%'}}></div>
                 <div className="absolute top-0 bottom-0 w-px border-l-2 border-dotted border-gray-400 z-0" style={{left: '37.5%'}}></div>
                 <div className="absolute top-0 bottom-0 w-px border-l-2 border-dotted border-gray-400 z-0" style={{left: '62.5%'}}></div>
