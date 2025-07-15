@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Bot, Brain, Eye, MessageSquare, Settings, Database, Shield, Zap, Users, TrendingUp, Award, Clock, CheckCircle } from "lucide-react";
+import { ArrowRight, Bot, Brain, Eye, MessageSquare, Settings, Database, Shield, Zap, Users, TrendingUp, Award, Clock, CheckCircle, Star, Sparkles, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -42,6 +42,37 @@ export default function AIApplicationDevelopment() {
       title: "AI Integration & Automation",
       description: "We help integrate AI into your existing systems or workflows—be it CRM, ERP, or cloud platforms—streamlining operations and increasing productivity.",
       backgroundImage: "/assets/AI-Integration.png",
+    },
+  ];
+
+  const stats = [
+    {
+      icon: <Target className="h-8 w-8" />,
+      title: "95%",
+      subtitle: "Success Rate",
+      description: "AI Project delivery",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: <Brain className="h-8 w-8" />,
+      title: "200+",
+      subtitle: "AI Applications",
+      description: "Successfully developed",
+      color: "from-green-500 to-emerald-500",
+    },
+    {
+      icon: <Zap className="h-8 w-8" />,
+      title: "80%",
+      subtitle: "Time Reduction",
+      description: "In development cycles",
+      color: "from-purple-500 to-violet-500",
+    },
+    {
+      icon: <Star className="h-8 w-8" />,
+      title: "50+",
+      subtitle: "Industries Served",
+      description: "Across all sectors",
+      color: "from-orange-500 to-red-500",
     },
   ];
 
@@ -118,56 +149,111 @@ export default function AIApplicationDevelopment() {
         minHeight: '100vh'
       }}
     >
-      {/* Hero Section - Same as AI Components Development */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-transparent"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                AI Application Development
-              </h1>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mb-8"></div>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                Unlock the Power of Artificial Intelligence
-              </p>
-              <p className="text-lg text-gray-400 mb-12 max-w-3xl">
-                Artificial Intelligence (AI) is transforming industries, driving efficiency, and unlocking new possibilities. At RT NextGenAI, we specialize in designing and developing intelligent AI-powered applications tailored to your unique business needs.
-              </p>
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105"
-              >
-                Get Started Today
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </motion.div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <img
+            src="/assets/AIApplication-banner.png"
+            alt="AI Application Development"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        </div>
 
-            {/* Right Column - Banner Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
             >
-              <div className="relative">
-                <img
-                  src="/assets/AIApplication-banner.png"
-                  alt="AI Application Development"
-                  className="w-full h-auto rounded-2xl shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-2xl"></div>
-                
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-20 animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-20 animate-pulse delay-1000"></div>
-              </div>
-            </motion.div>
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                AI Application Development
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
+            >
+              Unlock the Power of Artificial Intelligence
+            </motion.p>
+
+            {/* Badge */}
+            <div className="mb-32">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.8, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+              >
+                <Sparkles className="h-5 w-5 text-cyan-400" />
+                <span className="text-white font-medium">
+                  AI Application Excellence
+                </span>
+                <Star className="h-4 w-4 text-blue-400 fill-current" />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="absolute bottom-8 left-0 right-0">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-center md:justify-start">
+              <motion.div
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl w-full"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+              >
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
+                    className="group relative"
+                  >
+                    <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                      />
+
+                      <div className="relative z-10">
+                        <div className="flex justify-center mb-3 md:mb-4">
+                          <div
+                            className={`inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br ${stat.color}`}
+                          >
+                            <div className="text-white">{stat.icon}</div>
+                          </div>
+                        </div>
+                        <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">
+                          {stat.title}
+                        </div>
+                        <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">
+                          {stat.subtitle}
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          {stat.description}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
