@@ -677,6 +677,6 @@ export default function LLMDevelopment() {
           </motion.div>
         </div>
       </section>
-    
-  );
+      </motion.div>
+    );
 }
