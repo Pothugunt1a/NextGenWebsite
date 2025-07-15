@@ -375,12 +375,12 @@ export default function AIApplicationDevelopment() {
                   className="relative group"
                 >
                   {/* Main Feature Card */}
-                  <div className="relative min-h-96 w-full bg-black rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
-                    <div className="relative w-full">
+                  <div className="relative h-80 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="relative w-full h-full">
                       <img
                         src="/assets/AI-ApplicationDevelopment.gif"
                         alt="AI Application Development Services"
-                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -390,28 +390,28 @@ export default function AIApplicationDevelopment() {
                     </div>
 
                     {/* Floating Elements */}
-                    <div className="absolute top-8 right-8 flex flex-col gap-4">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                        <Bot className="h-8 w-8 text-white" />
+                    <div className="absolute top-6 right-6 flex flex-col gap-3">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Bot className="h-6 w-6 text-white" />
                       </div>
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                      <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg text-sm">
                         AI
                       </div>
                     </div>
 
                     {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="mb-4">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="mb-3">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full mb-3">
+                          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-xs font-medium">
                             AI Development Hub
                           </span>
                         </div>
-                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                        <h3 className="text-xl font-bold text-white mb-2 leading-tight">
                           Intelligent AI Solutions
                         </h3>
-                        <p className="text-blue-100 leading-relaxed mb-6">
+                        <p className="text-blue-100 leading-relaxed text-sm">
                           Advanced AI development solutions that transform
                           business operations.
                         </p>
