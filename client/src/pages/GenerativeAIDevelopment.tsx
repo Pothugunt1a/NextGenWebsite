@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -218,40 +217,44 @@ export default function GenerativeAIDevelopment() {
   const benefitSteps = [
     {
       number: "01",
-      title: "Accelerated Content Creation",
-      subtitle: "Reduce time-to-market significantly",
-      description: "Our generative AI solutions dramatically reduce content creation time by automating writing, design, and multimedia production processes. Generate high-quality content in minutes rather than hours.",
-      icon: <Clock className="h-8 w-8" />,
+      title: "Enhanced Creativity and Innovation",
+      subtitle: "Generate new and unique outputs",
+      description:
+        "Generative AI produces unique outputs—like designs, text, and art—fueling creativity and offering businesses fresh ideas for innovation and product development.",
+      icon: <Lightbulb className="h-8 w-8" />,
       bgColor: "from-blue-500/30 to-cyan-500/40",
-      arrowColor: "bg-blue-500/30"
+      arrowColor: "bg-blue-500/30",
     },
     {
-      number: "02", 
-      title: "Scalable Personalization",
-      subtitle: "Scale across all customer touchpoints",
-      description: "Create personalized experiences at unprecedented scale with AI-generated content tailored to individual customer preferences, behaviors, and demographics for increased engagement.",
-      icon: <Users className="h-8 w-8" />,
+      number: "02",
+      title: "Time and Cost Efficiency",
+      subtitle: "Automate and streamline processes",
+      description:
+        "Generative AI streamlines tasks like content creation, design prototyping, and data synthesis, saving time and cutting costs by reducing manual effort.",
+      icon: <Clock className="h-8 w-8" />,
       bgColor: "from-blue-500/30 to-cyan-500/40",
-      arrowColor: "bg-blue-500/30"
+      arrowColor: "bg-blue-500/30",
     },
     {
       number: "03",
-      title: "Enhanced Innovation",
-      subtitle: "Augment creativity and capabilities",
-      description: "Augment human creativity with AI-powered ideation, design exploration, and content variation generation. Break creative blocks and explore new concepts while maintaining brand consistency.",
-      icon: <Lightbulb className="h-8 w-8" />,
+      title: "Improved Decision-Making",
+      subtitle: "Data-driven insights and predictions",
+      description:
+        "Generative AI analyzes large data sets to uncover insights and trends, helping businesses make smarter, data-driven decisions and refine strategies.",
+      icon: <TrendingUp className="h-8 w-8" />,
       bgColor: "from-blue-500/30 to-cyan-500/40",
-      arrowColor: "bg-blue-500/30"
+      arrowColor: "bg-blue-500/30",
     },
     {
       number: "04",
-      title: "Cost Optimization",
-      subtitle: "Optimize resource allocation",
-      description: "Reduce content creation costs by up to 70% while maintaining quality standards. Automate repetitive tasks and reallocate human resources to strategic initiatives.",
-      icon: <TrendingUp className="h-8 w-8" />,
+      title: "Personalized Experiences",
+      subtitle: "Tailored customer engagement",
+      description:
+        "Generative AI delivers customized content and recommendations based on user behavior, boosting customer engagement, satisfaction, and loyalty.",
+      icon: <Users className="h-8 w-8" />,
       bgColor: "from-blue-500/30 to-cyan-500/40",
-      arrowColor: "bg-blue-500/30"
-    }
+      arrowColor: "bg-blue-500/30",
+    },
   ];
 
   const whyChooseUs = [
@@ -298,35 +301,40 @@ export default function GenerativeAIDevelopment() {
     {
       number: "1.",
       title: "Content Marketing Automation",
-      description: "Generate blog posts, social media content, email campaigns, and marketing materials that align with your brand voice and engage your target audience effectively.",
+      description:
+        "Generate blog posts, social media content, email campaigns, and marketing materials that align with your brand voice and engage your target audience effectively.",
       icon: <PenTool className="h-8 w-8" />,
       color: "from-blue-500 to-cyan-500",
     },
     {
       number: "2.",
       title: "Product Development & Design",
-      description: "Create product prototypes, design variations, and innovative concepts through AI-generated visuals, specifications, and development documentation.",
+      description:
+        "Create product prototypes, design variations, and innovative concepts through AI-generated visuals, specifications, and development documentation.",
       icon: <Lightbulb className="h-8 w-8" />,
       color: "from-blue-500 to-cyan-500",
     },
     {
       number: "3.",
       title: "Customer Service Enhancement",
-      description: "Develop intelligent virtual assistants and automated response systems that provide personalized customer support and resolve inquiries efficiently.",
+      description:
+        "Develop intelligent virtual assistants and automated response systems that provide personalized customer support and resolve inquiries efficiently.",
       icon: <Headphones className="h-8 w-8" />,
       color: "from-blue-500 to-cyan-500",
     },
     {
       number: "4.",
       title: "Training & Educational Content",
-      description: "Generate comprehensive training materials, e-learning courses, and educational resources tailored to specific learning objectives and skill levels.",
+      description:
+        "Generate comprehensive training materials, e-learning courses, and educational resources tailored to specific learning objectives and skill levels.",
       icon: <FileText className="h-8 w-8" />,
       color: "from-blue-500 to-cyan-500",
     },
     {
       number: "5.",
       title: "Data Analysis & Reporting",
-      description: "Create automated reports, data visualizations, and business intelligence dashboards that transform complex data into actionable insights and recommendations.",
+      description:
+        "Create automated reports, data visualizations, and business intelligence dashboards that transform complex data into actionable insights and recommendations.",
       icon: <Database className="h-8 w-8" />,
       color: "from-blue-500 to-cyan-500",
     },
@@ -398,7 +406,8 @@ export default function GenerativeAIDevelopment() {
         "Generative AI can create diverse content types including written content (articles, emails, reports), visual content (images, designs, videos), audio content (voiceovers, music), code (software applications, scripts), and interactive content (chatbots, virtual assistants). The possibilities are expanding rapidly with advancing technology.",
     },
     {
-      question: "How do you ensure the quality and accuracy of AI-generated content?",
+      question:
+        "How do you ensure the quality and accuracy of AI-generated content?",
       answer:
         "We implement multi-layered quality assurance including model fine-tuning with high-quality data, automated content filtering, human review processes, and continuous monitoring. Our systems include fact-checking mechanisms, brand consistency validation, and customizable quality controls to meet your specific standards.",
     },
@@ -676,8 +685,8 @@ export default function GenerativeAIDevelopment() {
                           Intelligent Content Generation
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Advanced generative AI solutions that create, innovate,
-                          and transform content creation.
+                          Advanced generative AI solutions that create,
+                          innovate, and transform content creation.
                         </p>
                       </div>
                     </div>
@@ -811,7 +820,7 @@ export default function GenerativeAIDevelopment() {
               Benefits of Employing Our Generative AI Development Services
             </h2>
           </div>
-          
+
           {/* Vertical Steps Layout */}
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
@@ -824,25 +833,28 @@ export default function GenerativeAIDevelopment() {
                   className="flex items-center gap-8 relative"
                 >
                   {/* Step Arrow Shape */}
-                  <div className={`relative flex-shrink-0 bg-gradient-to-br ${step.bgColor} text-white rounded-l-lg backdrop-blur-sm border border-white/10`} 
-                       style={{
-                         clipPath: 'polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%)',
-                         width: '280px',
-                         height: '120px'
-                       }}>
+                  <div
+                    className={`relative flex-shrink-0 bg-gradient-to-br ${step.bgColor} text-white rounded-l-lg backdrop-blur-sm border border-white/10`}
+                    style={{
+                      clipPath:
+                        "polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%)",
+                      width: "280px",
+                      height: "120px",
+                    }}
+                  >
                     <div className="flex items-center h-full px-6">
                       {/* Step Number */}
                       <div className="text-4xl font-bold mr-4 opacity-90">
                         {step.number}
                       </div>
-                      
+
                       {/* Icon in white shield */}
                       <div className="bg-white rounded-lg p-3 flex items-center justify-center text-gray-800 mr-4">
                         {step.icon}
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-white mb-2">
@@ -909,8 +921,8 @@ export default function GenerativeAIDevelopment() {
                         index === 0
                           ? "rounded-l-2xl border-r-0"
                           : index === useCaseSteps.length - 1
-                          ? "rounded-r-2xl border-l-0"
-                          : "border-l-0 border-r-0"
+                            ? "rounded-r-2xl border-l-0"
+                            : "border-l-0 border-r-0"
                       }`}
                       style={{ height: "15rem" }}
                     >
@@ -1303,9 +1315,9 @@ export default function GenerativeAIDevelopment() {
                         </h3>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        Choose optimal AI models and design custom architectures,
-                        evaluate pre-trained models, and determine the best
-                        approach for your specific use case
+                        Choose optimal AI models and design custom
+                        architectures, evaluate pre-trained models, and
+                        determine the best approach for your specific use case
                       </p>
                     </div>
                   </motion.div>
@@ -1342,8 +1354,8 @@ export default function GenerativeAIDevelopment() {
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">
                         Collect and preprocess training data, fine-tune models
-                        with your specific requirements, and optimize performance
-                        for your target applications
+                        with your specific requirements, and optimize
+                        performance for your target applications
                       </p>
                     </div>
                   </motion.div>
@@ -1575,7 +1587,9 @@ export default function GenerativeAIDevelopment() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Join innovative companies who trust RT NextGenAI for cutting-edge generative AI solutions. Our experts are ready to help you harness the power of next-generation AI technologies.
+              Join innovative companies who trust RT NextGenAI for cutting-edge
+              generative AI solutions. Our experts are ready to help you harness
+              the power of next-generation AI technologies.
             </motion.p>
 
             {/* Benefits Grid */}
@@ -1614,7 +1628,7 @@ export default function GenerativeAIDevelopment() {
               <Button
                 size="lg"
                 className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-                onClick={() => window.location.href = '/contact'}
+                onClick={() => (window.location.href = "/contact")}
               >
                 <Brain className="mr-2 h-5 w-5" />
                 Unleash AI Innovation
