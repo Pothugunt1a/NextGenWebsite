@@ -134,6 +134,65 @@
   --radius: 0.5rem;
 }
 
+/* Global spacing overrides for tighter layout */
+.section-spacing {
+  @apply py-8 md:py-12;
+}
+
+.component-gap {
+  @apply gap-6 md:gap-8;
+}
+
+.text-spacing {
+  @apply mb-6 md:mb-8;
+}
+
+.container-spacing {
+  @apply space-y-4 md:space-y-6;
+}
+
+/* Override default Tailwind spacing for specific classes */
+@layer utilities {
+  .py-16 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .py-20 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .mb-16 {
+    margin-bottom: 2rem !important;
+  }
+
+  .mb-20 {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .gap-12 {
+    gap: 1.5rem !important;
+  }
+
+  .gap-16 {
+    gap: 2rem !important;
+  }
+
+  .space-y-12 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5rem !important;
+  }
+
+  .space-y-16 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 2rem !important;
+  }
+
+  .space-y-20 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 2.5rem !important;
+  }
+}
+
+/* Base styles */
 @layer base {
   * {
     border-color: hsl(var(--border));
@@ -227,7 +286,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -259,27 +318,27 @@
   .text-responsive-xs {
     @apply text-xs sm:text-sm;
   }
-  
+
   .text-responsive-sm {
     @apply text-sm sm:text-base;
   }
-  
+
   .text-responsive-base {
     @apply text-base sm:text-lg;
   }
-  
+
   .text-responsive-lg {
     @apply text-lg sm:text-xl md:text-2xl;
   }
-  
+
   .text-responsive-xl {
     @apply text-xl sm:text-2xl md:text-3xl;
   }
-  
+
   .text-responsive-2xl {
     @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
   }
-  
+
   .text-responsive-3xl {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
   }
