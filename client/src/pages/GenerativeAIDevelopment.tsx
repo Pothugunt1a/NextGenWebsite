@@ -833,7 +833,7 @@ export default function GenerativeAIDevelopment() {
               >
                 <div className="relative rounded-2xl overflow-hidden h-full">
                   <img
-                    src="/assets/GenerativeAI.png"
+                    src="/assets/GenerativeAI.gif"
                     alt="Generative AI Benefits"
                     className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   />
