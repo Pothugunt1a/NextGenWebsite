@@ -704,9 +704,7 @@ export default function AIChatbotDevelopment() {
                           03
                         </div>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 grouphover:to```typescript
-// This file adds AI-chatbot.gif on the left side of the advantages layout.
-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 grouphover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                         {chatbotServices[2].title}
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
@@ -808,17 +806,25 @@ cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all du
             </h2>
           </div>
 
-          {/* Main Layout: 2 Equal Columns */}
+          {/* Main Layout: 3 Equal Columns */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-3 gap-8">
               {/* First Column - Image */}
-              <div className="hidden lg:block">
-                <img
-                  src="./assets/AI-Chatbot.gif"
-                  alt="AI Chatbot Technology"
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="relative rounded-2xl overflow-hidden h-full">
+                  <img
+                    src="/assets/AI-chatbot.gif"
+                    alt="AI Chatbot Advantages"
+                    className="w-[60%] h-full object-cover rounded-2xl shadow-2xl mx-auto"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                </div>
+              </motion.div>
 
               {/* Second Column - Advantages 01 & 02 */}
               <div className="space-y-6">
@@ -1380,7 +1386,7 @@ cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all du
                   style={{
                     top: "50%",
                     left: "calc(50% - 180px)",
-                    transform: "translate(-50%, -50%)"",
+                    transform: "translate(-50%, -50%)",
                   }}
                 >
                   <motion.div
