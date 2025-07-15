@@ -188,10 +188,15 @@ export default function AIApplicationDevelopment() {
           <img
             src="/assets/AIApplication-banner.png"
             alt="AI Application Development"
-            className="w-full h-full object-cover brightness-110 contrast-110"
+            className="w-full h-full object-cover object-center"
+            style={{ 
+              imageRendering: 'crisp-edges',
+              filter: 'contrast(1.1) saturate(1.1) brightness(1.05)',
+              transform: 'translateZ(0)'
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/60"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
