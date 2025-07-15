@@ -57,6 +57,8 @@ import {
   Image,
   FileText,
   Cpu,
+  Network,
+  Megaphone,
 } from "lucide-react";
 
 export default function GenerativeAIDevelopment() {
@@ -213,27 +215,51 @@ export default function GenerativeAIDevelopment() {
     },
   ];
 
-  const benefits = [
+  const quarterlyBenefits = [
     {
-      title: "Accelerate content creation and reduce time-to-market",
-      description:
-        "Our generative AI solutions dramatically reduce content creation time by automating writing, design, and multimedia production processes. Generate high-quality content in minutes rather than hours, enabling faster campaign launches, product releases, and marketing initiatives that keep you ahead of competition.",
+      quarter: "Q1",
+      phase: "CONCEPT:",
+      title: "Product ideation continued",
+      subtitle: "Product concept:",
+      details: "Designs? Features? Target Market?",
+      subtitle2: "Marketing campaign concepts, brand development",
+      icon: <Lightbulb className="h-8 w-8" />,
+      bgColor: "from-purple-500 to-purple-600",
+      position: "top-left"
     },
     {
-      title: "Scale personalization across all customer touchpoints",
-      description:
-        "Create personalized experiences at unprecedented scale with AI-generated content tailored to individual customer preferences, behaviors, and demographics. Deliver customized marketing messages, product recommendations, and user experiences that increase engagement and conversion rates.",
+      quarter: "Q2", 
+      phase: "IDEATION:",
+      title: "Product ideation:",
+      subtitle: "Materials, features, purposes, alternatives",
+      subtitle2: "Competitor research",
+      subtitle3: "Market sounding",
+      icon: <Network className="h-8 w-8" />,
+      bgColor: "from-blue-500 to-blue-600",
+      position: "bottom-center"
     },
     {
-      title: "Enhance creativity and innovation capabilities",
-      description:
-        "Augment human creativity with AI-powered ideation, design exploration, and content variation generation. Break creative blocks, explore new concepts, and generate innovative solutions that push the boundaries of traditional content creation while maintaining brand consistency.",
+      quarter: "Q3",
+      phase: "TESTING:",
+      title: "Concept production and testing:",
+      subtitle: "Test comfort, durability, functionality, fashion",
+      subtitle2: "Market analysis:",
+      details: "Branding, naming, campaign planning",
+      icon: <Settings className="h-8 w-8" />,
+      bgColor: "from-teal-500 to-cyan-500",
+      position: "top-right"
     },
     {
-      title: "Optimize costs and resource allocation",
-      description:
-        "Reduce content creation costs by up to 70% while maintaining quality standards. Automate repetitive creative tasks, minimize outsourcing expenses, and reallocate human resources to strategic initiatives that drive business growth and innovation.",
-    },
+      quarter: "Q4",
+      phase: "RELEASE:",
+      title: "Product testing continued:",
+      subtitle: "Reiterate, optimize, finalize",
+      subtitle2: "End of Q4:",
+      details: "Open pre-order, release marketing campaign, prepare for retail launch",
+      icon: <Megaphone className="h-8 w-8" />,
+      bgColor: "from-cyan-400 to-teal-400",
+      position: "bottom-right"
+    }
   ];
 
   const whyChooseUs = [
@@ -785,7 +811,7 @@ export default function GenerativeAIDevelopment() {
         </div>
       </div>
 
-      {/* Benefits Section - Same as Advantages in AIChatbotDevelopment */}
+      {/* Benefits Section - Quarterly Timeline Layout */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -793,29 +819,176 @@ export default function GenerativeAIDevelopment() {
               Benefits of Employing Our Generative AI Development Services
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6 bg-gray-700/80 border-gray-600 hover:bg-gray-650/80 transition-colors backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="text-xl mb-4 text-white">
-                      {benefit.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base text-gray-300">
-                      {benefit.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+          
+          {/* Quarterly Timeline Grid */}
+          <div className="max-w-6xl mx-auto relative">
+            {/* Desktop Grid Layout */}
+            <div className="hidden lg:block relative">
+              {/* Connecting Lines */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Horizontal dotted lines */}
+                <div className="absolute top-1/4 left-1/4 right-1/4 h-px border-t-2 border-dotted border-gray-400"></div>
+                <div className="absolute bottom-1/4 left-1/4 right-1/4 h-px border-t-2 border-dotted border-gray-400"></div>
+                {/* Vertical dotted lines */}
+                <div className="absolute left-1/2 top-1/4 bottom-1/4 w-px border-l-2 border-dotted border-gray-400"></div>
+                <div className="absolute left-1/4 top-1/4 bottom-1/4 w-px border-l-2 border-dotted border-gray-400"></div>
+                <div className="absolute right-1/4 top-1/4 bottom-1/4 w-px border-l-2 border-dotted border-gray-400"></div>
+              </div>
+
+              {/* Quarter Sections */}
+              <div className="grid grid-cols-2 gap-16 py-16">
+                {/* Q1 - Top Left */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="relative text-right"
+                >
+                  <div className="mb-8">
+                    <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br ${quarterlyBenefits[0].bgColor} text-white mb-6`}>
+                      {quarterlyBenefits[0].icon}
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white px-6 py-4 rounded-lg mb-4">
+                    <h3 className="text-2xl font-bold">Q1</h3>
+                  </div>
+                  <div className="text-left bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                    <h4 className="text-lg font-bold text-purple-300 mb-2">CONCEPT:</h4>
+                    <h5 className="font-semibold text-white mb-2">Product ideation continued</h5>
+                    <p className="text-sm text-gray-300 mb-2">
+                      <span className="font-medium text-purple-200">Product concept:</span><br />
+                      Designs? Features?<br />
+                      Target Market?
+                    </p>
+                    <p className="text-sm text-gray-300">
+                      <span className="font-medium text-purple-200">Marketing campaign concepts, brand development</span>
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Q3 - Top Right */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="relative text-left"
+                >
+                  <div className="mb-8">
+                    <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br ${quarterlyBenefits[2].bgColor} text-white mb-6`}>
+                      {quarterlyBenefits[2].icon}
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-teal-500 to-cyan-500 text-white px-6 py-4 rounded-lg mb-4">
+                    <h3 className="text-2xl font-bold">Q3</h3>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                    <h4 className="text-lg font-bold text-cyan-300 mb-2">TESTING:</h4>
+                    <h5 className="font-semibold text-white mb-2">Concept production and testing:</h5>
+                    <p className="text-sm text-gray-300 mb-2">
+                      Test comfort, durability,<br />
+                      functionality, fashion
+                    </p>
+                    <p className="text-sm text-gray-300">
+                      <span className="font-medium text-cyan-200">Market analysis:</span><br />
+                      Branding, naming,<br />
+                      campaign planning
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Q2 - Bottom Left */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="relative text-right"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-4">
+                    <h4 className="text-lg font-bold text-blue-300 mb-2">IDEATION:</h4>
+                    <h5 className="font-semibold text-white mb-2">Product ideation:</h5>
+                    <p className="text-sm text-gray-300 mb-2">
+                      Materials, features,<br />
+                      purposes, alternatives
+                    </p>
+                    <p className="text-sm text-gray-300 mb-2">
+                      <span className="font-medium text-blue-200">Competitor research</span>
+                    </p>
+                    <p className="text-sm text-gray-300">
+                      <span className="font-medium text-blue-200">Market sounding</span>
+                    </p>
+                  </div>
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white px-6 py-4 rounded-lg mb-4">
+                    <h3 className="text-2xl font-bold">Q2</h3>
+                  </div>
+                  <div className="mb-8">
+                    <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br ${quarterlyBenefits[1].bgColor} text-white`}>
+                      {quarterlyBenefits[1].icon}
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Q4 - Bottom Right */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="relative text-left"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-4">
+                    <h4 className="text-lg font-bold text-teal-300 mb-2">RELEASE:</h4>
+                    <h5 className="font-semibold text-white mb-2">Product testing continued:</h5>
+                    <p className="text-sm text-gray-300 mb-2">
+                      Reiterate, optimize,<br />
+                      finalize
+                    </p>
+                    <p className="text-sm text-gray-300">
+                      <span className="font-medium text-teal-200">End of Q4:</span><br />
+                      Open pre-order,<br />
+                      release marketing<br />
+                      campaign, prepare<br />
+                      for retail launch
+                    </p>
+                  </div>
+                  <div className="bg-gradient-to-br from-cyan-400 to-teal-400 text-white px-6 py-4 rounded-lg mb-4">
+                    <h3 className="text-2xl font-bold">Q4</h3>
+                  </div>
+                  <div className="mb-8">
+                    <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br ${quarterlyBenefits[3].bgColor} text-white`}>
+                      {quarterlyBenefits[3].icon}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Mobile Layout */}
+            <div className="lg:hidden">
+              <div className="space-y-8">
+                {quarterlyBenefits.map((quarter, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-lg p-6"
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${quarter.bgColor} text-white flex items-center justify-center`}>
+                        {quarter.icon}
+                      </div>
+                      <div className={`bg-gradient-to-br ${quarter.bgColor} text-white px-4 py-2 rounded-lg`}>
+                        <h3 className="text-xl font-bold">{quarter.quarter}</h3>
+                      </div>
+                    </div>
+                    <h4 className="text-lg font-bold text-cyan-300 mb-2">{quarter.phase}</h4>
+                    <h5 className="font-semibold text-white mb-2">{quarter.title}</h5>
+                    <p className="text-sm text-gray-300">{quarter.subtitle}</p>
+                    {quarter.subtitle2 && <p className="text-sm text-gray-300 mt-2">{quarter.subtitle2}</p>}
+                    {quarter.details && <p className="text-sm text-gray-300 mt-2">{quarter.details}</p>}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
