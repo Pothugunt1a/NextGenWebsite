@@ -366,127 +366,7 @@ export default function IntelligentSystemsDevelopment() {
         </div>
       </div>
 
-      {/* Why Choose Our Intelligent Systems Section - Same as AI Chatbot Development */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why Choose Our Intelligent Systems
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Advanced AI-driven systems that transform business operations
-              through intelligent automation
-            </p>
-          </motion.div>
-
-          <div className="relative max-w-6xl mx-auto">
-            <Carousel
-              className="w-full"
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 5000,
-                  stopOnInteraction: true,
-                  stopOnMouseEnter: true,
-                }),
-              ]}
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {/* First slide - items 0,1,2 */}
-                <CarouselItem className="pl-2 md:pl-4">
-                  <div className="p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                      {whyChooseUsItems.slice(0, 3).map((item, index) => {
-                        const IconComponent = item.icon;
-
-                        return (
-                          <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ y: -10, scale: 1.05 }}
-                            viewport={{ once: true }}
-                            className="group"
-                          >
-                            <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
-                              <div className="flex justify-center mb-6">
-                                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
-                                  <div className="text-white">
-                                    <IconComponent className="h-10 w-10" />
-                                  </div>
-                                </div>
-                              </div>
-                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                {item.title}
-                              </h3>
-                              <p className="text-gray-300 leading-relaxed">
-                                {item.description}
-                              </p>
-                            </div>
-                          </motion.div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </CarouselItem>
-
-                {/* Second slide - items 3,4 */}
-                <CarouselItem className="pl-2 md:pl-4">
-                  <div className="p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                      {whyChooseUsItems.slice(3, 5).map((item, index) => {
-                        const IconComponent = item.icon;
-
-                        return (
-                          <motion.div
-                            key={index + 3}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ y: -10, scale: 1.05 }}
-                            viewport={{ once: true }}
-                            className="group"
-                          >
-                            <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
-                              <div className="flex justify-center mb-6">
-                                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
-                                  <div className="text-white">
-                                    <IconComponent className="h-10 w-10" />
-                                  </div>
-                                </div>
-                              </div>
-                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                {item.title}
-                              </h3>
-                              <p className="text-gray-300 leading-relaxed">
-                                {item.description}
-                              </p>
-                            </div>
-                          </motion.div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-
-              <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
-              <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
-            </Carousel>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Our Technical Capabilities - Same as AI Consulting main capabilities */}
       <div
@@ -934,43 +814,226 @@ export default function IntelligentSystemsDevelopment() {
         </div>
       </section>
 
-      {/* Ready to Bring Intelligence CTA - Same as AI Consulting */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-700/20 to-cyan-600/20"></div>
-        <div className="absolute inset-0 bg-light/80"></div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Why Choose Our Intelligent Systems Section - Moved above CTA */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-300 bg-clip-text text-transparent">
-                Ready to Bring Intelligence to Your Business?
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Why Choose Our Intelligent Systems
             </h2>
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Advanced AI-driven systems that transform business operations
+              through intelligent automation
+            </p>
+          </motion.div>
+
+          <div className="relative max-w-6xl mx-auto">
+            <Carousel
+              className="w-full"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 5000,
+                  stopOnInteraction: true,
+                  stopOnMouseEnter: true,
+                }),
+              ]}
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {/* First slide - items 0,1,2 */}
+                <CarouselItem className="pl-2 md:pl-4">
+                  <div className="p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                      {whyChooseUsItems.slice(0, 3).map((item, index) => {
+                        const IconComponent = item.icon;
+
+                        return (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.05 }}
+                            viewport={{ once: true }}
+                            className="group"
+                          >
+                            <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                              <div className="flex justify-center mb-6">
+                                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                                  <div className="text-white">
+                                    <IconComponent className="h-10 w-10" />
+                                  </div>
+                                </div>
+                              </div>
+                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                {item.title}
+                              </h3>
+                              <p className="text-gray-300 leading-relaxed">
+                                {item.description}
+                              </p>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </CarouselItem>
+
+                {/* Second slide - items 3,4 */}
+                <CarouselItem className="pl-2 md:pl-4">
+                  <div className="p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                      {whyChooseUsItems.slice(3, 5).map((item, index) => {
+                        const IconComponent = item.icon;
+
+                        return (
+                          <motion.div
+                            key={index + 3}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.05 }}
+                            viewport={{ once: true }}
+                            className="group"
+                          >
+                            <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                              <div className="flex justify-center mb-6">
+                                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                                  <div className="text-white">
+                                    <IconComponent className="h-10 w-10" />
+                                  </div>
+                                </div>
+                              </div>
+                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                {item.title}
+                              </h3>
+                              <p className="text-gray-300 leading-relaxed">
+                                {item.description}
+                              </p>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+
+              <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+              <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+            </Carousel>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced CTA Section - Updated to match AI Consulting */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="text-center p-16 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/20 shadow-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Top Badge */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
+            >
+              <Target className="h-5 w-5 text-cyan-400" />
+              <span className="text-white font-medium">
+                Intelligent Systems Innovation Experts
+              </span>
+              <Award className="h-4 w-4 text-blue-400 fill-current" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold mb-6"
+            >
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Ready to Bring Intelligence
+              </span>
+              <br />
+              <span className="text-white">to Your Business?</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
               Let's build intelligent systems that do more than automate—systems
               that learn, reason, adapt, and truly partner with your business
-              strategy.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link href="/contact">
-                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-2xl text-lg">
-                  Start Your Project
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              strategy
+            </motion.p>
+
+            {/* Benefits Grid */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Free Strategy Session
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Expert AI Guidance
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">Proven Results</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex justify-center"
+            >
               <Button
-                variant="outline"
-                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg"
+                size="lg"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               >
-                Learn More
+                <Brain className="mr-2 h-5 w-5" />
+                Start Your AI Journey
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
