@@ -222,8 +222,8 @@ export default function GenerativeAIDevelopment() {
       subtitle: "Reduce time-to-market significantly",
       description: "Our generative AI solutions dramatically reduce content creation time by automating writing, design, and multimedia production processes. Generate high-quality content in minutes rather than hours.",
       icon: <Clock className="h-8 w-8" />,
-      bgColor: "from-purple-600 to-purple-700",
-      arrowColor: "bg-purple-600"
+      bgColor: "from-slate-700 to-slate-800",
+      arrowColor: "bg-slate-700"
     },
     {
       number: "02", 
@@ -231,8 +231,8 @@ export default function GenerativeAIDevelopment() {
       subtitle: "Scale across all customer touchpoints",
       description: "Create personalized experiences at unprecedented scale with AI-generated content tailored to individual customer preferences, behaviors, and demographics for increased engagement.",
       icon: <Users className="h-8 w-8" />,
-      bgColor: "from-cyan-500 to-cyan-600",
-      arrowColor: "bg-cyan-500"
+      bgColor: "from-emerald-500 to-emerald-600",
+      arrowColor: "bg-emerald-500"
     },
     {
       number: "03",
@@ -240,8 +240,8 @@ export default function GenerativeAIDevelopment() {
       subtitle: "Augment creativity and capabilities",
       description: "Augment human creativity with AI-powered ideation, design exploration, and content variation generation. Break creative blocks and explore new concepts while maintaining brand consistency.",
       icon: <Lightbulb className="h-8 w-8" />,
-      bgColor: "from-purple-600 to-purple-700",
-      arrowColor: "bg-purple-600"
+      bgColor: "from-slate-700 to-slate-800",
+      arrowColor: "bg-slate-700"
     },
     {
       number: "04",
@@ -249,8 +249,8 @@ export default function GenerativeAIDevelopment() {
       subtitle: "Optimize resource allocation",
       description: "Reduce content creation costs by up to 70% while maintaining quality standards. Automate repetitive tasks and reallocate human resources to strategic initiatives.",
       icon: <TrendingUp className="h-8 w-8" />,
-      bgColor: "from-cyan-500 to-cyan-600",
-      arrowColor: "bg-cyan-500"
+      bgColor: "from-emerald-500 to-emerald-600",
+      arrowColor: "bg-emerald-500"
     }
   ];
 
@@ -805,33 +805,15 @@ export default function GenerativeAIDevelopment() {
 
       {/* Benefits Section - Vertical Steps Layout */}
       <section className="py-20 relative">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-          <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-purple-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
-          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur-2xl opacity-30"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Benefits of Employing Our Generative AI Development Services
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Transform your business with cutting-edge generative AI solutions that deliver measurable results
-            </p>
-          </motion.div>
+          </div>
           
           {/* Vertical Steps Layout */}
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
               {benefitSteps.map((step, index) => (
                 <motion.div
@@ -839,38 +821,37 @@ export default function GenerativeAIDevelopment() {
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-8 relative group"
+                  className="flex items-center gap-8 relative"
                 >
                   {/* Step Arrow Shape */}
-                  <div className={`relative flex-shrink-0 bg-gradient-to-br ${step.bgColor} text-white shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl`} 
+                  <div className={`relative flex-shrink-0 bg-gradient-to-br ${step.bgColor} text-white rounded-l-lg`} 
                        style={{
                          clipPath: 'polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%)',
-                         width: '320px',
-                         height: '130px'
+                         width: '280px',
+                         height: '120px'
                        }}>
-                    <div className="flex items-center h-full px-8">
+                    <div className="flex items-center h-full px-6">
                       {/* Step Number */}
-                      <div className="text-5xl font-bold mr-6 opacity-90">
+                      <div className="text-4xl font-bold mr-4 opacity-90">
                         {step.number}
                       </div>
                       
                       {/* Icon in white shield */}
-                      <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center text-gray-800 shadow-lg">
+                      <div className="bg-white rounded-lg p-3 flex items-center justify-center text-gray-800 mr-4">
                         {step.icon}
                       </div>
                     </div>
                   </div>
                   
                   {/* Content */}
-                  <div className="flex-1 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-xl transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {step.title}
                     </h3>
-                    <h4 className="text-lg text-purple-300 mb-4 font-semibold">
+                    <h4 className="text-lg text-gray-300 mb-3">
                       {step.subtitle}
                     </h4>
-                    <p className="text-gray-300 leading-relaxed text-base">
+                    <p className="text-gray-400 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
