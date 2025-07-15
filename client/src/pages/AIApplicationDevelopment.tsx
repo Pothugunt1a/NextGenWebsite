@@ -151,10 +151,11 @@ export default function AIApplicationDevelopment() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-black"></div>
           <img
             src="/assets/AIApplication-banner.png"
             alt="AI Application Development"
-            className="w-full h-full object-cover brightness-110 contrast-110"
+            className="w-full h-full object-cover brightness-110 contrast-110 relative z-10"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/60"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30"></div>
@@ -374,7 +375,7 @@ export default function AIApplicationDevelopment() {
                   className="relative group"
                 >
                   {/* Main Feature Card */}
-                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                  <div className="relative min-h-96 w-full bg-black rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="relative w-full">
                       <img
                         src="/assets/AI-ApplicationDevelopment.gif"
@@ -588,7 +589,7 @@ export default function AIApplicationDevelopment() {
                   className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl overflow-hidden"
                 >
                   {/* Industry Image */}
-                  <div className="relative h-64 overflow-hidden group cursor-pointer">
+                  <div className="relative h-64 overflow-hidden group cursor-pointer bg-black">
                     <img
                       src={selectedIndustry.image}
                       alt={selectedIndustry.name}
