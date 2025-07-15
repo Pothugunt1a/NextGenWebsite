@@ -146,12 +146,7 @@ export default function AIApplicationDevelopment() {
   ];
 
   return (
-    <div className="text-white"
-      style={{
-        background: 'linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a)',
-        minHeight: '100vh'
-      }}
-    >
+    <div className="min-h-screen bg-light text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
