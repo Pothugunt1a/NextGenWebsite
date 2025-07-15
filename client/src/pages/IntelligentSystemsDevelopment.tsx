@@ -505,12 +505,14 @@ export default function IntelligentSystemsDevelopment() {
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                          Computer Vision & Visual Analytics
-                        </h3>
-                        <ArrowRight className="h-5 w-5 text-blue-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          01
+                        </div>
                       </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        Computer Vision & Visual Analytics
+                      </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         Object detection, image segmentation, video analytics, facial recognition, and real-time visual monitoring systems.
                       </p>
@@ -540,12 +542,14 @@ export default function IntelligentSystemsDevelopment() {
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                          Natural Language & Conversational AI
-                        </h3>
-                        <ArrowRight className="h-5 w-5 text-blue-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          02
+                        </div>
                       </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        Natural Language & Conversational AI
+                      </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         Intelligent chatbots, virtual assistants, text classification, summarization, and multilingual support systems.
                       </p>
@@ -554,16 +558,70 @@ export default function IntelligentSystemsDevelopment() {
                 </motion.div>
               </div>
 
-              {/* Middle Row - Predictive Modeling */}
-              <div className="lg:col-span-3 mb-8">
+              {/* Second Row - Central Image with Predictive Modeling */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Central Image */}
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="group cursor-pointer"
+                  transition={{ duration: 1, type: "spring" }}
+                  className="relative group"
                 >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-y-2">
+                  {/* Main Feature Card */}
+                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="relative w-full">
+                      <img
+                        src="/assets/IntelligentSystemsDevelopment-banner.png"
+                        alt="Intelligent Systems Capabilities"
+                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
+                        style={{ backgroundAttachment: "fixed" }}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/assets/AI-Capabilities.gif";
+                        }}
+                      />
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 flex flex-col gap-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Brain className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        AI
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-sm font-medium">
+                            Intelligent Systems Hub
+                          </span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                          Intelligent Systems Capabilities
+                        </h3>
+                        <p className="text-blue-100 leading-relaxed mb-6">
+                          Advanced intelligent systems that transform business operations through automation and AI.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Predictive Modeling & Anomaly Detection */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
                         src="/assets/AI-ML.png"
@@ -577,12 +635,14 @@ export default function IntelligentSystemsDevelopment() {
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                          Predictive Modeling & Anomaly Detection
-                        </h3>
-                        <ArrowRight className="h-5 w-5 text-blue-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          03
+                        </div>
                       </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        Predictive Modeling & Anomaly Detection
+                      </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         Time‑series forecasting, root‑cause identification, and automated alerting based on real‑time data.
                       </p>
@@ -591,27 +651,23 @@ export default function IntelligentSystemsDevelopment() {
                 </motion.div>
               </div>
 
-              {/* Bottom Row - RPA and Intelligent Automation */}
+              {/* Third Row - RPA and Intelligent Automation */}
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Robotic Process Automation */}
                 <motion.div
                   initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
+                  transition={{ duration: 0.8 }}
                   className="group cursor-pointer h-full"
                 >
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
-                        src="/assets/AI-automation.png"
+                        src="/assets/AI-Training.png"
                         alt="RPA Automation"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         style={{ backgroundAttachment: "fixed" }}
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "/assets/AI-Training.png";
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -619,12 +675,14 @@ export default function IntelligentSystemsDevelopment() {
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                          Robotic Process Automation (RPA)
-                        </h3>
-                        <ArrowRight className="h-5 w-5 text-blue-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          04
+                        </div>
                       </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        Robotic Process Automation (RPA)
+                      </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         End‑to‑end automation of routine tasks—from invoice processing to data entry and workflow orchestration.
                       </p>
@@ -637,20 +695,16 @@ export default function IntelligentSystemsDevelopment() {
                   initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
+                  transition={{ duration: 0.8 }}
                   className="group cursor-pointer h-full"
                 >
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
-                        src="/assets/AI-intelligent-automation.png"
+                        src="/assets/AI-ProcessOptimization.png"
                         alt="Intelligent Automation"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         style={{ backgroundAttachment: "fixed" }}
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "/assets/AI-ProcessOptimization.png";
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -658,12 +712,14 @@ export default function IntelligentSystemsDevelopment() {
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                          Intelligent Automation
-                        </h3>
-                        <ArrowRight className="h-5 w-5 text-blue-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          05
+                        </div>
                       </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        Intelligent Automation
+                      </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         Combining RPA with machine learning to build self‑learning processes that adapt to new data and evolving business needs.
                       </p>
