@@ -704,7 +704,7 @@ export default function AIChatbotDevelopment() {
                           03
                         </div>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 grouphover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                         {chatbotServices[2].title}
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
@@ -826,7 +826,7 @@ export default function AIChatbotDevelopment() {
                         <stop offset="100%" stopColor="#06b6d4" />
                       </linearGradient>
                     </defs>
-                    
+
                     {/* Main semi-circle arc - positioned on the right side */}
                     <path
                       d="M 290 80 A 110 110 0 0 1 290 304"
@@ -836,7 +836,7 @@ export default function AIChatbotDevelopment() {
                       opacity="0.9"
                       strokeDasharray="8,6"
                     />
-                    
+
                     {/* Extending dashed lines at the ends */}
                     <path
                       d="M 270 65 Q 285 75 290 80"
@@ -854,28 +854,28 @@ export default function AIChatbotDevelopment() {
                       opacity="0.7"
                       strokeDasharray="8,6"
                     />
-                    
+
                     {/* Connection dots and lines to advantage items */}
                     <g>
                       {/* Dot 1 - Top position */}
                       <circle cx="290" cy="110" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
                       <line x1="290" y1="110" x2="340" y2="110" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-                      
+
                       {/* Dot 2 - Upper middle position */}
                       <circle cx="290" cy="160" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
                       <line x1="290" y1="160" x2="340" y2="160" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-                      
+
                       {/* Dot 3 - Lower middle position */}
                       <circle cx="290" cy="220" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
                       <line x1="290" y1="220" x2="340" y2="220" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
-                      
+
                       {/* Dot 4 - Bottom position */}
                       <circle cx="290" cy="274" r="6" fill="white" stroke="url(#timelineGradient)" strokeWidth="3" opacity="1" />
                       <line x1="290" y1="274" x2="340" y2="274" stroke="url(#timelineGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.8" />
                     </g>
                   </svg>
                 </div>
-                
+
                 {/* Blue gradient ring around the image */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 p-4">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden">
@@ -941,7 +941,7 @@ export default function AIChatbotDevelopment() {
 
 
 
-              
+
 
             </svg>
 

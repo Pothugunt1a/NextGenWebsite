@@ -386,7 +386,7 @@ export default function ITConsulting() {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-16">
+        <section className="py-16 bg-light relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center mb-16"

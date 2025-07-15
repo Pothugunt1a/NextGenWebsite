@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -786,7 +785,7 @@ export default function GenerativeAI() {
       </div>
 
       {/* Benefits Section - Same as Advantages in AIChatbotDevelopment */}
-      <section className="py-20 relative">
+      <section className="py-20 bg-light relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -929,7 +928,7 @@ export default function GenerativeAI() {
       </section>
 
       {/* Why Choose Us Section - Same as Validation Page */}
-      <section className="py-16">
+      <section className="py-16 bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -938,7 +937,7 @@ export default function GenerativeAI() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Why Choose RT NextGenAI
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
@@ -1039,7 +1038,7 @@ export default function GenerativeAI() {
       </section>
 
       {/* Industries Section - Interactive Layout */}
-      <section className="py-20 text-white">
+      <section className="py-20 text-white bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -1126,7 +1125,7 @@ export default function GenerativeAI() {
       </section>
 
       {/* Development Flow Section - Same as AIChatbotDevelopment */}
-      <section className="py-16 text-white relative overflow-hidden">
+      <section className="py-16 text-white relative overflow-hidden bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -1427,7 +1426,7 @@ export default function GenerativeAI() {
       </section>
 
       {/* FAQs Section */}
-      <section className="py-16 text-white relative">
+      <section className="py-16 text-white relative bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
