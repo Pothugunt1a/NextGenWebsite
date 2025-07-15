@@ -346,55 +346,104 @@ export default function IntelligentSystemsDevelopment() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyChooseUsItems.map((item, index) => {
-              const IconComponent = item.icon;
-              const SecondaryIconComponent = item.secondaryIcon;
+          <div className="relative max-w-6xl mx-auto">
+            <Carousel
+              className="w-full"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 5000,
+                  stopOnInteraction: true,
+                  stopOnMouseEnter: true,
+                }),
+              ]}
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {/* First slide - items 0,1,2 */}
+                <CarouselItem className="pl-2 md:pl-4">
+                  <div className="p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                      {whyChooseUsItems.slice(0, 3).map((item, index) => {
+                        const IconComponent = item.icon;
 
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group"
-                >
-                  <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
-
-                    <div className="flex items-start gap-6 mb-6">
-                      <div className="relative">
-                        <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                          <IconComponent className="h-10 w-10 text-white" />
-                        </div>
-                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                          <SecondaryIconComponent className="h-4 w-4 text-white" />
-                        </div>
-                      </div>
-
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {item.title}
-                        </h3>
-                        <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                      </div>
-                    </div>
-
-                    <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                      {item.description}
-                    </p>
-
-                    <div className="flex items-center gap-2 text-cyan-400">
-                      <CheckCircle className="h-4 w-4" />
-                      <span className="text-sm font-medium">
-                        {item.badge}
-                      </span>
+                        return (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.05 }}
+                            viewport={{ once: true }}
+                            className="group"
+                          >
+                            <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                              <div className="flex justify-center mb-6">
+                                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                                  <div className="text-white">
+                                    <IconComponent className="h-10 w-10" />
+                                  </div>
+                                </div>
+                              </div>
+                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                {item.title}
+                              </h3>
+                              <p className="text-gray-300 leading-relaxed">
+                                {item.description}
+                              </p>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
                     </div>
                   </div>
-                </motion.div>
-              );
-            })}
+                </CarouselItem>
+
+                {/* Second slide - items 3,4 */}
+                <CarouselItem className="pl-2 md:pl-4">
+                  <div className="p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                      {whyChooseUsItems.slice(3, 5).map((item, index) => {
+                        const IconComponent = item.icon;
+
+                        return (
+                          <motion.div
+                            key={index + 3}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.05 }}
+                            viewport={{ once: true }}
+                            className="group"
+                          >
+                            <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                              <div className="flex justify-center mb-6">
+                                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
+                                  <div className="text-white">
+                                    <IconComponent className="h-10 w-10" />
+                                  </div>
+                                </div>
+                              </div>
+                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                {item.title}
+                              </h3>
+                              <p className="text-gray-300 leading-relaxed">
+                                {item.description}
+                              </p>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+
+              <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+              <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+            </Carousel>
           </div>
         </div>
       </section>
