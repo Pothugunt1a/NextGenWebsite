@@ -2,6 +2,7 @@
 
 # Fix Image Permissions for CPPanel Deployment
 # This script ensures all image assets have proper read permissions (644)
+# Critical for cpanel deployment - prevents 403 errors when serving images
 
 echo "Fixing image permissions for cpanel deployment..."
 
@@ -40,3 +41,6 @@ ls -la client/public/assets/*.gif 2>/dev/null | head -3
 
 echo ""
 echo "Ready for cpanel deployment - all images should now display correctly."
+echo ""
+echo "IMPORTANT: Always run this script after each build before deploying to cpanel!"
+echo "Usage: ./fix-banner-permissions.sh"

@@ -88,6 +88,13 @@ The backend is minimalistic but extensible, currently providing an API endpoint 
 
 ## Recent Changes
 
+**July 16, 2025:**
+- Fixed critical image permissions issue for cpanel deployment
+- Enhanced fix-banner-permissions.sh script with better documentation
+- All PNG, GIF, JPG, and SVG files now automatically set to 644 permissions
+- Created comprehensive cpanel deployment checklist
+- Verified both source and built assets have proper permissions for web server access
+
 **July 5, 2025:**
 - Enhanced footer with professional design matching website theme
 - Fixed AI Consulting page banner to match careers and validation page structure
