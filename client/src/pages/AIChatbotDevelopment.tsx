@@ -814,7 +814,24 @@ export default function AIChatbotDevelopment() {
           {/* Main Layout: 3 Columns */}
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-8 items-start">
-              {/* First Column - Advantages 01 & 02 */}
+              {/* First Column - Image (60% width) */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="relative rounded-2xl overflow-hidden h-full">
+                  <img
+                    src="/assets/AI-chatbot.gif"
+                    alt="AI Chatbot Advantages"
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                </div>
+              </motion.div>
+
+              {/* Second Column - Advantages 01 & 02 */}
               <div className="space-y-6">
                 {advantages.slice(0, 2).map((advantage, index) => (
                   <motion.div
@@ -860,23 +877,6 @@ export default function AIChatbotDevelopment() {
                   </motion.div>
                 ))}
               </div>
-
-              {/* Second Column - Image (Center) */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="relative rounded-2xl overflow-hidden h-full">
-                  <img
-                    src="/assets/AI-chatbot.gif"
-                    alt="AI Chatbot Advantages"
-                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-                </div>
-              </motion.div>
 
               {/* Third Column - Advantages 03 & 04 */}
               <div className="space-y-6">
