@@ -1536,7 +1536,6 @@ export default function GenerativeAIDevelopment() {
       <section className="py-16 text-white relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div>
               {/* FAQ Image - Left Aligned with Reduced Size */}
               <div className="mb-12 flex justify-start">
                 <div className="relative w-80">
