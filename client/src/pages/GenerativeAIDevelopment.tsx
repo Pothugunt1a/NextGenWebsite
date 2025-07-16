@@ -934,7 +934,6 @@ export default function GenerativeAIDevelopment() {
 
       {/* Generative AI Use Cases - Same as LLM Use Cases Layout */}
       <section className="py-16 relative">
-
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -1550,9 +1549,9 @@ export default function GenerativeAIDevelopment() {
               <div className="lg:col-span-5">
                 <div className="relative">
                   <img
-                    src="./assets/AI Gif.gif"
+                    src="./assets/Faq's-transparent.svg"
                     alt="Generative AI Technology"
-                    className="w-full h-[500px] object-cover rounded-2xl"
+                    className="w-full h-[500px] object-contain rounded-2xl"
                   />
                 </div>
               </div>
