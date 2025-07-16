@@ -50,6 +50,20 @@
   filter: brightness(1.4) contrast(1.3) saturate(1.2);
 }
 
+/* Responsive adjustments for dropdown images */
+@media (max-width: 1024px) {
+  .dropdown-image {
+    width: 20rem !important;
+    height: 12rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-image {
+    display: none;
+  }
+}
+
 /* Navbar gradient underline effect */
 .nav-link {
   position: relative;

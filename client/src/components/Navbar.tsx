@@ -225,7 +225,7 @@ export default function Navbar({
 
                       {activeDropdown === link.id && (
                         <div
-                          className="absolute left-0 right-0 top-full mt-2 bg-black shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
+                          className="absolute left-0 right-0 top-full mt-2 bg-gray-900/95 backdrop-blur-sm shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
                           onMouseEnter={handleDropdownMouseEnter}
                           onMouseLeave={handleDropdownMouseLeave}
                           style={{
@@ -239,7 +239,7 @@ export default function Navbar({
                           <div className="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
                           <div className="container mx-auto relative flex max-w-none min-h-[320px]">
                             {/* Dynamic Image on the right with gradient overlay */}
-                            <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
+                            <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 hidden md:block">
                               <div className="relative">
                                 <img
                                   src={
@@ -257,8 +257,8 @@ export default function Navbar({
                                   }`}
                                   style={{ width: "28rem", height: "18rem" }}
                                 />
-                                {/* Gradient overlay on the image */}
-                                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/60"></div>
+                                {/* Subtle overlay for better integration */}
+                                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-gray-900/10 to-gray-900/30"></div>
                               </div>
                             </div>
 
@@ -618,14 +618,14 @@ export default function Navbar({
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute left-0 right-0 top-full bg-black border-t border-gray-600 shadow-lg">
+          <div className="lg:hidden absolute left-0 right-0 top-full bg-gray-900/95 backdrop-blur-sm border-t border-gray-600 shadow-lg">
             <div className="flex flex-col space-y-2 pt-4 pb-4 px-4">
               {navLinks.map((link) => (
                 <div key={link.id}>
                   {link.hasDropdown ? (
                     <div>
                       <button
-                        className="w-full text-left px-3 py-2 text-white hover:bg-black hover:text-cyan-400 rounded-lg transition-all duration-300 flex items-center justify-between"
+                        className="w-full text-left px-3 py-2 text-white hover:bg-gray-800 hover:text-cyan-400 rounded-lg transition-all duration-300 flex items-center justify-between"
                         onClick={() => toggleMobileDropdown(link.id)}
                       >
                         {link.name}
@@ -707,7 +707,7 @@ export default function Navbar({
                   ) : (
                     <a
                       href={link.href}
-                      className="block px-3 py-2 text-white hover:bg-black hover:text-cyan-400 rounded-lg transition-all duration-300"
+                      className="block px-3 py-2 text-white hover:bg-gray-800 hover:text-cyan-400 rounded-lg transition-all duration-300"
                       onClick={(e) => {
                         e.preventDefault();
                         if (link.href === "#home") {
