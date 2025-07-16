@@ -819,7 +819,7 @@ export default function AIChatbotDevelopment() {
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="relative mt-12"
+                className="relative mt-20"
               >
                 <div className="relative rounded-2xl overflow-hidden h-full">
                   <img
