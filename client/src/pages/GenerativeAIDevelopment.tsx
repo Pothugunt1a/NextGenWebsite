@@ -58,6 +58,7 @@ import {
   Cpu,
   Network,
   Megaphone,
+  User,
 } from "lucide-react";
 
 export default function GenerativeAIDevelopment() {
@@ -218,7 +219,6 @@ export default function GenerativeAIDevelopment() {
     {
       number: "01",
       title: "Enhanced Creativity and Innovation",
-      subtitle: "Generate new and unique outputs",
       description:
         "Generative AI produces unique outputs—like designs, text, and art—fueling creativity and offering businesses fresh ideas for innovation and product development.",
       icon: <Lightbulb className="h-8 w-8" />,
@@ -228,7 +228,6 @@ export default function GenerativeAIDevelopment() {
     {
       number: "02",
       title: "Time and Cost Efficiency",
-      subtitle: "Automate and streamline processes",
       description:
         "Generative AI streamlines tasks like content creation, design prototyping, and data synthesis, saving time and cutting costs by reducing manual effort.",
       icon: <Clock className="h-8 w-8" />,
@@ -238,7 +237,6 @@ export default function GenerativeAIDevelopment() {
     {
       number: "03",
       title: "Improved Decision-Making",
-      subtitle: "Data-driven insights and predictions",
       description:
         "Generative AI analyzes large data sets to uncover insights and trends, helping businesses make smarter, data-driven decisions and refine strategies.",
       icon: <TrendingUp className="h-8 w-8" />,
@@ -248,10 +246,9 @@ export default function GenerativeAIDevelopment() {
     {
       number: "04",
       title: "Personalized Experiences",
-      subtitle: "Tailored customer engagement",
       description:
-        "Generative AI delivers customized content and recommendations based on user behavior, boosting customer engagement, satisfaction, and loyalty.",
-      icon: <Users className="h-8 w-8" />,
+        "Generative AI creates personalized content, recommendations, and interactions, enhancing customer satisfaction and driving engagement across all touchpoints.",
+      icon: <User className="h-8 w-8" />,
       bgColor: "from-blue-500/30 to-cyan-500/40",
       arrowColor: "bg-blue-500/30",
     },
@@ -843,7 +840,7 @@ export default function GenerativeAIDevelopment() {
 
               {/* Second Column - Benefits 01 & 02 */}
               <div className="space-y-6">
-                {benefitSteps.slice(0, 2).map((step, index) => (
+                {benefitSteps.slice(0, 2).map((benefitStep, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 30 }}
@@ -853,7 +850,7 @@ export default function GenerativeAIDevelopment() {
                   >
                     {/* Step Arrow Shape */}
                     <div
-                      className={`relative bg-gradient-to-br ${step.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`}
+                      className={`relative bg-gradient-to-br ${benefitStep.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`}
                       style={{
                         clipPath:
                           "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)",
@@ -863,12 +860,12 @@ export default function GenerativeAIDevelopment() {
                       <div className="flex items-center h-full px-4">
                         {/* Step Number */}
                         <div className="text-2xl font-bold mr-3 opacity-90">
-                          {step.number}
+                          {benefitStep.number}
                         </div>
 
                         {/* Icon in white shield */}
                         <div className="bg-white rounded-lg p-2 flex items-center justify-center text-gray-800">
-                          <div className="scale-75">{step.icon}</div>
+                          <div className="scale-75">{benefitStep.icon}</div>
                         </div>
                       </div>
                     </div>
@@ -876,13 +873,10 @@ export default function GenerativeAIDevelopment() {
                     {/* Content */}
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">
-                        {step.title}
+                        {benefitStep.title}
                       </h3>
-                      <h4 className="text-sm text-gray-300 mb-2">
-                        {step.subtitle}
-                      </h4>
                       <p className="text-sm text-gray-400 leading-relaxed">
-                        {step.description}
+                        {benefitStep.description}
                       </p>
                     </div>
                   </motion.div>
@@ -891,7 +885,7 @@ export default function GenerativeAIDevelopment() {
 
               {/* Third Column - Benefits 03 & 04 */}
               <div className="space-y-6">
-                {benefitSteps.slice(2, 4).map((step, index) => (
+                {benefitSteps.slice(2, 4).map((benefitStep, index) => (
                   <motion.div
                     key={index + 2}
                     initial={{ opacity: 0, y: 30 }}
@@ -901,7 +895,7 @@ export default function GenerativeAIDevelopment() {
                   >
                     {/* Step Arrow Shape */}
                     <div
-                      className={`relative bg-gradient-to-br ${step.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`}
+                      className={`relative bg-gradient-to-br ${benefitStep.bgColor} text-white rounded-lg backdrop-blur-sm border border-white/10 mb-4`}
                       style={{
                         clipPath:
                           "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)",
@@ -911,12 +905,12 @@ export default function GenerativeAIDevelopment() {
                       <div className="flex items-center h-full px-4">
                         {/* Step Number */}
                         <div className="text-2xl font-bold mr-3 opacity-90">
-                          {step.number}
+                          {benefitStep.number}
                         </div>
 
                         {/* Icon in white shield */}
                         <div className="bg-white rounded-lg p-2 flex items-center justify-center text-gray-800">
-                          <div className="scale-75">{step.icon}</div>
+                          <div className="scale-75">{benefitStep.icon}</div>
                         </div>
                       </div>
                     </div>
@@ -924,13 +918,10 @@ export default function GenerativeAIDevelopment() {
                     {/* Content */}
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">
-                        {step.title}
+                        {benefitStep.title}
                       </h3>
-                      <h4 className="text-sm text-gray-300 mb-2">
-                        {step.subtitle}
-                      </h4>
                       <p className="text-sm text-gray-400 leading-relaxed">
-                        {step.description}
+                        {benefitStep.description}
                       </p>
                     </div>
                   </motion.div>
