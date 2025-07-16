@@ -825,7 +825,7 @@ export default function AIChatbotDevelopment() {
                   <img
                     src="/assets/AI-chatbot.gif"
                     alt="AI Chatbot Advantages"
-                    className="w-[60%] h-full object-cover rounded-2xl shadow-2xl mx-auto"
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                 </div>
