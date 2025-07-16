@@ -107,14 +107,14 @@ export default function GenerativeAIDevelopment() {
     {
       id: "education",
       name: "Education",
-      image: "/assets/Internet-Tech-Startup.png",
+      image: "/assets/Education.png",
       content:
         "Revolutionize learning with AI-generated curriculum, personalized tutoring systems, and adaptive educational content. Create interactive learning experiences, generate assessment materials, and develop virtual teaching assistants that provide individualized support to students at all levels.",
     },
     {
       id: "manufacturing",
       name: "Manufacturing",
-      image: "/assets/Oil-Gas.png",
+      image: "/assets/Manufacturing.png",
       content:
         "Optimize manufacturing processes with AI-generated maintenance schedules, quality control reports, and production optimization strategies. Create automated documentation, generate training materials, and develop predictive models that improve efficiency and reduce operational costs.",
     },
@@ -182,35 +182,35 @@ export default function GenerativeAIDevelopment() {
       title: "Natural Language Generation",
       description:
         "Create human-like text content at scale with advanced NLG models. Generate articles, reports, product descriptions, and marketing copy that resonates with your target audience while maintaining brand consistency and quality standards across all communications.",
-      backgroundImage: "/assets/AI-Training.png",
+      backgroundImage: "/assets/AI-nlp.png",
     },
     {
       icon: <Image className="h-8 w-8 text-white" />,
       title: "Computer Vision & Image Generation",
       description:
         "Transform visual content creation with AI-powered image generation, enhancement, and manipulation. Create stunning visuals, product mockups, architectural designs, and artistic content that meets your specific requirements and brand guidelines.",
-      backgroundImage: "/assets/AI-Lifecycle.png",
+      backgroundImage: "/assets/AI-computerVision.png",
     },
     {
       icon: <Film className="h-8 w-8 text-white" />,
       title: "Video & Audio Generation",
       description:
         "Revolutionize multimedia content with AI-generated videos, voiceovers, and audio content. Create engaging presentations, training materials, advertisements, and personalized video messages that captivate your audience and drive engagement.",
-      backgroundImage: "/assets/AI-ProcessOptimization.png",
+      backgroundImage: "/assets/AI-VideoAudio.png",
     },
     {
       icon: <Code className="h-8 w-8 text-white" />,
       title: "Code Generation & Automation",
       description:
         "Accelerate software development with AI-powered code generation, testing, and documentation. Automate repetitive programming tasks, generate boilerplate code, and create comprehensive technical documentation that improves development efficiency.",
-      backgroundImage: "/assets/AI-Components.gif",
+      backgroundImage: "/assets/AI-CodeGeneration.png",
     },
     {
       icon: <Palette className="h-8 w-8 text-white" />,
       title: "Creative Content Generation",
       description:
         "Unleash creativity with AI-generated designs, artwork, music, and creative writing. Develop unique brand assets, marketing materials, and creative content that stands out in competitive markets while maintaining artistic integrity and brand alignment.",
-      backgroundImage: "/assets/GenerativeAI.gif",
+      backgroundImage: "/assets/AI-CreativeContent.png",
     },
   ];
 
