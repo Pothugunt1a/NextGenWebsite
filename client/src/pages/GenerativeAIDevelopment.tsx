@@ -713,7 +713,8 @@ export default function GenerativeAIDevelopment() {
                     </div>
                     <div className="flex-grow">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center```python
+ text-white text-sm font-bold">
                           03
                         </div>
                       </div>
@@ -934,6 +935,7 @@ export default function GenerativeAIDevelopment() {
 
       {/* Generative AI Use Cases - Same as LLM Use Cases Layout */}
       <section className="py-16 relative">
+
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -1533,31 +1535,21 @@ export default function GenerativeAIDevelopment() {
       {/* FAQs Section */}
       <section className="py-16 text-white relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Still Have Some Confusion Regarding Generative AI?
-              </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300">
-                Answers to the following frequently asked questions can help
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              {/* Left Side - Generative AI Image */}
-              <div className="lg:col-span-5">
-                <div className="relative">
+          <div className="max-w-6xl mx-auto">
+            <div>
+              {/* FAQ Image - Left Aligned with Reduced Size */}
+              <div className="mb-12 flex justify-start">
+                <div className="relative w-80">
                   <img
-                    src="./assets/Faq's-transparent.svg"
+                    src="./assets/Faq's.png"
                     alt="Generative AI Technology"
-                    className="w-full h-[500px] object-contain rounded-2xl"
+                    className="w-full h-auto object-contain rounded-2xl"
                   />
                 </div>
               </div>
 
-              {/* Right Side - FAQ Content */}
-              <div className="lg:col-span-7">
+              {/* FAQ Content - Full Width */}
+              <div className="max-w-5xl mx-auto">
                 <Accordion type="single" collapsible className="space-y-4">
                   {faqs.map((faq, index) => (
                     <AccordionItem
