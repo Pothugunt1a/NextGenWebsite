@@ -252,7 +252,9 @@ export default function Navbar({
                                       ? "IT Services Technology"
                                       : "AI Technology"
                                   }
-                                  className="object-contain opacity-90"
+                                  className={`object-contain opacity-90 dropdown-image ${
+                                    link.name === "IT Services" ? "it-services" : "ai-services"
+                                  }`}
                                   style={{ width: "28rem", height: "18rem" }}
                                 />
                                 {/* Gradient overlay on the image */}
