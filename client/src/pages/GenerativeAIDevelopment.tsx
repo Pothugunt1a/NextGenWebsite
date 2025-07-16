@@ -1544,20 +1544,20 @@ export default function GenerativeAIDevelopment() {
               </p>
             </div>
 
-            <div className="max-w-4xl mx-auto">
-              {/* FAQ Image - Full Width */}
-              <div className="mb-12">
-                <div className="relative">
+            <div className="max-w-6xl mx-auto">
+              {/* FAQ Image - Left Aligned */}
+              <div className="mb-12 flex justify-start">
+                <div className="relative max-w-2xl">
                   <img
                     src="./assets/Faq's.png"
                     alt="Generative AI Technology"
-                    className="w-full h-auto object-contain rounded-2xl mx-auto"
+                    className="w-full h-auto object-contain rounded-2xl"
                   />
                 </div>
               </div>
 
               {/* FAQ Content - Full Width */}
-              <div>
+              <div className="max-w-4xl mx-auto">
                 <Accordion type="single" collapsible className="space-y-4">
                   {faqs.map((faq, index) => (
                     <AccordionItem
