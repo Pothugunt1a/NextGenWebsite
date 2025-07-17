@@ -182,7 +182,7 @@ export default function Navbar({
               <img
                 src="/assets/3dgifmaker34062.gif"
                 alt="RT NextGenAI Logo"
-                className="h-16 w-auto"
+                className="h-16 sm:h-20 lg:h-24 w-auto"
               />
             </a>
           </div>
