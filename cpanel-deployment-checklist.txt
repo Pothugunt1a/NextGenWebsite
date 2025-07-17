@@ -1,0 +1,40 @@
+# CPPanel Deployment Checklist
+
+## Pre-Deployment Verification
+- [ ] Project built successfully (npm run build)
+- [ ] All image files have 644 permissions
+- [ ] Logo file (3dgifmaker34062.gif) displays correctly
+- [ ] Dropdown images (IT-Services-dropdown.gif, AI-dropdown.png) display correctly
+- [ ] No 403 errors when accessing images
+- [ ] All static files (HTML, CSS, JS) have proper permissions
+
+## Files to Upload to CPPanel
+1. Upload contents of `dist/` directory to your cpanel public_html folder
+2. Ensure the following critical files are present:
+   - dist/index.js (server file)
+   - dist/public/index.html (main HTML file)
+   - dist/public/assets/ (all image and static assets)
+
+## Critical Image Files to Verify
+- Logo: assets/3dgifmaker34062.gif
+- IT Services Dropdown: assets/IT-Services-dropdown.gif
+- AI Dropdown: assets/AI-dropdown.png
+- All other PNG, JPG, GIF, SVG files in assets/
+
+## Post-Deployment Testing
+- [ ] Website loads correctly
+- [ ] Navigation dropdown images display without black backgrounds
+- [ ] Logo appears at correct size on desktop/mobile
+- [ ] All images load without 403 errors
+- [ ] Responsive design works on mobile/tablet/desktop
+
+## Common Issues and Solutions
+- 403 errors on images: Run chmod 644 on all image files
+- Missing images: Verify file paths and permissions
+- Broken dropdowns: Check image blend modes and CSS
+- Logo too small: Verify responsive CSS is applied
+
+## Emergency Commands
+If images don't load after deployment:
+1. SSH to cpanel and run: find public_html/assets -name "*.png" -o -name "*.jpg" -o -name "*.gif" -o -name "*.svg" | xargs chmod 644
+2. Clear browser cache and test again

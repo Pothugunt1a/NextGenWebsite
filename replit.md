@@ -88,6 +88,16 @@ The backend is minimalistic but extensible, currently providing an API endpoint 
 
 ## Recent Changes
 
+**July 17, 2025:**
+- Fixed JSX closing tag error in GenerativeAIDevelopment.tsx that was preventing app startup
+- Removed black background from dropdown images (IT-Services-dropdown.gif, AI-dropdown.png) using CSS blend modes
+- Fixed black background patches in dropdown overlays for better mobile responsiveness
+- Increased navbar logo size with responsive design (64px mobile, 80px tablet, 96px desktop)
+- Added logo margin adjustments for desktop/iPad only while preserving mobile layout
+- Created comprehensive cpanel deployment preparation script (cpanel-deployment-prep.sh)
+- Enhanced deployment checklist with step-by-step verification process
+- All images now have proper 644 permissions for web server compatibility
+
 **July 16, 2025:**
 - Fixed critical image permissions issue for cpanel deployment
 - Enhanced fix-banner-permissions.sh script with better documentation
