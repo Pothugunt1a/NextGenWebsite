@@ -9,6 +9,7 @@ import LifeScience from "./pages/LifeScienceNew";
 import Layout from "./components/Layout";
 import Validation from "./pages/Validation";
 import ContactInfo from "./pages/ContactInfo";
+import CloudServices from "./pages/CloudServices";
 import AboutPage from "./pages/About";
 import Careers from "./pages/Careers";
 import AIConsulting from "./pages/AIConsulting";
@@ -32,6 +33,7 @@ function Router() {
         <Route path="/validation" component={Validation} />
         <Route path="/careers" component={Careers} />
         <Route path="/contact" component={ContactInfo} />
+        <Route path="/cloud-services" component={CloudServices} />
         <Route path="/about" component={AboutPage} />
         <Route path="/ai-consulting" component={AIConsulting} />
         <Route path="/it-consulting" component={ITConsulting} />
