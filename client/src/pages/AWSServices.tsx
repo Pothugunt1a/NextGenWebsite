@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -207,25 +206,37 @@ const industries = [
   {
     icon: Building,
     title: "Healthcare",
-    description: "HIPAA-compliant architectures, AI diagnostics, secure patient data management",
-    useCases: ["AI Diagnostics", "Patient Data Security", "Telemedicine Platforms"],
+    description:
+      "HIPAA-compliant architectures, AI diagnostics, secure patient data management",
+    useCases: [
+      "AI Diagnostics",
+      "Patient Data Security",
+      "Telemedicine Platforms",
+    ],
   },
   {
     icon: TrendingUp,
     title: "Finance",
-    description: "Secure data lakes, fraud detection, real-time transaction processing",
+    description:
+      "Secure data lakes, fraud detection, real-time transaction processing",
     useCases: ["Fraud Detection", "Risk Analytics", "Regulatory Compliance"],
   },
   {
     icon: ShoppingCart,
     title: "Retail & eCommerce",
-    description: "Personalization engines, customer analytics, scalable shopping platforms",
-    useCases: ["Recommendation Engines", "Inventory Management", "Customer Insights"],
+    description:
+      "Personalization engines, customer analytics, scalable shopping platforms",
+    useCases: [
+      "Recommendation Engines",
+      "Inventory Management",
+      "Customer Insights",
+    ],
   },
   {
     icon: Factory,
     title: "Manufacturing",
-    description: "IoT analytics, predictive maintenance, supply chain optimization",
+    description:
+      "IoT analytics, predictive maintenance, supply chain optimization",
     useCases: ["Predictive Maintenance", "Quality Control", "Supply Chain"],
   },
   {
@@ -237,8 +248,13 @@ const industries = [
   {
     icon: Gamepad2,
     title: "Gaming",
-    description: "Real-time multiplayer, game analytics, content delivery networks",
-    useCases: ["Multiplayer Infrastructure", "Game Analytics", "Content Streaming"],
+    description:
+      "Real-time multiplayer, game analytics, content delivery networks",
+    useCases: [
+      "Multiplayer Infrastructure",
+      "Game Analytics",
+      "Content Streaming",
+    ],
   },
 ];
 
@@ -247,19 +263,22 @@ const advancedTechnologies = [
   {
     icon: Globe,
     title: "Internet of Things (IoT)",
-    description: "Build scalable IoT applications with AWS IoT Core and Greengrass for edge computing.",
+    description:
+      "Build scalable IoT applications with AWS IoT Core and Greengrass for edge computing.",
     features: ["Device Management", "Real-time Processing", "Edge Computing"],
   },
   {
     icon: MessageSquare,
     title: "Generative AI & LLM",
-    description: "Implement Large Language Models using Amazon Bedrock with private, fine-tuned capabilities.",
+    description:
+      "Implement Large Language Models using Amazon Bedrock with private, fine-tuned capabilities.",
     features: ["Custom LLMs", "Private Deployment", "Multi-modal AI"],
   },
   {
     icon: Zap,
     title: "Serverless Computing",
-    description: "Develop serverless applications with AWS Lambda and real-time processing with Kinesis.",
+    description:
+      "Develop serverless applications with AWS Lambda and real-time processing with Kinesis.",
     features: ["Auto-scaling", "Cost Optimization", "Real-time Processing"],
   },
 ];
@@ -305,7 +324,7 @@ export default function AWSServices() {
         {/* Background for AWS page */}
         <div className="absolute inset-0">
           <img
-            src="/assets/CloudComputing-banner.png"
+            src="/assets/AWS-banner.png"
             alt="AWS Cloud Solutions"
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -342,7 +361,9 @@ export default function AWSServices() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
             >
-              Welcome to NextGenAI, where innovation meets scalability. We empower businesses through Amazon Web Services (AWS) — the world's most comprehensive and widely adopted cloud platform.
+              Welcome to NextGenAI, where innovation meets scalability. We
+              empower businesses through Amazon Web Services (AWS) — the world's
+              most comprehensive and widely adopted cloud platform.
             </motion.p>
 
             {/* Badge below description */}
@@ -426,7 +447,10 @@ export default function AWSServices() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              AWS offers over 200 fully featured services from data centers globally. With NextGenAI as your AWS partner, you gain access to industry-leading solutions that combine cloud efficiency with cutting-edge technologies.
+              AWS offers over 200 fully featured services from data centers
+              globally. With NextGenAI as your AWS partner, you gain access to
+              industry-leading solutions that combine cloud efficiency with
+              cutting-edge technologies.
             </p>
           </motion.div>
 
@@ -446,7 +470,9 @@ export default function AWSServices() {
               >
                 <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
                   <div className="flex justify-center mb-6">
-                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}>
+                    <div
+                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}
+                    >
                       <div className="text-white">{item.icon}</div>
                     </div>
                   </div>
@@ -480,7 +506,8 @@ export default function AWSServices() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive AWS services designed to accelerate your digital transformation and unlock new possibilities for your business.
+              Comprehensive AWS services designed to accelerate your digital
+              transformation and unlock new possibilities for your business.
             </p>
           </div>
 
@@ -494,8 +521,10 @@ export default function AWSServices() {
                 viewport={{ once: true }}
                 className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.backgroundGradient} opacity-90`}></div>
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.backgroundGradient} opacity-90`}
+                ></div>
+
                 <div className="relative p-8 text-white">
                   <div className="flex items-center mb-4">
                     {service.icon}
@@ -503,11 +532,11 @@ export default function AWSServices() {
                       <h3 className="text-2xl font-bold">{service.title}</h3>
                     </div>
                   </div>
-                  
+
                   <p className="text-white/90 mb-6 leading-relaxed">
                     {service.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {service.services.map((tech, techIndex) => (
                       <span
@@ -534,7 +563,8 @@ export default function AWSServices() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Leverage cutting-edge AWS technologies to build next-generation applications and stay ahead of the competition.
+              Leverage cutting-edge AWS technologies to build next-generation
+              applications and stay ahead of the competition.
             </p>
           </div>
 
@@ -551,14 +581,12 @@ export default function AWSServices() {
                 <div className="p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl w-fit mb-6">
                   <tech.icon className="h-8 w-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-white mb-4">
                   {tech.title}
                 </h3>
-                <p className="text-gray-300 mb-6">
-                  {tech.description}
-                </p>
-                
+                <p className="text-gray-300 mb-6">{tech.description}</p>
+
                 <div className="space-y-2">
                   {tech.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center">
@@ -590,7 +618,8 @@ export default function AWSServices() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Delivering specialized AWS solutions across diverse industries with deep domain expertise and proven results.
+              Delivering specialized AWS solutions across diverse industries
+              with deep domain expertise and proven results.
             </p>
           </div>
 
@@ -612,11 +641,9 @@ export default function AWSServices() {
                     {industry.title}
                   </h3>
                 </div>
-                
-                <p className="text-gray-300 mb-4">
-                  {industry.description}
-                </p>
-                
+
+                <p className="text-gray-300 mb-4">{industry.description}</p>
+
                 <div className="space-y-2">
                   {industry.useCases.map((useCase, caseIndex) => (
                     <div key={caseIndex} className="flex items-center">
@@ -640,7 +667,8 @@ export default function AWSServices() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300">
-              Get answers to common questions about our AWS services and expertise.
+              Get answers to common questions about our AWS services and
+              expertise.
             </p>
           </div>
 
@@ -733,7 +761,9 @@ export default function AWSServices() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Whether you're modernizing your IT stack or building the next AI-powered platform, NextGenAI is your trusted AWS partner. Let's architect the future, together.
+              Whether you're modernizing your IT stack or building the next
+              AI-powered platform, NextGenAI is your trusted AWS partner. Let's
+              architect the future, together.
             </motion.p>
 
             {/* Benefits Grid */}
@@ -757,9 +787,7 @@ export default function AWSServices() {
               </div>
               <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
                 <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  24/7 Support
-                </span>
+                <span className="text-white font-semibold">24/7 Support</span>
               </div>
             </motion.div>
 
