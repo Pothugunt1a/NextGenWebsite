@@ -23,30 +23,46 @@ const serviceCategories = [
   {
     id: 1,
     category: "Artificial Intelligence",
-    description: "Cutting-edge AI solutions to transform your business operations",
+    description:
+      "Cutting-edge AI solutions to transform your business operations",
     services: [
       {
         id: 1,
         title: "AI Consulting",
-        description: "Strategic guidance on implementing AI to enhance operations, improve efficiency, and drive innovation.",
-        icon: <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0"><BrainCircuit className="h-10 w-10 text-white" /></div>,
+        description:
+          "Strategic guidance on implementing AI to enhance operations, improve efficiency, and drive innovation.",
+        icon: (
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0">
+            <BrainCircuit className="h-10 w-10 text-white" />
+          </div>
+        ),
         backgroundImage: "/assets/ai-network-banner2.png",
       },
       {
         id: 2,
         title: "AI Software Development",
-        description: "Custom AI solutions tailored to your business needs, from proof-of-concept to full-scale deployment.",
-        icon: <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0"><Code className="h-10 w-10 text-white" /></div>,
+        description:
+          "Custom AI solutions tailored to your business needs, from proof-of-concept to full-scale deployment.",
+        icon: (
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0">
+            <Code className="h-10 w-10 text-white" />
+          </div>
+        ),
         backgroundImage: "/assets/ai-network-banner3.png",
       },
       {
         id: 3,
         title: "Generative AI Development",
-        description: "Implementation of cutting-edge generative models for content creation, design, and process automation.",
-        icon: <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0"><FileCode className="h-10 w-10 text-white" /></div>,
+        description:
+          "Implementation of cutting-edge generative models for content creation, design, and process automation.",
+        icon: (
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0">
+            <FileCode className="h-10 w-10 text-white" />
+          </div>
+        ),
         backgroundImage: "/assets/ai-network-banner1.jpg",
       },
-    ]
+    ],
   },
   {
     id: 2,
@@ -56,25 +72,40 @@ const serviceCategories = [
       {
         id: 4,
         title: "IT Services",
-        description: "Comprehensive IT solutions including infrastructure management, cloud services, and enterprise applications.",
-        icon: <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0"><Server className="h-10 w-10 text-white" /></div>,
-        backgroundImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        description:
+          "Comprehensive IT solutions including infrastructure management, cloud services, and enterprise applications.",
+        icon: (
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0">
+            <Server className="h-10 w-10 text-white" />
+          </div>
+        ),
+        backgroundImage: "/assets/IT-Services.png",
       },
       {
         id: 6,
         title: "IT Consulting",
-        description: "Expert guidance on technology strategy, digital transformation, and maximizing IT investments.",
-        icon: <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0"><Database className="h-10 w-10 text-white" /></div>,
-        backgroundImage: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        description:
+          "Expert guidance on technology strategy, digital transformation, and maximizing IT investments.",
+        icon: (
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0">
+            <Database className="h-10 w-10 text-white" />
+          </div>
+        ),
+        backgroundImage: "/assets/IT-Consulting.png",
       },
       {
         id: 8,
         title: "Project Management",
-        description: "End-to-end project planning, execution, and delivery services with a focus on quality and efficiency.",
-        icon: <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0"><Shield className="h-10 w-10 text-white" /></div>,
-        backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        description:
+          "End-to-end project planning, execution, and delivery services with a focus on quality and efficiency.",
+        icon: (
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0">
+            <Shield className="h-10 w-10 text-white" />
+          </div>
+        ),
+        backgroundImage: "/assets/Project-Management.png",
       },
-    ]
+    ],
   },
   {
     id: 3,
@@ -84,18 +115,28 @@ const serviceCategories = [
       {
         id: 5,
         title: "Life Science Solutions",
-        description: "Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance and innovation.",
-        icon: <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0"><Beaker className="h-10 w-10 text-white" /></div>,
-        backgroundImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        description:
+          "Specialized services for pharmaceutical, biotechnology, and healthcare organizations focused on compliance and innovation.",
+        icon: (
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0">
+            <Beaker className="h-10 w-10 text-white" />
+          </div>
+        ),
+        backgroundImage: "/assets/LifeScience-Solutions.png",
       },
       {
         id: 7,
         title: "Validation",
-        description: "Computer system validation, process validation, and qualification services for regulated industries.",
-        icon: <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0"><ChartBar className="h-10 w-10 text-white" /></div>,
-        backgroundImage: "https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        description:
+          "Computer system validation, process validation, and qualification services for regulated industries.",
+        icon: (
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg flex-shrink-0">
+            <ChartBar className="h-10 w-10 text-white" />
+          </div>
+        ),
+        backgroundImage: "/assets/Validation.png",
       },
-    ]
+    ],
   },
 ];
 
@@ -156,7 +197,7 @@ export default function ServicesHighlights() {
                 delay: 5000,
                 stopOnInteraction: true,
                 stopOnMouseEnter: true,
-              })
+              }),
             ]}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
@@ -176,16 +217,18 @@ export default function ServicesHighlights() {
                     </div>
 
                     {/* Services Grid */}
-                    <div className={`grid gap-6 ${
-                      categoryGroup.category === "Artificial Intelligence" 
-                        ? "grid-cols-1 md:grid-cols-3" 
-                        : categoryGroup.category === "IT & Consulting"
-                        ? "grid-cols-1 md:grid-cols-3"
-                        : "grid-cols-1 md:grid-cols-2"
-                    }`}>
+                    <div
+                      className={`grid gap-6 ${
+                        categoryGroup.category === "Artificial Intelligence"
+                          ? "grid-cols-1 md:grid-cols-3"
+                          : categoryGroup.category === "IT & Consulting"
+                            ? "grid-cols-1 md:grid-cols-3"
+                            : "grid-cols-1 md:grid-cols-2"
+                      }`}
+                    >
                       {categoryGroup.services.map((service) => (
-                        <Card 
-                          key={service.id} 
+                        <Card
+                          key={service.id}
                           className="group cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl hover:border-white/20 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] shadow-2xl shadow-black/30 rounded-2xl h-96"
                         >
                           <CardContent className="p-0 relative h-full">
@@ -205,20 +248,23 @@ export default function ServicesHighlights() {
                               <div className="p-6">
                                 {/* Icon */}
                                 <div className="absolute -top-6 right-6">
-                                  <div className={`w-12 h-12 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20 ${
-                                    categoryGroup.category === "Artificial Intelligence" 
-                                      ? "bg-white/10" 
-                                      : "bg-primary"
-                                  }`}>
+                                  <div
+                                    className={`w-12 h-12 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-xl border border-white/20 ${
+                                      categoryGroup.category ===
+                                      "Artificial Intelligence"
+                                        ? "bg-white/10"
+                                        : "bg-primary"
+                                    }`}
+                                  >
                                     {service.icon}
                                   </div>
                                 </div>
-                                
+
                                 {/* Title */}
                                 <h3 className="text-xl font-bold text-white mb-3 leading-tight">
                                   {service.title}
                                 </h3>
-                                
+
                                 {/* Description */}
                                 <p className="text-gray-200 text-sm leading-relaxed font-medium">
                                   {service.description}
@@ -233,7 +279,7 @@ export default function ServicesHighlights() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            
+
             <CarouselPrevious className="left-4 bg-white/10 border-white/30 hover:bg-white/20 text-white" />
             <CarouselNext className="right-4 bg-white/10 border-white/30 hover:bg-white/20 text-white" />
           </Carousel>
