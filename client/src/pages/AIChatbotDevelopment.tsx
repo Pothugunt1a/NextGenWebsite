@@ -411,10 +411,10 @@ export default function AIChatbotDevelopment() {
           <img
             src="./assets/AI-Chatbot-banner.png"
             alt="AI Chatbot Development"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center brightness-110 contrast-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
