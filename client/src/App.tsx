@@ -23,6 +23,7 @@ import AIChatbotDevelopment from "./pages/AIChatbotDevelopment";
 import GenerativeAIDevelopment from "./pages/GenerativeAIDevelopment";
 import AIApplicationDevelopment from "./pages/AIApplicationDevelopment";
 import IntelligentSystemsDevelopment from "./pages/IntelligentSystemsDevelopment";
+import AWSServices from "./pages/AWSServices";
 
 function Router() {
   return (
@@ -46,6 +47,7 @@ function Router() {
         <Route path="/generative-ai-development" component={GenerativeAIDevelopment} />
         <Route path="/ai-application-development" component={AIApplicationDevelopment} />
         <Route path="/intelligent-systems-development" component={IntelligentSystemsDevelopment} />
+        <Route path="/aws-services" component={AWSServices} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
