@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -39,6 +40,9 @@ import {
   Dna,
   Factory,
   GraduationCap,
+  Star,
+  Clock,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
@@ -55,38 +59,66 @@ interface FAQ {
   answer: string;
 }
 
+// Stats for hero section
+const stats = [
+  {
+    icon: <Shield className="h-8 w-8" />,
+    title: "100%",
+    subtitle: "Uptime SLA",
+    description: "Service reliability",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: <Target className="h-8 w-8" />,
+    title: "50%",
+    subtitle: "Cost Savings",
+    description: "Average reduction",
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    icon: <Clock className="h-8 w-8" />,
+    title: "75%",
+    subtitle: "Faster Deployment",
+    description: "Accelerated delivery",
+    color: "from-purple-500 to-violet-500",
+  },
+  {
+    icon: <TrendingUp className="h-8 w-8" />,
+    title: "500+",
+    subtitle: "Projects Deployed",
+    description: "Successful implementations",
+    color: "from-orange-500 to-red-500",
+  },
+];
+
 const whyChooseUsItems = [
   {
-    icon: Award,
-    secondaryIcon: CheckCircle,
+    icon: <Award className="h-10 w-10" />,
     title: "Certified AWS Experts",
     description:
       "Our team consists of AWS Solutions Architects, DevOps Engineers, and Data Scientists with proven expertise in architecting enterprise-scale solutions on AWS infrastructure.",
-    badge: "AWS Certified",
+    color: "from-blue-500 to-cyan-500",
   },
   {
-    icon: Layers,
-    secondaryIcon: Zap,
+    icon: <Layers className="h-10 w-10" />,
     title: "Full-Cycle Support",
     description:
       "From initial consulting and migration planning to 24/7 monitoring and optimization. We provide comprehensive support throughout your entire AWS journey.",
-    badge: "End-to-End Service",
+    color: "from-green-500 to-emerald-500",
   },
   {
-    icon: Brain,
-    secondaryIcon: Cpu,
+    icon: <Brain className="h-10 w-10" />,
     title: "Innovation-Focused",
     description:
       "Leverage cutting-edge AWS services including Generative AI, predictive intelligence, and automation-first approaches to stay ahead of the competition.",
-    badge: "GenAI Ready",
+    color: "from-purple-500 to-violet-500",
   },
   {
-    icon: TrendingUp,
-    secondaryIcon: BarChart3,
+    icon: <TrendingUp className="h-10 w-10" />,
     title: "Agile & Scalable",
     description:
       "Modular deployments that scale from startups to enterprises. Our solutions grow with your business while maintaining optimal performance and cost efficiency.",
-    badge: "Enterprise Ready",
+    color: "from-orange-500 to-red-500",
   },
 ];
 
@@ -239,127 +271,215 @@ export default function AWSServices() {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 dark:from-slate-900 dark:via-blue-900 dark:to-cyan-900">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-16 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/90 via-blue-700/90 to-cyan-600/90"></div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-light text-white"
+    >
+      {/* Hero Section - Same style as LifeScienceNew */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background for AWS page */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20"></div>
+          <img
+            src="/assets/CloudComputing-banner.png"
+            alt="AWS Cloud Solutions"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/assets/aws-banner.png";
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex justify-center mb-6"
-            >
-              <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl">
-                <Cloud className="h-16 w-16 text-white" />
-              </div>
-            </motion.div>
-            
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold text-white mb-6"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
             >
-              AWS Cloud Solutions
-              <span className="block text-cyan-300">for the Future</span>
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                AWS Cloud Solutions
+              </span>
             </motion.h1>
-            
+
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
             >
               Welcome to NextGenAI, where innovation meets scalability. We empower businesses through Amazon Web Services (AWS) — the world's most comprehensive and widely adopted cloud platform.
             </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Button 
-                size="lg" 
-                className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300"
+
+            {/* Badge below description */}
+            <div className="mb-32">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                Get Started with AWS
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-300"
+                <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
+                <span className="text-white font-medium">
+                  Industry-Leading AWS Solutions
+                </span>
+                <Award className="h-4 w-4 text-blue-400 fill-current" />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Enhanced Stats Section */}
+        <div className="absolute bottom-8 left-0 right-0">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-center md:justify-start">
+              <motion.div
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl w-full"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
               >
-                View Our Solutions
-              </Button>
-            </motion.div>
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="group relative"
+                  >
+                    <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden text-center">
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                      />
+
+                      <div className="relative z-10">
+                        <div className="flex justify-center mb-3 md:mb-4">
+                          <div
+                            className={`inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br ${stat.color}`}
+                          >
+                            <div className="text-white">{stat.icon}</div>
+                          </div>
+                        </div>
+                        <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white">
+                          {stat.title}
+                        </div>
+                        <div className="text-xs md:text-sm font-semibold text-gray-300 mb-1">
+                          {stat.subtitle}
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          {stat.description}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why AWS with NextGenAI Section */}
-      <section className="py-20 bg-white dark:bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+      {/* Why Choose Us Section - Same style as Validation page */}
+      <section className="py-16 bg-light">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Why AWS with NextGenAI?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               AWS offers over 200 fully featured services from data centers globally. With NextGenAI as your AWS partner, you gain access to industry-leading solutions that combine cloud efficiency with cutting-edge technologies.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             {whyChooseUsItems.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative p-8 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-800 dark:to-blue-900 rounded-2xl border border-blue-100 dark:border-blue-800 hover:shadow-xl transition-all duration-300"
+                variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="group"
               >
-                <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 text-xs font-semibold bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 rounded-full">
-                    {item.badge}
-                  </span>
-                </div>
-                
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mr-4">
-                    <item.icon className="h-8 w-8 text-white" />
+                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                  <div className="flex justify-center mb-6">
+                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}>
+                      <div className="text-white">{item.icon}</div>
+                    </div>
                   </div>
-                  <item.secondaryIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {item.description}
-                </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* AWS Core Services Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Our AWS Offerings
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive AWS services designed to accelerate your digital transformation and unlock new possibilities for your business.
             </p>
           </div>
@@ -372,7 +492,7 @@ export default function AWSServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.backgroundGradient} opacity-90`}></div>
                 
@@ -406,13 +526,14 @@ export default function AWSServices() {
       </section>
 
       {/* Advanced Technologies Section */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Advanced Technologies Integration
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Leverage cutting-edge AWS technologies to build next-generation applications and stay ahead of the competition.
             </p>
           </div>
@@ -425,16 +546,16 @@ export default function AWSServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group p-8 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-800 dark:to-blue-900 rounded-2xl border border-blue-100 dark:border-blue-800 hover:shadow-xl transition-all duration-300"
+                className="group p-8 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-2xl hover:shadow-xl transition-all duration-300"
               >
                 <div className="p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl w-fit mb-6">
                   <tech.icon className="h-8 w-8 text-white" />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   {tech.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-gray-300 mb-6">
                   {tech.description}
                 </p>
                 
@@ -442,7 +563,7 @@ export default function AWSServices() {
                   {tech.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center">
                       <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                      <span className="text-gray-300">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -453,13 +574,22 @@ export default function AWSServices() {
       </section>
 
       {/* Industries We Serve Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Industries We Serve
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Delivering specialized AWS solutions across diverse industries with deep domain expertise and proven results.
             </p>
           </div>
@@ -472,18 +602,18 @@ export default function AWSServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group p-6 bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300"
+                className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-2xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center mb-4">
                   <div className="p-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mr-4">
                     <industry.icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-bold text-white">
                     {industry.title}
                   </h3>
                 </div>
                 
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-300 mb-4">
                   {industry.description}
                 </p>
                 
@@ -491,7 +621,7 @@ export default function AWSServices() {
                   {industry.useCases.map((useCase, caseIndex) => (
                     <div key={caseIndex} className="flex items-center">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{useCase}</span>
+                      <span className="text-sm text-gray-300">{useCase}</span>
                     </div>
                   ))}
                 </div>
@@ -502,13 +632,14 @@ export default function AWSServices() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="py-20 bg-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300">
               Get answers to common questions about our AWS services and expertise.
             </p>
           </div>
@@ -521,24 +652,24 @@ export default function AWSServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden"
+                className="border border-white/10 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200 flex justify-between items-center"
+                  className="w-full p-6 text-left hover:bg-white/10 transition-colors duration-200 flex justify-between items-center"
                 >
-                  <span className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <span className="text-lg font-semibold text-white">
                     {faq.question}
                   </span>
                   {openFAQ === index ? (
-                    <ChevronUp className="h-5 w-5 text-gray-500" />
+                    <ChevronUp className="h-5 w-5 text-gray-400" />
                   ) : (
-                    <ChevronDown className="h-5 w-5 text-gray-500" />
+                    <ChevronDown className="h-5 w-5 text-gray-400" />
                   )}
                 </button>
                 {openFAQ === index && (
-                  <div className="p-6 bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-gray-700">
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <div className="p-6 border-t border-white/10">
+                    <p className="text-gray-300 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -549,40 +680,107 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Enhanced CTA Section - Same style as LifeScience */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            className="text-center p-16 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/20 shadow-2xl"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business with AWS?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            {/* Top Badge */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
+            >
+              <Globe className="h-5 w-5 text-cyan-400" />
+              <span className="text-white font-medium">
+                Trusted AWS Partner Worldwide
+              </span>
+              <Award className="h-4 w-4 text-blue-400 fill-current" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold mb-6"
+            >
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Transform Your
+              </span>
+              <br />
+              <span className="text-white">Business with AWS</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
               Whether you're modernizing your IT stack or building the next AI-powered platform, NextGenAI is your trusted AWS partner. Let's architect the future, together.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300"
+            </motion.p>
+
+            {/* Benefits Grid */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Free AWS Assessment
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Certified Experts
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  24/7 Support
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex justify-center"
+            >
+              <Button
+                size="lg"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               >
+                <Users className="mr-2 h-5 w-5" />
                 Get Started Today
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-300"
-              >
-                Contact Our Experts
-              </Button>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
