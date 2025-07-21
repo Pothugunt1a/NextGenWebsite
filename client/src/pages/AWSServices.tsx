@@ -326,7 +326,7 @@ export default function AWSServices() {
           <img
             src="/assets/AWS-banner.png"
             alt="AWS Cloud Solutions"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.src = "/assets/aws-banner.png";
