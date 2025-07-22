@@ -52,9 +52,9 @@
 
 /* Logo margin adjustments for desktop and iPad only */
 @media (min-width: 768px) {
-  img.h-16.sm\:h-20.lg\:h-24.w-auto {
-    margin-top: -16px;
-    margin-bottom: -16px;
+  img.h-20.sm\:h-24.lg\:h-28.w-auto {
+    margin-top: -20px;
+    margin-bottom: -20px;
   }
 }
 
