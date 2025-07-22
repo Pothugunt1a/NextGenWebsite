@@ -176,20 +176,18 @@ export default function Navbar({
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black shadow-md py-1" : "bg-transparent py-2"}`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-12 items-center min-h-[80px]">
-          {/* Logo Column - Fixed width */}
-          <div className="col-span-2 lg:col-span-2 flex justify-start">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
             <a href="#" className="flex items-center">
               <img
                 src="/assets/3dgifmaker34062.gif"
                 alt="RT NextGenAI Logo"
-                className="h-20 sm:h-24 lg:h-28 w-auto"
+                className="h-16 sm:h-20 lg:h-24 w-auto"
               />
             </a>
           </div>
 
-          {/* Navigation Column - Remaining space */}
-          <div className="col-span-10 lg:col-span-10 flex items-center justify-end gap-4">
+          <div className="flex items-center gap-4">
             <nav className="hidden lg:flex items-center" ref={dropdownRef}>
               {navLinks.map((link) => (
                 <div key={link.id} className="relative group mx-1">
