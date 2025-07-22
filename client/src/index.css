@@ -50,12 +50,17 @@
   filter: brightness(1.4) contrast(1.3) saturate(1.2);
 }
 
-/* Logo margin adjustments for desktop and iPad only */
+/* Logo margin adjustments for desktop and iPad only - contained within logo column */
 @media (min-width: 768px) {
   img.h-20.sm\:h-24.lg\:h-28.w-auto {
-    margin-top: -20px;
-    margin-bottom: -20px;
+    margin-top: -12px;
+    margin-bottom: -12px;
   }
+}
+
+/* Ensure navbar has consistent height regardless of logo size */
+.grid.grid-cols-12.items-center.min-h-\[80px\] {
+  align-items: center;
 }
 
 /* Responsive adjustments for dropdown images */
