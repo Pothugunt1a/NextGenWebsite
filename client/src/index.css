@@ -384,8 +384,8 @@
 
 /* Larger logo size for desktop */
 @media (min-width: 1024px) {
-  .lg\:h-28 {
-    height: 11rem;
+  .lg\:h-24 {
+    height: 11rem !important;
   }
 }
 
