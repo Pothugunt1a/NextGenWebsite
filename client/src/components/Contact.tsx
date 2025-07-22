@@ -122,7 +122,7 @@ export default function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((item) => (
                   <div key={item.id} className="flex items-start">
@@ -138,7 +138,7 @@ export default function Contact() {
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-8">
                 <h4 className="font-semibold mb-4 text-white">Follow Us</h4>
                 <div className="flex space-x-4">
@@ -155,7 +155,7 @@ export default function Contact() {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -169,11 +169,11 @@ export default function Contact() {
                     <img
                       src="./assets/Contact.gif"
                       alt="Contact Background"
-                      className="w-full h-full object-cover opacity-20"
+                      className="w-full h-full object-cover opacity-40"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/60"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 to-gray-900/40"></div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -203,7 +203,7 @@ export default function Contact() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/60"></div>
                     </div>
-                    
+
                     {/* Form Content */}
                     <div className="relative z-10">
                     <FormField
@@ -223,7 +223,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="email"
@@ -242,7 +242,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    
+
                     <div className="mb-6">
                       <label className="text-white font-medium mb-2 block">Attachment (PDF/Word)</label>
                       <div className="relative">
@@ -271,7 +271,7 @@ export default function Contact() {
                         </div>
                       )}
                     </div>
-                    
+
                     <FormField
                       control={form.control}
                       name="message"
@@ -290,7 +290,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    
+
                     <Button 
                       type="submit"
                       className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
