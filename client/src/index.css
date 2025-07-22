@@ -66,6 +66,11 @@
   }
 }
 
+/* Remove max-width constraint from logo image */
+img.h-20.sm\:h-24.lg\:h-28.w-auto {
+  max-width: none;
+}
+
 /* Responsive adjustments for dropdown images */
 @media (max-width: 1024px) {
   .dropdown-image {
