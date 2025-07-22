@@ -53,8 +53,9 @@
 /* Logo margin adjustments for desktop and iPad only */
 @media (min-width: 768px) {
   img.h-16.sm\:h-20.lg\:h-24.w-auto {
-    margin-top: -16px;
-    margin-bottom: -16px;
+    margin-top: -33px;
+    margin-bottom: -26px;
+    margin-left: -67px;
   }
 }
 
@@ -379,4 +380,16 @@
   .text-responsive-3xl {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
   }
+}
+
+/* Larger logo size for desktop */
+@media (min-width: 1024px) {
+  .lg\:h-24 {
+    height: 11rem;
+  }
+}
+
+/* Remove max-width constraint from logo image */
+img.h-16.sm\:h-20.lg\:h-24.w-auto {
+  max-width: none;
 }
