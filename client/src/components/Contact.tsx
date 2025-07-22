@@ -163,24 +163,49 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
             >
               {isSuccess ? (
-                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-lg h-full flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="text-green-400 h-8 w-8" />
+                <div className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-lg h-full flex flex-col items-center justify-center text-center overflow-hidden">
+                  {/* Background Image */}
+                  <div className="absolute inset-0 rounded-xl overflow-hidden">
+                    <img
+                      src="./assets/Contact.gif"
+                      alt="Contact Background"
+                      className="w-full h-full object-cover opacity-20"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/60"></div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Message Sent Successfully!</h3>
-                  <p className="text-gray-300 mb-6">
-                    Thank you for contacting us. Our team will get back to you shortly.
-                  </p>
-                  <Button
-                    onClick={handleSendAnother}
-                    className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold"
-                  >
-                    Send Another Message
-                  </Button>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="text-green-400 h-8 w-8" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-white">Message Sent Successfully!</h3>
+                    <p className="text-gray-300 mb-6">
+                      Thank you for contacting us. Our team will get back to you shortly.
+                    </p>
+                    <Button
+                      onClick={handleSendAnother}
+                      className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold"
+                    >
+                      Send Another Message
+                    </Button>
+                  </div>
                 </div>
               ) : (
                 <Form {...form}>
-                  <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-lg">
+                  <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-lg overflow-hidden">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 rounded-xl overflow-hidden">
+                      <img
+                        src="./assets/Contact.gif"
+                        alt="Contact Background"
+                        className="w-full h-full object-cover opacity-20"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/60"></div>
+                    </div>
+                    
+                    {/* Form Content */}
+                    <div className="relative z-10">
                     <FormField
                       control={form.control}
                       name="name"
@@ -273,6 +298,7 @@ export default function Contact() {
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
+                    </div>
                   </form>
                 </Form>
               )}
