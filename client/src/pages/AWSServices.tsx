@@ -42,6 +42,7 @@ import {
   Star,
   Clock,
   Sparkles,
+  BarChart,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
@@ -283,12 +284,131 @@ const advancedTechnologies = [
   },
 ];
 
+const awsOfferings = [
+  {
+    icon: Cloud,
+    title: "Cloud Migration & Modernization",
+    description:
+      "Seamlessly migrate your applications and infrastructure to AWS with minimal downtime and maximum efficiency.",
+    features: [
+      "Application assessment and planning",
+      "Legacy system modernization",
+      "Zero-downtime migration strategies",
+      "Post-migration optimization",
+    ],
+    backgroundImage: "/assets/cloud_1752856032189.gif",
+  },
+  {
+    icon: Server,
+    title: "Infrastructure & Architecture",
+    description:
+      "Design and implement scalable, secure, and cost-effective AWS architectures tailored to your business needs.",
+    features: [
+      "Well-architected framework design",
+      "Auto-scaling implementation",
+      "High availability setup",
+      "Cost optimization strategies",
+    ],
+    backgroundImage: "/assets/cloud2_1752856022708.gif",
+  },
+  {
+    icon: Brain,
+    title: "AI & Machine Learning on AWS",
+    description:
+      "Leverage AWS AI/ML services to build intelligent applications that drive business insights and automation.",
+    features: [
+      "SageMaker model development",
+      "Computer vision solutions",
+      "Natural language processing",
+      "Predictive analytics platforms",
+    ],
+    backgroundImage: "/assets/AI-ML.png",
+  },
+  {
+    icon: BarChart,
+    title: "Data Analytics & Business Intelligence",
+    description:
+      "Transform your data into actionable insights with comprehensive analytics and BI solutions on AWS.",
+    features: [
+      "Data lake architecture",
+      "Real-time analytics dashboards",
+      "ETL pipeline automation",
+      "Advanced reporting systems",
+    ],
+    backgroundImage: "/assets/cloud3_1752856017147.gif",
+  },
+  {
+    icon: Settings,
+    title: "DevOps & Automation",
+    description:
+      "Streamline your development lifecycle with AWS DevOps tools and automation best practices.",
+    features: [
+      "CI/CD pipeline setup",
+      "Infrastructure as Code",
+      "Automated testing frameworks",
+      "Monitoring and alerting",
+    ],
+    backgroundImage: "/assets/cloud 5_1752856047806.gif",
+  },
+];
+
 export default function AWSServices() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
   };
+
+  // Industry data for the interactive section
+  const industryData = [
+    {
+      id: "healthcare",
+      name: "Healthcare",
+      image: "/assets/Healthcare.png",
+      content:
+        "Transform healthcare delivery with HIPAA-compliant AWS architectures, AI-powered diagnostics, and secure patient data management. Our solutions include telemedicine platforms, electronic health records, and advanced analytics that improve patient outcomes while ensuring regulatory compliance and data security.",
+    },
+    {
+      id: "finance",
+      name: "Finance",
+      image: "/assets/Finance.png",
+      content:
+        "Secure your financial operations with AWS solutions designed for fraud detection, real-time transaction processing, and regulatory compliance. We build scalable data lakes, implement advanced security measures, and develop analytics platforms that help financial institutions make informed decisions while protecting sensitive data.",
+    },
+    {
+      id: "retail",
+      name: "Retail & eCommerce",
+      image: "/assets/Ecommerce.png",
+      content:
+        "Enhance customer experiences with personalization engines, customer analytics, and scalable shopping platforms. Our AWS solutions include recommendation systems, inventory management, real-time analytics, and omnichannel platforms that drive sales and improve customer satisfaction.",
+    },
+    {
+      id: "manufacturing",
+      name: "Manufacturing",
+      image: "/assets/Manufacturing.png",
+      content:
+        "Optimize manufacturing processes with IoT analytics, predictive maintenance, and supply chain optimization. Our AWS solutions help manufacturers reduce downtime, improve quality control, streamline operations, and implement Industry 4.0 technologies for competitive advantage.",
+    },
+    {
+      id: "education",
+      name: "EdTech",
+      image: "/assets/Education.png",
+      content:
+        "Scale educational content delivery with AI tutors, learning analytics, and personalized learning experiences. Our AWS solutions include content management systems, virtual classrooms, assessment platforms, and analytics tools that enhance learning outcomes and operational efficiency.",
+    },
+    {
+      id: "media",
+      name: "Media & Entertainment",
+      image: "/assets/Media.png",
+      content:
+        "Deliver engaging content with real-time streaming, content delivery networks, and audience analytics. Our AWS solutions help media companies scale their platforms, optimize content delivery, implement live streaming, and gain insights into audience behavior and preferences.",
+    },
+  ];
+
+  const [selectedIndustryData, setSelectedIndustryData] = useState(
+    industryData[0],
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -489,8 +609,8 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* AWS Core Services Section */}
-      <section className="py-20 bg-light relative overflow-hidden">
+      {/* Our AWS Offerings - Same as Generative AI Development Services Layout */}
+      <div className="py-20 bg-light relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
@@ -499,57 +619,363 @@ export default function AWSServices() {
           <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl font-bold mb-6 text-white">
               Our AWS Offerings
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive AWS services designed to accelerate your digital
-              transformation and unlock new possibilities for your business.
+              Comprehensive AWS cloud solutions designed to accelerate your
+              digital transformation and business growth
             </p>
+          </motion.div>
+
+          {/* 2x2 Grid Layout with Central Image */}
+          <div className="max-w-8xl mx-auto relative">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Top Row - Cloud Migration and Infrastructure */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Cloud Migration & Modernization */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={awsOfferings[0].backgroundImage}
+                        alt={awsOfferings[0].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Cloud className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          01
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {awsOfferings[0].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {awsOfferings[0].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Infrastructure & Architecture */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={awsOfferings[1].backgroundImage}
+                        alt={awsOfferings[1].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Server className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          02
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {awsOfferings[1].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {awsOfferings[1].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Second Row - Central Image with AI & ML */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Central Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, type: "spring" }}
+                  className="relative group"
+                >
+                  {/* Main Feature Card */}
+                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="relative w-full">
+                      <img
+                        src="/assets/cloud_1752856032189.gif"
+                        alt="AWS Cloud Solutions"
+                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
+                        style={{ backgroundAttachment: "fixed" }}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/assets/AWS-banner.png";
+                        }}
+                      />
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 flex flex-col gap-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Cloud className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full```text
+ flex items-center justify-center text-white font-bold shadow-lg">
+                        AWS
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-sm font-medium">
+                            AWS Cloud Hub
+                          </span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                          Intelligent Cloud Solutions
+                        </h3>
+                        <p className="text-blue-100 leading-relaxed mb-6">
+                          Advanced AWS solutions that transform, scale, and
+                          secure your business operations.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* AI & Machine Learning on AWS */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={awsOfferings[2].backgroundImage}
+                        alt={awsOfferings[2].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Brain className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          03
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {awsOfferings[2].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {awsOfferings[2].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Third Row - Data Analytics and DevOps */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Data Analytics & Business Intelligence */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={awsOfferings[3].backgroundImage}
+                        alt={awsOfferings[3].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <BarChart className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          04
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {awsOfferings[3].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {awsOfferings[3].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* DevOps & Automation */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={awsOfferings[4].backgroundImage}
+                        alt={awsOfferings[4].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Settings className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          05
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {awsOfferings[4].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {awsOfferings[4].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {awsCoreServices.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300"
-              >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.backgroundGradient} opacity-90`}
-                ></div>
+      {/* Industries We Serve Section - Interactive Layout */}
+      <section className="py-20 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                How Our AWS Solutions Can Help Businesses in Different Industries
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            </div>
 
-                <div className="relative p-8 text-white">
-                  <div className="flex items-center mb-4">
-                    {service.icon}
-                    <div className="ml-4">
-                      <h3 className="text-2xl font-bold">{service.title}</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Left Navigation */}
+              <div className="lg:col-span-4">
+                <div className="grid grid-cols-1 gap-4">
+                  {industryData.map((industry) => (
+                    <Button
+                      key={industry.id}
+                      variant={
+                        selectedIndustryData.id === industry.id
+                          ? "default"
+                          : "outline"
+                      }
+                      className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
+                        selectedIndustryData.id === industry.id
+                          ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
+                          : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
+                      }`}
+                      onClick={() => {
+                        setSelectedIndustryData(industry);
+                      }}
+                    >
+                      <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
+                        {industry.name}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Content Display */}
+              <div className="lg:col-span-8">
+                <motion.div
+                  key={selectedIndustryData.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl overflow-hidden"
+                >
+                  {/* Industry Image */}
+                  <div className="relative h-64 overflow-hidden group cursor-pointer">
+                    <img
+                      src={selectedIndustryData.image}
+                      alt={selectedIndustryData.name}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        console.error(
+                          `Failed to load image: ${selectedIndustryData.image}`,
+                        );
+                      }}
+                      onLoad={() => {
+                        console.log(
+                          `Successfully loaded image: ${selectedIndustryData.image}`,
+                        );
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent group-hover:from-gray-900/60 transition-all duration-300"></div>
+                    <div className="absolute bottom-4 left-6">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                        {selectedIndustryData.name}
+                      </h3>
                     </div>
                   </div>
 
-                  <p className="text-white/90 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {service.services.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 text-sm font-medium bg-white/20 backdrop-blur-sm rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  {/* Industry Content */}
+                  <div className="p-6">
+                    <p className="text-gray-300 leading-relaxed text-lg">
+                      {selectedIndustryData.content}
+                    </p>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -592,63 +1018,6 @@ export default function AWSServices() {
                     <div key={featureIndex} className="flex items-center">
                       <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
                       <span className="text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries We Serve Section */}
-      <section className="py-20 bg-light relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
-          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
-          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
-          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Industries We Serve
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Delivering specialized AWS solutions across diverse industries
-              with deep domain expertise and proven results.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-2xl hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mr-4">
-                    <industry.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">
-                    {industry.title}
-                  </h3>
-                </div>
-
-                <p className="text-gray-300 mb-4">{industry.description}</p>
-
-                <div className="space-y-2">
-                  {industry.useCases.map((useCase, caseIndex) => (
-                    <div key={caseIndex} className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                      <span className="text-sm text-gray-300">{useCase}</span>
                     </div>
                   ))}
                 </div>
