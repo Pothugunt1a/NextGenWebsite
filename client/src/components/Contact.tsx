@@ -169,9 +169,9 @@ export default function Contact() {
                     <img
                       src="./assets/Contact.gif"
                       alt="Contact Background"
-                      className="w-full h-full object-cover opacity-40"
+                      className="w-full h-full object-cover opacity-70"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 to-gray-900/40"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900/30"></div>
                   </div>
 
                   {/* Content */}
@@ -199,9 +199,9 @@ export default function Contact() {
                       <img
                         src="./assets/Contact.gif"
                         alt="Contact Background"
-                        className="w-full h-full object-cover opacity-20"
+                        className="w-full h-full object-cover opacity-60"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/60"></div>
+                      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 to-gray-900/40"></div>
                     </div>
 
                     {/* Form Content */}
