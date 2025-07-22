@@ -654,91 +654,146 @@ export default function AWSServices() {
             </p>
           </motion.div>
 
-          {/* 3x2 Grid Layout with Central Image */}
+          {/* AWS Offerings Layout */}
           <div className="max-w-8xl mx-auto relative">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Top Row - Compute Services and Storage & Databases */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Compute Services */}
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={awsOfferings[0].backgroundImage}
-                        alt={awsOfferings[0].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Server className="h-6 w-6 text-white" />
+            {/* Top Row - Compute Services and Storage & Databases */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Compute Services */}
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="group cursor-pointer h-full"
+              >
+                <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                    <img
+                      src={awsOfferings[0].backgroundImage}
+                      alt={awsOfferings[0].title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={{ backgroundAttachment: "fixed" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Server className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        01
                       </div>
                     </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          01
-                        </div>
+                    <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {awsOfferings[0].title}
+                    </h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {awsOfferings[0].description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Storage & Databases */}
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="group cursor-pointer h-full"
+              >
+                <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                    <img
+                      src={awsOfferings[1].backgroundImage}
+                      alt={awsOfferings[1].title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={{ backgroundAttachment: "fixed" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Database className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        02
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {awsOfferings[0].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {awsOfferings[0].description}
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {awsOfferings[1].title}
+                    </h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {awsOfferings[1].description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Middle Row - Central Image with Items 3 & 4 on the right */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              {/* Left Side - Central Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, type: "spring" }}
+                className="relative group"
+              >
+                {/* Main Feature Card */}
+                <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                  <div className="relative w-full">
+                    <img
+                      src="/assets/cloud_1752856032189.gif"
+                      alt="AWS Cloud Solutions"
+                      className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
+                      style={{ backgroundAttachment: "fixed" }}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/assets/AWS-banner.png";
+                      }}
+                    />
+                  </div>
+
+                  {/* Floating Elements */}
+                  <div className="absolute top-8 right-8 flex flex-col gap-4">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                      <Cloud className="h-8 w-8 text-white" />
+                    </div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                      AWS
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="mb-4">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span className="text-blue-200 text-sm font-medium">
+                          AWS Cloud Hub
+                        </span>
+                      </div>
+                      <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                        Intelligent Cloud Solutions
+                      </h3>
+                      <p className="text-blue-100 leading-relaxed mb-6">
+                        Advanced AWS solutions that transform, scale, and
+                        secure your business operations.
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
-                {/* Storage & Databases */}
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={awsOfferings[1].backgroundImage}
-                        alt={awsOfferings[1].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Database className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          02
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {awsOfferings[1].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {awsOfferings[1].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Second Row - AI & ML and Data Analytics (Equal Space) */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Right Side - Items 3 & 4 in column format */}
+              <div className="flex flex-col gap-6">
                 {/* AI & Machine Learning */}
                 <motion.div
-                  initial={{ opacity: 0, x: -100 }}
+                  initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
@@ -778,7 +833,7 @@ export default function AWSServices() {
                   initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
+                  transition={{ duration: 0.8, delay: 0.1 }}
                   className="group cursor-pointer h-full"
                 >
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
@@ -810,139 +865,83 @@ export default function AWSServices() {
                   </div>
                 </motion.div>
               </div>
+            </div>
 
-              {/* Third Row - Central Image */}
-              <div className="lg:col-span-3 mb-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, type: "spring" }}
-                  className="relative group"
-                >
-                  {/* Main Feature Card */}
-                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
-                    <div className="relative w-full">
-                      <img
-                        src="/assets/cloud_1752856032189.gif"
-                        alt="AWS Cloud Solutions"
-                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
-                        style={{ backgroundAttachment: "fixed" }}
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "/assets/AWS-banner.png";
-                        }}
-                      />
-                    </div>
-
-                    {/* Floating Elements */}
-                    <div className="absolute top-8 right-8 flex flex-col gap-4">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                        <Cloud className="h-8 w-8 text-white" />
-                      </div>
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                        AWS
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="mb-4">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">
-                            AWS Cloud Hub
-                          </span>
-                        </div>
-                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
-                          Intelligent Cloud Solutions
-                        </h3>
-                        <p className="text-blue-100 leading-relaxed mb-6">
-                          Advanced AWS solutions that transform, scale, and
-                          secure your business operations.
-                        </p>
-                      </div>
+            {/* Bottom Row - Security & Compliance and DevOps & Automation */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Security & Compliance */}
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="group cursor-pointer h-full"
+              >
+                <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                    <img
+                      src={awsOfferings[4].backgroundImage}
+                      alt={awsOfferings[4].title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={{ backgroundAttachment: "fixed" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Shield className="h-6 w-6 text-white" />
                     </div>
                   </div>
-                </motion.div>
-              </div>
-
-              {/* Fourth Row - Security & Compliance and DevOps & Automation */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Security & Compliance */}
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={awsOfferings[4].backgroundImage}
-                        alt={awsOfferings[4].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Shield className="h-6 w-6 text-white" />
+                  <div className="flex-grow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        05
                       </div>
                     </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          05
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {awsOfferings[4].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {awsOfferings[4].description}
-                      </p>
+                    <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {awsOfferings[4].title}
+                    </h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {awsOfferings[4].description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* DevOps & Automation */}
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="group cursor-pointer h-full"
+              >
+                <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                    <img
+                      src={awsOfferings[5].backgroundImage}
+                      alt={awsOfferings[5].title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={{ backgroundAttachment: "fixed" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Settings className="h-6 w-6 text-white" />
                     </div>
                   </div>
-                </motion.div>
-
-                {/* DevOps & Automation */}
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={awsOfferings[5].backgroundImage}
-                        alt={awsOfferings[5].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        style={{ backgroundAttachment: "fixed" }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Settings className="h-6 w-6 text-white" />
+                  <div className="flex-grow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        06
                       </div>
                     </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          06
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {awsOfferings[5].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {awsOfferings[5].description}
-                      </p>
-                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {awsOfferings[5].title}
+                    </h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {awsOfferings[5].description}
+                    </p>
                   </div>
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
