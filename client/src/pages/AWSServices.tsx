@@ -569,62 +569,7 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* Why Choose Us Section - Same style as Validation page */}
-      <section className="py-16 bg-light">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why AWS with NextGenAI?
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              AWS offers over 200 fully featured services from data centers
-              globally. With NextGenAI as your AWS partner, you gain access to
-              industry-leading solutions that combine cloud efficiency with
-              cutting-edge technologies.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {whyChooseUsItems.map((item, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.05 }}
-                className="group"
-              >
-                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
-                  <div className="flex justify-center mb-6">
-                    <div
-                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <div className="text-white">{item.icon}</div>
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* Our AWS Offerings - Same as Generative AI Development Services Layout */}
       <div className="py-20 bg-light relative overflow-hidden">
@@ -1081,8 +1026,8 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* Why AWS with NextGenAI? Section - Moved Above FAQ */}
-      <section className="py-16 bg-light">
+      {/* Why AWS with NextGenAI? Section - Same style as Validation page */}
+      <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -1119,9 +1064,7 @@ export default function AWSServices() {
               >
                 <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
                   <div className="flex justify-center mb-6">
-                    <div
-                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}
-                    >
+                    <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform duration-300">
                       <div className="text-white">{item.icon}</div>
                     </div>
                   </div>
