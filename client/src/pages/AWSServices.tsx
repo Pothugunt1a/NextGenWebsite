@@ -46,6 +46,12 @@ import {
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../components/ui/accordion";
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -366,7 +372,6 @@ const awsOfferings = [
 ];
 
 export default function AWSServices() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -444,9 +449,7 @@ export default function AWSServices() {
     },
   };
 
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
-  };
+  
 
   return (
     <motion.div
@@ -1081,52 +1084,61 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* FAQ Section - Styled like AI Chatbot FAQs */}
-      <section className="py-20 bg-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Frequently Asked Questions
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300">
-              Get answers to common questions about our AWS services and
-              expertise.
-            </p>
-          </div>
+      {/* FAQ Section - Same style as AI Chatbot FAQs */}
+      <section className="py-16 text-white relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300">
+                Get answers to common questions about our AWS services and
+                expertise.
+              </p>
+            </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="border border-white/10 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm"
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left hover:bg-white/10 transition-colors duration-200 flex justify-between items-center"
-                >
-                  <span className="text-lg font-semibold text-white">
-                    {faq.question}
-                  </span>
-                  {openFAQ === index ? (
-                    <ChevronUp className="h-5 w-5 text-gray-400" />
-                  ) : (
-                    <ChevronDown className="h-5 w-5 text-gray-400" />
-                  )}
-                </button>
-                {openFAQ === index && (
-                  <div className="p-6 border-t border-white/10">
-                    <p className="text-gray-300 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </motion.div>
-            ))}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              {/* Left Side - AWS Services Image */}
+              <div className="lg:col-span-5">
+                <div className="relative">
+                  <img
+                    src="./assets/AWS-banner.png"
+                    alt="AWS Cloud Technology"
+                    className="w-full h-[500px] object-cover rounded-2xl"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/assets/cloud_1752856032189.gif";
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Right Side - FAQ Content */}
+              <div className="lg:col-span-7">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <AccordionItem
+                      key={index}
+                      value={`item-${index}`}
+                      className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-xl border border-gray-700 overflow-hidden backdrop-blur-sm"
+                    >
+                      <AccordionTrigger className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors">
+                        <h3 className="text-lg font-semibold text-white pr-4">
+                          {faq.question}
+                        </h3>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-6">
+                        <p className="text-gray-400 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </div>
           </div>
         </div>
       </section>
