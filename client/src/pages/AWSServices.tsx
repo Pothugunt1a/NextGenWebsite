@@ -287,9 +287,9 @@ const advancedTechnologies = [
 const awsOfferings = [
   {
     icon: Cloud,
-    title: "Cloud Migration & Modernization",
+    title: "Compute Services",
     description:
-      "Seamlessly migrate your applications and infrastructure to AWS with minimal downtime and maximum efficiency.",
+      "Amazon EC2 for resizable virtual servers, AWS Lambda for serverless computing, EKS for Kubernetes, and ECS for container orchestration.",
     features: [
       "Application assessment and planning",
       "Legacy system modernization",
@@ -300,9 +300,9 @@ const awsOfferings = [
   },
   {
     icon: Server,
-    title: "Infrastructure & Architecture",
+    title: "Storage & Databases",
     description:
-      "Design and implement scalable, secure, and cost-effective AWS architectures tailored to your business needs.",
+      "Scalable storage with S3, managed databases with RDS and DynamoDB, and high-performance Aurora for mission-critical applications.",
     features: [
       "Well-architected framework design",
       "Auto-scaling implementation",
@@ -313,9 +313,9 @@ const awsOfferings = [
   },
   {
     icon: Brain,
-    title: "AI & Machine Learning on AWS",
+    title: "AI & Machine Learning",
     description:
-      "Leverage AWS AI/ML services to build intelligent applications that drive business insights and automation.",
+      "End-to-end ML services with SageMaker, Generative AI with Bedrock, and ready-to-use AI services for vision, speech, and language.",
     features: [
       "SageMaker model development",
       "Computer vision solutions",
@@ -326,7 +326,7 @@ const awsOfferings = [
   },
   {
     icon: BarChart,
-    title: "Data Analytics & Business Intelligence",
+    title: "Data Analytics",
     description:
       "Transform your data into actionable insights with comprehensive analytics and BI solutions on AWS.",
     features: [
@@ -336,6 +336,19 @@ const awsOfferings = [
       "Advanced reporting systems",
     ],
     backgroundImage: "/assets/cloud3_1752856017147.gif",
+  },
+  {
+    icon: Settings,
+    title: "Security & Compliance",
+    description:
+      "Streamline your development lifecycle with AWS DevOps tools and automation best practices.",
+    features: [
+      "CI/CD pipeline setup",
+      "Infrastructure as Code",
+      "Automated testing frameworks",
+      "Monitoring and alerting",
+    ],
+    backgroundImage: "/assets/cloud 5_1752856047806.gif",
   },
   {
     icon: Settings,
@@ -429,6 +442,10 @@ export default function AWSServices() {
         duration: 0.5,
       },
     },
+  };
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   return (
@@ -637,12 +654,12 @@ export default function AWSServices() {
             </p>
           </motion.div>
 
-          {/* 2x2 Grid Layout with Central Image */}
+          {/* 3x2 Grid Layout with Central Image */}
           <div className="max-w-8xl mx-auto relative">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Top Row - Cloud Migration and Infrastructure */}
+              {/* Top Row - Compute Services and Storage & Databases */}
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Cloud Migration & Modernization */}
+                {/* Compute Services */}
                 <motion.div
                   initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -660,7 +677,7 @@ export default function AWSServices() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Cloud className="h-6 w-6 text-white" />
+                        <Server className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -679,7 +696,7 @@ export default function AWSServices() {
                   </div>
                 </motion.div>
 
-                {/* Infrastructure & Architecture */}
+                {/* Storage & Databases */}
                 <motion.div
                   initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -697,7 +714,7 @@ export default function AWSServices() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Server className="h-6 w-6 text-white" />
+                        <Database className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -717,66 +734,11 @@ export default function AWSServices() {
                 </motion.div>
               </div>
 
-              {/* Second Row - Central Image with AI & ML */}
+              {/* Second Row - AI & ML and Data Analytics (Equal Space) */}
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Central Image */}
+                {/* AI & Machine Learning */}
                 <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, type: "spring" }}
-                  className="relative group"
-                >
-                  {/* Main Feature Card */}
-                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
-                    <div className="relative w-full">
-                      <img
-                        src="/assets/cloud_1752856032189.gif"
-                        alt="AWS Cloud Solutions"
-                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
-                        style={{ backgroundAttachment: "fixed" }}
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "/assets/AWS-banner.png";
-                        }}
-                      />
-                    </div>
-
-                    {/* Floating Elements */}
-                    <div className="absolute top-8 right-8 flex flex-col gap-4">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                        <Cloud className="h-8 w-8 text-white" />
-                      </div>
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full```text
- flex items-center justify-center text-white font-bold shadow-lg">
-                        AWS
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="mb-4">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">
-                            AWS Cloud Hub
-                          </span>
-                        </div>
-                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
-                          Intelligent Cloud Solutions
-                        </h3>
-                        <p className="text-blue-100 leading-relaxed mb-6">
-                          Advanced AWS solutions that transform, scale, and
-                          secure your business operations.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* AI & Machine Learning on AWS */}
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
+                  initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
@@ -810,13 +772,10 @@ export default function AWSServices() {
                     </div>
                   </div>
                 </motion.div>
-              </div>
 
-              {/* Third Row - Data Analytics and DevOps */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Data Analytics & Business Intelligence */}
+                {/* Data Analytics */}
                 <motion.div
-                  initial={{ opacity: 0, x: -100 }}
+                  initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
@@ -850,10 +809,69 @@ export default function AWSServices() {
                     </div>
                   </div>
                 </motion.div>
+              </div>
 
-                {/* DevOps & Automation */}
+              {/* Third Row - Central Image */}
+              <div className="lg:col-span-3 mb-8">
                 <motion.div
-                  initial={{ opacity: 0, x: 100 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, type: "spring" }}
+                  className="relative group"
+                >
+                  {/* Main Feature Card */}
+                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="relative w-full">
+                      <img
+                        src="/assets/cloud_1752856032189.gif"
+                        alt="AWS Cloud Solutions"
+                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
+                        style={{ backgroundAttachment: "fixed" }}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/assets/AWS-banner.png";
+                        }}
+                      />
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 flex flex-col gap-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Cloud className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        AWS
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-sm font-medium">
+                            AWS Cloud Hub
+                          </span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                          Intelligent Cloud Solutions
+                        </h3>
+                        <p className="text-blue-100 leading-relaxed mb-6">
+                          Advanced AWS solutions that transform, scale, and
+                          secure your business operations.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Fourth Row - Security & Compliance and DevOps & Automation */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Security & Compliance */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
@@ -869,7 +887,7 @@ export default function AWSServices() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Settings className="h-6 w-6 text-white" />
+                        <Shield className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -883,6 +901,43 @@ export default function AWSServices() {
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         {awsOfferings[4].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* DevOps & Automation */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={awsOfferings[5].backgroundImage}
+                        alt={awsOfferings[5].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundAttachment: "fixed" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Settings className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          06
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {awsOfferings[5].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {awsOfferings[5].description}
                       </p>
                     </div>
                   </div>
@@ -1027,7 +1082,64 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Why AWS with NextGenAI? Section - Moved Above FAQ */}
+      <section className="py-16 bg-light">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Why AWS with NextGenAI?
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              AWS offers over 200 fully featured services from data centers
+              globally. With NextGenAI as your AWS partner, you gain access to
+              industry-leading solutions that combine cloud efficiency with
+              cutting-edge technologies.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {whyChooseUsItems.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="group"
+              >
+                <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 text-center">
+                  <div className="flex justify-center mb-6">
+                    <div
+                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <div className="text-white">{item.icon}</div>
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Styled like AI Chatbot FAQs */}
       <section className="py-20 bg-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
