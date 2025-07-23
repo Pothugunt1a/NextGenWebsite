@@ -36,7 +36,7 @@ const serviceCategories = [
             <BrainCircuit className="h-10 w-10 text-white" />
           </div>
         ),
-        backgroundImage: "/assets/ai-network-banner2.png",
+        backgroundImage: "./assets/ai-network-banner2.png",
       },
       {
         id: 2,
@@ -48,7 +48,7 @@ const serviceCategories = [
             <Code className="h-10 w-10 text-white" />
           </div>
         ),
-        backgroundImage: "/assets/ai-network-banner3.png",
+        backgroundImage: "./assets/ai-network-banner3.png",
       },
       {
         id: 3,
@@ -60,7 +60,7 @@ const serviceCategories = [
             <FileCode className="h-10 w-10 text-white" />
           </div>
         ),
-        backgroundImage: "/assets/ai-network-banner1.jpg",
+        backgroundImage: "./assets/ai-network-banner1.jpg",
       },
     ],
   },
@@ -79,7 +79,7 @@ const serviceCategories = [
             <Server className="h-10 w-10 text-white" />
           </div>
         ),
-        backgroundImage: "/assets/IT-Services.png",
+        backgroundImage: "./assets/IT-Services.png",
       },
       {
         id: 6,
@@ -91,7 +91,7 @@ const serviceCategories = [
             <Database className="h-10 w-10 text-white" />
           </div>
         ),
-        backgroundImage: "/assets/IT-Consulting.png",
+        backgroundImage: "./assets/IT-Consulting.png",
       },
       {
         id: 8,
@@ -103,7 +103,7 @@ const serviceCategories = [
             <Shield className="h-10 w-10 text-white" />
           </div>
         ),
-        backgroundImage: "/assets/Project-Management.png",
+        backgroundImage: "./assets/Project-Management.png",
       },
     ],
   },
@@ -122,7 +122,7 @@ const serviceCategories = [
             <Beaker className="h-10 w-10 text-white" />
           </div>
         ),
-        backgroundImage: "/assets/LifeScience-Solutions.png",
+        backgroundImage: "./assets/LifeScience-Solutions.png",
       },
       {
         id: 7,
@@ -134,7 +134,7 @@ const serviceCategories = [
             <ChartBar className="h-10 w-10 text-white" />
           </div>
         ),
-        backgroundImage: "/assets/Validation.png",
+        backgroundImage: "./assets/Validation.png",
       },
     ],
   },
