@@ -186,9 +186,9 @@ export const navLinks = [
         name: "Cloud Services",
         items: [
           { name: "Cloud Computing", href: "/cloud-services" },
-          { name: "Azure", href: "#azure" },
+          { name: "Azure", href: "/azure-services" },
           { name: "AWS Services", href: "/aws-services" },
-          { name: "Salesforce", href: "#salesforce" },
+          { name: "Salesforce", href: "/salesforce-services" },
         ],
       },
       {

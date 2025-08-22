@@ -24,6 +24,8 @@ import GenerativeAIDevelopment from "./pages/GenerativeAIDevelopment";
 import AIApplicationDevelopment from "./pages/AIApplicationDevelopment";
 import IntelligentSystemsDevelopment from "./pages/IntelligentSystemsDevelopment";
 import AWSServices from "./pages/AWSServices";
+import AzureServices from "./pages/AzureServices";
+import SalesforceServices from "./pages/SalesforceServices";
 
 function Router() {
   return (
@@ -48,6 +50,8 @@ function Router() {
         <Route path="/ai-application-development" component={AIApplicationDevelopment} />
         <Route path="/intelligent-systems-development" component={IntelligentSystemsDevelopment} />
         <Route path="/aws-services" component={AWSServices} />
+        <Route path="/azure-services" component={AzureServices} />
+        <Route path="/salesforce-services" component={SalesforceServices} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
