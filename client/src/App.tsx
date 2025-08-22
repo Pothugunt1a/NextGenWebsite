@@ -26,6 +26,8 @@ import IntelligentSystemsDevelopment from "./pages/IntelligentSystemsDevelopment
 import AWSServices from "./pages/AWSServices";
 import AzureServices from "./pages/AzureServices";
 import SalesforceServices from "./pages/SalesforceServices";
+import MobileDevelopment from "./pages/MobileDevelopment";
+import WebDevelopment from "./pages/WebDevelopment";
 
 function Router() {
   return (
@@ -52,6 +54,8 @@ function Router() {
         <Route path="/aws-services" component={AWSServices} />
         <Route path="/azure-services" component={AzureServices} />
         <Route path="/salesforce-services" component={SalesforceServices} />
+        <Route path="/mobile-development" component={MobileDevelopment} />
+        <Route path="/web-development" component={WebDevelopment} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

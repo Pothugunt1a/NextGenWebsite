@@ -226,17 +226,17 @@ export const navLinks = [
       {
         name: "Mobile Development",
         items: [
-          { name: "iOS Development", href: "#ios-development" },
-          { name: "Android Development", href: "#android-development" },
-          { name: "Cross-Platform Apps", href: "#cross-platform" },
+          { name: "iOS Development", href: "/mobile-development" },
+          { name: "Android Development", href: "/mobile-development" },
+          { name: "Cross-Platform Apps", href: "/mobile-development" },
         ],
       },
       {
         name: "Web Development",
         items: [
-          { name: "Frontend Development", href: "#frontend-development" },
-          { name: "Backend Development", href: "#backend-development" },
-          { name: "Full-Stack Solutions", href: "#fullstack-solutions" },
+          { name: "Frontend Development", href: "/web-development" },
+          { name: "Backend Development", href: "/web-development" },
+          { name: "Full-Stack Solutions", href: "/web-development" },
         ],
       },
       {
