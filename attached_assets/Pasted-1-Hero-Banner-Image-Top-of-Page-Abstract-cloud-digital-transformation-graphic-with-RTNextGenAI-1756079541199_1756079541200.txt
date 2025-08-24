@@ -1,0 +1,87 @@
+1. Hero/Banner Image (Top of Page)
+
+Abstract cloud + digital transformation graphic with RTNextGenAI branding.
+
+Optionally overlay the AWS logo (subtle, not dominant).
+
+Could also show a team working on laptops with cloud icons floating above.
+
+2. AWS Architecture Diagrams (Professional Icons)
+
+Use official AWS architecture icons to show:
+
+Migration workflows (on-prem → AWS cloud)
+
+Serverless architecture (Lambda, API Gateway, DynamoDB)
+
+Data lake architecture (S3 + Glue + Redshift + QuickSight)
+
+These are recognized by technical audiences and make your site look enterprise-grade.
+
+3. Service-Specific Illustrations
+
+For each section (migration, data, AI/ML, DevOps, security), add a relevant image/icon:
+
+Migration – Cloud with arrows showing “lift & shift.”
+
+Data & Analytics – Database + charts/dashboard illustration.
+
+AI/ML – AI brain or predictive analytics graphic with AWS SageMaker branding.
+
+DevOps – Pipeline/automation gear icons.
+
+Security – Shield + cloud lock icon.
+
+4. Industry Use Case Graphics
+
+Show small visuals/logos for the industries you serve:
+
+Healthcare – Patient data dashboard or heart/health icon.
+
+Finance – Digital banking dashboard or padlock + dollar sign.
+
+Retail – Shopping cart with cloud + analytics.
+
+Manufacturing – IoT-connected machines.
+
+5. Client Success / Metrics Image
+
+If you highlight case studies or KPIs, you can:
+
+Add an infographic: e.g.,
+
+“60% Cost Reduction” (icon: dollar with down arrow).
+
+“3X Faster Reporting” (icon: speedometer/analytics).
+
+This gives a visual punch to success stories.
+
+6. Certifications & Trust Badges
+
+AWS Partner logo (if applicable).
+
+Icons for AWS Certified Solutions Architect, DevOps Engineer, ML Specialty.
+
+Security/compliance badges (HIPAA, ISO, GDPR).
+
+7. Call-to-Action Section Visuals
+
+Friendly illustration of a team meeting/handshake.
+
+Futuristic AI + cloud hologram style image.
+
+Button visuals like “Schedule a Consultation” beside cloud icons.
+
+✅ Example Layout With Images
+
+Hero: Futuristic AWS + cloud banner.
+
+Why AWS: Infographic-style image with AWS benefits.
+
+Services Sections: Each with a small AWS icon-based graphic.
+
+Industries: Grid with icons for healthcare, finance, retail, manufacturing.
+
+Case Study/Success: Metric-based infographic.
+
+CTA: Handshake/teamwork image.
