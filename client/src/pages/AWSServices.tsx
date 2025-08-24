@@ -461,19 +461,26 @@ export default function AWSServices() {
     >
       {/* Hero Section - Same style as LifeScienceNew */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background for AWS page */}
+        {/* Background for AWS page - Enhanced with cloud transformation graphics */}
         <div className="absolute inset-0">
           <img
-            src="/assets/AWS-banner.png"
-            alt="AWS Cloud Solutions"
+            src="/assets/cloud_1752856032189.gif"
+            alt="AWS Cloud Digital Transformation"
             className="w-full h-full object-cover object-center"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "/assets/aws-banner.png";
+              target.src = "/assets/AWS-banner.png";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+          
+          {/* Floating AWS Logo */}
+          <div className="absolute top-8 right-8 opacity-30">
+            <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+              <Cloud className="h-10 w-10 text-white" />
+            </div>
+          </div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
@@ -506,19 +513,41 @@ export default function AWSServices() {
               most comprehensive and widely adopted cloud platform.
             </motion.p>
 
-            {/* Badge below description */}
+            {/* Certifications and Trust Badges */}
             <div className="mb-32">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.6, type: "spring" }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+                className="flex flex-col items-center gap-4"
               >
-                <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
-                <span className="text-white font-medium">
-                  Industry-Leading AWS Solutions
-                </span>
-                <Award className="h-4 w-4 text-blue-400 fill-current" />
+                <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm">
+                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
+                  <span className="text-white font-medium">
+                    Certified AWS Partner
+                  </span>
+                  <Award className="h-4 w-4 text-blue-400 fill-current" />
+                </div>
+                
+                {/* AWS Certifications */}
+                <div className="flex flex-wrap justify-center gap-4 mt-4">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                    <Shield className="h-4 w-4 text-blue-400" />
+                    <span className="text-sm text-gray-300">Solutions Architect</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                    <Settings className="h-4 w-4 text-green-400" />
+                    <span className="text-sm text-gray-300">DevOps Engineer</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                    <Brain className="h-4 w-4 text-purple-400" />
+                    <span className="text-sm text-gray-300">ML Specialty</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                    <Lock className="h-4 w-4 text-orange-400" />
+                    <span className="text-sm text-gray-300">HIPAA/GDPR</span>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
@@ -573,6 +602,100 @@ export default function AWSServices() {
       </section>
 
       
+
+      {/* AWS Architecture Diagrams Section */}
+      <section className="py-16 bg-gradient-to-b from-gray-900 to-light">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Enterprise-Grade AWS Architectures
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Professional AWS architecture patterns designed for scalability, security, and performance
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Migration Architecture */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-blue-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl">
+                  <ArrowRight className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">Migration Workflows</h3>
+              <p className="text-gray-300 text-center mb-6">On-premises to AWS cloud migration with lift-and-shift strategies</p>
+              <div className="flex justify-center space-x-2">
+                <div className="w-12 h-8 bg-gray-600 rounded flex items-center justify-center">
+                  <Server className="h-4 w-4 text-white" />
+                </div>
+                <ArrowRight className="h-8 w-8 text-blue-400 self-center" />
+                <div className="w-12 h-8 bg-blue-500 rounded flex items-center justify-center">
+                  <Cloud className="h-4 w-4 text-white" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Serverless Architecture */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl">
+                  <Zap className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">Serverless Architecture</h3>
+              <p className="text-gray-300 text-center mb-6">Lambda, API Gateway, and DynamoDB for scalable applications</p>
+              <div className="flex justify-center space-x-1">
+                <div className="w-8 h-6 bg-orange-500 rounded text-xs text-white flex items-center justify-center">λ</div>
+                <div className="w-8 h-6 bg-purple-500 rounded text-xs text-white flex items-center justify-center">API</div>
+                <div className="w-8 h-6 bg-blue-500 rounded text-xs text-white flex items-center justify-center">DB</div>
+              </div>
+            </motion.div>
+
+            {/* Data Lake Architecture */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="p-4 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl">
+                  <BarChart3 className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">Data Lake Architecture</h3>
+              <p className="text-gray-300 text-center mb-6">S3, Glue, Redshift, and QuickSight for comprehensive analytics</p>
+              <div className="grid grid-cols-2 gap-1">
+                <div className="h-6 bg-green-500 rounded text-xs text-white flex items-center justify-center">S3</div>
+                <div className="h-6 bg-orange-500 rounded text-xs text-white flex items-center justify-center">Glue</div>
+                <div className="h-6 bg-red-500 rounded text-xs text-white flex items-center justify-center">Redshift</div>
+                <div className="h-6 bg-blue-500 rounded text-xs text-white flex items-center justify-center">QuickSight</div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Our AWS Offerings - Same as Generative AI Development Services Layout */}
       <div className="py-20 bg-light relative overflow-hidden">
@@ -907,7 +1030,7 @@ export default function AWSServices() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Left Navigation */}
+              {/* Left Navigation - Enhanced with icons */}
               <div className="lg:col-span-4">
                 <div className="grid grid-cols-1 gap-4">
                   {industryData.map((industry) => (
@@ -918,7 +1041,7 @@ export default function AWSServices() {
                           ? "default"
                           : "outline"
                       }
-                      className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
+                      className={`flex items-center justify-start gap-3 p-4 h-auto min-h-[60px] transition-all duration-300 ${
                         selectedIndustryData.id === industry.id
                           ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
                           : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
@@ -927,11 +1050,48 @@ export default function AWSServices() {
                         setSelectedIndustryData(industry);
                       }}
                     >
-                      <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
+                      {/* Industry specific icons */}
+                      <div className="flex-shrink-0">
+                        {industry.id === 'healthcare' && <Building className="h-5 w-5" />}
+                        {industry.id === 'finance' && <TrendingUp className="h-5 w-5" />}
+                        {industry.id === 'retail' && <ShoppingCart className="h-5 w-5" />}
+                        {industry.id === 'manufacturing' && <Factory className="h-5 w-5" />}
+                        {industry.id === 'education' && <GraduationCap className="h-5 w-5" />}
+                        {industry.id === 'media' && <Video className="h-5 w-5" />}
+                      </div>
+                      <span className="font-semibold text-sm leading-tight text-left whitespace-normal flex-grow">
                         {industry.name}
                       </span>
                     </Button>
                   ))}
+                </div>
+                
+                {/* Success Metrics Infographic */}
+                <div className="mt-8 p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl">
+                  <h4 className="text-lg font-bold text-white mb-4 text-center">Client Success Metrics</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-green-400" />
+                        <span className="text-sm text-gray-300">Cost Reduction</span>
+                      </div>
+                      <span className="text-lg font-bold text-green-400">60%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Zap className="h-4 w-4 text-blue-400" />
+                        <span className="text-sm text-gray-300">Faster Reporting</span>
+                      </div>
+                      <span className="text-lg font-bold text-blue-400">3X</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Shield className="h-4 w-4 text-purple-400" />
+                        <span className="text-sm text-gray-300">Uptime SLA</span>
+                      </div>
+                      <span className="text-lg font-bold text-purple-400">99.9%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1143,7 +1303,7 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* Enhanced CTA Section - Same style as LifeScience */}
+      {/* Enhanced CTA Section with Team Collaboration Theme */}
       <section className="py-16 relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
@@ -1153,6 +1313,17 @@ export default function AWSServices() {
             className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "1s" }}
           />
+          
+          {/* Floating collaboration icons */}
+          <div className="absolute top-16 left-16 opacity-20">
+            <Users className="h-12 w-12 text-blue-400 animate-pulse" />
+          </div>
+          <div className="absolute top-32 right-16 opacity-20">
+            <MessageSquare className="h-10 w-10 text-cyan-400 animate-pulse" style={{ animationDelay: "0.5s" }} />
+          </div>
+          <div className="absolute bottom-32 left-32 opacity-20">
+            <Sparkles className="h-8 w-8 text-purple-400 animate-pulse" style={{ animationDelay: "1.5s" }} />
+          </div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
