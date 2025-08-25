@@ -717,17 +717,15 @@ export default function AWSServices() {
 
                 {/* Back Side - Architecture Diagram */}
                 <div className="flip-card-back">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <img
-                      src="/assets/ServerlessArchitecture.png"
-                      alt="Serverless Architecture Diagram"
-                      className="w-full h-full object-contain rounded-lg"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/assets/cloud3_1752856017147.gif";
-                      }}
-                    />
-                  </div>
+                  <img
+                    src="/assets/ServerlessArchitecture.png"
+                    alt="Serverless Architecture Diagram"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/assets/cloud3_1752856017147.gif";
+                    }}
+                  />
                 </div>
               </div>
             </motion.div>
