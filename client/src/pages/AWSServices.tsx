@@ -603,7 +603,7 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* AWS Architecture Diagrams Section - Professional Icons */}
+      {/* AWS Architecture Diagrams (Professional Icons) - Using flip card layout */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -618,304 +618,165 @@ export default function AWSServices() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Professional AWS architecture blueprints for enterprise-grade cloud transformation
+              Use official AWS architecture icons to show recognized by technical audiences and make your site look enterprise-grade
             </p>
           </motion.div>
 
-          <div className="space-y-16 max-w-7xl mx-auto">
-            {/* Migration Workflow Architecture */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-8"
-            >
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-white mb-4">Migration Workflow Architecture</h3>
-                <p className="text-gray-300 text-lg">On-Premises to AWS Cloud Migration Strategy</p>
-              </div>
+          {/* Modern Capabilities Grid - Three flip cards */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                {/* On-Premises */}
-                <div className="text-center">
-                  <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl p-6 border border-gray-600">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <Server className="h-8 w-8 text-white" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-3">On-Premises</h4>
-                    <div className="space-y-2 text-sm text-gray-300">
-                      <div className="flex items-center gap-2 justify-center">
-                        <HardDrive className="h-4 w-4" />
-                        <span>Legacy Systems</span>
-                      </div>
-                      <div className="flex items-center gap-2 justify-center">
-                        <Database className="h-4 w-4" />
-                        <span>Traditional Databases</span>
-                      </div>
-                      <div className="flex items-center gap-2 justify-center">
-                        <Network className="h-4 w-4" />
-                        <span>Physical Infrastructure</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Migration Process */}
-                <div className="text-center">
-                  <div className="relative">
-                    <div className="w-full h-24 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-400/30">
-                      <div className="flex items-center gap-4">
-                        <ArrowRight className="h-6 w-6 text-blue-400" />
-                        <Workflow className="h-8 w-8 text-cyan-400" />
-                        <ArrowRight className="h-6 w-6 text-blue-400" />
-                      </div>
-                    </div>
-                    <div className="mt-4">
-                      <h4 className="text-lg font-bold text-white mb-2">Migration Tools</h4>
-                      <div className="flex flex-wrap justify-center gap-2">
-                        <span className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-400/30">
-                          AWS DMS
-                        </span>
-                        <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-400/30">
-                          Server Migration Service
-                        </span>
-                        <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-400/30">
-                          CloudFormation
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* AWS Cloud */}
-                <div className="text-center">
-                  <div className="bg-gradient-to-br from-blue-800/80 to-cyan-800/80 rounded-2xl p-6 border border-blue-400/30">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <Cloud className="h-8 w-8 text-white" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-3">AWS Cloud</h4>
-                    <div className="space-y-2 text-sm text-gray-300">
-                      <div className="flex items-center gap-2 justify-center">
-                        <Server className="h-4 w-4" />
-                        <span>EC2 Instances</span>
-                      </div>
-                      <div className="flex items-center gap-2 justify-center">
-                        <Database className="h-4 w-4" />
-                        <span>RDS & DynamoDB</span>
-                      </div>
-                      <div className="flex items-center gap-2 justify-center">
-                        <Shield className="h-4 w-4" />
-                        <span>VPC & Security</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Serverless Architecture */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-8"
-            >
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-white mb-4">Serverless Architecture</h3>
-                <p className="text-gray-300 text-lg">Lambda + API Gateway + DynamoDB Integration</p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {/* API Gateway */}
-                <div className="bg-gradient-to-br from-green-800/60 to-emerald-800/60 rounded-xl p-6 border border-green-400/30 text-center transform-style-3d">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Globe className="h-6 w-6 text-white" />
-                  </div>
-                  <h4 className="text-lg font-bold text-white mb-2">API Gateway</h4>
-                  <p className="text-sm text-gray-300 mb-3">RESTful APIs & WebSocket</p>
-                  <div className="flex flex-wrap justify-center gap-1">
-                    <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">REST</span>
-                    <span className="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded">GraphQL</span>
-                  </div>
-                </div>
-
-                {/* Lambda Functions */}
-                <div className="bg-gradient-to-br from-orange-800/60 to-red-800/60 rounded-xl p-6 border border-orange-400/30 text-center transform-style-3d">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Zap className="h-6 w-6 text-white" />
-                  </div>
-                  <h4 className="text-lg font-bold text-white mb-2">Lambda</h4>
-                  <p className="text-sm text-gray-300 mb-3">Serverless Compute</p>
-                  <div className="flex flex-wrap justify-center gap-1">
-                    <span className="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">Node.js</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-300 text-xs rounded">Python</span>
-                  </div>
-                </div>
-
-                {/* DynamoDB */}
-                <div className="bg-gradient-to-br from-blue-800/60 to-indigo-800/60 rounded-xl p-6 border border-blue-400/30 text-center transform-style-3d">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Database className="h-6 w-6 text-white" />
-                  </div>
-                  <h4 className="text-lg font-bold text-white mb-2">DynamoDB</h4>
-                  <p className="text-sm text-gray-300 mb-3">NoSQL Database</p>
-                  <div className="flex flex-wrap justify-center gap-1">
-                    <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Auto-Scale</span>
-                    <span className="px-2 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded">Global Tables</span>
-                  </div>
-                </div>
-
-                {/* CloudWatch */}
-                <div className="bg-gradient-to-br from-purple-800/60 to-violet-800/60 rounded-xl p-6 border border-purple-400/30 text-center transform-style-3d">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Monitor className="h-6 w-6 text-white" />
-                  </div>
-                  <h4 className="text-lg font-bold text-white mb-2">CloudWatch</h4>
-                  <p className="text-sm text-gray-300 mb-3">Monitoring & Logs</p>
-                  <div className="flex flex-wrap justify-center gap-1">
-                    <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">Metrics</span>
-                    <span className="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs rounded">Alarms</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Architecture Flow */}
-              <div className="mt-8 flex items-center justify-center">
-                <div className="flex items-center gap-4 text-gray-400">
-                  <span className="text-sm">Client</span>
-                  <ArrowRight className="h-4 w-4" />
-                  <span className="text-sm">API Gateway</span>
-                  <ArrowRight className="h-4 w-4" />
-                  <span className="text-sm">Lambda</span>
-                  <ArrowRight className="h-4 w-4" />
-                  <span className="text-sm">DynamoDB</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Data Lake Architecture */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-8"
-            >
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-white mb-4">Data Lake Architecture</h3>
-                <p className="text-gray-300 text-lg">S3 + Glue + Redshift + QuickSight Analytics Pipeline</p>
-              </div>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Data Ingestion & Storage */}
-                <div className="space-y-6">
-                  <h4 className="text-xl font-bold text-white text-center mb-4">Data Ingestion & Storage</h4>
-                  
-                  {/* S3 Data Lake */}
-                  <div className="bg-gradient-to-br from-green-800/60 to-emerald-800/60 rounded-xl p-6 border border-green-400/30 transform-style-3d">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                        <HardDrive className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="text-lg font-bold text-white mb-2">Amazon S3 Data Lake</h5>
-                        <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Raw Data</span>
-                          <span className="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded">Processed</span>
-                          <span className="px-2 py-1 bg-teal-500/20 text-teal-300 text-xs rounded">Curated</span>
+              {/* Migration Workflows Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0 * 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+                className="group h-full"
+              >
+                <div className="capability-flipbox h-[400px] perspective">
+                  <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
+                    {/* Front */}
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d">
+                      <div className="capability-flipbox-inner w-full flex-grow-1 flex flex-col justify-center items-center backface-hidden">
+                        <div className="card-icon-box mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center border border-blue-400/30 group-hover:border-blue-400/60 group-hover:scale-110 transition-all duration-300 mx-auto mb-4">
+                            <Workflow className="h-8 w-8 text-blue-400" />
+                          </div>
+                          <h4 className="text-2xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            Migration Workflows
+                          </h4>
                         </div>
                       </div>
                     </div>
-                  </div>
-
-                  {/* AWS Glue */}
-                  <div className="bg-gradient-to-br from-orange-800/60 to-red-800/60 rounded-xl p-6 border border-orange-400/30 transform-style-3d">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                        <Workflow className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="text-lg font-bold text-white mb-2">AWS Glue ETL</h5>
-                        <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">Data Catalog</span>
-                          <span className="px-2 py-1 bg-red-500/20 text-red-300 text-xs rounded">ETL Jobs</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Analytics & Visualization */}
-                <div className="space-y-6">
-                  <h4 className="text-xl font-bold text-white text-center mb-4">Analytics & Visualization</h4>
-                  
-                  {/* Redshift */}
-                  <div className="bg-gradient-to-br from-blue-800/60 to-indigo-800/60 rounded-xl p-6 border border-blue-400/30 transform-style-3d">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                        <Database className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="text-lg font-bold text-white mb-2">Amazon Redshift</h5>
-                        <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Data Warehouse</span>
-                          <span className="px-2 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded">Analytics</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* QuickSight */}
-                  <div className="bg-gradient-to-br from-purple-800/60 to-violet-800/60 rounded-xl p-6 border border-purple-400/30 transform-style-3d">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center">
-                        <BarChart3 className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="text-lg font-bold text-white mb-2">Amazon QuickSight</h5>
-                        <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">Dashboards</span>
-                          <span className="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs rounded">BI Reports</span>
-                        </div>
+                    
+                    {/* Back */}
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-400/20 rounded-2xl backface-hidden transform-style-3d rotateY-180">
+                      <div className="capability-flipbox-inner p-6 h-full flex flex-col justify-center items-center w-full backface-hidden">
+                        <h4 className="text-xl font-bold text-white mb-4 text-center">Migration Workflows</h4>
+                        <p className="text-gray-300 text-center mb-6">On-premises → AWS cloud migration strategies</p>
+                        <ul className="space-y-3 text-gray-300">
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">Automated provisioning and configuration</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">Legacy system modernization</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">Zero-downtime migration strategies</span>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Data Flow Visualization */}
-              <div className="mt-8 bg-gray-800/50 rounded-xl p-6 border border-gray-600">
-                <h5 className="text-lg font-bold text-white mb-4 text-center">Data Flow Pipeline</h5>
-                <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-300">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    <span>Raw Data Sources</span>
-                  </div>
-                  <ArrowRight className="h-4 w-4" />
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span>S3 Data Lake</span>
-                  </div>
-                  <ArrowRight className="h-4 w-4" />
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-                    <span>Glue ETL</span>
-                  </div>
-                  <ArrowRight className="h-4 w-4" />
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-indigo-500 rounded-full"></div>
-                    <span>Redshift DW</span>
-                  </div>
-                  <ArrowRight className="h-4 w-4" />
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                    <span>QuickSight BI</span>
+              {/* Serverless Architecture Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 * 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+                className="group h-full"
+              >
+                <div className="capability-flipbox h-[400px] perspective">
+                  <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
+                    {/* Front */}
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d">
+                      <div className="capability-flipbox-inner w-full flex-grow-1 flex flex-col justify-center items-center backface-hidden">
+                        <div className="card-icon-box mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-2xl flex items-center justify-center border border-purple-400/30 group-hover:border-purple-400/60 group-hover:scale-110 transition-all duration-300 mx-auto mb-4">
+                            <Zap className="h-8 w-8 text-purple-400" />
+                          </div>
+                          <h4 className="text-2xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-violet-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            Serverless Architecture
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Back */}
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-400/20 rounded-2xl backface-hidden transform-style-3d rotateY-180">
+                      <div className="capability-flipbox-inner p-6 h-full flex flex-col justify-center items-center w-full backface-hidden">
+                        <h4 className="text-xl font-bold text-white mb-4 text-center">Serverless Architecture</h4>
+                        <p className="text-gray-300 text-center mb-6">Lambda, API Gateway, DynamoDB</p>
+                        <ul className="space-y-3 text-gray-300">
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">Auto-scaling serverless functions</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">RESTful API development</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">NoSQL database integration</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+
+              {/* Data Lake Architecture Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2 * 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+                className="group h-full"
+              >
+                <div className="capability-flipbox h-[400px] perspective">
+                  <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
+                    {/* Front */}
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d">
+                      <div className="capability-flipbox-inner w-full flex-grow-1 flex flex-col justify-center items-center backface-hidden">
+                        <div className="card-icon-box mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl flex items-center justify-center border border-green-400/30 group-hover:border-green-400/60 group-hover:scale-110 transition-all duration-300 mx-auto mb-4">
+                            <BarChart3 className="h-8 w-8 text-green-400" />
+                          </div>
+                          <h4 className="text-2xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-emerald-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            Data Lake Architecture
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Back */}
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-400/20 rounded-2xl backface-hidden transform-style-3d rotateY-180">
+                      <div className="capability-flipbox-inner p-6 h-full flex flex-col justify-center items-center w-full backface-hidden">
+                        <h4 className="text-xl font-bold text-white mb-4 text-center">Data Lake Architecture</h4>
+                        <p className="text-gray-300 text-center mb-6">S3 + Glue + Redshift + QuickSight</p>
+                        <ul className="space-y-3 text-gray-300">
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">Scalable data storage and processing</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">ETL pipeline automation</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm">Advanced analytics and BI dashboards</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+            </div>
           </div>
         </div>
       </section>
