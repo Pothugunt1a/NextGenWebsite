@@ -637,39 +637,55 @@ export default function AWSServices() {
               >
                 <div className="capability-flipbox h-[400px] perspective">
                   <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
-                    {/* Front */}
-                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d">
-                      <div className="capability-flipbox-inner w-full flex-grow-1 flex flex-col justify-center items-center backface-hidden">
-                        <div className="card-icon-box mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center border border-blue-400/30 group-hover:border-blue-400/60 group-hover:scale-110 transition-all duration-300 mx-auto mb-4">
-                            <Workflow className="h-8 w-8 text-blue-400" />
+                    {/* Front - Clean design with icon and name only */}
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-blue-400/50 transition-all duration-300">
+                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden">
+                        {/* Large Icon with improved styling */}
+                        <div className="mb-8">
+                          <div className="w-24 h-24 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-3xl flex items-center justify-center border-2 border-blue-400/40 group-hover:border-blue-400/70 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl shadow-blue-500/20">
+                            <Workflow className="h-12 w-12 text-blue-400 drop-shadow-lg" />
                           </div>
-                          <h4 className="text-2xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                            Migration Workflows
-                          </h4>
+                        </div>
+                        
+                        {/* Title only */}
+                        <h4 className="text-3xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight">
+                          Migration Workflows
+                        </h4>
+                        
+                        {/* Subtle hint to hover */}
+                        <div className="mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-8 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mx-auto"></div>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Back */}
-                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-400/20 rounded-2xl backface-hidden transform-style-3d rotateY-180">
-                      <div className="capability-flipbox-inner p-6 h-full flex flex-col justify-center items-center w-full backface-hidden">
-                        <h4 className="text-xl font-bold text-white mb-4 text-center">Migration Workflows</h4>
-                        <p className="text-gray-300 text-center mb-6">On-premises → AWS cloud migration strategies</p>
-                        <ul className="space-y-3 text-gray-300">
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">Automated provisioning and configuration</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">Legacy system modernization</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">Zero-downtime migration strategies</span>
-                          </li>
-                        </ul>
+                    {/* Back - Detailed content */}
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-xl border-2 border-blue-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
+                      <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
+                        {/* Icon for context */}
+                        <div className="flex justify-center mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <Workflow className="h-8 w-8 text-white" />
+                          </div>
+                        </div>
+                        
+                        <h4 className="text-2xl font-bold text-white mb-4 text-center">Migration Workflows</h4>
+                        <p className="text-blue-100 text-center mb-8 leading-relaxed">On-premises → AWS cloud migration strategies with enterprise-grade security and minimal downtime</p>
+                        
+                        <div className="space-y-4">
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">Automated provisioning and configuration management</span>
+                          </div>
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">Legacy system modernization with microservices</span>
+                          </div>
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">Zero-downtime migration strategies and rollback plans</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -687,39 +703,55 @@ export default function AWSServices() {
               >
                 <div className="capability-flipbox h-[400px] perspective">
                   <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
-                    {/* Front */}
-                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d">
-                      <div className="capability-flipbox-inner w-full flex-grow-1 flex flex-col justify-center items-center backface-hidden">
-                        <div className="card-icon-box mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-2xl flex items-center justify-center border border-purple-400/30 group-hover:border-purple-400/60 group-hover:scale-110 transition-all duration-300 mx-auto mb-4">
-                            <Zap className="h-8 w-8 text-purple-400" />
+                    {/* Front - Clean design with icon and name only */}
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-purple-400/50 transition-all duration-300">
+                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden">
+                        {/* Large Icon with improved styling */}
+                        <div className="mb-8">
+                          <div className="w-24 h-24 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-3xl flex items-center justify-center border-2 border-purple-400/40 group-hover:border-purple-400/70 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl shadow-purple-500/20">
+                            <Zap className="h-12 w-12 text-purple-400 drop-shadow-lg" />
                           </div>
-                          <h4 className="text-2xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-violet-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                            Serverless Architecture
-                          </h4>
+                        </div>
+                        
+                        {/* Title only */}
+                        <h4 className="text-3xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-violet-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight">
+                          Serverless Architecture
+                        </h4>
+                        
+                        {/* Subtle hint to hover */}
+                        <div className="mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-8 h-1 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mx-auto"></div>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Back */}
-                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-400/20 rounded-2xl backface-hidden transform-style-3d rotateY-180">
-                      <div className="capability-flipbox-inner p-6 h-full flex flex-col justify-center items-center w-full backface-hidden">
-                        <h4 className="text-xl font-bold text-white mb-4 text-center">Serverless Architecture</h4>
-                        <p className="text-gray-300 text-center mb-6">Lambda, API Gateway, DynamoDB</p>
-                        <ul className="space-y-3 text-gray-300">
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">Auto-scaling serverless functions</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">RESTful API development</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">NoSQL database integration</span>
-                          </li>
-                        </ul>
+                    {/* Back - Detailed content */}
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-xl border-2 border-purple-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
+                      <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
+                        {/* Icon for context */}
+                        <div className="flex justify-center mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <Zap className="h-8 w-8 text-white" />
+                          </div>
+                        </div>
+                        
+                        <h4 className="text-2xl font-bold text-white mb-4 text-center">Serverless Architecture</h4>
+                        <p className="text-purple-100 text-center mb-8 leading-relaxed">Lambda, API Gateway, DynamoDB - Event-driven computing without server management</p>
+                        
+                        <div className="space-y-4">
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">Auto-scaling serverless functions with pay-per-use</span>
+                          </div>
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">RESTful API development with API Gateway</span>
+                          </div>
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">NoSQL database integration with DynamoDB</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -737,39 +769,55 @@ export default function AWSServices() {
               >
                 <div className="capability-flipbox h-[400px] perspective">
                   <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
-                    {/* Front */}
-                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d">
-                      <div className="capability-flipbox-inner w-full flex-grow-1 flex flex-col justify-center items-center backface-hidden">
-                        <div className="card-icon-box mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl flex items-center justify-center border border-green-400/30 group-hover:border-green-400/60 group-hover:scale-110 transition-all duration-300 mx-auto mb-4">
-                            <BarChart3 className="h-8 w-8 text-green-400" />
+                    {/* Front - Clean design with icon and name only */}
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-green-400/50 transition-all duration-300">
+                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden">
+                        {/* Large Icon with improved styling */}
+                        <div className="mb-8">
+                          <div className="w-24 h-24 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-3xl flex items-center justify-center border-2 border-green-400/40 group-hover:border-green-400/70 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl shadow-green-500/20">
+                            <BarChart3 className="h-12 w-12 text-green-400 drop-shadow-lg" />
                           </div>
-                          <h4 className="text-2xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-emerald-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                            Data Lake Architecture
-                          </h4>
+                        </div>
+                        
+                        {/* Title only */}
+                        <h4 className="text-3xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-emerald-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight">
+                          Data Lake Architecture
+                        </h4>
+                        
+                        {/* Subtle hint to hover */}
+                        <div className="mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-8 h-1 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mx-auto"></div>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Back */}
-                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-400/20 rounded-2xl backface-hidden transform-style-3d rotateY-180">
-                      <div className="capability-flipbox-inner p-6 h-full flex flex-col justify-center items-center w-full backface-hidden">
-                        <h4 className="text-xl font-bold text-white mb-4 text-center">Data Lake Architecture</h4>
-                        <p className="text-gray-300 text-center mb-6">S3 + Glue + Redshift + QuickSight</p>
-                        <ul className="space-y-3 text-gray-300">
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">Scalable data storage and processing</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">ETL pipeline automation</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-sm">Advanced analytics and BI dashboards</span>
-                          </li>
-                        </ul>
+                    {/* Back - Detailed content */}
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-green-900/40 to-emerald-900/40 backdrop-blur-xl border-2 border-green-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
+                      <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
+                        {/* Icon for context */}
+                        <div className="flex justify-center mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <BarChart3 className="h-8 w-8 text-white" />
+                          </div>
+                        </div>
+                        
+                        <h4 className="text-2xl font-bold text-white mb-4 text-center">Data Lake Architecture</h4>
+                        <p className="text-green-100 text-center mb-8 leading-relaxed">S3 + Glue + Redshift + QuickSight - Complete analytics pipeline for big data</p>
+                        
+                        <div className="space-y-4">
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">Scalable data storage and real-time processing</span>
+                          </div>
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">ETL pipeline automation with AWS Glue</span>
+                          </div>
+                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                            <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-200 text-sm leading-relaxed">Advanced analytics and BI dashboards</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

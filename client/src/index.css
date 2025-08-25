@@ -481,18 +481,25 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 
 .capability-flipbox-wrap {
   transform-style: preserve-3d;
-  transition: transform 0.7s ease-in-out;
+  transition-property: box-shadow, transform;
+  transition-duration: .6s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
 }
 
 .capability-flipbox:hover .capability-flipbox-wrap {
   transform: rotateY(180deg);
 }
 
-.capability-face {
+.capability-flipbox-face {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.capability-back {
+.capability-flipbox-front {
+  transform: rotateY(0deg);
+}
+
+.capability-flipbox-back {
   transform: rotateY(180deg);
 }
 
@@ -501,8 +508,17 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
   transform-style: preserve-3d;
 }
 
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
 .backface-hidden {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotateY-180 {
+  transform: rotateY(180deg);
 }
 
 .rotate-y-180 {
@@ -511,4 +527,9 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 
 .hover\:rotate-y-180:hover {
   transform: rotateY(180deg);
+}
+
+/* Perspective for 3D effect */
+.perspective {
+  perspective: 1000px;
 }
