@@ -344,7 +344,7 @@ const awsOfferings = [
     backgroundImage: "/assets/cloud3_1752856017147.gif",
   },
   {
-    icon: Shield,
+    icon: Settings,
     title: "Security & Compliance",
     description:
       "Streamline your development lifecycle with AWS DevOps tools and automation best practices.",
@@ -633,7 +633,7 @@ export default function AWSServices() {
                 className="capability-flipbox"
                 style={{ perspective: "1000px", height: "320px" }}
               >
-                <div className="capability-flipbox-wrap w-full h-full relative transform-style-3d transition-transform duration-700 hover:rotate-y-180">
+                <div className="capability-flipbox-wrap w-full h-full relative transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
                   {/* Front Face */}
                   <div className="capability-face capability-front absolute w-full h-full backface-hidden bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col items-center justify-center p-8 hover:border-blue-400/40 transition-all duration-300">
                     <div className="capability-icon-box text-center">
@@ -712,7 +712,7 @@ export default function AWSServices() {
                   <div className="relative h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
                     {/* Background Pattern */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-bl-full transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-700"></div>
-
+                    
                     {/* Icon Container */}
                     <div className="relative z-10 mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center border border-blue-400/30 group-hover:border-blue-400/60 group-hover:scale-110 transition-all duration-300">
@@ -730,9 +730,9 @@ export default function AWSServices() {
                       <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                         {offering.title}
                       </h3>
-
+                      
                       <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mb-6 group-hover:w-24 transition-all duration-300"></div>
-
+                      
                       <p className="text-gray-300 leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
                         {offering.description}
                       </p>
