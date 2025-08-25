@@ -675,28 +675,18 @@ export default function AWSServices() {
                     {/* Back - Detailed content */}
                     <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-xl border-2 border-blue-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
-                        {/* Icon for context */}
-                        <div className="flex justify-center mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg">
-                            <Workflow className="h-8 w-8 text-white" />
-                          </div>
-                        </div>
-
-                        <h4 className="text-2xl font-bold text-white mb-4 text-center">Migration Workflows</h4>
-                        <p className="text-blue-100 text-center mb-8 leading-relaxed">On-premises → AWS cloud migration strategies with enterprise-grade security and minimal downtime</p>
-
-                        <div className="space-y-4">
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                        <div className="space-y-6">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">Automated provisioning and configuration management</span>
+                            <span className="text-gray-200 text-base leading-relaxed">Automated provisioning and configuration management</span>
                           </div>
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">Legacy system modernization with microservices</span>
+                            <span className="text-gray-200 text-base leading-relaxed">Legacy system modernization with microservices</span>
                           </div>
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">Zero-downtime migration strategies and rollback plans</span>
+                            <span className="text-gray-200 text-base leading-relaxed">Zero-downtime migration strategies and rollback plans</span>
                           </div>
                         </div>
                       </div>
@@ -754,28 +744,18 @@ export default function AWSServices() {
                     {/* Back - Detailed content */}
                     <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-xl border-2 border-purple-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
-                        {/* Icon for context */}
-                        <div className="flex justify-center mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center shadow-lg">
-                            <Zap className="h-8 w-8 text-white" />
-                          </div>
-                        </div>
-
-                        <h4 className="text-2xl font-bold text-white mb-4 text-center">Serverless Architecture</h4>
-                        <p className="text-purple-100 text-center mb-8 leading-relaxed">Lambda, API Gateway, DynamoDB - Event-driven computing without server management</p>
-
-                        <div className="space-y-4">
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                        <div className="space-y-6">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">Auto-scaling serverless functions with pay-per-use</span>
+                            <span className="text-gray-200 text-base leading-relaxed">Auto-scaling serverless functions with pay-per-use</span>
                           </div>
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">RESTful API development with API Gateway</span>
+                            <span className="text-gray-200 text-base leading-relaxed">RESTful API development with API Gateway</span>
                           </div>
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">NoSQL database integration with DynamoDB</span>
+                            <span className="text-gray-200 text-base leading-relaxed">NoSQL database integration with DynamoDB</span>
                           </div>
                         </div>
                       </div>
@@ -833,28 +813,18 @@ export default function AWSServices() {
                     {/* Back - Detailed content */}
                     <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-green-900/40 to-emerald-900/40 backdrop-blur-xl border-2 border-green-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
-                        {/* Icon for context */}
-                        <div className="flex justify-center mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg">
-                            <BarChart3 className="h-8 w-8 text-white" />
-                          </div>
-                        </div>
-
-                        <h4 className="text-2xl font-bold text-white mb-4 text-center">Data Lake Architecture</h4>
-                        <p className="text-green-100 text-center mb-8 leading-relaxed">S3 + Glue + Redshift + QuickSight - Complete analytics pipeline for big data</p>
-
-                        <div className="space-y-4">
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                        <div className="space-y-6">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">Scalable data storage and real-time processing</span>
+                            <span className="text-gray-200 text-base leading-relaxed">Scalable data storage and real-time processing</span>
                           </div>
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">ETL pipeline automation with AWS Glue</span>
+                            <span className="text-gray-200 text-base leading-relaxed">ETL pipeline automation with AWS Glue</span>
                           </div>
-                          <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
+                          <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-sm leading-relaxed">Advanced analytics and BI dashboards</span>
+                            <span className="text-gray-200 text-base leading-relaxed">Advanced analytics and BI dashboards</span>
                           </div>
                         </div>
                       </div>
