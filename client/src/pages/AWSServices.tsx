@@ -679,7 +679,7 @@ export default function AWSServices() {
                 <div className="flip-card-back">
                   <div className="w-full h-full flex items-center justify-center">
                     <img
-                      src="/attached_assets/ServerlessArchitecture_1756081044056.jpg"
+                      src="/attached_assets/ServerlessArchitecture.jpg"
                       alt="Serverless Architecture Diagram"
                       className="w-full h-full object-contain rounded-lg"
                       onError={(e) => {
