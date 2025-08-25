@@ -638,8 +638,21 @@ export default function AWSServices() {
                 <div className="capability-flipbox h-[400px] perspective">
                   <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
                     {/* Front - Clean design with icon and name only */}
-                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-blue-400/50 transition-all duration-300">
-                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden">
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-blue-400/50 transition-all duration-300 relative overflow-hidden">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 w-full h-full">
+                        <img
+                          src="/assets/Migration.png"
+                          alt="Migration Background"
+                          className="w-full h-full object-cover opacity-20"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = "/assets/cloud_1752856032189.gif";
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/60"></div>
+                      </div>
+                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden relative z-10">
                         {/* Large Icon with improved styling */}
                         <div className="mb-8">
                           <div className="w-24 h-24 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-3xl flex items-center justify-center border-2 border-blue-400/40 group-hover:border-blue-400/70 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl shadow-blue-500/20">
@@ -704,8 +717,21 @@ export default function AWSServices() {
                 <div className="capability-flipbox h-[400px] perspective">
                   <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
                     {/* Front - Clean design with icon and name only */}
-                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-purple-400/50 transition-all duration-300">
-                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden">
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-purple-400/50 transition-all duration-300 relative overflow-hidden">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 w-full h-full">
+                        <img
+                          src="/assets/Migration.png"
+                          alt="Migration Background"
+                          className="w-full h-full object-cover opacity-20"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = "/assets/cloud_1752856032189.gif";
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/60"></div>
+                      </div>
+                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden relative z-10">
                         {/* Large Icon with improved styling */}
                         <div className="mb-8">
                           <div className="w-24 h-24 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-3xl flex items-center justify-center border-2 border-purple-400/40 group-hover:border-purple-400/70 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl shadow-purple-500/20">
@@ -770,8 +796,21 @@ export default function AWSServices() {
                 <div className="capability-flipbox h-[400px] perspective">
                   <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
                     {/* Front - Clean design with icon and name only */}
-                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-green-400/50 transition-all duration-300">
-                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden">
+                    <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-green-400/50 transition-all duration-300 relative overflow-hidden">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 w-full h-full">
+                        <img
+                          src="/assets/Migration.png"
+                          alt="Migration Background"
+                          className="w-full h-full object-cover opacity-20"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = "/assets/cloud_1752856032189.gif";
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/60"></div>
+                      </div>
+                      <div className="capability-flipbox-inner w-full flex-grow flex flex-col justify-center items-center backface-hidden relative z-10">
                         {/* Large Icon with improved styling */}
                         <div className="mb-8">
                           <div className="w-24 h-24 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-3xl flex items-center justify-center border-2 border-green-400/40 group-hover:border-green-400/70 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl shadow-green-500/20">
