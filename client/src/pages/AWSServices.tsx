@@ -673,7 +673,7 @@ export default function AWSServices() {
                     </div>
 
                     {/* Back - Detailed content */}
-                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-xl border-2 border-blue-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 backdrop-blur-xl border-2 border-blue-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
                         <div className="space-y-6">
                           <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
@@ -742,7 +742,7 @@ export default function AWSServices() {
                     </div>
 
                     {/* Back - Detailed content */}
-                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-xl border-2 border-purple-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 backdrop-blur-xl border-2 border-purple-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
                         <div className="space-y-6">
                           <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
@@ -811,7 +811,7 @@ export default function AWSServices() {
                     </div>
 
                     {/* Back - Detailed content */}
-                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-green-900/40 to-emerald-900/40 backdrop-blur-xl border-2 border-green-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
+                    <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 backdrop-blur-xl border-2 border-green-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
                         <div className="space-y-6">
                           <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
