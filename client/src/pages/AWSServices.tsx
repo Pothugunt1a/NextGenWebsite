@@ -661,8 +661,8 @@ export default function AWSServices() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl hover:shadow-xl transition-all duration-300 relative overflow-hidden cursor-pointer"
-              style={{ perspective: "1000px", height: "320px", width: "384px" }}
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 relative overflow-hidden cursor-pointer"
+              style={{ perspective: "1000px", height: "320px" }}
               onMouseEnter={() => {
                 const flipCard = document.querySelector(
                   ".flip-card-inner-interactive",
@@ -720,13 +720,8 @@ export default function AWSServices() {
                   <img
                     src="/assets/ServerlessArchitecture.png"
                     alt="Serverless Architecture Diagram"
-                    className="object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-2xl"
                     style={{ 
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
                       margin: 0, 
                       padding: 0, 
                       border: 'none',
