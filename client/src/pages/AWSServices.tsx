@@ -662,23 +662,29 @@ export default function AWSServices() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 relative overflow-hidden cursor-pointer"
-              style={{ perspective: '1000px', height: '320px' }}
+              style={{ perspective: "1000px", height: "320px" }}
               onMouseEnter={() => {
-                const flipCard = document.querySelector('.flip-card-inner-interactive');
+                const flipCard = document.querySelector(
+                  ".flip-card-inner-interactive",
+                );
                 if (flipCard) {
-                  flipCard.classList.add('flipped');
+                  flipCard.classList.add("flipped");
                 }
               }}
               onMouseLeave={() => {
-                const flipCard = document.querySelector('.flip-card-inner-interactive');
+                const flipCard = document.querySelector(
+                  ".flip-card-inner-interactive",
+                );
                 if (flipCard) {
-                  flipCard.classList.remove('flipped');
+                  flipCard.classList.remove("flipped");
                 }
               }}
               onClick={() => {
-                const flipCard = document.querySelector('.flip-card-inner-interactive');
+                const flipCard = document.querySelector(
+                  ".flip-card-inner-interactive",
+                );
                 if (flipCard) {
-                  flipCard.classList.toggle('flipped');
+                  flipCard.classList.toggle("flipped");
                 }
               }}
             >
@@ -690,12 +696,22 @@ export default function AWSServices() {
                       <Zap className="h-8 w-8 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 text-center">Serverless Architecture</h3>
-                  <p className="text-gray-300 text-center mb-6">Lambda, API Gateway, and DynamoDB for scalable applications</p>
+                  <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                    Serverless Architecture
+                  </h3>
+                  <p className="text-gray-300 text-center mb-6">
+                    Lambda, API Gateway, and DynamoDB for scalable applications
+                  </p>
                   <div className="flex justify-center space-x-1">
-                    <div className="w-8 h-6 bg-orange-500 rounded text-xs text-white flex items-center justify-center">λ</div>
-                    <div className="w-8 h-6 bg-purple-500 rounded text-xs text-white flex items-center justify-center">API</div>
-                    <div className="w-8 h-6 bg-blue-500 rounded text-xs text-white flex items-center justify-center">DB</div>
+                    <div className="w-8 h-6 bg-orange-500 rounded text-xs text-white flex items-center justify-center">
+                      λ
+                    </div>
+                    <div className="w-8 h-6 bg-purple-500 rounded text-xs text-white flex items-center justify-center">
+                      API
+                    </div>
+                    <div className="w-8 h-6 bg-blue-500 rounded text-xs text-white flex items-center justify-center">
+                      DB
+                    </div>
                   </div>
                 </div>
 
@@ -703,7 +719,7 @@ export default function AWSServices() {
                 <div className="flip-card-back">
                   <div className="w-full h-full flex items-center justify-center">
                     <img
-                      src="/attached_assets/ServerlessArchitecture_1756081044056.jpg"
+                      src="/assets/ServerlessArchitecture.png"
                       alt="Serverless Architecture Diagram"
                       className="w-full h-full object-contain rounded-lg"
                       onError={(e) => {
