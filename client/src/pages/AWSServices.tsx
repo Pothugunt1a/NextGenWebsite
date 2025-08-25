@@ -720,7 +720,7 @@ export default function AWSServices() {
                   <img
                     src="/assets/ServerlessArchitecture.png"
                     alt="Serverless Architecture Diagram"
-                    className="object-cover rounded-2xl"
+                    className="w-full h-full object-contain rounded-2xl"
                     style={{ 
                       position: 'absolute',
                       top: 0,
@@ -730,7 +730,8 @@ export default function AWSServices() {
                       margin: 0, 
                       padding: 0, 
                       border: 'none',
-                      borderRadius: '1rem'
+                      borderRadius: '1rem',
+                      objectFit: 'contain'
                     }}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
