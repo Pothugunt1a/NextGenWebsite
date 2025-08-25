@@ -625,7 +625,7 @@ export default function AWSServices() {
           {/* Modern Capabilities Grid - Three flip cards */}
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              
+
               {/* Migration Workflows Card */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -659,19 +659,19 @@ export default function AWSServices() {
                             <Workflow className="h-12 w-12 text-blue-400 drop-shadow-lg" />
                           </div>
                         </div>
-                        
+
                         {/* Title only */}
                         <h4 className="text-3xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight">
                           Migration Workflows
                         </h4>
-                        
+
                         {/* Subtle hint to hover */}
                         <div className="mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="w-8 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mx-auto"></div>
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Back - Detailed content */}
                     <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-xl border-2 border-blue-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
@@ -681,10 +681,10 @@ export default function AWSServices() {
                             <Workflow className="h-8 w-8 text-white" />
                           </div>
                         </div>
-                        
+
                         <h4 className="text-2xl font-bold text-white mb-4 text-center">Migration Workflows</h4>
                         <p className="text-blue-100 text-center mb-8 leading-relaxed">On-premises → AWS cloud migration strategies with enterprise-grade security and minimal downtime</p>
-                        
+
                         <div className="space-y-4">
                           <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -738,19 +738,19 @@ export default function AWSServices() {
                             <Zap className="h-12 w-12 text-purple-400 drop-shadow-lg" />
                           </div>
                         </div>
-                        
+
                         {/* Title only */}
                         <h4 className="text-3xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-violet-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight">
                           Serverless Architecture
                         </h4>
-                        
+
                         {/* Subtle hint to hover */}
                         <div className="mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="w-8 h-1 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mx-auto"></div>
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Back - Detailed content */}
                     <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-xl border-2 border-purple-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
@@ -760,10 +760,10 @@ export default function AWSServices() {
                             <Zap className="h-8 w-8 text-white" />
                           </div>
                         </div>
-                        
+
                         <h4 className="text-2xl font-bold text-white mb-4 text-center">Serverless Architecture</h4>
                         <p className="text-purple-100 text-center mb-8 leading-relaxed">Lambda, API Gateway, DynamoDB - Event-driven computing without server management</p>
-                        
+
                         <div className="space-y-4">
                           <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -817,19 +817,19 @@ export default function AWSServices() {
                             <BarChart3 className="h-12 w-12 text-green-400 drop-shadow-lg" />
                           </div>
                         </div>
-                        
+
                         {/* Title only */}
                         <h4 className="text-3xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-emerald-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight">
                           Data Lake Architecture
                         </h4>
-                        
+
                         {/* Subtle hint to hover */}
                         <div className="mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="w-8 h-1 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mx-auto"></div>
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Back - Detailed content */}
                     <div className="capability-flipbox-face capability-flipbox-back absolute inset-0 w-full h-full bg-gradient-to-br from-green-900/40 to-emerald-900/40 backdrop-blur-xl border-2 border-green-400/30 rounded-2xl backface-hidden transform-style-3d rotateY-180 shadow-2xl">
                       <div className="capability-flipbox-inner p-8 h-full flex flex-col justify-center w-full backface-hidden">
@@ -839,10 +839,10 @@ export default function AWSServices() {
                             <BarChart3 className="h-8 w-8 text-white" />
                           </div>
                         </div>
-                        
+
                         <h4 className="text-2xl font-bold text-white mb-4 text-center">Data Lake Architecture</h4>
                         <p className="text-green-100 text-center mb-8 leading-relaxed">S3 + Glue + Redshift + QuickSight - Complete analytics pipeline for big data</p>
-                        
+
                         <div className="space-y-4">
                           <div className="flex items-start gap-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm">
                             <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -912,7 +912,7 @@ export default function AWSServices() {
                   <div className="relative h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
                     {/* Background Pattern */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-bl-full transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-700"></div>
-                    
+
                     {/* Icon Container */}
                     <div className="relative z-10 mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center border border-blue-400/30 group-hover:border-blue-400/60 group-hover:scale-110 transition-all duration-300">
@@ -930,9 +930,9 @@ export default function AWSServices() {
                       <h3 className="text-2xl font-bold mb-4 text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                         {offering.title}
                       </h3>
-                      
+
                       <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mb-6 group-hover:w-24 transition-all duration-300"></div>
-                      
+
                       <p className="text-gray-300 leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
                         {offering.description}
                       </p>
