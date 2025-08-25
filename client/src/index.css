@@ -474,33 +474,60 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
   cursor: pointer;
 }
 
-/* Anblicks-style Capability Flipbox */
+/* Enhanced Anblicks-style Capability Flipbox with stronger 3D bulge effect */
 .capability-flipbox {
   cursor: pointer;
+  perspective: 1200px; /* Increased perspective for stronger 3D effect */
 }
 
 .capability-flipbox-wrap {
   transform-style: preserve-3d;
   transition-property: box-shadow, transform;
-  transition-duration: .6s;
+  transition-duration: .8s; /* Slightly slower for more dramatic effect */
   transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transform-origin: center center;
 }
 
 .capability-flipbox:hover .capability-flipbox-wrap {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) scale3d(1.05, 1.05, 1.05); /* Added scale for bulge effect */
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.3), 
+              0 15px 30px rgba(6, 182, 212, 0.2),
+              inset 0 0 30px rgba(59, 130, 246, 0.1); /* Enhanced shadow depth */
 }
 
 .capability-flipbox-face {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .capability-flipbox-front {
-  transform: rotateY(0deg);
+  transform: rotateY(0deg) translateZ(20px); /* Added translateZ for depth */
 }
 
 .capability-flipbox-back {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(20px); /* Added translateZ for depth */
+}
+
+/* Enhanced hover effects for stronger 3D bulge */
+.capability-flipbox:hover .capability-flipbox-front {
+  transform: rotateY(0deg) translateZ(30px) scale(1.02); /* More pronounced bulge */
+}
+
+.capability-flipbox:hover .capability-flipbox-back {
+  transform: rotateY(180deg) translateZ(30px) scale(1.02); /* More pronounced bulge */
+}
+
+/* Additional 3D enhancement for the inner content */
+.capability-flipbox-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.capability-flipbox:hover .capability-flipbox-inner {
+  transform: translateZ(15px); /* Content pops forward */
 }
 
 /* Utility classes for 3D transforms */
@@ -510,6 +537,15 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 
 .transform-style-3d {
   transform-style: preserve-3d;
+}
+
+/* Enhanced perspective utility */
+.perspective {
+  perspective: 1200px;
+}
+
+.perspective-xl {
+  perspective: 1500px;
 }
 
 .backface-hidden {

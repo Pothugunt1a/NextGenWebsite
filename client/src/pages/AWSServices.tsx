@@ -770,10 +770,10 @@ export default function AWSServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2 * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -12, scale: 1.02 }}
                 className="group h-full"
               >
-                <div className="capability-flipbox h-[400px] perspective">
+                <div className="capability-flipbox h-[400px] perspective-xl">
                   <div className="capability-flipbox-wrap w-full h-full transform-style-3d backface-hidden">
                     {/* Front - Clean design with icon and name only */}
                     <div className="capability-flipbox-face capability-flipbox-front absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col justify-center items-center text-center p-8 backface-hidden transform-style-3d hover:border-green-400/50 transition-all duration-300 relative overflow-hidden">
