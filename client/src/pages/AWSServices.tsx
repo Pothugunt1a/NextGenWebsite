@@ -603,7 +603,7 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* AWS Capabilities Section - Anblicks Style */}
+      {/* AWS Core Services Section - Anblicks Style Flip Cards */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -614,140 +614,56 @@ export default function AWSServices() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-white">
-              Our AWS Capabilities
+              AWS Core Services
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive AWS expertise across cloud infrastructure, security, and modern application development
+              Comprehensive AWS core services to accelerate your cloud transformation and digital innovation
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Environment Management Capability */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="capability-flipbox"
-              style={{ perspective: "1000px", height: "280px" }}
-            >
-              <div className="capability-flipbox-wrap w-full h-full relative transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
-                {/* Front Face */}
-                <div className="capability-face capability-front absolute w-full h-full backface-hidden bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col items-center justify-center p-8 hover:border-blue-400/40 transition-all duration-300">
-                  <div className="capability-icon-box text-center">
-                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center border border-blue-400/30">
-                      <Settings className="h-8 w-8 text-blue-400" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {awsCoreServices.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="capability-flipbox"
+                style={{ perspective: "1000px", height: "320px" }}
+              >
+                <div className="capability-flipbox-wrap w-full h-full relative transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
+                  {/* Front Face */}
+                  <div className="capability-face capability-front absolute w-full h-full backface-hidden bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col items-center justify-center p-8 hover:border-blue-400/40 transition-all duration-300">
+                    <div className="capability-icon-box text-center">
+                      <div className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-br ${service.backgroundGradient}/20 rounded-2xl flex items-center justify-center border border-blue-400/30`}>
+                        {service.icon}
+                      </div>
+                      <h4 className="text-2xl font-bold text-white mb-4">{service.title}</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
                     </div>
-                    <h4 className="text-2xl font-bold text-white">Environment Management</h4>
                   </div>
-                </div>
 
-                {/* Back Face */}
-                <div className="capability-face capability-back absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-blue-600/90 to-cyan-600/90 backdrop-blur-xl border border-blue-400/50 rounded-2xl flex items-center justify-center p-8">
-                  <div className="capability-content text-center">
-                    <ul className="text-white space-y-3 text-sm">
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        Automated provisioning and configuration
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        Version control and deployment
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        Infrastructure as Code
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Security & Compliance Capability */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="capability-flipbox"
-              style={{ perspective: "1000px", height: "280px" }}
-            >
-              <div className="capability-flipbox-wrap w-full h-full relative transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
-                {/* Front Face */}
-                <div className="capability-face capability-front absolute w-full h-full backface-hidden bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col items-center justify-center p-8 hover:border-green-400/40 transition-all duration-300">
-                  <div className="capability-icon-box text-center">
-                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl flex items-center justify-center border border-green-400/30">
-                      <Shield className="h-8 w-8 text-green-400" />
+                  {/* Back Face */}
+                  <div className={`capability-face capability-back absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br ${service.backgroundGradient}/90 backdrop-blur-xl border border-blue-400/50 rounded-2xl flex flex-col items-center justify-center p-8`}>
+                    <div className="capability-content text-center">
+                      <h5 className="text-white font-bold text-lg mb-4">Key Services</h5>
+                      <div className="flex flex-wrap justify-center gap-2">
+                        {service.services.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-3 py-1 bg-white/20 text-white text-xs rounded-full border border-white/30"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <h4 className="text-2xl font-bold text-white">Security & Compliance</h4>
                   </div>
                 </div>
-
-                {/* Back Face */}
-                <div className="capability-face capability-back absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-green-600/90 to-emerald-600/90 backdrop-blur-xl border border-green-400/50 rounded-2xl flex items-center justify-center p-8">
-                  <div className="capability-content text-center">
-                    <ul className="text-white space-y-3 text-sm">
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        IAM and access management
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        Threat detection and monitoring
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        HIPAA, GDPR compliance
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Data Analytics Capability */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="capability-flipbox"
-              style={{ perspective: "1000px", height: "280px" }}
-            >
-              <div className="capability-flipbox-wrap w-full h-full relative transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
-                {/* Front Face */}
-                <div className="capability-face capability-front absolute w-full h-full backface-hidden bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col items-center justify-center p-8 hover:border-purple-400/40 transition-all duration-300">
-                  <div className="capability-icon-box text-center">
-                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-2xl flex items-center justify-center border border-purple-400/30">
-                      <BarChart3 className="h-8 w-8 text-purple-400" />
-                    </div>
-                    <h4 className="text-2xl font-bold text-white">Data Analytics</h4>
-                  </div>
-                </div>
-
-                {/* Back Face */}
-                <div className="capability-face capability-back absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-purple-600/90 to-violet-600/90 backdrop-blur-xl border border-purple-400/50 rounded-2xl flex items-center justify-center p-8">
-                  <div className="capability-content text-center">
-                    <ul className="text-white space-y-3 text-sm">
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        Real-time data processing
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        Advanced analytics dashboards
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                        ML-powered insights
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
