@@ -306,7 +306,7 @@
 
   /* Mobile-first responsive cards */
   .responsive-card {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 sm:p-4 md:p-8 transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50;
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 sm:p-6 md:p-8 transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50;
   }
 
   /* Responsive buttons */
@@ -481,25 +481,18 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 
 .capability-flipbox-wrap {
   transform-style: preserve-3d;
-  transition-property: box-shadow, transform;
-  transition-duration: .6s;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition: transform 0.7s ease-in-out;
 }
 
 .capability-flipbox:hover .capability-flipbox-wrap {
   transform: rotateY(180deg);
 }
 
-.capability-flipbox-face {
+.capability-face {
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
-.capability-flipbox-front {
-  transform: rotateY(0deg);
-}
-
-.capability-flipbox-back {
+.capability-back {
   transform: rotateY(180deg);
 }
 
@@ -508,17 +501,8 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
   transform-style: preserve-3d;
 }
 
-.transform-style-3d {
-  transform-style: preserve-3d;
-}
-
 .backface-hidden {
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.rotateY-180 {
-  transform: rotateY(180deg);
 }
 
 .rotate-y-180 {
@@ -527,9 +511,4 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 
 .hover\:rotate-y-180:hover {
   transform: rotateY(180deg);
-}
-
-/* Perspective for 3D effect */
-.perspective {
-  perspective: 1000px;
 }
