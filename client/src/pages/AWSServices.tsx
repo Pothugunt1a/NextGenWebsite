@@ -649,25 +649,46 @@ export default function AWSServices() {
               </div>
             </motion.div>
 
-            {/* Serverless Architecture */}
+            {/* Serverless Architecture - Flip Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              style={{ perspective: '1000px', height: '320px' }}
             >
-              <div className="flex items-center justify-center mb-6">
-                <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl">
-                  <Zap className="h-8 w-8 text-white" />
+              <div className="flip-card-inner">
+                {/* Front Side - Text Content */}
+                <div className="flip-card-front">
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl">
+                      <Zap className="h-8 w-8 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4 text-center">Serverless Architecture</h3>
+                  <p className="text-gray-300 text-center mb-6">Lambda, API Gateway, and DynamoDB for scalable applications</p>
+                  <div className="flex justify-center space-x-1">
+                    <div className="w-8 h-6 bg-orange-500 rounded text-xs text-white flex items-center justify-center">λ</div>
+                    <div className="w-8 h-6 bg-purple-500 rounded text-xs text-white flex items-center justify-center">API</div>
+                    <div className="w-8 h-6 bg-blue-500 rounded text-xs text-white flex items-center justify-center">DB</div>
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">Serverless Architecture</h3>
-              <p className="text-gray-300 text-center mb-6">Lambda, API Gateway, and DynamoDB for scalable applications</p>
-              <div className="flex justify-center space-x-1">
-                <div className="w-8 h-6 bg-orange-500 rounded text-xs text-white flex items-center justify-center">λ</div>
-                <div className="w-8 h-6 bg-purple-500 rounded text-xs text-white flex items-center justify-center">API</div>
-                <div className="w-8 h-6 bg-blue-500 rounded text-xs text-white flex items-center justify-center">DB</div>
+
+                {/* Back Side - Architecture Diagram */}
+                <div className="flip-card-back">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img
+                      src="/attached_assets/ServerlessArchitecture_1756081044056.jpg"
+                      alt="Serverless Architecture Diagram"
+                      className="w-full h-full object-contain rounded-lg"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/assets/cloud3_1752856017147.gif";
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
 
