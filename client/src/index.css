@@ -501,6 +501,10 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
   transform-style: preserve-3d;
 }
 
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
 .backface-hidden {
   backface-visibility: hidden;
 }
