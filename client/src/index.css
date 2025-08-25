@@ -405,6 +405,19 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
   animation: autoFlip 6s infinite;
 }
 
+.flip-card-inner-interactive {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-interactive.flipped {
+  transform: rotateY(180deg);
+}
+
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
@@ -437,4 +450,14 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 /* Pause animation on hover */
 .group:hover .flip-card-inner {
   animation-play-state: paused;
+}
+
+/* Interactive flip card hover effects */
+.flip-card-inner-interactive:hover {
+  transform: rotateY(180deg);
+}
+
+/* Smooth transition for interactive cards */
+.flip-card-inner-interactive {
+  cursor: pointer;
 }
