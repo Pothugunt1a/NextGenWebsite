@@ -655,42 +655,29 @@ export default function AWSServices() {
               </div>
             </motion.div>
 
-            {/* Serverless Architecture - Flip Card */}
+            {/* Serverless Architecture - Full Card Flip */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl hover:shadow-xl transition-all duration-300 relative overflow-hidden cursor-pointer"
+              className="group cursor-pointer"
               style={{ perspective: "1000px", height: "320px", width: "384px" }}
-              onMouseEnter={() => {
-                const flipCard = document.querySelector(
-                  ".flip-card-inner-interactive",
-                );
-                if (flipCard) {
-                  flipCard.classList.add("flipped");
-                }
-              }}
-              onMouseLeave={() => {
-                const flipCard = document.querySelector(
-                  ".flip-card-inner-interactive",
-                );
-                if (flipCard) {
-                  flipCard.classList.remove("flipped");
-                }
-              }}
-              onClick={() => {
-                const flipCard = document.querySelector(
-                  ".flip-card-inner-interactive",
-                );
-                if (flipCard) {
-                  flipCard.classList.toggle("flipped");
-                }
-              }}
             >
-              <div className="flip-card-inner-interactive">
-                {/* Front Side - Text Content */}
-                <div className="flip-card-front">
+              <div 
+                className="flip-card-inner-interactive w-full h-full relative"
+                onMouseEnter={(e) => {
+                  e.currentTarget.classList.add("flipped");
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.classList.remove("flipped");
+                }}
+                onClick={(e) => {
+                  e.currentTarget.classList.toggle("flipped");
+                }}
+              >
+                {/* Front Side - Text Content with full card styling */}
+                <div className="flip-card-front bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl hover:shadow-xl transition-all duration-300 p-8">
                   <div className="flex items-center justify-center mb-6">
                     <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl">
                       <Zap className="h-8 w-8 text-white" />
@@ -715,24 +702,12 @@ export default function AWSServices() {
                   </div>
                 </div>
 
-                {/* Back Side - Architecture Diagram */}
-                <div className="flip-card-back">
+                {/* Back Side - Architecture Diagram with full card styling */}
+                <div className="flip-card-back bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden">
                   <img
                     src="/assets/ServerlessArchitecture.png"
                     alt="Serverless Architecture Diagram"
-                    className="w-full h-full object-contain rounded-2xl"
-                    style={{ 
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      margin: 0, 
-                      padding: 0, 
-                      border: 'none',
-                      borderRadius: '1rem',
-                      objectFit: 'contain'
-                    }}
+                    className="w-full h-full object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "/assets/cloud3_1752856017147.gif";
