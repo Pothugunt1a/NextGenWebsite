@@ -603,7 +603,7 @@ export default function AWSServices() {
         </div>
       </section>
 
-      {/* AWS Architecture Diagrams Section */}
+      {/* AWS Capabilities Section - Anblicks Style */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -614,140 +614,137 @@ export default function AWSServices() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-white">
-              Enterprise-Grade AWS Architectures
+              Our AWS Capabilities
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Professional AWS architecture patterns designed for scalability,
-              security, and performance
+              Comprehensive AWS expertise across cloud infrastructure, security, and modern application development
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Migration Architecture */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Environment Management Capability */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-blue-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+              className="capability-flipbox"
+              style={{ perspective: "1000px", height: "280px" }}
             >
-              <div className="flex items-center justify-center mb-6">
-                <div className="p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl">
-                  <ArrowRight className="h-8 w-8 text-white" />
+              <div className="capability-flipbox-wrap w-full h-full relative transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
+                {/* Front Face */}
+                <div className="capability-face capability-front absolute w-full h-full backface-hidden bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col items-center justify-center p-8 hover:border-blue-400/40 transition-all duration-300">
+                  <div className="capability-icon-box text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center border border-blue-400/30">
+                      <Settings className="h-8 w-8 text-blue-400" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-white">Environment Management</h4>
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Migration Workflows
-              </h3>
-              <p className="text-gray-300 text-center mb-6">
-                On-premises to AWS cloud migration with lift-and-shift
-                strategies
-              </p>
-              <div className="flex justify-center space-x-2">
-                <div className="w-12 h-8 bg-gray-600 rounded flex items-center justify-center">
-                  <Server className="h-4 w-4 text-white" />
-                </div>
-                <ArrowRight className="h-8 w-8 text-blue-400 self-center" />
-                <div className="w-12 h-8 bg-blue-500 rounded flex items-center justify-center">
-                  <Cloud className="h-4 w-4 text-white" />
+
+                {/* Back Face */}
+                <div className="capability-face capability-back absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-blue-600/90 to-cyan-600/90 backdrop-blur-xl border border-blue-400/50 rounded-2xl flex items-center justify-center p-8">
+                  <div className="capability-content text-center">
+                    <ul className="text-white space-y-3 text-sm">
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        Automated provisioning and configuration
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        Version control and deployment
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        Infrastructure as Code
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Serverless Architecture - Full Card Flip */}
+            {/* Security & Compliance Capability */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="group cursor-pointer"
-              style={{ perspective: "1000px", height: "320px", width: "384px" }}
+              className="capability-flipbox"
+              style={{ perspective: "1000px", height: "280px" }}
             >
-              <div 
-                className="flip-card-inner-interactive w-full h-full relative"
-                onMouseEnter={(e) => {
-                  e.currentTarget.classList.add("flipped");
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.classList.remove("flipped");
-                }}
-                onClick={(e) => {
-                  e.currentTarget.classList.toggle("flipped");
-                }}
-              >
-                {/* Front Side - Text Content with full card styling */}
-                <div className="flip-card-front bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl hover:shadow-xl transition-all duration-300 p-8">
-                  <div className="flex items-center justify-center mb-6">
-                    <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl">
-                      <Zap className="h-8 w-8 text-white" />
+              <div className="capability-flipbox-wrap w-full h-full relative transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
+                {/* Front Face */}
+                <div className="capability-face capability-front absolute w-full h-full backface-hidden bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col items-center justify-center p-8 hover:border-green-400/40 transition-all duration-300">
+                  <div className="capability-icon-box text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl flex items-center justify-center border border-green-400/30">
+                      <Shield className="h-8 w-8 text-green-400" />
                     </div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                    Serverless Architecture
-                  </h3>
-                  <p className="text-gray-300 text-center mb-6">
-                    Lambda, API Gateway, and DynamoDB for scalable applications
-                  </p>
-                  <div className="flex justify-center space-x-1">
-                    <div className="w-8 h-6 bg-orange-500 rounded text-xs text-white flex items-center justify-center">
-                      λ
-                    </div>
-                    <div className="w-8 h-6 bg-purple-500 rounded text-xs text-white flex items-center justify-center">
-                      API
-                    </div>
-                    <div className="w-8 h-6 bg-blue-500 rounded text-xs text-white flex items-center justify-center">
-                      DB
-                    </div>
+                    <h4 className="text-2xl font-bold text-white">Security & Compliance</h4>
                   </div>
                 </div>
 
-                {/* Back Side - Architecture Diagram with full card styling */}
-                <div className="flip-card-back bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden">
-                  <img
-                    src="/assets/ServerlessArchitecture.png"
-                    alt="Serverless Architecture Diagram"
-                    className="w-full h-full object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "/assets/cloud3_1752856017147.gif";
-                    }}
-                  />
+                {/* Back Face */}
+                <div className="capability-face capability-back absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-green-600/90 to-emerald-600/90 backdrop-blur-xl border border-green-400/50 rounded-2xl flex items-center justify-center p-8">
+                  <div className="capability-content text-center">
+                    <ul className="text-white space-y-3 text-sm">
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        IAM and access management
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        Threat detection and monitoring
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        HIPAA, GDPR compliance
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Data Lake Architecture */}
+            {/* Data Analytics Capability */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+              className="capability-flipbox"
+              style={{ perspective: "1000px", height: "280px" }}
             >
-              <div className="flex items-center justify-center mb-6">
-                <div className="p-4 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl">
-                  <BarChart3 className="h-8 w-8 text-white" />
+              <div className="capability-flipbox-wrap w-full h-full relative transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
+                {/* Front Face */}
+                <div className="capability-face capability-front absolute w-full h-full backface-hidden bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl flex flex-col items-center justify-center p-8 hover:border-purple-400/40 transition-all duration-300">
+                  <div className="capability-icon-box text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-2xl flex items-center justify-center border border-purple-400/30">
+                      <BarChart3 className="h-8 w-8 text-purple-400" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-white">Data Analytics</h4>
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Data Lake Architecture
-              </h3>
-              <p className="text-gray-300 text-center mb-6">
-                S3, Glue, Redshift, and QuickSight for comprehensive analytics
-              </p>
-              <div className="grid grid-cols-2 gap-1">
-                <div className="h-6 bg-green-500 rounded text-xs text-white flex items-center justify-center">
-                  S3
-                </div>
-                <div className="h-6 bg-orange-500 rounded text-xs text-white flex items-center justify-center">
-                  Glue
-                </div>
-                <div className="h-6 bg-red-500 rounded text-xs text-white flex items-center justify-center">
-                  Redshift
-                </div>
-                <div className="h-6 bg-blue-500 rounded text-xs text-white flex items-center justify-center">
-                  QuickSight
+
+                {/* Back Face */}
+                <div className="capability-face capability-back absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-purple-600/90 to-violet-600/90 backdrop-blur-xl border border-purple-400/50 rounded-2xl flex items-center justify-center p-8">
+                  <div className="capability-content text-center">
+                    <ul className="text-white space-y-3 text-sm">
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        Real-time data processing
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        Advanced analytics dashboards
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        ML-powered insights
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </motion.div>

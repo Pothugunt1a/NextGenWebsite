@@ -473,3 +473,42 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 .flip-card-inner-interactive {
   cursor: pointer;
 }
+
+/* Anblicks-style Capability Flipbox */
+.capability-flipbox {
+  cursor: pointer;
+}
+
+.capability-flipbox-wrap {
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out;
+}
+
+.capability-flipbox:hover .capability-flipbox-wrap {
+  transform: rotateY(180deg);
+}
+
+.capability-face {
+  backface-visibility: hidden;
+}
+
+.capability-back {
+  transform: rotateY(180deg);
+}
+
+/* Utility classes for 3D transforms */
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.hover\:rotate-y-180:hover {
+  transform: rotateY(180deg);
+}
