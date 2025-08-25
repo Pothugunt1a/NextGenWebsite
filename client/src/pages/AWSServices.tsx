@@ -721,7 +721,12 @@ export default function AWSServices() {
                     src="/assets/ServerlessArchitecture.png"
                     alt="Serverless Architecture Diagram"
                     className="w-full h-full object-cover rounded-2xl"
-                    style={{ margin: 0, padding: 0, border: 'none' }}
+                    style={{ 
+                      margin: 0, 
+                      padding: 0, 
+                      border: 'none',
+                      borderRadius: '1rem'
+                    }}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "/assets/cloud3_1752856017147.gif";
