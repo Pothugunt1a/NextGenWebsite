@@ -433,9 +433,11 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 
 .flip-card-back {
   transform: rotateY(180deg);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
+  background: transparent;
+  backdrop-filter: none;
   padding: 0;
+  margin: 0;
+  border: none;
   overflow: hidden;
 }
 
