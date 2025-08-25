@@ -481,9 +481,7 @@ img.h-16.sm\:h-20.lg\:h-24.w-auto {
 
 .capability-flipbox-wrap {
   transform-style: preserve-3d;
-  transition-property: box-shadow, transform;
-  transition-duration: .6s;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition: transform 0.7s ease-in-out;
 }
 
 .capability-flipbox:hover .capability-flipbox-wrap {
