@@ -62,6 +62,11 @@ function Router() {
         <Route path="/devops-services" component={DevOpsServices} />
         <Route path="/data-governance-mdm" component={DataGovernanceMDM} />
         <Route path="/bi-big-data-services" component={BIBigDataServices} />
+        <Route path="/data-engineering-etl" component={BIBigDataServices} />
+        <Route path="/data-warehousing-lakehouse" component={BIBigDataServices} />
+        <Route path="/business-intelligence-visualization" component={BIBigDataServices} />
+        <Route path="/advanced-analytics-ai-ml" component={BIBigDataServices} />
+        <Route path="/real-time-data-streaming" component={BIBigDataServices} />
         <Route path="/life-science-solutions" element={<div>Life Science Solutions Coming Soon</div>} />
         <Route component={NotFound} />
       </Switch>
