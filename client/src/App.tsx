@@ -29,12 +29,6 @@ import SalesforceServices from "./pages/SalesforceServices";
 import MobileDevelopment from "./pages/MobileDevelopment";
 import WebDevelopment from "./pages/WebDevelopment";
 import DevOpsServices from "./pages/DevOpsServices";
-import DataEngineeringETL from "./pages/DataEngineeringETL";
-import DataWarehousingLakehouse from "./pages/DataWarehousingLakehouse";
-import BusinessIntelligenceVisualization from "./pages/BusinessIntelligenceVisualization";
-import AdvancedAnalyticsAIML from "./pages/AdvancedAnalyticsAIML";
-import RealTimeDataStreaming from "./pages/RealTimeDataStreaming";
-import DataGovernanceMDM from "./pages/DataGovernanceMDM";
 
 function Router() {
   return (
@@ -64,12 +58,6 @@ function Router() {
         <Route path="/mobile-development" component={MobileDevelopment} />
         <Route path="/web-development" component={WebDevelopment} />
         <Route path="/devops-services" component={DevOpsServices} />
-        <Route path="/data-engineering-etl" component={DataEngineeringETL} />
-        <Route path="/data-warehousing-lakehouse" component={DataWarehousingLakehouse} />
-        <Route path="/business-intelligence-visualization" component={BusinessIntelligenceVisualization} />
-        <Route path="/advanced-analytics-ai-ml" component={AdvancedAnalyticsAIML} />
-        <Route path="/real-time-data-streaming" component={RealTimeDataStreaming} />
-        <Route path="/data-governance-mdm" component={DataGovernanceMDM} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
