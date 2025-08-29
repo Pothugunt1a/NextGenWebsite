@@ -202,13 +202,9 @@ export const navLinks = [
       {
         name: "Database",
         items: [
-          { name: "BI & Big Data Overview", href: "/bi-big-data-services" },
-          { name: "Data Engineering & ETL", href: "/data-engineering-etl" },
-          { name: "Data Warehousing & Lakehouse", href: "/data-warehousing-lakehouse" },
-          { name: "Business Intelligence & Visualization", href: "/business-intelligence-visualization" },
-          { name: "Advanced Analytics & AI/ML", href: "/advanced-analytics-ai-ml" },
-          { name: "Real-Time Data & Streaming", href: "/real-time-data-streaming" },
-          { name: "Data Governance & MDM", href: "/data-governance-mdm" },
+          { name: "Database Design", href: "#database-design" },
+          { name: "Database Administration", href: "#database-admin" },
+          { name: "Data Migration", href: "#data-migration" },
         ],
       },
       {
