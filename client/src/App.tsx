@@ -29,6 +29,8 @@ import SalesforceServices from "./pages/SalesforceServices";
 import MobileDevelopment from "./pages/MobileDevelopment";
 import WebDevelopment from "./pages/WebDevelopment";
 import DevOpsServices from "./pages/DevOpsServices";
+import DataGovernanceMDM from "./pages/DataGovernanceMDM";
+import BIBigDataServices from "./pages/BIBigDataServices";
 
 function Router() {
   return (
@@ -58,6 +60,9 @@ function Router() {
         <Route path="/mobile-development" component={MobileDevelopment} />
         <Route path="/web-development" component={WebDevelopment} />
         <Route path="/devops-services" component={DevOpsServices} />
+        <Route path="/data-governance-mdm" component={DataGovernanceMDM} />
+        <Route path="/bi-big-data-services" component={BIBigDataServices} />
+        <Route path="/life-science-solutions" element={<div>Life Science Solutions Coming Soon</div>} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
