@@ -23,6 +23,7 @@ import AIChatbotDevelopment from "./pages/AIChatbotDevelopment";
 import GenerativeAIDevelopment from "./pages/GenerativeAIDevelopment";
 import AIApplicationDevelopment from "./pages/AIApplicationDevelopment";
 import IntelligentSystemsDevelopment from "./pages/IntelligentSystemsDevelopment";
+import BIBigDataSolutions from "./pages/BIBigDataSolutions";
 import AWSServices from "./pages/AWSServices";
 import AzureServices from "./pages/AzureServices";
 import SalesforceServices from "./pages/SalesforceServices";
@@ -52,6 +53,8 @@ function Router() {
         <Route path="/generative-ai-development" component={GenerativeAIDevelopment} />
         <Route path="/ai-application-development" component={AIApplicationDevelopment} />
         <Route path="/intelligent-systems-development" component={IntelligentSystemsDevelopment} />
+        <Route path="/bi-big-data-solutions" component={BIBigDataSolutions} />
+        <Route path="/life-science-new" component={LifeScienceNew} />
         <Route path="/aws-services" component={AWSServices} />
         <Route path="/azure-services" component={AzureServices} />
         <Route path="/salesforce-services" component={SalesforceServices} />
