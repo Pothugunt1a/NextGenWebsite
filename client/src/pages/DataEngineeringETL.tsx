@@ -299,21 +299,7 @@ export default function DataEngineeringETL() {
                 RTNextGenAI delivers end-to-end Data Engineering and ETL solutions that transform raw, fragmented data into trusted, analytics-ready datasets for BI, Big Data, AI, and IoT applications
               </motion.p>
 
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 mb-16"
-              >
-                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Talk to a Data Engineer
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" className="border-blue-400/50 text-white hover:bg-blue-400/10 px-8 py-4 rounded-lg">
-                  Get a Free Assessment
-                </Button>
-              </motion.div>
+              
 
               {/* Badge below CTA */}
               <div className="mb-32">
