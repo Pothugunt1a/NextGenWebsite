@@ -78,38 +78,51 @@ const whyChooseUsItems = [
 const capabilities = [
   {
     icon: <Database className="h-8 w-8 text-white" />,
-    title: "Data Ingestion",
+    title: "🟧 Data Ingestion",
     description:
-      "Build robust data ingestion pipelines supporting both batch processing (daily/weekly loads) and real-time streaming from APIs, IoT devices, and event streams. Utilize Apache Kafka, AWS Kinesis, Azure Event Hub, and Google Pub/Sub for reliable, scalable data collection across diverse sources.",
+      "Batch + streaming pipelines with Kafka, Kinesis. Real-time data collection from APIs, IoT devices, and enterprise systems.",
     backgroundImage: "/assets/Data-Governance.png",
+    badge: "Real-time & Batch",
   },
   {
     icon: <Settings className="h-8 w-8 text-white" />,
-    title: "ETL & ELT Pipelines",
+    title: "🟦 ETL & ELT Pipelines",
     description:
-      "Design and implement both traditional ETL (Extract, Transform, Load) for legacy systems and modern ELT (Extract, Load, Transform) pipelines leveraging cloud-native platforms like Snowflake, BigQuery, and Redshift. Utilize Apache Spark, Databricks, AWS Glue, Azure Data Factory, and Airflow for optimal performance.",
+      "Traditional ETL for legacy systems + modern ELT for cloud warehouses. Spark, Databricks, Airflow orchestration.",
     backgroundImage: "/assets/AI-Integration.png",
+    badge: "Cloud-Native",
   },
   {
     icon: <GitBranch className="h-8 w-8 text-white" />,
-    title: "Data Transformation",
+    title: "🟨 Data Transformation",
     description:
-      "Implement comprehensive data cleansing, normalization, and enrichment processes. Handle complex semi-structured and unstructured data formats including JSON, XML, IoT telemetry, and log files. Ensure schema evolution capabilities and robust data quality checks throughout the transformation process.",
+      "Cleansing, enrichment, schema evolution. Handle JSON, XML, IoT telemetry with automated quality checks.",
     backgroundImage: "/assets/AI-ProcessOptimization.png",
+    badge: "AI-Ready",
   },
   {
     icon: <Network className="h-8 w-8 text-white" />,
-    title: "Data Integration",
+    title: "🟪 Data Integration",
     description:
-      "Seamlessly integrate enterprise systems including ERP (SAP, NetSuite), CRM (Salesforce, Dynamics), HRMS, and IoT platforms. Unify disparate data sources including SQL databases, NoSQL stores, SaaS applications, and APIs into cohesive, single-source-of-truth pipelines across AWS, Azure, and GCP.",
+      "Unify ERP, CRM, SaaS, and IoT systems. Single source of truth across AWS, Azure, GCP platforms.",
     backgroundImage: "/assets/AI-Robotic.png",
+    badge: "Enterprise-Grade",
   },
   {
     icon: <Cloud className="h-8 w-8 text-white" />,
-    title: "Data Storage & Delivery",
+    title: "🟩 Data Storage & Delivery",
     description:
-      "Optimize data loading into modern Data Lakes (S3, ADLS, GCS) and cloud Data Warehouses (Snowflake, Redshift, Synapse, BigQuery). Implement advanced partitioning and clustering strategies for optimal query performance while serving data efficiently to BI dashboards, ML models, and API endpoints.",
+      "Optimized loading to Data Lakes and Warehouses. Advanced partitioning for BI dashboards and ML models.",
     backgroundImage: "/assets/AI-ML.png",
+    badge: "Performance Optimized",
+  },
+  {
+    icon: <Activity className="h-8 w-8 text-white" />,
+    title: "🔄 Automation & Orchestration",
+    description:
+      "Workflow orchestration with Airflow, monitoring with Prometheus, Infrastructure as Code deployments.",
+    backgroundImage: "/assets/AI-DataStratergy-banner.png",
+    badge: "Fully Automated",
   },
 ];
 
@@ -314,7 +327,7 @@ export default function DataEngineeringETL() {
         </div>
       </div>
 
-      {/* Why Data Engineering Matters Section */}
+      {/* Problem → Solution Section */}
       <section className="py-16 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
@@ -325,7 +338,7 @@ export default function DataEngineeringETL() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              className="text-center mb-20"
+              className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -335,31 +348,173 @@ export default function DataEngineeringETL() {
                 Why Data Engineering Matters
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12">
-                In today's digital economy, enterprises generate massive volumes of structured, semi-structured, and unstructured data from web apps, mobile apps, IoT devices, ERP/CRM systems, and cloud platforms. Without the right pipelines, this data remains inaccessible and inconsistent.
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                In today's digital economy, enterprises generate massive volumes of data from multiple sources. Without proper pipelines, this valuable data remains fragmented and unusable.
               </p>
+            </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                {[
-                  "Unified across sources (databases, SaaS apps, APIs, IoT)",
-                  "Cleansed & Standardized for consistency",
-                  "Transformed for analytics, BI, and ML",
-                  "Delivered in real time for actionable insights"
-                ].map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-6 rounded-xl border border-green-500/20"
-                  >
-                    <div className="flex items-center gap-2 mb-2">
-                      <CheckCircle className="h-5 w-5 text-green-400" />
-                      <span className="text-green-400 font-semibold text-sm">Our Data Engineering & ETL services ensure your data is:</span>
+            {/* Two-Column Problem → Solution Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+              {/* Left Column - Data Challenges */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 p-8 rounded-2xl border border-red-500/20">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
+                      <span className="text-2xl">⚠️</span>
                     </div>
-                    <p className="text-gray-300">{benefit}</p>
-                  </motion.div>
-                ))}
+                    <h3 className="text-2xl font-bold text-white">Common Data Challenges</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl mt-1">🏗️</span>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Data Silos</h4>
+                        <p className="text-gray-300 text-sm">Fragmented data across systems, preventing unified insights</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl mt-1">⏱️</span>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">High Latency</h4>
+                        <p className="text-gray-300 text-sm">Slow data processing delaying critical business decisions</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl mt-1">🔧</span>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Messy Pipelines</h4>
+                        <p className="text-gray-300 text-sm">Complex, unreliable data flows that break frequently</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl mt-1">📊</span>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Poor Data Quality</h4>
+                        <p className="text-gray-300 text-sm">Inconsistent, duplicated, or incomplete data affecting analytics</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right Column - RTNextGenAI Solutions */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <div className="bg-gradient-to-br from-green-500/10 to-cyan-500/10 p-8 rounded-2xl border border-green-500/20">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+                      <span className="text-2xl">✅</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">RTNextGenAI Solutions</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl mt-1">⚡</span>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Automation & Speed</h4>
+                        <p className="text-gray-300 text-sm">Automated pipelines with real-time processing capabilities</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl mt-1">☁️</span>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Cloud-Native Architecture</h4>
+                        <p className="text-gray-300 text-sm">Scalable, resilient infrastructure on AWS, Azure, and GCP</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl mt-1">🤖</span>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">AI-Ready Pipelines</h4>
+                        <p className="text-gray-300 text-sm">ML-optimized data flows for advanced analytics and AI models</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl mt-1">🔒</span>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Security & Compliance</h4>
+                        <p className="text-gray-300 text-sm">HIPAA, GDPR, SOC2 compliant with end-to-end encryption</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Data Pipeline Architecture Visual */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-8 rounded-2xl border border-blue-500/20 mb-12"
+            >
+              <h3 className="text-2xl font-bold text-white text-center mb-8">Modern Data Pipeline Architecture</h3>
+              
+              {/* Pipeline Flow Diagram */}
+              <div className="flex items-center justify-between max-w-6xl mx-auto">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
+                    <Database className="h-10 w-10 text-white" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-1">Data Sources</h4>
+                  <p className="text-xs text-gray-400">APIs, Databases, IoT, SaaS</p>
+                </div>
+                
+                <div className="flex-1 mx-4">
+                  <ArrowRight className="w-full h-6 text-blue-400" />
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
+                    <Settings className="h-10 w-10 text-white" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-1">ETL/ELT</h4>
+                  <p className="text-xs text-gray-400">Transform, Cleanse, Enrich</p>
+                </div>
+                
+                <div className="flex-1 mx-4">
+                  <ArrowRight className="w-full h-6 text-blue-400" />
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
+                    <Cloud className="h-10 w-10 text-white" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-1">Storage</h4>
+                  <p className="text-xs text-gray-400">Data Lake, Warehouse</p>
+                </div>
+                
+                <div className="flex-1 mx-4">
+                  <ArrowRight className="w-full h-6 text-blue-400" />
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
+                    <BarChart3 className="h-10 w-10 text-white" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-1">Analytics</h4>
+                  <p className="text-xs text-gray-400">BI, ML, AI Models</p>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -410,7 +565,14 @@ export default function DataEngineeringETL() {
                     transition={{ duration: 0.8 }}
                     className="group cursor-pointer h-full"
                   >
-                    <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                      {/* Badge */}
+                      <div className="absolute top-4 right-4">
+                        <span className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 rounded-full text-xs text-blue-300 font-medium">
+                          {capability.badge}
+                        </span>
+                      </div>
+                      
                       <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                         <img
                           src={capability.backgroundImage}
@@ -501,7 +663,14 @@ export default function DataEngineeringETL() {
                   transition={{ duration: 0.8 }}
                   className="group cursor-pointer h-full"
                 >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                  <div className="relative flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    {/* Badge */}
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 rounded-full text-xs text-blue-300 font-medium">
+                        {capabilities[2].badge}
+                      </span>
+                    </div>
+                    
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
                         src={capabilities[2].backgroundImage}
@@ -530,35 +699,43 @@ export default function DataEngineeringETL() {
                 </motion.div>
               </div>
 
-              {/* Third Row - Data Integration and Data Storage & Delivery */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {capabilities.slice(3, 5).map((capability, index) => (
+              {/* Third Row - Data Integration, Storage & Delivery, and Automation */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {capabilities.slice(3, 6).map((capability, index) => (
                   <motion.div
                     key={index + 3}
-                    initial={{ opacity: 0, x: index === 0 ? -100 : 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
                     className="group cursor-pointer h-full"
                   >
-                    <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                      <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                        <img
-                          src={capability.backgroundImage}
-                          alt={capability.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          {capability.icon}
-                        </div>
+                    <div className="relative flex flex-col gap-4 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-y-2 h-full">
+                      {/* Badge */}
+                      <div className="absolute top-4 right-4">
+                        <span className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 rounded-full text-xs text-blue-300 font-medium">
+                          {capability.badge}
+                        </span>
                       </div>
-                      <div className="flex-grow">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {String(index + 4).padStart(2, '0')}
+                      
+                      <div className="flex items-center gap-4">
+                        <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                          <img
+                            src={capability.backgroundImage}
+                            alt={capability.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            {capability.icon}
                           </div>
                         </div>
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          {String(index + 4).padStart(2, '0')}
+                        </div>
+                      </div>
+                      
+                      <div className="flex-grow">
                         <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                           {capability.title}
                         </h4>
@@ -867,7 +1044,7 @@ export default function DataEngineeringETL() {
         </div>
       </section>
 
-      {/* Technology Stack */}
+      {/* Technology Stack - Logo Wall */}
       <section className="py-16 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -877,18 +1054,110 @@ export default function DataEngineeringETL() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Industry-leading tools and platforms for robust data engineering solutions
+                Industry-leading tools and platforms trusted by enterprises worldwide
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {techStack.map((tech, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg border border-gray-700 hover:border-cyan-400/40 transition-all duration-300"
-                >
-                  <p className="text-gray-300 text-sm font-medium">{tech}</p>
+
+            {/* Technology Categories */}
+            <div className="space-y-12">
+              {/* Data Processing & ETL */}
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-6">Data Processing & ETL</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                  {[
+                    { name: "Apache Spark", icon: "⚡" },
+                    { name: "Databricks", icon: "🧱" },
+                    { name: "Apache Kafka", icon: "📡" },
+                    { name: "Apache Airflow", icon: "🌊" },
+                    { name: "AWS Glue", icon: "🔗" },
+                    { name: "Azure Data Factory", icon: "🏭" }
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.6 }}
+                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-blue-400/40 transition-all duration-300 hover:scale-105"
+                    >
+                      <div className="text-2xl mb-2">{tech.icon}</div>
+                      <p className="text-gray-300 text-sm font-medium">{tech.name}</p>
+                    </motion.div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Cloud Platforms */}
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-6">Cloud Platforms</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                  {[
+                    { name: "Amazon Web Services", icon: "☁️", color: "from-orange-500 to-yellow-500" },
+                    { name: "Microsoft Azure", icon: "🔷", color: "from-blue-500 to-cyan-500" },
+                    { name: "Google Cloud Platform", icon: "🌐", color: "from-green-500 to-blue-500" }
+                  ].map((platform, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.2, duration: 0.6 }}
+                      className={`bg-gradient-to-br ${platform.color} p-1 rounded-2xl`}
+                    >
+                      <div className="bg-gray-900 p-6 rounded-xl">
+                        <div className="text-3xl mb-3">{platform.icon}</div>
+                        <p className="text-white font-semibold">{platform.name}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Data Storage */}
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-6">Data Storage & Warehousing</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {[
+                    { name: "Snowflake", icon: "❄️" },
+                    { name: "Amazon Redshift", icon: "🔴" },
+                    { name: "Google BigQuery", icon: "📊" },
+                    { name: "Azure Synapse", icon: "🔷" }
+                  ].map((storage, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.6 }}
+                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:scale-105"
+                    >
+                      <div className="text-2xl mb-2">{storage.icon}</div>
+                      <p className="text-gray-300 text-sm font-medium">{storage.name}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Analytics & BI */}
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-6">Analytics & Business Intelligence</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {[
+                    { name: "Tableau", icon: "📈" },
+                    { name: "Power BI", icon: "📊" },
+                    { name: "Looker", icon: "👀" },
+                    { name: "Qlik Sense", icon: "🎯" }
+                  ].map((analytics, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.6 }}
+                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:scale-105"
+                    >
+                      <div className="text-2xl mb-2">{analytics.icon}</div>
+                      <p className="text-gray-300 text-sm font-medium">{analytics.name}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
