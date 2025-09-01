@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -44,7 +43,8 @@ const whyChooseUsItems = [
   {
     icon: Database,
     secondaryIcon: Brain,
-    title: "Proven expertise in building high-performance pipelines at enterprise scale",
+    title:
+      "Proven expertise in building high-performance pipelines at enterprise scale",
     description:
       "Our team has successfully designed and implemented data pipelines processing petabytes of data daily for Fortune 500 companies. We deliver scalable, fault-tolerant architectures that handle massive data volumes while maintaining optimal performance and reliability across hybrid and multi-cloud environments.",
     badge: "Enterprise-scale expertise",
@@ -52,7 +52,8 @@ const whyChooseUsItems = [
   {
     icon: Award,
     secondaryIcon: Cloud,
-    title: "Certified professionals across AWS, Azure, GCP, Snowflake, Databricks",
+    title:
+      "Certified professionals across AWS, Azure, GCP, Snowflake, Databricks",
     description:
       "Our engineers hold industry-leading certifications including AWS Data Analytics Specialty, Azure Data Engineer Associate, Google Cloud Professional Data Engineer, Snowflake SnowPro, and Databricks Certified Associate Developer. This ensures best practices and cutting-edge implementation techniques.",
     badge: "Industry-certified experts",
@@ -60,7 +61,8 @@ const whyChooseUsItems = [
   {
     icon: TrendingUp,
     secondaryIcon: Zap,
-    title: "Experience across industries: healthcare, finance, retail, IoT manufacturing",
+    title:
+      "Experience across industries: healthcare, finance, retail, IoT manufacturing",
     description:
       "We've delivered data engineering solutions across diverse sectors, understanding unique industry requirements from HIPAA compliance in healthcare to real-time fraud detection in finance, inventory optimization in retail, and predictive maintenance in IoT manufacturing environments.",
     badge: "Cross-industry experience",
@@ -128,12 +130,14 @@ const capabilities = [
 
 const faqs: FAQ[] = [
   {
-    question: "What's the difference between ETL and ELT, and which should I choose?",
+    question:
+      "What's the difference between ETL and ELT, and which should I choose?",
     answer:
       "ETL (Extract, Transform, Load) processes data before loading it into the target system, ideal for legacy systems and complex transformations. ELT (Extract, Load, Transform) loads raw data first then transforms it using the target system's computing power, perfect for cloud data warehouses like Snowflake and BigQuery. We recommend ELT for modern cloud-first architectures due to better scalability and cost-efficiency.",
   },
   {
-    question: "How do you ensure data quality and reliability in your pipelines?",
+    question:
+      "How do you ensure data quality and reliability in your pipelines?",
     answer:
       "We implement multi-layered data quality checks including schema validation, data profiling, anomaly detection, and automated testing. Our pipelines include comprehensive monitoring, alerting, and data lineage tracking. We also implement circuit breakers, retry mechanisms, and dead letter queues to handle failures gracefully while maintaining data integrity.",
   },
@@ -148,7 +152,8 @@ const faqs: FAQ[] = [
       "Security is built into our pipeline architecture with end-to-end encryption, role-based access controls, audit logging, and comprehensive data lineage tracking. Our solutions meet HIPAA, GDPR, SOC 2, and PCI-DSS requirements with automated compliance monitoring and reporting capabilities.",
   },
   {
-    question: "What's the typical timeline for implementing a data engineering solution?",
+    question:
+      "What's the typical timeline for implementing a data engineering solution?",
     answer:
       "Implementation timelines vary based on complexity and scope. Simple ETL pipelines can be delivered in 2-4 weeks, while comprehensive enterprise data platforms typically take 8-16 weeks. We focus on delivering value incrementally with MVP implementations followed by iterative enhancements.",
   },
@@ -216,17 +221,20 @@ const techStack = [
 const useCases = [
   {
     title: "Business Intelligence (BI)",
-    description: "Prepare clean, aggregated datasets for Power BI, Tableau, Qlik",
+    description:
+      "Prepare clean, aggregated datasets for Power BI, Tableau, Qlik",
     icon: <BarChart3 className="h-6 w-6 text-blue-400" />,
   },
   {
     title: "Machine Learning",
-    description: "Build ML-ready feature pipelines for SageMaker, Azure ML, TensorFlow, PyTorch",
+    description:
+      "Build ML-ready feature pipelines for SageMaker, Azure ML, TensorFlow, PyTorch",
     icon: <Brain className="h-6 w-6 text-blue-400" />,
   },
   {
     title: "IoT & Real-Time Analytics",
-    description: "Stream sensor data into time-series databases for instant insights",
+    description:
+      "Stream sensor data into time-series databases for instant insights",
     icon: <Activity className="h-6 w-6 text-blue-400" />,
   },
   {
@@ -236,7 +244,8 @@ const useCases = [
   },
   {
     title: "Enterprise Data Lakes",
-    description: "Centralize data from ERP, CRM, SaaS apps into a single source of truth",
+    description:
+      "Centralize data from ERP, CRM, SaaS apps into a single source of truth",
     icon: <Server className="h-6 w-6 text-blue-400" />,
   },
 ];
@@ -296,10 +305,11 @@ export default function DataEngineeringETL() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
               >
-                RTNextGenAI delivers end-to-end Data Engineering and ETL solutions that transform raw, fragmented data into trusted, analytics-ready datasets for BI, Big Data, AI, and IoT applications
+                RTNextGenAI delivers end-to-end Data Engineering and ETL
+                solutions that transform raw, fragmented data into trusted,
+                analytics-ready datasets for BI, Big Data, AI, and IoT
+                applications
               </motion.p>
-
-              
 
               {/* Badge below CTA */}
               <div className="mb-32">
@@ -343,7 +353,9 @@ export default function DataEngineeringETL() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                In today's digital economy, enterprises generate massive volumes of data from multiple sources. Without proper pipelines, this valuable data remains fragmented and unusable.
+                In today's digital economy, enterprises generate massive volumes
+                of data from multiple sources. Without proper pipelines, this
+                valuable data remains fragmented and unusable.
               </p>
             </motion.div>
 
@@ -362,39 +374,60 @@ export default function DataEngineeringETL() {
                     <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
                       <span className="text-2xl">⚠️</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">Common Data Challenges</h3>
+                    <h3 className="text-2xl font-bold text-white">
+                      Common Data Challenges
+                    </h3>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <span className="text-xl mt-1">🏗️</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Data Silos</h4>
-                        <p className="text-gray-300 text-sm">Fragmented data across systems, preventing unified insights</p>
+                        <h4 className="font-semibold text-white mb-1">
+                          Data Silos
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          Fragmented data across systems, preventing unified
+                          insights
+                        </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <span className="text-xl mt-1">⏱️</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">High Latency</h4>
-                        <p className="text-gray-300 text-sm">Slow data processing delaying critical business decisions</p>
+                        <h4 className="font-semibold text-white mb-1">
+                          High Latency
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          Slow data processing delaying critical business
+                          decisions
+                        </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <span className="text-xl mt-1">🔧</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Messy Pipelines</h4>
-                        <p className="text-gray-300 text-sm">Complex, unreliable data flows that break frequently</p>
+                        <h4 className="font-semibold text-white mb-1">
+                          Messy Pipelines
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          Complex, unreliable data flows that break frequently
+                        </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <span className="text-xl mt-1">📊</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Poor Data Quality</h4>
-                        <p className="text-gray-300 text-sm">Inconsistent, duplicated, or incomplete data affecting analytics</p>
+                        <h4 className="font-semibold text-white mb-1">
+                          Poor Data Quality
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          Inconsistent, duplicated, or incomplete data affecting
+                          analytics
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -414,39 +447,60 @@ export default function DataEngineeringETL() {
                     <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
                       <span className="text-2xl">✅</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">RTNextGenAI Solutions</h3>
+                    <h3 className="text-2xl font-bold text-white">
+                      RTNextGenAI Solutions
+                    </h3>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <span className="text-xl mt-1">⚡</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Automation & Speed</h4>
-                        <p className="text-gray-300 text-sm">Automated pipelines with real-time processing capabilities</p>
+                        <h4 className="font-semibold text-white mb-1">
+                          Automation & Speed
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          Automated pipelines with real-time processing
+                          capabilities
+                        </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <span className="text-xl mt-1">☁️</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Cloud-Native Architecture</h4>
-                        <p className="text-gray-300 text-sm">Scalable, resilient infrastructure on AWS, Azure, and GCP</p>
+                        <h4 className="font-semibold text-white mb-1">
+                          Cloud-Native Architecture
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          Scalable, resilient infrastructure on AWS, Azure, and
+                          GCP
+                        </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <span className="text-xl mt-1">🤖</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">AI-Ready Pipelines</h4>
-                        <p className="text-gray-300 text-sm">ML-optimized data flows for advanced analytics and AI models</p>
+                        <h4 className="font-semibold text-white mb-1">
+                          AI-Ready Pipelines
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          ML-optimized data flows for advanced analytics and AI
+                          models
+                        </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <span className="text-xl mt-1">🔒</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Security & Compliance</h4>
-                        <p className="text-gray-300 text-sm">HIPAA, GDPR, SOC2 compliant with end-to-end encryption</p>
+                        <h4 className="font-semibold text-white mb-1">
+                          Security & Compliance
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          HIPAA, GDPR, SOC2 compliant with end-to-end encryption
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -462,34 +516,42 @@ export default function DataEngineeringETL() {
               transition={{ duration: 0.6 }}
               className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-8 rounded-2xl border border-blue-500/20 mb-12"
             >
-              <h3 className="text-2xl font-bold text-white text-center mb-8">Modern Data Pipeline Architecture</h3>
-              
+              <h3 className="text-2xl font-bold text-white text-center mb-8">
+                Modern Data Pipeline Architecture
+              </h3>
+
               {/* Pipeline Flow Diagram */}
               <div className="flex items-center justify-between max-w-6xl mx-auto">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
                     <Database className="h-10 w-10 text-white" />
                   </div>
-                  <h4 className="font-semibold text-white mb-1">Data Sources</h4>
-                  <p className="text-xs text-gray-400">APIs, Databases, IoT, SaaS</p>
+                  <h4 className="font-semibold text-white mb-1">
+                    Data Sources
+                  </h4>
+                  <p className="text-xs text-gray-400">
+                    APIs, Databases, IoT, SaaS
+                  </p>
                 </div>
-                
+
                 <div className="flex-1 mx-4">
                   <ArrowRight className="w-full h-6 text-blue-400" />
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
                     <Settings className="h-10 w-10 text-white" />
                   </div>
                   <h4 className="font-semibold text-white mb-1">ETL/ELT</h4>
-                  <p className="text-xs text-gray-400">Transform, Cleanse, Enrich</p>
+                  <p className="text-xs text-gray-400">
+                    Transform, Cleanse, Enrich
+                  </p>
                 </div>
-                
+
                 <div className="flex-1 mx-4">
                   <ArrowRight className="w-full h-6 text-blue-400" />
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
                     <Cloud className="h-10 w-10 text-white" />
@@ -497,11 +559,11 @@ export default function DataEngineeringETL() {
                   <h4 className="font-semibold text-white mb-1">Storage</h4>
                   <p className="text-xs text-gray-400">Data Lake, Warehouse</p>
                 </div>
-                
+
                 <div className="flex-1 mx-4">
                   <ArrowRight className="w-full h-6 text-blue-400" />
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
                     <BarChart3 className="h-10 w-10 text-white" />
@@ -541,7 +603,8 @@ export default function DataEngineeringETL() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive data engineering solutions that power modern analytics and AI
+              Comprehensive data engineering solutions that power modern
+              analytics and AI
             </p>
           </motion.div>
 
@@ -566,7 +629,7 @@ export default function DataEngineeringETL() {
                           {capability.badge}
                         </span>
                       </div>
-                      
+
                       <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                         <img
                           src={capability.backgroundImage}
@@ -581,7 +644,7 @@ export default function DataEngineeringETL() {
                       <div className="flex-grow">
                         <div className="flex items-center gap-3 mb-2">
                           <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {String(index + 1).padStart(2, '0')}
+                            {String(index + 1).padStart(2, "0")}
                           </div>
                         </div>
                         <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
@@ -609,7 +672,7 @@ export default function DataEngineeringETL() {
                   <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="relative w-full">
                       <img
-                        src="/assets/AI-DataStratergy-banner.png"
+                        src="/assets/Data-Engineering-banner.png"
                         alt="Data Engineering Capabilities"
                         className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
                         onError={(e) => {
@@ -642,7 +705,8 @@ export default function DataEngineeringETL() {
                           Data Engineering Solutions
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Transform raw data into analytics-ready insights with enterprise-grade pipelines.
+                          Transform raw data into analytics-ready insights with
+                          enterprise-grade pipelines.
                         </p>
                       </div>
                     </div>
@@ -664,7 +728,7 @@ export default function DataEngineeringETL() {
                         {capabilities[2].badge}
                       </span>
                     </div>
-                    
+
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <img
                         src={capabilities[2].backgroundImage}
@@ -711,7 +775,7 @@ export default function DataEngineeringETL() {
                           {capability.badge}
                         </span>
                       </div>
-                      
+
                       <div className="flex items-center gap-4">
                         <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
                           <img
@@ -725,10 +789,10 @@ export default function DataEngineeringETL() {
                           </div>
                         </div>
                         <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          {String(index + 4).padStart(2, '0')}
+                          {String(index + 4).padStart(2, "0")}
                         </div>
                       </div>
-                      
+
                       <div className="flex-grow">
                         <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                           {capability.title}
@@ -751,12 +815,11 @@ export default function DataEngineeringETL() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Use Cases
-              </h2>
+              <h2 className="text-4xl font-bold text-white mb-6">Use Cases</h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Transform your business operations with our data engineering solutions
+                Transform your business operations with our data engineering
+                solutions
               </p>
             </div>
 
@@ -771,7 +834,9 @@ export default function DataEngineeringETL() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     {useCase.icon}
-                    <h3 className="text-lg font-semibold text-white">{useCase.title}</h3>
+                    <h3 className="text-lg font-semibold text-white">
+                      {useCase.title}
+                    </h3>
                   </div>
                   <p className="text-gray-300 text-sm">{useCase.description}</p>
                 </motion.div>
@@ -814,7 +879,8 @@ export default function DataEngineeringETL() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Partner with certified data engineering experts who deliver enterprise-scale solutions with proven business results
+                Partner with certified data engineering experts who deliver
+                enterprise-scale solutions with proven business results
               </p>
             </motion.div>
 
@@ -968,7 +1034,8 @@ export default function DataEngineeringETL() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                How we implement data engineering solutions across multiple industries
+                How we implement data engineering solutions across multiple
+                industries
               </p>
             </div>
 
@@ -1048,7 +1115,8 @@ export default function DataEngineeringETL() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Industry-leading tools and platforms trusted by enterprises worldwide
+                Industry-leading tools and platforms trusted by enterprises
+                worldwide
               </p>
             </div>
 
@@ -1056,7 +1124,9 @@ export default function DataEngineeringETL() {
             <div className="space-y-16">
               {/* Data Processing & ETL */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Data Processing & ETL Tools</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Data Processing & ETL Tools
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "Apache Spark", icon: "⚡" },
@@ -1070,7 +1140,7 @@ export default function DataEngineeringETL() {
                     { name: "Informatica", icon: "ℹ️" },
                     { name: "Apache NiFi", icon: "🌐" },
                     { name: "Pentaho", icon: "🔨" },
-                    { name: "Fivetran", icon: "🚀" }
+                    { name: "Fivetran", icon: "🚀" },
                   ].map((tech, index) => (
                     <motion.div
                       key={index}
@@ -1080,7 +1150,9 @@ export default function DataEngineeringETL() {
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-blue-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{tech.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{tech.name}</p>
+                      <p className="text-gray-300 text-sm font-medium">
+                        {tech.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -1088,7 +1160,9 @@ export default function DataEngineeringETL() {
 
               {/* Real-Time Processing */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Real-Time Processing</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Real-Time Processing
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "Apache Flink", icon: "🌊" },
@@ -1096,7 +1170,7 @@ export default function DataEngineeringETL() {
                     { name: "Kinesis Analytics", icon: "📊" },
                     { name: "Azure Stream Analytics", icon: "🔷" },
                     { name: "Google Dataflow", icon: "🌊" },
-                    { name: "Apache Beam", icon: "🔦" }
+                    { name: "Apache Beam", icon: "🔦" },
                   ].map((tech, index) => (
                     <motion.div
                       key={index}
@@ -1106,7 +1180,9 @@ export default function DataEngineeringETL() {
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{tech.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{tech.name}</p>
+                      <p className="text-gray-300 text-sm font-medium">
+                        {tech.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -1114,13 +1190,31 @@ export default function DataEngineeringETL() {
 
               {/* Cloud Platforms */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Cloud Platforms</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Cloud Platforms
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                   {[
-                    { name: "Amazon Web Services", icon: "☁️", color: "from-orange-500 to-yellow-500" },
-                    { name: "Microsoft Azure", icon: "🔷", color: "from-blue-500 to-cyan-500" },
-                    { name: "Google Cloud Platform", icon: "🌐", color: "from-green-500 to-blue-500" },
-                    { name: "IBM Cloud", icon: "💙", color: "from-blue-600 to-indigo-600" }
+                    {
+                      name: "Amazon Web Services",
+                      icon: "☁️",
+                      color: "from-orange-500 to-yellow-500",
+                    },
+                    {
+                      name: "Microsoft Azure",
+                      icon: "🔷",
+                      color: "from-blue-500 to-cyan-500",
+                    },
+                    {
+                      name: "Google Cloud Platform",
+                      icon: "🌐",
+                      color: "from-green-500 to-blue-500",
+                    },
+                    {
+                      name: "IBM Cloud",
+                      icon: "💙",
+                      color: "from-blue-600 to-indigo-600",
+                    },
                   ].map((platform, index) => (
                     <motion.div
                       key={index}
@@ -1131,7 +1225,9 @@ export default function DataEngineeringETL() {
                     >
                       <div className="bg-gray-900 p-6 rounded-xl">
                         <div className="text-3xl mb-3">{platform.icon}</div>
-                        <p className="text-white font-semibold text-sm text-center">{platform.name}</p>
+                        <p className="text-white font-semibold text-sm text-center">
+                          {platform.name}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
@@ -1140,7 +1236,9 @@ export default function DataEngineeringETL() {
 
               {/* Data Storage & Warehousing */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Data Storage & Warehousing</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Data Storage & Warehousing
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "Snowflake", icon: "❄️" },
@@ -1154,7 +1252,7 @@ export default function DataEngineeringETL() {
                     { name: "Amazon S3", icon: "📦" },
                     { name: "HDFS", icon: "🗂️" },
                     { name: "MinIO", icon: "💾" },
-                    { name: "Apache Hudi", icon: "🔄" }
+                    { name: "Apache Hudi", icon: "🔄" },
                   ].map((storage, index) => (
                     <motion.div
                       key={index}
@@ -1164,7 +1262,9 @@ export default function DataEngineeringETL() {
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{storage.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{storage.name}</p>
+                      <p className="text-gray-300 text-sm font-medium">
+                        {storage.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -1172,7 +1272,9 @@ export default function DataEngineeringETL() {
 
               {/* Database Technologies */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Database Technologies</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Database Technologies
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "PostgreSQL", icon: "🐘" },
@@ -1186,7 +1288,7 @@ export default function DataEngineeringETL() {
                     { name: "Apache HBase", icon: "🏗️" },
                     { name: "Cosmos DB", icon: "🌌" },
                     { name: "CockroachDB", icon: "🪳" },
-                    { name: "TimescaleDB", icon: "⏰" }
+                    { name: "TimescaleDB", icon: "⏰" },
                   ].map((db, index) => (
                     <motion.div
                       key={index}
@@ -1196,7 +1298,9 @@ export default function DataEngineeringETL() {
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-blue-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{db.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{db.name}</p>
+                      <p className="text-gray-300 text-sm font-medium">
+                        {db.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -1204,7 +1308,9 @@ export default function DataEngineeringETL() {
 
               {/* Workflow Orchestration */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Workflow Orchestration</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Workflow Orchestration
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "Apache Airflow", icon: "🌊" },
@@ -1212,7 +1318,7 @@ export default function DataEngineeringETL() {
                     { name: "Dagster", icon: "⚡" },
                     { name: "Luigi", icon: "🍄" },
                     { name: "AWS Step Functions", icon: "📝" },
-                    { name: "Kubeflow Pipelines", icon: "🔄" }
+                    { name: "Kubeflow Pipelines", icon: "🔄" },
                   ].map((orchestrator, index) => (
                     <motion.div
                       key={index}
@@ -1222,7 +1328,9 @@ export default function DataEngineeringETL() {
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-green-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{orchestrator.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{orchestrator.name}</p>
+                      <p className="text-gray-300 text-sm font-medium">
+                        {orchestrator.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -1230,7 +1338,9 @@ export default function DataEngineeringETL() {
 
               {/* Data Quality & Monitoring */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Data Quality & Monitoring</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Data Quality & Monitoring
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "Great Expectations", icon: "✅" },
@@ -1244,7 +1354,7 @@ export default function DataEngineeringETL() {
                     { name: "Bigeye", icon: "👁️" },
                     { name: "Collibra", icon: "📋" },
                     { name: "Apache Atlas", icon: "🗺️" },
-                    { name: "Alation", icon: "📚" }
+                    { name: "Alation", icon: "📚" },
                   ].map((tool, index) => (
                     <motion.div
                       key={index}
@@ -1254,7 +1364,9 @@ export default function DataEngineeringETL() {
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-purple-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{tool.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{tool.name}</p>
+                      <p className="text-gray-300 text-sm font-medium">
+                        {tool.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -1262,7 +1374,9 @@ export default function DataEngineeringETL() {
 
               {/* Programming Languages */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Programming Languages & Frameworks</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Programming Languages & Frameworks
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "Python", icon: "🐍" },
@@ -1276,7 +1390,7 @@ export default function DataEngineeringETL() {
                     { name: ".NET", icon: "🔷" },
                     { name: "Node.js", icon: "🟢" },
                     { name: "Spark SQL", icon: "✨" },
-                    { name: "PySpark", icon: "🐍" }
+                    { name: "PySpark", icon: "🐍" },
                   ].map((lang, index) => (
                     <motion.div
                       key={index}
@@ -1286,7 +1400,9 @@ export default function DataEngineeringETL() {
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-yellow-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{lang.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{lang.name}</p>
+                      <p className="text-gray-300 text-sm font-medium">
+                        {lang.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -1294,7 +1410,9 @@ export default function DataEngineeringETL() {
 
               {/* Analytics & BI */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Analytics & Business Intelligence</h3>
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Analytics & Business Intelligence
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "Tableau", icon: "📈" },
@@ -1308,7 +1426,7 @@ export default function DataEngineeringETL() {
                     { name: "Plotly", icon: "📉" },
                     { name: "D3.js", icon: "📊" },
                     { name: "Bokeh", icon: "🌟" },
-                    { name: "Streamlit", icon: "🌊" }
+                    { name: "Streamlit", icon: "🌊" },
                   ].map((analytics, index) => (
                     <motion.div
                       key={index}
@@ -1318,7 +1436,9 @@ export default function DataEngineeringETL() {
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{analytics.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{analytics.name}</p>
+                      <p className="text-gray-300 text-sm font-medium">
+                        {analytics.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -1356,7 +1476,8 @@ export default function DataEngineeringETL() {
                         Data Pipeline Excellence
                       </h3>
                       <p className="text-gray-200 text-sm">
-                        Building reliable, scalable data pipelines that power modern analytics and AI
+                        Building reliable, scalable data pipelines that power
+                        modern analytics and AI
                       </p>
                     </div>
                   </div>
@@ -1453,7 +1574,8 @@ export default function DataEngineeringETL() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Partner with RTNextGenAI to build scalable, real-time, and cloud-native Data Engineering & ETL solutions
+              Partner with RTNextGenAI to build scalable, real-time, and
+              cloud-native Data Engineering & ETL solutions
             </motion.p>
 
             <motion.div
