@@ -454,6 +454,21 @@ export default function Navbar({
                                                     category.name,
                                                     e,
                                                   );
+                                                } else if (
+                                                  category.name ===
+                                                  "BI and Big Data"
+                                                ) {
+                                                  e.preventDefault();
+                                                  setLocation("/data-warehousing-lakehouse");
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
+                                                  // Don't close dropdowns, just toggle submenu
+                                                  toggleDesktopSubmenu(
+                                                    category.name,
+                                                    e,
+                                                  );
                                                 } else {
                                                   toggleDesktopSubmenu(
                                                     category.name,
