@@ -1,23 +1,34 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
 import {
-  ChevronDown,
-  ChevronUp,
   Database,
   Cloud,
   BarChart3,
   Shield,
+  Settings,
   Zap,
+  Target,
   Users,
-  Network,
   TrendingUp,
   ArrowRight,
   CheckCircle,
   Award,
+  Layers,
   Server,
-  HardDrive,
+  Brain,
+  Activity,
+  Globe,
+  Lock,
+  Eye,
+  FileText,
+  Building,
+  Heart,
+  ShoppingCart,
+  Factory,
+  Tv,
+  Phone,
+  Calendar,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
@@ -29,209 +40,147 @@ import {
 } from "../components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-interface FAQ {
-  question: string;
-  answer: string;
-}
-
-const whyChooseUsItems = [
-  {
-    icon: Cloud,
-    secondaryIcon: Database,
-    title: "Multi-cloud expertise",
-    description:
-      "Our team has deep expertise across AWS, Azure, Google Cloud Platform, Snowflake, and Databricks. We design and implement cloud-native data platforms that leverage the best features of each platform, ensuring optimal performance, scalability, and cost-effectiveness for your specific business requirements.",
-    badge: "AWS, Azure, GCP certified",
-  },
-  {
-    icon: Network,
-    secondaryIcon: Zap,
-    title: "End-to-end solutions",
-    description:
-      "From data ingestion and storage to business intelligence and machine learning, we provide comprehensive data platform solutions. Our approach covers the entire data lifecycle - ingestion, transformation, storage, analytics, and AI/ML - ensuring seamless integration across your technology stack.",
-    badge: "Complete data pipeline",
-  },
-  {
-    icon: Shield,
-    secondaryIcon: Users,
-    title: "Deep industry experience",
-    description:
-      "We bring specialized knowledge across healthcare, finance, retail, and manufacturing industries. Our solutions are designed with industry-specific compliance requirements, regulatory standards, and business processes in mind, ensuring your data platform meets both technical and regulatory needs.",
-    badge: "Industry-specific solutions",
-  },
-  {
-    icon: TrendingUp,
-    secondaryIcon: BarChart3,
-    title: "Scalable & future-ready",
-    description:
-      "Our data architectures are built to scale from gigabytes to petabytes while supporting AI, IoT, deep learning, and real-time analytics. We design platforms that grow with your business and adapt to emerging technologies, ensuring your investment remains valuable as your data needs evolve.",
-    badge: "AI & ML ready",
-  },
-];
-
-const faqs: FAQ[] = [
-  {
-    question: "What's the difference between a data warehouse and a data lake?",
-    answer:
-      "Data warehouses are optimized for structured data and fast SQL queries, making them ideal for business intelligence and reporting. Data lakes store raw data in its native format (structured, semi-structured, unstructured), offering flexibility for diverse analytics and machine learning use cases. Modern lakehouse architectures combine the best of both approaches.",
-  },
-  {
-    question: "Which cloud platform is best for data warehousing?",
-    answer:
-      "The best platform depends on your specific needs, existing infrastructure, and budget. Snowflake offers excellent performance and ease of use, AWS Redshift integrates well with the AWS ecosystem, Azure Synapse works great for Microsoft-centric environments, and Google BigQuery excels at analytics workloads. We help you choose the optimal solution.",
-  },
-  {
-    question: "How do you ensure data security and compliance?",
-    answer:
-      "We implement comprehensive security measures including encryption at rest and in transit, role-based access controls (RBAC), audit logging, and compliance frameworks for HIPAA, GDPR, SOC2, and PCI-DSS. Our solutions include metadata management, data lineage tracking, and automated compliance reporting.",
-  },
-  {
-    question: "Can you migrate our existing on-premises data warehouse to the cloud?",
-    answer:
-      "Yes, we specialize in cloud migration strategies including lift-and-shift, refactoring, and rebuilding approaches. We assess your current architecture, data volumes, and business requirements to design a migration plan that minimizes downtime while optimizing performance and cost in the cloud environment.",
-  },
-  {
-    question: "How do you handle real-time data streaming and analytics?",
-    answer:
-      "We implement streaming architectures using technologies like Apache Kafka, Amazon Kinesis, Azure Event Hubs, and Google Pub/Sub. Our solutions support real-time ingestion, processing with Apache Spark Streaming, and delivery to both operational systems and analytical platforms for immediate insights and decision-making.",
-  },
-];
-
-const useCases = [
-  {
-    name: "Business Intelligence & Dashboards",
-    description:
-      "Create unified sources of truth for Tableau, Power BI, and Looker with centralized data warehousing that enables consistent reporting across your organization.",
-  },
-  {
-    name: "Machine Learning & AI",
-    description:
-      "Build feature engineering and model training pipelines with SageMaker, Azure ML, and TensorFlow using scalable data lake architectures optimized for ML workloads.",
-  },
-  {
-    name: "IoT & Streaming Analytics",
-    description:
-      "Process real-time sensor and telemetry data for predictive maintenance, operational monitoring, and automated decision-making with streaming data architectures.",
-  },
-  {
-    name: "Customer 360 & Personalization",
-    description:
-      "Unify customer data from multiple touchpoints to enable personalized recommendations, churn prediction, and enhanced customer experience through integrated data platforms.",
-  },
-  {
-    name: "Risk Analytics & Compliance",
-    description:
-      "Build regulatory reporting, fraud detection, and risk assessment systems with secure, compliant data architectures designed for financial services and regulated industries.",
-  },
-  {
-    name: "Healthcare Analytics",
-    description:
-      "Develop patient care dashboards, predictive diagnostics, and population health analytics with HIPAA-compliant data platforms that support clinical and operational decision-making.",
-  },
-];
-
 const capabilities = [
   {
-    icon: <Database className="h-8 w-8 text-white" />,
-    title: "Cloud Data Warehousing",
-    description:
-      "Design and implement scalable cloud data warehouses using Snowflake, Amazon Redshift, Azure Synapse Analytics, and Google BigQuery. Our solutions feature fast SQL-based analytics, elastic compute and storage separation, advanced query optimization, and intelligent workload management to support enterprise-scale business intelligence and reporting requirements.",
-    backgroundImage: "/assets/Data-Warehousing.png",
-  },
-  {
-    icon: <HardDrive className="h-8 w-8 text-white" />,
-    title: "Data Lakes",
-    description:
-      "Build flexible data lakes on AWS S3, Azure Data Lake Storage, Google Cloud Storage, and Hadoop HDFS with Delta Lake integration. Store raw structured and unstructured data with schema-on-read flexibility, enabling machine learning and AI workloads while providing seamless integration with Spark, Databricks, EMR, and Presto for advanced analytics.",
-    backgroundImage: "/assets/Data-Lakes.png",
-  },
-  {
     icon: <Cloud className="h-8 w-8 text-white" />,
-    title: "Lakehouse Architectures",
-    description:
-      "Implement unified analytics platforms with Databricks and Delta Lake that combine the flexibility of data lakes with the governance and performance of data warehouses. Support batch, streaming, and machine learning workloads in a single platform, enabling advanced analytics and AI/ML capabilities with enterprise-grade data governance.",
-    backgroundImage: "/assets/Lakehouse.png",
+    title: "Cloud Data Warehousing",
+    description: "Build scalable data warehouses using Snowflake, Amazon Redshift, Azure Synapse Analytics, and Google BigQuery for fast SQL-based analytics.",
+    technologies: ["Snowflake", "Redshift", "Synapse", "BigQuery"],
+    backgroundImage: "/assets/Data-Governance.png",
   },
   {
-    icon: <Network className="h-8 w-8 text-white" />,
-    title: "Data Integration & Ingestion",
-    description:
-      "Design robust data pipelines that ingest from on-premises and cloud applications including ERP, CRM, IoT devices, and APIs. Build ETL/ELT workflows using Apache Spark, AWS Glue, Azure Data Factory, and dbt, with streaming ingestion capabilities from Kafka, Kinesis, and Event Hub for real-time data processing.",
-    backgroundImage: "/assets/Data-Integration.png",
+    icon: <Database className="h-8 w-8 text-white" />,
+    title: "Data Lakes",
+    description: "Store raw structured and unstructured data using AWS S3, Azure Data Lake Storage, Google Cloud Storage, and Hadoop HDFS.",
+    technologies: ["S3", "ADLS", "GCS", "HDFS"],
+    backgroundImage: "/assets/AI-ML.png",
+  },
+  {
+    icon: <Layers className="h-8 w-8 text-white" />,
+    title: "Lakehouse Architecture",
+    description: "Combine the flexibility of data lakes with the performance of data warehouses using Databricks and Delta Lake.",
+    technologies: ["Databricks", "Delta Lake", "Unity Catalog"],
+    backgroundImage: "/assets/AI-Integration.png",
+  },
+  {
+    icon: <Settings className="h-8 w-8 text-white" />,
+    title: "Data Ingestion & ETL",
+    description: "Build robust data pipelines using Apache Spark, AWS Glue, Azure Data Factory, and Apache Airflow.",
+    technologies: ["Spark", "Glue", "ADF", "Airflow"],
+    backgroundImage: "/assets/Process-Optimization.png",
   },
   {
     icon: <Shield className="h-8 w-8 text-white" />,
-    title: "Data Security & Governance",
-    description:
-      "Implement comprehensive data security with access controls, encryption using IAM, KMS, and RBAC frameworks. Deploy metadata management solutions with Unity Catalog, Collibra, and Informatica, while building compliance-ready architectures that meet HIPAA, GDPR, SOC2, and PCI-DSS requirements for regulated industries.",
-    backgroundImage: "/assets/Data-Governance.png",
+    title: "Security & Governance",
+    description: "Implement comprehensive data governance with IAM, RBAC, Unity Catalog, and compliance frameworks.",
+    technologies: ["IAM", "RBAC", "Unity Catalog", "Data Lineage"],
+    backgroundImage: "/assets/AI-Vision.png",
+  },
+  {
+    icon: <BarChart3 className="h-8 w-8 text-white" />,
+    title: "BI & Analytics Integration",
+    description: "Connect seamlessly with Power BI, Tableau, Qlik, and Looker for advanced analytics and visualization.",
+    technologies: ["Power BI", "Tableau", "Qlik", "Looker"],
+    backgroundImage: "/assets/AI-Robotic.png",
+  },
+];
+
+const industryUseCases = [
+  {
+    icon: <Heart className="h-8 w-8 text-white" />,
+    title: "Healthcare",
+    description: "Patient data analytics, predictive diagnostics, and compliance dashboards with HIPAA compliance.",
+    image: "/assets/Healthcare.png",
+  },
+  {
+    icon: <Building className="h-8 w-8 text-white" />,
+    title: "Finance",
+    description: "Fraud detection, risk modeling, regulatory compliance reporting, and real-time analytics.",
+    image: "/assets/Finance.png",
+  },
+  {
+    icon: <ShoppingCart className="h-8 w-8 text-white" />,
+    title: "Retail",
+    description: "Customer 360 analytics, personalized recommendations, and demand forecasting.",
+    image: "/assets/Ecommerce.png",
+  },
+  {
+    icon: <Factory className="h-8 w-8 text-white" />,
+    title: "Manufacturing & IoT",
+    description: "Predictive maintenance, digital twins, and IoT sensor data analytics.",
+    image: "/assets/Manufacturing.png",
+  },
+  {
+    icon: <Tv className="h-8 w-8 text-white" />,
+    title: "Media & Entertainment",
+    description: "Streaming analytics, content personalization, and audience behavior insights.",
+    image: "/assets/Media.png",
+  },
+];
+
+const whyChooseUs = [
+  {
+    icon: <Globe className="h-6 w-6 text-white" />,
+    title: "Multi-cloud Expertise",
+    description: "Certified specialists across AWS, Azure, Google Cloud, and specialized platforms like Snowflake and Databricks.",
+  },
+  {
+    icon: <Zap className="h-6 w-6 text-white" />,
+    title: "End-to-end Solutions",
+    description: "Complete data pipeline from ingestion and storage to analytics, ML, and AI integration.",
+  },
+  {
+    icon: <Shield className="h-6 w-6 text-white" />,
+    title: "Governance & Compliance",
+    description: "Built-in security, governance, and compliance for HIPAA, GDPR, and SOC2 requirements.",
+  },
+  {
+    icon: <TrendingUp className="h-6 w-6 text-white" />,
+    title: "Enterprise Scale",
+    description: "Proven deployments at enterprise scale with petabyte-level data processing capabilities.",
+  },
+  {
+    icon: <Brain className="h-6 w-6 text-white" />,
+    title: "AI/ML & IoT Integration",
+    description: "Seamless integration with AI, machine learning models, and IoT data streams.",
+  },
+];
+
+const successStories = [
+  {
+    industry: "Healthcare",
+    metric: "70% faster reporting",
+    description: "Implemented Snowflake + Power BI solution for real-time patient analytics and compliance dashboards.",
+    technology: "Snowflake + Power BI",
+  },
+  {
+    industry: "Finance",
+    metric: "60% reduction in fraud detection latency",
+    description: "Built real-time streaming pipelines for instant fraud detection and risk assessment.",
+    technology: "Kafka + Databricks",
+  },
+  {
+    industry: "Retail",
+    metric: "+25% revenue increase",
+    description: "Deployed real-time recommendation engine using lakehouse architecture.",
+    technology: "Delta Lake + ML",
   },
 ];
 
 const techStack = [
-  "Cloud Platforms: AWS, Azure, Google Cloud, Snowflake, Databricks",
-  "Data Warehouses: Redshift, Synapse Analytics, BigQuery, Snowflake",
-  "Data Lakes: S3, ADLS, Cloud Storage, HDFS, Delta Lake",
-  "ETL/ELT Tools: Apache Spark, Glue, Data Factory, dbt, Airflow",
-  "Query Engines: Presto, Athena, Trino, Dremio, Spark SQL",
-  "Streaming: Kafka, Kinesis, Event Hub, Pub/Sub, Spark Streaming",
-  "Visualization: Tableau, Power BI, Qlik, Looker, Superset",
-  "Programming: Python, SQL, Scala, Java, R",
-];
-
-// Use case data for the interactive section
-const useCaseData = [
-  {
-    id: "business-intelligence",
-    name: "Business Intelligence",
-    image: "/assets/BI-Dashboards.png",
-    content:
-      "Transform raw data into actionable insights with unified data warehouses that serve as single sources of truth for Tableau, Power BI, and Looker. Our solutions enable consistent reporting, self-service analytics, and real-time dashboards that empower data-driven decision making across your organization.",
-  },
-  {
-    id: "machine-learning",
-    name: "Machine Learning & AI",
-    image: "/assets/ML-AI-Analytics.png",
-    content:
-      "Build scalable feature engineering and model training pipelines using cloud-native data lakes optimized for ML workloads. Our platforms integrate seamlessly with SageMaker, Azure ML, and TensorFlow, enabling data scientists to access clean, prepared data for advanced analytics, predictive modeling, and AI applications.",
-  },
-  {
-    id: "iot-streaming",
-    name: "IoT & Streaming",
-    image: "/assets/IoT-Streaming.png",
-    content:
-      "Process millions of real-time sensor events and telemetry data for predictive maintenance, operational monitoring, and automated decision-making. Our streaming architectures handle high-velocity data ingestion while providing low-latency analytics capabilities for time-sensitive business operations.",
-  },
-  {
-    id: "retail-ecommerce",
-    name: "Retail & eCommerce",
-    image: "/assets/Ecommerce&Retail.png",
-    content:
-      "Create comprehensive customer 360-degree views by unifying data from multiple touchpoints including web, mobile, in-store, and social channels. Enable personalized product recommendations, churn prediction, inventory optimization, and customer journey analytics that drive revenue growth and customer satisfaction.",
-  },
-  {
-    id: "finance",
-    name: "Finance",
-    image: "/assets/Finance.png",
-    content:
-      "Build regulatory reporting systems, fraud detection platforms, and risk assessment tools with secure, compliant data architectures. Our solutions support real-time transaction monitoring, regulatory compliance automation, and advanced analytics for credit risk, market risk, and operational risk management.",
-  },
-  {
-    id: "healthcare",
-    name: "Healthcare",
-    image: "/assets/Healthcare&LifeScience.png",
-    content:
-      "Develop HIPAA-compliant patient care dashboards, predictive diagnostic systems, and population health analytics platforms. Our healthcare data solutions integrate clinical, operational, and research data while maintaining strict privacy controls and supporting evidence-based care delivery and health outcomes improvement.",
-  },
+  { name: "Snowflake", logo: "/assets/logos/snowflake.png" },
+  { name: "Databricks", logo: "/assets/logos/databricks.png" },
+  { name: "Amazon Redshift", logo: "/assets/logos/redshift.png" },
+  { name: "Azure Synapse", logo: "/assets/logos/synapse.png" },
+  { name: "Google BigQuery", logo: "/assets/logos/bigquery.png" },
+  { name: "Apache Spark", logo: "/assets/logos/spark.png" },
+  { name: "Apache Kafka", logo: "/assets/logos/kafka.png" },
+  { name: "Tableau", logo: "/assets/logos/tableau.png" },
+  { name: "Power BI", logo: "/assets/logos/powerbi.png" },
 ];
 
 export default function DataWarehousingLakes() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [selectedUseCase, setSelectedUseCase] = useState(useCaseData[0]);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
+  const [activeTab, setActiveTab] = useState("warehouse");
 
   return (
     <motion.div
@@ -241,328 +190,277 @@ export default function DataWarehousingLakes() {
       className="min-h-screen bg-light text-white"
     >
       {/* Hero Section */}
-      <div className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="/assets/DataWarehousing-banner.png"
-            alt="Data Warehousing & Lakes Services"
+            src="/assets/AI-DataStratergy-banner.png"
+            alt="Data Warehousing & Lakes"
             className="w-full h-full object-cover object-center"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "/assets/CloudComputing-banner.png";
-            }}
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
 
-        <div className="relative flex items-center h-full">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Content */}
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="max-w-5xl"
+              className="space-y-8"
             >
               <motion.h1
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-                style={{ fontWeight: 700 }}
+                className="text-4xl md:text-6xl font-bold leading-tight"
               >
                 <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Unify, Store, and Scale Your Enterprise Data
+                  Unify, Store, and Scale
                 </span>
+                <br />
+                <span className="text-white">Your Enterprise Data</span>
               </motion.h1>
 
               <motion.p
-                initial={{ y: 30, opacity: 0 }}
+                initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-xl text-gray-300 leading-relaxed max-w-2xl"
               >
-                RTNextGenAI helps organizations design and implement modern data warehouses and lakes on AWS, Azure, Google Cloud, and Snowflake — enabling real-time analytics, AI/ML, and enterprise-wide insights
+                Modern cloud-native data warehouses and lakes built for analytics, AI, and real-time insights. 
+                RTNextGenAI delivers scalable data platforms on AWS, Azure, Google Cloud, and Snowflake.
               </motion.p>
 
-              {/* Badge below description */}
-              <div className="mb-32">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.6, type: "spring" }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
-                >
-                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
-                  <span className="text-white font-medium">
-                    Modern Data Architecture Solutions
-                  </span>
-                  <Award className="h-4 w-4 text-blue-400 fill-current" />
-                </motion.div>
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Request a Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" className="border-blue-400/50 text-white hover:bg-blue-400/10 px-8 py-4 rounded-lg">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Talk to a Data Architect
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Side - Illustration */}
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative w-full h-96 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl overflow-hidden backdrop-blur-sm border border-blue-400/30">
+                <img
+                  src="/assets/Data-Governance.png"
+                  alt="Data Pipeline Illustration"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                
+                {/* Floating elements */}
+                <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                  <Database className="h-6 w-6 text-cyan-400" />
+                </div>
+                <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                  <BarChart3 className="h-6 w-6 text-blue-400" />
+                </div>
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                  <Brain className="h-6 w-6 text-purple-400" />
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Why Data Warehousing & Data Lakes Matter */}
-      <section className="py-16 text-white relative overflow-hidden">
+      {/* What & Why Section */}
+      <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              className="text-center mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Why Data Warehousing &{" "}
-                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                  Data Lakes
-                </span>{" "}
-                Matter
-              </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <div className="max-w-4xl mx-auto space-y-6">
-                <p className="text-xl text-gray-300">
-                  Today's enterprises deal with massive volumes of structured, semi-structured, and unstructured data from ERP, CRM, IoT, mobile, and cloud applications.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                  <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 border border-blue-400/20 rounded-xl p-6">
-                    <h4 className="text-lg font-semibold text-blue-300 mb-3">Data Warehouses</h4>
-                    <p className="text-gray-300">Excel at structured data (transactions, ERP, BI reporting)</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-cyan-500/10 to-cyan-600/10 border border-cyan-400/20 rounded-xl p-6">
-                    <h4 className="text-lg font-semibold text-cyan-300 mb-3">Data Lakes</h4>
-                    <p className="text-gray-300">Excel at raw and semi-structured data (IoT, logs, social media, images)</p>
-                  </div>
-                </div>
-                <p className="text-lg text-gray-300">
-                  The new approach is the <strong className="text-white">Lakehouse</strong> — combining the flexibility of a data lake with the performance of a data warehouse.
-                </p>
-                <p className="text-lg text-blue-200">
-                  RTNextGenAI builds scalable, cloud-native data platforms that support analytics, machine learning, deep learning, and real-time decision-making.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Work With Us Section */}
-      <section className="py-16 text-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              className="text-center mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-400/20 mb-6">
-                <Award className="h-4 w-4 text-cyan-400" />
-                <span className="text-cyan-300 text-sm font-medium">
-                  Why Choose RTNextGenAI
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Why choose{" "}
-                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                  RTNextGenAI
-                </span>{" "}
-                for Data Warehousing & Lakes
-              </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Partner with cloud data experts who deliver scalable, secure, and future-ready data platforms
-              </p>
-            </motion.div>
-
-            {/* Embla Carousel */}
-            <div className="relative max-w-6xl mx-auto">
-              <Carousel
-                className="w-full"
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                plugins={[
-                  Autoplay({
-                    delay: 5000,
-                    stopOnInteraction: true,
-                    stopOnMouseEnter: true,
-                  }),
-                ]}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Left Column - Definitions */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-8"
               >
-                <CarouselContent className="-ml-2 md:-ml-4">
-                  {/* First slide - items 0,1 */}
-                  <CarouselItem className="pl-2 md:pl-4">
-                    <div className="p-6">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {whyChooseUsItems.slice(0, 2).map((item, index) => {
-                          const IconComponent = item.icon;
-                          const SecondaryIconComponent = item.secondaryIcon;
+                <h2 className="text-4xl font-bold text-white mb-8">
+                  Understanding Modern Data Architecture
+                </h2>
 
-                          return (
-                            <motion.div
-                              key={index}
-                              initial={{ opacity: 0, y: 30 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.6, delay: index * 0.1 }}
-                              whileHover={{ y: -10, scale: 1.05 }}
-                              viewport={{ once: true }}
-                              className="group"
-                            >
-                              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
+                <div className="space-y-6">
+                  <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 rounded-xl p-6">
+                    <h3 className="text-2xl font-bold text-white mb-3 flex items-center">
+                      <Database className="h-6 w-6 text-blue-400 mr-3" />
+                      What is a Data Warehouse?
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      A structured repository optimized for analytics and BI reporting. Ideal for transactional data, 
+                      ERP systems, and SQL-based queries with fast performance and ACID compliance.
+                    </p>
+                  </div>
 
-                                <div className="flex items-start gap-6 mb-6">
-                                  <div className="relative">
-                                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                                      <IconComponent className="h-10 w-10 text-white" />
-                                    </div>
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                                      <SecondaryIconComponent className="h-4 w-4 text-white" />
-                                    </div>
-                                  </div>
+                  <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-sm border border-cyan-400/30 rounded-xl p-6">
+                    <h3 className="text-2xl font-bold text-white mb-3 flex items-center">
+                      <Cloud className="h-6 w-6 text-cyan-400 mr-3" />
+                      What is a Data Lake?
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      A flexible storage system for raw, unstructured data including IoT sensors, logs, social media, 
+                      images, and videos. Schema-on-read enables diverse analytics and ML workloads.
+                    </p>
+                  </div>
 
-                                  <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                      {item.title}
-                                    </h3>
-                                    <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                                  </div>
-                                </div>
-
-                                <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                                  {item.description}
-                                </p>
-
-                                <div className="flex items-center gap-2 text-cyan-400">
-                                  <CheckCircle className="h-4 w-4" />
-                                  <span className="text-sm font-medium">
-                                    {item.badge}
-                                  </span>
-                                </div>
-                              </div>
-                            </motion.div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </CarouselItem>
-
-                  {/* Second slide - items 2,3 */}
-                  <CarouselItem className="pl-2 md:pl-4">
-                    <div className="p-6">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {whyChooseUsItems.slice(2, 4).map((item, index) => {
-                          const IconComponent = item.icon;
-                          const SecondaryIconComponent = item.secondaryIcon;
-
-                          return (
-                            <motion.div
-                              key={index + 2}
-                              initial={{ opacity: 0, y: 30 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.6, delay: index * 0.1 }}
-                              whileHover={{ y: -10, scale: 1.05 }}
-                              viewport={{ once: true }}
-                              className="group"
-                            >
-                              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
-
-                                <div className="flex items-start gap-6 mb-6">
-                                  <div className="relative">
-                                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                                      <IconComponent className="h-10 w-10 text-white" />
-                                    </div>
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                                      <SecondaryIconComponent className="h-4 w-4 text-white" />
-                                    </div>
-                                  </div>
-
-                                  <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                      {item.title}
-                                    </h3>
-                                    <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                                  </div>
-                                </div>
-
-                                <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                                  {item.description}
-                                </p>
-
-                                <div className="flex items-center gap-2 text-cyan-400">
-                                  <CheckCircle className="h-4 w-4" />
-                                  <span className="text-sm font-medium">
-                                    {item.badge}
-                                  </span>
-                                </div>
-                              </div>
-                            </motion.div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </CarouselItem>
-                </CarouselContent>
-
-                <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
-                <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
-              </Carousel>
-            </div>
-
-            {/* Call to Action */}
-            <motion.div
-              className="text-center mt-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <div className="inline-flex items-center gap-4 bg-gradient-to-r from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-gray-300 text-sm">
-                    Ready to modernize your data platform?
-                  </span>
+                  <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-purple-400/30 rounded-xl p-6">
+                    <h3 className="text-2xl font-bold text-white mb-3 flex items-center">
+                      <Layers className="h-6 w-6 text-purple-400 mr-3" />
+                      What is a Lakehouse?
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      The hybrid approach combining data lake flexibility with data warehouse performance. 
+                      Unified platform supporting both BI and AI/ML workloads with ACID transactions.
+                    </p>
+                  </div>
                 </div>
-                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Request a Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </motion.div>
+              </motion.div>
+
+              {/* Right Column - Interactive Comparison */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                {/* Tab Navigation */}
+                <div className="flex bg-gray-800/60 rounded-xl p-2 backdrop-blur-sm border border-gray-700">
+                  {[
+                    { id: "warehouse", label: "Warehouse", icon: Database },
+                    { id: "lake", label: "Lake", icon: Cloud },
+                    { id: "lakehouse", label: "Lakehouse", icon: Layers },
+                  ].map((tab) => {
+                    const IconComponent = tab.icon;
+                    return (
+                      <button
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg transition-all duration-300 ${
+                          activeTab === tab.id
+                            ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+                            : "text-gray-400 hover:text-white hover:bg-gray-700/50"
+                        }`}
+                      >
+                        <IconComponent className="h-4 w-4" />
+                        <span className="font-medium">{tab.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Tab Content */}
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8"
+                >
+                  {activeTab === "warehouse" && (
+                    <div className="space-y-4">
+                      <h4 className="text-xl font-bold text-blue-400">Data Warehouse</h4>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
+                          <ul className="text-gray-300 space-y-1 text-sm">
+                            <li>• Structured data</li>
+                            <li>• BI reporting</li>
+                            <li>• SQL analytics</li>
+                            <li>• ACID compliance</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="text-orange-400 font-semibold mb-2">⚠ Limitations:</p>
+                          <ul className="text-gray-300 space-y-1 text-sm">
+                            <li>• Schema-on-write</li>
+                            <li>• Higher storage costs</li>
+                            <li>• Less flexibility</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeTab === "lake" && (
+                    <div className="space-y-4">
+                      <h4 className="text-xl font-bold text-cyan-400">Data Lake</h4>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
+                          <ul className="text-gray-300 space-y-1 text-sm">
+                            <li>• Raw data storage</li>
+                            <li>• ML/AI workloads</li>
+                            <li>• IoT data streams</li>
+                            <li>• Cost-effective storage</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="text-orange-400 font-semibold mb-2">⚠ Limitations:</p>
+                          <ul className="text-gray-300 space-y-1 text-sm">
+                            <li>• Data swamps risk</li>
+                            <li>• Slower queries</li>
+                            <li>• Governance challenges</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeTab === "lakehouse" && (
+                    <div className="space-y-4">
+                      <h4 className="text-xl font-bold text-purple-400">Lakehouse</h4>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
+                          <ul className="text-gray-300 space-y-1 text-sm">
+                            <li>• Unified analytics</li>
+                            <li>• BI + ML workloads</li>
+                            <li>• ACID + flexibility</li>
+                            <li>• Modern architectures</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="text-blue-400 font-semibold mb-2">🚀 Advantages:</p>
+                          <ul className="text-gray-300 space-y-1 text-sm">
+                            <li>• Best of both worlds</li>
+                            <li>• Reduced complexity</li>
+                            <li>• Lower TCO</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Main Capabilities Section */}
-      <div
-        id="capabilities-section"
-        className="py-20 bg-light relative overflow-hidden"
-      >
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
-          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
-          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
-          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Our Capabilities Section */}
+      <section className="py-20 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -571,295 +469,345 @@ export default function DataWarehousingLakes() {
             className="text-center mb-20"
           >
             <h2 className="text-5xl font-bold mb-6 text-white">
-              Our Data Platform Capabilities
+              Our Capabilities
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive data warehousing and lake solutions for modern enterprise needs
+              Comprehensive data warehousing and lake solutions covering the entire data lifecycle
             </p>
           </motion.div>
 
-          {/* Capabilities Grid */}
-          <div className="max-w-8xl mx-auto relative">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Grid Layout */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {capabilities.slice(0, 2).map((capability, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: index === 0 ? -100 : 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="group cursor-pointer h-full"
-                  >
-                    <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                      <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                        <img
-                          src={capability.backgroundImage}
-                          alt={capability.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = "/assets/Data-Warehousing.png";
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          {capability.icon}
-                        </div>
-                      </div>
-                      <div className="flex-grow">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {String(index + 1).padStart(2, '0')}
-                          </div>
-                        </div>
-                        <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {capability.title}
-                        </h4>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          {capability.description}
-                        </p>
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {capabilities.map((capability, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-blue-500/50 hover:bg-gray-800/90 transition-all duration-500 group-hover:scale-105">
+                  <div className="relative w-16 h-16 mb-6 rounded-xl overflow-hidden">
+                    <img
+                      src={capability.backgroundImage}
+                      alt={capability.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      {capability.icon}
                     </div>
-                  </motion.div>
-                ))}
-              </div>
+                  </div>
 
-              {/* Second Row with remaining capabilities */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
-                {capabilities.slice(2, 5).map((capability, index) => (
-                  <motion.div
-                    key={index + 2}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
-                    className="group cursor-pointer h-full"
-                  >
-                    <div className="flex flex-col gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-y-2 h-full">
-                      <div className="relative w-full h-32 rounded-xl overflow-hidden">
-                        <img
-                          src={capability.backgroundImage}
-                          alt={capability.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = "/assets/Data-Lakes.png";
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          {capability.icon}
-                        </div>
-                      </div>
-                      <div className="flex-grow">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {String(index + 3).padStart(2, '0')}
-                          </div>
-                        </div>
-                        <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {capability.title}
-                        </h4>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          {capability.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {capability.title}
+                  </h3>
+
+                  <p className="text-gray-400 leading-relaxed mb-6">
+                    {capability.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {capability.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium border border-blue-400/30"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Use Cases Section - Interactive Layout */}
-      <section className="py-16 text-white">
+      {/* Architecture Diagram Section */}
+      <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Data Platform Use Cases Across Industries
-              </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Modern Data Architecture
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              End-to-end data flow from multiple sources to insights and AI models
+            </p>
+          </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Left Navigation */}
-              <div className="lg:col-span-4">
-                <div className="grid grid-cols-1 gap-4">
-                  {useCaseData.map((useCase) => (
-                    <Button
-                      key={useCase.id}
-                      variant={
-                        selectedUseCase.id === useCase.id
-                          ? "default"
-                          : "outline"
-                      }
-                      className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
-                        selectedUseCase.id === useCase.id
-                          ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
-                          : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
-                      }`}
-                      onClick={() => {
-                        setSelectedUseCase(useCase);
-                      }}
-                    >
-                      <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
-                        {useCase.name}
-                      </span>
-                    </Button>
+          <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+              {/* Sources */}
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-blue-400 mb-4">Data Sources</h3>
+                <div className="space-y-3">
+                  {["ERP", "CRM", "IoT", "SaaS", "Mobile"].map((source, index) => (
+                    <div key={index} className="bg-blue-500/20 rounded-lg p-3 border border-blue-400/30">
+                      <span className="text-white text-sm font-medium">{source}</span>
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Right Content Display */}
-              <div className="lg:col-span-8">
-                <motion.div
-                  key={selectedUseCase.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl overflow-hidden"
-                >
-                  {/* Use Case Image */}
-                  <div className="relative h-64 overflow-hidden group cursor-pointer">
-                    <img
-                      src={selectedUseCase.image}
-                      alt={selectedUseCase.name}
-                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/assets/Data-Warehousing.png";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent group-hover:from-gray-900/60 transition-all duration-300"></div>
-                    <div className="absolute bottom-4 left-6">
-                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                        {selectedUseCase.name}
-                      </h3>
-                    </div>
-                  </div>
+              {/* Arrow 1 */}
+              <div className="flex justify-center">
+                <ArrowRight className="h-8 w-8 text-cyan-400" />
+              </div>
 
-                  {/* Use Case Content */}
-                  <div className="p-6">
-                    <p className="text-gray-300 leading-relaxed text-lg">
-                      {selectedUseCase.content}
-                    </p>
+              {/* ETL Tools */}
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-cyan-400 mb-4">ETL/ELT</h3>
+                <div className="space-y-3">
+                  {["Spark", "Databricks", "Glue", "ADF"].map((tool, index) => (
+                    <div key={index} className="bg-cyan-500/20 rounded-lg p-3 border border-cyan-400/30">
+                      <span className="text-white text-sm font-medium">{tool}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Arrow 2 */}
+              <div className="flex justify-center">
+                <ArrowRight className="h-8 w-8 text-purple-400" />
+              </div>
+
+              {/* Storage & Analytics */}
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-purple-400 mb-4">Storage & Analytics</h3>
+                <div className="space-y-3">
+                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-400/30">
+                    <span className="text-white text-sm font-medium">Data Lake (S3/ADLS)</span>
                   </div>
-                </motion.div>
+                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-400/30">
+                    <span className="text-white text-sm font-medium">Data Warehouse</span>
+                  </div>
+                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-400/30">
+                    <span className="text-white text-sm font-medium">BI Dashboards</span>
+                  </div>
+                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-400/30">
+                    <span className="text-white text-sm font-medium">ML Models</span>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Use Cases */}
+      <section className="py-20 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Industry Use Cases
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Real-world applications across multiple industries
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {industryUseCases.map((useCase, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-all duration-500 group-hover:scale-105">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={useCase.image}
+                      alt={useCase.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                      {useCase.icon}
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {useCase.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {useCase.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Technology Stack */}
-      <section className="py-16 text-white">
+      <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Our Data Platform Technology Stack
-              </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {techStack.map((tech, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg border border-gray-700 hover:border-cyan-400/40 transition-all duration-300"
-                >
-                  <p className="text-gray-300 text-sm font-medium">{tech}</p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Technology Stack
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Industry-leading platforms and tools we work with
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {techStack.map((tech, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl font-bold text-white">{tech.name.charAt(0)}</span>
+                  </div>
+                  <h3 className="text-white font-medium text-sm">{tech.name}</h3>
                 </div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQs Section */}
-      <section className="py-16 text-white">
+      {/* Why Choose RTNextGenAI */}
+      <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">FAQs</h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300">
-                Common questions about our data warehousing and lakes services
-              </p>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Why Choose RTNextGenAI
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Partner with certified data experts for proven enterprise solutions
+            </p>
+          </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              {/* Left Side - Data Platform Image */}
-              <div className="lg:col-span-5">
-                <div className="relative group">
-                  <div className="relative overflow-hidden rounded-2xl">
-                    <img
-                      src="/assets/Data-Platform-FAQ.png"
-                      alt="Data Platform Technology"
-                      className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/assets/FAQ's.png";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">
-                        Data-Driven Solutions
-                      </h3>
-                      <p className="text-gray-200 text-sm">
-                        Modern data platforms that scale with your business
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {whyChooseUs.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 h-full hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories */}
+      <section className="py-20 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Success Stories
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Proven results across industries with measurable impact
+            </p>
+          </motion.div>
+
+          <Carousel
+            className="w-full max-w-5xl mx-auto"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 5000,
+                stopOnInteraction: true,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              {successStories.map((story, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-6">
+                    <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center">
+                      <div className="mb-6">
+                        <h3 className="text-3xl font-bold text-blue-400 mb-2">{story.metric}</h3>
+                        <h4 className="text-xl font-semibold text-white mb-4">{story.industry}</h4>
+                      </div>
+                      <p className="text-gray-300 leading-relaxed mb-6 max-w-2xl mx-auto">
+                        {story.description}
                       </p>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full">
+                        <Award className="h-4 w-4 text-blue-400" />
+                        <span className="text-blue-300 text-sm font-medium">{story.technology}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Right Side - FAQ Content */}
-              <div className="lg:col-span-7">
-                <div className="space-y-4">
-                  {faqs.map((faq, index) => (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 overflow-hidden"
-                    >
-                      <button
-                        className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors"
-                        onClick={() => toggleFaq(index)}
-                      >
-                        <h3 className="text-lg font-semibold text-white pr-4">
-                          {faq.question}
-                        </h3>
-                        {openFaq === index ? (
-                          <ChevronUp className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                        ) : (
-                          <ChevronDown className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                        )}
-                      </button>
-                      {openFaq === index && (
-                        <div className="px-6 pb-6">
-                          <p className="text-gray-400 leading-relaxed">
-                            {faq.answer}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+            <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+          </Carousel>
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section className="py-16 relative overflow-hidden">
-        {/* Background Effects */}
+      {/* Call-to-Action Section */}
+      <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
@@ -877,16 +825,15 @@ export default function DataWarehousingLakes() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Top Badge */}
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring" }}
               className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
             >
-              <Database className="h-5 w-5 text-cyan-400" />
+              <Target className="h-5 w-5 text-cyan-400" />
               <span className="text-white font-medium">
-                Enterprise Data Platform Experts
+                Enterprise Data Platform Solutions
               </span>
               <Award className="h-4 w-4 text-blue-400 fill-current" />
             </motion.div>
@@ -898,10 +845,10 @@ export default function DataWarehousingLakes() {
               className="text-4xl md:text-6xl font-bold mb-6"
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Ready to Modernize Your
+                Ready to Build Your 
               </span>
               <br />
-              <span className="text-white">Data Platform?</span>
+              <span className="text-white">Modern Data Platform?</span>
             </motion.h2>
 
             <motion.p
@@ -910,56 +857,30 @@ export default function DataWarehousingLakes() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Partner with RTNextGenAI to build scalable, secure, and AI-ready data warehousing and lake solutions that unlock your data's full potential
+              Partner with RTNextGenAI to implement scalable, secure, and AI-ready data warehousing & lake solutions that transform your business intelligence capabilities.
             </motion.p>
-
-            {/* Benefits Grid */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-            >
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Free Architecture Assessment
-                </span>
-              </div>
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Expert Data Architects
-                </span>
-              </div>
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">Proven Scalability</span>
-              </div>
-            </motion.div>
 
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex justify-center gap-4"
+              className="flex flex-col sm:flex-row justify-center gap-4"
             >
               <Button
                 size="lg"
                 className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               >
-                <Database className="mr-2 h-5 w-5" />
+                <Calendar className="mr-2 h-5 w-5" />
                 Schedule a Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="group border-2 border-white/20 hover:border-cyan-400/50 text-white hover:text-cyan-400 px-10 py-6 text-lg font-semibold backdrop-blur-sm transition-all duration-300"
+                className="border-blue-400/50 text-white hover:bg-blue-400/10 px-10 py-6 text-lg font-semibold"
               >
-                <Server className="mr-2 h-5 w-5" />
-                Talk to a Data Architect
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Eye className="mr-2 h-5 w-5" />
+                Get a Demo
               </Button>
             </motion.div>
           </motion.div>
