@@ -194,22 +194,14 @@ const industryData = [
 ];
 
 const techStack = [
-  "Data Ingestion & Streaming: Apache Kafka, AWS Kinesis, Azure Event Hub, Google Pub/Sub, Apache Flume, Apache Pulsar, Amazon MSK, Confluent Platform",
-  "ETL/ELT & Transformation: Apache Spark, Databricks, AWS Glue, Azure Data Factory, dbt, Apache Airflow, Talend, Informatica PowerCenter, Pentaho, Apache NiFi",
-  "Workflow Orchestration: Apache Airflow, Prefect, Luigi, AWS Step Functions, Azure Logic Apps, Dagster, Argo Workflows, Apache Oozie, Kubeflow Pipelines",
-  "Storage & Warehousing: Snowflake, Amazon Redshift, Google BigQuery, Azure Synapse, Apache Iceberg, Delta Lake, Apache Hudi, Teradata, Oracle Exadata",
-  "Data Lakes & Object Storage: Amazon S3, Azure Data Lake Storage, Google Cloud Storage, Apache Hadoop HDFS, MinIO, Ceph, IBM Cloud Object Storage",
-  "Real-Time Processing: Apache Flink, Apache Storm, Apache Samza, Amazon Kinesis Analytics, Azure Stream Analytics, Google Dataflow, Apache Beam",
-  "Database Technologies: PostgreSQL, MySQL, MongoDB, Cassandra, Amazon DynamoDB, Azure Cosmos DB, Redis, Apache HBase, Neo4j, InfluxDB",
-  "Data Integration: MuleSoft, Dell Boomi, IBM DataStage, Oracle Data Integrator, Microsoft SSIS, SnapLogic, Stitch, Fivetran, Airbyte",
-  "Monitoring & Governance: Databricks Unity Catalog, Apache Atlas, Collibra, Informatica Axon, Alation, DataDog, Prometheus, Grafana, Apache Ranger",
-  "Cloud Platforms: AWS, Azure, Google Cloud Platform, IBM Cloud, Oracle Cloud, Alibaba Cloud, Multi-cloud and Hybrid deployments",
-  "Programming & Frameworks: Python, Scala, Java, SQL, R, Apache Beam, Apache Flink, Rust, Go, .NET, Node.js",
-  "Data Quality & Testing: Great Expectations, Monte Carlo, Soda, Apache Griffin, Deequ, Datafold, Bigeye, Custom validation frameworks",
-  "Container & Orchestration: Docker, Kubernetes, Apache Mesos, Docker Swarm, OpenShift, Amazon EKS, Azure AKS, Google GKE",
-  "DevOps & CI/CD: Jenkins, GitLab CI, GitHub Actions, Azure DevOps, AWS CodePipeline, Terraform, Ansible, Chef, Puppet",
-  "Message Queues: Apache Kafka, RabbitMQ, Amazon SQS, Apache ActiveMQ, Azure Service Bus, Google Cloud Tasks, Apache RocketMQ",
-  "Search & Analytics: Elasticsearch, Apache Solr, Amazon OpenSearch, Azure Cognitive Search, Splunk, Apache Lucene",
+  "Data Ingestion & Streaming: Apache Kafka, AWS Kinesis, Azure Event Hub, Google Pub/Sub, Apache Flume",
+  "ETL/ELT & Transformation: Apache Spark, Databricks, AWS Glue, Azure Data Factory, dbt, Apache Airflow",
+  "Workflow Orchestration: Apache Airflow, Prefect, Luigi, AWS Step Functions, Azure Logic Apps",
+  "Storage & Warehousing: Snowflake, Amazon Redshift, Google BigQuery, Azure Synapse, Apache Iceberg",
+  "Monitoring & Governance: Databricks Unity Catalog, Apache Atlas, Collibra, Informatica, DataDog",
+  "Cloud Platforms: AWS, Azure, Google Cloud Platform, Multi-cloud and Hybrid deployments",
+  "Programming & Frameworks: Python, Scala, Java, SQL, Apache Beam, Apache Flink",
+  "Data Quality & Testing: Great Expectations, Monte Carlo, Soda, Custom validation frameworks",
 ];
 
 // Use cases data
@@ -299,7 +291,21 @@ export default function DataEngineeringETL() {
                 RTNextGenAI delivers end-to-end Data Engineering and ETL solutions that transform raw, fragmented data into trusted, analytics-ready datasets for BI, Big Data, AI, and IoT applications
               </motion.p>
 
-              
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 mb-16"
+              >
+                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Talk to a Data Engineer
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" className="border-blue-400/50 text-white hover:bg-blue-400/10 px-8 py-4 rounded-lg">
+                  Get a Free Assessment
+                </Button>
+              </motion.div>
 
               {/* Badge below CTA */}
               <div className="mb-32">
@@ -1053,10 +1059,10 @@ export default function DataEngineeringETL() {
             </div>
 
             {/* Technology Categories */}
-            <div className="space-y-16">
+            <div className="space-y-12">
               {/* Data Processing & ETL */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Data Processing & ETL Tools</h3>
+                <h3 className="text-xl font-semibold text-white mb-6">Data Processing & ETL</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {[
                     { name: "Apache Spark", icon: "⚡" },
@@ -1064,46 +1070,14 @@ export default function DataEngineeringETL() {
                     { name: "Apache Kafka", icon: "📡" },
                     { name: "Apache Airflow", icon: "🌊" },
                     { name: "AWS Glue", icon: "🔗" },
-                    { name: "Azure Data Factory", icon: "🏭" },
-                    { name: "dbt", icon: "🔄" },
-                    { name: "Talend", icon: "🔧" },
-                    { name: "Informatica", icon: "ℹ️" },
-                    { name: "Apache NiFi", icon: "🌐" },
-                    { name: "Pentaho", icon: "🔨" },
-                    { name: "Fivetran", icon: "🚀" }
-                  ].map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05, duration: 0.6 }}
-                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-blue-400/40 transition-all duration-300 hover:scale-105"
-                    >
-                      <div className="text-2xl mb-2">{tech.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{tech.name}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Real-Time Processing */}
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Real-Time Processing</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                  {[
-                    { name: "Apache Flink", icon: "🌊" },
-                    { name: "Apache Storm", icon: "⛈️" },
-                    { name: "Kinesis Analytics", icon: "📊" },
-                    { name: "Azure Stream Analytics", icon: "🔷" },
-                    { name: "Google Dataflow", icon: "🌊" },
-                    { name: "Apache Beam", icon: "🔦" }
+                    { name: "Azure Data Factory", icon: "🏭" }
                   ].map((tech, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1, duration: 0.6 }}
-                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:scale-105"
+                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-blue-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{tech.icon}</div>
                       <p className="text-gray-300 text-sm font-medium">{tech.name}</p>
@@ -1114,53 +1088,44 @@ export default function DataEngineeringETL() {
 
               {/* Cloud Platforms */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Cloud Platforms</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <h3 className="text-xl font-semibold text-white mb-6">Cloud Platforms</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
                   {[
                     { name: "Amazon Web Services", icon: "☁️", color: "from-orange-500 to-yellow-500" },
                     { name: "Microsoft Azure", icon: "🔷", color: "from-blue-500 to-cyan-500" },
-                    { name: "Google Cloud Platform", icon: "🌐", color: "from-green-500 to-blue-500" },
-                    { name: "IBM Cloud", icon: "💙", color: "from-blue-600 to-indigo-600" }
+                    { name: "Google Cloud Platform", icon: "🌐", color: "from-green-500 to-blue-500" }
                   ].map((platform, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.15, duration: 0.6 }}
+                      transition={{ delay: index * 0.2, duration: 0.6 }}
                       className={`bg-gradient-to-br ${platform.color} p-1 rounded-2xl`}
                     >
                       <div className="bg-gray-900 p-6 rounded-xl">
                         <div className="text-3xl mb-3">{platform.icon}</div>
-                        <p className="text-white font-semibold text-sm text-center">{platform.name}</p>
+                        <p className="text-white font-semibold">{platform.name}</p>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </div>
 
-              {/* Data Storage & Warehousing */}
+              {/* Data Storage */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Data Storage & Warehousing</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <h3 className="text-xl font-semibold text-white mb-6">Data Storage & Warehousing</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {[
                     { name: "Snowflake", icon: "❄️" },
                     { name: "Amazon Redshift", icon: "🔴" },
                     { name: "Google BigQuery", icon: "📊" },
-                    { name: "Azure Synapse", icon: "🔷" },
-                    { name: "Delta Lake", icon: "🌊" },
-                    { name: "Apache Iceberg", icon: "🧊" },
-                    { name: "Teradata", icon: "📈" },
-                    { name: "Oracle Exadata", icon: "🏛️" },
-                    { name: "Amazon S3", icon: "📦" },
-                    { name: "HDFS", icon: "🗂️" },
-                    { name: "MinIO", icon: "💾" },
-                    { name: "Apache Hudi", icon: "🔄" }
+                    { name: "Azure Synapse", icon: "🔷" }
                   ].map((storage, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05, duration: 0.6 }}
+                      transition={{ delay: index * 0.1, duration: 0.6 }}
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{storage.icon}</div>
@@ -1170,151 +1135,21 @@ export default function DataEngineeringETL() {
                 </div>
               </div>
 
-              {/* Database Technologies */}
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Database Technologies</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                  {[
-                    { name: "PostgreSQL", icon: "🐘" },
-                    { name: "MySQL", icon: "🐬" },
-                    { name: "MongoDB", icon: "🍃" },
-                    { name: "Cassandra", icon: "🔸" },
-                    { name: "DynamoDB", icon: "⚡" },
-                    { name: "Redis", icon: "🔴" },
-                    { name: "Neo4j", icon: "🕸️" },
-                    { name: "InfluxDB", icon: "📈" },
-                    { name: "Apache HBase", icon: "🏗️" },
-                    { name: "Cosmos DB", icon: "🌌" },
-                    { name: "CockroachDB", icon: "🪳" },
-                    { name: "TimescaleDB", icon: "⏰" }
-                  ].map((db, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05, duration: 0.6 }}
-                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-blue-400/40 transition-all duration-300 hover:scale-105"
-                    >
-                      <div className="text-2xl mb-2">{db.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{db.name}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Workflow Orchestration */}
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Workflow Orchestration</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                  {[
-                    { name: "Apache Airflow", icon: "🌊" },
-                    { name: "Prefect", icon: "🎯" },
-                    { name: "Dagster", icon: "⚡" },
-                    { name: "Luigi", icon: "🍄" },
-                    { name: "AWS Step Functions", icon: "📝" },
-                    { name: "Kubeflow Pipelines", icon: "🔄" }
-                  ].map((orchestrator, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1, duration: 0.6 }}
-                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-green-400/40 transition-all duration-300 hover:scale-105"
-                    >
-                      <div className="text-2xl mb-2">{orchestrator.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{orchestrator.name}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Data Quality & Monitoring */}
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Data Quality & Monitoring</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                  {[
-                    { name: "Great Expectations", icon: "✅" },
-                    { name: "Monte Carlo", icon: "🎲" },
-                    { name: "Soda", icon: "🥤" },
-                    { name: "Apache Griffin", icon: "🦅" },
-                    { name: "DataDog", icon: "🐕" },
-                    { name: "Prometheus", icon: "🔥" },
-                    { name: "Grafana", icon: "📊" },
-                    { name: "Deequ", icon: "🔍" },
-                    { name: "Bigeye", icon: "👁️" },
-                    { name: "Collibra", icon: "📋" },
-                    { name: "Apache Atlas", icon: "🗺️" },
-                    { name: "Alation", icon: "📚" }
-                  ].map((tool, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05, duration: 0.6 }}
-                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-purple-400/40 transition-all duration-300 hover:scale-105"
-                    >
-                      <div className="text-2xl mb-2">{tool.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{tool.name}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Programming Languages */}
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Programming Languages & Frameworks</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                  {[
-                    { name: "Python", icon: "🐍" },
-                    { name: "Scala", icon: "⚖️" },
-                    { name: "Java", icon: "☕" },
-                    { name: "SQL", icon: "🗃️" },
-                    { name: "R", icon: "📊" },
-                    { name: "Go", icon: "🐹" },
-                    { name: "Rust", icon: "🦀" },
-                    { name: "C++", icon: "⚡" },
-                    { name: ".NET", icon: "🔷" },
-                    { name: "Node.js", icon: "🟢" },
-                    { name: "Spark SQL", icon: "✨" },
-                    { name: "PySpark", icon: "🐍" }
-                  ].map((lang, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05, duration: 0.6 }}
-                      className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-yellow-400/40 transition-all duration-300 hover:scale-105"
-                    >
-                      <div className="text-2xl mb-2">{lang.icon}</div>
-                      <p className="text-gray-300 text-sm font-medium">{lang.name}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
               {/* Analytics & BI */}
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-8">Analytics & Business Intelligence</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <h3 className="text-xl font-semibold text-white mb-6">Analytics & Business Intelligence</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {[
                     { name: "Tableau", icon: "📈" },
                     { name: "Power BI", icon: "📊" },
                     { name: "Looker", icon: "👀" },
-                    { name: "Qlik Sense", icon: "🎯" },
-                    { name: "Apache Superset", icon: "🚀" },
-                    { name: "Metabase", icon: "📊" },
-                    { name: "Jupyter", icon: "📓" },
-                    { name: "Apache Zeppelin", icon: "🎈" },
-                    { name: "Plotly", icon: "📉" },
-                    { name: "D3.js", icon: "📊" },
-                    { name: "Bokeh", icon: "🌟" },
-                    { name: "Streamlit", icon: "🌊" }
+                    { name: "Qlik Sense", icon: "🎯" }
                   ].map((analytics, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05, duration: 0.6 }}
+                      transition={{ delay: index * 0.1, duration: 0.6 }}
                       className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:scale-105"
                     >
                       <div className="text-2xl mb-2">{analytics.icon}</div>
