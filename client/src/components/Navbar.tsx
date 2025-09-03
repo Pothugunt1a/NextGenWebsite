@@ -469,6 +469,12 @@ export default function Navbar({
                                                     category.name,
                                                     e,
                                                   );
+                                                  });
+                                                  // Don't close dropdowns, just toggle submenu
+                                                  toggleDesktopSubmenu(
+                                                    category.name,
+                                                    e,
+                                                  );
                                                 } else {
                                                   toggleDesktopSubmenu(
                                                     category.name,
