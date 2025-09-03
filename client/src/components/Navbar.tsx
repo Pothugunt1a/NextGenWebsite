@@ -469,9 +469,6 @@ export default function Navbar({
                                                     category.name,
                                                     e,
                                                   );
-                                                    category.name,
-                                                    e,
-                                                  );
                                                 } else {
                                                   toggleDesktopSubmenu(
                                                     category.name,
