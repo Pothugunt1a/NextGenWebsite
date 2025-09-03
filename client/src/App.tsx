@@ -31,6 +31,7 @@ import WebDevelopment from "./pages/WebDevelopment";
 import DevOpsServices from "./pages/DevOpsServices";
 import DataWarehousingLakes from "./pages/DataWarehousingLakes";
 import DataEngineeringETL from "./pages/DataEngineeringETL";
+import BIBigDataServices from "./pages/BIBigDataServices";
 
 function Router() {
   return (
