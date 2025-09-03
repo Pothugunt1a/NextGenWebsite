@@ -1,0 +1,83 @@
+What & Why Section (Split Block)
+
+Left Column:
+
+What is a Data Warehouse? (structured, BI-focused)
+
+What is a Data Lake? (unstructured, raw data)
+
+What is a Lakehouse? (hybrid, unified)
+
+Right Column:
+
+Infographic comparison: Warehouse vs Lake vs Lakehouse.
+
+3. Our Capabilities (Card Grid)
+
+6 Cards with Icons:
+
+Cloud Data Warehousing (Snowflake, Redshift, Synapse, BigQuery)
+
+Data Lakes (S3, ADLS, GCS, HDFS)
+
+Lakehouse (Databricks, Delta Lake)
+
+Data Ingestion & ETL (Spark, Glue, ADF, Airflow)
+
+Security & Governance (IAM, Unity Catalog, RBAC)
+
+BI & Analytics Integration (Tableau, Power BI, Qlik)
+
+4. Architecture Diagram (Full-Width Visual)
+
+Data flow illustration: Sources (ERP, CRM, IoT, SaaS, Mobile) → ETL Tools (Spark, Databricks, Glue, ADF) → Data Lake (S3/ADLS) + Data Warehouse (Snowflake/Redshift/BigQuery) → BI Dashboards & ML Models.
+
+5. Use Cases (Industry Tiles)
+
+Grid of 5–6 Tiles with Icons:
+
+Healthcare → Predictive diagnostics, compliance dashboards
+
+Finance → Fraud detection, risk modeling, compliance reporting
+
+Retail → Customer 360, recommendations, demand forecasting
+
+Manufacturing & IoT → Predictive maintenance, digital twins
+
+Media & Entertainment → Streaming analytics, personalization
+
+6. Technology Stack (Logo Wall)
+
+Display logos: Snowflake, Databricks, Redshift, Synapse, BigQuery, Spark, Kafka, Tableau, Power BI.
+
+7. Why Choose RTNextGenAI (Feature Highlights)
+
+4–5 feature blocks with icons:
+
+Multi-cloud expertise (AWS, Azure, GCP)
+
+End-to-end (ingestion → storage → analytics → ML)
+
+Governance & compliance ready (HIPAA, GDPR, SOC2)
+
+Proven deployments at enterprise scale
+
+AI/ML & IoT integration
+
+8. Success Stories / Metrics (Optional Carousel)
+
+Slide 1: Healthcare → 70% faster reporting with Snowflake + Power BI
+
+Slide 2: Finance → 60% reduction in fraud detection latency
+
+Slide 3: Retail → +25% revenue from real-time recommendations
+
+9. Call-to-Action (Full-Width Footer)
+
+Headline: “Ready to Build Your Modern Data Platform?”
+
+Subtext: “Partner with RTNextGenAI to implement scalable, secure, and AI-ready data warehousing & lake solutions.”
+
+CTA Buttons: [Schedule a Consultation] [Get a Demo]
+
+Background: Futuristic AI + cloud ecosystem graphic.
