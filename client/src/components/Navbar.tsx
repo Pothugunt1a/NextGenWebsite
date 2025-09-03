@@ -454,21 +454,6 @@ export default function Navbar({
                                                     category.name,
                                                     e,
                                                   );
-                                                } else if (
-                                                  category.name ===
-                                                  "BI and Big Data"
-                                                ) {
-                                                  e.preventDefault();
-                                                  setLocation("/data-warehousing-lakehouse");
-                                                  window.scrollTo({
-                                                    top: 0,
-                                                    behavior: "smooth",
-                                                  });
-                                                  // Don't close dropdowns, just toggle submenu
-                                                  toggleDesktopSubmenu(
-                                                    category.name,
-                                                    e,
-                                                  );
                                                 } else {
                                                   toggleDesktopSubmenu(
                                                     category.name,
@@ -661,13 +646,6 @@ export default function Navbar({
                                       if (category.name === "AI Consulting") {
                                         handleNavigationClick(
                                           "/ai-consulting",
-                                          true,
-                                        );
-                                        // Toggle submenu to show the dropdown items
-                                        toggleMobileSubmenu(category.name);
-                                      } else if (category.name === "BI and Big Data") {
-                                        handleNavigationClick(
-                                          "/data-warehousing-lakehouse",
                                           true,
                                         );
                                         // Toggle submenu to show the dropdown items
