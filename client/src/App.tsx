@@ -29,7 +29,7 @@ import SalesforceServices from "./pages/SalesforceServices";
 import MobileDevelopment from "./pages/MobileDevelopment";
 import WebDevelopment from "./pages/WebDevelopment";
 import DevOpsServices from "./pages/DevOpsServices";
-import BIBigDataServices from "./pages/BIBigDataServices";
+import DataWarehousingLakes from "./pages/DataWarehousingLakes";
 import DataEngineeringETL from "./pages/DataEngineeringETL";
 
 function Router() {
@@ -61,7 +61,7 @@ function Router() {
         <Route path="/web-development" component={WebDevelopment} />
         <Route path="/devops-services" component={DevOpsServices} />
         <Route path="/data-engineering-etl" component={DataEngineeringETL} />
-        <Route path="/data-warehousing-lakehouse" component={BIBigDataServices} />
+        <Route path="/data-warehousing-lakehouse" component={DataWarehousingLakes} />
         <Route path="/business-intelligence-visualization" component={BIBigDataServices} />
         <Route path="/advanced-analytics-ai-ml" component={BIBigDataServices} />
         <Route path="/real-time-data-streaming" component={BIBigDataServices} />
