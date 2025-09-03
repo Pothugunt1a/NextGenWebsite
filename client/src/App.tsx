@@ -32,6 +32,7 @@ import DevOpsServices from "./pages/DevOpsServices";
 import DataWarehousingLakes from "./pages/DataWarehousingLakes";
 import DataEngineeringETL from "./pages/DataEngineeringETL";
 import BIBigDataServices from "./pages/BIBigDataServices";
+import BusinessIntelligenceVisualization from "./pages/BusinessIntelligenceVisualization";
 
 function Router() {
   return (
@@ -63,7 +64,7 @@ function Router() {
         <Route path="/devops-services" component={DevOpsServices} />
         <Route path="/data-engineering-etl" component={DataEngineeringETL} />
         <Route path="/data-warehousing-lakehouse" component={DataWarehousingLakes} />
-        <Route path="/business-intelligence-visualization" component={BIBigDataServices} />
+        <Route path="/business-intelligence-visualization" component={BusinessIntelligenceVisualization} />
         <Route path="/advanced-analytics-ai-ml" component={BIBigDataServices} />
         <Route path="/real-time-data-streaming" component={BIBigDataServices} />
         <Route path="/data-governance-mdm" component={BIBigDataServices} />
