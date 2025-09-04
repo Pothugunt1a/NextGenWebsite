@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -17,6 +16,9 @@ import {
   Award,
   Target,
   Brain,
+  AlertTriangle,
+  ShieldCheck,
+  X,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
@@ -261,7 +263,7 @@ export default function DataGovernanceMDM() {
       </div>
 
       {/* Why Data Governance & MDM Matter Section */}
-      <section className="py-16 text-white relative overflow-hidden">
+      <section className="py-20 text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
@@ -272,7 +274,7 @@ export default function DataGovernanceMDM() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              className="text-center mb-20"
+              className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -285,67 +287,139 @@ export default function DataGovernanceMDM() {
                 </span>
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Enterprises are collecting more data than ever before — but without governance, 
+                data becomes a liability. Transform your data from risk to value.
+              </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-              {/* Left Side - Problems */}
+            {/* Business Risks vs Benefits - Two Column Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+              {/* Left Column - Risks without Governance */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="bg-gradient-to-br from-red-900/20 to-red-800/20 backdrop-blur-sm border border-red-500/30 rounded-2xl p-8"
+                className="relative"
               >
-                <h3 className="text-2xl font-bold text-red-400 mb-6">Without Governance, Data Becomes a Liability</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                    <span className="text-gray-300">Wrong business decisions</span>
+                <div className="bg-gradient-to-br from-red-900/20 to-red-800/20 border border-red-500/30 rounded-2xl p-8 h-full">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
+                      <AlertTriangle className="h-6 w-6 text-red-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-red-300">Risks Without Governance</h3>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                    <span className="text-gray-300">Compliance violations (HIPAA, GDPR, SOC2)</span>
+                  <div className="space-y-4">
+                    {[
+                      "Wrong business decisions based on poor data quality",
+                      "Compliance violations (HIPAA, GDPR, SOC2)",
+                      "Data silos preventing unified insights",
+                      "Higher operational costs due to duplication",
+                      "Security risks and data breaches",
+                      "Inconsistent data definitions across teams"
+                    ].map((risk, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                        className="flex items-start gap-3"
+                      >
+                        <X className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                        <span className="text-gray-300">{risk}</span>
+                      </motion.div>
+                    ))}
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                    <span className="text-gray-300">Security risks & data breaches</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                    <span className="text-gray-300">Higher costs due to duplication & inefficiency</span>
+                  <div className="mt-6 p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                    <p className="text-red-300 font-semibold text-center">
+                      Unmanaged Data = Risk
+                    </p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Right Side - Solutions */}
+              {/* Right Column - Benefits with Governance */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="bg-gradient-to-br from-green-900/20 to-green-800/20 backdrop-blur-sm border border-green-500/30 rounded-2xl p-8"
+                className="relative"
               >
-                <h3 className="text-2xl font-bold text-green-400 mb-6">With Data Governance & MDM</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300">Establish a single source of truth</span>
+                <div className="bg-gradient-to-br from-green-900/20 to-emerald-800/20 border border-green-500/30 rounded-2xl p-8 h-full">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+                      <ShieldCheck className="h-6 w-6 text-green-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-green-300">Benefits with Governance</h3>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300">Ensure data quality, lineage, and consistency</span>
+                  <div className="space-y-4">
+                    {[
+                      "Trusted decisions from high-quality data",
+                      "Audit-ready compliance and regulatory adherence",
+                      "Single source of truth across all systems",
+                      "Improved operational efficiency and cost savings",
+                      "Enhanced security with proper access controls",
+                      "Consistent data definitions and business rules"
+                    ].map((benefit, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                        <span className="text-gray-300">{benefit}</span>
+                      </motion.div>
+                    ))}
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300">Protect sensitive data with security & compliance controls</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300">Improve trust in BI dashboards, ML models, and AI insights</span>
+                  <div className="mt-6 p-4 bg-green-500/10 rounded-lg border border-green-500/20">
+                    <p className="text-green-300 font-semibold text-center">
+                      Governed Data = Value
+                    </p>
                   </div>
                 </div>
               </motion.div>
             </div>
+
+            {/* Infographic Banner */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-r from-blue-900/30 to-cyan-900/30 border border-blue-500/30 rounded-2xl p-8">
+                <div className="flex items-center justify-center gap-8 flex-wrap">
+                  <div className="flex items-center gap-3">
+                    <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center">
+                      <AlertTriangle className="h-8 w-8 text-red-400" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-2xl font-bold text-red-300">Unmanaged Data</p>
+                      <p className="text-red-400">= Risk & Liability</p>
+                    </div>
+                  </div>
+
+                  <ArrowRight className="h-8 w-8 text-gray-400" />
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center">
+                      <ShieldCheck className="h-8 w-8 text-green-400" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-2xl font-bold text-green-300">Governed Data</p>
+                      <p className="text-green-400">= Business Value</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -529,7 +603,7 @@ export default function DataGovernanceMDM() {
               <div className="inline-flex items-center gap-4 bg-gradient-to-r from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-6">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-gray-300 text-sm">
+                  <span className="text-gray-300">
                     Ready to secure your data?
                   </span>
                 </div>
