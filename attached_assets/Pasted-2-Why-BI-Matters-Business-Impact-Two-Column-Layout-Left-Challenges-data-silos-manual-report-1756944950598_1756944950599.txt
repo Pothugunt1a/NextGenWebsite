@@ -1,0 +1,79 @@
+2. Why BI Matters (Business Impact)
+
+Two-Column Layout:
+
+Left: Challenges (data silos, manual reports, lack of real-time insights).
+
+Right: Solutions (unified dashboards, predictive insights, faster decision-making).
+
+Infographic: Before vs After → spreadsheets vs sleek BI dashboards.
+
+3. Capabilities Section (Grid of 5 Cards)
+
+Card Titles & Icons:
+
+Dashboard Design (executive dashboards, KPI scorecards)
+
+Self-Service BI (empower business users)
+
+Embedded Analytics (integrated with web & mobile apps)
+
+Cloud BI (Tableau, Power BI, Qlik, Looker)
+
+Predictive Analytics (AI + BI integration)
+
+Each card: Icon + 2-line description.
+
+4. BI Architecture Diagram (Full-Width Visual)
+
+Data Flow Illustration: Data Sources (ERP, CRM, IoT, SaaS) → Data Warehouses/Lakes (Snowflake, Redshift, BigQuery, Synapse) → BI Tools (Tableau, Power BI, Qlik, Looker) → Dashboards (Web + Mobile).
+
+5. Industry Use Cases (Grid of Tiles)
+
+Tiles with Icons & Short Captions:
+
+Healthcare → Patient care dashboards, compliance reports
+
+Finance → Fraud detection, risk analytics
+
+Retail → Customer 360, product performance dashboards
+
+Manufacturing & IoT → Factory dashboards, predictive maintenance
+
+Media → Audience analytics, content engagement
+
+6. Technology Stack (Logo Wall)
+
+Showcase logos: Tableau, Power BI, Qlik, Looker, Superset, Snowflake, Redshift, Synapse, BigQuery, Databricks.
+
+7. Why Choose RTNextGenAI (Feature Highlights)
+
+Horizontal feature blocks with icons:
+
+Certified BI & Data Visualization Experts
+
+Proven Enterprise Deployments
+
+Cloud + AI Integrated Dashboards
+
+Governance & Accuracy by Design
+
+Mobile-Ready BI Solutions
+
+8. Success Stories / Metrics (Carousel)
+
+Slide 1: Retail → +25% sales lift from BI-driven personalization.
+
+Slide 2: Healthcare → Reduced reporting time from days to minutes.
+
+Slide 3: Finance → Real-time fraud detection with BI dashboards.
+
+9. Call-to-Action (Footer Section)
+
+Headline: “Ready to Unlock the Power of Your Data?”
+
+Subtext: “Partner with RTNextGenAI to build intuitive, AI-powered BI solutions for your enterprise.”
+
+CTA Buttons: [Schedule a BI Demo] [Get a Consultation]
+
+Background: Futuristic cloud + dashboard graphic.
