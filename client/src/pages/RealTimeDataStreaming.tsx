@@ -848,6 +848,150 @@ export default function RealTimeDataStreaming() {
         </div>
       </section>
 
+      {/* Real-Time Data Architecture Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20"></div>
+          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-400/20 mb-6">
+                <Network className="h-4 w-4 text-cyan-400" />
+                <span className="text-cyan-300 text-sm font-medium">
+                  Enterprise Architecture
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Real-Time Data Architecture
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                End-to-end streaming data pipeline from ingestion to insights
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-400/20 rounded-3xl p-8 lg:p-12">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                  {/* Sources */}
+                  <div className="text-center group">
+                    <div className="relative mx-auto mb-4 w-20 h-20 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl flex items-center justify-center border border-green-400/30 group-hover:border-green-400/50 transition-colors">
+                      <Database className="h-10 w-10 text-green-400" />
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">1</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">Data Sources</h3>
+                    <p className="text-gray-400 text-sm">IoT • Web • Mobile • ERP/CRM</p>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="hidden lg:flex justify-center">
+                    <ArrowRight className="h-8 w-8 text-cyan-400 animate-pulse" />
+                  </div>
+
+                  {/* Streaming Platform */}
+                  <div className="text-center group">
+                    <div className="relative mx-auto mb-4 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center border border-blue-400/30 group-hover:border-blue-400/50 transition-colors">
+                      <Radio className="h-10 w-10 text-blue-400" />
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">2</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">Streaming Platform</h3>
+                    <p className="text-gray-400 text-sm">Kafka • Kinesis • Event Hub</p>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="hidden lg:flex justify-center">
+                    <ArrowRight className="h-8 w-8 text-cyan-400 animate-pulse" />
+                  </div>
+
+                  {/* Processing */}
+                  <div className="text-center group">
+                    <div className="relative mx-auto mb-4 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center border border-purple-400/30 group-hover:border-purple-400/50 transition-colors">
+                      <Cpu className="h-10 w-10 text-purple-400" />
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">3</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">Stream Processing</h3>
+                    <p className="text-gray-400 text-sm">Flink • Spark • Lambda</p>
+                  </div>
+                </div>
+
+                <div className="flex justify-center my-8">
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                  {/* Storage */}
+                  <div className="text-center group">
+                    <div className="relative mx-auto mb-4 w-20 h-20 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center border border-orange-400/30 group-hover:border-orange-400/50 transition-colors">
+                      <HardDrive className="h-10 w-10 text-orange-400" />
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">4</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">Low-Latency Storage</h3>
+                    <p className="text-gray-400 text-sm">Cassandra • DynamoDB • InfluxDB</p>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="hidden lg:flex justify-center">
+                    <ArrowRight className="h-8 w-8 text-cyan-400 animate-pulse" />
+                  </div>
+
+                  {/* Outputs */}
+                  <div className="text-center group">
+                    <div className="relative mx-auto mb-4 w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                      <Monitor className="h-10 w-10 text-cyan-400" />
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">5</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">Real-Time Outputs</h3>
+                    <p className="text-gray-400 text-sm">Dashboards • Alerts • ML Models</p>
+                  </div>
+                </div>
+
+                {/* Performance Metrics */}
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="text-center p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl border border-blue-400/20">
+                    <div className="text-3xl font-bold text-blue-400 mb-2">&lt;100ms</div>
+                    <div className="text-gray-300 text-sm">Processing Latency</div>
+                  </div>
+                  <div className="text-center p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl border border-green-400/20">
+                    <div className="text-3xl font-bold text-green-400 mb-2">99.99%</div>
+                    <div className="text-gray-300 text-sm">Uptime SLA</div>
+                  </div>
+                  <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl border border-purple-400/20">
+                    <div className="text-3xl font-bold text-purple-400 mb-2">1M+</div>
+                    <div className="text-gray-300 text-sm">Events/Second</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="py-16 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -863,14 +1007,177 @@ export default function RealTimeDataStreaming() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {techStack.map((tech, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg border border-gray-700 hover:border-cyan-400/40 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05, duration: 0.5 }}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 hover:transform hover:scale-105"
                 >
                   <p className="text-gray-300 text-sm font-medium">{tech}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Impact / Success Metrics */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Real Results from Real-Time Solutions
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300">
+                Proven success stories across industries
+              </p>
+            </div>
+
+            <Carousel
+              className="w-full max-w-5xl mx-auto"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                  stopOnInteraction: true,
+                  stopOnMouseEnter: true,
+                }),
+              ]}
+            >
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-8 lg:p-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                      <div>
+                        <div className="flex items-center gap-3 mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                            <DollarSign className="h-6 w-6 text-white" />
+                          </div>
+                          <span className="text-cyan-400 font-semibold text-lg">Financial Services</span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-4">
+                          Fraud Detection in 2 Seconds
+                        </h3>
+                        <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                          Implemented real-time analytics pipeline that processes 500K transactions per second, 
+                          reducing fraud detection time from 24 hours to under 2 seconds, preventing $50M in 
+                          potential losses annually.
+                        </p>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="text-center p-3 bg-blue-500/10 rounded-lg">
+                            <div className="text-2xl font-bold text-blue-400">2s</div>
+                            <div className="text-gray-400 text-sm">Detection Time</div>
+                          </div>
+                          <div className="text-center p-3 bg-green-500/10 rounded-lg">
+                            <div className="text-2xl font-bold text-green-400">$50M</div>
+                            <div className="text-gray-400 text-sm">Losses Prevented</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <img
+                          src="/assets/Finance.png"
+                          alt="Financial Services Success"
+                          className="w-full h-80 object-cover rounded-xl"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent rounded-xl"></div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+
+                <CarouselItem>
+                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-8 lg:p-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                      <div>
+                        <div className="flex items-center gap-3 mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                            <ShoppingCart className="h-6 w-6 text-white" />
+                          </div>
+                          <span className="text-emerald-400 font-semibold text-lg">Retail & eCommerce</span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-4">
+                          20% Conversion Boost
+                        </h3>
+                        <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                          Built real-time personalization engine processing clickstream data from 2M daily users, 
+                          delivering instant product recommendations that increased conversion rates by 20% and 
+                          average order value by 15%.
+                        </p>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="text-center p-3 bg-green-500/10 rounded-lg">
+                            <div className="text-2xl font-bold text-green-400">+20%</div>
+                            <div className="text-gray-400 text-sm">Conversions</div>
+                          </div>
+                          <div className="text-center p-3 bg-blue-500/10 rounded-lg">
+                            <div className="text-2xl font-bold text-blue-400">2M</div>
+                            <div className="text-gray-400 text-sm">Daily Users</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <img
+                          src="/assets/Ecommerce.png"
+                          alt="Retail Success"
+                          className="w-full h-80 object-cover rounded-xl"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent rounded-xl"></div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+
+                <CarouselItem>
+                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-8 lg:p-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                      <div>
+                        <div className="flex items-center gap-3 mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                            <Factory className="h-6 w-6 text-white" />
+                          </div>
+                          <span className="text-orange-400 font-semibold text-lg">Manufacturing</span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-4">
+                          40% Downtime Reduction
+                        </h3>
+                        <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                          Deployed IoT streaming analytics for predictive maintenance across 200+ machines, 
+                          processing sensor data in real-time to predict failures 48 hours in advance, 
+                          reducing unplanned downtime by 40%.
+                        </p>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="text-center p-3 bg-orange-500/10 rounded-lg">
+                            <div className="text-2xl font-bold text-orange-400">-40%</div>
+                            <div className="text-gray-400 text-sm">Downtime</div>
+                          </div>
+                          <div className="text-center p-3 bg-purple-500/10 rounded-lg">
+                            <div className="text-2xl font-bold text-purple-400">48h</div>
+                            <div className="text-gray-400 text-sm">Prediction Lead</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <img
+                          src="/assets/Manufacturing.png"
+                          alt="Manufacturing Success"
+                          className="w-full h-80 object-cover rounded-xl"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent rounded-xl"></div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+
+              <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+              <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+            </Carousel>
           </div>
         </div>
       </section>
@@ -893,7 +1200,7 @@ export default function RealTimeDataStreaming() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="flex items-start gap-4 p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700"
+                  className="flex items-start gap-4 p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 hover:border-cyan-400/30 transition-all duration-300"
                 >
                   {reason.icon}
                   <div>
