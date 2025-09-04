@@ -1,0 +1,79 @@
+Why It Matters (Business Risks vs Benefits)
+
+Two-Column Layout:
+
+Left: Risks without governance → wrong decisions, compliance violations, data silos, duplication costs.
+
+Right: Benefits with governance → trusted decisions, audit-ready compliance, single source of truth, improved efficiency.
+
+Infographic: “Unmanaged Data = Risk / Governed Data = Value.”
+
+3. Capabilities Section (Grid of 5 Cards)
+
+Card Titles & Icons:
+
+Data Governance Frameworks (policies, RBAC, lineage)
+
+Master Data Management (Customer 360, Product 360, Supplier 360)
+
+Data Catalog & Metadata (Collibra, Informatica, Unity Catalog)
+
+Security & Compliance (IAM, encryption, anonymization)
+
+Cloud & Hybrid Governance (AWS Lake Formation, Azure Purview, GCP Data Catalog)
+
+Each card: Icon + 2-line description.
+
+4. Governance Architecture Diagram (Full-Width Visual)
+
+Flow Illustration: Enterprise apps (ERP, CRM, SaaS, IoT) → MDM Hub + Governance Layer → BI Dashboards & AI Models → Compliance & Audit Layer.
+
+5. Industry Use Cases (Grid of Tiles)
+
+Tiles with Icons & Short Captions:
+
+Healthcare → HIPAA compliance, unified EMR systems
+
+Finance → Golden records for KYC/AML, fraud prevention
+
+Retail → GDPR-ready customer 360 & product catalog
+
+Manufacturing → Supplier master data, demand forecasting
+
+Government → Citizen record management, secure open data initiatives
+
+6. Technology Stack (Logo Wall)
+
+Logos: Collibra, Informatica, Alation, Databricks Unity Catalog, SAP MDM, AWS Lake Formation, Azure Purview, GCP Data Catalog.
+
+7. Why Choose RTNextGenAI (Feature Highlights)
+
+Horizontal feature blocks with icons:
+
+Certified governance & MDM specialists
+
+End-to-end approach (governance + MDM + security)
+
+Proven in regulated industries (healthcare, finance, government)
+
+Multi-cloud expertise (AWS, Azure, GCP, hybrid)
+
+Automation-first, scalable architectures
+
+8. Client Impact / Compliance Metrics (Optional Carousel)
+
+Slide 1: Healthcare → Cut compliance audit time by 50%.
+
+Slide 2: Finance → Unified golden records across 5 ERP/CRM systems.
+
+Slide 3: Retail → Improved data accuracy by 40% with MDM implementation.
+
+9. Call-to-Action (Footer Section)
+
+Full-width background with futuristic lock + shield + cloud illustration.
+
+Headline: “Is Your Data Trusted and Audit-Ready?”
+
+Subtext: “Partner with RTNextGenAI to implement secure, compliant, and enterprise-grade data governance & MDM solutions.”
+
+CTA Buttons: [Schedule a Consultation] [Request a Demo]
