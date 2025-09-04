@@ -309,7 +309,7 @@ export default function RealTimeDataStreaming() {
       </div>
 
       {/* Why Real-Time Data Matters Section */}
-      <section className="py-16 text-white relative overflow-hidden">
+      <section className="py-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -319,7 +319,7 @@ export default function RealTimeDataStreaming() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              className="text-center mb-20"
+              className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -334,7 +334,7 @@ export default function RealTimeDataStreaming() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Real-Time Data Isn't Just Faster —{" "}
                 <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                  It's Smarter
+                  It's Critical for Business Success
                 </span>
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
@@ -343,139 +343,178 @@ export default function RealTimeDataStreaming() {
               </p>
             </motion.div>
 
-            <div className="relative max-w-6xl mx-auto">
-              <Carousel
-                className="w-full"
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                plugins={[
-                  Autoplay({
-                    delay: 5000,
-                    stopOnInteraction: true,
-                    stopOnMouseEnter: true,
-                  }),
-                ]}
+            {/* Two-Column Layout: Challenges vs Solutions */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+              {/* Left Column: Challenges */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8 }}
+                className="space-y-8"
               >
-                <CarouselContent className="-ml-2 md:-ml-4">
-                  <CarouselItem className="pl-2 md:pl-4">
-                    <div className="p-6">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {whyRealTimeMatters.slice(0, 2).map((item, index) => {
-                          const IconComponent = item.icon;
-                          const SecondaryIconComponent = item.secondaryIcon;
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-full border border-red-400/20 mb-4">
+                    <AlertTriangle className="h-4 w-4 text-red-400" />
+                    <span className="text-red-300 text-sm font-medium">Business Challenges</span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-6">
+                    The Cost of Delayed Decisions
+                  </h3>
+                </div>
 
-                          return (
-                            <motion.div
-                              key={index}
-                              initial={{ opacity: 0, y: 30 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.6, delay: index * 0.1 }}
-                              whileHover={{ y: -10, scale: 1.05 }}
-                              viewport={{ once: true }}
-                              className="group"
-                            >
-                              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
-
-                                <div className="flex items-start gap-6 mb-6">
-                                  <div className="relative">
-                                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                                      <IconComponent className="h-10 w-10 text-white" />
-                                    </div>
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                                      <SecondaryIconComponent className="h-4 w-4 text-white" />
-                                    </div>
-                                  </div>
-
-                                  <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                      {item.title}
-                                    </h3>
-                                    <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                                  </div>
-                                </div>
-
-                                <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                                  {item.description}
-                                </p>
-
-                                <div className="flex items-center gap-2 text-cyan-400">
-                                  <CheckCircle className="h-4 w-4" />
-                                  <span className="text-sm font-medium">
-                                    {item.badge}
-                                  </span>
-                                </div>
-                              </div>
-                            </motion.div>
-                          );
-                        })}
-                      </div>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-xl border border-red-500/20">
+                    <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <AlertTriangle className="h-6 w-6 text-red-400" />
                     </div>
-                  </CarouselItem>
-
-                  <CarouselItem className="pl-2 md:pl-4">
-                    <div className="p-6">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {whyRealTimeMatters.slice(2, 4).map((item, index) => {
-                          const IconComponent = item.icon;
-                          const SecondaryIconComponent = item.secondaryIcon;
-
-                          return (
-                            <motion.div
-                              key={index + 2}
-                              initial={{ opacity: 0, y: 30 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.6, delay: index * 0.1 }}
-                              whileHover={{ y: -10, scale: 1.05 }}
-                              viewport={{ once: true }}
-                              className="group"
-                            >
-                              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
-
-                                <div className="flex items-start gap-6 mb-6">
-                                  <div className="relative">
-                                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                                      <IconComponent className="h-10 w-10 text-white" />
-                                    </div>
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                                      <SecondaryIconComponent className="h-4 w-4 text-white" />
-                                    </div>
-                                  </div>
-
-                                  <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                      {item.title}
-                                    </h3>
-                                    <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                                  </div>
-                                </div>
-
-                                <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                                  {item.description}
-                                </p>
-
-                                <div className="flex items-center gap-2 text-cyan-400">
-                                  <CheckCircle className="h-4 w-4" />
-                                  <span className="text-sm font-medium">
-                                    {item.badge}
-                                  </span>
-                                </div>
-                              </div>
-                            </motion.div>
-                          );
-                        })}
-                      </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Delayed Reports</h4>
+                      <p className="text-gray-300">Critical business insights arrive hours or days too late, missing time-sensitive opportunities</p>
                     </div>
-                  </CarouselItem>
-                </CarouselContent>
+                  </div>
 
-                <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
-                <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
-              </Carousel>
+                  <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-xl border border-red-500/20">
+                    <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-6 w-6 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Fraud Detected Too Late</h4>
+                      <p className="text-gray-300">Security threats and fraudulent activities go undetected for hours, resulting in significant losses</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-xl border border-red-500/20">
+                    <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Target className="h-6 w-6 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Missed Business Opportunities</h4>
+                      <p className="text-gray-300">Customer behavior insights arrive too late to capitalize on sales opportunities and market trends</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right Column: Solutions */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8 }}
+                className="space-y-8"
+              >
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-full border border-green-400/20 mb-4">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span className="text-green-300 text-sm font-medium">Real-Time Solutions</span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-6">
+                    The Power of Instant Intelligence
+                  </h3>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-green-900/20 to-cyan-900/20 rounded-xl border border-green-500/20">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Zap className="h-6 w-6 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Fraud Detection in Seconds</h4>
+                      <p className="text-gray-300">Identify and block fraudulent transactions instantly with real-time monitoring and AI-powered alerts</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-green-900/20 to-cyan-900/20 rounded-xl border border-green-500/20">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Smartphone className="h-6 w-6 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Real-Time Personalization</h4>
+                      <p className="text-gray-300">Deliver personalized experiences instantly based on live user behavior and preferences</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-green-900/20 to-cyan-900/20 rounded-xl border border-green-500/20">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Settings className="h-6 w-6 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Predictive IoT Maintenance</h4>
+                      <p className="text-gray-300">Prevent equipment failures with continuous monitoring and predictive analytics on sensor data</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
+
+            {/* Infographic: Batch vs Real-Time */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-400/20 rounded-3xl p-8 lg:p-12"
+            >
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  Batch Processing vs Real-Time Streaming
+                </h3>
+                <p className="text-gray-300 text-lg">
+                  See the dramatic difference in response times
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Batch Processing */}
+                <div className="text-center p-8 bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-2xl border border-red-500/20">
+                  <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <BarChart3 className="h-10 w-10 text-red-400" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-white mb-4">Batch Processing</h4>
+                  <div className="text-4xl font-bold text-red-400 mb-2">Hours - Days</div>
+                  <p className="text-gray-300">Traditional data processing with significant delays</p>
+                  <div className="mt-6 space-y-2">
+                    <div className="flex items-center gap-2 text-red-300">
+                      <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                      <span className="text-sm">Scheduled reports</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-red-300">
+                      <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                      <span className="text-sm">Historical analysis</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-red-300">
+                      <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                      <span className="text-sm">Delayed insights</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Real-Time Processing */}
+                <div className="text-center p-8 bg-gradient-to-br from-green-900/20 to-cyan-900/20 rounded-2xl border border-green-500/20">
+                  <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Activity className="h-10 w-10 text-green-400" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-white mb-4">Real-Time Streaming</h4>
+                  <div className="text-4xl font-bold text-green-400 mb-2">Seconds</div>
+                  <p className="text-gray-300">Instant processing and immediate insights</p>
+                  <div className="mt-6 space-y-2">
+                    <div className="flex items-center gap-2 text-green-300">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-sm">Live dashboards</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-green-300">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-sm">Instant alerts</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-green-300">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-sm">Immediate action</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
 
             <motion.div
               className="text-center mt-16"
@@ -488,11 +527,11 @@ export default function RealTimeDataStreaming() {
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                   <span className="text-gray-300 text-sm">
-                    Ready to stream data in real-time?
+                    Ready to make real-time decisions?
                   </span>
                 </div>
                 <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Request a Demo
+                  Get Started Today
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
