@@ -34,6 +34,7 @@ import DataEngineeringETL from "./pages/DataEngineeringETL";
 import BIBigDataServices from "./pages/BIBigDataServices";
 import BusinessIntelligenceVisualization from "./pages/BusinessIntelligenceVisualization";
 import RealTimeDataStreaming from "./pages/RealTimeDataStreaming";
+import DataGovernanceMDM from "./pages/DataGovernanceMDM";
 
 function Router() {
   return (
@@ -68,7 +69,7 @@ function Router() {
         <Route path="/business-intelligence-visualization" component={BusinessIntelligenceVisualization} />
         <Route path="/advanced-analytics-ai-ml" component={BIBigDataServices} />
         <Route path="/real-time-data-streaming" component={RealTimeDataStreaming} />
-        <Route path="/data-governance-mdm" component={BIBigDataServices} />
+        <Route path="/data-governance-mdm" component={DataGovernanceMDM} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
