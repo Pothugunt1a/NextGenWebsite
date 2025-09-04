@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   TrendingUp,
@@ -26,42 +26,51 @@ import {
   ChevronDown,
   ChevronUp,
   AlertTriangle,
+  Factory,
+  Heart,
+  DollarSign,
+  ShoppingCart,
+  Tv,
+  Server,
+  GitBranch,
+  Gauge,
+  Lock,
 } from "lucide-react";
 
 const capabilities = [
   {
     icon: <BarChart3 className="h-8 w-8 text-white" />,
     title: "Dashboard Design & Development",
-    description: "Executive dashboards, KPI scorecards, operational reporting with interactive drill-down charts and custom visualizations.",
+    description: "Executive dashboards, KPI scorecards, operational reporting with interactive drill-down capabilities.",
     backgroundImage: "/assets/AI-DataStratergy-banner.png",
   },
   {
     icon: <Users className="h-8 w-8 text-white" />,
-    title: "Self-Service BI Enablement",
-    description: "Empower business teams to explore and analyze data without IT bottlenecks, with governance policies ensuring consistency.",
+    title: "Self-Service BI",
+    description: "Empower business users to explore data independently with governed, user-friendly analytics tools.",
     backgroundImage: "/assets/Data-Governance.png",
   },
   {
     icon: <Smartphone className="h-8 w-8 text-white" />,
     title: "Embedded Analytics",
-    description: "Integrate BI dashboards directly into web apps, mobile apps, ERP & CRM systems with white-label analytics portals.",
+    description: "Seamlessly integrate BI dashboards into web apps, mobile apps, and existing business systems.",
     backgroundImage: "/assets/AI-Integration.png",
   },
   {
     icon: <Cloud className="h-8 w-8 text-white" />,
     title: "Cloud BI Solutions",
-    description: "Deploy BI platforms in AWS, Azure, GCP using Power BI, Tableau, Qlik, Looker with scalable, cost-efficient architecture.",
+    description: "Modern cloud-native BI platforms: Tableau, Power BI, Qlik, Looker with enterprise scalability.",
     backgroundImage: "/assets/AWS-banner.png",
   },
   {
     icon: <Brain className="h-8 w-8 text-white" />,
-    title: "Advanced Visualization & Predictive Analytics",
-    description: "Integrate BI with machine learning models for predictive insights, automated forecasting, and AI-powered visual storytelling.",
+    title: "Predictive Analytics",
+    description: "AI-powered insights with machine learning integration for forecasting and predictive modeling.",
     backgroundImage: "/assets/AI-ML.png",
   },
 ];
 
-const businessProblems = [
+const businessChallenges = [
   {
     icon: <Database className="h-6 w-6 text-red-400" />,
     title: "Data Silos",
@@ -69,73 +78,63 @@ const businessProblems = [
   },
   {
     icon: <Activity className="h-6 w-6 text-red-400" />,
-    title: "Slow Decision-Making",
-    description: "Manual reporting processes delay critical business decisions by days or weeks",
+    title: "Manual Reports",
+    description: "Time-consuming manual reporting processes that delay critical business decisions",
   },
   {
-    icon: <PieChart className="h-6 w-6 text-red-400" />,
-    title: "Inconsistent Reports",
-    description: "Different teams generating conflicting reports from the same data sources",
-  },
-  {
-    icon: <Monitor className="h-6 w-6 text-red-400" />,
-    title: "Limited Visibility",
-    description: "Executives lack real-time visibility into key performance indicators",
+    icon: <Gauge className="h-6 w-6 text-red-400" />,
+    title: "Lack of Real-Time Insights",
+    description: "Outdated information preventing timely responses to market changes and opportunities",
   },
 ];
 
 const businessSolutions = [
   {
-    icon: <Layers className="h-6 w-6 text-green-400" />,
-    title: "Unified Data Platform",
-    description: "Centralized data warehouse connecting all business systems for single source of truth",
-  },
-  {
-    icon: <Zap className="h-6 w-6 text-green-400" />,
-    title: "Real-Time Dashboards",
-    description: "Interactive dashboards providing instant access to critical business metrics",
+    icon: <Monitor className="h-6 w-6 text-green-400" />,
+    title: "Unified Dashboards",
+    description: "Centralized view of all business metrics with real-time data integration across systems",
   },
   {
     icon: <Brain className="h-6 w-6 text-green-400" />,
     title: "Predictive Insights",
-    description: "AI-powered analytics delivering forecasting and trend analysis capabilities",
+    description: "AI-powered analytics delivering forecasting and trend analysis for proactive decision-making",
   },
   {
-    icon: <Target className="h-6 w-6 text-green-400" />,
-    title: "Self-Service Analytics",
-    description: "Empower business users with intuitive tools for independent data exploration",
+    icon: <Zap className="h-6 w-6 text-green-400" />,
+    title: "Faster Decision-Making",
+    description: "Real-time analytics enabling instant access to critical business intelligence",
   },
 ];
 
 const industryUseCases = [
   {
-    icon: <Activity className="h-8 w-8 text-blue-400" />,
+    icon: <Heart className="h-8 w-8 text-blue-400" />,
     title: "Healthcare",
-    description: "Patient dashboards, compliance reports, operational efficiency tracking",
+    description: "Patient care dashboards, compliance reports, operational efficiency tracking",
     image: "/assets/Healthcare.png",
   },
   {
-    icon: <TrendingUp className="h-8 w-8 text-green-400" />,
+    icon: <DollarSign className="h-8 w-8 text-green-400" />,
     title: "Finance",
-    description: "Fraud detection, risk analytics, regulatory reporting",
+    description: "Fraud detection, risk analytics, regulatory reporting, portfolio management",
     image: "/assets/Finance.png",
   },
   {
-    icon: <Smartphone className="h-8 w-8 text-purple-400" />,
+    icon: <ShoppingCart className="h-8 w-8 text-purple-400" />,
     title: "Retail",
-    description: "Customer 360 view, demand forecasting, inventory optimization",
+    description: "Customer 360 view, product performance dashboards, demand forecasting",
     image: "/assets/Ecommerce.png",
   },
   {
-    icon: <Settings className="h-8 w-8 text-orange-400" />,
-    title: "Manufacturing",
-    description: "Factory floor dashboards, predictive maintenance, quality control",
+    icon: <Factory className="h-8 w-8 text-orange-400" />,
+    title: "Manufacturing & IoT",
+    description: "Factory dashboards, predictive maintenance, quality control analytics",
     image: "/assets/Manufacturing.png",
   },
   {
-    icon: <Monitor className="h-8 w-8 text-cyan-400" />,
+    icon: <Tv className="h-8 w-8 text-cyan-400" />,
     title: "Media",
-    description: "Audience engagement dashboards, content performance analytics",
+    description: "Audience analytics, content engagement tracking, performance optimization",
     image: "/assets/Media.png",
   },
 ];
@@ -143,28 +142,28 @@ const industryUseCases = [
 const whyChooseUs = [
   {
     icon: <Award className="h-6 w-6 text-blue-400" />,
-    title: "Certified BI Experts",
-    description: "Tableau, Power BI, Looker certified professionals with enterprise experience",
+    title: "Certified BI & Data Visualization Experts",
+    description: "Tableau, Power BI, Looker certified professionals with enterprise deployment experience",
   },
   {
     icon: <CheckCircle className="h-6 w-6 text-green-400" />,
     title: "Proven Enterprise Deployments",
-    description: "Successfully deployed BI solutions across Fortune 500 companies",
+    description: "Successfully implemented BI solutions across Fortune 500 companies with measurable results",
   },
   {
-    icon: <Brain className="h-6 w-6 text-purple-400" />,
-    title: "AI/ML-driven BI Capabilities",
-    description: "Advanced analytics with machine learning integration for predictive insights",
-  },
-  {
-    icon: <Cloud className="h-6 w-6 text-cyan-400" />,
-    title: "Cloud-Native Solutions",
-    description: "Mobile-ready, scalable solutions built for modern cloud infrastructure",
+    icon: <Cloud className="h-6 w-6 text-purple-400" />,
+    title: "Cloud + AI Integrated Dashboards",
+    description: "Modern cloud-native solutions with artificial intelligence capabilities for advanced analytics",
   },
   {
     icon: <Shield className="h-6 w-6 text-yellow-400" />,
-    title: "Governance-First Approach",
-    description: "Data accuracy, security, and compliance built into every solution",
+    title: "Governance & Accuracy by Design",
+    description: "Built-in data governance, security compliance, and accuracy validation frameworks",
+  },
+  {
+    icon: <Smartphone className="h-6 w-6 text-cyan-400" />,
+    title: "Mobile-Ready BI Solutions",
+    description: "Responsive dashboards optimized for desktop, tablet, and mobile accessibility",
   },
 ];
 
@@ -177,30 +176,65 @@ const techStack = [
   { name: "Snowflake", logo: "❄️" },
   { name: "Amazon Redshift", logo: "🔴" },
   { name: "Azure Synapse", logo: "🔷" },
+  { name: "BigQuery", logo: "🔍" },
   { name: "Databricks", logo: "🧱" },
 ];
 
 const successStories = [
   {
     industry: "Retail",
-    metric: "25% increase in sales",
-    description: "Using customer analytics dashboards for personalized marketing campaigns",
+    metric: "+25% Sales Lift",
+    description: "BI-driven personalization and customer analytics increased revenue by 25% through targeted marketing campaigns",
+    icon: <ShoppingCart className="h-8 w-8 text-purple-400" />,
   },
   {
     industry: "Healthcare",
-    metric: "Reduced reporting time from days to minutes",
-    description: "Automated compliance reporting and patient outcome tracking",
+    metric: "Days to Minutes",
+    description: "Reduced reporting time from days to minutes with automated compliance dashboards and real-time patient analytics",
+    icon: <Heart className="h-8 w-8 text-blue-400" />,
   },
   {
     industry: "Finance",
-    metric: "Real-time fraud detection",
-    description: "AI-powered dashboards identifying suspicious transactions instantly",
+    metric: "Real-Time Fraud Detection",
+    description: "Implemented real-time fraud detection dashboards identifying suspicious transactions instantly, reducing fraud by 40%",
+    icon: <DollarSign className="h-8 w-8 text-green-400" />,
+  },
+];
+
+const dataFlowSteps = [
+  {
+    step: "Data Sources",
+    description: "ERP, CRM, IoT, SaaS",
+    icon: <Database className="h-6 w-6 text-blue-400" />,
+  },
+  {
+    step: "Data Warehouses/Lakes",
+    description: "Snowflake, Redshift, BigQuery, Synapse",
+    icon: <Server className="h-6 w-6 text-green-400" />,
+  },
+  {
+    step: "BI Tools",
+    description: "Tableau, Power BI, Qlik, Looker",
+    icon: <BarChart3 className="h-6 w-6 text-purple-400" />,
+  },
+  {
+    step: "Dashboards",
+    description: "Web + Mobile",
+    icon: <Monitor className="h-6 w-6 text-cyan-400" />,
   },
 ];
 
 export default function BusinessIntelligenceVisualization() {
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
+  // Auto-rotate success stories
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentStoryIndex((prev) => (prev + 1) % successStories.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <motion.div
@@ -210,7 +244,7 @@ export default function BusinessIntelligenceVisualization() {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-light text-white"
     >
-      {/* Hero Section */}
+      {/* 1. Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -244,7 +278,7 @@ export default function BusinessIntelligenceVisualization() {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed"
               >
-                Interactive dashboards, real-time analytics, and AI-powered insights for smarter decisions across your enterprise.
+                RTNextGenAI empowers enterprises with modern BI platforms and data visualization solutions that deliver real-time insights, self-service analytics, and predictive intelligence.
               </motion.p>
 
               <motion.div
@@ -298,7 +332,7 @@ export default function BusinessIntelligenceVisualization() {
         </div>
       </section>
 
-      {/* Why BI Matters Section */}
+      {/* 2. Why BI Matters (Business Impact) */}
       <section className="py-20 bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -319,14 +353,14 @@ export default function BusinessIntelligenceVisualization() {
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Problems */}
+              {/* Left - Challenges */}
               <div>
                 <h3 className="text-2xl font-bold text-red-400 mb-8 flex items-center gap-3">
                   <AlertTriangle className="h-6 w-6" />
-                  Common Business Challenges
+                  Business Challenges
                 </h3>
                 <div className="space-y-6">
-                  {businessProblems.map((problem, index) => (
+                  {businessChallenges.map((challenge, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
@@ -334,17 +368,17 @@ export default function BusinessIntelligenceVisualization() {
                       transition={{ delay: index * 0.1, duration: 0.6 }}
                       className="flex items-start gap-4 p-4 bg-red-900/20 border border-red-500/20 rounded-lg"
                     >
-                      {problem.icon}
+                      {challenge.icon}
                       <div>
-                        <h4 className="text-lg font-semibold text-white mb-2">{problem.title}</h4>
-                        <p className="text-gray-300">{problem.description}</p>
+                        <h4 className="text-lg font-semibold text-white mb-2">{challenge.title}</h4>
+                        <p className="text-gray-300">{challenge.description}</p>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </div>
 
-              {/* Solutions */}
+              {/* Right - Solutions */}
               <div>
                 <h3 className="text-2xl font-bold text-green-400 mb-8 flex items-center gap-3">
                   <CheckCircle className="h-6 w-6" />
@@ -373,7 +407,7 @@ export default function BusinessIntelligenceVisualization() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
+      {/* 3. Capabilities Section (Grid of 5 Cards) */}
       <section className="py-20 bg-gray-900/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -419,8 +453,57 @@ export default function BusinessIntelligenceVisualization() {
         </div>
       </section>
 
-      {/* Industry Use Cases */}
+      {/* 4. BI Architecture Diagram */}
       <section className="py-20 bg-light">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                BI Architecture & Data Flow
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                How we transform your data sources into actionable business intelligence
+              </p>
+            </motion.div>
+
+            <div className="relative">
+              <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-4">
+                {dataFlowSteps.map((step, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    className="flex-1 text-center"
+                  >
+                    <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                      <div className="flex justify-center mb-4">{step.icon}</div>
+                      <h3 className="text-lg font-bold text-white mb-3">{step.step}</h3>
+                      <p className="text-gray-300 text-sm">{step.description}</p>
+                    </div>
+                    {index < dataFlowSteps.length - 1 && (
+                      <div className="hidden md:block absolute top-1/2 transform -translate-y-1/2 text-blue-400" 
+                           style={{ left: `${((index + 1) * 100) / dataFlowSteps.length - 5}%` }}>
+                        <ArrowRight className="h-6 w-6" />
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Industry Use Cases */}
+      <section className="py-20 bg-gray-900/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -467,8 +550,8 @@ export default function BusinessIntelligenceVisualization() {
         </div>
       </section>
 
-      {/* Technology Stack */}
-      <section className="py-20 bg-gray-900/50">
+      {/* 6. Technology Stack */}
+      <section className="py-20 bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -505,8 +588,8 @@ export default function BusinessIntelligenceVisualization() {
         </div>
       </section>
 
-      {/* Why Choose RTNextGenAI */}
-      <section className="py-20 bg-light">
+      {/* 7. Why Choose RTNextGenAI */}
+      <section className="py-20 bg-gray-900/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -543,8 +626,8 @@ export default function BusinessIntelligenceVisualization() {
         </div>
       </section>
 
-      {/* Success Stories Carousel */}
-      <section className="py-20 bg-gray-900/50">
+      {/* 8. Success Stories Carousel */}
+      <section className="py-20 bg-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -555,7 +638,7 @@ export default function BusinessIntelligenceVisualization() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Success Stories
+                Success Stories & Metrics
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto"></div>
             </motion.div>
@@ -569,13 +652,16 @@ export default function BusinessIntelligenceVisualization() {
                 transition={{ duration: 0.5 }}
                 className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 text-center"
               >
+                <div className="flex justify-center mb-6">
+                  {successStories[currentStoryIndex].icon}
+                </div>
                 <div className="text-4xl font-bold text-blue-400 mb-4">
                   {successStories[currentStoryIndex].metric}
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   {successStories[currentStoryIndex].industry}
                 </h3>
-                <p className="text-gray-300 text-lg">
+                <p className="text-gray-300 text-lg leading-relaxed">
                   {successStories[currentStoryIndex].description}
                 </p>
               </motion.div>
@@ -598,7 +684,7 @@ export default function BusinessIntelligenceVisualization() {
         </div>
       </section>
 
-      {/* Call-to-Action */}
+      {/* 9. Call-to-Action */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -629,7 +715,7 @@ export default function BusinessIntelligenceVisualization() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Partner with RTNextGenAI to design intuitive, AI-powered BI dashboards that empower your enterprise with actionable insights
+            Partner with RTNextGenAI to build intuitive, AI-powered BI solutions for your enterprise. Transform your data into competitive advantage.
           </motion.p>
 
           <motion.div
