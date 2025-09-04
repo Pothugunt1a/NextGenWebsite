@@ -1,0 +1,81 @@
+Why Real-Time Matters (Impact Section)
+
+Two-Column Layout:
+
+Left: Challenges → delayed reports, fraud detected too late, missed business opportunities.
+
+Right: Solutions → fraud detection in seconds, real-time personalization, predictive IoT maintenance.
+
+Infographic: Batch (hours/days) vs Real-Time (seconds).
+
+3. Capabilities Section (Grid of 5 Cards)
+
+Card Titles & Icons:
+
+Real-Time Ingestion (Kafka, Kinesis, Event Hub, Pub/Sub)
+
+Stream Processing & Analytics (Flink, Spark, Storm)
+
+Event-Driven Architectures (serverless, microservices)
+
+Low-Latency Storage (Cassandra, DynamoDB, InfluxDB)
+
+AI with Streaming (anomaly detection, recommendations)
+
+Each card: Icon + 2-line description.
+
+4. Real-Time Data Architecture (Full-Width Diagram)
+
+Flow: Sources (IoT, Web, Mobile, ERP/CRM) → Streaming Platform (Kafka, Kinesis, Event Hub) → Processing (Flink, Spark, Lambda) → Storage (Cassandra, DynamoDB, InfluxDB) → Outputs (Dashboards, Alerts, ML Models, Apps).
+
+5. Industry Use Cases (Grid of Tiles)
+
+Tiles with Icons & Captions:
+
+Finance → Fraud detection & instant payments
+
+Retail → Real-time personalization, clickstream analytics
+
+Healthcare → Remote patient monitoring, emergency alerts
+
+Manufacturing → IoT-driven predictive maintenance
+
+Media → Audience engagement, ad targeting
+
+Smart Cities → Traffic monitoring, smart grids
+
+6. Technology Stack (Logo Wall)
+
+Logos: Apache Kafka, AWS Kinesis, Azure Event Hub, Google Pub/Sub, Apache Flink, Spark, Storm, Cassandra, InfluxDB, Grafana, Kibana.
+
+7. Why Choose RTNextGenAI (Feature Highlights)
+
+Horizontal feature blocks with icons:
+
+High-throughput streaming expertise
+
+Multi-cloud deployments (AWS, Azure, GCP)
+
+AI/ML integration for predictive intelligence
+
+Compliance-ready (HIPAA, GDPR, SOC2)
+
+24/7 monitoring & support
+
+8. Client Impact / Success Metrics (Carousel)
+
+Slide 1: Finance → Detected fraud within 2 seconds with real-time analytics.
+
+Slide 2: Retail → +20% conversions via real-time personalization.
+
+Slide 3: Manufacturing → Downtime reduced 40% with IoT predictive maintenance.
+
+9. Call-to-Action (Footer Section)
+
+Full-width background with glowing data stream graphics.
+
+Headline: “Ready to Unlock the Power of Real-Time Data?”
+
+Subtext: “Partner with RTNextGenAI to build secure, scalable, and intelligent streaming solutions.”
+
+CTA Buttons: [Schedule a Consultation] [Request a Demo]
