@@ -113,7 +113,7 @@ const capabilities = [
     icon: <Cpu className="h-8 w-8 text-white" />,
     title: "Machine Learning Solutions",
     description:
-      "Comprehensive ML implementations using supervised, unsupervised, and reinforcement learning approaches. We leverage platforms like AWS SageMaker, Azure ML, Google Vertex AI, and Databricks MLflow with robust MLOps pipelines including CI/CD, automated retraining, and performance monitoring.",
+      "Comprehensive ML implementations using supervised, unsupervised, and reinforcement learning approaches. Classification, anomaly detection, and automation solutions that leverage platforms like AWS SageMaker, Azure ML, Google Vertex AI, and Databricks MLflow with robust pipelines.",
     backgroundImage: "/assets/AI-ML.png",
   },
   {
@@ -127,7 +127,7 @@ const capabilities = [
     icon: <Zap className="h-8 w-8 text-white" />,
     title: "Generative AI Development",
     description:
-      "Cutting-edge Generative AI solutions including text generation for chatbots and content automation, code generation for development acceleration, image and video synthesis for marketing, and synthetic data generation for ML training using OpenAI GPT, Azure OpenAI, and Hugging Face platforms.",
+      "Cutting-edge Generative AI solutions including text generation, code generation, image and video synthesis, and simulations. We build AI copilots using OpenAI GPT, Azure OpenAI, and Hugging Face platforms to accelerate content creation and development workflows.",
     backgroundImage: "/assets/GenerativeAI.png",
   },
   {
@@ -136,6 +136,13 @@ const capabilities = [
     description:
       "Autonomous AI agents that reason, plan, and execute tasks across applications. We build multi-agent workflows for finance approvals, supply chain optimization, and automated IT monitoring using frameworks like LangChain, AutoGen, Semantic Kernel, and AWS Bedrock Agents.",
     backgroundImage: "/assets/AI-Robotic.png",
+  },
+  {
+    icon: <Cog className="h-8 w-8 text-white" />,
+    title: "MLOps & AIOps",
+    description:
+      "Enterprise-grade model lifecycle management, monitoring, and governance. We implement CI/CD for models, automated retraining, performance monitoring, and compliance frameworks to ensure your AI solutions remain accurate, reliable, and continuously improved at scale.",
+    backgroundImage: "/assets/AI-Integration.png",
   },
 ];
 
@@ -282,8 +289,32 @@ export default function AdvancedAnalyticsAIML() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
               >
-                RTNextGenAI enables enterprises to leverage advanced analytics, machine learning, generative AI, and agentic AI systems to transform data into intelligence, automate decisions, and create adaptive business ecosystems
+                AI solutions that don't just analyze but also create, adapt, and act for your enterprise.
               </motion.p>
+
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 mb-12"
+              >
+                <Button
+                  size="lg"
+                  className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-4 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                >
+                  <Brain className="mr-2 h-5 w-5" />
+                  Request a Demo
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
+                >
+                  <Users className="mr-2 h-5 w-5" />
+                  Talk to an AI Expert
+                </Button>
+              </motion.div>
 
               {/* Badge below description */}
               <div className="mb-32">
@@ -570,244 +601,47 @@ export default function AdvancedAnalyticsAIML() {
 
           {/* Capabilities Grid */}
           <div className="max-w-8xl mx-auto relative">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Top Row */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Predictive Analytics */}
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={capabilities[0].backgroundImage}
-                        alt={capabilities[0].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <BarChart3 className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          01
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {capabilities.map((capability, index) => {
+                const IconComponent = capability.icon.type;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group cursor-pointer h-full"
+                  >
+                    <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:scale-105">
+                      <div className="relative w-20 h-20 rounded-xl overflow-hidden mb-6">
+                        <img
+                          src={capability.backgroundImage}
+                          alt={capability.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          {capability.icon}
                         </div>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {capabilities[0].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {capabilities[0].description}
+                      
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          {String(index + 1).padStart(2, '0')}
+                        </div>
+                        <h4 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {capability.title}
+                        </h4>
+                      </div>
+                      
+                      <p className="text-gray-400 leading-relaxed">
+                        {capability.description}
                       </p>
                     </div>
-                  </div>
-                </motion.div>
-
-                {/* Machine Learning */}
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={capabilities[1].backgroundImage}
-                        alt={capabilities[1].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Cpu className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          02
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {capabilities[1].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {capabilities[1].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Second Row - Central Feature with Deep Learning */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Central Feature Image */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, type: "spring" }}
-                  className="relative group"
-                >
-                  <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
-                    <div className="relative w-full">
-                      <img
-                        src="/assets/AI-Capabilities.gif"
-                        alt="AI/ML Capabilities"
-                        className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "/assets/AI-ML.png";
-                        }}
-                      />
-                    </div>
-
-                    <div className="absolute top-8 right-8 flex flex-col gap-4">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                        <Brain className="h-8 w-8 text-white" />
-                      </div>
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                        AI
-                      </div>
-                    </div>
-
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="mb-4">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                          <span className="text-blue-200 text-sm font-medium">
-                            AI/ML Innovation Hub
-                          </span>
-                        </div>
-                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
-                          Advanced AI/ML Capabilities
-                        </h3>
-                        <p className="text-blue-100 leading-relaxed mb-6">
-                          Comprehensive AI/ML solutions that transform business operations.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Deep Learning */}
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={capabilities[2].backgroundImage}
-                        alt={capabilities[2].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Eye className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          03
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {capabilities[2].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {capabilities[2].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Third Row - Generative AI and Agentic AI */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Generative AI */}
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={capabilities[3].backgroundImage}
-                        alt={capabilities[3].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Zap className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          04
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {capabilities[3].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {capabilities[3].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Agentic AI */}
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="group cursor-pointer h-full"
-                >
-                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                      <img
-                        src={capabilities[4].backgroundImage}
-                        alt={capabilities[4].title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Bot className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          05
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        {capabilities[4].title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {capabilities[4].description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -1023,10 +857,10 @@ export default function AdvancedAnalyticsAIML() {
               className="text-4xl md:text-6xl font-bold mb-6"
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Ready to build AI that creates
+                Ready to Build AI That Predicts,
               </span>
               <br />
-              <span className="text-white">and acts autonomously?</span>
+              <span className="text-white">Creates, and Acts?</span>
             </motion.h2>
 
             <motion.p
