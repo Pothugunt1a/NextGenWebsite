@@ -35,6 +35,7 @@ import BIBigDataServices from "./pages/BIBigDataServices";
 import BusinessIntelligenceVisualization from "./pages/BusinessIntelligenceVisualization";
 import RealTimeDataStreaming from "./pages/RealTimeDataStreaming";
 import DataGovernanceMDM from "./pages/DataGovernanceMDM";
+import AdvancedAnalyticsAIML from "./pages/AdvancedAnalyticsAIML";
 
 function Router() {
   return (
@@ -70,6 +71,7 @@ function Router() {
         <Route path="/advanced-analytics-ai-ml" component={BIBigDataServices} />
         <Route path="/real-time-data-streaming" component={RealTimeDataStreaming} />
         <Route path="/data-governance-mdm" component={DataGovernanceMDM} />
+        <Route path="/advanced-analytics-ai-ml" component={AdvancedAnalyticsAIML} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
