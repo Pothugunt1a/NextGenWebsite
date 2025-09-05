@@ -42,7 +42,7 @@ export default function Footer() {
             <p className="text-slate-400 mb-6 text-lg leading-relaxed">
               Empowering businesses with cutting-edge AI solutions, data-driven insights, and innovative technology consulting services.
             </p>
-            
+
             {/* Contact Information */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start space-x-3">
@@ -52,7 +52,7 @@ export default function Footer() {
                   <p className="text-slate-400 text-sm">Bridgewater Dr, Argyle, TX 76226</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <div>
@@ -62,7 +62,7 @@ export default function Footer() {
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <div>
@@ -200,6 +200,25 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* BI & Big Data Services */}
+          <div>
+            <h4 className="text-xl font-semibold mb-6 text-white">BI & Big Data</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/advanced-analytics-ai-ml" className="text-slate-400 hover:text-primary transition-colors flex items-center group">
+                  Advanced Analytics & AI/ML
+                  <ExternalLink className="h-4 w-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/bi-big-data-services" className="text-slate-400 hover:text-primary transition-colors flex items-center group">
+                  BI & Big Data Services
+                  <ExternalLink className="h-4 w-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Section */}
@@ -221,7 +240,7 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-2 text-slate-400 text-sm">
               <span>Built with</span>
               <span className="text-primary">❤️</span>

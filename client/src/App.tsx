@@ -68,7 +68,7 @@ function Router() {
         <Route path="/data-engineering-etl" component={DataEngineeringETL} />
         <Route path="/data-warehousing-lakehouse" component={DataWarehousingLakes} />
         <Route path="/business-intelligence-visualization" component={BusinessIntelligenceVisualization} />
-        <Route path="/advanced-analytics-ai-ml" component={BIBigDataServices} />
+        <Route path="/bi-big-data-services" component={BIBigDataServices} />
         <Route path="/real-time-data-streaming" component={RealTimeDataStreaming} />
         <Route path="/data-governance-mdm" component={DataGovernanceMDM} />
         <Route path="/advanced-analytics-ai-ml" component={AdvancedAnalyticsAIML} />
