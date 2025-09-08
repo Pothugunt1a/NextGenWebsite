@@ -422,7 +422,7 @@ export default function Navbar({
                                                               }}
                                                             >
                                                               <div className="w-3 h-px bg-gradient-to-r from-slate-400/40 to-transparent group-hover/subitem:from-cyan-400/40"></div>
-                                                              <span className="text-slate-400 group-hover/subitem:text-slate-200 transition-colors duration-200 text-xs">
+                                                              <span className="text-slate-400 group-hover/subitem:text-slate-200 transition-colors duration-200 text-sm">
                                                                 {subItem.name}
                                                               </span>
                                                             </a>
