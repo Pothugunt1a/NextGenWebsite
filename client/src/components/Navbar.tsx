@@ -403,7 +403,7 @@ export default function Navbar({
                                                           }`}
                                                         />
                                                       </div>
-                                                      {/* Sub-category items - show only when active */}
+                                                      {/* Sub-category items - show when this specific submenu is active */}
                                                       {activeDesktopSubmenu === `${category.name}-${item.name}` && (
                                                         <div className="ml-6 space-y-1 animate-in slide-in-from-top-3 fade-in-20 duration-300">
                                                           {item.items.map((subItem, subIdx) => (
