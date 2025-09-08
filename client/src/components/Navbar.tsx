@@ -405,12 +405,12 @@ export default function Navbar({
                                                       </div>
                                                       {/* Sub-category items - show when this specific submenu is active */}
                                                       {activeDesktopSubmenu === `${category.name}-${item.name}` && (
-                                                        <div className="ml-6 space-y-1 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                                        <div className="ml-8 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300 mt-2">
                                                           {item.items.map((subItem, subIdx) => (
                                                             <a
                                                               key={subIdx}
                                                               href={subItem.href}
-                                                              className="group/subitem flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-700/30 hover:to-slate-600/30 border border-transparent hover:border-slate-600/30 hover:shadow-sm"
+                                                              className="group/subitem flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-700/40 hover:to-slate-600/40 border border-transparent hover:border-slate-500/40 hover:shadow-md"
                                                               onClick={(e) => {
                                                                 e.preventDefault();
                                                                 if (subItem.href.startsWith("/")) {
@@ -421,8 +421,8 @@ export default function Navbar({
                                                                 }
                                                               }}
                                                             >
-                                                              <div className="w-3 h-px bg-gradient-to-r from-slate-400/40 to-transparent group-hover/subitem:from-cyan-400/40"></div>
-                                                              <span className="text-slate-400 group-hover/subitem:text-slate-200 transition-colors duration-200 text-sm">
+                                                              <div className="w-4 h-px bg-gradient-to-r from-slate-400/50 to-transparent group-hover/subitem:from-cyan-400/60"></div>
+                                                              <span className="text-slate-300 group-hover/subitem:text-white transition-colors duration-200 text-sm font-medium">
                                                                 {subItem.name}
                                                               </span>
                                                             </a>
