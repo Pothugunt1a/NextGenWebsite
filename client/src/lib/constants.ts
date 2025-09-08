@@ -241,9 +241,9 @@ export const navLinks = [
             name: "Core Development", 
             href: "/web-development",
             items: [
-              { name: "Frontend Development (React, Angular, Vue, Next.js)", href: "/web-development" },
-              { name: "Backend Development (Node.js, Python/Django, Java/Spring, PHP/Laravel)", href: "/web-development" },
-              { name: "Full-Stack Development (end-to-end web apps, APIs, databases)", href: "/web-development" }
+              { name: "Frontend Development", href: "/web-development" },
+              { name: "Backend Development", href: "/web-development" },
+              { name: "Full-Stack Development", href: "/web-development" }
             ]
           },
           { 
