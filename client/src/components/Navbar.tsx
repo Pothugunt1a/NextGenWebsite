@@ -400,118 +400,86 @@ export default function Navbar({
                                       <ul className="space-y-2">
                                         {section.items.map((item, itemIndex) => (
                                           <li key={itemIndex}>
-                                            {item.hasSubmenu && section.submenuItems && section.submenuItems[item.name] ? (
-                                              <div
-                                                className="relative"
-                                                onMouseEnter={() => setActiveDesktopSubmenu(item.name)}
-                                                onMouseLeave={() => setActiveDesktopSubmenu(null)}
-                                              >
-                                                <button
-                                                  className="text-gray-300 hover:text-white transition-colors duration-200 text-sm block py-1 flex items-center"
-                                                  onClick={() => setActiveDesktopSubmenu(activeDesktopSubmenu === item.name ? null : item.name)}
-                                                >
-                                                  {item.name}
-                                                  <ChevronDown className="h-3 w-3 ml-1" />
-                                                </button>
-                                                {activeDesktopSubmenu === item.name && (
-                                                  <div className="absolute left-full top-0 ml-2 bg-gray-800 border border-gray-700 rounded-md shadow-lg min-w-[300px] z-50">
-                                                    <div className="p-4">
-                                                      {section.submenuItems[item.name].map((subItem, subIndex) => (
-                                                        <a
-                                                          key={subIndex}
-                                                          href={subItem.href}
-                                                          className="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-gray-700 rounded transition-colors duration-200"
-                                                          onClick={() => handleNavigationClick(subItem.href)}
-                                                        >
-                                                          {subItem.name}
-                                                        </a>
-                                                      ))}
-                                                    </div>
-                                                  </div>
-                                                )}
-                                              </div>
-                                            ) : (
-                                              <a
-                                                href={item.href}
-                                                className="text-gray-300 hover:text-white transition-colors duration-200 text-sm block py-1"
-                                                onClick={(e) => {
-                                                  if (
-                                                    item.name ===
-                                                    "Advanced Analytics & AI/ML"
-                                                  ) {
-                                                    e.preventDefault();
-                                                    setLocation("/advanced-analytics-ai-ml");
-                                                    window.scrollTo({
-                                                      top: 0,
-                                                      behavior: "smooth",
-                                                    });
-                                                  } else if (
-                                                    item.name ===
-                                                    "Real-Time Data & Streaming"
-                                                  ) {
-                                                    e.preventDefault();
-                                                    setLocation("/real-time-data-streaming");
-                                                    window.scrollTo({
-                                                      top: 0,
-                                                      behavior: "smooth",
-                                                    });
-                                                  } else if (
-                                                    item.name ===
-                                                    "Data Governance & MDM"
-                                                  ) {
-                                                    e.preventDefault();
-                                                    setLocation("/data-governance-mdm");
-                                                    window.scrollTo({
-                                                      top: 0,
-                                                      behavior: "smooth",
-                                                    });
-                                                  } else if (
-                                                    item.name ===
-                                                    "Business Intelligence & Visualization"
-                                                  ) {
-                                                    e.preventDefault();
-                                                    setLocation("/business-intelligence-visualization");
-                                                    window.scrollTo({
-                                                      top: 0,
-                                                      behavior: "smooth",
-                                                    });
-                                                  } else if (
-                                                    item.name ===
-                                                    "Data Warehousing & Lakehouse"
-                                                  ) {
-                                                    e.preventDefault();
-                                                    setLocation("/data-warehousing-lakehouse");
-                                                    window.scrollTo({
-                                                      top: 0,
-                                                      behavior: "smooth",
-                                                    });
-                                                  } else if (
-                                                    item.name ===
-                                                    "Data Engineering & ETL"
-                                                  ) {
-                                                    e.preventDefault();
-                                                    setLocation("/data-engineering-etl");
-                                                    window.scrollTo({
-                                                      top: 0,
-                                                      behavior: "smooth",
-                                                    });
-                                                  } else if (
-                                                    item.name ===
-                                                    "BI and Big Data"
-                                                  ) {
-                                                    e.preventDefault();
-                                                    setLocation("/bi-big-data-services");
-                                                    window.scrollTo({
-                                                      top: 0,
-                                                      behavior: "smooth",
-                                                    });
-                                                  }
-                                                  handleNavigationClick(item.href);
-                                                }}
-                                              >
-                                                {item.name}
-                                              </a>
-                                            )}
+                                            <a
+                                              href={item.href}
+                                              className="text-gray-300 hover:text-white transition-colors duration-200 text-sm block py-1"
+                                              onClick={(e) => {
+                                                if (
+                                                  item.name ===
+                                                  "Advanced Analytics & AI/ML"
+                                                ) {
+                                                  e.preventDefault();
+                                                  setLocation("/advanced-analytics-ai-ml");
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
+                                                } else if (
+                                                  item.name ===
+                                                  "Real-Time Data & Streaming"
+                                                ) {
+                                                  e.preventDefault();
+                                                  setLocation("/real-time-data-streaming");
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
+                                                } else if (
+                                                  item.name ===
+                                                  "Data Governance & MDM"
+                                                ) {
+                                                  e.preventDefault();
+                                                  setLocation("/data-governance-mdm");
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
+                                                } else if (
+                                                  item.name ===
+                                                  "Business Intelligence & Visualization"
+                                                ) {
+                                                  e.preventDefault();
+                                                  setLocation("/business-intelligence-visualization");
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
+                                                } else if (
+                                                  item.name ===
+                                                  "Data Warehousing & Lakehouse"
+                                                ) {
+                                                  e.preventDefault();
+                                                  setLocation("/data-warehousing-lakehouse");
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
+                                                } else if (
+                                                  item.name ===
+                                                  "Data Engineering & ETL"
+                                                ) {
+                                                  e.preventDefault();
+                                                  setLocation("/data-engineering-etl");
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
+                                                } else if (
+                                                  item.name ===
+                                                  "BI and Big Data"
+                                                ) {
+                                                  e.preventDefault();
+                                                  setLocation("/bi-big-data-services");
+                                                  window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                  });
+                                                }
+                                                handleNavigationClick(item.href);
+                                              }}
+                                            >
+                                              {item.name}
+                                            </a>
                                           </li>
                                         ))}
                                       </ul>
