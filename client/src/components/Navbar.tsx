@@ -375,40 +375,60 @@ export default function Navbar({
                                                   {/* Check if item has sub-items (nested structure) */}
                                                   {item.items && item.items.length > 0 ? (
                                                     <div className="space-y-1">
-                                                      {/* Sub-category header */}
-                                                      <div className="group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-800/50 hover:to-slate-700/50 border border-transparent hover:border-slate-600/40 hover:shadow-md">
-                                                        <div className="w-4 h-px bg-gradient-to-r from-slate-500/60 to-transparent group-hover/item:from-cyan-400/60"></div>
-                                                        <div className="flex items-center gap-2">
-                                                          {getCategoryIcon(item.name)}
-                                                          <span className="text-slate-200 group-hover/item:text-white transition-colors duration-200 font-semibold text-sm">
-                                                            {item.name}
-                                                          </span>
-                                                        </div>
-                                                      </div>
-                                                      {/* Sub-category items */}
-                                                      <div className="ml-6 space-y-1">
-                                                        {item.items.map((subItem, subIdx) => (
-                                                          <a
-                                                            key={subIdx}
-                                                            href={subItem.href}
-                                                            className="group/subitem flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-700/30 hover:to-slate-600/30 border border-transparent hover:border-slate-600/30 hover:shadow-sm"
-                                                            onClick={(e) => {
-                                                              e.preventDefault();
-                                                              if (subItem.href.startsWith("/")) {
-                                                                setLocation(subItem.href);
-                                                                handleLinkClick();
-                                                              } else {
-                                                                scrollToSection(e, subItem.href);
-                                                              }
-                                                            }}
-                                                          >
-                                                            <div className="w-3 h-px bg-gradient-to-r from-slate-400/40 to-transparent group-hover/subitem:from-cyan-400/40"></div>
-                                                            <span className="text-slate-400 group-hover/subitem:text-slate-200 transition-colors duration-200 text-xs">
-                                                              {subItem.name}
+                                                      {/* Sub-category header - clickable to toggle sub-items */}
+                                                      <div 
+                                                        className="group/item flex items-center justify-between p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-800/50 hover:to-slate-700/50 border border-transparent hover:border-slate-600/40 hover:shadow-md cursor-pointer"
+                                                        onClick={(e) => {
+                                                          e.preventDefault();
+                                                          e.stopPropagation();
+                                                          // Toggle the sub-items visibility for this specific item
+                                                          const submenuKey = `${category.name}-${item.name}`;
+                                                          setActiveDesktopSubmenu(
+                                                            activeDesktopSubmenu === submenuKey ? null : submenuKey
+                                                          );
+                                                        }}
+                                                      >
+                                                        <div className="flex items-center gap-3">
+                                                          <div className="w-4 h-px bg-gradient-to-r from-slate-500/60 to-transparent group-hover/item:from-cyan-400/60"></div>
+                                                          <div className="flex items-center gap-2">
+                                                            {getCategoryIcon(item.name)}
+                                                            <span className="text-slate-200 group-hover/item:text-white transition-colors duration-200 font-semibold text-sm">
+                                                              {item.name}
                                                             </span>
-                                                          </a>
-                                                        ))}
+                                                          </div>
+                                                        </div>
+                                                        <ChevronDown
+                                                          className={`h-3 w-3 text-slate-400 group-hover/item:text-cyan-400 transition-all duration-300 ${
+                                                            activeDesktopSubmenu === `${category.name}-${item.name}` ? "rotate-180" : ""
+                                                          }`}
+                                                        />
                                                       </div>
+                                                      {/* Sub-category items - show only when active */}
+                                                      {activeDesktopSubmenu === `${category.name}-${item.name}` && (
+                                                        <div className="ml-6 space-y-1 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                                          {item.items.map((subItem, subIdx) => (
+                                                            <a
+                                                              key={subIdx}
+                                                              href={subItem.href}
+                                                              className="group/subitem flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-700/30 hover:to-slate-600/30 border border-transparent hover:border-slate-600/30 hover:shadow-sm"
+                                                              onClick={(e) => {
+                                                                e.preventDefault();
+                                                                if (subItem.href.startsWith("/")) {
+                                                                  setLocation(subItem.href);
+                                                                  handleLinkClick();
+                                                                } else {
+                                                                  scrollToSection(e, subItem.href);
+                                                                }
+                                                              }}
+                                                            >
+                                                              <div className="w-3 h-px bg-gradient-to-r from-slate-400/40 to-transparent group-hover/subitem:from-cyan-400/40"></div>
+                                                              <span className="text-slate-400 group-hover/subitem:text-slate-200 transition-colors duration-200 text-xs">
+                                                                {subItem.name}
+                                                              </span>
+                                                            </a>
+                                                          ))}
+                                                        </div>
+                                                      )}
                                                     </div>
                                                   ) : (
                                                     /* Regular item without sub-items */
