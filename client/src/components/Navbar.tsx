@@ -391,62 +391,72 @@ export default function Navbar({
                                   })}
                                 </div>
                               ) : (
-                                <div className="grid grid-cols-1 gap-6 p-6">
-                                  {link.dropdownItems?.map((section, sectionIndex) => (
-                                    <div key={sectionIndex}>
-                                      <h3 className="font-semibold text-white mb-3 text-sm">
-                                        {section.name}
-                                      </h3>
-                                      <ul className="space-y-2">
-                                        {section.items.map((item, itemIndex) => (
-                                          <li key={itemIndex}>
-                                            <a
-                                              href={item.href}
-                                              className="text-gray-300 hover:text-white transition-colors duration-200 text-sm block py-1"
+                                <div className="space-y-3 w-full max-w-4xl">
+                                  {link.dropdownItems?.map((category, idx) => {
+                                    const getCategoryIcon = (name: string) => {
+                                      switch (name) {
+                                        case "AI Consulting":
+                                          return (
+                                            <Brain className="h-6 w-6 text-cyan-400" />
+                                          );
+                                        case "AI Software Development":
+                                          return (
+                                            <Code className="h-6 w-6 text-blue-400" />
+                                          );
+                                        case "Generative AI":
+                                          return (
+                                            <Sparkles className="h-6 w-6 text-purple-400" />
+                                          );
+                                        case "Events":
+                                          return (
+                                            <Calendar className="h-6 w-6 text-green-400" />
+                                          );
+                                        case "Videos":
+                                          return (
+                                            <Video className="h-6 w-6 text-red-400" />
+                                          );
+                                        case "Blog":
+                                          return (
+                                            <FileText className="h-6 w-6 text-blue-400" />
+                                          );
+                                        default:
+                                          return (
+                                            <Brain className="h-6 w-6 text-cyan-400" />
+                                          );
+                                      }
+                                    };
+
+                                    const isActive =
+                                      activeDesktopSubmenu === category.name;
+
+                                    return (
+                                      <div key={idx} className="group">
+                                        {/* Check if category has items or is directly clickable */}
+                                        {category.items &&
+                                        category.items.length > 0 ? (
+                                          <>
+                                            <div
+                                              className="relative cursor-pointer select-none"
                                               onClick={(e) => {
+                                                // For AI Consulting, navigate to page but keep dropdown open
                                                 if (
-                                                  item.name ===
-                                                  "Advanced Analytics & AI/ML"
+                                                  category.name ===
+                                                  "AI Consulting"
                                                 ) {
                                                   e.preventDefault();
-                                                  setLocation("/advanced-analytics-ai-ml");
+                                                  setLocation("/ai-consulting");
                                                   window.scrollTo({
                                                     top: 0,
                                                     behavior: "smooth",
                                                   });
+                                                  // Don't close dropdowns, just toggle submenu
+                                                  toggleDesktopSubmenu(
+                                                    category.name,
+                                                    e,
+                                                  );
                                                 } else if (
-                                                  item.name ===
-                                                  "Real-Time Data & Streaming"
-                                                ) {
-                                                  e.preventDefault();
-                                                  setLocation("/real-time-data-streaming");
-                                                  window.scrollTo({
-                                                    top: 0,
-                                                    behavior: "smooth",
-                                                  });
-                                                } else if (
-                                                  item.name ===
-                                                  "Data Governance & MDM"
-                                                ) {
-                                                  e.preventDefault();
-                                                  setLocation("/data-governance-mdm");
-                                                  window.scrollTo({
-                                                    top: 0,
-                                                    behavior: "smooth",
-                                                  });
-                                                } else if (
-                                                  item.name ===
-                                                  "Business Intelligence & Visualization"
-                                                ) {
-                                                  e.preventDefault();
-                                                  setLocation("/business-intelligence-visualization");
-                                                  window.scrollTo({
-                                                    top: 0,
-                                                    behavior: "smooth",
-                                                  });
-                                                } else if (
-                                                  item.name ===
-                                                  "Data Warehousing & Lakehouse"
+                                                  category.name ===
+                                                  "BI and Big Data"
                                                 ) {
                                                   e.preventDefault();
                                                   setLocation("/data-warehousing-lakehouse");
@@ -454,37 +464,112 @@ export default function Navbar({
                                                     top: 0,
                                                     behavior: "smooth",
                                                   });
-                                                } else if (
-                                                  item.name ===
-                                                  "Data Engineering & ETL"
-                                                ) {
-                                                  e.preventDefault();
-                                                  setLocation("/data-engineering-etl");
-                                                  window.scrollTo({
-                                                    top: 0,
-                                                    behavior: "smooth",
-                                                  });
-                                                } else if (
-                                                  item.name ===
-                                                  "BI and Big Data"
-                                                ) {
-                                                  e.preventDefault();
-                                                  setLocation("/bi-big-data-services");
-                                                  window.scrollTo({
-                                                    top: 0,
-                                                    behavior: "smooth",
-                                                  });
+                                                  // Don't close dropdowns, just toggle submenu
+                                                  toggleDesktopSubmenu(
+                                                    category.name,
+                                                    e,
+                                                  );
+                                                } else {
+                                                  toggleDesktopSubmenu(
+                                                    category.name,
+                                                    e,
+                                                  );
                                                 }
-                                                handleNavigationClick(item.href);
                                               }}
                                             >
-                                              {item.name}
-                                            </a>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  ))}
+                                              <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-slate-900/95 to-slate-800/90 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 backdrop-blur-md shadow-lg hover:shadow-xl hover:shadow-cyan-400/10 hover:bg-gradient-to-r hover:from-slate-800/95 hover:to-slate-700/90">
+                                                <div className="flex items-center gap-3">
+                                                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 shadow-sm">
+                                                    {getCategoryIcon(
+                                                      category.name,
+                                                    )}
+                                                  </div>
+                                                  <div>
+                                                    <h3 className="text-white font-semibold text-base group-hover:text-cyan-300 transition-colors whitespace-nowrap">
+                                                      {category.name}
+                                                    </h3>
+                                                  </div>
+                                                </div>
+                                                <ChevronDown
+                                                  className={`h-4 w-4 text-slate-400 group-hover:text-cyan-400 transition-all duration-300 ${
+                                                    isActive ? "rotate-180" : ""
+                                                  }`}
+                                                />
+                                              </div>
+                                            </div>
+
+                                            {isActive && (
+                                              <div className="mt-4 ml-4 space-y-1 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                                {category.items.map(
+                                                  (item, itemIdx) => (
+                                                    <a
+                                                      key={itemIdx}
+                                                      href={item.href}
+                                                      className="group/item flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-800/50 hover:to-slate-700/50 border border-transparent hover:border-slate-600/40 hover:shadow-md"
+                                                      onClick={(e) => {
+                                                        e.preventDefault();
+                                                        if (
+                                                          item.href.startsWith(
+                                                            "/",
+                                                          )
+                                                        ) {
+                                                          handleNavigationClick(
+                                                            item.href,
+                                                          );
+                                                        } else {
+                                                          scrollToSection(
+                                                            e,
+                                                            item.href,
+                                                          );
+                                                        }
+                                                      }}
+                                                    >
+                                                      <div className="w-4 h-px bg-gradient-to-r from-slate-500/60 to-transparent group-hover/item:from-cyan-400/60"></div>
+                                                      <span className="text-slate-300 group-hover/item:text-white transition-colors duration-200 font-medium text-sm">
+                                                        {item.name}
+                                                      </span>
+                                                    </a>
+                                                  ),
+                                                )}
+                                              </div>
+                                            )}
+                                          </>
+                                        ) : (
+                                          /* Direct clickable category without dropdown */
+                                          <a
+                                            href={category.href}
+                                            className="block cursor-pointer select-none"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              if (
+                                                category.href &&
+                                                category.href.startsWith("/")
+                                              ) {
+                                                handleNavigationClick(
+                                                  category.href,
+                                                );
+                                              }
+                                            }}
+                                          >
+                                            <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-slate-900/95 to-slate-800/90 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 backdrop-blur-md shadow-lg hover:shadow-xl hover:shadow-cyan-400/10 hover:bg-gradient-to-r hover:from-slate-800/95 hover:to-slate-700/90">
+                                              <div className="flex items-center gap-3">
+                                                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 shadow-sm">
+                                                  {getCategoryIcon(
+                                                    category.name,
+                                                  )}
+                                                </div>
+                                                <div>
+                                                  <h3 className="text-white font-semibold text-base group-hover:text-cyan-300 transition-colors whitespace-nowrap">
+                                                    {category.name}
+                                                  </h3>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </a>
+                                        )}
+                                      </div>
+                                    );
+                                  })}
                                 </div>
                               )}
                             </div>
@@ -565,35 +650,35 @@ export default function Navbar({
                       </button>
                       {activeMobileDropdown === link.id && (
                         <div className="ml-4 mt-2 space-y-2">
-                          {link.dropdownItems?.map((section, idx) => (
+                          {link.dropdownItems?.map((category, idx) => (
                             <div key={idx}>
-                              {section.items && section.items.length > 0 ? (
+                              {category.items && category.items.length > 0 ? (
                                 <>
                                   <button
                                     className="w-full text-left px-3 py-2 text-sm text-white hover:bg-gray-800 hover:text-cyan-400 rounded-lg transition-all duration-300 flex items-center justify-between"
                                     onClick={() => {
                                       // For AI Consulting, navigate to page first and keep menu open
-                                      if (section.name === "AI Consulting") {
+                                      if (category.name === "AI Consulting") {
                                         handleNavigationClick(
                                           "/ai-consulting",
                                           true,
                                         );
                                         // Toggle submenu to show the dropdown items
-                                        toggleMobileSubmenu(section.name);
+                                        toggleMobileSubmenu(category.name);
                                       } else {
                                         // For other categories, just toggle submenu
-                                        toggleMobileSubmenu(section.name);
+                                        toggleMobileSubmenu(category.name);
                                       }
                                     }}
                                   >
-                                    {section.name}
+                                    {category.name}
                                     <ChevronDown
-                                      className={`h-3 w-3 text-white transition-transform ${activeMobileSubmenu === section.name ? "rotate-180" : ""}`}
+                                      className={`h-3 w-3 text-white transition-transform ${activeMobileSubmenu === category.name ? "rotate-180" : ""}`}
                                     />
                                   </button>
-                                  {activeMobileSubmenu === section.name && (
+                                  {activeMobileSubmenu === category.name && (
                                     <div className="ml-4 mt-2 space-y-1">
-                                      {section.items.map((item, itemIdx) => (
+                                      {category.items.map((item, itemIdx) => (
                                         <a
                                           key={itemIdx}
                                           href={item.href}
@@ -615,18 +700,18 @@ export default function Navbar({
                                 </>
                               ) : (
                                 <a
-                                  href={section.href}
+                                  href={category.href}
                                   className="block px-3 py-2 text-sm text-white hover:bg-gray-800 hover:text-cyan-400 rounded-lg transition-all duration-300"
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    if (section.href?.startsWith("/")) {
-                                      handleNavigationClick(section.href);
+                                    if (category.href?.startsWith("/")) {
+                                      handleNavigationClick(category.href);
                                     } else {
-                                      scrollToSection(e, section.href || "");
+                                      scrollToSection(e, category.href || "");
                                     }
                                   }}
                                 >
-                                  {section.name}
+                                  {category.name}
                                 </a>
                               )}
                             </div>
