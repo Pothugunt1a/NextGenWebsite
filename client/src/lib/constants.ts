@@ -194,9 +194,11 @@ export const navLinks = [
       {
         name: "AI & Data Science",
         items: [
-          { name: "Data Analytics", href: "/data-analytics" },
-          { name: "Machine Learning", href: "#machine-learning" },
-          { name: "Predictive Modeling", href: "#predictive-modeling" },
+          { name: "Data Science", href: "#data-science" },
+          { name: "ML", href: "#ml" },
+          { name: "AI", href: "#ai" },
+          { name: "Gen AI", href: "#gen-ai" },
+          { name: "Agentic AI", href: "#agentic-ai" },
         ],
       },
       {
