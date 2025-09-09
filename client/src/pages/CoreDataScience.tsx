@@ -716,42 +716,307 @@ export default function CoreDataScience() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { name: "Python", category: "Languages", icon: "🐍" },
-                { name: "R", category: "Statistical Computing", icon: "📊" },
-                { name: "SQL", category: "Query Language", icon: "🗃️" },
-                { name: "Jupyter", category: "Interactive Development", icon: "📓" },
-                { name: "Pandas", category: "Data Manipulation", icon: "🐼" },
-                { name: "NumPy", category: "Numerical Computing", icon: "🔢" },
-                { name: "Scikit-learn", category: "Machine Learning", icon: "🤖" },
-                { name: "Tableau", category: "Visualization", icon: "📈" },
-                { name: "Power BI", category: "Business Intelligence", icon: "📊" },
-                { name: "Plotly", category: "Interactive Charts", icon: "📉" },
-                { name: "Apache Spark", category: "Big Data Processing", icon: "⚡" },
-                { name: "Databricks", category: "Analytics Platform", icon: "🧱" },
-                { name: "Snowflake", category: "Data Warehouse", icon: "❄️" },
-                { name: "AWS", category: "Cloud Platform", icon: "☁️" },
-                { name: "Azure", category: "Cloud Services", icon: "🌐" },
-                { name: "Airflow", category: "Workflow Orchestration", icon: "🌊" },
-              ].map((tech, index) => (
+            {/* Technology Categories */}
+            <div className="space-y-16">
+              {/* Data Collection & Integration */}
+              <div>
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="group cursor-pointer"
+                  transition={{ duration: 0.6 }}
+                  className="text-center mb-8"
                 >
-                  <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105 h-full">
-                    <div className="text-4xl mb-3">{tech.icon}</div>
-                    <h3 className="text-white font-bold text-lg mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {tech.name}
-                    </h3>
-                    <p className="text-gray-400 text-sm">{tech.category}</p>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-400/20 mb-4">
+                    <Database className="h-4 w-4 text-cyan-400" />
+                    <span className="text-cyan-300 text-sm font-medium">Data Collection & Integration</span>
                   </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Seamless Data Ingestion</h3>
+                  <p className="text-gray-400">From enterprise apps, IoT, APIs, and cloud platforms</p>
                 </motion.div>
-              ))}
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {[
+                    { name: "MySQL", category: "Databases", icon: "🗄️" },
+                    { name: "PostgreSQL", category: "Databases", icon: "🐘" },
+                    { name: "MongoDB", category: "NoSQL", icon: "🍃" },
+                    { name: "Snowflake", category: "Data Warehouse", icon: "❄️" },
+                    { name: "BigQuery", category: "Data Warehouse", icon: "🔍" },
+                    { name: "Redshift", category: "Data Warehouse", icon: "🚀" },
+                    { name: "Apache NiFi", category: "ETL/ELT", icon: "🌊" },
+                    { name: "Fivetran", category: "ETL/ELT", icon: "🔄" },
+                    { name: "AWS Glue", category: "Cloud Pipelines", icon: "🔗" },
+                    { name: "Azure Data Factory", category: "Cloud Pipelines", icon: "🏭" },
+                    { name: "Databricks", category: "Cloud Pipelines", icon: "🧱" },
+                    { name: "dbt", category: "Data Transformation", icon: "⚡" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-lg p-4 text-center hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105">
+                        <div className="text-2xl mb-2">{tech.icon}</div>
+                        <h4 className="text-white font-medium text-sm mb-1 group-hover:text-cyan-400 transition-colors">
+                          {tech.name}
+                        </h4>
+                        <p className="text-gray-500 text-xs">{tech.category}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Data Preparation & Wrangling */}
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center mb-8"
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full border border-emerald-400/20 mb-4">
+                    <Zap className="h-4 w-4 text-emerald-400" />
+                    <span className="text-emerald-300 text-sm font-medium">Data Preparation & Wrangling</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Clean & Enrich Data</h3>
+                  <p className="text-gray-400">Prepare data for accurate analysis and modeling</p>
+                </motion.div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {[
+                    { name: "Pandas", category: "Python Libraries", icon: "🐼" },
+                    { name: "NumPy", category: "Python Libraries", icon: "🔢" },
+                    { name: "Dask", category: "Python Libraries", icon: "⚡" },
+                    { name: "Polars", category: "Python Libraries", icon: "🐻‍❄️" },
+                    { name: "dplyr", category: "R Libraries", icon: "📊" },
+                    { name: "tidyr", category: "R Libraries", icon: "🧹" },
+                    { name: "OpenRefine", category: "Data Prep Tools", icon: "🛠️" },
+                    { name: "Alteryx", category: "Data Prep Tools", icon: "🔧" },
+                    { name: "Apache Airflow", category: "Workflow Automation", icon: "🌊" },
+                    { name: "Luigi", category: "Workflow Automation", icon: "🍄" },
+                    { name: "Prefect", category: "Workflow Automation", icon: "⚙️" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-lg p-4 text-center hover:border-emerald-500/50 transition-all duration-300 group-hover:scale-105">
+                        <div className="text-2xl mb-2">{tech.icon}</div>
+                        <h4 className="text-white font-medium text-sm mb-1 group-hover:text-emerald-400 transition-colors">
+                          {tech.name}
+                        </h4>
+                        <p className="text-gray-500 text-xs">{tech.category}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* EDA & Statistics */}
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center mb-8"
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full border border-purple-400/20 mb-4">
+                    <Search className="h-4 w-4 text-purple-400" />
+                    <span className="text-purple-300 text-sm font-medium">Exploratory Data Analysis & Statistics</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Uncover Hidden Insights</h3>
+                  <p className="text-gray-400">Discover trends and relationships before advanced modeling</p>
+                </motion.div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {[
+                    { name: "SciPy", category: "Python Libraries", icon: "🔬" },
+                    { name: "Statsmodels", category: "Python Libraries", icon: "📈" },
+                    { name: "Seaborn", category: "Python Visualization", icon: "🌊" },
+                    { name: "Matplotlib", category: "Python Visualization", icon: "📊" },
+                    { name: "R", category: "Statistical Suites", icon: "📊" },
+                    { name: "SAS", category: "Statistical Suites", icon: "📋" },
+                    { name: "SPSS", category: "Statistical Suites", icon: "📊" },
+                    { name: "JupyterLab", category: "Environments", icon: "📓" },
+                    { name: "RStudio", category: "Environments", icon: "🏢" },
+                    { name: "Zeppelin", category: "Environments", icon: "🎈" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-lg p-4 text-center hover:border-purple-500/50 transition-all duration-300 group-hover:scale-105">
+                        <div className="text-2xl mb-2">{tech.icon}</div>
+                        <h4 className="text-white font-medium text-sm mb-1 group-hover:text-purple-400 transition-colors">
+                          {tech.name}
+                        </h4>
+                        <p className="text-gray-500 text-xs">{tech.category}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Data Visualization & Storytelling */}
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center mb-8"
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full border border-orange-400/20 mb-4">
+                    <BarChart3 className="h-4 w-4 text-orange-400" />
+                    <span className="text-orange-300 text-sm font-medium">Data Visualization & Storytelling</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Intuitive Dashboards & Reports</h3>
+                  <p className="text-gray-400">Executive storytelling and interactive visualizations</p>
+                </motion.div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {[
+                    { name: "Tableau", category: "BI Dashboards", icon: "📈" },
+                    { name: "Power BI", category: "BI Dashboards", icon: "📊" },
+                    { name: "Qlik Sense", category: "BI Dashboards", icon: "🎯" },
+                    { name: "Looker", category: "BI Dashboards", icon: "👀" },
+                    { name: "Superset", category: "BI Dashboards", icon: "⚡" },
+                    { name: "Plotly", category: "Python/R Visualization", icon: "📉" },
+                    { name: "Altair", category: "Python/R Visualization", icon: "🎨" },
+                    { name: "Bokeh", category: "Python/R Visualization", icon: "🌸" },
+                    { name: "D3.js", category: "Advanced Visuals", icon: "🎭" },
+                    { name: "Kepler.gl", category: "Advanced Visuals", icon: "🗺️" },
+                    { name: "ArcGIS", category: "Advanced Visuals", icon: "🌍" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-lg p-4 text-center hover:border-orange-500/50 transition-all duration-300 group-hover:scale-105">
+                        <div className="text-2xl mb-2">{tech.icon}</div>
+                        <h4 className="text-white font-medium text-sm mb-1 group-hover:text-orange-400 transition-colors">
+                          {tech.name}
+                        </h4>
+                        <p className="text-gray-500 text-xs">{tech.category}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Data Governance & Quality */}
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center mb-8"
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 rounded-full border border-indigo-400/20 mb-4">
+                    <Shield className="h-4 w-4 text-indigo-400" />
+                    <span className="text-indigo-300 text-sm font-medium">Data Governance & Quality</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Enterprise-Grade Security</h3>
+                  <p className="text-gray-400">HIPAA, GDPR, SOC2 compliance with data trust</p>
+                </motion.div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {[
+                    { name: "Collibra", category: "Data Catalogs", icon: "📚" },
+                    { name: "Alation", category: "Data Catalogs", icon: "🗃️" },
+                    { name: "Unity Catalog", category: "Data Catalogs", icon: "🏛️" },
+                    { name: "Apache Atlas", category: "Data Catalogs", icon: "🗺️" },
+                    { name: "Great Expectations", category: "Data Quality", icon: "✅" },
+                    { name: "Monte Carlo", category: "Data Quality", icon: "🎲" },
+                    { name: "Lake Formation", category: "Compliance", icon: "🏞️" },
+                    { name: "Azure Purview", category: "Compliance", icon: "🔍" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-lg p-4 text-center hover:border-indigo-500/50 transition-all duration-300 group-hover:scale-105">
+                        <div className="text-2xl mb-2">{tech.icon}</div>
+                        <h4 className="text-white font-medium text-sm mb-1 group-hover:text-indigo-400 transition-colors">
+                          {tech.name}
+                        </h4>
+                        <p className="text-gray-500 text-xs">{tech.category}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Collaboration & Version Control */}
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center mb-8"
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 rounded-full border border-teal-400/20 mb-4">
+                    <Users className="h-4 w-4 text-teal-400" />
+                    <span className="text-teal-300 text-sm font-medium">Collaboration & Version Control</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Team-Based Workflows</h3>
+                  <p className="text-gray-400">Secure and governed Data Science collaboration</p>
+                </motion.div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {[
+                    { name: "GitHub", category: "Version Control", icon: "🐙" },
+                    { name: "GitLab", category: "Version Control", icon: "🦊" },
+                    { name: "Bitbucket", category: "Version Control", icon: "🪣" },
+                    { name: "JupyterHub", category: "Collaborative Notebooks", icon: "👥" },
+                    { name: "Google Colab", category: "Collaborative Notebooks", icon: "🤝" },
+                    { name: "Deepnote", category: "Collaborative Notebooks", icon: "📝" },
+                    { name: "Hex", category: "Collaborative Notebooks", icon: "⬡" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-lg p-4 text-center hover:border-teal-500/50 transition-all duration-300 group-hover:scale-105">
+                        <div className="text-2xl mb-2">{tech.icon}</div>
+                        <h4 className="text-white font-medium text-sm mb-1 group-hover:text-teal-400 transition-colors">
+                          {tech.name}
+                        </h4>
+                        <p className="text-gray-500 text-xs">{tech.category}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            }
             </div>
           </div>
         </div>
