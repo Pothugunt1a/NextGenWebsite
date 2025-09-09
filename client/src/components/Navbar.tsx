@@ -383,6 +383,7 @@ export default function Navbar({
                                                           e.stopPropagation();
                                                           // Toggle the sub-items visibility for this specific item
                                                           const submenuKey = `${category.name}-${item.name}`;
+                                                          console.log('Clicking on submenu:', submenuKey, 'Current active:', activeDesktopSubmenu);
                                                           setActiveDesktopSubmenu(
                                                             activeDesktopSubmenu === submenuKey ? null : submenuKey
                                                           );
@@ -404,7 +405,7 @@ export default function Navbar({
                                                         />
                                                       </div>
                                                       {/* Sub-category items - show when this specific submenu is active */}
-                                                      {activeDesktopSubmenu === `${category.name}-${item.name}` && (
+                                                      {activeDesktopSubmenu === `${category.name}-${item.name}` && item.items && item.items.length > 0 && (
                                                         <div className="ml-8 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300 mt-2">
                                                           {item.items.map((subItem, subIdx) => (
                                                             <a
