@@ -1,0 +1,119 @@
+Core Data Science – RTNextGenAI
+Hero Section
+
+Headline:
+Transform Raw Data into Business Intelligence
+
+Subheadline:
+At RTNextGenAI, we help enterprises harness the full power of their data. From collection and preparation to exploratory analysis, visualization, and storytelling, our Core Data Science solutions turn complexity into clarity — enabling smarter, faster, and more confident decision-making.
+
+CTA Buttons:
+[Talk to a Data Scientist] [Request a Demo]
+
+Why Core Data Science Matters
+
+Today’s businesses collect vast amounts of data — but most of it is underutilized. Without proper preparation, analysis, and visualization, data remains just noise.
+
+Our Core Data Science services ensure that your data is:
+
+Clean and reliable for accurate insights
+
+Explored with advanced statistics to reveal hidden trends
+
+Visualized in dashboards that empower decision-makers
+
+Translated into stories that drive strategy and action
+
+Our Core Data Science Services
+🔹 Data Collection & Preparation
+
+We gather and process data from databases, APIs, IoT devices, cloud apps, and web sources, ensuring accuracy and consistency.
+
+Data cleansing, deduplication, normalization
+
+Feature engineering for ML readiness
+
+ETL/ELT pipelines with Spark, Databricks, and Airflow
+
+Built-in quality checks and governance
+
+🔹 Exploratory Data Analysis (EDA) & Statistics
+
+Discover meaningful insights before advanced modeling.
+
+Descriptive and inferential statistics
+
+Correlation analysis, outlier detection, hypothesis testing
+
+Visual EDA with Python (Seaborn, Plotly, Matplotlib) and R
+
+Jupyter-based exploratory workflows
+
+🔹 Data Visualization & Storytelling
+
+We design intuitive dashboards and reports that bring data to life.
+
+Interactive dashboards with Power BI, Tableau, and Superset
+
+Executive scorecards and KPI monitoring
+
+Geospatial and time-series visualizations
+
+Data storytelling for boardrooms and frontline teams
+
+Industry Applications
+
+Our Core Data Science practice supports enterprises across industries:
+
+Healthcare → Patient data analytics, research dashboards
+
+Finance → Risk assessment, anomaly detection, compliance analytics
+
+Retail & eCommerce → Customer segmentation, product performance insights
+
+Manufacturing → Sensor data processing, defect tracking
+
+Media & Entertainment → Audience insights, engagement analytics
+
+Technology Expertise
+
+We leverage a modern data science stack to deliver results:
+
+Languages & Frameworks: Python (Pandas, NumPy, Scikit-learn), R, SQL
+
+Visualization Tools: Tableau, Power BI, Plotly, Dash, Superset
+
+Data Pipelines: Apache Spark, Databricks, Airflow, dbt
+
+Databases: PostgreSQL, MySQL, MongoDB, Snowflake, BigQuery
+
+Why Choose RTNextGenAI?
+
+✅ End-to-end expertise — from raw data to executive insights
+
+✅ Cloud-native solutions on AWS, Azure, and GCP
+
+✅ Certified data scientists with industry experience
+
+✅ Proven results across healthcare, finance, retail, and IoT
+
+✅ Focus on business impact, not just numbers
+
+Call-to-Action
+
+💡 Unlock the full potential of your data with RTNextGenAI.
+Whether you’re modernizing analytics or building AI-ready pipelines, our Core Data Science team delivers clarity, accuracy, and insights you can trust.
+
+[📞 Schedule a Consultation] [📊 Request a Demo Dashboard]
+
+🎨 Image Suggestions
+
+Hero: Flow of raw data transforming into a dashboard.
+
+Services: Icons for Collection, EDA, Visualization.
+
+Industries: Industry icons (health cross, dollar sign, shopping cart, factory gear, media play).
+
+Tech Stack: Logos (Python, R, Spark, Tableau, Power BI, Databricks).
+
+✅ This is ready-to-publish content for your Core Data Science webpage — professional tone, balanced technical + business messaging, SEO keywords, and CTA-driven.
