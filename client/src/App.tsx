@@ -36,6 +36,7 @@ import BusinessIntelligenceVisualization from "./pages/BusinessIntelligenceVisua
 import RealTimeDataStreaming from "./pages/RealTimeDataStreaming";
 import DataGovernanceMDM from "./pages/DataGovernanceMDM";
 import AdvancedAnalyticsAIML from "./pages/AdvancedAnalyticsAIML";
+import CoreDataScience from "./pages/CoreDataScience";
 
 function Router() {
   return (
@@ -72,6 +73,7 @@ function Router() {
         <Route path="/real-time-data-streaming" component={RealTimeDataStreaming} />
         <Route path="/data-governance-mdm" component={DataGovernanceMDM} />
         <Route path="/advanced-analytics-ai-ml" component={AdvancedAnalyticsAIML} />
+        <Route path="/core-data-science" component={CoreDataScience} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
