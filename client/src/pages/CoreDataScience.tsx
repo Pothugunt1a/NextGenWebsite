@@ -708,50 +708,319 @@ export default function CoreDataScience() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Technology Stack
+                Technology Stack – Data Science at RTNextGenAI
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Industry-leading tools and platforms we use for Core Data Science
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                At RTNextGenAI, we use a modern, enterprise-grade Data Science toolkit to ensure accuracy, scalability, and business impact. Our stack covers the entire data lifecycle — from ingestion and preparation to exploration, visualization, and governance.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { name: "Python", category: "Languages", icon: "🐍" },
-                { name: "R", category: "Statistical Computing", icon: "📊" },
-                { name: "SQL", category: "Query Language", icon: "🗃️" },
-                { name: "Jupyter", category: "Interactive Development", icon: "📓" },
-                { name: "Pandas", category: "Data Manipulation", icon: "🐼" },
-                { name: "NumPy", category: "Numerical Computing", icon: "🔢" },
-                { name: "Scikit-learn", category: "Machine Learning", icon: "🤖" },
-                { name: "Tableau", category: "Visualization", icon: "📈" },
-                { name: "Power BI", category: "Business Intelligence", icon: "📊" },
-                { name: "Plotly", category: "Interactive Charts", icon: "📉" },
-                { name: "Apache Spark", category: "Big Data Processing", icon: "⚡" },
-                { name: "Databricks", category: "Analytics Platform", icon: "🧱" },
-                { name: "Snowflake", category: "Data Warehouse", icon: "❄️" },
-                { name: "AWS", category: "Cloud Platform", icon: "☁️" },
-                { name: "Azure", category: "Cloud Services", icon: "🌐" },
-                { name: "Airflow", category: "Workflow Orchestration", icon: "🌊" },
-              ].map((tech, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105 h-full">
-                    <div className="text-4xl mb-3">{tech.icon}</div>
-                    <h3 className="text-white font-bold text-lg mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {tech.name}
-                    </h3>
-                    <p className="text-gray-400 text-sm">{tech.category}</p>
+            {/* Category Sections */}
+            <div className="space-y-16">
+              {/* Data Collection & Integration */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
+                    <Database className="h-8 w-8 text-white" />
                   </div>
-                </motion.div>
-              ))}
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">Data Collection & Integration</h3>
+                    <p className="text-gray-300 text-lg">Seamlessly ingest data from enterprise apps, IoT, APIs, and cloud platforms.</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {[
+                    { name: "MySQL", tooltip: "MySQL → Relational Database" },
+                    { name: "PostgreSQL", tooltip: "PostgreSQL → Advanced SQL Database" },
+                    { name: "MongoDB", tooltip: "MongoDB → NoSQL Document Database" },
+                    { name: "Snowflake", tooltip: "Snowflake → Cloud Data Warehouse" },
+                    { name: "BigQuery", tooltip: "BigQuery → Google Cloud Data Warehouse" },
+                    { name: "Amazon Redshift", tooltip: "Amazon Redshift → AWS Data Warehouse" },
+                    { name: "Apache NiFi", tooltip: "Apache NiFi → Data Flow Automation" },
+                    { name: "Talend", tooltip: "Talend → Data Integration Platform" },
+                    { name: "Fivetran", tooltip: "Fivetran → Automated Data Pipelines" },
+                    { name: "AWS Glue", tooltip: "AWS Glue → Serverless ETL Service" },
+                    { name: "Azure Data Factory", tooltip: "Azure Data Factory → Cloud ETL Service" },
+                    { name: "Databricks", tooltip: "Databricks → Unified Analytics Platform" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      className="group cursor-pointer relative"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105 h-full">
+                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {tech.name}
+                        </h4>
+                      </div>
+                      {/* Tooltip */}
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                        {tech.tooltip}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Data Preparation & Wrangling */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                    <Zap className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">Data Preparation & Wrangling</h3>
+                    <p className="text-gray-300 text-lg">Clean, enrich, and prepare data for accurate analysis.</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {[
+                    { name: "Pandas", tooltip: "Pandas → Python Data Manipulation" },
+                    { name: "NumPy", tooltip: "NumPy → Numerical Computing Library" },
+                    { name: "Dask", tooltip: "Dask → Parallel Computing in Python" },
+                    { name: "R", tooltip: "R → Statistical Computing Language" },
+                    { name: "dplyr", tooltip: "dplyr → R Data Manipulation" },
+                    { name: "OpenRefine", tooltip: "OpenRefine → Data Cleaning Tool" },
+                    { name: "Alteryx", tooltip: "Alteryx → Self-Service Analytics" },
+                    { name: "Apache Airflow", tooltip: "Apache Airflow → Workflow Orchestration" },
+                    { name: "Luigi", tooltip: "Luigi → Python Workflow Engine" },
+                    { name: "Prefect", tooltip: "Prefect → Modern Workflow Engine" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      className="group cursor-pointer relative"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-purple-500/50 transition-all duration-300 group-hover:scale-105 h-full">
+                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {tech.name}
+                        </h4>
+                      </div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                        {tech.tooltip}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Exploratory Data Analysis */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
+                    <Search className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">Exploratory Data Analysis & Statistics</h3>
+                    <p className="text-gray-300 text-lg">Uncover hidden trends and relationships before advanced modeling.</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {[
+                    { name: "SciPy", tooltip: "SciPy → Scientific Computing Library" },
+                    { name: "Statsmodels", tooltip: "Statsmodels → Statistical Modeling" },
+                    { name: "Seaborn", tooltip: "Seaborn → Statistical Visualization" },
+                    { name: "Matplotlib", tooltip: "Matplotlib → Python Plotting Library" },
+                    { name: "SAS", tooltip: "SAS → Statistical Analysis Software" },
+                    { name: "SPSS", tooltip: "SPSS → Statistical Package" },
+                    { name: "JupyterLab", tooltip: "JupyterLab → Interactive Development" },
+                    { name: "RStudio", tooltip: "RStudio → R Development Environment" },
+                    { name: "Apache Zeppelin", tooltip: "Apache Zeppelin → Web Notebook" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      className="group cursor-pointer relative"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-green-500/50 transition-all duration-300 group-hover:scale-105 h-full">
+                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-green-500 group-hover:to-emerald-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {tech.name}
+                        </h4>
+                      </div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                        {tech.tooltip}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Data Visualization & Storytelling */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+                    <BarChart3 className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">Data Visualization & Storytelling</h3>
+                    <p className="text-gray-300 text-lg">Deliver insights through intuitive dashboards and executive storytelling.</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {[
+                    { name: "Tableau", tooltip: "Tableau → Business Intelligence Platform" },
+                    { name: "Power BI", tooltip: "Power BI → Microsoft Analytics Service" },
+                    { name: "Qlik Sense", tooltip: "Qlik Sense → Associative Analytics" },
+                    { name: "Looker", tooltip: "Looker → Modern BI Platform" },
+                    { name: "Apache Superset", tooltip: "Apache Superset → Open Source BI" },
+                    { name: "Plotly", tooltip: "Plotly → Interactive Visualizations" },
+                    { name: "Altair", tooltip: "Altair → Statistical Visualization Grammar" },
+                    { name: "Bokeh", tooltip: "Bokeh → Interactive Visualization Library" },
+                    { name: "D3.js", tooltip: "D3.js → Data-Driven Documents" },
+                    { name: "Flourish", tooltip: "Flourish → Data Storytelling Platform" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      className="group cursor-pointer relative"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-orange-500/50 transition-all duration-300 group-hover:scale-105 h-full">
+                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-red-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {tech.name}
+                        </h4>
+                      </div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                        {tech.tooltip}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Data Governance & Quality */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">Data Governance & Quality</h3>
+                    <p className="text-gray-300 text-lg">Ensure trust, accuracy, and compliance with HIPAA, GDPR, SOC2.</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {[
+                    { name: "Collibra", tooltip: "Collibra → Data Intelligence Platform" },
+                    { name: "Alation", tooltip: "Alation → Data Catalog Platform" },
+                    { name: "Unity Catalog", tooltip: "Unity Catalog → Databricks Data Catalog" },
+                    { name: "Apache Atlas", tooltip: "Apache Atlas → Data Governance" },
+                    { name: "Great Expectations", tooltip: "Great Expectations → Data Quality Testing" },
+                    { name: "Monte Carlo", tooltip: "Monte Carlo → Data Observability" },
+                    { name: "AWS Lake Formation", tooltip: "AWS Lake Formation → Data Lake Security" },
+                    { name: "Azure Purview", tooltip: "Azure Purview → Data Governance Service" },
+                    { name: "Google Data Catalog", tooltip: "Google Data Catalog → Metadata Management" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      className="group cursor-pointer relative"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-indigo-500/50 transition-all duration-300 group-hover:scale-105 h-full">
+                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-indigo-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {tech.name}
+                        </h4>
+                      </div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                        {tech.tooltip}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Collaboration & Version Control */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center">
+                    <Users className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">Collaboration & Version Control</h3>
+                    <p className="text-gray-300 text-lg">Enable team-based, secure, and governed Data Science workflows.</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {[
+                    { name: "GitHub", tooltip: "GitHub → Version Control Platform" },
+                    { name: "GitLab", tooltip: "GitLab → DevOps Platform" },
+                    { name: "Bitbucket", tooltip: "Bitbucket → Git Repository Management" },
+                    { name: "JupyterHub", tooltip: "JupyterHub → Multi-User Jupyter Server" },
+                    { name: "Google Colab", tooltip: "Google Colab → Cloud Jupyter Notebooks" },
+                    { name: "Deepnote", tooltip: "Deepnote → Collaborative Data Science" },
+                    { name: "Hex", tooltip: "Hex → Collaborative Data Workspace" },
+                  ].map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      className="group cursor-pointer relative"
+                    >
+                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-teal-500/50 transition-all duration-300 group-hover:scale-105 h-full">
+                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-teal-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          {tech.name}
+                        </h4>
+                      </div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                        {tech.tooltip}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
