@@ -37,6 +37,7 @@ import RealTimeDataStreaming from "./pages/RealTimeDataStreaming";
 import DataGovernanceMDM from "./pages/DataGovernanceMDM";
 import AdvancedAnalyticsAIML from "./pages/AdvancedAnalyticsAIML";
 import CoreDataScience from "./pages/CoreDataScience";
+import MachineLearningServices from "./pages/MachineLearningServices";
 
 function Router() {
   return (
@@ -74,6 +75,7 @@ function Router() {
         <Route path="/data-governance-mdm" component={DataGovernanceMDM} />
         <Route path="/advanced-analytics-ai-ml" component={AdvancedAnalyticsAIML} />
         <Route path="/core-data-science" component={CoreDataScience} />
+        <Route path="/machine-learning-services" component={MachineLearningServices} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
