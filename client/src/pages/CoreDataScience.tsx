@@ -24,6 +24,11 @@ import {
   PieChart,
   LineChart,
   FileSpreadsheet,
+  Settings,
+  AlertTriangle,
+  TrendingDown,
+  Clock,
+  Filter,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
@@ -73,6 +78,14 @@ const whyChooseUsItems = [
       "Our data science foundation prepares your organization for advanced analytics and AI implementations. We build clean, well-structured datasets and pipelines that seamlessly integrate with machine learning and AI workflows.",
     badge: "Future-ready infrastructure",
   },
+  {
+    icon: Users,
+    secondaryIcon: Award,
+    title: "Industry Success Record",
+    description:
+      "Proven track record across healthcare, finance, retail, and IoT sectors. Our team combines technical expertise with deep industry knowledge to deliver solutions that address real business challenges and create measurable value.",
+    badge: "Cross-industry expertise",
+  },
 ];
 
 const faqs: FAQ[] = [
@@ -108,61 +121,80 @@ const services = [
     icon: <Database className="h-8 w-8 text-white" />,
     title: "Data Collection & Preparation",
     description:
-      "We gather and process data from databases, APIs, IoT devices, cloud apps, and web sources, ensuring accuracy and consistency. Our services include data cleansing, deduplication, normalization, feature engineering for ML readiness, and ETL/ELT pipelines with Spark, Databricks, and Airflow.",
+      "Reliable, analysis-ready datasets from multiple sources. We gather and process data from databases, APIs, IoT devices, cloud apps, and web sources, ensuring accuracy and consistency through advanced ETL/ELT pipelines.",
     backgroundImage: "/assets/AI&Data.png",
+    features: [
+      "Data cleansing & deduplication",
+      "ETL/ELT pipelines with Spark & Databricks",
+      "Feature engineering for ML readiness",
+      "Quality checks & governance"
+    ]
   },
   {
     icon: <Search className="h-8 w-8 text-white" />,
     title: "Exploratory Data Analysis (EDA) & Statistics",
     description:
-      "Discover meaningful insights before advanced modeling with descriptive and inferential statistics, correlation analysis, outlier detection, and hypothesis testing. We use visual EDA with Python (Seaborn, Plotly, Matplotlib) and R, along with Jupyter-based exploratory workflows.",
+      "Discover trends, outliers, and correlations. Uncover meaningful insights through descriptive statistics, hypothesis testing, and visual exploration before advanced modeling.",
     backgroundImage: "/assets/AI-ML.png",
+    features: [
+      "Statistical analysis & hypothesis testing",
+      "Correlation analysis & outlier detection",
+      "Visual EDA with Python & R",
+      "Jupyter-based workflows"
+    ]
   },
   {
     icon: <BarChart3 className="h-8 w-8 text-white" />,
     title: "Data Visualization & Storytelling",
     description:
-      "We design intuitive dashboards and reports that bring data to life. Our solutions include interactive dashboards with Power BI, Tableau, and Superset, executive scorecards and KPI monitoring, geospatial and time-series visualizations, and data storytelling for boardrooms and frontline teams.",
+      "Turn insights into intuitive dashboards and executive stories. Design compelling visualizations that make complex data accessible and actionable for all stakeholders.",
     backgroundImage: "/assets/AI-Vision.png",
+    features: [
+      "Interactive dashboards & scorecards",
+      "Executive-ready visualizations",
+      "Geospatial & time-series charts",
+      "Data storytelling for decision-makers"
+    ]
   },
 ];
 
-const industries = [
+// Data Science Lifecycle steps
+const lifecycleSteps = [
   {
-    name: "Healthcare",
-    description: "Patient data analytics, research dashboards, clinical trial analysis",
+    step: "01",
+    title: "Collect",
+    description: "Gather data from multiple sources",
+    icon: Database,
+    color: "from-blue-500 to-blue-600"
   },
   {
-    name: "Finance",
-    description: "Risk assessment, anomaly detection, compliance analytics, fraud prevention",
+    step: "02",
+    title: "Prepare",
+    description: "Clean and structure for analysis",
+    icon: Filter,
+    color: "from-purple-500 to-purple-600"
   },
   {
-    name: "Retail & eCommerce",
-    description: "Customer segmentation, product performance insights, inventory optimization",
+    step: "03",
+    title: "Explore (EDA)",
+    description: "Discover patterns and relationships",
+    icon: Search,
+    color: "from-green-500 to-green-600"
   },
   {
-    name: "Manufacturing",
-    description: "Sensor data processing, defect tracking, predictive maintenance analytics",
+    step: "04",
+    title: "Visualize",
+    description: "Create dashboards and charts",
+    icon: BarChart3,
+    color: "from-orange-500 to-orange-600"
   },
   {
-    name: "Media & Entertainment",
-    description: "Audience insights, engagement analytics, content performance tracking",
-  },
-  {
-    name: "Technology",
-    description: "User behavior analysis, system performance monitoring, product analytics",
-  },
-];
-
-const techStack = [
-  "Languages & Frameworks: Python (Pandas, NumPy, Scikit-learn), R, SQL",
-  "Visualization Tools: Tableau, Power BI, Plotly, Dash, Superset",
-  "Data Pipelines: Apache Spark, Databricks, Airflow, dbt",
-  "Databases: PostgreSQL, MySQL, MongoDB, Snowflake, BigQuery",
-  "Cloud Platforms: AWS, Azure, GCP",
-  "Analytics: Jupyter, Statistical Analysis, Data Mining",
-  "Quality Assurance: Data Validation, Governance, Testing",
-  "Integration: APIs, IoT Devices, Enterprise Systems",
+    step: "05",
+    title: "Share Insights",
+    description: "Deliver actionable business intelligence",
+    icon: TrendingUp,
+    color: "from-cyan-500 to-cyan-600"
+  }
 ];
 
 // Industry data for the interactive section
@@ -172,43 +204,73 @@ const industryData = [
     name: "Healthcare",
     image: "/assets/Healthcare.png",
     content:
-      "Healthcare organizations leverage our Core Data Science solutions for comprehensive patient data analytics, research dashboard development, and clinical trial analysis. We help medical institutions transform complex healthcare data into actionable insights that improve patient outcomes and operational efficiency.",
+      "Patient analytics, research dashboards, and clinical data insights. Transform complex healthcare data into actionable insights that improve patient outcomes and operational efficiency.",
+    impact: "Reduced research data prep time by 40%"
   },
   {
     id: "finance",
     name: "Finance",
     image: "/assets/Finance.png",
     content:
-      "Financial institutions utilize our data science expertise for risk assessment, anomaly detection, and compliance analytics. Our solutions help banks and financial services companies identify fraud patterns, assess credit risks, and maintain regulatory compliance through advanced data analysis.",
+      "Risk analysis, anomaly detection, and compliance monitoring. Advanced analytics help financial institutions identify patterns, assess risks, and maintain regulatory compliance.",
+    impact: "Faster compliance reporting with automated data prep"
   },
   {
     id: "retail",
     name: "Retail & eCommerce",
     image: "/assets/Ecommerce.png",
     content:
-      "Retail companies transform customer experiences with data-driven customer segmentation, product performance insights, and inventory optimization. Our data science solutions help retailers understand buying patterns, optimize pricing strategies, and improve supply chain efficiency.",
+      "Customer segmentation, product performance insights, and inventory optimization. Data-driven strategies that enhance customer experiences and drive revenue growth.",
+    impact: "Improved product insights leading to +15% revenue lift"
   },
   {
     id: "manufacturing",
     name: "Manufacturing",
     image: "/assets/Manufacturing.png",
     content:
-      "Manufacturing enterprises optimize operations with sensor data processing, defect tracking, and predictive maintenance analytics. Our solutions help manufacturers reduce downtime, improve quality control, and optimize production processes through data-driven insights.",
+      "IoT sensor data processing, defect tracking, and predictive maintenance. Transform manufacturing operations through data-driven insights and optimization.",
+    impact: "Reduced equipment downtime by 30%"
   },
   {
     id: "media",
     name: "Media & Entertainment",
     image: "/assets/Media.png",
     content:
-      "Media companies enhance content strategies with audience insights, engagement analytics, and content performance tracking. Our data science solutions help media organizations understand viewer preferences, optimize content distribution, and improve audience engagement.",
+      "Audience insights, engagement analytics, and content performance tracking. Understand viewer preferences and optimize content strategies through data analysis.",
+    impact: "Enhanced content engagement by 25%"
+  }
+];
+
+// Success metrics for carousel
+const successMetrics = [
+  {
+    industry: "Healthcare",
+    metric: "40%",
+    description: "Reduced research data preparation time",
+    icon: Activity,
+    color: "from-red-500 to-pink-500"
   },
   {
-    id: "technology",
-    name: "Technology",
-    image: "/assets/AI-Integration.png",
-    content:
-      "Technology companies leverage our data science expertise for user behavior analysis, system performance monitoring, and product analytics. We help tech organizations optimize user experiences, improve system performance, and make data-driven product decisions.",
+    industry: "Retail",
+    metric: "15%",
+    description: "Revenue lift through improved product insights",
+    icon: TrendingUp,
+    color: "from-green-500 to-emerald-500"
   },
+  {
+    industry: "Finance",
+    metric: "60%",
+    description: "Faster compliance reporting automation",
+    icon: Shield,
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    industry: "Manufacturing",
+    metric: "30%",
+    description: "Reduced equipment downtime",
+    icon: Settings,
+    color: "from-orange-500 to-red-500"
+  }
 ];
 
 export default function CoreDataScience() {
@@ -239,80 +301,112 @@ export default function CoreDataScience() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
 
         <div className="relative flex items-center h-full">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-5xl"
-            >
-              <motion.h1
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-                style={{ fontWeight: 700 }}
-              >
-                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Transform Raw Data into Business Intelligence
-                </span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
-              >
-                At RTNextGenAI, we help enterprises harness the full power of their data. From collection and preparation to exploratory analysis, visualization, and storytelling, our Core Data Science solutions turn complexity into clarity.
-              </motion.p>
-
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 mb-12"
-              >
-                <Button
-                  size="lg"
-                  className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-4 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-                >
-                  <Database className="mr-2 h-5 w-5" />
-                  Talk to a Data Scientist
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
-                >
-                  <BarChart3 className="mr-2 h-5 w-5" />
-                  Request a Demo
-                </Button>
-              </motion.div>
-
-              {/* Badge below description */}
-              <div className="mb-32">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* Left Side - Content */}
+              <div className="lg:col-span-7">
                 <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.6, type: "spring" }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8 }}
                 >
-                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
-                  <span className="text-white font-medium">
-                    Enterprise Data Science Solutions
-                  </span>
-                  <Award className="h-4 w-4 text-blue-400 fill-current" />
+                  <motion.h1
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
+                  >
+                    <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                      Transform Raw Data into Business Intelligence
+                    </span>
+                  </motion.h1>
+
+                  <motion.p
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed"
+                  >
+                    From collection and preparation to visualization and storytelling, RTNextGenAI helps enterprises unlock the full value of data.
+                  </motion.p>
+
+                  <motion.div
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.6, duration: 0.8 }}
+                    className="flex flex-col sm:flex-row gap-4"
+                  >
+                    <Button
+                      size="lg"
+                      className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-4 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                    >
+                      <Database className="mr-2 h-5 w-5" />
+                      Request a Demo
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
+                    >
+                      <BarChart3 className="mr-2 h-5 w-5" />
+                      Talk to a Data Scientist
+                    </Button>
+                  </motion.div>
                 </motion.div>
               </div>
-            </motion.div>
+
+              {/* Right Side - Flow Diagram Visual */}
+              <div className="lg:col-span-5">
+                <motion.div
+                  initial={{ x: 50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                  className="relative"
+                >
+                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <h3 className="text-2xl font-bold text-white mb-6 text-center">Data Flow</h3>
+                    <div className="space-y-4">
+                      {[
+                        { icon: Database, label: "Raw Data Streams", color: "from-blue-500 to-blue-600" },
+                        { icon: Filter, label: "Data Cleaning", color: "from-purple-500 to-purple-600" },
+                        { icon: BarChart3, label: "Dashboard Insights", color: "from-green-500 to-green-600" }
+                      ].map((step, index) => {
+                        const IconComponent = step.icon;
+                        return (
+                          <motion.div
+                            key={index}
+                            initial={{ x: 20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: 1 + index * 0.2, duration: 0.6 }}
+                            className="flex items-center gap-4"
+                          >
+                            <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center`}>
+                              <IconComponent className="h-6 w-6 text-white" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="text-white font-medium">{step.label}</div>
+                              {index < 2 && (
+                                <div className="w-full h-0.5 bg-gradient-to-r from-white/30 to-transparent mt-2"></div>
+                              )}
+                            </div>
+                            {index < 2 && (
+                              <ArrowRight className="h-5 w-5 text-white/60" />
+                            )}
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Why Core Data Science Matters */}
-      <section className="py-16 text-white relative overflow-hidden">
+      {/* Why Data Science Matters */}
+      <section className="py-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -331,7 +425,7 @@ export default function CoreDataScience() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-400/20 mb-6">
                 <Database className="h-4 w-4 text-cyan-400" />
                 <span className="text-cyan-300 text-sm font-medium">
-                  Why Core Data Science Matters
+                  Why Data Science Matters
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -341,293 +435,232 @@ export default function CoreDataScience() {
                 </span>
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                Today's businesses collect vast amounts of data — but most of it is underutilized. Without proper preparation, analysis, and visualization, data remains just noise.
-              </p>
             </motion.div>
 
-            {/* Data Quality Benefits */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {[
-                { title: "Clean & Reliable", desc: "Accurate insights from quality data", icon: Shield, color: "from-blue-500 to-blue-600" },
-                { title: "Advanced Analytics", desc: "Hidden trends revealed through statistics", icon: TrendingUp, color: "from-purple-500 to-purple-600" },
-                { title: "Visual Dashboards", desc: "Empower decision-makers with clarity", icon: BarChart3, color: "from-cyan-500 to-cyan-600" },
-                { title: "Strategic Stories", desc: "Data narratives that drive action", icon: FileSpreadsheet, color: "from-green-500 to-green-600" },
-              ].map((item, index) => {
-                const IconComponent = item.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6 text-center hover:border-blue-400/40 transition-all duration-300"
-                  >
-                    <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-r ${item.color} rounded-2xl flex items-center justify-center`}>
-                      <IconComponent className="h-8 w-8 text-white" />
+            {/* Two-Column Layout: Challenges vs Benefits */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+              {/* Left: Challenges */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <AlertTriangle className="h-8 w-8 text-red-400" />
+                  <h3 className="text-2xl font-bold text-white">Without Data Science</h3>
+                </div>
+                {[
+                  { title: "Unstructured Data", desc: "Raw data scattered across systems", icon: TrendingDown },
+                  { title: "Poor Insights", desc: "Limited visibility into trends and patterns", icon: Eye },
+                  { title: "Reactive Decisions", desc: "Making choices based on outdated information", icon: Clock },
+                ].map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <div key={index} className="flex items-start gap-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl">
+                      <IconComponent className="h-6 w-6 text-red-400 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">{item.title}</h4>
+                        <p className="text-gray-300">{item.desc}</p>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-gray-400 text-sm">{item.desc}</p>
-                  </motion.div>
-                );
-              })}
+                  );
+                })}
+              </motion.div>
+
+              {/* Right: Benefits */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <CheckCircle className="h-8 w-8 text-green-400" />
+                  <h3 className="text-2xl font-bold text-white">With Data Science</h3>
+                </div>
+                {[
+                  { title: "Clean Data", desc: "Structured, reliable datasets ready for analysis", icon: Shield },
+                  { title: "Hidden Patterns", desc: "Discover trends and correlations through advanced analytics", icon: Search },
+                  { title: "Real-time Dashboards", desc: "Intuitive visualizations for informed decision-making", icon: BarChart3 },
+                ].map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <div key={index} className="flex items-start gap-4 p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
+                      <IconComponent className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">{item.title}</h4>
+                        <p className="text-gray-300">{item.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </motion.div>
             </div>
+
+            {/* Infographic */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="inline-flex items-center gap-8 p-8 bg-gradient-to-r from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-cyan-400/20 rounded-2xl">
+                <div className="text-center">
+                  <TrendingDown className="h-12 w-12 text-red-400 mx-auto mb-3" />
+                  <div className="text-xl font-bold text-white">Unmanaged Data</div>
+                  <div className="text-red-400 font-medium">= Noise</div>
+                </div>
+                <ArrowRight className="h-8 w-8 text-cyan-400" />
+                <div className="text-center">
+                  <TrendingUp className="h-12 w-12 text-green-400 mx-auto mb-3" />
+                  <div className="text-xl font-bold text-white">Governed Data</div>
+                  <div className="text-green-400 font-medium">= Insights</div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Core Data Science Services */}
+      <section className="py-20 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-20"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-400/20 mb-6">
-                <Award className="h-4 w-4 text-cyan-400" />
-                <span className="text-cyan-300 text-sm font-medium">
-                  Why Choose RTNextGenAI
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Why choose{" "}
-                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                  RTNextGenAI
-                </span>{" "}
-                for Core Data Science
+              <h2 className="text-5xl font-bold mb-6 text-white">
+                Our Core Data Science Services
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Partner with certified data scientists who deliver end-to-end solutions focused on business impact
+                Comprehensive data science solutions from collection to insights
               </p>
             </motion.div>
 
-            {/* Carousel */}
-            <div className="relative max-w-6xl mx-auto">
-              <Carousel
-                className="w-full"
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                plugins={[
-                  Autoplay({
-                    delay: 5000,
-                    stopOnInteraction: true,
-                    stopOnMouseEnter: true,
-                  }),
-                ]}
-              >
-                <CarouselContent className="-ml-2 md:-ml-4">
-                  <CarouselItem className="pl-2 md:pl-4">
-                    <div className="p-6">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {whyChooseUsItems.slice(0, 2).map((item, index) => {
-                          const IconComponent = item.icon;
-                          const SecondaryIconComponent = item.secondaryIcon;
-
-                          return (
-                            <motion.div
-                              key={index}
-                              initial={{ opacity: 0, y: 30 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.6, delay: index * 0.1 }}
-                              whileHover={{ y: -10, scale: 1.05 }}
-                              viewport={{ once: true }}
-                              className="group"
-                            >
-                              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
-
-                                <div className="flex items-start gap-6 mb-6">
-                                  <div className="relative">
-                                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                                      <IconComponent className="h-10 w-10 text-white" />
-                                    </div>
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                                      <SecondaryIconComponent className="h-4 w-4 text-white" />
-                                    </div>
-                                  </div>
-
-                                  <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                      {item.title}
-                                    </h3>
-                                    <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                                  </div>
-                                </div>
-
-                                <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                                  {item.description}
-                                </p>
-
-                                <div className="flex items-center gap-2 text-cyan-400">
-                                  <CheckCircle className="h-4 w-4" />
-                                  <span className="text-sm font-medium">
-                                    {item.badge}
-                                  </span>
-                                </div>
-                              </div>
-                            </motion.div>
-                          );
-                        })}
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:scale-105">
+                    <div className="relative w-20 h-20 rounded-xl overflow-hidden mb-6">
+                      <img
+                        src={service.backgroundImage}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        {service.icon}
                       </div>
                     </div>
-                  </CarouselItem>
-
-                  <CarouselItem className="pl-2 md:pl-4">
-                    <div className="p-6">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {whyChooseUsItems.slice(2, 4).map((item, index) => {
-                          const IconComponent = item.icon;
-                          const SecondaryIconComponent = item.secondaryIcon;
-
-                          return (
-                            <motion.div
-                              key={index + 2}
-                              initial={{ opacity: 0, y: 30 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.6, delay: index * 0.1 }}
-                              whileHover={{ y: -10, scale: 1.05 }}
-                              viewport={{ once: true }}
-                              className="group"
-                            >
-                              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
-
-                                <div className="flex items-start gap-6 mb-6">
-                                  <div className="relative">
-                                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
-                                      <IconComponent className="h-10 w-10 text-white" />
-                                    </div>
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                                      <SecondaryIconComponent className="h-4 w-4 text-white" />
-                                    </div>
-                                  </div>
-
-                                  <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                                      {item.title}
-                                    </h3>
-                                    <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                                  </div>
-                                </div>
-
-                                <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                                  {item.description}
-                                </p>
-
-                                <div className="flex items-center gap-2 text-cyan-400">
-                                  <CheckCircle className="h-4 w-4" />
-                                  <span className="text-sm font-medium">
-                                    {item.badge}
-                                  </span>
-                                </div>
-                              </div>
-                            </motion.div>
-                          );
-                        })}
+                    
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        {String(index + 1).padStart(2, '0')}
                       </div>
+                      <h4 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {service.title}
+                      </h4>
                     </div>
-                  </CarouselItem>
-                </CarouselContent>
+                    
+                    <p className="text-gray-400 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
 
-                <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
-                <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
-              </Carousel>
+                    <div className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                          <span className="text-sm text-gray-300">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Data Science Services Section */}
-      <div
-        id="services-section"
-        className="py-20 bg-light relative overflow-hidden"
-      >
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
-          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
-          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
-          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
-        </div>
+      {/* Data Science Lifecycle */}
+      <section className="py-20 text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Data Science Lifecycle
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                RTNextGenAI follows a structured lifecycle ensuring accuracy, trust, and value
+              </p>
+            </motion.div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-5xl font-bold mb-6 text-white">
-              Our Core Data Science Services
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive data science solutions from collection to insights
-            </p>
-          </motion.div>
-
-          {/* Services Grid */}
-          <div className="max-w-8xl mx-auto relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => {
-                const IconComponent = service.icon.type;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group cursor-pointer h-full"
-                  >
-                    <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:scale-105">
-                      <div className="relative w-20 h-20 rounded-xl overflow-hidden mb-6">
-                        <img
-                          src={service.backgroundImage}
-                          alt={service.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          {service.icon}
-                        </div>
+            {/* Process Diagram */}
+            <div className="relative">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                {lifecycleSteps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className="relative flex flex-col items-center text-center max-w-xs"
+                    >
+                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center mb-4 shadow-lg`}>
+                        <IconComponent className="h-10 w-10 text-white" />
                       </div>
-                      
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          {String(index + 1).padStart(2, '0')}
-                        </div>
-                        <h4 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {service.title}
-                        </h4>
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        {step.step}
                       </div>
+                      <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                      <p className="text-gray-400">{step.description}</p>
                       
-                      <p className="text-gray-400 leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
+                      {/* Connection Arrow */}
+                      {index < lifecycleSteps.length - 1 && (
+                        <div className="hidden lg:block absolute top-10 left-full w-16">
+                          <ArrowRight className="h-6 w-6 text-cyan-400 mx-auto" />
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Industries Section */}
-      <section className="py-16 text-white">
+      {/* Industry Applications */}
+      <section className="py-20 bg-light text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-6">
-                Industry Applications of Core Data Science
+                Industry Applications
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             </div>
@@ -685,9 +718,13 @@ export default function CoreDataScience() {
                   </div>
 
                   <div className="p-6">
-                    <p className="text-gray-300 leading-relaxed text-lg">
+                    <p className="text-gray-300 leading-relaxed text-lg mb-4">
                       {selectedIndustry.content}
                     </p>
+                    <div className="flex items-center gap-2 text-green-400">
+                      <TrendingUp className="h-5 w-5" />
+                      <span className="font-medium">{selectedIndustry.impact}</span>
+                    </div>
                   </div>
                 </motion.div>
               </div>
@@ -697,7 +734,7 @@ export default function CoreDataScience() {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-20 bg-light relative overflow-hidden">
+      <section className="py-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -708,326 +745,241 @@ export default function CoreDataScience() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Technology Stack – Data Science at RTNextGenAI
+                Technology Stack
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                At RTNextGenAI, we use a modern, enterprise-grade Data Science toolkit to ensure accuracy, scalability, and business impact. Our stack covers the entire data lifecycle — from ingestion and preparation to exploration, visualization, and governance.
+                Category-based toolkit covering the entire data science lifecycle
               </p>
             </motion.div>
 
             {/* Category Sections */}
-            <div className="space-y-16">
-              {/* Data Collection & Integration */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
-                    <Database className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-bold text-white mb-2">Data Collection & Integration</h3>
-                    <p className="text-gray-300 text-lg">Seamlessly ingest data from enterprise apps, IoT, APIs, and cloud platforms.</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {[
-                    { name: "MySQL", tooltip: "MySQL → Relational Database" },
-                    { name: "PostgreSQL", tooltip: "PostgreSQL → Advanced SQL Database" },
-                    { name: "MongoDB", tooltip: "MongoDB → NoSQL Document Database" },
-                    { name: "Snowflake", tooltip: "Snowflake → Cloud Data Warehouse" },
-                    { name: "BigQuery", tooltip: "BigQuery → Google Cloud Data Warehouse" },
-                    { name: "Amazon Redshift", tooltip: "Amazon Redshift → AWS Data Warehouse" },
-                    { name: "Apache NiFi", tooltip: "Apache NiFi → Data Flow Automation" },
-                    { name: "Talend", tooltip: "Talend → Data Integration Platform" },
-                    { name: "Fivetran", tooltip: "Fivetran → Automated Data Pipelines" },
-                    { name: "AWS Glue", tooltip: "AWS Glue → Serverless ETL Service" },
-                    { name: "Azure Data Factory", tooltip: "Azure Data Factory → Cloud ETL Service" },
-                    { name: "Databricks", tooltip: "Databricks → Unified Analytics Platform" },
-                  ].map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
-                      className="group cursor-pointer relative"
-                    >
-                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105 h-full">
-                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {tech.name}
-                        </h4>
+            <div className="space-y-12">
+              {[
+                {
+                  title: "Data Collection & Integration",
+                  icon: Database,
+                  color: "from-blue-500 to-cyan-500",
+                  tools: ["MySQL", "PostgreSQL", "Snowflake", "BigQuery", "dbt", "Airflow", "Apache NiFi", "Fivetran"]
+                },
+                {
+                  title: "Data Preparation & Wrangling",
+                  icon: Filter,
+                  color: "from-purple-500 to-pink-500",
+                  tools: ["Pandas", "NumPy", "R (dplyr, tidyr)", "Alteryx", "OpenRefine", "Dask", "Apache Spark"]
+                },
+                {
+                  title: "EDA & Statistics",
+                  icon: Search,
+                  color: "from-green-500 to-emerald-500",
+                  tools: ["RStudio", "Jupyter", "SciPy", "Statsmodels", "Seaborn", "Matplotlib", "Apache Zeppelin"]
+                },
+                {
+                  title: "Visualization & Storytelling",
+                  icon: BarChart3,
+                  color: "from-orange-500 to-red-500",
+                  tools: ["Tableau", "Power BI", "Looker", "Plotly", "Superset", "D3.js", "Bokeh", "Flourish"]
+                },
+                {
+                  title: "Data Governance & Quality",
+                  icon: Shield,
+                  color: "from-indigo-500 to-purple-500",
+                  tools: ["Collibra", "Alation", "Informatica", "Great Expectations", "Monte Carlo", "Unity Catalog"]
+                },
+                {
+                  title: "Collaboration",
+                  icon: Users,
+                  color: "from-teal-500 to-cyan-500",
+                  tools: ["GitHub", "JupyterHub", "Google Colab", "Hex", "GitLab", "Deepnote"]
+                }
+              ].map((category, categoryIndex) => {
+                const IconComponent = category.icon;
+                return (
+                  <motion.div
+                    key={categoryIndex}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+                    className="relative"
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center`}>
+                        <IconComponent className="h-8 w-8 text-white" />
                       </div>
-                      {/* Tooltip */}
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                        {tech.tooltip}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                      <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                      {category.tools.map((tool, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, delay: index * 0.05 }}
+                          className="group cursor-pointer"
+                        >
+                          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105 h-full">
+                            <h4 className={`text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:${category.color} group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300`}>
+                              {tool}
+                            </h4>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Data Preparation & Wrangling */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
-                    <Zap className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-bold text-white mb-2">Data Preparation & Wrangling</h3>
-                    <p className="text-gray-300 text-lg">Clean, enrich, and prepare data for accurate analysis.</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {[
-                    { name: "Pandas", tooltip: "Pandas → Python Data Manipulation" },
-                    { name: "NumPy", tooltip: "NumPy → Numerical Computing Library" },
-                    { name: "Dask", tooltip: "Dask → Parallel Computing in Python" },
-                    { name: "R", tooltip: "R → Statistical Computing Language" },
-                    { name: "dplyr", tooltip: "dplyr → R Data Manipulation" },
-                    { name: "OpenRefine", tooltip: "OpenRefine → Data Cleaning Tool" },
-                    { name: "Alteryx", tooltip: "Alteryx → Self-Service Analytics" },
-                    { name: "Apache Airflow", tooltip: "Apache Airflow → Workflow Orchestration" },
-                    { name: "Luigi", tooltip: "Luigi → Python Workflow Engine" },
-                    { name: "Prefect", tooltip: "Prefect → Modern Workflow Engine" },
-                  ].map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
-                      className="group cursor-pointer relative"
-                    >
-                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-purple-500/50 transition-all duration-300 group-hover:scale-105 h-full">
-                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {tech.name}
-                        </h4>
-                      </div>
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                        {tech.tooltip}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+      {/* Why Choose RTNextGenAI */}
+      <section className="py-20 bg-light text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                Why Choose{" "}
+                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                  RTNextGenAI
+                </span>
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Partner with certified data scientists who deliver end-to-end solutions focused on business impact
+              </p>
+            </motion.div>
 
-              {/* Exploratory Data Analysis */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
-                    <Search className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-bold text-white mb-2">Exploratory Data Analysis & Statistics</h3>
-                    <p className="text-gray-300 text-lg">Uncover hidden trends and relationships before advanced modeling.</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {[
-                    { name: "SciPy", tooltip: "SciPy → Scientific Computing Library" },
-                    { name: "Statsmodels", tooltip: "Statsmodels → Statistical Modeling" },
-                    { name: "Seaborn", tooltip: "Seaborn → Statistical Visualization" },
-                    { name: "Matplotlib", tooltip: "Matplotlib → Python Plotting Library" },
-                    { name: "SAS", tooltip: "SAS → Statistical Analysis Software" },
-                    { name: "SPSS", tooltip: "SPSS → Statistical Package" },
-                    { name: "JupyterLab", tooltip: "JupyterLab → Interactive Development" },
-                    { name: "RStudio", tooltip: "RStudio → R Development Environment" },
-                    { name: "Apache Zeppelin", tooltip: "Apache Zeppelin → Web Notebook" },
-                  ].map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
-                      className="group cursor-pointer relative"
-                    >
-                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-green-500/50 transition-all duration-300 group-hover:scale-105 h-full">
-                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-green-500 group-hover:to-emerald-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {tech.name}
-                        </h4>
-                      </div>
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                        {tech.tooltip}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+            {/* Horizontal Feature Blocks */}
+            <div className="space-y-8">
+              {whyChooseUsItems.map((item, index) => {
+                const IconComponent = item.icon;
+                const SecondaryIconComponent = item.secondaryIcon;
 
-              {/* Data Visualization & Storytelling */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
-                    <BarChart3 className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-bold text-white mb-2">Data Visualization & Storytelling</h3>
-                    <p className="text-gray-300 text-lg">Deliver insights through intuitive dashboards and executive storytelling.</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {[
-                    { name: "Tableau", tooltip: "Tableau → Business Intelligence Platform" },
-                    { name: "Power BI", tooltip: "Power BI → Microsoft Analytics Service" },
-                    { name: "Qlik Sense", tooltip: "Qlik Sense → Associative Analytics" },
-                    { name: "Looker", tooltip: "Looker → Modern BI Platform" },
-                    { name: "Apache Superset", tooltip: "Apache Superset → Open Source BI" },
-                    { name: "Plotly", tooltip: "Plotly → Interactive Visualizations" },
-                    { name: "Altair", tooltip: "Altair → Statistical Visualization Grammar" },
-                    { name: "Bokeh", tooltip: "Bokeh → Interactive Visualization Library" },
-                    { name: "D3.js", tooltip: "D3.js → Data-Driven Documents" },
-                    { name: "Flourish", tooltip: "Flourish → Data Storytelling Platform" },
-                  ].map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
-                      className="group cursor-pointer relative"
-                    >
-                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-orange-500/50 transition-all duration-300 group-hover:scale-105 h-full">
-                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-red-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {tech.name}
-                        </h4>
-                      </div>
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                        {tech.tooltip}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.02 }}
+                    viewport={{ once: true }}
+                    className="group"
+                  >
+                    <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
+                      <div className="flex items-start gap-6">
+                        <div className="relative flex-shrink-0">
+                          <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors">
+                            <IconComponent className="h-10 w-10 text-white" />
+                          </div>
+                          <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                            <SecondaryIconComponent className="h-4 w-4 text-white" />
+                          </div>
+                        </div>
 
-              {/* Data Governance & Quality */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center">
-                    <Shield className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-bold text-white mb-2">Data Governance & Quality</h3>
-                    <p className="text-gray-300 text-lg">Ensure trust, accuracy, and compliance with HIPAA, GDPR, SOC2.</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {[
-                    { name: "Collibra", tooltip: "Collibra → Data Intelligence Platform" },
-                    { name: "Alation", tooltip: "Alation → Data Catalog Platform" },
-                    { name: "Unity Catalog", tooltip: "Unity Catalog → Databricks Data Catalog" },
-                    { name: "Apache Atlas", tooltip: "Apache Atlas → Data Governance" },
-                    { name: "Great Expectations", tooltip: "Great Expectations → Data Quality Testing" },
-                    { name: "Monte Carlo", tooltip: "Monte Carlo → Data Observability" },
-                    { name: "AWS Lake Formation", tooltip: "AWS Lake Formation → Data Lake Security" },
-                    { name: "Azure Purview", tooltip: "Azure Purview → Data Governance Service" },
-                    { name: "Google Data Catalog", tooltip: "Google Data Catalog → Metadata Management" },
-                  ].map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
-                      className="group cursor-pointer relative"
-                    >
-                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-indigo-500/50 transition-all duration-300 group-hover:scale-105 h-full">
-                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-indigo-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {tech.name}
-                        </h4>
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            {item.title}
+                          </h3>
+                          <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
+                          <p className="text-gray-300 leading-relaxed text-lg mb-4">
+                            {item.description}
+                          </p>
+                          <div className="flex items-center gap-2 text-cyan-400">
+                            <CheckCircle className="h-4 w-4" />
+                            <span className="text-sm font-medium">
+                              {item.badge}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                        {tech.tooltip}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Collaboration & Version Control */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative"
+      {/* Client Impact / Success Metrics */}
+      <section className="py-20 text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Client Impact & Success Metrics
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Measurable results across industries through data science excellence
+              </p>
+            </motion.div>
+
+            {/* Success Metrics Carousel */}
+            <div className="relative max-w-4xl mx-auto">
+              <Carousel
+                className="w-full"
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 4000,
+                    stopOnInteraction: true,
+                    stopOnMouseEnter: true,
+                  }),
+                ]}
               >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center">
-                    <Users className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-bold text-white mb-2">Collaboration & Version Control</h3>
-                    <p className="text-gray-300 text-lg">Enable team-based, secure, and governed Data Science workflows.</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {[
-                    { name: "GitHub", tooltip: "GitHub → Version Control Platform" },
-                    { name: "GitLab", tooltip: "GitLab → DevOps Platform" },
-                    { name: "Bitbucket", tooltip: "Bitbucket → Git Repository Management" },
-                    { name: "JupyterHub", tooltip: "JupyterHub → Multi-User Jupyter Server" },
-                    { name: "Google Colab", tooltip: "Google Colab → Cloud Jupyter Notebooks" },
-                    { name: "Deepnote", tooltip: "Deepnote → Collaborative Data Science" },
-                    { name: "Hex", tooltip: "Hex → Collaborative Data Workspace" },
-                  ].map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
-                      className="group cursor-pointer relative"
-                    >
-                      <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-teal-500/50 transition-all duration-300 group-hover:scale-105 h-full">
-                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:bg-gradient-to-r group-hover:from-teal-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {tech.name}
-                        </h4>
-                      </div>
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                        {tech.tooltip}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {successMetrics.map((metric, index) => {
+                    const IconComponent = metric.icon;
+                    return (
+                      <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2">
+                        <div className="p-6">
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6 }}
+                            className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 text-center hover:border-blue-400/40 transition-all duration-500"
+                          >
+                            <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-r ${metric.color} rounded-2xl flex items-center justify-center`}>
+                              <IconComponent className="h-10 w-10 text-white" />
+                            </div>
+                            <div className="text-4xl font-bold text-white mb-2">{metric.metric}</div>
+                            <div className="text-lg font-semibold text-cyan-400 mb-3">{metric.industry}</div>
+                            <p className="text-gray-300">{metric.description}</p>
+                          </motion.div>
+                        </div>
+                      </CarouselItem>
+                    );
+                  })}
+                </CarouselContent>
+                <CarouselPrevious className="left-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+                <CarouselNext className="right-4 bg-gradient-to-r from-gray-800/90 to-gray-700/90 border border-cyan-400/40 hover:border-cyan-400/70 text-cyan-400 hover:text-white" />
+              </Carousel>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQs Section */}
-      <section className="py-16 text-white">
+      <section className="py-20 bg-light text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -1099,7 +1051,7 @@ export default function CoreDataScience() {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
@@ -1117,19 +1069,6 @@ export default function CoreDataScience() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring" }}
-              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
-            >
-              <Database className="h-5 w-5 text-cyan-400" />
-              <span className="text-white font-medium">
-                Core Data Science Experts
-              </span>
-              <Award className="h-4 w-4 text-blue-400 fill-current" />
-            </motion.div>
-
             <motion.h2
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -1137,10 +1076,10 @@ export default function CoreDataScience() {
               className="text-4xl md:text-6xl font-bold mb-6"
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Unlock the Full Potential
+                Ready to Unlock the Power
               </span>
               <br />
-              <span className="text-white">of Your Data</span>
+              <span className="text-white">of Your Data?</span>
             </motion.h2>
 
             <motion.p
@@ -1149,7 +1088,7 @@ export default function CoreDataScience() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Whether you're modernizing analytics or building AI-ready pipelines, our Core Data Science team delivers clarity, accuracy, and insights you can trust.
+              Partner with RTNextGenAI to implement data science solutions that deliver clarity and confidence. Whether you're modernizing analytics or building AI-ready pipelines, our team delivers results you can trust.
             </motion.p>
 
             <motion.div
