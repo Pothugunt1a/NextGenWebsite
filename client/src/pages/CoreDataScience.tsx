@@ -697,23 +697,60 @@ export default function CoreDataScience() {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-16 text-white">
+      <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Our Core Data Science Technology Stack
+                Technology Stack
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {techStack.map((tech, index) => (
-                <div
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Industry-leading tools and platforms we use for Core Data Science
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[
+                { name: "Python", category: "Languages", icon: "🐍" },
+                { name: "R", category: "Statistical Computing", icon: "📊" },
+                { name: "SQL", category: "Query Language", icon: "🗃️" },
+                { name: "Jupyter", category: "Interactive Development", icon: "📓" },
+                { name: "Pandas", category: "Data Manipulation", icon: "🐼" },
+                { name: "NumPy", category: "Numerical Computing", icon: "🔢" },
+                { name: "Scikit-learn", category: "Machine Learning", icon: "🤖" },
+                { name: "Tableau", category: "Visualization", icon: "📈" },
+                { name: "Power BI", category: "Business Intelligence", icon: "📊" },
+                { name: "Plotly", category: "Interactive Charts", icon: "📉" },
+                { name: "Apache Spark", category: "Big Data Processing", icon: "⚡" },
+                { name: "Databricks", category: "Analytics Platform", icon: "🧱" },
+                { name: "Snowflake", category: "Data Warehouse", icon: "❄️" },
+                { name: "AWS", category: "Cloud Platform", icon: "☁️" },
+                { name: "Azure", category: "Cloud Services", icon: "🌐" },
+                { name: "Airflow", category: "Workflow Orchestration", icon: "🌊" },
+              ].map((tech, index) => (
+                <motion.div
                   key={index}
-                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg border border-gray-700 hover:border-cyan-400/40 transition-all duration-300"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  className="group cursor-pointer"
                 >
-                  <p className="text-gray-300 text-sm font-medium">{tech}</p>
-                </div>
+                  <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105 h-full">
+                    <div className="text-4xl mb-3">{tech.icon}</div>
+                    <h3 className="text-white font-bold text-lg mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {tech.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm">{tech.category}</p>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
