@@ -192,9 +192,9 @@ export const navLinks = [
         ],
       },
       {
-        name: "Data Science",
+        name: "AI & Data Science",
         items: [
-          { name: "Data Analytics", href: "#data-analytics" },
+          { name: "Data Analytics", href: "/data-analytics" },
           { name: "Machine Learning", href: "#machine-learning" },
           { name: "Predictive Modeling", href: "#predictive-modeling" },
         ],
