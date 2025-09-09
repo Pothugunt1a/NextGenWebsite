@@ -1,0 +1,95 @@
+# Wireframe Layout – Data Science Page (RTNextGenAI)
+
+---
+
+## 1. Hero Section (Full-Width Banner)
+
+* **Left Side:**
+
+  * Headline: *“Transform Raw Data into Business Intelligence”*
+  * Subheadline: *“From collection and preparation to visualization and storytelling, RTNextGenAI helps enterprises unlock the full value of data.”*
+  * CTA Buttons: \[Request a Demo] \[Talk to a Data Scientist]
+* **Right Side:**
+
+  * Visual: Flow diagram showing raw data streams → cleaning → dashboards.
+
+---
+
+## 2. Why Data Science Matters (Impact Section)
+
+* **Two-Column Layout:**
+
+  * Left: Challenges → unstructured data, poor insights, reactive decision-making.
+  * Right: Benefits → clean data, hidden pattern discovery, real-time dashboards, clear storytelling.
+* Infographic: *“Unmanaged Data = Noise / Governed Data = Insights.”*
+
+---
+
+## 3. Our Core Data Science Services (Grid of 3 Cards)
+
+* **Card Titles & Icons:**
+
+  1. Data Collection & Preparation → *“Reliable, analysis-ready datasets from multiple sources.”*
+  2. Exploratory Data Analysis (EDA) & Statistics → *“Discover trends, outliers, and correlations.”*
+  3. Data Visualization & Storytelling → *“Turn insights into intuitive dashboards and executive stories.”*
+
+---
+
+## 4. Data Science Lifecycle (Full-Width Visual)
+
+* Process Diagram: **Collect → Prepare → Explore (EDA) → Visualize → Share Insights.**
+* Subtext: RTNextGenAI follows a structured lifecycle ensuring accuracy, trust, and value.
+
+---
+
+## 5. Industry Applications (Grid of Tiles)
+
+* **Tiles with Icons & Captions:**
+
+  * Healthcare → Patient analytics, research dashboards
+  * Finance → Risk analysis, anomaly detection
+  * Retail → Customer segmentation, product performance
+  * Manufacturing → IoT sensor data, defect tracking
+  * Media → Audience insights, engagement analytics
+
+---
+
+## 6. Technology Stack (Category-Based Logo Wall)
+
+* **Categories:**
+
+  * Data Collection & Integration → MySQL, Snowflake, BigQuery, dbt, Airflow
+  * Data Preparation & Wrangling → Pandas, NumPy, R (dplyr, tidyr), Alteryx
+  * EDA & Statistics → RStudio, Jupyter, SciPy, Statsmodels
+  * Visualization & Storytelling → Tableau, Power BI, Looker, Plotly, Superset
+  * Data Governance & Quality → Collibra, Alation, Informatica, Great Expectations
+  * Collaboration → GitHub, JupyterHub, Google Colab, Hex
+
+---
+
+## 7. Why Choose RTNextGenAI (Feature Highlights)
+
+* Horizontal feature blocks with icons:
+
+  * End-to-end expertise: collection → analysis → visualization
+  * Certified data scientists with cloud expertise
+  * Industry success across healthcare, finance, retail, IoT
+  * Cloud-native solutions (AWS, Azure, GCP)
+  * Storytelling-driven insights for executives
+
+---
+
+## 8. Client Impact / Success Metrics (Optional Carousel)
+
+* Slide 1: Healthcare → Reduced research data prep time by 40%.
+* Slide 2: Retail → Improved product insights leading to +15% revenue lift.
+* Slide 3: Finance → Faster compliance reporting with automated data prep.
+
+---
+
+## 9. Call-to-Action (Footer Section)
+
+* Full-width background with a futuristic dashboard illustration.
+* Headline: *“Ready to Unlock the Power of Your Data?”*
+* Subtext: *“Partner with RTNextGenAI to implement data science solutions that deliver clarity and confidence.”*
+* CTA Buttons: \[Schedule a Consultation] \[Request a Demo Dashboard]
