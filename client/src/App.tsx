@@ -39,6 +39,7 @@ import AdvancedAnalyticsAIML from "./pages/AdvancedAnalyticsAIML";
 import CoreDataScience from "./pages/CoreDataScience";
 import MachineLearningServices from "./pages/MachineLearningServices";
 import ArtificialIntelligenceServices from "./pages/ArtificialIntelligenceServices";
+import GenerativeAgenticAI from "./pages/GenerativeAgenticAI";
 
 function Router() {
   return (
@@ -78,6 +79,7 @@ function Router() {
         <Route path="/core-data-science" component={CoreDataScience} />
         <Route path="/machine-learning-services" component={MachineLearningServices} />
         <Route path="/artificial-intelligence-services" component={ArtificialIntelligenceServices} />
+            <Route path="/generative-agentic-ai" component={GenerativeAgenticAI} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -196,8 +196,8 @@ export const navLinks = [
         items: [
           { name: "Core Data Science", href: "/core-data-science" },
           { name: "Machine Learning", href: "/machine-learning-services" },
-          { name: "Artificial Intelligence", href: "/artificial-intelligence-services" },
-          { name: "Generative & Agentic AI", href: "#generative-agentic-ai" },
+          { name: "Artificial Intelligence Services", href: "/artificial-intelligence-services" },
+          { name: "Generative & Agentic AI", href: "/generative-agentic-ai" },
         ],
       },
       {
