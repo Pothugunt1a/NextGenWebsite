@@ -42,6 +42,9 @@ export default function Navbar({
   const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<
     string | null
   >(null);
+  const [activeDesktopSubSubmenu, setActiveDesktopSubSubmenu] = useState<
+    string | null
+  >(null);
   const [dropdownHoverTimeout, setDropdownHoverTimeout] =
     useState<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -73,6 +76,7 @@ export default function Navbar({
       ) {
         setActiveDropdown(null);
         setActiveDesktopSubmenu(null);
+        setActiveDesktopSubSubmenu(null);
       }
     };
 
@@ -113,6 +117,7 @@ export default function Navbar({
     setActiveMobileDropdown(null);
     setActiveMobileSubmenu(null);
     setActiveDesktopSubmenu(null);
+    setActiveDesktopSubSubmenu(null);
   };
 
   const handleNavigationClick = (
@@ -134,6 +139,7 @@ export default function Navbar({
     const timeout = setTimeout(() => {
       setActiveDropdown(null);
       setActiveDesktopSubmenu(null);
+      setActiveDesktopSubSubmenu(null);
     }, 200); // 200ms delay
     setDropdownHoverTimeout(timeout);
   };
@@ -150,6 +156,7 @@ export default function Navbar({
     e.preventDefault();
     setActiveDropdown(activeDropdown === linkId ? null : linkId);
     setActiveDesktopSubmenu(null);
+    setActiveDesktopSubSubmenu(null);
   };
 
   const toggleMobileDropdown = (linkId: number) => {
@@ -168,6 +175,15 @@ export default function Navbar({
     e.stopPropagation();
     setActiveDesktopSubmenu(
       activeDesktopSubmenu === submenuName ? null : submenuName,
+    );
+    setActiveDesktopSubSubmenu(null);
+  };
+
+  const toggleDesktopSubSubmenu = (subSubmenuName: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setActiveDesktopSubSubmenu(
+      activeDesktopSubSubmenu === subSubmenuName ? null : subSubmenuName,
     );
   };
 
@@ -373,20 +389,15 @@ export default function Navbar({
                                               (item, itemIdx) => (
                                                 <div key={itemIdx}>
                                                   {/* Check if item has sub-items (nested structure) */}
-                                                  {item.items && item.items.length > 0 ? (
+                                                  {"items" in item && item.items && item.items.length > 0 ? (
                                                     <div className="space-y-1">
                                                       {/* Sub-category header - clickable to toggle sub-items */}
                                                       <div 
                                                         className="group/item flex items-center justify-between p-3 rounded-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-800/50 hover:to-slate-700/50 border border-transparent hover:border-slate-600/40 hover:shadow-md cursor-pointer"
                                                         onClick={(e) => {
-                                                          e.preventDefault();
-                                                          e.stopPropagation();
                                                           // Toggle the sub-items visibility for this specific item
-                                                          const submenuKey = `${category.name}-${item.name}`;
-                                                          console.log('Clicking on submenu:', submenuKey, 'Current active:', activeDesktopSubmenu);
-                                                          setActiveDesktopSubmenu(
-                                                            activeDesktopSubmenu === submenuKey ? null : submenuKey
-                                                          );
+                                                          const subSubmenuKey = `${category.name}-${item.name}`;
+                                                          toggleDesktopSubSubmenu(subSubmenuKey, e);
                                                         }}
                                                       >
                                                         <div className="flex items-center gap-3">
@@ -400,12 +411,12 @@ export default function Navbar({
                                                         </div>
                                                         <ChevronDown
                                                           className={`h-3 w-3 text-slate-400 group-hover/item:text-cyan-400 transition-all duration-300 ${
-                                                            activeDesktopSubmenu === `${category.name}-${item.name}` ? "rotate-180" : ""
+                                                            activeDesktopSubSubmenu === `${category.name}-${item.name}` ? "rotate-180" : ""
                                                           }`}
                                                         />
                                                       </div>
-                                                      {/* Sub-category items - show when this specific submenu is active */}
-                                                      {activeDesktopSubmenu === `${category.name}-${item.name}` && (
+                                                      {/* Sub-category items - show when this specific sub-submenu is active */}
+                                                      {activeDesktopSubSubmenu === `${category.name}-${item.name}` && (
                                                         <div className="ml-8 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300 mt-2">
                                                           {item.items.map((subItem, subIdx) => (
                                                             <a
@@ -608,16 +619,17 @@ export default function Navbar({
                                         ) : (
                                           /* Direct clickable category without dropdown */
                                           <a
-                                            href={category.href}
+                                            href={(category as any).href || "#"}
                                             className="block cursor-pointer select-none"
                                             onClick={(e) => {
                                               e.preventDefault();
+                                              const categoryWithHref = category as { href?: string };
                                               if (
-                                                category.href &&
-                                                category.href.startsWith("/")
+                                                categoryWithHref.href &&
+                                                categoryWithHref.href.startsWith("/")
                                               ) {
                                                 handleNavigationClick(
-                                                  category.href,
+                                                  categoryWithHref.href,
                                                 );
                                               }
                                             }}
@@ -771,14 +783,15 @@ export default function Navbar({
                                 </>
                               ) : (
                                 <a
-                                  href={category.href}
+                                  href={(category as any).href || "#"}
                                   className="block px-3 py-2 text-sm text-white hover:bg-gray-800 hover:text-cyan-400 rounded-lg transition-all duration-300"
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    if (category.href?.startsWith("/")) {
-                                      handleNavigationClick(category.href);
-                                    } else {
-                                      scrollToSection(e, category.href || "");
+                                    const categoryWithHref = category as { href?: string };
+                                    if (categoryWithHref.href?.startsWith("/")) {
+                                      handleNavigationClick(categoryWithHref.href);
+                                    } else if (categoryWithHref.href) {
+                                      scrollToSection(e, categoryWithHref.href);
                                     }
                                   }}
                                 >
