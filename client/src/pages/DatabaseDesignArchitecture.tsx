@@ -479,6 +479,190 @@ export default function DatabaseDesignArchitecture() {
         </div>
       </section>
 
+      {/* Choosing the Right Database Type Section */}
+      <section className="py-20 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Choosing the Right Database Type
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                RTNextGenAI helps clients decide between SQL, NoSQL, or cloud-native databases based on specific business requirements and scalability needs
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-blue-900/40 to-blue-800/40 backdrop-blur-sm border border-blue-500/30 rounded-xl p-8"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <Database className="h-8 w-8 text-blue-400" />
+                  <h3 className="text-2xl font-bold text-white">Relational Databases (SQL)</h3>
+                </div>
+                <p className="text-gray-300 mb-6">
+                  Perfect for structured data with complex relationships, ACID compliance, and strong consistency requirements.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
+                    <div className="text-blue-400 font-bold text-lg">Oracle</div>
+                  </div>
+                  <div className="text-center p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
+                    <div className="text-blue-400 font-bold text-lg">MySQL</div>
+                  </div>
+                  <div className="text-center p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
+                    <div className="text-blue-400 font-bold text-lg">PostgreSQL</div>
+                  </div>
+                  <div className="text-center p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
+                    <div className="text-blue-400 font-bold text-lg">SQL Server</div>
+                  </div>
+                </div>
+                <div className="text-sm text-gray-400">
+                  <strong>Best for:</strong> Financial systems, ERP, CRM, traditional business applications
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-green-900/40 to-green-800/40 backdrop-blur-sm border border-green-500/30 rounded-xl p-8"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <Layers className="h-8 w-8 text-green-400" />
+                  <h3 className="text-2xl font-bold text-white">NoSQL Databases</h3>
+                </div>
+                <p className="text-gray-300 mb-6">
+                  Flexible schema design for unstructured data, horizontal scaling, and high-performance applications.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center p-4 bg-green-500/10 rounded-lg border border-green-400/20">
+                    <div className="text-green-400 font-bold text-lg">MongoDB</div>
+                  </div>
+                  <div className="text-center p-4 bg-green-500/10 rounded-lg border border-green-400/20">
+                    <div className="text-green-400 font-bold text-lg">Cassandra</div>
+                  </div>
+                  <div className="text-center p-4 bg-green-500/10 rounded-lg border border-green-400/20">
+                    <div className="text-green-400 font-bold text-lg">DynamoDB</div>
+                  </div>
+                  <div className="text-center p-4 bg-green-500/10 rounded-lg border border-green-400/20">
+                    <div className="text-green-400 font-bold text-lg">Cosmos DB</div>
+                  </div>
+                </div>
+                <div className="text-sm text-gray-400">
+                  <strong>Best for:</strong> Content management, IoT applications, real-time analytics, social media
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-purple-900/40 to-purple-800/40 backdrop-blur-sm border border-purple-500/30 rounded-xl p-8"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <Network className="h-8 w-8 text-purple-400" />
+                  <h3 className="text-2xl font-bold text-white">Graph Databases</h3>
+                </div>
+                <p className="text-gray-300 mb-6">
+                  Optimized for complex relationships and connected data with advanced query capabilities.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center p-4 bg-purple-500/10 rounded-lg border border-purple-400/20">
+                    <div className="text-purple-400 font-bold text-lg">Neo4j</div>
+                  </div>
+                  <div className="text-center p-4 bg-purple-500/10 rounded-lg border border-purple-400/20">
+                    <div className="text-purple-400 font-bold text-lg">AWS Neptune</div>
+                  </div>
+                  <div className="text-center p-4 bg-purple-500/10 rounded-lg border border-purple-400/20">
+                    <div className="text-purple-400 font-bold text-lg">Azure Cosmos</div>
+                  </div>
+                  <div className="text-center p-4 bg-purple-500/10 rounded-lg border border-purple-400/20">
+                    <div className="text-purple-400 font-bold text-lg">ArangoDB</div>
+                  </div>
+                </div>
+                <div className="text-sm text-gray-400">
+                  <strong>Best for:</strong> Social networks, recommendation engines, fraud detection, knowledge graphs
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-cyan-900/40 to-cyan-800/40 backdrop-blur-sm border border-cyan-500/30 rounded-xl p-8"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <Cloud className="h-8 w-8 text-cyan-400" />
+                  <h3 className="text-2xl font-bold text-white">Cloud-Native & Specialized</h3>
+                </div>
+                <p className="text-gray-300 mb-6">
+                  Modern databases built for cloud environments with auto-scaling and managed services.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center p-4 bg-cyan-500/10 rounded-lg border border-cyan-400/20">
+                    <div className="text-cyan-400 font-bold text-lg">Snowflake</div>
+                  </div>
+                  <div className="text-center p-4 bg-cyan-500/10 rounded-lg border border-cyan-400/20">
+                    <div className="text-cyan-400 font-bold text-lg">BigQuery</div>
+                  </div>
+                  <div className="text-center p-4 bg-cyan-500/10 rounded-lg border border-cyan-400/20">
+                    <div className="text-cyan-400 font-bold text-lg">Redshift</div>
+                  </div>
+                  <div className="text-center p-4 bg-cyan-500/10 rounded-lg border border-cyan-400/20">
+                    <div className="text-cyan-400 font-bold text-lg">Synapse</div>
+                  </div>
+                </div>
+                <div className="text-sm text-gray-400">
+                  <strong>Best for:</strong> Data warehousing, business intelligence, analytics, time-series data
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-white/20 rounded-xl p-8"
+            >
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">Additional Specialized Databases</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center p-4 bg-orange-500/10 rounded-lg border border-orange-400/20">
+                  <div className="text-orange-400 font-bold text-lg mb-2">Time-Series</div>
+                  <div className="text-sm text-gray-300">InfluxDB, TimescaleDB</div>
+                  <div className="text-xs text-gray-400 mt-2">IoT sensors, monitoring</div>
+                </div>
+                <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-400/20">
+                  <div className="text-red-400 font-bold text-lg mb-2">In-Memory</div>
+                  <div className="text-sm text-gray-300">Redis, Memcached</div>
+                  <div className="text-xs text-gray-400 mt-2">Caching, session storage</div>
+                </div>
+                <div className="text-center p-4 bg-yellow-500/10 rounded-lg border border-yellow-400/20">
+                  <div className="text-yellow-400 font-bold text-lg mb-2">NewSQL</div>
+                  <div className="text-sm text-gray-300">CockroachDB, YugabyteDB</div>
+                  <div className="text-xs text-gray-400 mt-2">Global applications</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Architecture Approaches Section */}
       <section className="py-20 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
