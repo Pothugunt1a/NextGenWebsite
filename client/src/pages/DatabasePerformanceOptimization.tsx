@@ -19,173 +19,219 @@ import {
   Eye,
   Timer,
   Search,
+  Server,
+  Layers,
+  Clock,
+  Brain,
+  RefreshCw,
+  LineChart,
+  CloudIcon,
+  Monitor,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 
-const optimizationServices = [
+const keyOptimizationCapabilities = [
   {
     icon: <Search className="h-8 w-8 text-white" />,
-    title: "Query Analysis & Tuning",
-    description: "Comprehensive analysis of slow-performing queries with advanced optimization techniques, indexing strategies, and execution plan improvements.",
-    backgroundImage: "/assets/AI-Training.png",
+    title: "Query Tuning & Execution Plan Analysis",
+    description: "Advanced SQL query optimization with detailed execution plan analysis for maximum performance gains.",
     features: [
-      "SQL query performance analysis",
-      "Execution plan optimization",
-      "Index recommendation & creation",
-      "Query rewriting & refactoring"
+      "Inefficient SQL rewriting",
+      "Execution plan analysis tools",
+      "Batch vs real-time strategies",
+      "Query performance monitoring"
     ]
   },
   {
-    icon: <BarChart3 className="h-8 w-8 text-white" />,
-    title: "Index Optimization & Management",
-    description: "Strategic index design, maintenance, and optimization to improve query performance while minimizing storage overhead and maintenance costs.",
-    backgroundImage: "/assets/Process-optimization.png",
+    icon: <Database className="h-8 w-8 text-white" />,
+    title: "Indexing Strategies",
+    description: "Strategic index design and maintenance for optimal query performance and storage efficiency.",
     features: [
-      "Index usage analysis",
-      "Covering index strategies",
-      "Index maintenance automation",
-      "Fragmentation monitoring"
+      "Clustered vs non-clustered indexes",
+      "Index maintenance & rebuilds",
+      "Advanced columnstore indexes",
+      "Bitmap index optimization"
     ]
   },
   {
-    icon: <Cpu className="h-8 w-8 text-white" />,
-    title: "Resource Utilization Optimization",
-    description: "System-level performance tuning including memory management, CPU optimization, disk I/O improvements, and network latency reduction.",
-    backgroundImage: "/assets/AI-Integration.png",
+    icon: <Settings className="h-8 w-8 text-white" />,
+    title: "Workload Balancing",
+    description: "Intelligent workload distribution and resource allocation for consistent performance.",
     features: [
-      "Memory buffer optimization",
-      "CPU usage optimization",
-      "Disk I/O performance tuning",
-      "Network latency reduction"
+      "Load balancing strategies",
+      "Resource allocation optimization",
+      "Connection pool management",
+      "Query routing optimization"
     ]
   },
   {
-    icon: <Activity className="h-8 w-8 text-white" />,
-    title: "Real-Time Performance Monitoring",
-    description: "Advanced monitoring solutions with real-time alerts, performance dashboards, and predictive analytics for proactive optimization.",
-    backgroundImage: "/assets/AI-Capabilities.gif",
+    icon: <Layers className="h-8 w-8 text-white" />,
+    title: "Partitioning & Sharding",
+    description: "Advanced data partitioning and sharding strategies for horizontal scalability.",
     features: [
-      "Real-time performance metrics",
-      "Automated alerting systems",
-      "Performance trend analysis",
-      "Capacity planning insights"
+      "Horizontal data partitioning",
+      "Sharding implementation",
+      "Cross-shard query optimization",
+      "Partition pruning strategies"
+    ]
+  },
+  {
+    icon: <Zap className="h-8 w-8 text-white" />,
+    title: "In-Memory & Caching Solutions",
+    description: "High-performance caching and in-memory database solutions for ultra-fast data access.",
+    features: [
+      "Redis & Memcached implementation",
+      "SQL Server In-Memory OLTP",
+      "Oracle TimesTen optimization",
+      "Hybrid caching strategies"
+    ]
+  },
+  {
+    icon: <CloudIcon className="h-8 w-8 text-white" />,
+    title: "Cloud-Native Performance Tools",
+    description: "Leverage cloud-native performance optimization tools and auto-scaling capabilities.",
+    features: [
+      "AWS Aurora Performance Insights",
+      "Azure Intelligent Performance",
+      "GCP Query Insights",
+      "Cost-performance optimization"
     ]
   },
 ];
 
-const performanceAreas = [
+const scalingStrategies = [
   {
-    category: "Query Performance",
-    optimizations: ["Slow query identification", "Execution plan analysis", "Query rewriting", "Parameterization strategies"]
+    type: "Vertical Scaling",
+    description: "Adding more resources (CPU, RAM, storage) to existing servers",
+    benefits: ["Immediate performance boost", "Simplified architecture", "No application changes needed"],
+    icon: <Server className="h-6 w-6 text-blue-400" />
   },
   {
-    category: "Indexing Strategy",
-    optimizations: ["Index usage analysis", "Covering index design", "Composite index optimization", "Index maintenance automation"]
+    type: "Horizontal Scaling",
+    description: "Distributing workload across multiple servers and instances",
+    benefits: ["Unlimited scalability", "Better fault tolerance", "Cost-effective scaling"],
+    icon: <Layers className="h-6 w-6 text-green-400" />
   },
   {
-    category: "System Resources",
-    optimizations: ["Memory buffer tuning", "CPU optimization", "Storage I/O improvement", "Network latency reduction"]
-  },
-  {
-    category: "Concurrency & Locking",
-    optimizations: ["Lock contention analysis", "Deadlock prevention", "Transaction isolation tuning", "Connection pool optimization"]
-  },
-  {
-    category: "Storage Optimization",
-    optimizations: ["Data compression strategies", "Partition management", "Archive data strategies", "Storage tier optimization"]
+    type: "Multi-Region Optimization",
+    description: "Global workload distribution for reduced latency worldwide",
+    benefits: ["Reduced global latency", "Enhanced availability", "Disaster recovery"],
+    icon: <CloudIcon className="h-6 w-6 text-purple-400" />
   },
 ];
 
 const industryUseCases = [
   {
     name: "Finance",
-    description: "High-frequency trading systems requiring sub-millisecond response times",
+    description: "Faster fraud detection queries and real-time trading systems",
     image: "/assets/Finance.png",
-    metrics: "Achieved 99.9% reduction in query response time from 500ms to <1ms"
+    metrics: "Reduced query time by 70% for fraud detection systems",
+    improvements: ["Sub-millisecond trading queries", "Real-time risk analytics", "Regulatory reporting optimization"]
   },
   {
     name: "Healthcare",
-    description: "Patient record systems optimized for real-time clinical decision support",
+    description: "Real-time EMR access and patient data optimization",
     image: "/assets/Healthcare.png",
-    metrics: "Improved EMR query performance by 85% supporting 10K+ concurrent users"
+    metrics: "Doubled EMR performance for 10K+ concurrent users",
+    improvements: ["Instant patient record access", "Real-time clinical dashboards", "HIPAA-compliant optimization"]
   },
   {
     name: "Retail",
-    description: "eCommerce platforms handling millions of product searches and transactions",
+    description: "Optimized checkout and inventory query performance",
     image: "/assets/Ecommerce.png",
-    metrics: "Optimized product search to handle 100M+ queries/day with <50ms response"
+    metrics: "40% faster checkouts during peak traffic",
+    improvements: ["Real-time inventory updates", "Personalized recommendations", "Cart optimization"]
   },
   {
     name: "Manufacturing",
-    description: "Real-time IoT analytics requiring immediate processing of sensor data",
+    description: "IoT data pipelines tuned for low-latency processing",
     image: "/assets/Manufacturing.png",
-    metrics: "Enabled real-time processing of 1M+ IoT events per second"
+    metrics: "IoT latency reduced to near real-time processing",
+    improvements: ["Real-time sensor analytics", "Predictive maintenance", "Supply chain optimization"]
   },
   {
     name: "Media",
-    description: "Content delivery systems with global user bases and high throughput",
+    description: "Streaming analytics with minimal lag and high throughput",
     image: "/assets/Media.png",
-    metrics: "Scaled to support 50M+ concurrent streaming users with optimized databases"
-  },
-  {
-    name: "Government",
-    description: "Citizen service portals requiring high availability and fast response times",
-    image: "/assets/IT-Services.png",
-    metrics: "Reduced citizen portal response time by 75% while maintaining 99.99% uptime"
-  },
-];
-
-const whyChooseFeatures = [
-  {
-    icon: Award,
-    title: "Expert performance engineers with deep database knowledge",
-    description: "Certified professionals with expertise across all major database platforms",
-    badge: "Performance Experts"
-  },
-  {
-    icon: Target,
-    title: "Proven methodology delivering measurable performance gains",
-    description: "Systematic approach to performance optimization with quantifiable results",
-    badge: "Proven Results"
-  },
-  {
-    icon: Shield,
-    title: "Non-disruptive optimization with minimal downtime",
-    description: "Safe optimization practices that don't impact production operations",
-    badge: "Production Safe"
-  },
-  {
-    icon: TrendingUp,
-    title: "Continuous monitoring and proactive performance management",
-    description: "Ongoing optimization with predictive analytics and trend analysis",
-    badge: "Proactive Monitoring"
+    metrics: "Streaming analytics optimized for millions of concurrent users",
+    improvements: ["Real-time content recommendations", "User engagement analytics", "Content delivery optimization"]
   },
 ];
 
 const performanceMetrics = [
   {
-    industry: "Finance",
-    impact: "Reduced query response time by 95% (500ms → 25ms)",
-    description: "Critical trading system optimization for high-frequency transactions",
-    icon: <Timer className="h-6 w-6 text-green-400" />
+    metric: "50-70%",
+    description: "Query execution improvement",
+    icon: <Timer className="h-8 w-8 text-green-400" />
   },
   {
-    industry: "Healthcare",
-    impact: "Improved concurrent user capacity by 400% (2K → 10K users)",
-    description: "EMR system optimization supporting hospital-wide operations",
-    icon: <Users className="h-6 w-6 text-blue-400" />
+    metric: "99.99%",
+    description: "System uptime achieved",
+    icon: <Shield className="h-8 w-8 text-blue-400" />
   },
   {
-    industry: "Retail",
-    impact: "Increased throughput by 300% handling Black Friday traffic",
-    description: "eCommerce platform optimization for peak seasonal loads",
-    icon: <TrendingUp className="h-6 w-6 text-purple-400" />
+    metric: "40%",
+    description: "Infrastructure cost reduction",
+    icon: <TrendingUp className="h-8 w-8 text-purple-400" />
   },
   {
-    industry: "Manufacturing",
-    impact: "Enabled 10x data processing capacity for IoT analytics",
-    description: "Real-time sensor data processing optimization for operational intelligence",
-    icon: <Zap className="h-6 w-6 text-cyan-400" />
+    metric: "80%",
+    description: "Faster response times",
+    icon: <Zap className="h-8 w-8 text-cyan-400" />
+  },
+];
+
+const technologyStack = {
+  databases: [
+    { name: "Oracle", icon: "/assets/Oracle.png" },
+    { name: "SQL Server", icon: "/assets/SQLServer.png" },
+    { name: "PostgreSQL", icon: "/assets/PostgreSQL.png" },
+    { name: "MySQL", icon: "/assets/MySQL.png" },
+    { name: "MongoDB", icon: "/assets/MongoDB.png" },
+    { name: "Cassandra", icon: "/assets/Cassandra.png" },
+  ],
+  performanceTools: [
+    { name: "Oracle AWR", icon: "/assets/Oracle.png" },
+    { name: "SQL Profiler", icon: "/assets/SQLServer.png" },
+    { name: "pgAdmin", icon: "/assets/PostgreSQL.png" },
+    { name: "MySQL Workbench", icon: "/assets/MySQL.png" },
+  ],
+  cloudPlatforms: [
+    { name: "AWS Aurora", icon: "/assets/AWS.png" },
+    { name: "Azure SQL", icon: "/assets/Azure.png" },
+    { name: "GCP BigQuery", icon: "/assets/GCP.png" },
+  ],
+  monitoring: [
+    { name: "Grafana", icon: "/assets/Grafana.png" },
+    { name: "Prometheus", icon: "/assets/Prometheus.png" },
+    { name: "Datadog", icon: "/assets/Datadog.png" },
+  ],
+};
+
+const whyChooseFeatures = [
+  {
+    icon: Award,
+    title: "Expert DB performance engineers",
+    description: "Certified professionals with deep expertise across all major database platforms and performance optimization techniques",
+    badge: "Performance Experts"
+  },
+  {
+    icon: CloudIcon,
+    title: "Multi-cloud & hybrid optimization specialists",
+    description: "Comprehensive optimization across AWS, Azure, GCP, and hybrid cloud environments",
+    badge: "Multi-Cloud Expertise"
+  },
+  {
+    icon: Target,
+    title: "Proven 50–70% query execution improvement",
+    description: "Measurable performance gains with documented before/after metrics and ROI analysis",
+    badge: "Proven Results"
+  },
+  {
+    icon: Shield,
+    title: "Secure + compliant optimization approach",
+    description: "Security-first optimization maintaining compliance with industry standards and regulations",
+    badge: "Secure & Compliant"
   },
 ];
 
@@ -237,7 +283,7 @@ export default function DatabasePerformanceOptimization() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
               >
-                RTNextGenAI delivers comprehensive database performance optimization services to eliminate bottlenecks, accelerate queries, and ensure peak system efficiency
+                RTNextGenAI helps enterprises fine-tune their databases for lightning-fast queries, reduced costs, and enhanced scalability
               </motion.p>
 
               <motion.div
@@ -250,7 +296,7 @@ export default function DatabasePerformanceOptimization() {
                   size="lg" 
                   className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  Request Performance Analysis
+                  Request a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
@@ -269,11 +315,11 @@ export default function DatabasePerformanceOptimization() {
                   transition={{ delay: 0.8, type: "spring" }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
                 >
-                  <Zap className="h-5 w-5 text-cyan-400 fill-none" />
+                  <Activity className="h-5 w-5 text-cyan-400 fill-none" />
                   <span className="text-white font-medium">
-                    Performance Optimization Excellence
+                    Speedometer + Database Cluster Optimization
                   </span>
-                  <Activity className="h-4 w-4 text-blue-400 fill-current" />
+                  <BarChart3 className="h-4 w-4 text-blue-400 fill-current" />
                 </motion.div>
               </div>
             </motion.div>
@@ -300,72 +346,33 @@ export default function DatabasePerformanceOptimization() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Slow databases cost businesses millions in lost revenue, poor user experience, and operational inefficiency. Performance optimization transforms sluggish systems into high-speed, reliable platforms.
+                Slow databases impact revenue, user experience, and productivity. Optimized databases deliver faster applications, lower costs, and greater customer satisfaction.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="bg-gradient-to-br from-red-900/20 to-red-800/20 backdrop-blur-sm border border-red-500/20 rounded-xl p-8"
-              >
-                <h3 className="text-2xl font-bold text-red-400 mb-6">Performance Problems Impact</h3>
-                <ul className="space-y-4 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Slow response times frustrate users</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>High server costs due to inefficiency</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Revenue loss from system downtime</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Poor scalability under load</span>
-                  </li>
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-gradient-to-br from-green-900/20 to-green-800/20 backdrop-blur-sm border border-green-500/20 rounded-xl p-8"
-              >
-                <h3 className="text-2xl font-bold text-green-400 mb-6">Optimization Benefits</h3>
-                <ul className="space-y-4 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Lightning-fast response times</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Reduced infrastructure costs</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Improved user satisfaction</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Enhanced system scalability</span>
-                  </li>
-                </ul>
-              </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {performanceMetrics.map((metric, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-6 text-center"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    {metric.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-2">{metric.metric}</div>
+                  <div className="text-gray-300">{metric.description}</div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Optimization Services */}
+      {/* Key Optimization Capabilities */}
       <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -376,7 +383,7 @@ export default function DatabasePerformanceOptimization() {
             className="text-center mb-20"
           >
             <h2 className="text-5xl font-bold mb-6 text-white">
-              Performance Optimization Services
+              Key Optimization Capabilities
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -384,8 +391,8 @@ export default function DatabasePerformanceOptimization() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-            {optimizationServices.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {keyOptimizationCapabilities.map((capability, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -395,33 +402,21 @@ export default function DatabasePerformanceOptimization() {
                 className="group"
               >
                 <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                    <img
-                      src={service.backgroundImage}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/assets/AI-Training.png";
-                      }}
-                    />
-                  </div>
-
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                      {service.icon}
+                      {capability.icon}
                     </div>
 
                     <h3 className="text-xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {service.title}
+                      {capability.title}
                     </h3>
 
                     <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                      {service.description}
+                      {capability.description}
                     </p>
 
                     <div className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
+                      {capability.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center gap-2 text-xs text-gray-400">
                           <CheckCircle className="h-3 w-3 text-blue-400" />
                           <span>{feature}</span>
@@ -436,7 +431,7 @@ export default function DatabasePerformanceOptimization() {
         </div>
       </section>
 
-      {/* Performance Areas */}
+      {/* Query Optimization Deep Dive */}
       <section className="py-20 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -448,16 +443,100 @@ export default function DatabasePerformanceOptimization() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Performance Optimization Areas
+                Query Optimization Deep Dive
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive optimization across all database performance dimensions
+                Advanced SQL optimization techniques with measurable performance improvements
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {performanceAreas.map((area, index) => (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">Before vs After Performance</h3>
+                <div className="space-y-6">
+                  <div className="bg-gradient-to-r from-red-900/20 to-red-800/20 border border-red-500/20 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-red-400 font-semibold">Before Optimization</span>
+                      <span className="text-red-400 text-2xl font-bold">500ms</span>
+                    </div>
+                    <div className="w-full bg-red-900/30 rounded-full h-2">
+                      <div className="bg-red-500 h-2 rounded-full w-full"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-500/20 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-green-400 font-semibold">After Optimization</span>
+                      <span className="text-green-400 text-2xl font-bold">25ms</span>
+                    </div>
+                    <div className="w-full bg-green-900/30 rounded-full h-2">
+                      <div className="bg-green-500 h-2 rounded-full w-1/20"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center p-4 bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-500/20 rounded-lg">
+                    <div className="text-cyan-400 text-3xl font-bold mb-2">95% Improvement</div>
+                    <div className="text-gray-300">Query execution time reduction</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <div className="space-y-6">
+                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-3">Rewriting Inefficient SQL</h4>
+                    <p className="text-gray-300 text-sm">Transform complex queries into optimized statements with proper indexing strategies and execution plans.</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-3">Execution Plan Analysis</h4>
+                    <p className="text-gray-300 text-sm">Deep analysis using advanced tools to identify bottlenecks and optimize query execution paths.</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-3">Batch vs Real-time Strategies</h4>
+                    <p className="text-gray-300 text-sm">Optimize processing strategies based on workload patterns and business requirements.</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Scaling Strategies */}
+      <section className="py-20 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Scaling Strategies
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Comprehensive scaling approaches for growing businesses and increasing workloads
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {scalingStrategies.map((strategy, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -466,19 +545,98 @@ export default function DatabasePerformanceOptimization() {
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-6"
                 >
-                  <h3 className="text-xl font-bold text-white mb-4">
-                    {area.category}
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                    {strategy.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">
+                    {strategy.type}
                   </h3>
+                  <p className="text-gray-300 text-sm mb-4">
+                    {strategy.description}
+                  </p>
                   <div className="space-y-2">
-                    {area.optimizations.map((optimization, optIndex) => (
-                      <div key={optIndex} className="flex items-center gap-2">
+                    {strategy.benefits.map((benefit, benefitIndex) => (
+                      <div key={benefitIndex} className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-cyan-400" />
-                        <span className="text-gray-300 text-sm">{optimization}</span>
+                        <span className="text-gray-300 text-sm">{benefit}</span>
                       </div>
                     ))}
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Monitoring & Observability */}
+      <section className="py-20 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Monitoring & Observability
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Real-time monitoring and AI-driven analytics for proactive performance management
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6 text-center"
+              >
+                <Monitor className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Real-time Dashboards</h3>
+                <p className="text-gray-300 text-sm">Live performance metrics and alerts</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6 text-center"
+              >
+                <Brain className="h-12 w-12 text-green-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">AI/ML Anomaly Detection</h3>
+                <p className="text-gray-300 text-sm">Predictive performance insights</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6 text-center"
+              >
+                <LineChart className="h-12 w-12 text-purple-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Performance Analytics</h3>
+                <p className="text-gray-300 text-sm">Grafana, Prometheus integration</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6 text-center"
+              >
+                <RefreshCw className="h-12 w-12 text-cyan-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Automated Optimization</h3>
+                <p className="text-gray-300 text-sm">Datadog, CloudWatch tools</p>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -561,68 +719,25 @@ export default function DatabasePerformanceOptimization() {
                   </div>
 
                   <div className="p-6">
-                    <div className="flex items-center gap-3 bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-500/20 rounded-lg p-4">
+                    <div className="flex items-center gap-3 bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-500/20 rounded-lg p-4 mb-6">
                       <TrendingUp className="h-6 w-6 text-green-400" />
                       <span className="text-white font-semibold">
                         Success Metric: {selectedIndustry.metrics}
                       </span>
                     </div>
+
+                    <h4 className="text-lg font-semibold text-white mb-4">Key Improvements:</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {selectedIndustry.improvements.map((improvement, index) => (
+                        <div key={index} className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-cyan-400" />
+                          <span className="text-gray-300 text-sm">{improvement}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Performance Metrics */}
-      <section className="py-20 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Performance Improvement Metrics
-              </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Measurable performance improvements from our optimization services
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {performanceMetrics.map((metric, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center">
-                      {metric.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-white mb-2">
-                        {metric.industry}
-                      </h3>
-                      <div className="text-cyan-400 font-semibold mb-2">
-                        {metric.impact}
-                      </div>
-                      <p className="text-gray-300 text-sm">
-                        {metric.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </div>
@@ -644,7 +759,7 @@ export default function DatabasePerformanceOptimization() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Your trusted partner for database performance optimization
+                Your trusted partner for database performance optimization excellence
               </p>
             </motion.div>
 
@@ -689,6 +804,103 @@ export default function DatabasePerformanceOptimization() {
         </div>
       </section>
 
+      {/* Technology Stack */}
+      <section className="py-20 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Technology Stack
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Comprehensive expertise across databases, performance tools, cloud platforms, and monitoring solutions
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6"
+              >
+                <h3 className="text-lg font-semibold text-blue-400 mb-4">Databases</h3>
+                <div className="space-y-2">
+                  {["Oracle", "SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Cassandra"].map((tech, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <Database className="h-4 w-4 text-cyan-400" />
+                      <span className="text-gray-300 text-sm">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6"
+              >
+                <h3 className="text-lg font-semibold text-blue-400 mb-4">Performance Tools</h3>
+                <div className="space-y-2">
+                  {["Oracle AWR", "SQL Profiler", "pgAdmin", "MySQL Workbench"].map((tech, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <Settings className="h-4 w-4 text-cyan-400" />
+                      <span className="text-gray-300 text-sm">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6"
+              >
+                <h3 className="text-lg font-semibold text-blue-400 mb-4">Cloud Platforms</h3>
+                <div className="space-y-2">
+                  {["AWS Aurora", "Azure SQL", "GCP BigQuery"].map((tech, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <CloudIcon className="h-4 w-4 text-cyan-400" />
+                      <span className="text-gray-300 text-sm">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-blue-500/20 rounded-xl p-6"
+              >
+                <h3 className="text-lg font-semibold text-blue-400 mb-4">Monitoring</h3>
+                <div className="space-y-2">
+                  {["Grafana", "Prometheus", "Datadog"].map((tech, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <Monitor className="h-4 w-4 text-cyan-400" />
+                      <span className="text-gray-300 text-sm">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -714,11 +926,11 @@ export default function DatabasePerformanceOptimization() {
               transition={{ delay: 0.2, type: "spring" }}
               className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-400/30 rounded-full backdrop-blur-sm"
             >
-              <Zap className="h-5 w-5 text-blue-400" />
+              <Activity className="h-5 w-5 text-blue-400" />
               <span className="text-white font-medium">
-                Performance Optimization Excellence
+                Futuristic Database + Speed Graphics
               </span>
-              <Activity className="h-4 w-4 text-cyan-400 fill-current" />
+              <Zap className="h-4 w-4 text-cyan-400 fill-current" />
             </motion.div>
 
             <motion.h2
@@ -728,10 +940,10 @@ export default function DatabasePerformanceOptimization() {
               className="text-4xl md:text-6xl font-bold mb-6"
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Accelerate Your Database
+                Get the Most Out of
               </span>
               <br />
-              <span className="text-white">Performance Today</span>
+              <span className="text-white">Your Databases</span>
             </motion.h2>
 
             <motion.p
@@ -740,7 +952,7 @@ export default function DatabasePerformanceOptimization() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Partner with RTNextGenAI to eliminate performance bottlenecks and achieve lightning-fast database operations
+              Partner with RTNextGenAI for expert database optimization — faster queries, lower costs, and better reliability
             </motion.p>
 
             <motion.div
@@ -753,8 +965,8 @@ export default function DatabasePerformanceOptimization() {
                 size="lg"
                 className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               >
-                <Zap className="mr-2 h-5 w-5" />
-                Start Performance Analysis
+                <Timer className="mr-2 h-5 w-5" />
+                Schedule a Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
