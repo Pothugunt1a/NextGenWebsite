@@ -45,6 +45,7 @@ import DatabaseDesignArchitecture from "./pages/DatabaseDesignArchitecture";
 import DatabaseMigrationModernization from "./pages/DatabaseMigrationModernization";
 import CloudManagedDatabases from "./pages/CloudManagedDatabases";
 import DatabasePerformanceOptimization from "./pages/DatabasePerformanceOptimization";
+import DatabaseMigration from "./pages/DatabaseMigration";
 
 
 function Router() {
@@ -88,7 +89,8 @@ function Router() {
         <Route path="/generative-agentic-ai" component={GenerativeAgenticAI} />
         <Route path="/it-services/databases/database-administration" component={DatabaseAdministration} />
         <Route path="/it-services/databases/database-design-architecture" component={DatabaseDesignArchitecture} />
-        <Route path="/it-services/databases/database-migration-modernization" component={DatabaseMigrationModernization} />
+        <Route path="/it-services/databases/database-migration-modernization" component={DatabaseMigration} />
+        <Route path="/database-migration" component={DatabaseMigration} />
         <Route path="/it-services/databases/cloud-managed-databases" component={CloudManagedDatabases} />
         <Route path="/it-services/databases/database-performance-optimization" component={DatabasePerformanceOptimization} />
         <Route component={NotFound} />
