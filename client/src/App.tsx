@@ -40,6 +40,12 @@ import CoreDataScience from "./pages/CoreDataScience";
 import MachineLearningServices from "./pages/MachineLearningServices";
 import ArtificialIntelligenceServices from "./pages/ArtificialIntelligenceServices";
 import GenerativeAgenticAI from "./pages/GenerativeAgenticAI";
+import DatabaseAdministration from "./pages/DatabaseAdministration";
+import DatabaseDesignArchitecture from "./pages/DatabaseDesignArchitecture";
+import DatabaseMigrationModernization from "./pages/DatabaseMigrationModernization";
+import CloudManagedDatabases from "./pages/CloudManagedDatabases";
+import DatabasePerformanceOptimization from "./pages/DatabasePerformanceOptimization";
+
 
 function Router() {
   return (
@@ -79,7 +85,12 @@ function Router() {
         <Route path="/core-data-science" component={CoreDataScience} />
         <Route path="/machine-learning-services" component={MachineLearningServices} />
         <Route path="/artificial-intelligence-services" component={ArtificialIntelligenceServices} />
-            <Route path="/generative-agentic-ai" component={GenerativeAgenticAI} />
+        <Route path="/generative-agentic-ai" component={GenerativeAgenticAI} />
+        <Route path="/it-services/databases/database-administration" component={DatabaseAdministration} />
+        <Route path="/it-services/databases/database-design-architecture" component={DatabaseDesignArchitecture} />
+        <Route path="/it-services/databases/database-migration-modernization" component={DatabaseMigrationModernization} />
+        <Route path="/it-services/databases/cloud-managed-databases" component={CloudManagedDatabases} />
+        <Route path="/it-services/databases/database-performance-optimization" component={DatabasePerformanceOptimization} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

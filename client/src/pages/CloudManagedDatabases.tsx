@@ -3,193 +3,191 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
-  ArrowRightLeft,
-  Database,
   Cloud,
+  Database,
   Shield,
   Settings,
-  CheckCircle,
+  Server,
+  Cpu,
+  BarChart3,
   Zap,
-  Target,
+  Lock,
+  Globe,
+  CheckCircle,
   ArrowRight,
   Users,
+  Target,
   Award,
   TrendingUp,
-  Server,
+  Eye,
   Layers,
-  RefreshCw,
-  Lock,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 
-const migrationServices = [
+const cloudDatabasePlatforms = [
   {
-    icon: <ArrowRightLeft className="h-8 w-8 text-white" />,
-    title: "Legacy to Modern Database Migration",
-    description: "Comprehensive migration from legacy systems to modern, cloud-native databases with minimal downtime and zero data loss guarantee.",
+    icon: <Database className="h-8 w-8 text-white" />,
+    title: "AWS RDS & Aurora",
+    description: "Fully managed relational database service with automated backups, patching, and scaling capabilities for MySQL, PostgreSQL, Oracle, and SQL Server.",
     backgroundImage: "/assets/AI-Training.png",
     features: [
-      "Legacy system assessment",
-      "Data mapping & transformation",
-      "Zero-downtime migration",
-      "Post-migration optimization"
+      "Automated backups & recovery",
+      "Multi-AZ deployments",
+      "Read replicas for scaling",
+      "Performance monitoring"
     ]
   },
   {
     icon: <Cloud className="h-8 w-8 text-white" />,
-    title: "Cloud Migration & Modernization",
-    description: "Strategic migration to AWS, Azure, and GCP cloud platforms with modernization to take advantage of cloud-native capabilities and services.",
+    title: "Azure SQL Database & Cosmos DB",
+    description: "Intelligent, fully managed cloud database services with built-in AI capabilities and global distribution for mission-critical applications.",
     backgroundImage: "/assets/Process-optimization.png",
     features: [
-      "Cloud platform selection",
-      "Architecture modernization",
-      "Scalability optimization",
-      "Cost optimization strategies"
+      "Intelligent performance tuning",
+      "Global distribution",
+      "Multi-model database support",
+      "Advanced security features"
     ]
   },
   {
-    icon: <RefreshCw className="h-8 w-8 text-white" />,
-    title: "Database Version Upgrades",
-    description: "Safe and efficient database version upgrades with comprehensive testing, rollback procedures, and performance validation.",
+    icon: <Server className="h-8 w-8 text-white" />,
+    title: "Google Cloud SQL & Spanner",
+    description: "Globally distributed database services with strong consistency, automatic scaling, and seamless integration with Google Cloud ecosystem.",
     backgroundImage: "/assets/AI-Integration.png",
     features: [
-      "Version compatibility analysis",
-      "Automated upgrade processes",
-      "Performance testing",
-      "Rollback contingency planning"
+      "Horizontal scaling",
+      "Strong consistency",
+      "Multi-region replication",
+      "Automatic failover"
     ]
   },
   {
     icon: <Layers className="h-8 w-8 text-white" />,
-    title: "Data Architecture Modernization",
-    description: "Transform monolithic database architectures into microservices-ready, distributed systems with improved scalability and maintainability.",
+    title: "Multi-Cloud Database Management",
+    description: "Comprehensive multi-cloud database strategies with unified management, monitoring, and optimization across AWS, Azure, and GCP platforms.",
     backgroundImage: "/assets/AI-Capabilities.gif",
     features: [
-      "Microservices decomposition",
-      "API-first design",
-      "Event-driven architectures",
-      "Service mesh integration"
+      "Cross-cloud data synchronization",
+      "Unified monitoring dashboard",
+      "Cost optimization strategies",
+      "Disaster recovery planning"
     ]
   },
 ];
 
-const migrationApproaches = [
+const keyBenefits = [
   {
-    category: "Migration Strategies",
-    approaches: ["Lift and Shift", "Re-platform", "Re-factor", "Hybrid migration"]
+    category: "Scalability & Performance",
+    benefits: ["Auto-scaling capabilities", "Global data distribution", "Optimized query performance", "Load balancing"]
   },
   {
-    category: "Source Systems",
-    approaches: ["Oracle to PostgreSQL", "SQL Server to Cloud", "MySQL to Aurora", "On-premises to SaaS"]
+    category: "Security & Compliance",
+    benefits: ["Encryption at rest & in transit", "Identity & access management", "Compliance certifications", "Advanced threat protection"]
   },
   {
-    category: "Target Platforms",
-    approaches: ["AWS RDS/Aurora", "Azure SQL Database", "Google Cloud SQL", "MongoDB Atlas"]
+    category: "Operational Excellence",
+    benefits: ["Automated backups & recovery", "Patch management", "24/7 monitoring", "Performance optimization"]
   },
   {
-    category: "Data Types",
-    approaches: ["Relational databases", "NoSQL databases", "Data warehouses", "Real-time streaming"]
-  },
-  {
-    category: "Migration Tools",
-    approaches: ["AWS DMS", "Azure Database Migration", "Google Database Migration", "Custom ETL pipelines"]
+    category: "Cost Optimization",
+    benefits: ["Pay-as-you-scale pricing", "Reserved capacity options", "Resource utilization monitoring", "Cost allocation tracking"]
   },
 ];
 
 const industryUseCases = [
   {
     name: "Healthcare",
-    description: "HIPAA-compliant migration of patient records to secure cloud platforms",
+    description: "HIPAA-compliant cloud databases for patient records with high availability",
     image: "/assets/Healthcare.png",
-    metrics: "Migrated 10M+ patient records with zero downtime and maintained HIPAA compliance"
+    metrics: "Achieved 99.99% uptime for 500K+ patient records with full HIPAA compliance"
   },
   {
     name: "Finance",
-    description: "High-security migration of trading systems with regulatory compliance",
+    description: "Secure, globally distributed databases for real-time trading and transactions",
     image: "/assets/Finance.png",
-    metrics: "Completed migration during off-market hours with 99.99% data integrity"
+    metrics: "Processing 10M+ transactions daily with sub-second latency across 3 continents"
   },
   {
     name: "Retail",
-    description: "Scalable migration supporting seasonal traffic and global expansion",
+    description: "Scalable eCommerce databases handling peak seasonal traffic automatically",
     image: "/assets/Ecommerce.png",
-    metrics: "Enabled 10x scalability with cloud-native architecture post-migration"
+    metrics: "Auto-scaled to handle 50x traffic during Black Friday with zero downtime"
   },
   {
     name: "Manufacturing",
-    description: "IoT-ready migration supporting real-time analytics and predictive maintenance",
+    description: "IoT data lakes and real-time analytics for operational intelligence",
     image: "/assets/Manufacturing.png",
-    metrics: "Migrated legacy systems to support 1M+ IoT devices with real-time processing"
+    metrics: "Ingesting 1M+ IoT sensor readings per minute with real-time dashboards"
   },
   {
     name: "Media",
-    description: "Content delivery optimization with global distribution and edge caching",
+    description: "Content delivery databases with global edge caching and CDN integration",
     image: "/assets/Media.png",
-    metrics: "Achieved 50% performance improvement with cloud-native content delivery"
+    metrics: "Serving 100M+ users globally with <50ms response times"
   },
   {
     name: "Government",
-    description: "Secure migration with enhanced security and compliance capabilities",
+    description: "Secure, compliant citizen databases with audit trails and governance",
     image: "/assets/IT-Services.png",
-    metrics: "Migrated citizen services with enhanced security and 40% cost reduction"
+    metrics: "Managing 10M+ citizen records with FedRAMP compliance and zero breaches"
   },
 ];
 
 const whyChooseFeatures = [
   {
     icon: Award,
-    title: "Proven migration expertise across all major platforms",
-    description: "Successful migrations from legacy to modern, cloud-native systems",
-    badge: "Migration Experts"
+    title: "Multi-cloud certified experts with deep database expertise",
+    description: "Certified professionals across AWS, Azure, and Google Cloud platforms",
+    badge: "Multi-Cloud Certified"
   },
   {
     icon: Shield,
-    title: "Zero data loss guarantee with comprehensive security",
-    description: "Rigorous testing and validation ensures complete data integrity",
-    badge: "Zero Data Loss"
-  },
-  {
-    icon: Target,
-    title: "Minimal downtime with strategic migration planning",
-    description: "Advanced techniques to minimize business disruption during migration",
-    badge: "Minimal Downtime"
+    title: "Security-first approach with compliance expertise",
+    description: "Enterprise-grade security with HIPAA, SOC 2, and PCI DSS compliance",
+    badge: "Security Focused"
   },
   {
     icon: TrendingUp,
-    title: "Post-migration optimization and performance tuning",
-    description: "Continued optimization to maximize ROI from modernized systems",
-    badge: "Ongoing Optimization"
+    title: "Proven track record in large-scale deployments",
+    description: "Successfully managed databases serving millions of users globally",
+    badge: "Enterprise Scale"
+  },
+  {
+    icon: Target,
+    title: "Cost optimization with performance excellence",
+    description: "Balanced approach to cost efficiency and high performance",
+    badge: "Cost Optimized"
   },
 ];
 
-const migrationMetrics = [
+const clientSuccessMetrics = [
   {
     industry: "Finance",
-    impact: "Completed mission-critical migration with 99.99% uptime",
-    description: "Trading system migration during weekend with full Monday readiness",
-    icon: <Shield className="h-6 w-6 text-green-400" />
+    impact: "Reduced database costs by 40% with AWS Aurora Serverless",
+    description: "Automatic scaling reduced costs during low-traffic periods",
+    icon: <TrendingUp className="h-6 w-6 text-green-400" />
   },
   {
     industry: "Healthcare",
-    impact: "Migrated 50TB of patient data with zero data loss",
-    description: "HIPAA-compliant migration maintaining full audit trails",
-    icon: <Database className="h-6 w-6 text-blue-400" />
+    impact: "Achieved 99.99% uptime with multi-region failover",
+    description: "Zero patient data loss during disaster recovery testing",
+    icon: <Shield className="h-6 w-6 text-blue-400" />
   },
   {
     industry: "Retail",
-    impact: "Achieved 60% cost reduction with cloud migration",
-    description: "Optimized cloud resources and eliminated legacy infrastructure costs",
+    impact: "Scaled to handle 10x traffic with zero manual intervention",
+    description: "Auto-scaling handled Black Friday traffic surge seamlessly",
     icon: <Target className="h-6 w-6 text-purple-400" />
   },
   {
     industry: "Manufacturing",
-    impact: "Enabled real-time analytics post-migration",
-    description: "Legacy batch processing transformed to real-time stream processing",
+    impact: "Reduced query response time by 80% with global distribution",
+    description: "Edge locations improved IoT data processing significantly",
     icon: <Zap className="h-6 w-6 text-cyan-400" />
   },
 ];
 
-export default function DatabaseMigrationModernization() {
+export default function CloudManagedDatabases() {
   const [selectedIndustry, setSelectedIndustry] = useState(industryUseCases[0]);
 
   return (
@@ -204,7 +202,7 @@ export default function DatabaseMigrationModernization() {
         <div className="absolute inset-0">
           <img
             src="/assets/Data-Governance.png"
-            alt="Database Migration & Modernization Services"
+            alt="Cloud & Managed Databases Services"
             className="w-full h-full object-cover object-center"
           />
         </div>
@@ -227,7 +225,7 @@ export default function DatabaseMigrationModernization() {
                 style={{ fontWeight: 700 }}
               >
                 <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Seamless Database Migration & Modernization for the Cloud Era
+                  Scalable, Secure, and Fully-Managed Cloud Databases
                 </span>
               </motion.h1>
 
@@ -237,7 +235,7 @@ export default function DatabaseMigrationModernization() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
               >
-                RTNextGenAI helps enterprises migrate legacy databases to modern, cloud-native, and high-performance platforms with minimal downtime and maximum security
+                RTNextGenAI helps enterprises adopt cloud-native and managed database services across AWS, Azure, and GCP to ensure high availability, scalability, and cost efficiency
               </motion.p>
 
               <motion.div
@@ -250,7 +248,7 @@ export default function DatabaseMigrationModernization() {
                   size="lg" 
                   className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  Start Migration Assessment
+                  Request a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
@@ -258,7 +256,7 @@ export default function DatabaseMigrationModernization() {
                   variant="outline" 
                   className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-lg transition-all duration-300"
                 >
-                  Talk to a Migration Expert
+                  Talk to a Cloud Expert
                 </Button>
               </motion.div>
 
@@ -269,11 +267,11 @@ export default function DatabaseMigrationModernization() {
                   transition={{ delay: 0.8, type: "spring" }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
                 >
-                  <ArrowRightLeft className="h-5 w-5 text-cyan-400 fill-none" />
+                  <Cloud className="h-5 w-5 text-cyan-400 fill-none" />
                   <span className="text-white font-medium">
-                    Database Migration Excellence
+                    Cloud-Native Database Solutions
                   </span>
-                  <Cloud className="h-4 w-4 text-blue-400 fill-current" />
+                  <Database className="h-4 w-4 text-blue-400 fill-current" />
                 </motion.div>
               </div>
             </motion.div>
@@ -281,7 +279,7 @@ export default function DatabaseMigrationModernization() {
         </div>
       </div>
 
-      {/* Why Migration Matters */}
+      {/* Why Cloud Databases Matter */}
       <section className="py-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
@@ -293,14 +291,14 @@ export default function DatabaseMigrationModernization() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Why Database Migration &{" "}
+                Why Cloud & Managed{" "}
                 <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                  Modernization Matters
+                  Databases Matter
                 </span>
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Legacy databases limit business agility, increase costs, and pose security risks. Modern migration unlocks scalability, performance, and innovation capabilities.
+                Traditional on-premises databases require significant infrastructure investment and ongoing maintenance. Cloud databases offer scalability, reliability, and cost-effectiveness without the operational overhead.
               </p>
             </motion.div>
 
@@ -312,23 +310,23 @@ export default function DatabaseMigrationModernization() {
                 transition={{ duration: 0.8 }}
                 className="bg-gradient-to-br from-red-900/20 to-red-800/20 backdrop-blur-sm border border-red-500/20 rounded-xl p-8"
               >
-                <h3 className="text-2xl font-bold text-red-400 mb-6">Legacy System Challenges</h3>
+                <h3 className="text-2xl font-bold text-red-400 mb-6">Traditional On-Premises Challenges</h3>
                 <ul className="space-y-4 text-gray-300">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>High maintenance costs and complexity</span>
+                    <span>High upfront infrastructure costs</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Limited scalability and performance</span>
+                    <span>Manual scaling and capacity planning</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Security vulnerabilities and compliance risks</span>
+                    <span>Time-consuming maintenance and updates</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Inability to leverage modern technologies</span>
+                    <span>Limited disaster recovery options</span>
                   </li>
                 </ul>
               </motion.div>
@@ -340,23 +338,23 @@ export default function DatabaseMigrationModernization() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="bg-gradient-to-br from-green-900/20 to-green-800/20 backdrop-blur-sm border border-green-500/20 rounded-xl p-8"
               >
-                <h3 className="text-2xl font-bold text-green-400 mb-6">Modern Database Benefits</h3>
+                <h3 className="text-2xl font-bold text-green-400 mb-6">Cloud Database Advantages</h3>
                 <ul className="space-y-4 text-gray-300">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Reduced operational costs and complexity</span>
+                    <span>Pay-as-you-scale pricing model</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Elastic scalability and high performance</span>
+                    <span>Automatic scaling and load balancing</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Enhanced security and compliance features</span>
+                    <span>Managed updates, backups, and security</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Integration with modern cloud services</span>
+                    <span>Built-in high availability and disaster recovery</span>
                   </li>
                 </ul>
               </motion.div>
@@ -365,7 +363,7 @@ export default function DatabaseMigrationModernization() {
         </div>
       </section>
 
-      {/* Migration Services */}
+      {/* Cloud Database Platforms */}
       <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -376,16 +374,16 @@ export default function DatabaseMigrationModernization() {
             className="text-center mb-20"
           >
             <h2 className="text-5xl font-bold mb-6 text-white">
-              Migration & Modernization Services
+              Cloud Database Platforms
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive migration services for legacy to modern database transformation
+              Comprehensive managed database services across major cloud platforms
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-            {migrationServices.map((service, index) => (
+            {cloudDatabasePlatforms.map((platform, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -397,8 +395,8 @@ export default function DatabaseMigrationModernization() {
                 <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
                   <div className="absolute inset-0 rounded-2xl overflow-hidden opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                     <img
-                      src={service.backgroundImage}
-                      alt={service.title}
+                      src={platform.backgroundImage}
+                      alt={platform.title}
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -409,19 +407,19 @@ export default function DatabaseMigrationModernization() {
 
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                      {service.icon}
+                      {platform.icon}
                     </div>
 
                     <h3 className="text-xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {service.title}
+                      {platform.title}
                     </h3>
 
                     <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                      {service.description}
+                      {platform.description}
                     </p>
 
                     <div className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
+                      {platform.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center gap-2 text-xs text-gray-400">
                           <CheckCircle className="h-3 w-3 text-blue-400" />
                           <span>{feature}</span>
@@ -436,7 +434,7 @@ export default function DatabaseMigrationModernization() {
         </div>
       </section>
 
-      {/* Migration Approaches */}
+      {/* Key Benefits */}
       <section className="py-20 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -448,16 +446,16 @@ export default function DatabaseMigrationModernization() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Migration Approaches & Technologies
+                Key Benefits
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive migration strategies and toolsets for every database platform
+                Comprehensive advantages of cloud and managed database solutions
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {migrationApproaches.map((category, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {keyBenefits.map((category, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -470,10 +468,10 @@ export default function DatabaseMigrationModernization() {
                     {category.category}
                   </h3>
                   <div className="space-y-2">
-                    {category.approaches.map((approach, approachIndex) => (
-                      <div key={approachIndex} className="flex items-center gap-2">
+                    {category.benefits.map((benefit, benefitIndex) => (
+                      <div key={benefitIndex} className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-cyan-400" />
-                        <span className="text-gray-300 text-sm">{approach}</span>
+                        <span className="text-gray-300 text-sm">{benefit}</span>
                       </div>
                     ))}
                   </div>
@@ -500,7 +498,7 @@ export default function DatabaseMigrationModernization() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Specialized migration solutions tailored for industry-specific requirements
+                Cloud database solutions tailored for industry-specific requirements
               </p>
             </motion.div>
 
@@ -575,7 +573,7 @@ export default function DatabaseMigrationModernization() {
         </div>
       </section>
 
-      {/* Migration Success Metrics */}
+      {/* Client Success Metrics */}
       <section className="py-20 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -587,16 +585,16 @@ export default function DatabaseMigrationModernization() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Migration Success Metrics
+                Client Success & Impact Metrics
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Proven results from our database migration and modernization projects
+                Proven results from our cloud database implementations
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {migrationMetrics.map((metric, index) => (
+              {clientSuccessMetrics.map((metric, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -644,7 +642,7 @@ export default function DatabaseMigrationModernization() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Your trusted partner for database migration and modernization
+                Your trusted partner for cloud and managed database solutions
               </p>
             </motion.div>
 
@@ -714,11 +712,11 @@ export default function DatabaseMigrationModernization() {
               transition={{ delay: 0.2, type: "spring" }}
               className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-400/30 rounded-full backdrop-blur-sm"
             >
-              <ArrowRightLeft className="h-5 w-5 text-blue-400" />
+              <Cloud className="h-5 w-5 text-blue-400" />
               <span className="text-white font-medium">
-                Migration & Modernization Excellence
+                Cloud Database Excellence
               </span>
-              <Cloud className="h-4 w-4 text-cyan-400 fill-current" />
+              <Database className="h-4 w-4 text-cyan-400 fill-current" />
             </motion.div>
 
             <motion.h2
@@ -728,10 +726,10 @@ export default function DatabaseMigrationModernization() {
               className="text-4xl md:text-6xl font-bold mb-6"
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Transform Your Legacy
+                Scale Your Business
               </span>
               <br />
-              <span className="text-white">Databases Today</span>
+              <span className="text-white">with Cloud Databases</span>
             </motion.h2>
 
             <motion.p
@@ -740,7 +738,7 @@ export default function DatabaseMigrationModernization() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Partner with RTNextGenAI to migrate your databases to modern, secure, and scalable platforms
+              Partner with RTNextGenAI to implement scalable, secure, and cost-effective cloud database solutions
             </motion.p>
 
             <motion.div
@@ -753,8 +751,8 @@ export default function DatabaseMigrationModernization() {
                 size="lg"
                 className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               >
-                <ArrowRightLeft className="mr-2 h-5 w-5" />
-                Schedule Migration Assessment
+                <Cloud className="mr-2 h-5 w-5" />
+                Schedule a Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
