@@ -203,11 +203,11 @@ export const navLinks = [
       {
         name: "Database",
         items: [
-          { name: "Database Design & Architecture", href: "/database-design-architecture" },
-          { name: "Database Administration", href: "/database-administration" },
-          { name: "Database Migration & Modernization", href: "/database-migration-modernization" },
-          { name: "Cloud & Managed Databases", href: "/cloud-managed-databases" },
-          { name: "Performance Optimization", href: "/database-performance-optimization" },
+          { name: "Database Design & Architecture", href: "/it-services/databases/database-design-architecture" },
+          { name: "Database Administration", href: "/it-services/databases/database-administration" },
+          { name: "Database Migration & Modernization", href: "/it-services/databases/database-migration-modernization" },
+          { name: "Cloud & Managed Databases", href: "/it-services/databases/cloud-managed-databases" },
+          { name: "Database Performance Optimization", href: "/it-services/databases/database-performance-optimization" },
         ],
       },
       {
