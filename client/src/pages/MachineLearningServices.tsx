@@ -186,6 +186,19 @@ const capabilities = [
     ]
   },
   {
+    icon: <Activity className="h-8 w-8 text-white" />,
+    title: "Time-Series & Streaming ML",
+    description:
+      "Real-time predictions on streaming data for finance (fraud detection), IoT (sensor data), retail (clickstream analysis), and other time-sensitive applications requiring immediate insights.",
+    backgroundImage: "/assets/AI-ML.png",
+    features: [
+      "Real-time fraud detection",
+      "IoT sensor data analysis",
+      "Financial market predictions",
+      "Live clickstream analytics"
+    ]
+  },
+  {
     icon: <Settings className="h-8 w-8 text-white" />,
     title: "MLOps & Model Deployment",
     description:
@@ -198,6 +211,19 @@ const capabilities = [
       "Performance tracking & drift detection"
     ]
   },
+  {
+    icon: <Layers className="h-8 w-8 text-white" />,
+    title: "AI/ML Integration with Gen AI & Agents",
+    description:
+      "ML models powering Gen AI copilots and agentic systems with multi-agent orchestration for autonomous workflows, bridging traditional ML with cutting-edge AI capabilities.",
+    backgroundImage: "/assets/GenerativeAI.png",
+    features: [
+      "Gen AI copilot integration",
+      "Multi-agent orchestration",
+      "Autonomous workflow systems",
+      "ML-powered AI agents"
+    ]
+  },
 ];
 
 // Industry data for the interactive section
@@ -207,7 +233,7 @@ const industryData = [
     name: "Healthcare",
     image: "/assets/Healthcare.png",
     content:
-      "Predictive diagnostics, patient risk scoring, AI imaging analysis, and clinical decision support systems that improve patient outcomes while reducing operational costs and enhancing care quality.",
+      "Predictive diagnostics, patient risk scoring, AI imaging analysis, clinical decision support systems, and Gen AI for medical documentation that improve patient outcomes while reducing operational costs and enhancing care quality.",
     impact: "Improved diagnostic accuracy by 40% and reduced readmission rates by 25%"
   },
   {
@@ -215,7 +241,7 @@ const industryData = [
     name: "Finance",
     image: "/assets/Finance.png",
     content:
-      "Fraud detection, algorithmic trading, credit scoring, and risk assessment models that protect financial institutions while optimizing investment strategies and regulatory compliance.",
+      "Fraud detection, algorithmic trading, credit scoring, risk assessment models, and autonomous compliance monitoring with AI agents that protect financial institutions while optimizing investment strategies and regulatory compliance.",
     impact: "Reduced fraud losses by 60% and improved trading algorithm performance by 35%"
   },
   {
@@ -223,7 +249,7 @@ const industryData = [
     name: "Retail & eCommerce",
     image: "/assets/Ecommerce.png",
     content:
-      "Recommendation engines, demand forecasting, customer churn prevention, and personalization systems that enhance customer experience and drive revenue growth.",
+      "Recommendation engines, demand forecasting, customer churn prevention, personalization systems, and Gen AI-driven marketing content that enhance customer experience and drive revenue growth.",
     impact: "Increased conversion rates by 45% and reduced inventory costs by 30%"
   },
   {
@@ -231,7 +257,7 @@ const industryData = [
     name: "Manufacturing & IoT",
     image: "/assets/Manufacturing.png",
     content:
-      "Predictive maintenance, defect detection, supply chain optimization, and quality control systems that minimize downtime and maximize operational efficiency.",
+      "Predictive maintenance, defect detection, supply chain optimization, quality control systems, and IoT agents for automation that minimize downtime and maximize operational efficiency.",
     impact: "Reduced equipment downtime by 50% and improved quality control by 40%"
   },
   {
@@ -239,8 +265,16 @@ const industryData = [
     name: "Media & Entertainment",
     image: "/assets/Media.png",
     content:
-      "Audience analytics, content personalization, real-time recommendations, and engagement optimization that enhance viewer experience and content performance.",
+      "Audience analytics, content personalization, real-time recommendations, content generation, and engagement optimization that enhance viewer experience and content performance.",
     impact: "Enhanced content engagement by 55% and improved recommendation accuracy by 40%"
+  },
+  {
+    id: "energy",
+    name: "Energy & Utilities",
+    image: "/assets/Oil-Gas.png",
+    content:
+      "Smart grid forecasting, consumption optimization, predictive outage management, and demand response systems that improve grid reliability and reduce operational costs.",
+    impact: "Reduced energy waste by 35% and improved grid reliability by 45%"
   }
 ];
 
@@ -273,6 +307,13 @@ const successMetrics = [
     description: "Reduced equipment downtime with predictive maintenance",
     icon: Settings,
     color: "from-orange-500 to-red-500"
+  },
+  {
+    industry: "Energy",
+    metric: "35%",
+    description: "Reduced energy waste with smart grid optimization",
+    icon: Zap,
+    color: "from-yellow-500 to-orange-500"
   }
 ];
 
@@ -625,6 +666,12 @@ export default function MachineLearningServices() {
                   icon: Zap,
                   color: "from-orange-500 to-red-500",
                   platforms: ["AWS", "Azure", "GCP", "Multi-cloud"]
+                },
+                {
+                  title: "AI/Gen AI Tools",
+                  icon: Brain,
+                  color: "from-pink-500 to-purple-500",
+                  platforms: ["OpenAI", "Hugging Face", "LangChain", "Azure OpenAI"]
                 }
               ].map((category, index) => {
                 const IconComponent = category.icon;
@@ -778,6 +825,12 @@ export default function MachineLearningServices() {
                   icon: BarChart3,
                   color: "from-orange-500 to-red-500",
                   tools: ["Power BI", "Tableau", "Looker", "Grafana", "Weights & Biases", "TensorBoard", "Neptune"]
+                },
+                {
+                  title: "Gen AI & Agent Frameworks",
+                  icon: Bot,
+                  color: "from-purple-500 to-pink-500",
+                  tools: ["OpenAI GPT", "Azure OpenAI", "Hugging Face", "LangChain", "AutoGen", "CrewAI", "LlamaIndex"]
                 }
               ].map((category, categoryIndex) => {
                 const IconComponent = category.icon;
