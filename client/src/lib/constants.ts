@@ -203,9 +203,11 @@ export const navLinks = [
       {
         name: "Database",
         items: [
-          { name: "Database Design", href: "#database-design" },
-          { name: "Database Administration", href: "#database-admin" },
-          { name: "Data Migration", href: "#data-migration" },
+          { name: "Database Design & Architecture", href: "/database-design-architecture" },
+          { name: "Database Administration", href: "/database-administration" },
+          { name: "Database Migration & Modernization", href: "/database-migration-modernization" },
+          { name: "Cloud & Managed Databases", href: "/cloud-managed-databases" },
+          { name: "Performance Optimization", href: "/database-performance-optimization" },
         ],
       },
       {
