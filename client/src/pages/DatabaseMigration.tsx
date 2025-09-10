@@ -173,19 +173,25 @@ export default function DatabaseMigration() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-light text-white">
         
         {/* Hero Section */}
-        <section className="relative pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          {/* Background Elements */}
+        <section className="relative h-screen overflow-hidden">
+          {/* Background Image */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
+            <img
+              src="/assets/database-migration-banner.png"
+              alt="Database Migration & Modernization"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
+          {/* Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
 
-          <div className="relative max-w-7xl mx-auto text-center">
-            <motion.div {...fadeInUp}>
+          <div className="relative flex items-center h-full">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <motion.div {...fadeInUp}>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                 Seamless Database Migration &{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
@@ -231,7 +237,8 @@ export default function DatabaseMigration() {
                   <span className="text-lg font-medium text-orange-400">GCP</span>
                 </div>
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
