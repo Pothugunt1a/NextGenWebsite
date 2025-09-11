@@ -16,7 +16,6 @@ import {
   TrendingDown,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import Layout from "../components/Layout";
 
 interface Benefit {
   icon: React.ReactNode;
@@ -138,8 +137,7 @@ export default function ITConsulting() {
   };
 
   return (
-    <Layout>
-      <motion.div
+    <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -529,7 +527,6 @@ export default function ITConsulting() {
             </motion.div>
           </div>
         </section>
-      </motion.div>
-    </Layout>
+    </motion.div>
   );
 }

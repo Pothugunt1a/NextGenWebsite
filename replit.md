@@ -102,6 +102,7 @@ The backend is minimalistic but extensible, currently providing an API endpoint 
 - Corrected z-index conflicts between dropdown content and background images
 - Fixed navigation conflict where IT Services was navigating instead of showing dropdown
 - Added proper height constraints with scrolling for long dropdown lists
+- Fixed duplicate footer issue on IT Consulting page by removing double Layout wrapping
 
 **July 17, 2025:**
 - Fixed JSX closing tag error in GenerativeAIDevelopment.tsx that was preventing app startup
