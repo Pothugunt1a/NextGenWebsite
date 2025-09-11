@@ -226,6 +226,7 @@ export default function Navbar({
                           e.preventDefault();
                           if (link.hasDropdown) {
                             toggleDropdown(link.id, e);
+                            return; // Prevent any navigation when dropdown is enabled
                           } else if (link.href.startsWith("/")) {
                             setLocation(link.href);
                           } else {
@@ -241,7 +242,7 @@ export default function Navbar({
 
                       {activeDropdown === link.id && (
                         <div
-                          className="absolute left-0 right-0 top-full mt-2 bg-gray-900/95 backdrop-blur-sm shadow-2xl z-50 overflow-hidden animate-in fade-in-10 slide-in-from-top-5"
+                          className="absolute left-0 right-0 top-full mt-2 bg-gray-900/95 backdrop-blur-sm shadow-2xl z-50 overflow-x-visible overflow-y-auto max-h-[80vh] animate-in fade-in-10 slide-in-from-top-5"
                           onMouseEnter={handleDropdownMouseEnter}
                           onMouseLeave={handleDropdownMouseLeave}
                           style={{
@@ -255,7 +256,7 @@ export default function Navbar({
                           <div className="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
                           <div className="container mx-auto relative flex max-w-none min-h-[320px]">
                             {/* Dynamic Image on the right with gradient overlay */}
-                            <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 hidden md:block">
+                            <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-0 hidden md:block pointer-events-none">
                               <div className="relative">
                                 <img
                                   src={
@@ -417,7 +418,7 @@ export default function Navbar({
                                                       </div>
                                                       {/* Sub-category items - show when this specific sub-submenu is active */}
                                                       {activeDesktopSubSubmenu === `${category.name}-${item.name}` && (
-                                                        <div className="ml-8 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300 mt-2">
+                                                        <div className="ml-8 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300 mt-2 relative z-[60] overflow-visible">
                                                           {item.items.map((subItem, subIdx) => (
                                                             <a
                                                               key={subIdx}
