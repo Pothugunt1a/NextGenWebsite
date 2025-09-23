@@ -261,8 +261,8 @@ export default function DataWarehousingLakes() {
             >
               <div className="relative w-full h-96 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl overflow-hidden backdrop-blur-sm border border-blue-400/30">
                 <img
-                  src="/assets/DataLake-DataWarehouse.png"
-                  alt="Data Lake and Data Warehouse Architecture"
+                  src="/assets/Data-Governance.png"
+                  alt="Data Pipeline Illustration"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
