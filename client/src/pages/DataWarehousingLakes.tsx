@@ -452,6 +452,27 @@ export default function DataWarehousingLakes() {
                     </div>
                   )}
                 </motion.div>
+
+                {/* Architecture Visualization Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="mt-8"
+                >
+                  <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden">
+                    <img
+                      src="/assets/DataLake-DataWarehouse.png"
+                      alt="Data Lake and Data Warehouse Architecture Comparison"
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
+                  <p className="text-center text-gray-400 text-sm mt-3">
+                    Modern Data Architecture: Data Lake vs Data Warehouse Comparison
+                  </p>
+                </motion.div>
               </motion.div>
             </div>
           </div>
