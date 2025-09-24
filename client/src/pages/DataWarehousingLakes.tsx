@@ -479,6 +479,85 @@ export default function DataWarehousingLakes() {
         </div>
       </section>
 
+      {/* Architecture Overview Section */}
+      <section className="py-20 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Modern Data Architecture Overview
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Understand the comprehensive landscape of data lakes and data warehouses, 
+              and how they work together to create a unified data ecosystem for your enterprise.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-3xl overflow-hidden p-8">
+              <div className="relative">
+                <img
+                  src="/assets/DataLake-DataWarehouse.png"
+                  alt="Data Lake and Data Warehouse Architecture Overview"
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-2xl"></div>
+              </div>
+              
+              <div className="mt-8 text-center">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Complete Data Ecosystem Architecture
+                </h3>
+                <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                  This comprehensive diagram illustrates how data flows from various sources through 
+                  ingestion layers, gets processed and stored in both data lakes and warehouses, 
+                  and ultimately serves analytics, BI, and AI/ML workloads across your organization.
+                </p>
+              </div>
+
+              {/* Key Architecture Components */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-6 text-center">
+                  <Database className="h-8 w-8 text-blue-400 mx-auto mb-3" />
+                  <h4 className="text-lg font-bold text-white mb-2">Data Sources</h4>
+                  <p className="text-gray-300 text-sm">
+                    Multiple data inputs from ERP, CRM, IoT, social media, and operational systems
+                  </p>
+                </div>
+                
+                <div className="bg-cyan-500/10 border border-cyan-400/30 rounded-xl p-6 text-center">
+                  <Cloud className="h-8 w-8 text-cyan-400 mx-auto mb-3" />
+                  <h4 className="text-lg font-bold text-white mb-2">Processing Layer</h4>
+                  <p className="text-gray-300 text-sm">
+                    ETL/ELT pipelines, real-time streaming, and data transformation workflows
+                  </p>
+                </div>
+                
+                <div className="bg-purple-500/10 border border-purple-400/30 rounded-xl p-6 text-center">
+                  <BarChart3 className="h-8 w-8 text-purple-400 mx-auto mb-3" />
+                  <h4 className="text-lg font-bold text-white mb-2">Analytics & AI</h4>
+                  <p className="text-gray-300 text-sm">
+                    BI dashboards, machine learning models, and advanced analytics platforms
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Our Capabilities Section */}
       <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
