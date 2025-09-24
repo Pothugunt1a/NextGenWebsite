@@ -1,0 +1,125 @@
+Reference Architectures (cloud-agnostic)
+
+Ingest → (Batch/CDC/Streaming)
+Store → Object Storage (raw/bronze), ACID Tables (silver/gold)
+Transform → ELT/ETL with workflows & SQL/Notebook jobs
+Serve → BI semantic layer + SQL endpoints + Feature Store
+Govern → Catalog, lineage, row/column masking, tokenization
+Ops → CI/CD for data, tests, observability, cost guardrails
+
+6) Detailed Sections
+A. Data Warehouse
+
+What you get
+
+Dimensional models (star/snowflake), conformed dimensions, governed semantic layer.
+
+Fast aggregates, materialized views, workload isolation.
+
+Data quality SLAs and auditability.
+
+Typical use cases
+
+Financial & regulatory reporting, sales pipeline dashboards, inventory & supply chain KPIs.
+
+Key capabilities
+
+SQL performance tuning, partitioning/clustering, role-based access, SCD handling, data vault if needed.
+
+B. Data Lake
+
+What you get
+
+Low-cost, elastic storage for raw/semi-structured/streaming data.
+
+Schema-on-read, notebooks for exploration, ML feature creation.
+
+Batch + streaming pipelines, sandboxed experimentation.
+
+Typical use cases
+
+Clickstream, IoT, logs, image/audio NLP, experimentation datasets.
+
+Key capabilities
+
+Data zoning (Bronze/Silver/Gold), schema evolution, cost-aware lifecycle (tiering/retention), data discovery.
+
+C. Data Lakehouse
+
+What you get
+
+ACID table format over the lake (Delta/Iceberg/Hudi).
+
+Time travel, incremental upserts/merges, streaming writes.
+
+Warehouse-quality SQL + vector/ML workloads on the same tables.
+
+One catalog for permissions, lineage, and data products.
+
+Typical use cases
+
+Real-time dashboards on streaming data, ML-powered BI, unified metrics layer, feature store + batch/online inference.
+
+Key capabilities
+
+Table optimization (Z-order/clustering), caching, change data feed, fine-grained access control, governance at column/row level.
+
+7) Tooling & Tech (examples)
+
+Ingest: Fivetran, Stitch, Debezium, Kafka/Kinesis/Event Hubs, Airbyte
+
+Transform/Orchestrate: dbt, Airflow/Composer, Fabric Data Factory, AWS Glue, Databricks Workflows
+
+Storage & Tables: S3/ADLS/GCS + Delta/Iceberg/Hudi
+
+Serving/BI: Power BI, Looker, Tableau, Fabric, BigQuery, Snowflake SQL endpoints
+
+ML/AI: Databricks/Vertex/SageMaker, Feature Store, MLflow
+
+Governance: Unity Catalog/BigQuery Data Catalog/Purview + Great Expectations/Assertions for data tests
+
+8) Security, Compliance & Governance
+
+Central catalog with least privilege & attribute-based access.
+
+PII handling: tokenization, masking, encryption at rest & in transit.
+
+Data contracts & quality rules (freshness, completeness, uniqueness).
+
+Lineage & impact analysis; audit trails for change management.
+
+Regs: SOC 2, HIPAA, GDPR, PCI—mapped to controls and evidence.
+
+9) Performance & Cost Controls
+
+Right-sizing compute pools/warehouses; autoscaling with guardrails.
+
+Storage tiering + compaction & file size tuning.
+
+Caching, materialized views, clustering/Z-order.
+
+Unit cost dashboards (cost per query, per job, per dataset).
+
+Workload isolation (BI vs. ELT vs. DS).
+
+10) Migration & Modernization (your path)
+
+Assess: inventory sources, reports, pipelines, SLAs, and cost.
+
+Design: target (Warehouse / Lake / Lakehouse), data model, security model, and data contracts.
+
+Pilot: migrate 1–2 data products end-to-end; validate KPIs & costs.
+
+Migrate: automate ELT, implement tests, swap BI sources with dual-run.
+
+Optimize: performance tuning, governance rollout, decommission legacy.
+
+Operate: observability, SLOs, CI/CD, FinOps.
+
+11) Sample Packages
+
+Warehouse QuickStart (4–6 weeks): conformed model, semantic layer, 10–15 KPIs, automated refresh, governance baseline.
+
+Lakehouse Accelerator (6–10 weeks): Delta/Iceberg tables, streaming pipeline, dbt + tests, feature store + one ML use case.
+
+Modernization & FinOps: cost baseline, right-sizing, tiering, caching/materialization strategy.
