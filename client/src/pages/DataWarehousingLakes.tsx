@@ -490,11 +490,11 @@ export default function DataWarehousingLakes() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Modern Data Architecture
+              What is Modern Data Architecture
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              A blueprint framework for how data is collected, transformed, stored, managed, and used across an organization.
+              A blueprint/framework for how data is collected, transformed, stored, managed, and used across an organization.
               Designed to support both historical/batch analytics and real-time/streaming analytics, with scalability, flexibility, and governance baked in.
             </p>
           </motion.div>
@@ -519,17 +519,17 @@ export default function DataWarehousingLakes() {
               
               <div className="mt-8 text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Complete Data Ecosystem Framework
+                  Complete Modern Data Architecture Framework
                 </h3>
                 <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
                   This framework facilitates integration across many data sources (structured, semi-structured, unstructured) 
-                  and enables advanced use cases like machine learning, AI, and predictive analytics.
+                  and enables advanced use cases like machine learning, AI, predictive analytics.
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Key Components/Layers */}
+          {/* Key Components/Layers Table */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -537,69 +537,80 @@ export default function DataWarehousingLakes() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <h3 className="text-3xl font-bold text-white text-center mb-12">Key Components & Layers</h3>
+            <h3 className="text-3xl font-bold text-white text-center mb-12">Key Components / Layers</h3>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Data Sources",
-                  description: "ERP systems, CRM, IoT devices, SaaS apps, mobile devices, logs, external data feeds, etc.",
-                  icon: Database,
-                  color: "blue"
-                },
-                {
-                  title: "Ingestion / Processing",
-                  description: "ETL or ELT pipelines; streaming ingestion; tools like Spark, Glue, Databricks, Azure Data Factory; cleaning, transforming, enriching data.",
-                  icon: Settings,
-                  color: "cyan"
-                },
-                {
-                  title: "Storage",
-                  description: "Data lake (e.g. S3, ADLS), data warehouse for structured, curated data; often hybrid storage solutions.",
-                  icon: Server,
-                  color: "purple"
-                },
-                {
-                  title: "Analytics & Consumption",
-                  description: "BI dashboards, reporting, ad-hoc queries; dashboards for business users; real-time & interactive analytics.",
-                  icon: BarChart3,
-                  color: "green"
-                },
-                {
-                  title: "Machine Learning / AI",
-                  description: "Training models, deploying models, using data for predictions, recommendations, anomaly detection.",
-                  icon: Brain,
-                  color: "orange"
-                },
-                {
-                  title: "Governance / Security / Quality",
-                  description: "Data catalog, metadata, access controls, data lineage, compliance, ensuring data is accurate and trustworthy.",
-                  icon: Shield,
-                  color: "red"
-                }
-              ].map((component, index) => {
-                const IconComponent = component.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300"
-                  >
-                    <div className={`w-12 h-12 bg-gradient-to-r from-${component.color}-500 to-${component.color}-600 rounded-lg flex items-center justify-center mb-4`}>
-                      <IconComponent className="h-6 w-6 text-white" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-3">{component.title}</h4>
-                    <p className="text-gray-300 leading-relaxed text-sm">{component.description}</p>
-                  </motion.div>
-                );
-              })}
+            <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-b border-gray-600">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-lg font-bold text-blue-400">Layer / Component</th>
+                      <th className="px-6 py-4 text-left text-lg font-bold text-cyan-400">What it does / includes</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-700">
+                    <tr className="hover:bg-gray-700/50 transition-colors duration-300">
+                      <td className="px-6 py-6">
+                        <div className="flex items-center gap-4">
+                          <Database className="h-8 w-8 text-blue-400" />
+                          <span className="text-xl font-semibold text-white">Data Sources</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-6 text-gray-300 leading-relaxed">
+                        ERP systems, CRM, IoT devices, SaaS apps, mobile devices, logs, external data feeds, etc.
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-700/50 transition-colors duration-300">
+                      <td className="px-6 py-6">
+                        <div className="flex items-center gap-4">
+                          <Settings className="h-8 w-8 text-cyan-400" />
+                          <span className="text-xl font-semibold text-white">Ingestion / Processing</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-6 text-gray-300 leading-relaxed">
+                        ETL or ELT pipelines; streaming ingestion; tools like Spark, Glue, Databricks, Azure Data Factory; cleaning, transforming, enriching data.
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-700/50 transition-colors duration-300">
+                      <td className="px-6 py-6">
+                        <div className="flex items-center gap-4">
+                          <Server className="h-8 w-8 text-purple-400" />
+                          <span className="text-xl font-semibold text-white">Storage</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-6 text-gray-300 leading-relaxed">
+                        Data lake (e.g. S3, ADLS), data warehouse for structured, curated data; often hybrid storage solutions.
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-700/50 transition-colors duration-300">
+                      <td className="px-6 py-6">
+                        <div className="flex items-center gap-4">
+                          <BarChart3 className="h-8 w-8 text-green-400" />
+                          <span className="text-xl font-semibold text-white">Analytics & Consumption</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-6 text-gray-300 leading-relaxed">
+                        BI dashboards, reporting, ad-hoc queries; dashboards for business users; real-time & interactive analytics.
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-700/50 transition-colors duration-300">
+                      <td className="px-6 py-6">
+                        <div className="flex items-center gap-4">
+                          <Brain className="h-8 w-8 text-orange-400" />
+                          <span className="text-xl font-semibold text-white">Machine Learning / AI</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-6 text-gray-300 leading-relaxed">
+                        Training models, deploying models, using data for predictions, recommendations, anomaly detection.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </motion.div>
 
-          {/* Benefits and Challenges */}
+          {/* Benefits and Challenges Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Benefits */}
             <motion.div
@@ -611,7 +622,7 @@ export default function DataWarehousingLakes() {
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                 <CheckCircle className="h-7 w-7 text-green-400 mr-3" />
-                Benefits of Modern Data Architecture
+                Key Benefits
               </h3>
               <ul className="space-y-4">
                 {[
@@ -623,7 +634,7 @@ export default function DataWarehousingLakes() {
                 ].map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-300 leading-relaxed">{benefit}</p>
+                    <p className="text-gray-300 leading-relaxed text-sm">{benefit}</p>
                   </li>
                 ))}
               </ul>
@@ -639,7 +650,7 @@ export default function DataWarehousingLakes() {
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                 <Activity className="h-7 w-7 text-orange-400 mr-3" />
-                Challenges & Considerations
+                Implementation Challenges
               </h3>
               <ul className="space-y-4">
                 {[
@@ -651,7 +662,7 @@ export default function DataWarehousingLakes() {
                 ].map((challenge, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-300 leading-relaxed">{challenge}</p>
+                    <p className="text-gray-300 leading-relaxed text-sm">{challenge}</p>
                   </li>
                 ))}
               </ul>
