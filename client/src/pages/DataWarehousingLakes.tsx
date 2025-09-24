@@ -625,7 +625,236 @@ export default function DataWarehousingLakes() {
         </div>
       </section>
 
-      {/* Architecture Diagram Section */}
+      {/* Reference Architectures Section */}
+      <section className="py-20 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Cloud-Agnostic Reference Architectures
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Comprehensive data architecture patterns that work across AWS, Azure, and Google Cloud platforms
+            </p>
+          </motion.div>
+
+          {/* Architecture Flow */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-20"
+          >
+            <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-3xl p-8">
+              <div className="grid grid-cols-1 md:grid-cols-6 gap-6 items-center">
+                {/* Ingest */}
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-blue-400 mb-4">Ingest</h3>
+                  <div className="space-y-2">
+                    {["Batch", "CDC", "Streaming"].map((type, index) => (
+                      <div key={index} className="bg-blue-500/20 rounded-lg p-2 border border-blue-400/30">
+                        <span className="text-white text-sm font-medium">{type}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <ArrowRight className="h-6 w-6 text-cyan-400 mx-auto" />
+
+                {/* Store */}
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-cyan-400 mb-4">Store</h3>
+                  <div className="space-y-2">
+                    <div className="bg-cyan-500/20 rounded-lg p-2 border border-cyan-400/30">
+                      <span className="text-white text-xs">Object Storage</span>
+                    </div>
+                    <div className="bg-cyan-500/20 rounded-lg p-2 border border-cyan-400/30">
+                      <span className="text-white text-xs">ACID Tables</span>
+                    </div>
+                  </div>
+                </div>
+
+                <ArrowRight className="h-6 w-6 text-green-400 mx-auto" />
+
+                {/* Transform */}
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-green-400 mb-4">Transform</h3>
+                  <div className="space-y-2">
+                    <div className="bg-green-500/20 rounded-lg p-2 border border-green-400/30">
+                      <span className="text-white text-xs">ELT/ETL</span>
+                    </div>
+                    <div className="bg-green-500/20 rounded-lg p-2 border border-green-400/30">
+                      <span className="text-white text-xs">SQL/Notebooks</span>
+                    </div>
+                  </div>
+                </div>
+
+                <ArrowRight className="h-6 w-6 text-purple-400 mx-auto" />
+
+                {/* Serve & Govern */}
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-purple-400 mb-4">Serve & Govern</h3>
+                  <div className="space-y-2">
+                    <div className="bg-purple-500/20 rounded-lg p-2 border border-purple-400/30">
+                      <span className="text-white text-xs">BI Semantic Layer</span>
+                    </div>
+                    <div className="bg-purple-500/20 rounded-lg p-2 border border-purple-400/30">
+                      <span className="text-white text-xs">Feature Store</span>
+                    </div>
+                    <div className="bg-purple-500/20 rounded-lg p-2 border border-purple-400/30">
+                      <span className="text-white text-xs">Catalog & Lineage</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Detailed Architecture Components */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Data Warehouse */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8"
+            >
+              <div className="flex items-center mb-6">
+                <Database className="h-8 w-8 text-blue-400 mr-3" />
+                <h3 className="text-2xl font-bold text-white">Data Warehouse</h3>
+              </div>
+              
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-300 mb-2">What You Get</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Dimensional models (star/snowflake)</li>
+                    <li>• Governed semantic layer</li>
+                    <li>• Fast aggregates & materialized views</li>
+                    <li>• Data quality SLAs</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-green-300 mb-2">Use Cases</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Financial & regulatory reporting</li>
+                    <li>• Sales pipeline dashboards</li>
+                    <li>• Inventory & supply chain KPIs</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-purple-300 mb-2">Key Capabilities</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• SQL performance tuning</li>
+                    <li>• Role-based access control</li>
+                    <li>• SCD handling & data vault</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Data Lake */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8"
+            >
+              <div className="flex items-center mb-6">
+                <Cloud className="h-8 w-8 text-cyan-400 mr-3" />
+                <h3 className="text-2xl font-bold text-white">Data Lake</h3>
+              </div>
+              
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-300 mb-2">What You Get</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Low-cost, elastic storage</li>
+                    <li>• Schema-on-read flexibility</li>
+                    <li>• Notebooks for exploration</li>
+                    <li>• ML feature creation</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-green-300 mb-2">Use Cases</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Clickstream & IoT data</li>
+                    <li>• Image/audio NLP</li>
+                    <li>• Experimentation datasets</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-purple-300 mb-2">Key Capabilities</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Bronze/Silver/Gold zoning</li>
+                    <li>• Schema evolution</li>
+                    <li>• Cost-aware lifecycle</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Lakehouse */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8"
+            >
+              <div className="flex items-center mb-6">
+                <Layers className="h-8 w-8 text-purple-400 mr-3" />
+                <h3 className="text-2xl font-bold text-white">Lakehouse</h3>
+              </div>
+              
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-300 mb-2">What You Get</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• ACID table format (Delta/Iceberg)</li>
+                    <li>• Time travel & incremental upserts</li>
+                    <li>• Warehouse-quality SQL + ML</li>
+                    <li>• Unified catalog & governance</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-green-300 mb-2">Use Cases</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Real-time dashboards</li>
+                    <li>• ML-powered BI</li>
+                    <li>• Unified metrics layer</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-purple-300 mb-2">Key Capabilities</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Table optimization (Z-order)</li>
+                    <li>• Fine-grained access control</li>
+                    <li>• Change data feed</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack & Tooling */}
       <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -636,70 +865,472 @@ export default function DataWarehousingLakes() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-white">
-              Modern Data Architecture
+              Enterprise-Grade Tooling & Technology
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              End-to-end data flow from multiple sources to insights and AI models
+              Comprehensive technology stack for modern data platforms
             </p>
           </motion.div>
 
-          <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-              {/* Sources */}
-              <div className="text-center">
-                <h3 className="text-lg font-bold text-blue-400 mb-4">Data Sources</h3>
-                <div className="space-y-3">
-                  {["ERP", "CRM", "IoT", "SaaS", "Mobile"].map((source, index) => (
-                    <div key={index} className="bg-blue-500/20 rounded-lg p-3 border border-blue-400/30">
-                      <span className="text-white text-sm font-medium">{source}</span>
-                    </div>
-                  ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Ingestion Tools */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center">
+                <Database className="h-6 w-6 mr-2" />
+                Data Ingestion
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["Fivetran", "Stitch", "Debezium", "Kafka", "Kinesis", "Airbyte"].map((tool, index) => (
+                  <span key={index} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-400/30">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Transform & Orchestrate */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <h3 className="text-xl font-bold text-cyan-400 mb-4 flex items-center">
+                <Settings className="h-6 w-6 mr-2" />
+                Transform & Orchestrate
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["dbt", "Airflow", "Databricks", "AWS Glue", "Data Factory"].map((tool, index) => (
+                  <span key={index} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm border border-cyan-400/30">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Storage & Tables */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center">
+                <Cloud className="h-6 w-6 mr-2" />
+                Storage & Tables
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["S3/ADLS/GCS", "Delta Lake", "Iceberg", "Hudi"].map((tool, index) => (
+                  <span key={index} className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm border border-green-400/30">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* BI & Analytics */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <h3 className="text-xl font-bold text-purple-400 mb-4 flex items-center">
+                <BarChart3 className="h-6 w-6 mr-2" />
+                BI & Analytics
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["Power BI", "Looker", "Tableau", "Fabric", "BigQuery"].map((tool, index) => (
+                  <span key={index} className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-400/30">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* ML & AI */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <h3 className="text-xl font-bold text-orange-400 mb-4 flex items-center">
+                <Brain className="h-6 w-6 mr-2" />
+                ML & AI Platform
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["Databricks", "SageMaker", "Vertex AI", "MLflow", "Feature Store"].map((tool, index) => (
+                  <span key={index} className="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-sm border border-orange-400/30">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Governance */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <h3 className="text-xl font-bold text-red-400 mb-4 flex items-center">
+                <Shield className="h-6 w-6 mr-2" />
+                Governance & Security
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["Unity Catalog", "Purview", "Great Expectations", "Data Catalog"].map((tool, index) => (
+                  <span key={index} className="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-sm border border-red-400/30">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Security, Compliance & Governance */}
+      <section className="py-20 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Enterprise Security & Compliance
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive security frameworks with built-in compliance for regulated industries
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Access Control */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                <Lock className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">Access Control</h3>
+              <ul className="text-gray-400 space-y-2 text-sm">
+                <li>• Central catalog with least privilege</li>
+                <li>• Attribute-based access control</li>
+                <li>• Role-based permissions</li>
+                <li>• Fine-grained column/row security</li>
+              </ul>
+            </motion.div>
+
+            {/* Data Protection */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+                <Shield className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">Data Protection</h3>
+              <ul className="text-gray-400 space-y-2 text-sm">
+                <li>• PII tokenization & masking</li>
+                <li>• Encryption at rest & in transit</li>
+                <li>• Data anonymization</li>
+                <li>• Secure key management</li>
+              </ul>
+            </motion.div>
+
+            {/* Quality & Contracts */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+                <CheckCircle className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">Data Quality</h3>
+              <ul className="text-gray-400 space-y-2 text-sm">
+                <li>• Data contracts & quality rules</li>
+                <li>• Freshness monitoring</li>
+                <li>• Completeness validation</li>
+                <li>• Uniqueness checks</li>
+              </ul>
+            </motion.div>
+
+            {/* Compliance */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
+            >
+              <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <Award className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">Compliance</h3>
+              <ul className="text-gray-400 space-y-2 text-sm">
+                <li>• SOC 2 Type II compliance</li>
+                <li>• HIPAA for healthcare</li>
+                <li>• GDPR for EU data</li>
+                <li>• PCI DSS for payments</li>
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Governance Features */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16"
+          >
+            <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-white text-center mb-8">
+                Advanced Governance Capabilities
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Eye className="h-8 w-8 text-blue-400" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Data Lineage</h4>
+                  <p className="text-gray-400 text-sm">End-to-end impact analysis and change management</p>
                 </div>
-              </div>
 
-              {/* Arrow 1 */}
-              <div className="flex justify-center">
-                <ArrowRight className="h-8 w-8 text-cyan-400" />
-              </div>
-
-              {/* ETL Tools */}
-              <div className="text-center">
-                <h3 className="text-lg font-bold text-cyan-400 mb-4">ETL/ELT</h3>
-                <div className="space-y-3">
-                  {["Spark", "Databricks", "Glue", "ADF"].map((tool, index) => (
-                    <div key={index} className="bg-cyan-500/20 rounded-lg p-3 border border-cyan-400/30">
-                      <span className="text-white text-sm font-medium">{tool}</span>
-                    </div>
-                  ))}
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <FileText className="h-8 w-8 text-cyan-400" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Audit Trails</h4>
+                  <p className="text-gray-400 text-sm">Comprehensive logging for compliance and security</p>
                 </div>
-              </div>
 
-              {/* Arrow 2 */}
-              <div className="flex justify-center">
-                <ArrowRight className="h-8 w-8 text-purple-400" />
-              </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Activity className="h-8 w-8 text-green-400" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Cost Controls</h4>
+                  <p className="text-gray-400 text-sm">Unit cost dashboards and workload isolation</p>
+                </div>
 
-              {/* Storage & Analytics */}
-              <div className="text-center">
-                <h3 className="text-lg font-bold text-purple-400 mb-4">Storage & Analytics</h3>
-                <div className="space-y-3">
-                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-400/30">
-                    <span className="text-white text-sm font-medium">Data Lake (S3/ADLS)</span>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="h-8 w-8 text-purple-400" />
                   </div>
-                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-400/30">
-                    <span className="text-white text-sm font-medium">Data Warehouse</span>
-                  </div>
-                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-400/30">
-                    <span className="text-white text-sm font-medium">BI Dashboards</span>
-                  </div>
-                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-400/30">
-                    <span className="text-white text-sm font-medium">ML Models</span>
-                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Performance</h4>
+                  <p className="text-gray-400 text-sm">Right-sizing, caching, and optimization strategies</p>
                 </div>
               </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Migration & Modernization Roadmap */}
+      <section className="py-20 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Migration & Modernization Roadmap
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Proven methodology for migrating from legacy systems to modern data platforms
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                phase: "01",
+                title: "Assess & Inventory",
+                description: "Comprehensive analysis of current data sources, reports, pipelines, SLAs, and costs",
+                icon: <Eye className="h-6 w-6 text-white" />,
+                color: "from-blue-500 to-cyan-500",
+                deliverables: ["Asset inventory", "Cost baseline", "Performance metrics", "Gap analysis"]
+              },
+              {
+                phase: "02", 
+                title: "Design & Plan",
+                description: "Target architecture design with data models, security frameworks, and migration strategy",
+                icon: <Settings className="h-6 w-6 text-white" />,
+                color: "from-cyan-500 to-blue-500",
+                deliverables: ["Architecture blueprint", "Security model", "Data contracts", "Migration plan"]
+              },
+              {
+                phase: "03",
+                title: "Pilot & Validate",
+                description: "End-to-end migration of 1-2 data products to validate approach and performance",
+                icon: <Target className="h-6 w-6 text-white" />,
+                color: "from-green-500 to-teal-500",
+                deliverables: ["Pilot implementation", "KPI validation", "Cost analysis", "Lessons learned"]
+              },
+              {
+                phase: "04",
+                title: "Migrate & Automate",
+                description: "Full-scale migration with automated ELT, comprehensive testing, and BI source swapping",
+                icon: <ArrowRight className="h-6 w-6 text-white" />,
+                color: "from-purple-500 to-blue-500",
+                deliverables: ["Automated pipelines", "Test frameworks", "Dual-run validation", "User training"]
+              },
+              {
+                phase: "05",
+                title: "Optimize & Scale",
+                description: "Performance tuning, governance rollout, and legacy system decommissioning",
+                icon: <TrendingUp className="h-6 w-6 text-white" />,
+                color: "from-orange-500 to-red-500",
+                deliverables: ["Performance optimization", "Governance policies", "Cost optimization", "Legacy sunset"]
+              },
+              {
+                phase: "06",
+                title: "Operate & Monitor",
+                description: "Ongoing operations with observability, SLOs, CI/CD, and FinOps implementation",
+                icon: <Activity className="h-6 w-6 text-white" />,
+                color: "from-pink-500 to-purple-500",
+                deliverables: ["Monitoring dashboards", "SLO definitions", "CI/CD pipelines", "Cost controls"]
+              }
+            ].map((phase, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105">
+                  <div className="flex items-center mb-6">
+                    <div className={`w-12 h-12 bg-gradient-to-r ${phase.color} rounded-lg flex items-center justify-center mr-4`}>
+                      {phase.icon}
+                    </div>
+                    <div>
+                      <span className="text-sm font-medium text-gray-400">Phase {phase.phase}</span>
+                      <h3 className="text-xl font-bold text-white">{phase.title}</h3>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-400 leading-relaxed mb-6">
+                    {phase.description}
+                  </p>
+
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-300 mb-3">Key Deliverables:</h4>
+                    <ul className="space-y-1">
+                      {phase.deliverables.map((deliverable, idx) => (
+                        <li key={idx} className="text-gray-400 text-sm flex items-center">
+                          <CheckCircle className="h-3 w-3 text-green-400 mr-2 flex-shrink-0" />
+                          {deliverable}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+
+          {/* Sample Packages */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-20"
+          >
+            <h3 className="text-3xl font-bold text-white text-center mb-12">
+              Sample Implementation Packages
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Warehouse QuickStart",
+                  duration: "4-6 weeks",
+                  description: "Conformed data model with semantic layer, 10-15 KPIs, automated refresh, and governance baseline",
+                  features: ["Dimensional modeling", "Semantic layer", "BI dashboards", "Data quality rules"],
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  title: "Lakehouse Accelerator", 
+                  duration: "6-10 weeks",
+                  description: "Delta/Iceberg tables, streaming pipelines, dbt transformations, feature store, and ML use case",
+                  features: ["ACID tables", "Streaming pipelines", "Feature store", "ML integration"],
+                  color: "from-purple-500 to-blue-500"
+                },
+                {
+                  title: "Modernization & FinOps",
+                  duration: "3-4 weeks",
+                  description: "Cost baseline analysis, right-sizing recommendations, tiering strategy, and optimization roadmap",
+                  features: ["Cost analysis", "Right-sizing", "Storage tiering", "Performance tuning"],
+                  color: "from-green-500 to-teal-500"
+                }
+              ].map((package_, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 h-full hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105">
+                    <div className={`w-full h-2 bg-gradient-to-r ${package_.color} rounded-full mb-6`}></div>
+                    
+                    <h4 className="text-xl font-bold text-white mb-2">{package_.title}</h4>
+                    <p className="text-sm text-blue-300 font-medium mb-4">{package_.duration}</p>
+                    
+                    <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                      {package_.description}
+                    </p>
+
+                    <div className="space-y-2">
+                      {package_.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-sm text-gray-300">
+                          <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
