@@ -479,7 +479,7 @@ export default function DataWarehousingLakes() {
         </div>
       </section>
 
-      {/* Modern Data Architecture Section */}
+      {/* Architecture Overview Section */}
       <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -490,28 +490,27 @@ export default function DataWarehousingLakes() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Modern Data Architecture
+              Modern Data Architecture Overview
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              A blueprint framework for how data is collected, transformed, stored, managed, and used across an organization.
-              Designed to support both historical/batch analytics and real-time/streaming analytics, with scalability, flexibility, and governance baked in.
+              Understand the comprehensive landscape of data lakes and data warehouses, 
+              and how they work together to create a unified data ecosystem for your enterprise.
             </p>
           </motion.div>
 
-          {/* Main Architecture Image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-7xl mx-auto mb-16"
+            className="max-w-6xl mx-auto"
           >
             <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-3xl overflow-hidden p-8">
               <div className="relative">
                 <img
-                  src="/assets/DataArchitecture.png"
-                  alt="Modern Data Architecture Blueprint"
+                  src="/assets/DataLake-DataWarehouse.png"
+                  alt="Data Lake and Data Warehouse Architecture Overview"
                   className="w-full h-auto object-cover rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-2xl"></div>
@@ -519,144 +518,43 @@ export default function DataWarehousingLakes() {
               
               <div className="mt-8 text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Complete Data Ecosystem Framework
+                  Complete Data Ecosystem Architecture
                 </h3>
                 <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
-                  This framework facilitates integration across many data sources (structured, semi-structured, unstructured) 
-                  and enables advanced use cases like machine learning, AI, and predictive analytics.
+                  This comprehensive diagram illustrates how data flows from various sources through 
+                  ingestion layers, gets processed and stored in both data lakes and warehouses, 
+                  and ultimately serves analytics, BI, and AI/ML workloads across your organization.
                 </p>
+              </div>
+
+              {/* Key Architecture Components */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-6 text-center">
+                  <Database className="h-8 w-8 text-blue-400 mx-auto mb-3" />
+                  <h4 className="text-lg font-bold text-white mb-2">Data Sources</h4>
+                  <p className="text-gray-300 text-sm">
+                    Multiple data inputs from ERP, CRM, IoT, social media, and operational systems
+                  </p>
+                </div>
+                
+                <div className="bg-cyan-500/10 border border-cyan-400/30 rounded-xl p-6 text-center">
+                  <Cloud className="h-8 w-8 text-cyan-400 mx-auto mb-3" />
+                  <h4 className="text-lg font-bold text-white mb-2">Processing Layer</h4>
+                  <p className="text-gray-300 text-sm">
+                    ETL/ELT pipelines, real-time streaming, and data transformation workflows
+                  </p>
+                </div>
+                
+                <div className="bg-purple-500/10 border border-purple-400/30 rounded-xl p-6 text-center">
+                  <BarChart3 className="h-8 w-8 text-purple-400 mx-auto mb-3" />
+                  <h4 className="text-lg font-bold text-white mb-2">Analytics & AI</h4>
+                  <p className="text-gray-300 text-sm">
+                    BI dashboards, machine learning models, and advanced analytics platforms
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
-
-          {/* Key Components/Layers */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h3 className="text-3xl font-bold text-white text-center mb-12">Key Components & Layers</h3>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Data Sources",
-                  description: "ERP systems, CRM, IoT devices, SaaS apps, mobile devices, logs, external data feeds, etc.",
-                  icon: Database,
-                  color: "blue"
-                },
-                {
-                  title: "Ingestion / Processing",
-                  description: "ETL or ELT pipelines; streaming ingestion; tools like Spark, Glue, Databricks, Azure Data Factory; cleaning, transforming, enriching data.",
-                  icon: Settings,
-                  color: "cyan"
-                },
-                {
-                  title: "Storage",
-                  description: "Data lake (e.g. S3, ADLS), data warehouse for structured, curated data; often hybrid storage solutions.",
-                  icon: Server,
-                  color: "purple"
-                },
-                {
-                  title: "Analytics & Consumption",
-                  description: "BI dashboards, reporting, ad-hoc queries; dashboards for business users; real-time & interactive analytics.",
-                  icon: BarChart3,
-                  color: "green"
-                },
-                {
-                  title: "Machine Learning / AI",
-                  description: "Training models, deploying models, using data for predictions, recommendations, anomaly detection.",
-                  icon: Brain,
-                  color: "orange"
-                },
-                {
-                  title: "Governance / Security / Quality",
-                  description: "Data catalog, metadata, access controls, data lineage, compliance, ensuring data is accurate and trustworthy.",
-                  icon: Shield,
-                  color: "red"
-                }
-              ].map((component, index) => {
-                const IconComponent = component.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300"
-                  >
-                    <div className={`w-12 h-12 bg-gradient-to-r from-${component.color}-500 to-${component.color}-600 rounded-lg flex items-center justify-center mb-4`}>
-                      <IconComponent className="h-6 w-6 text-white" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-3">{component.title}</h4>
-                    <p className="text-gray-300 leading-relaxed text-sm">{component.description}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-
-          {/* Benefits and Challenges */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Benefits */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-green-400/30 rounded-2xl p-8"
-            >
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <CheckCircle className="h-7 w-7 text-green-400 mr-3" />
-                Benefits of Modern Data Architecture
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Enables faster insights and decision making, because data is available sooner and in richer form",
-                  "Better support for real-time or near real-time analytics & streaming",
-                  "Flexibility: supports many types of data (structured, semi-structured, unstructured) and many processing paradigms",
-                  "Improved governance, data quality, security",
-                  "Efficiency and cost savings: avoiding unnecessary duplication of data, using cloud storage / compute elastically"
-                ].map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-300 leading-relaxed">{benefit}</p>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Challenges */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-orange-500/10 to-red-500/10 backdrop-blur-sm border border-orange-400/30 rounded-2xl p-8"
-            >
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <Activity className="h-7 w-7 text-orange-400 mr-3" />
-                Challenges & Considerations
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Legacy systems integration: many organizations have older systems that are hard to migrate",
-                  "Ensuring data quality, consistency, and metadata / lineage",
-                  "Balancing speed vs cost vs governance/security. Real-time systems can be expensive and complex",
-                  "Avoiding data silos and ensuring interoperability between tools, platforms, and formats",
-                  "Ensuring appropriate team skills, ownership, and domain knowledge"
-                ].map((challenge, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-300 leading-relaxed">{challenge}</p>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
         </div>
       </section>
 
