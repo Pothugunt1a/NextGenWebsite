@@ -93,6 +93,3 @@ args = "rm -rf node_modules/.cache"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run dev"
-
-[agent]
-expertMode = true
