@@ -285,189 +285,187 @@ export default function DataGovernanceMDM() {
       {/* Why Data Governance & MDM Matter Section */}
       <section className="py-20 bg-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-8">
+              Understanding Data Governance & MDM
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Risks vs Benefits */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-16"
+              className="space-y-8"
             >
-              <h2 className="text-4xl font-bold text-white mb-8">
-                Understanding Data Governance & MDM
-              </h2>
+              <div className="space-y-6">
+                <div className="bg-gradient-to-r from-red-500/20 to-red-400/20 backdrop-blur-sm border border-red-400/30 rounded-xl p-6">
+                  <h3 className="text-2xl font-bold text-white mb-3 flex items-center">
+                    <AlertTriangle className="h-6 w-6 text-red-400 mr-3" />
+                    Risks Without Governance
+                  </h3>
+                  <div className="space-y-2">
+                    {[
+                      "Wrong decisions from poor data quality",
+                      "Compliance violations (HIPAA, GDPR)",
+                      "Data silos preventing insights",
+                      "Higher costs from duplication",
+                    ].map((risk, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <X className="h-4 w-4 text-red-400" />
+                        <span className="text-gray-300 text-sm">{risk}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-green-500/20 to-emerald-400/20 backdrop-blur-sm border border-green-400/30 rounded-xl p-6">
+                  <h3 className="text-2xl font-bold text-white mb-3 flex items-center">
+                    <ShieldCheck className="h-6 w-6 text-green-400 mr-3" />
+                    Benefits with Governance
+                  </h3>
+                  <div className="space-y-2">
+                    {[
+                      "Trusted decisions from quality data",
+                      "Audit-ready compliance",
+                      "Single source of truth",
+                      "Improved efficiency",
+                    ].map((benefit, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-400" />
+                        <span className="text-gray-300 text-sm">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left Column - Risks vs Benefits */}
+            {/* Right Column - Interactive Comparison */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              {/* Tab Navigation */}
+              <div className="flex bg-gray-800/60 rounded-xl p-2 backdrop-blur-sm border border-gray-700">
+                {[
+                  { id: "governance", label: "Governance", icon: Shield },
+                  { id: "mdm", label: "MDM", icon: Database },
+                  { id: "compliance", label: "Compliance", icon: Lock },
+                ].map((tab) => {
+                  const IconComponent = tab.icon;
+                  return (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg transition-all duration-300 ${
+                        activeTab === tab.id
+                          ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+                          : "text-gray-400 hover:text-white hover:bg-gray-700/50"
+                      }`}
+                    >
+                      <IconComponent className="h-4 w-4" />
+                      <span className="font-medium">{tab.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Tab Content */}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-8"
+                key={activeTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8"
               >
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-r from-red-500/20 to-red-400/20 backdrop-blur-sm border border-red-400/30 rounded-xl p-6">
-                    <h3 className="text-2xl font-bold text-white mb-3 flex items-center">
-                      <AlertTriangle className="h-6 w-6 text-red-400 mr-3" />
-                      Risks Without Governance
-                    </h3>
-                    <div className="space-y-2">
-                      {[
-                        "Wrong decisions from poor data quality",
-                        "Compliance violations (HIPAA, GDPR)",
-                        "Data silos preventing insights",
-                        "Higher costs from duplication",
-                      ].map((risk, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <X className="h-4 w-4 text-red-400" />
-                          <span className="text-gray-300 text-sm">{risk}</span>
-                        </div>
-                      ))}
+                {activeTab === "governance" && (
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-blue-400">Data Governance</h4>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
+                        <ul className="text-gray-300 space-y-1 text-sm">
+                          <li>• Policy management</li>
+                          <li>• Access controls</li>
+                          <li>• Data lineage</li>
+                          <li>• Compliance audits</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-orange-400 font-semibold mb-2">⚠ Challenges:</p>
+                        <ul className="text-gray-300 space-y-1 text-sm">
+                          <li>• Cultural adoption</li>
+                          <li>• Process changes</li>
+                          <li>• Tool integration</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
+                )}
 
-                  <div className="bg-gradient-to-r from-green-500/20 to-emerald-400/20 backdrop-blur-sm border border-green-400/30 rounded-xl p-6">
-                    <h3 className="text-2xl font-bold text-white mb-3 flex items-center">
-                      <ShieldCheck className="h-6 w-6 text-green-400 mr-3" />
-                      Benefits with Governance
-                    </h3>
-                    <div className="space-y-2">
-                      {[
-                        "Trusted decisions from quality data",
-                        "Audit-ready compliance",
-                        "Single source of truth",
-                        "Improved efficiency",
-                      ].map((benefit, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-400" />
-                          <span className="text-gray-300 text-sm">{benefit}</span>
-                        </div>
-                      ))}
+                {activeTab === "mdm" && (
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-blue-400">Master Data Management</h4>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
+                        <ul className="text-gray-300 space-y-1 text-sm">
+                          <li>• Customer 360</li>
+                          <li>• Product catalogs</li>
+                          <li>• Golden records</li>
+                          <li>• Data synchronization</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-orange-400 font-semibold mb-2">⚠ Challenges:</p>
+                        <ul className="text-gray-300 space-y-1 text-sm">
+                          <li>• Data quality issues</li>
+                          <li>• System integration</li>
+                          <li>• Business rules</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
+
+                {activeTab === "compliance" && (
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-blue-400">Compliance & Security</h4>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
+                        <ul className="text-gray-300 space-y-1 text-sm">
+                          <li>• HIPAA/GDPR compliance</li>
+                          <li>• Data encryption</li>
+                          <li>• Access monitoring</li>
+                          <li>• Audit trails</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-blue-400 font-semibold mb-2">🚀 Benefits:</p>
+                        <ul className="text-gray-300 space-y-1 text-sm">
+                          <li>• Risk reduction</li>
+                          <li>• Trust building</li>
+                          <li>• Regulatory readiness</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </motion.div>
-
-              {/* Right Column - Interactive Comparison */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-6"
-              >
-                {/* Tab Navigation */}
-                <div className="flex bg-gray-800/60 rounded-xl p-2 backdrop-blur-sm border border-gray-700">
-                  {[
-                    { id: "governance", label: "Governance", icon: Shield },
-                    { id: "mdm", label: "MDM", icon: Database },
-                    { id: "compliance", label: "Compliance", icon: Lock },
-                  ].map((tab) => {
-                    const IconComponent = tab.icon;
-                    return (
-                      <button
-                        key={tab.id}
-                        onClick={() => setActiveTab(tab.id)}
-                        className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg transition-all duration-300 ${
-                          activeTab === tab.id
-                            ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
-                            : "text-gray-400 hover:text-white hover:bg-gray-700/50"
-                        }`}
-                      >
-                        <IconComponent className="h-4 w-4" />
-                        <span className="font-medium">{tab.label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Tab Content */}
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8"
-                >
-                  {activeTab === "governance" && (
-                    <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-blue-400">Data Governance</h4>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
-                          <ul className="text-gray-300 space-y-1 text-sm">
-                            <li>• Policy management</li>
-                            <li>• Access controls</li>
-                            <li>• Data lineage</li>
-                            <li>• Compliance audits</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="text-orange-400 font-semibold mb-2">⚠ Challenges:</p>
-                          <ul className="text-gray-300 space-y-1 text-sm">
-                            <li>• Cultural adoption</li>
-                            <li>• Process changes</li>
-                            <li>• Tool integration</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {activeTab === "mdm" && (
-                    <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-blue-400">Master Data Management</h4>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
-                          <ul className="text-gray-300 space-y-1 text-sm">
-                            <li>• Customer 360</li>
-                            <li>• Product catalogs</li>
-                            <li>• Golden records</li>
-                            <li>• Data synchronization</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="text-orange-400 font-semibold mb-2">⚠ Challenges:</p>
-                          <ul className="text-gray-300 space-y-1 text-sm">
-                            <li>• Data quality issues</li>
-                            <li>• System integration</li>
-                            <li>• Business rules</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {activeTab === "compliance" && (
-                    <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-blue-400">Compliance & Security</h4>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
-                          <ul className="text-gray-300 space-y-1 text-sm">
-                            <li>• HIPAA/GDPR compliance</li>
-                            <li>• Data encryption</li>
-                            <li>• Access monitoring</li>
-                            <li>• Audit trails</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="text-blue-400 font-semibold mb-2">🚀 Benefits:</p>
-                          <ul className="text-gray-300 space-y-1 text-sm">
-                            <li>• Risk reduction</li>
-                            <li>• Trust building</li>
-                            <li>• Regulatory readiness</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </motion.div>
-              </motion.div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
