@@ -572,7 +572,7 @@ export default function DataGovernanceMDM() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 mx-auto mb-8 animate-pulse"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Transform your diverse data assets into reliable, trustworthy inputs for your most critical AI initiatives. 
+              Transform your diverse data assets into reliable, trustworthy inputs for your most critical AI initiatives.
               <span className="text-cyan-400 font-semibold"> Every prediction, insight, and automated decision is governed, auditable, and compliant.</span>
             </p>
           </motion.div>
@@ -590,7 +590,7 @@ export default function DataGovernanceMDM() {
               >
                 <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-400/30 rounded-2xl p-8">
                   <p className="text-lg text-gray-200 leading-relaxed">
-                    Below is the framework we implement to transform your diverse data assets into reliable, trustworthy inputs for your most critical AI initiatives. 
+                    Below is the framework we implement to transform your diverse data assets into reliable, trustworthy inputs for your most critical AI initiatives.
                     This architecture ensures <span className="text-cyan-400 font-semibold">every prediction, insight, and automated decision is governed, auditable, and compliant.</span>
                   </p>
                 </div>
@@ -608,15 +608,15 @@ export default function DataGovernanceMDM() {
                 >
                   <div className="relative bg-gradient-to-br from-blue-500/10 to-blue-600/5 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 hover:border-blue-400/50 hover:bg-blue-500/15 transition-all duration-500">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-                    
+
                     <div className="relative">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
                         <Database className="h-6 w-6 text-white" />
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-white mb-2">Enterprise Apps</h3>
                       <p className="text-xs text-blue-300 font-semibold uppercase tracking-wider mb-3">Data Source Layer</p>
-                      
+
                       <p className="text-gray-300 leading-relaxed mb-4 text-sm">
                         The journey of trustworthy data begins by unifying all sources across your organization. Our approach acknowledges that governance must be uniform, regardless of the system of origin.
                       </p>
@@ -670,12 +670,12 @@ export default function DataGovernanceMDM() {
                 >
                   <div className="relative bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 backdrop-blur-sm border border-cyan-400/30 rounded-2xl p-6 hover:border-cyan-400/50 hover:bg-cyan-500/15 transition-all duration-500">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-                    
+
                     <div className="relative">
                       <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
                         <Shield className="h-6 w-6 text-white" />
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-white mb-2">Data & Feature Governance</h3>
                       <p className="text-xs text-cyan-300 font-semibold uppercase tracking-wider mb-3">The Control Center</p>
 
@@ -719,15 +719,15 @@ export default function DataGovernanceMDM() {
                 >
                   <div className="relative bg-gradient-to-br from-purple-500/10 to-purple-600/5 backdrop-blur-sm border border-purple-400/30 rounded-2xl p-6 hover:border-purple-400/50 hover:bg-purple-500/15 transition-all duration-500">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-                    
+
                     <div className="relative">
                       <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
                         <CheckCircle className="h-6 w-6 text-white" />
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-white mb-2">Consumption & AI Audit</h3>
                       <p className="text-xs text-purple-300 font-semibold uppercase tracking-wider mb-3">Output & Feedback</p>
-                      
+
                       <p className="text-gray-300 leading-relaxed mb-4 text-sm">
                         Ensures all outputs—whether a dashboard or an automated decision—are trusted, with a continuous feedback loop maintaining compliance.
                       </p>
@@ -820,15 +820,15 @@ export default function DataGovernanceMDM() {
             <div className="relative bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-purple-500/20 backdrop-blur-xl border border-gray-700 rounded-3xl p-10 overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 animate-pulse"></div>
               <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20"></div>
-              
+
               <div className="relative text-center">
                 <Award className="h-12 w-12 text-cyan-400 mx-auto mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">
                   The RT<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">NextGenAI</span> Difference
                 </h3>
                 <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  Our AI Governance architecture doesn't just check a box—it <span className="text-cyan-400 font-semibold">enables speed with safety</span>. 
-                  By placing the Data & Feature Governance Layer at the heart of your pipeline, we help you 
+                  Our AI Governance architecture doesn't just check a box—it <span className="text-cyan-400 font-semibold">enables speed with safety</span>.
+                  By placing the Data & Feature Governance Layer at the heart of your pipeline, we help you
                   <span className="text-blue-400 font-semibold"> launch more accurate, less-risky AI solutions faster than the competition.</span>
                 </p>
               </div>
