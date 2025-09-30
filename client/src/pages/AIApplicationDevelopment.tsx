@@ -34,28 +34,28 @@ export default function AIApplicationDevelopment() {
   const aiServices = [
     {
       icon: <Bot className="h-8 w-8 text-white" />,
-      title: "Custom AI Solutions",
+      title: "🤖 Custom AI Solutions",
       description:
         "We build AI applications from the ground up, tailored to solve your specific business challenges — whether it's automating processes, enhancing customer experiences, or unlocking insights from your data.",
       backgroundImage: "/assets/AI-Custom.png",
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-white" />,
-      title: "Machine Learning & Predictive Analytics",
+      title: "📈 Machine Learning & Predictive Analytics",
       description:
         "Harness the power of data. We develop machine learning models that learn from your data and provide accurate predictions, recommendations, and real-time decision-making support.",
       backgroundImage: "/assets/AI-ML.png",
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-white" />,
-      title: "Natural Language Processing (NLP)",
+      title: "💬 Natural Language Processing (NLP)",
       description:
         "From chatbots and voice assistants to text analytics and sentiment analysis, we build NLP solutions that understand and interact in human language.",
       backgroundImage: "/assets/AI-NLP.png",
     },
     {
       icon: <Eye className="h-8 w-8 text-white" />,
-      title: "Computer Vision",
+      title: "👁️ Computer Vision",
       description:
         "Empower your applications to see and understand the world. We integrate computer vision capabilities for image recognition, object detection, facial recognition, and more.",
       backgroundImage: "/assets/AI-Vision.png",

@@ -31,6 +31,18 @@ export default function Solutions() {
     return <i className={iconClass}></i>;
   };
 
+  const getEmojiIcon = (solutionId: number) => {
+    const emojiMap: { [key: number]: string } = {
+      1: "🤖", // Intelligent Automation
+      2: "📊", // Predictive Analytics
+      3: "💬", // Conversational AI
+      4: "👁️", // Computer Vision
+      5: "📈", // Business Intelligence
+      6: "🛡️", // AI Security Solutions
+    };
+    return emojiMap[solutionId] || "🔧";
+  };
+
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const contactSection = document.getElementById('contact');
@@ -73,7 +85,7 @@ export default function Solutions() {
                   <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
                     {getIconComponent(solution.icon)}
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{solution.title}</h3>
+                  <h3 className="text-xl font-bold mb-3">{getEmojiIcon(solution.id)} {solution.title}</h3>
                   <p className="text-slate-600 mb-4">
                     {solution.description}
                   </p>

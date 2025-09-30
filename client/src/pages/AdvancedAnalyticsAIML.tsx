@@ -104,42 +104,42 @@ const faqs: FAQ[] = [
 const capabilities = [
   {
     icon: <BarChart3 className="h-8 w-8 text-white" />,
-    title: "Predictive & Prescriptive Analytics",
+    title: "📊 Predictive & Prescriptive Analytics",
     description:
       "Advanced forecasting using time-series analysis, demand modeling, and risk assessment. We build optimization models for supply chain, finance, and healthcare operations, along with scenario planning and 'what-if' simulations that guide strategic decision-making and operational efficiency.",
     backgroundImage: "/assets/AI&Data.png",
   },
   {
     icon: <Cpu className="h-8 w-8 text-white" />,
-    title: "Machine Learning Solutions",
+    title: "🤖 Machine Learning Solutions",
     description:
       "Comprehensive ML implementations using supervised, unsupervised, and reinforcement learning approaches. Classification, anomaly detection, and automation solutions that leverage platforms like AWS SageMaker, Azure ML, Google Vertex AI, and Databricks MLflow with robust pipelines.",
     backgroundImage: "/assets/AI-ML.png",
   },
   {
     icon: <Eye className="h-8 w-8 text-white" />,
-    title: "Deep Learning & AI",
+    title: "🧠 Deep Learning & AI",
     description:
       "Advanced neural networks for computer vision (image/video analysis, defect detection), natural language processing (chatbots, sentiment analysis, document processing), and speech recognition. Our deep learning solutions transform unstructured data into actionable business insights.",
     backgroundImage: "/assets/AI-Vision.png",
   },
   {
     icon: <Zap className="h-8 w-8 text-white" />,
-    title: "Generative AI Development",
+    title: "✨ Generative AI Development",
     description:
       "Cutting-edge Generative AI solutions including text generation, code generation, image and video synthesis, and simulations. We build AI copilots using OpenAI GPT, Azure OpenAI, and Hugging Face platforms to accelerate content creation and development workflows.",
     backgroundImage: "/assets/GenerativeAI.png",
   },
   {
     icon: <Bot className="h-8 w-8 text-white" />,
-    title: "Agentic AI Systems",
+    title: "🔧 Agentic AI Systems",
     description:
       "Autonomous AI agents that reason, plan, and execute tasks across applications. We build multi-agent workflows for finance approvals, supply chain optimization, and automated IT monitoring using frameworks like LangChain, AutoGen, Semantic Kernel, and AWS Bedrock Agents.",
     backgroundImage: "/assets/AI-Robotic.png",
   },
   {
     icon: <Cog className="h-8 w-8 text-white" />,
-    title: "MLOps & AIOps",
+    title: "⚙️ MLOps & AIOps",
     description:
       "Enterprise-grade model lifecycle management, monitoring, and governance. We implement CI/CD for models, automated retraining, performance monitoring, and compliance frameworks to ensure your AI solutions remain accurate, reliable, and continuously improved at scale.",
     backgroundImage: "/assets/AI-Integration.png",

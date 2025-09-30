@@ -173,35 +173,35 @@ export default function AIChatbotDevelopment() {
   const chatbotServices = [
     {
       icon: <Bot className="h-8 w-8 text-white" />,
-      title: "GPT-based AI chatbot development",
+      title: "🤖 GPT-based AI chatbot development",
       description:
         "Leverage the capabilities of GPT-3 and its successors, including ChatGPT, through our advanced GPT-powered chatbot development services. Our team of experts builds intelligent conversational agents designed to accurately interpret and respond to user inquiries—delivering seamless experiences across personalized recommendations, content creation, and customer support.",
       backgroundImage: "/assets/AI-GPTChatbot.png",
     },
     {
       icon: <Headphones className="h-8 w-8 text-white" />,
-      title: "Customer service & CRM-based chatbots",
+      title: "🎧 Customer service & CRM-based chatbots",
       description:
         "Deliver exceptional customer service through AI chatbots tailored to your specific product data and customer interactions. By leveraging insights from CRM systems, our solutions provide precise and context-aware responses, driving improved customer satisfaction and fostering long-term loyalty.",
       backgroundImage: "/assets/AI-Customer.png",
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-white" />,
-      title: "Social media bots engineering",
+      title: "📱 Social media bots engineering",
       description:
         "Enhance your digital reach with AI-powered social media chatbots. At AI Superior, we develop tailored chatbot solutions for platforms like Facebook, Instagram, and LinkedIn—designed to engage your target audience, stimulate meaningful interactions, and support long-term brand development.",
       backgroundImage: "/assets/AI-SocialMedia.png",
     },
     {
       icon: <Settings className="h-8 w-8 text-white" />,
-      title: "AI-based virtual assistants programming",
+      title: "🔧 AI-based virtual assistants programming",
       description:
         "Enhance operational efficiency with AI-powered virtual assistants. Our team can seamlessly integrate intelligent assistants into your workflow to deliver information, manage schedules, and execute tasks—while continuously learning and improving through user interactions.",
       backgroundImage: "/assets/AI-VirtualAssistant.png",
     },
     {
       icon: <Brain className="h-8 w-8 text-white" />,
-      title: "Conversational AI development",
+      title: "💬 Conversational AI development",
       description:
         "Build sophisticated conversational AI systems that understand context, maintain dialogue flow, and provide intelligent responses. Our solutions leverage advanced NLP techniques to create more human-like interactions and improve user engagement across all touchpoints.",
       backgroundImage: "/assets/AI-Conversational.png",
