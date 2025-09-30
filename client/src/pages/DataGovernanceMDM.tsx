@@ -360,9 +360,9 @@ export default function DataGovernanceMDM() {
               {/* Tab Navigation */}
               <div className="flex bg-gray-800/60 rounded-xl p-2 backdrop-blur-sm border border-gray-700">
                 {[
-                  { id: "governance", label: "Governance", icon: Shield },
-                  { id: "mdm", label: "MDM", icon: Database },
-                  { id: "compliance", label: "Compliance", icon: Lock },
+                  { id: "governance", label: "Enterprise Apps (Data Source)", icon: Shield },
+                  { id: "mdm", label: "Data & Feature Governance Layer", icon: Database },
+                  { id: "compliance", label: "Consumption & Responsible AI Audit", icon: Lock },
                 ].map((tab) => {
                   const IconComponent = tab.icon;
                   return (
@@ -575,26 +575,18 @@ export default function DataGovernanceMDM() {
               Transform your diverse data assets into reliable, trustworthy inputs for your most critical AI initiatives.
               <span className="text-cyan-400 font-semibold"> Every prediction, insight, and automated decision is governed, auditable, and compliant.</span>
             </p>
+            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-400/30 rounded-2xl p-8 max-w-4xl mx-auto mt-8">
+              <p className="text-lg text-gray-200 leading-relaxed text-center">
+                Below is the framework we implement to transform your diverse data assets into reliable, trustworthy inputs for your most critical AI initiatives.
+                This architecture ensures <span className="text-cyan-400 font-semibold">every prediction, insight, and automated decision is governed, auditable, and compliant.</span>
+              </p>
+            </div>
           </motion.div>
 
           {/* Main Layout - Content Left, Diagram Right */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
             {/* Left Side - Content */}
             <div className="lg:col-span-7 space-y-8">
-              {/* Introduction */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-400/30 rounded-2xl p-8">
-                  <p className="text-lg text-gray-200 leading-relaxed">
-                    Below is the framework we implement to transform your diverse data assets into reliable, trustworthy inputs for your most critical AI initiatives.
-                    This architecture ensures <span className="text-cyan-400 font-semibold">every prediction, insight, and automated decision is governed, auditable, and compliant.</span>
-                  </p>
-                </div>
-              </motion.div>
 
               {/* Tabbed Content Navigation */}
               <motion.div
@@ -629,7 +621,7 @@ export default function DataGovernanceMDM() {
                   })}
                 </div>
 
-                {/* Tab Content */}
+                {/* Simplified Content */}
                 <motion.div
                   key={activeTab}
                   initial={{ opacity: 0, y: 20 }}
@@ -637,313 +629,109 @@ export default function DataGovernanceMDM() {
                   transition={{ duration: 0.3 }}
                   className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8"
                 >
-                  {/* Data Governance Tab Content */}
                   {activeTab === "governance" && (
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                          <Shield className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="text-2xl font-bold text-blue-400">Data Governance</h4>
-                          <p className="text-gray-400 text-sm">Framework for data policies and access controls</p>
-                        </div>
-                      </div>
+                    <div className="space-y-4">
+                      <h5 className="text-lg font-bold text-white mb-4">1. Enterprise Apps (Data Source)</h5>
+                      <p className="text-gray-300 text-sm mb-4">
+                        The journey of trustworthy data begins by unifying all sources across your organization. Our approach acknowledges that governance must be uniform, regardless of the system of origin.
+                      </p>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-400/30 rounded-xl p-6">
-                          <p className="text-green-400 font-semibold mb-3 flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4" />
-                            Best For:
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
+                          <h6 className="text-blue-300 font-semibold mb-2 flex items-center gap-2 text-sm">
+                            <Building className="h-4 w-4" />
+                            ERP, CRM, SaaS
+                          </h6>
+                          <p className="text-gray-400 text-xs mb-2">AI Governance Focus:</p>
+                          <p className="text-gray-300 text-xs">
+                            Integrating structured system data with policies for PII (Personally Identifiable Information) and role-based access controls (RBAC) before it ever enters an AI pipeline.
                           </p>
-                          <ul className="text-gray-300 space-y-2 text-sm">
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Policy management
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Access controls
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Data lineage
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Compliance audits
-                            </li>
-                          </ul>
                         </div>
 
-                        <div className="bg-gradient-to-br from-orange-500/10 to-orange-600/5 border border-orange-400/30 rounded-xl p-6">
-                          <p className="text-orange-400 font-semibold mb-3 flex items-center gap-2">
-                            <AlertTriangle className="h-4 w-4" />
-                            Challenges:
+                        <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
+                          <h6 className="text-cyan-300 font-semibold mb-2 flex items-center gap-2 text-sm">
+                            <Activity className="h-4 w-4" />
+                            IoT, Legacy, Web
+                          </h6>
+                          <p className="text-gray-400 text-xs mb-2">AI Governance Focus:</p>
+                          <p className="text-gray-300 text-xs">
+                            Establishing standards for unstructured (e.g., sensor data, text, images) and legacy data, ensuring data quality and lineage are captured from the very first ingestion point.
                           </p>
-                          <ul className="text-gray-300 space-y-2 text-sm">
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
-                              Cultural adoption
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
-                              Process changes
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
-                              Tool integration
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Enterprise Apps Section */}
-                      <div className="mt-8 space-y-4">
-                        <h5 className="text-lg font-bold text-white mb-4">1. Enterprise Apps (Data Source)</h5>
-                        <p className="text-gray-300 text-sm mb-4">
-                          The journey of trustworthy data begins by unifying all sources across your organization. Our approach acknowledges that governance must be uniform, regardless of the system of origin.
-                        </p>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
-                            <h6 className="text-blue-300 font-semibold mb-2 flex items-center gap-2 text-sm">
-                              <Building className="h-4 w-4" />
-                              ERP, CRM, SaaS
-                            </h6>
-                            <p className="text-gray-400 text-xs mb-2">AI Governance Focus:</p>
-                            <p className="text-gray-300 text-xs">
-                              Integrating structured system data with policies for PII (Personally Identifiable Information) and role-based access controls (RBAC) before it ever enters an AI pipeline.
-                            </p>
-                          </div>
-
-                          <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
-                            <h6 className="text-cyan-300 font-semibold mb-2 flex items-center gap-2 text-sm">
-                              <Activity className="h-4 w-4" />
-                              IoT, Legacy, Web
-                            </h6>
-                            <p className="text-gray-400 text-xs mb-2">AI Governance Focus:</p>
-                            <p className="text-gray-300 text-xs">
-                              Establishing standards for unstructured (e.g., sensor data, text, images) and legacy data, ensuring data quality and lineage are captured from the very first ingestion point.
-                            </p>
-                          </div>
                         </div>
                       </div>
                     </div>
                   )}
 
-                  {/* MDM Tab Content */}
                   {activeTab === "mdm" && (
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center">
-                          <Database className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="text-2xl font-bold text-cyan-400">Master Data Management</h4>
-                          <p className="text-gray-400 text-sm">Unified master data and golden records</p>
-                        </div>
-                      </div>
+                    <div className="space-y-4">
+                      <h5 className="text-lg font-bold text-white mb-4">2. Data & Feature Governance Layer (The Control Center)</h5>
+                      <p className="text-gray-300 text-sm mb-4">
+                        This is the core of our solution, where raw data is transformed into standardized, high-quality Features for Machine Learning, enforced by strict governance rules.
+                      </p>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-400/30 rounded-xl p-6">
-                          <p className="text-green-400 font-semibold mb-3 flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4" />
-                            Best For:
-                          </p>
-                          <ul className="text-gray-300 space-y-2 text-sm">
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Customer 360
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Product catalogs
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Golden records
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Data synchronization
-                            </li>
-                          </ul>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-orange-500/10 to-orange-600/5 border border-orange-400/30 rounded-xl p-6">
-                          <p className="text-orange-400 font-semibold mb-3 flex items-center gap-2">
-                            <AlertTriangle className="h-4 w-4" />
-                            Challenges:
-                          </p>
-                          <ul className="text-gray-300 space-y-2 text-sm">
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
-                              Data quality issues
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
-                              System integration
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
-                              Business rules
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Data & Feature Governance Layer */}
-                      <div className="mt-8 space-y-4">
-                        <h5 className="text-lg font-bold text-white mb-4">2. Data & Feature Governance Layer (The Control Center)</h5>
-                        <p className="text-gray-300 text-sm mb-4">
-                          This is the core of our solution, where raw data is transformed into standardized, high-quality Features for Machine Learning, enforced by strict governance rules.
-                        </p>
-
-                        <div className="space-y-3">
-                          {[
-                            { 
-                              title: "MDM Feature 360", 
-                              desc: "Master Data Management is redefined as the engine for Feature Engineering. It creates unified \"Golden Records\" (Customer 360, Product 360) that serve as consistent, non-biased features for all downstream AI models.",
-                              color: "cyan"
-                            },
-                            { 
-                              title: "Feature Store", 
-                              desc: "The central repository for validated, versioned, and easily discoverable features. It enforces a single quality standard for training, serving, and testing models, critical for MLOps efficiency.",
-                              color: "blue"
-                            },
-                            { 
-                              title: "Responsible AI Policies", 
-                              desc: "Automated policy layers that govern data usage, ethical sourcing, and model documentation. This layer defines rules for data minimization and consent tracking.",
-                              color: "purple"
-                            },
-                            { 
-                              title: "AI Bias Detection", 
-                              desc: "Proactively running statistical tests on features and model outputs to detect and mitigate algorithmic bias before models are deployed, ensuring fair and equitable outcomes.",
-                              color: "green"
-                            },
-                            { 
-                              title: "Model Lineage", 
-                              desc: "Provides an unbreakable audit trail, tracking every feature, data transformation, and training parameter used to create a model. Essential for Explainable AI (XAI) and regulatory compliance.",
-                              color: "yellow"
-                            },
-                            { 
-                              title: "AI-Powered Data Quality", 
-                              desc: "Leveraging machine learning itself to continuously monitor and alert on data drift or quality issues in real-time, automating the cleansing and validation process.",
-                              color: "red"
-                            }
-                          ].map((item, idx) => (
-                            <div key={idx} className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50 hover:border-cyan-400/40 transition-all duration-300">
-                              <h6 className="text-white font-semibold text-sm mb-2">{item.title}</h6>
-                              <p className="text-gray-300 text-xs leading-relaxed">{item.desc}</p>
-                            </div>
-                          ))}
-                        </div>
+                      <div className="space-y-3">
+                        {[
+                          { 
+                            title: "MDM Feature 360", 
+                            desc: "Master Data Management is redefined as the engine for Feature Engineering. It creates unified \"Golden Records\" (Customer 360, Product 360) that serve as consistent, non-biased features for all downstream AI models."
+                          },
+                          { 
+                            title: "Feature Store", 
+                            desc: "The central repository for validated, versioned, and easily discoverable features. It enforces a single quality standard for training, serving, and testing models, critical for MLOps efficiency."
+                          },
+                          { 
+                            title: "Responsible AI Policies", 
+                            desc: "Automated policy layers that govern data usage, ethical sourcing, and model documentation. This layer defines rules for data minimization and consent tracking."
+                          },
+                          { 
+                            title: "AI Bias Detection", 
+                            desc: "Proactively running statistical tests on features and model outputs to detect and mitigate algorithmic bias before models are deployed, ensuring fair and equitable outcomes."
+                          },
+                          { 
+                            title: "Model Lineage", 
+                            desc: "Provides an unbreakable audit trail, tracking every feature, data transformation, and training parameter used to create a model. Essential for Explainable AI (XAI) and regulatory compliance."
+                          }
+                        ].map((item, idx) => (
+                          <div key={idx} className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50 hover:border-cyan-400/40 transition-all duration-300">
+                            <h6 className="text-white font-semibold text-sm mb-2">{item.title}</h6>
+                            <p className="text-gray-300 text-xs leading-relaxed">{item.desc}</p>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   )}
 
-                  {/* Compliance Tab Content */}
                   {activeTab === "compliance" && (
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                          <Lock className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="text-2xl font-bold text-purple-400">Compliance & Security</h4>
-                          <p className="text-gray-400 text-sm">Audit trails and regulatory compliance</p>
-                        </div>
-                      </div>
+                    <div className="space-y-4">
+                      <h5 className="text-lg font-bold text-white mb-4">3. Consumption & Responsible AI Audit (The Output & Feedback)</h5>
+                      <p className="text-gray-300 text-sm mb-4">
+                        The final stage ensures that all outputs—whether a dashboard or an automated decision—are trusted and that a continuous feedback loop maintains compliance.
+                      </p>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-400/30 rounded-xl p-6">
-                          <p className="text-green-400 font-semibold mb-3 flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4" />
-                            Best For:
-                          </p>
-                          <ul className="text-gray-300 space-y-2 text-sm">
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              HIPAA/GDPR compliance
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Data encryption
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Access monitoring
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                              Audit trails
-                            </li>
-                          </ul>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-400/30 rounded-xl p-6">
-                          <p className="text-blue-400 font-semibold mb-3 flex items-center gap-2">
-                            <TrendingUp className="h-4 w-4" />
-                            Benefits:
-                          </p>
-                          <ul className="text-gray-300 space-y-2 text-sm">
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                              Risk reduction
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                              Trust building
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                              Regulatory readiness
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Consumption & Responsible AI Audit */}
-                      <div className="mt-8 space-y-4">
-                        <h5 className="text-lg font-bold text-white mb-4">3. Consumption & Responsible AI Audit (The Output & Feedback)</h5>
-                        <p className="text-gray-300 text-sm mb-4">
-                          The final stage ensures that all outputs—whether a dashboard or an automated decision—are trusted and that a continuous feedback loop maintains compliance.
-                        </p>
-
-                        <div className="space-y-4">
-                          <div>
-                            <h6 className="text-purple-300 font-semibold mb-3 flex items-center gap-2">
-                              <TrendingUp className="h-4 w-4" />
-                              Output & Audit Components
-                            </h6>
-                            <div className="space-y-3">
-                              {[
-                                {
-                                  title: "BI Dashboards & Advanced Analytics",
-                                  desc: "Consumes trusted, governed data to ensure business intelligence reports are accurate, driving high-confidence strategic decision-making."
-                                },
-                                {
-                                  title: "AI/ML Models & Generative AI Endpoints",
-                                  desc: "The consumption point for final, governed features. This includes production-level machine learning models and secure, enterprise-ready Generative AI applications (e.g., custom LLM endpoints)."
-                                },
-                                {
-                                  title: "Compliance & Audit Reports",
-                                  desc: "Automated generation of reports proving adherence to regulations (GDPR, HIPAA) and internal AI Ethics standards, ready for external auditing."
-                                },
-                                {
-                                  title: "Continuous Monitoring & Policy Enforcement",
-                                  desc: "The crucial step. It actively monitors live model performance (checking for drift and bias post-deployment) and automatically enforces governance policies, feeding insights back into the Data & Feature Governance Layer for iterative improvement."
-                                }
-                              ].map((item, idx) => (
-                                <div key={idx} className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
-                                  <h6 className="text-white font-semibold text-sm mb-2">{item.title}</h6>
-                                  <p className="text-gray-300 text-xs leading-relaxed">{item.desc}</p>
-                                </div>
-                              ))}
-                            </div>
+                      <div className="space-y-3">
+                        {[
+                          {
+                            title: "BI Dashboards & Advanced Analytics",
+                            desc: "Consumes trusted, governed data to ensure business intelligence reports are accurate, driving high-confidence strategic decision-making."
+                          },
+                          {
+                            title: "AI/ML Models & Generative AI Endpoints",
+                            desc: "The consumption point for final, governed features. This includes production-level machine learning models and secure, enterprise-ready Generative AI applications (e.g., custom LLM endpoints)."
+                          },
+                          {
+                            title: "Compliance & Audit Reports",
+                            desc: "Automated generation of reports proving adherence to regulations (GDPR, HIPAA) and internal AI Ethics standards, ready for external auditing."
+                          },
+                          {
+                            title: "Continuous Monitoring & Policy Enforcement",
+                            desc: "The crucial step. It actively monitors live model performance (checking for drift and bias post-deployment) and automatically enforces governance policies, feeding insights back into the Data & Feature Governance Layer for iterative improvement."
+                          }
+                        ].map((item, idx) => (
+                          <div key={idx} className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
+                            <h6 className="text-white font-semibold text-sm mb-2">{item.title}</h6>
+                            <p className="text-gray-300 text-xs leading-relaxed">{item.desc}</p>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   )}
