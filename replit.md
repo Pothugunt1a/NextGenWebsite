@@ -1,236 +1,141 @@
-# RTNextGenAI Marketing Website Project
+# RT NextGen AI - Full-Stack Web Application
 
 ## Overview
+RT NextGen AI is a professional business website showcasing AI and IT consulting services. The application is built with a modern full-stack JavaScript/TypeScript architecture.
 
-This project is a modern web application for an AI solutions company called RTNextGenAI. It features a marketing website with various sections including a hero banner, about section, solutions showcase, testimonials, and a contact form. The architecture follows a client-server approach with a React frontend and an Express.js backend.
+## Tech Stack
 
-The application uses the following key technologies:
-- React with TypeScript for the frontend UI
-- Express.js for the backend server
-- Drizzle ORM for database interactions
-- Tailwind CSS with shadcn/ui components for styling
-- Framer Motion for animations
+### Frontend
+- **React 18** with TypeScript
+- **Vite** as the build tool and dev server
+- **Wouter** for client-side routing
+- **TailwindCSS** for styling
+- **shadcn/ui** component library
+- **TanStack Query** for data fetching and state management
+- **Framer Motion** for animations
 
-## User Preferences
+### Backend
+- **Express.js** server with TypeScript
+- **Drizzle ORM** for database operations
+- **Neon PostgreSQL** database (optional)
+- In-memory storage fallback when database is not configured
+- Session management with express-session
 
-Preferred communication style: Simple, everyday language.
+### Development Tools
+- **tsx** for running TypeScript files
+- **esbuild** for production builds
+- TypeScript strict mode enabled
+- Hot module replacement in development
 
-## System Architecture
+## Project Structure
 
-### Frontend Architecture
+```
+├── client/                 # Frontend React application
+│   ├── src/
+│   │   ├── pages/         # Page components
+│   │   ├── components/    # Reusable UI components
+│   │   ├── lib/           # Utility functions and query client
+│   │   └── App.tsx        # Main app component with routing
+│   ├── public/            # Static assets
+│   └── index.html         # HTML entry point
+├── server/                # Backend Express server
+│   ├── index.ts          # Server entry point
+│   ├── routes.ts         # API route handlers
+│   ├── vite.ts           # Vite dev server integration
+│   ├── db.ts             # Database connection
+│   └── storage.ts        # Storage interface (DB or memory)
+├── shared/               # Shared types and schemas
+│   └── schema.ts         # Drizzle schemas and Zod validation
+└── dist/                 # Production build output
+```
 
-The frontend is built with:
-- React 18+ with TypeScript
-- Vite as the build tool
-- wouter for routing (lightweight alternative to React Router)
-- shadcn/ui component library based on Radix UI primitives
-- Tailwind CSS for styling with a customized theme
-- Framer Motion for animations
-- React Hook Form with Zod for form validation
-- TanStack Query (React Query) for data fetching
+## Development
 
-The frontend follows a component-based architecture with a clear separation of UI components, pages, and utilities. The UI is responsive and designed with a modern look and feel, featuring a color scheme of purple and orange as primary and secondary colors.
+### Running Locally
+The project uses a single server that serves both the API and frontend:
 
-### Backend Architecture
+```bash
+npm run dev
+```
 
-The backend is built with:
-- Express.js with TypeScript
-- Drizzle ORM for database operations
-- PostgreSQL as the database (configuration ready)
-- RESTful API endpoints
+This starts:
+- Express server on port 5000
+- Vite dev server with HMR (Hot Module Replacement)
+- Frontend accessible at http://localhost:5000
 
-The backend is minimalistic but extensible, currently providing an API endpoint for contact form submission and user management. The server is set up to handle both API requests and serve the static frontend files in production.
+### Key Features
+- **Single Port Setup**: Both frontend and backend run on port 5000
+- **Vite Integration**: Custom Vite middleware serves the frontend in dev mode
+- **Host Configuration**: Configured with `allowedHosts: true` for Replit proxy compatibility
+- **Database Flexibility**: Automatically falls back to in-memory storage if no database is configured
 
-### Data Layer
+## Production Build
 
-- Drizzle ORM is used for database operations with PostgreSQL
-- Database schema is defined in `shared/schema.ts`
-- The schema includes tables for users and contact form submissions
+### Build Process
+```bash
+npm run build
+```
 
-## Key Components
+This creates:
+1. Frontend production bundle in `dist/public/`
+2. Backend compiled bundle in `dist/index.js`
 
-### Frontend Components
+### Starting Production Server
+```bash
+npm run start
+```
 
-1. **Layout Components**:
-   - `Layout.tsx`: Main wrapper that includes Navbar and Footer
-   - `Navbar.tsx`: Navigation bar with responsive mobile menu
-   - `Footer.tsx`: Site footer with links and company info
+## Database
 
-2. **Page Sections**:
-   - `Hero.tsx`: Hero banner with call-to-action
-   - `About.tsx`: Company information section
-   - `Solutions.tsx`: Cards showcasing AI solutions
-   - `Testimonials.tsx`: Client testimonials
-   - `Statistics.tsx`: Company statistics display
-   - `CTA.tsx`: Call-to-action section
-   - `Contact.tsx`: Contact form
+The application supports both PostgreSQL (via Neon) and in-memory storage:
 
-3. **UI Components**:
-   - Extensive collection of UI components from shadcn/ui
-   - Form elements, buttons, cards, modals, etc.
+- **With Database**: Set `DATABASE_URL` environment variable
+- **Without Database**: Automatically uses in-memory storage (MemoryStorage)
 
-### Backend Components
+### Database Schema
+- `users` table for authentication
+- `contact_form_submissions` table for contact form data
 
-1. **Server Setup**:
-   - `server/index.ts`: Main server file setting up Express
-   - `server/routes.ts`: API route definitions
-   - `server/vite.ts`: Vite integration for development mode
-   - `server/storage.ts`: Data storage interface
+To push schema changes:
+```bash
+npm run db:push
+```
 
-2. **API Endpoints**:
-   - `/api/contact`: POST endpoint for contact form submissions
+## Deployment Configuration
 
-### Shared Components
+The project is configured for **autoscale** deployment on Replit:
+- **Build**: `npm run build`
+- **Run**: `npm run start`
+- **Target**: Autoscale (suitable for stateless web applications)
 
-1. **Database Schema**:
-   - `shared/schema.ts`: Drizzle ORM schema definitions for database tables
-   - Validation schemas using Zod
+## Environment Variables
+
+- `NODE_ENV`: Set to "development" or "production"
+- `DATABASE_URL`: PostgreSQL connection string (optional)
+
+## Important Notes
+
+1. **Port 5000**: The application MUST run on port 5000 (Replit requirement)
+2. **Host Configuration**: Server binds to `0.0.0.0` to allow external connections
+3. **Vite Allowed Hosts**: Configured to accept all hosts for Replit proxy
+4. **Static Assets**: Located in `client/public/` and `attached_assets/`
+
+## Pages and Routes
+
+The application includes 40+ pages covering:
+- AI Services (Consulting, Chatbot Development, ML, Generative AI)
+- IT Services (Cloud, DevOps, Databases, Web/Mobile Development)
+- Data Services (BI, Data Engineering, Warehousing, Analytics)
+- Company Pages (Home, About, Careers, Contact)
+
+All routes are defined in `client/src/App.tsx`.
 
 ## Recent Changes
 
-**September 10, 2025:**
-- Created comprehensive Database Migration & Modernization page following detailed user layout specification
-- Implemented 14 sections including hero, core capabilities, migration approaches, supported platforms, and client success metrics
-- Fixed Layout double-wrapping issue that was causing blank page rendering in DatabaseMigration component
-- Added interactive Migration Approaches selector with 4 different approach options
-- Implemented dual routing support (/database-migration primary, /it-services/databases/database-migration-modernization legacy)
-- All sections feature professional styling, animations, and responsive design matching brand guidelines
-- Added comprehensive data-testids for testing and verified all functionality through end-to-end testing
-- Updated Database Migration page background to match AI Consulting page styling (bg-light class with full-screen hero)
-- Fixed critical three-level dropdown navigation visibility issues in IT Services → Web Development submenu
-- Resolved dropdown overflow clipping by changing from overflow-hidden to overflow-x-visible overflow-y-auto
-- Corrected z-index conflicts between dropdown content and background images
-- Fixed navigation conflict where IT Services was navigating instead of showing dropdown
-- Added proper height constraints with scrolling for long dropdown lists
-- Fixed duplicate footer issue on IT Consulting page by removing double Layout wrapping
-
-**July 17, 2025:**
-- Fixed JSX closing tag error in GenerativeAIDevelopment.tsx that was preventing app startup
-- Removed black background from dropdown images (IT-Services-dropdown.gif, AI-dropdown.png) using CSS blend modes
-- Fixed black background patches in dropdown overlays for better mobile responsiveness
-- Increased navbar logo size with responsive design (64px mobile, 80px tablet, 96px desktop)
-- Added logo margin adjustments for desktop/iPad only while preserving mobile layout
-- Created comprehensive cpanel deployment preparation script (cpanel-deployment-prep.sh)
-- Enhanced deployment checklist with step-by-step verification process
-- All images now have proper 644 permissions for web server compatibility
-
-**July 16, 2025:**
-- Fixed critical image permissions issue for cpanel deployment
-- Enhanced fix-banner-permissions.sh script with better documentation
-- All PNG, GIF, JPG, and SVG files now automatically set to 644 permissions
-- Created comprehensive cpanel deployment checklist
-- Verified both source and built assets have proper permissions for web server access
-
-**July 5, 2025:**
-- Enhanced footer with professional design matching website theme
-- Fixed AI Consulting page banner to match careers and validation page structure
-- Standardized CTA components across AI Consulting, AI Chatbot Development, and Generative AI Development pages
-- Applied validation page's "Transform Your" component design with consistent styling, animations, and layout
-- All pages now feature professional backdrop-blur cards with gradient backgrounds and benefit grids
-
-**June 25, 2025:**
-- Fixed critical cpanel deployment issue: Image files (.png, .gif, .jpg) not displaying
-- Root cause: Build process created files with restrictive 600 permissions preventing web server access
-- Solution: Updated fix-banner-permissions.sh script to automatically set proper 644 permissions
-- Applied fix to both source and built assets, now ready for cpanel deployment
-- All carousel components now use consistent Embla Carousel with proper spacing for shadow visibility
-
-## Data Flow
-
-1. **Contact Form Submission Flow**:
-   - User fills out the contact form on the frontend
-   - Form data is validated using React Hook Form with Zod schema
-   - Validated data is sent to the `/api/contact` API endpoint
-   - Server validates the data again using the shared schema
-   - Data is stored in the database
-   - Response is sent back to the client
-   - User sees a success message or error message
-
-2. **Static Content Flow**:
-   - Pages and components are pre-rendered
-   - Animation triggers as user scrolls through the page
-   - Interactive elements like navigation work client-side
-
-3. **Asset Serving Flow**:
-   - Images served from `/assets/` path in production
-   - All image files have 644 permissions for proper web server access
-   - Automatic permission fixing via fix-banner-permissions.sh script
-
-## External Dependencies
-
-### Frontend Dependencies
-- React and React DOM
-- TanStack Query for data fetching
-- wouter for routing
-- Radix UI component primitives (accordion, dialog, etc.)
-- class-variance-authority & clsx for styling utilities
-- Framer Motion for animations
-- React Hook Form with Zod for form validation
-- date-fns for date handling
-- Lucide React for icons
-
-### Backend Dependencies
-- Express.js for the server
-- Drizzle ORM and Drizzle Zod for database operations
-- Zod for validation
-
-### Development Dependencies
-- TypeScript
-- Vite and related plugins
-- Tailwind CSS
-- PostCSS and plugins
-- ESBuild
-
-## Deployment Strategy
-
-The application is configured to be deployed on Replit with:
-
-1. **Development Mode**:
-   - Run `npm run dev` to start the development server
-   - This uses Vite's development server with HMR
-
-2. **Production Build**:
-   - Run `npm run build` to create the production build
-   - This builds the frontend with Vite and bundles the server with esbuild
-   - The frontend is built to the `dist/public` directory
-   - The server is bundled to `dist/index.js`
-
-3. **Production Server**:
-   - Run `npm run start` to start the production server
-   - This serves the static frontend files from `dist/public`
-   - API requests are handled by the Express server
-
-4. **Database Management**:
-   - Run `npm run db:push` to apply schema changes to the database
-   - This uses Drizzle Kit to update the database schema
-
-The Replit configuration includes:
-- Node.js 20
-- Web module for frontend
-- PostgreSQL 16 for database
-- Auto-scaling deployment target
-- Port configuration for HTTP access
-
-## Potential Enhancements
-
-1. **Authentication System**:
-   - Implement JWT or session-based authentication
-   - Add login/register functionality
-
-2. **Admin Dashboard**:
-   - Create protected routes for admin access
-   - Add contact submission management
-   - Add content management capabilities
-
-3. **Blog Section**:
-   - Add blog functionality with CMS capabilities
-   - Implement category and tag filtering
-
-4. **Analytics Integration**:
-   - Add tracking for user interactions
-   - Implement conversion tracking for contact form submissions
-
-5. **SEO Optimization**:
-   - Implement meta tags manager
-   - Add sitemap generation
-   - Add structured data for search engines
+- **2025-09-30**: Initial Replit setup completed
+  - Fixed TypeScript type error in Vite configuration
+  - Added nanoid package dependency
+  - Configured workflow for development server
+  - Set up deployment configuration
+  - Created .gitignore for Node.js project
+  - Verified production build process
