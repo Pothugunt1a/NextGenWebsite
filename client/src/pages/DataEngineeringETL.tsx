@@ -734,94 +734,35 @@ export default function DataEngineeringETL() {
         </div>
       </div>
 
-      {/* Use Cases Section - Horizontal Flow */}
-      <section className="py-16 bg-light relative">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
-          <div className="absolute top-1/4 left-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-2xl opacity-30"></div>
-          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-2xl opacity-30"></div>
-        </div>
+      {/* Use Cases Section */}
+      <section className="py-16 text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Use Cases
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Transform your business operations with our data engineering solutions
+              </p>
+            </div>
 
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Transform your business operations with our data engineering solutions
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-          </motion.div>
-
-          {/* Use Cases Flow */}
-          <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-center relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {useCases.map((useCase, index) => (
-                <div key={index} className="flex items-center">
-                  {/* Use Case Box */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ delay: index * 0.15, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    className="group"
-                  >
-                    <div className={`flex flex-col items-center justify-center p-4 w-56 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-500/30 shadow-2xl hover:border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/20 ${
-                      index === 0 ? 'rounded-l-2xl border-r-0' : 
-                      index === useCases.length - 1 ? 'rounded-r-2xl border-l-0' : 
-                      'border-l-0 border-r-0'
-                    }`} style={{ height: '15rem' }}>
-                      {/* Icon */}
-                      <div className="p-2 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 mb-2 group-hover:scale-110 transition-transform duration-300">
-                        <div className="text-white">
-                          {useCase.icon}
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <div className="text-white font-bold text-sm leading-tight px-1 mb-2 group-hover:text-gray-100 transition-colors">
-                        {useCase.title}
-                      </div>
-
-                      {/* Description */}
-                      <div className="text-gray-300 text-xs leading-tight px-1 group-hover:text-gray-200 transition-colors overflow-hidden">
-                        {useCase.description}
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Arrow between sections */}
-                  {index < useCases.length - 1 && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.15 + 0.4, duration: 0.4 }}
-                      viewport={{ once: true }}
-                      className="relative z-10 -mx-1 hidden lg:block"
-                    >
-                      <div className="w-0 h-0 border-l-[15px] border-l-blue-500 border-t-[18px] border-t-transparent border-b-[18px] border-b-transparent shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500"></div>
-                    </motion.div>
-                  )}
-
-                  {/* Mobile vertical arrow */}
-                  {index < useCases.length - 1 && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.15 + 0.4, duration: 0.4 }}
-                      viewport={{ once: true }}
-                      className="lg:hidden my-4 flex justify-center"
-                    >
-                      <div className="w-0 h-0 border-t-[15px] border-t-blue-500 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500"></div>
-                    </motion.div>
-                  )}
-                </div>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-6 rounded-xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    {useCase.icon}
+                    <h3 className="text-lg font-semibold text-white">{useCase.title}</h3>
+                  </div>
+                  <p className="text-gray-300 text-sm">{useCase.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -1283,7 +1224,7 @@ export default function DataEngineeringETL() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
           <div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "1s" }}
           />
         </div>
@@ -1317,10 +1258,10 @@ export default function DataEngineeringETL() {
               className="text-4xl md:text-6xl font-bold mb-6"
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Transform Your
+                Ready to modernize
               </span>
               <br />
-              <span className="text-white">Data Engineering Operations</span>
+              <span className="text-white">your data pipelines?</span>
             </motion.h2>
 
             <motion.p
@@ -1332,47 +1273,26 @@ export default function DataEngineeringETL() {
               Partner with RTNextGenAI to build scalable, real-time, and cloud-native Data Engineering & ETL solutions
             </motion.p>
 
-            {/* Benefits Grid */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-            >
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Expert Consultation
-                </span>
-              </div>
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Scalable Solutions
-                </span>
-              </div>
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Real-time Processing
-                </span>
-              </div>
-            </motion.div>
-
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex justify-center"
+              className="flex flex-col sm:flex-row justify-center gap-4"
             >
               <Button
                 size="lg"
                 className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-                data-testid="button-get-started"
               >
-                <Users className="mr-2 h-5 w-5" />
-                Get Started Today
+                <Database className="mr-2 h-5 w-5" />
+                Schedule a Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-blue-400/50 text-white hover:bg-blue-400/10 px-10 py-6 text-lg font-semibold"
+              >
+                Request a Demo
               </Button>
             </motion.div>
           </motion.div>
