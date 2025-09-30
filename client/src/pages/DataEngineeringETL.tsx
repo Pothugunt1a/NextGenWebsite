@@ -260,8 +260,6 @@ export default function DataEngineeringETL() {
               target.src = "/assets/AI-DataStratergy-banner.png";
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
