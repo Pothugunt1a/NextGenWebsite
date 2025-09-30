@@ -220,30 +220,30 @@ const useCases = [
     title: "Business Intelligence (BI)",
     description:
       "Prepare clean, aggregated datasets for Power BI, Tableau, Qlik",
-    icon: <BarChart3 className="h-6 w-6 text-blue-400" />,
+    icon: <BarChart3 className="h-6 w-6 text-white" />,
   },
   {
     title: "Machine Learning",
     description:
       "Build ML-ready feature pipelines for SageMaker, Azure ML, TensorFlow, PyTorch",
-    icon: <Brain className="h-6 w-6 text-blue-400" />,
+    icon: <Brain className="h-6 w-6 text-white" />,
   },
   {
     title: "IoT & Real-Time Analytics",
     description:
       "Stream sensor data into time-series databases for instant insights",
-    icon: <Activity className="h-6 w-6 text-blue-400" />,
+    icon: <Activity className="h-6 w-6 text-white" />,
   },
   {
     title: "Web & Mobile Apps",
     description: "Deliver customer insights from APIs, logs, and clickstreams",
-    icon: <Globe className="h-6 w-6 text-blue-400" />,
+    icon: <Globe className="h-6 w-6 text-white" />,
   },
   {
     title: "Enterprise Data Lakes",
     description:
       "Centralize data from ERP, CRM, SaaS apps into a single source of truth",
-    icon: <Server className="h-6 w-6 text-blue-400" />,
+    icon: <Server className="h-6 w-6 text-white" />,
   },
 ];
 
