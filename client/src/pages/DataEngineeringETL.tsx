@@ -453,15 +453,18 @@ export default function DataEngineeringETL() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mb-12"
+              className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-8 rounded-2xl border border-blue-500/20 mb-12"
             >
               <h3 className="text-2xl font-bold text-white text-center mb-8">Modern Data Pipeline Architecture</h3>
               
-              <img 
-                src="/assets/DataEngineeringModernArchitecture.png" 
-                alt="Modern Data Pipeline Architecture" 
-                className="w-full max-w-6xl mx-auto rounded-2xl"
-              />
+              <div className="max-w-6xl mx-auto">
+                <img 
+                  src="/assets/DataEngineeringModernArchitecture.png" 
+                  alt="Modern Data Pipeline Architecture" 
+                  className="w-full h-auto object-contain rounded-lg"
+                  style={{ maxHeight: '300px' }}
+                />
+              </div>
             </motion.div>
           </div>
         </div>
