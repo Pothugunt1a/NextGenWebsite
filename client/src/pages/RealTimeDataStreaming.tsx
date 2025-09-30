@@ -249,64 +249,67 @@ export default function RealTimeDataStreaming() {
       className="min-h-screen bg-light text-white"
     >
       {/* Hero Section */}
-      <div className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/assets/AI-DataStratergy-banner.png"
+            src="/assets/DataStreaming-banner.png"
             alt="Real-Time Data & Streaming Services"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/assets/AI-DataStratergy-banner.png";
+            }}
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
 
-        <div className="relative flex items-center h-full">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-5xl"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
             >
-              <motion.h1
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-                style={{ fontWeight: 700 }}
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Real-Time Data Excellence
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+            >
+              Stream, process, and act on data in real time through enterprise-grade streaming analytics and intelligent automation
+            </motion.p>
+
+            {/* Badge below description */}
+            <div className="mb-32">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Stream, Process, and Act on Data in Real Time
+                <Activity className="h-5 w-5 text-cyan-400" />
+                <span className="text-white font-medium">
+                  Industry-Leading Real-Time Analytics Solutions
                 </span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
-              >
-                RTNextGenAI helps enterprises harness the power of real-time data pipelines, streaming analytics, and event-driven architectures to deliver instant insights, improve agility, and enable intelligent automation
-              </motion.p>
-
-              <div className="mb-32">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.6, type: "spring" }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
-                >
-                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
-                  <span className="text-white font-medium">
-                    Enterprise Real-Time Analytics Solutions
-                  </span>
-                  <Award className="h-4 w-4 text-blue-400 fill-current" />
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
+                <Award className="h-4 w-4 text-blue-400 fill-current" />
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
 
       {/* Why Real-Time Data Matters Section */}
       <section className="py-20 text-white relative overflow-hidden">

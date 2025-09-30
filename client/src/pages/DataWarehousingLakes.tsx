@@ -194,92 +194,62 @@ export default function DataWarehousingLakes() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="/assets/AI-DataStratergy-banner.png"
+            src="/assets/DataWarehouse-banner.png"
             alt="Data Warehousing & Lakes"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/assets/AI-DataStratergy-banner.png";
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Content */}
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
             >
-              <motion.h1
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-6xl font-bold leading-tight"
-              >
-                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Unify, Store, and Scale
-                </span>
-                <br />
-                <span className="text-white">Your Enterprise Data</span>
-              </motion.h1>
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Data Warehousing Excellence
+              </span>
+            </motion.h1>
 
-              <motion.p
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-xl text-gray-300 leading-relaxed max-w-2xl"
-              >
-                Modern cloud-native data warehouses and lakes built for analytics, AI, and real-time insights. 
-                RTNextGenAI delivers scalable data platforms on AWS, Azure, Google Cloud, and Snowflake.
-              </motion.p>
-
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Request a Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" className="border-blue-400/50 text-white hover:bg-blue-400/10 px-8 py-4 rounded-lg">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Talk to a Data Architect
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            {/* Right Side - Illustration */}
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative"
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
             >
-              <div className="relative w-full h-96 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl overflow-hidden backdrop-blur-sm border border-blue-400/30">
-                <img
-                  src="/assets/Data-Governance.png"
-                  alt="Data Pipeline Illustration"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                
-                {/* Floating elements */}
-                <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                  <Database className="h-6 w-6 text-cyan-400" />
-                </div>
-                <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                  <BarChart3 className="h-6 w-6 text-blue-400" />
-                </div>
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                  <Brain className="h-6 w-6 text-purple-400" />
-                </div>
-              </div>
-            </motion.div>
-          </div>
+              Unify, store, and scale your enterprise data through modern cloud-native warehouses and intelligent analytics platforms
+            </motion.p>
+
+            {/* Badge below description */}
+            <div className="mb-32">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+              >
+                <Database className="h-5 w-5 text-cyan-400" />
+                <span className="text-white font-medium">
+                  Industry-Leading Data Warehousing Solutions
+                </span>
+                <Award className="h-4 w-4 text-blue-400 fill-current" />
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

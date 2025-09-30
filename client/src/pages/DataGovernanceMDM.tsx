@@ -418,7 +418,7 @@ export default function DataGovernanceMDM() {
 
                   {activeTab === "mdm" && (
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-cyan-400">Master Data Management</h4>
+                      <h4 className="text-xl font-bold text-blue-400">Master Data Management</h4>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>
@@ -443,7 +443,7 @@ export default function DataGovernanceMDM() {
 
                   {activeTab === "compliance" && (
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-purple-400">Compliance & Security</h4>
+                      <h4 className="text-xl font-bold text-blue-400">Compliance & Security</h4>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <p className="text-green-400 font-semibold mb-2">✓ Best For:</p>

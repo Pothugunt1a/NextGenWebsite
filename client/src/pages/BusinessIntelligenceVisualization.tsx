@@ -248,87 +248,62 @@ export default function BusinessIntelligenceVisualization() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/assets/Data-Governance.png"
+            src="/assets/BI&Visualization-banner.png"
             alt="Business Intelligence & Visualization"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/assets/Data-Governance.png";
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Content */}
-            <div>
-              <motion.h1
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
-              >
-                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Transform Complex Data
-                </span>
-                <br />
-                <span className="text-white">Into Actionable Insights</span>
-              </motion.h1>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
+            >
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Business Intelligence Excellence
+              </span>
+            </motion.h1>
 
-              <motion.p
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed"
-              >
-                RTNextGenAI empowers enterprises with modern BI platforms and data visualization solutions that deliver real-time insights, self-service analytics, and predictive intelligence.
-              </motion.p>
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+            >
+              Transform complex data into actionable insights through modern BI platforms and intelligent visualization solutions
+            </motion.p>
 
+            {/* Badge below description */}
+            <div className="mb-32">
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="flex flex-wrap gap-4"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2">
-                  <Monitor className="h-5 w-5" />
-                  See a Live Dashboard
-                </button>
-                <button className="border border-white/30 hover:border-white/60 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-white/10 flex items-center gap-2">
-                  <Users className="h-5 w-5" />
-                  Talk to a BI Expert
-                </button>
+                <BarChart3 className="h-5 w-5 text-cyan-400" />
+                <span className="text-white font-medium">
+                  Industry-Leading Business Intelligence Solutions
+                </span>
+                <Award className="h-4 w-4 text-blue-400 fill-current" />
               </motion.div>
             </div>
-
-            {/* Right Side - Dashboard Mockup */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="relative"
-            >
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700">
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 rounded-lg">
-                    <BarChart3 className="h-8 w-8 text-white mb-2" />
-                    <div className="text-sm text-white/80">Revenue Growth</div>
-                    <div className="text-2xl font-bold text-white">+24.5%</div>
-                  </div>
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-4 rounded-lg">
-                    <TrendingUp className="h-8 w-8 text-white mb-2" />
-                    <div className="text-sm text-white/80">Customer Satisfaction</div>
-                    <div className="text-2xl font-bold text-white">94.2%</div>
-                  </div>
-                </div>
-                <div className="bg-gray-700 p-4 rounded-lg">
-                  <LineChart className="h-6 w-6 text-blue-400 mb-2" />
-                  <div className="text-sm text-gray-300">Real-time Analytics</div>
-                  <div className="flex items-center gap-2 mt-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-green-400 text-sm">Live Data</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

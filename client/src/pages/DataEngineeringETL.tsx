@@ -249,83 +249,67 @@ export default function DataEngineeringETL() {
       className="min-h-screen bg-light text-white"
     >
       {/* Hero Section */}
-      <div className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/assets/AI-DataStratergy-banner.png"
+            src="/assets/DataEngineering-banner.png"
             alt="Data Engineering & ETL Services"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/assets/AI-DataStratergy-banner.png";
+            }}
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
 
-        <div className="relative flex items-center h-full">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-5xl"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              style={{ fontWeight: 700 }}
             >
-              <motion.h1
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-                style={{ fontWeight: 700 }}
-              >
-                <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                  Build Reliable Data Pipelines
-                </span>
-                <br />
-                <span className="text-white">for Scalable Analytics & AI</span>
-              </motion.h1>
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Data Engineering Excellence
+              </span>
+            </motion.h1>
 
-              <motion.p
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-4xl"
-              >
-                RTNextGenAI delivers end-to-end Data Engineering and ETL solutions that transform raw, fragmented data into trusted, analytics-ready datasets for BI, Big Data, AI, and IoT applications
-              </motion.p>
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
+            >
+              Build reliable data pipelines for scalable analytics & AI through enterprise-grade ETL solutions and intelligent automation
+            </motion.p>
 
-              {/* CTA Buttons */}
+            {/* Badge below description */}
+            <div className="mb-32">
               <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 mb-16"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
               >
-                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Talk to a Data Engineer
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" className="border-blue-400/50 text-white hover:bg-blue-400/10 px-8 py-4 rounded-lg">
-                  Get a Free Assessment
-                </Button>
+                <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
+                <span className="text-white font-medium">
+                  Industry-Leading Data Pipeline Solutions
+                </span>
+                <Award className="h-4 w-4 text-blue-400 fill-current" />
               </motion.div>
-
-              {/* Badge below CTA */}
-              <div className="mb-32">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.8, type: "spring" }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
-                >
-                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
-                  <span className="text-white font-medium">
-                    Enterprise-Grade Data Pipeline Solutions
-                  </span>
-                  <Award className="h-4 w-4 text-blue-400 fill-current" />
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
 
       {/* Problem → Solution Section */}
       <section className="py-16 text-white relative overflow-hidden">
