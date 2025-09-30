@@ -24,6 +24,11 @@ import {
   Cpu,
   Server,
   Network,
+  Download,
+  Workflow,
+  RefreshCw,
+  Link2,
+  Package,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
@@ -78,7 +83,7 @@ const whyChooseUsItems = [
 const capabilities = [
   {
     icon: <Database className="h-8 w-8 text-white" />,
-    title: "🟧 Data Ingestion",
+    title: "📥 Data Ingestion",
     description:
       "Batch + streaming pipelines with Kafka, Kinesis. Real-time data collection from APIs, IoT devices, and enterprise systems.",
     backgroundImage: "/assets/Data-Governance.png",
@@ -86,7 +91,7 @@ const capabilities = [
   },
   {
     icon: <Settings className="h-8 w-8 text-white" />,
-    title: "🟦 ETL & ELT Pipelines",
+    title: "⚙️ ETL & ELT Pipelines",
     description:
       "Traditional ETL for legacy systems + modern ELT for cloud warehouses. Spark, Databricks, Airflow orchestration.",
     backgroundImage: "/assets/AI-Integration.png",
@@ -94,7 +99,7 @@ const capabilities = [
   },
   {
     icon: <GitBranch className="h-8 w-8 text-white" />,
-    title: "🟨 Data Transformation",
+    title: "🔄 Data Transformation",
     description:
       "Cleansing, enrichment, schema evolution. Handle JSON, XML, IoT telemetry with automated quality checks.",
     backgroundImage: "/assets/AI-ProcessOptimization.png",
@@ -102,7 +107,7 @@ const capabilities = [
   },
   {
     icon: <Network className="h-8 w-8 text-white" />,
-    title: "🟪 Data Integration",
+    title: "🔗 Data Integration",
     description:
       "Unify ERP, CRM, SaaS, and IoT systems. Single source of truth across AWS, Azure, GCP platforms.",
     backgroundImage: "/assets/AI-Robotic.png",
@@ -110,7 +115,7 @@ const capabilities = [
   },
   {
     icon: <Cloud className="h-8 w-8 text-white" />,
-    title: "🟩 Data Storage & Delivery",
+    title: "📦 Data Storage & Delivery",
     description:
       "Optimized loading to Data Lakes and Warehouses. Advanced partitioning for BI dashboards and ML models.",
     backgroundImage: "/assets/AI-ML.png",
