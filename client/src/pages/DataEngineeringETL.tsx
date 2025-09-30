@@ -1189,7 +1189,7 @@ export default function DataEngineeringETL() {
                 <div className="relative group">
                   <div className="relative overflow-hidden rounded-2xl">
                     <img
-                      src="/assets/Data-Governance.png"
+                      src="/assets/"
                       alt="Data Engineering & ETL Solutions"
                       className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
