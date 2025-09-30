@@ -77,35 +77,35 @@ const whyChooseUsItems = [
 const capabilities = [
   {
     icon: <Eye className="h-8 w-8 text-white" />,
-    title: "Computer Vision & Visual Analytics",
+    title: "👁️ Computer Vision & Visual Analytics",
     description:
       "Object detection, image segmentation, video analytics, facial recognition, and real-time visual monitoring systems.",
     backgroundImage: "/assets/AI-ComputerVision.png",
   },
   {
     icon: <MessageSquare className="h-8 w-8 text-white" />,
-    title: "Natural Language & Conversational AI",
+    title: "💬 Natural Language & Conversational AI",
     description:
       "Intelligent chatbots, virtual assistants, text classification, summarization, and multilingual support systems.",
     backgroundImage: "/assets/AI-NLP.png",
   },
   {
     icon: <TrendingUp className="h-8 w-8 text-white" />,
-    title: "Predictive Modeling & Anomaly Detection",
+    title: "📈 Predictive Modeling & Anomaly Detection",
     description:
       "Time‑series forecasting, root‑cause identification, and automated alerting based on real‑time data.",
     backgroundImage: "/assets/AI-ML.png",
   },
   {
     icon: <Bot className="h-8 w-8 text-white" />,
-    title: "Robotic Process Automation (RPA)",
+    title: "🤖 Robotic Process Automation (RPA)",
     description:
       "End‑to‑end automation of routine tasks—from invoice processing to data entry and workflow orchestration.",
     backgroundImage: "/assets/AI-Robotic.png",
   },
   {
     icon: <Settings className="h-8 w-8 text-white" />,
-    title: "Intelligent Automation",
+    title: "⚙️ Intelligent Automation",
     description:
       "Combining RPA with machine learning to build self‑learning processes that adapt to new data and evolving business needs.",
     backgroundImage: "/assets/AI-Intelligent.png",

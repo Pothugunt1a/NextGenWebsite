@@ -19,7 +19,7 @@ import {
 const services = [
   {
     icon: <Stethoscope className="h-8 w-8 text-white" />,
-    title: "Clinical Operations",
+    title: "🩺 Clinical Operations",
     description:
       "Develop solutions that increase efficiencies, productivity, and quality in your clinical trial from study start-up through completion. By strategizing for the level of support you need, we create clinical operations solutions to facilitate all aspects of your clinical trial — including management of staff and training, budgets and contracts, patient recruitment and retention, and site operations — to drive on-time project delivery.",
     backgroundImage:
@@ -27,7 +27,7 @@ const services = [
   },
   {
     icon: <TrendingUp className="h-8 w-8 text-white" />,
-    title: "Biometrics",
+    title: "📊 Biometrics",
     description:
       "Leverage our life science knowledge for guidance on biometric solutions, including clinical data management and SAS programming, throughout the clinical drug development process. We identify solutions for every stage of your trial, minimizing your timeline risks and improving data quality via world-class clinical data management.",
     backgroundImage:
@@ -35,7 +35,7 @@ const services = [
   },
   {
     icon: <Beaker className="h-8 w-8 text-white" />,
-    title: "Pharmacovigilance / Drug Safety",
+    title: "🧪 Pharmacovigilance / Drug Safety",
     description:
       "If your organization is in the pharmaceutical, biotech, consumer health, animal health or medical device space, partner with us for consultation that streamlines your end-to-end drug safety surveillance activities for investigational and post-market products.",
     backgroundImage:
@@ -43,7 +43,7 @@ const services = [
   },
   {
     icon: <ScrollText className="h-8 w-8 text-white" />,
-    title: "Regulatory Affairs",
+    title: "📜 Regulatory Affairs",
     description:
       "Engage our consultative approach to quickly identify solutions that reduce costs, accelerate approval timelines and improve your processes. Ranging from preapproval to post-approval, and from intellectual property to FDA approval, we strategized cost-effective, high-quality regulatory affairs solutions.",
     backgroundImage:
@@ -51,7 +51,7 @@ const services = [
   },
   {
     icon: <Shield className="h-8 w-8 text-white" />,
-    title: "Quality and Compliance",
+    title: "🛡️ Quality and Compliance",
     description:
       "Create a long-term plan that ensures the production of quality products while meeting compliance requirements. Specializing in corrective and preventive action, we develop solutions that address your quality and regulatory compliance processes.",
     backgroundImage:
