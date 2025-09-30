@@ -553,7 +553,7 @@ export default function IntelligentSystemsDevelopment() {
                         </div>
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        👁️ Computer Vision & Visual Analytics
+                        Computer Vision & Visual Analytics
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         Object detection, image segmentation, video analytics,
@@ -592,7 +592,7 @@ export default function IntelligentSystemsDevelopment() {
                         </div>
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        💬 Natural Language & Conversational AI
+                        Natural Language & Conversational AI
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         Intelligent chatbots, virtual assistants, text
@@ -688,7 +688,7 @@ export default function IntelligentSystemsDevelopment() {
                         </div>
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        📈 Predictive Modeling & Anomaly Detection
+                        Predictive Modeling & Anomaly Detection
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         Time‑series forecasting, root‑cause identification, and
@@ -729,7 +729,7 @@ export default function IntelligentSystemsDevelopment() {
                         </div>
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        🤖 Robotic Process Automation (RPA)
+                        Robotic Process Automation (RPA)
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         End‑to‑end automation of routine tasks—from invoice
@@ -767,7 +767,7 @@ export default function IntelligentSystemsDevelopment() {
                         </div>
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                        ⚙️ Intelligent Automation
+                        Intelligent Automation
                       </h4>
                       <p className="text-gray-400 text-sm leading-relaxed">
                         Combining RPA with machine learning to build
