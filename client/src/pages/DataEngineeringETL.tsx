@@ -455,7 +455,7 @@ export default function DataEngineeringETL() {
               {/* Pipeline Flow Diagram */}
               <div className="flex items-center justify-between max-w-6xl mx-auto">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
                     <Database className="h-10 w-10 text-white" />
                   </div>
                   <h4 className="font-semibold text-white mb-1">Data Sources</h4>
@@ -467,7 +467,7 @@ export default function DataEngineeringETL() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
                     <Settings className="h-10 w-10 text-white" />
                   </div>
                   <h4 className="font-semibold text-white mb-1">ETL/ELT</h4>
@@ -479,7 +479,7 @@ export default function DataEngineeringETL() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
                     <Cloud className="h-10 w-10 text-white" />
                   </div>
                   <h4 className="font-semibold text-white mb-1">Storage</h4>
@@ -491,7 +491,7 @@ export default function DataEngineeringETL() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
                     <BarChart3 className="h-10 w-10 text-white" />
                   </div>
                   <h4 className="font-semibold text-white mb-1">Analytics</h4>
