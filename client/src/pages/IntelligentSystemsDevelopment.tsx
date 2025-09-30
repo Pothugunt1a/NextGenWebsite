@@ -543,7 +543,7 @@ export default function IntelligentSystemsDevelopment() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        {capabilities[0].icon}
+                        <Eye className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -582,7 +582,7 @@ export default function IntelligentSystemsDevelopment() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        {capabilities[1].icon}
+                        <MessageSquare className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -678,7 +678,7 @@ export default function IntelligentSystemsDevelopment() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        {capabilities[2].icon}
+                        <TrendingUp className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -719,7 +719,7 @@ export default function IntelligentSystemsDevelopment() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        {capabilities[3].icon}
+                        <Bot className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -757,7 +757,7 @@ export default function IntelligentSystemsDevelopment() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        {capabilities[4].icon}
+                        <Settings className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-grow">
