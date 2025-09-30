@@ -453,56 +453,15 @@ export default function DataEngineeringETL() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-8 rounded-2xl border border-blue-500/20 mb-12"
+              className="mb-12"
             >
               <h3 className="text-2xl font-bold text-white text-center mb-8">Modern Data Pipeline Architecture</h3>
               
-              {/* Pipeline Flow Diagram */}
-              <div className="flex items-center justify-between max-w-6xl mx-auto">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
-                    <Database className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-white mb-1">Data Sources</h4>
-                  <p className="text-xs text-gray-400">APIs, Databases, IoT, SaaS</p>
-                </div>
-                
-                <div className="flex-1 mx-4">
-                  <ArrowRight className="w-full h-6 text-blue-400" />
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
-                    <Settings className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-white mb-1">ETL/ELT</h4>
-                  <p className="text-xs text-gray-400">Transform, Cleanse, Enrich</p>
-                </div>
-                
-                <div className="flex-1 mx-4">
-                  <ArrowRight className="w-full h-6 text-blue-400" />
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3">
-                    <Cloud className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-white mb-1">Storage</h4>
-                  <p className="text-xs text-gray-400">Data Lake, Warehouse</p>
-                </div>
-                
-                <div className="flex-1 mx-4">
-                  <ArrowRight className="w-full h-6 text-blue-400" />
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-3">
-                    <BarChart3 className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-white mb-1">Analytics</h4>
-                  <p className="text-xs text-gray-400">BI, ML, AI Models</p>
-                </div>
-              </div>
+              <img 
+                src="/assets/DataEngineeringModernArchitecture.png" 
+                alt="Modern Data Pipeline Architecture" 
+                className="w-full max-w-6xl mx-auto rounded-2xl"
+              />
             </motion.div>
           </div>
         </div>
