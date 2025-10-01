@@ -360,9 +360,9 @@ export default function DataGovernanceMDM() {
               {/* Tab Navigation */}
               <div className="flex bg-gray-800/60 rounded-xl p-2 backdrop-blur-sm border border-gray-700">
                 {[
-                  { id: "governance", label: "Enterprise Apps (Data Source)", icon: Shield },
-                  { id: "mdm", label: "Data & Feature Governance Layer", icon: Database },
-                  { id: "compliance", label: "Consumption & Responsible AI Audit", icon: Lock },
+                  { id: "governance", label: "Governance", icon: Shield },
+                  { id: "mdm", label: "MDM", icon: Database },
+                  { id: "compliance", label: "Compliance", icon: Lock },
                 ].map((tab) => {
                   const IconComponent = tab.icon;
                   return (
@@ -599,9 +599,9 @@ export default function DataGovernanceMDM() {
                 {/* Tab Navigation */}
                 <div className="flex bg-gray-800/60 rounded-xl p-2 backdrop-blur-sm border border-gray-700">
                   {[
-                    { id: "governance", label: "Governance", icon: Shield },
-                    { id: "mdm", label: "MDM", icon: Database },
-                    { id: "compliance", label: "Compliance", icon: Lock },
+                    { id: "governance", label: "Enterprise Apps (Data Source)", icon: Shield },
+                    { id: "mdm", label: "Data & Feature Governance Layer", icon: Database },
+                    { id: "compliance", label: "Consumption & Responsible AI Audit", icon: Lock },
                   ].map((tab) => {
                     const IconComponent = tab.icon;
                     return (
