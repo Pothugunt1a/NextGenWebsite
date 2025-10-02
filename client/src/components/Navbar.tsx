@@ -224,14 +224,7 @@ export default function Navbar({
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          if (link.hasDropdown) {
-                            toggleDropdown(link.id, e);
-                            return; // Prevent any navigation when dropdown is enabled
-                          } else if (link.href.startsWith("/")) {
-                            setLocation(link.href);
-                          } else {
-                            scrollToSection(e, link.href);
-                          }
+                          toggleDropdown(link.id, e);
                         }}
                       >
                         {link.name}
