@@ -100,6 +100,7 @@ function Router() {
         <Route path="/it-services/ai-data-science" component={AIDataScienceServices} />
         <Route path="/it-services/networking-cybersecurity" component={NetworkingCyberSecurity} />
         <Route path="/it-services/erp" component={ERPServices} />
+        <Route path="/erp" component={ERPServices} />
         <Route path="/it-services/system-integration" component={SystemIntegration} />
         <Route component={NotFound} />
       </Switch>
