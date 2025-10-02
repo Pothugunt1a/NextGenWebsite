@@ -281,27 +281,7 @@ export default function ArtificialIntelligenceServices() {
                 Enterprise-ready AI solutions — from computer vision and NLP to generative AI, autonomous agents, and cognitive services — helping businesses innovate, automate, and scale with the latest technologies
               </motion.p>
 
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 mb-8"
-              >
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Request a Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-lg transition-all duration-300"
-                >
-                  Talk to an AI Expert
-                </Button>
-              </motion.div>
+              
 
               {/* Badge below CTA */}
               <div className="mb-32">
@@ -782,28 +762,7 @@ export default function ArtificialIntelligenceServices() {
               Partner with RTNextGenAI to harness Artificial Intelligence — from predictive insights to generative and agentic AI systems
             </motion.p>
 
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-col sm:flex-row justify-center gap-4"
-            >
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-              >
-                <Brain className="mr-2 h-5 w-5" />
-                Schedule a Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-10 py-6 text-lg font-semibold transition-all duration-300"
-              >
-                Request a Demo
-              </Button>
-            </motion.div>
+            
           </motion.div>
         </div>
       </section>

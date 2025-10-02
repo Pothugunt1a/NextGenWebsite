@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -346,7 +345,7 @@ export default function MachineLearningServices() {
 
         <div className="relative flex items-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-grid-cols-12 gap-12 items-center">
               {/* Left Side - Content */}
               <div className="lg:col-span-7">
                 <motion.div
@@ -374,29 +373,7 @@ export default function MachineLearningServices() {
                     At RTNextGenAI, we design, build, and deploy enterprise-grade Machine Learning solutions that transform raw data into intelligence, automate decision-making, and deliver measurable business outcomes.
                   </motion.p>
 
-                  <motion.div
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4"
-                  >
-                    <Button
-                      size="lg"
-                      className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-4 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-                    >
-                      <Brain className="mr-2 h-5 w-5" />
-                      Request a Demo
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
-                    >
-                      <Bot className="mr-2 h-5 w-5" />
-                      Talk to an ML Expert
-                    </Button>
-                  </motion.div>
+                  {/* CTA buttons removed as per user request */}
                 </motion.div>
               </div>
 
@@ -595,11 +572,11 @@ export default function MachineLearningServices() {
                         {capability.icon}
                       </div>
                     </div>
-                    
+
                     <h4 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 mb-4">
                       {capability.title}
                     </h4>
-                    
+
                     <p className="text-gray-400 leading-relaxed mb-6">
                       {capability.description}
                     </p>

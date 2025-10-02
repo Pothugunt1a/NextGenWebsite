@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -302,7 +301,7 @@ export default function CoreDataScience() {
 
         <div className="relative flex items-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-grid-cols-12 gap-12 items-center">
               {/* Left Side - Content */}
               <div className="lg:col-span-7">
                 <motion.div
@@ -330,29 +329,7 @@ export default function CoreDataScience() {
                     From collection and preparation to visualization and storytelling, RTNextGenAI helps enterprises unlock the full value of data.
                   </motion.p>
 
-                  <motion.div
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4"
-                  >
-                    <Button
-                      size="lg"
-                      className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-4 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-                    >
-                      <Database className="mr-2 h-5 w-5" />
-                      Request a Demo
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
-                    >
-                      <BarChart3 className="mr-2 h-5 w-5" />
-                      Talk to a Data Scientist
-                    </Button>
-                  </motion.div>
+                  {/* CTA buttons removed */}
                 </motion.div>
               </div>
 
@@ -566,7 +543,7 @@ export default function CoreDataScience() {
                         {service.icon}
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                         {String(index + 1).padStart(2, '0')}
@@ -575,7 +552,7 @@ export default function CoreDataScience() {
                         {service.title}
                       </h4>
                     </div>
-                    
+
                     <p className="text-gray-400 leading-relaxed mb-6">
                       {service.description}
                     </p>
@@ -638,7 +615,7 @@ export default function CoreDataScience() {
                       </div>
                       <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
                       <p className="text-gray-400">{step.description}</p>
-                      
+
                       {/* Connection Arrow */}
                       {index < lifecycleSteps.length - 1 && (
                         <div className="hidden lg:block absolute top-10 left-full w-16">
@@ -1089,7 +1066,7 @@ export default function CoreDataScience() {
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
               Partner with RTNextGenAI to implement data science solutions that deliver clarity and confidence. Whether you're modernizing analytics or building AI-ready pipelines, our team delivers results you can trust.
-            </motion.p>
+            </motion.h2>
 
             <motion.div
               initial={{ y: 20, opacity: 0 }}

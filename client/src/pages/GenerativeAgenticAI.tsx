@@ -314,27 +314,7 @@ export default function GenerativeAgenticAI() {
                 RTNextGenAI builds intelligent systems powered by Generative AI and Agentic AI — enabling enterprises to create, adapt, and act in real time
               </motion.p>
 
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 mb-8"
-              >
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Request a Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-lg transition-all duration-300"
-                >
-                  Talk to an AI Expert
-                </Button>
-              </motion.div>
+              
 
               {/* Badge below CTA */}
               <div className="mb-32">
@@ -342,7 +322,7 @@ export default function GenerativeAgenticAI() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.8, type: "spring" }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
                 >
                   <Palette className="h-5 w-5 text-cyan-400 fill-none" />
                   <span className="text-white font-medium">
@@ -911,13 +891,13 @@ export default function GenerativeAgenticAI() {
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring" }}
-              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-400/30 rounded-full backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
             >
-              <Palette className="h-5 w-5 text-purple-400" />
+              <Palette className="h-5 w-5 text-cyan-400" />
               <span className="text-white font-medium">
                 Generative + Agentic AI Solutions
               </span>
-              <Bot className="h-4 w-4 text-cyan-400 fill-current" />
+              <Bot className="h-4 w-4 text-blue-400 fill-current" />
             </motion.div>
 
             <motion.h2
@@ -946,22 +926,15 @@ export default function GenerativeAgenticAI() {
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-col sm:flex-row justify-center gap-4"
+              className="flex justify-center"
             >
               <Button
                 size="lg"
-                className="group bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-purple-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               >
-                <Palette className="mr-2 h-5 w-5" />
-                Schedule a Consultation
+                <Brain className="mr-2 h-5 w-5" />
+                Start Your AI Journey
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-10 py-6 text-lg font-semibold transition-all duration-300"
-              >
-                Request a Demo
               </Button>
             </motion.div>
           </motion.div>
