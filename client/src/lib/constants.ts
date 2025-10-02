@@ -305,11 +305,7 @@ export const navLinks = [
       },
       {
         name: "DevOps",
-        items: [
-          { name: "CI/CD Pipeline", href: "/devops-services" },
-          { name: "Infrastructure Automation", href: "/devops-services" },
-          { name: "Monitoring & Deployment", href: "/devops-services" },
-        ],
+        href: "/devops-services",
       },
     ],
   },

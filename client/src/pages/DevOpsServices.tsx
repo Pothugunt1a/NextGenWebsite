@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -313,7 +312,7 @@ export default function DevOpsServices() {
               className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
               style={{ fontWeight: 700 }}
             >
-              <span className="bg-gradient-to-r from-white via-blue-100 to-[#FF6B6B] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
                 DevOps & Automation Solutions
               </span>
             </motion.h1>
