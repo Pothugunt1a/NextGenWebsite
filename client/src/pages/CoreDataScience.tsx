@@ -1066,7 +1066,7 @@ export default function CoreDataScience() {
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
               Partner with RTNextGenAI to implement data science solutions that deliver clarity and confidence. Whether you're modernizing analytics or building AI-ready pipelines, our team delivers results you can trust.
-            </motion.h2>
+            </motion.p>
 
             <motion.div
               initial={{ y: 20, opacity: 0 }}
