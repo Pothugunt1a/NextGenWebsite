@@ -193,6 +193,7 @@ export const navLinks = [
       },
       {
         name: "AI & Data Science",
+        href: "/it-services/ai-data-science",
         items: [
           { name: "Core Data Science", href: "/core-data-science" },
           { name: "Machine Learning", href: "/machine-learning-services" },
@@ -223,10 +224,11 @@ export const navLinks = [
       },
       {
         name: "Networking and Cyber Security",
+        href: "/it-services/networking-cybersecurity",
         items: [
-          { name: "Network Infrastructure", href: "#network-infrastructure" },
-          { name: "Cybersecurity Solutions", href: "#cybersecurity" },
-          { name: "Security Audits", href: "#security-audits" },
+          { name: "Network Infrastructure", href: "/it-services/networking-cybersecurity" },
+          { name: "Cybersecurity Solutions", href: "/it-services/networking-cybersecurity" },
+          { name: "Security Audits", href: "/it-services/networking-cybersecurity" },
         ],
       },
       {
@@ -285,18 +287,20 @@ export const navLinks = [
       },
       {
         name: "Systems Integration",
+        href: "/it-services/system-integration",
         items: [
-          { name: "API Integration", href: "#api-integration" },
-          { name: "Third-Party Integrations", href: "#third-party-integrations" },
-          { name: "Legacy System Modernization", href: "#legacy-modernization" },
+          { name: "API Integration", href: "/it-services/system-integration" },
+          { name: "Third-Party Integrations", href: "/it-services/system-integration" },
+          { name: "Legacy System Modernization", href: "/it-services/system-integration" },
         ],
       },
       {
         name: "ERP",
+        href: "/it-services/erp",
         items: [
-          { name: "ERP Implementation", href: "#erp-implementation" },
-          { name: "ERP Customization", href: "#erp-customization" },
-          { name: "ERP Support", href: "#erp-support" },
+          { name: "ERP Implementation", href: "/it-services/erp" },
+          { name: "ERP Customization", href: "/it-services/erp" },
+          { name: "ERP Support", href: "/it-services/erp" },
         ],
       },
       {

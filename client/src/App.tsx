@@ -46,6 +46,10 @@ import DatabaseMigrationModernization from "./pages/DatabaseMigrationModernizati
 import CloudManagedDatabases from "./pages/CloudManagedDatabases";
 import DatabasePerformanceOptimization from "./pages/DatabasePerformanceOptimization";
 import DatabaseMigration from "./pages/DatabaseMigration";
+import AIDataScienceServices from "./pages/AIDataScienceServices";
+import NetworkingCyberSecurity from "./pages/NetworkingCyberSecurity";
+import ERPServices from "./pages/ERPServices";
+import SystemIntegration from "./pages/SystemIntegration";
 
 
 function Router() {
@@ -93,6 +97,10 @@ function Router() {
         <Route path="/database-migration" component={DatabaseMigration} />
         <Route path="/it-services/databases/cloud-managed-databases" component={CloudManagedDatabases} />
         <Route path="/it-services/databases/database-performance-optimization" component={DatabasePerformanceOptimization} />
+        <Route path="/it-services/ai-data-science" component={AIDataScienceServices} />
+        <Route path="/it-services/networking-cybersecurity" component={NetworkingCyberSecurity} />
+        <Route path="/it-services/erp" component={ERPServices} />
+        <Route path="/it-services/system-integration" component={SystemIntegration} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
