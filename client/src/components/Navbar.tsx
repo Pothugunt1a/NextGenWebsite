@@ -224,13 +224,23 @@ export default function Navbar({
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          toggleDropdown(link.id, e);
+                          // Check if this item has dropdown items
+                          const hasDropdownItems = link.dropdownItems && link.dropdownItems.length > 0;
+                          
+                          if (hasDropdownItems) {
+                            toggleDropdown(link.id, e);
+                          } else if (link.href && link.href.startsWith("/")) {
+                            // Navigate directly if no dropdown items
+                            handleNavigationClick(link.href);
+                          }
                         }}
                       >
                         {link.name}
-                        <ChevronDown
-                          className={`ml-1 h-3 w-3 transition-transform inline-block ${activeDropdown === link.id ? "rotate-180" : ""}`}
-                        />
+                        {link.dropdownItems && link.dropdownItems.length > 0 && (
+                          <ChevronDown
+                            className={`ml-1 h-3 w-3 transition-transform inline-block ${activeDropdown === link.id ? "rotate-180" : ""}`}
+                          />
+                        )}
                       </a>
 
                       {activeDropdown === link.id && (
@@ -344,18 +354,21 @@ export default function Navbar({
 
                                     const isActive =
                                       activeDesktopSubmenu === category.name;
+                                    const hasItems = category.items && category.items.length > 0;
 
                                     return (
                                       <div key={idx} className="group">
                                         {/* Clickable Category Header */}
                                         <div
                                           className="relative cursor-pointer select-none"
-                                          onClick={(e) =>
-                                            toggleDesktopSubmenu(
-                                              category.name,
-                                              e,
-                                            )
-                                          }
+                                          onClick={(e) => {
+                                            if (hasItems) {
+                                              toggleDesktopSubmenu(category.name, e);
+                                            } else if ((category as any).href) {
+                                              e.preventDefault();
+                                              handleNavigationClick((category as any).href);
+                                            }
+                                          }}
                                         >
                                           <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-slate-900/95 to-slate-800/90 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 backdrop-blur-md shadow-lg hover:shadow-xl hover:shadow-cyan-400/10 hover:bg-gradient-to-r hover:from-slate-800/95 hover:to-slate-700/90">
                                             <div className="flex items-center gap-3">
@@ -368,16 +381,18 @@ export default function Navbar({
                                                 </h3>
                                               </div>
                                             </div>
-                                            <ChevronDown
-                                              className={`h-4 w-4 text-slate-400 group-hover:text-cyan-400 transition-all duration-300 ${
-                                                isActive ? "rotate-180" : ""
-                                              }`}
-                                            />
+                                            {hasItems && (
+                                              <ChevronDown
+                                                className={`h-4 w-4 text-slate-400 group-hover:text-cyan-400 transition-all duration-300 ${
+                                                  isActive ? "rotate-180" : ""
+                                                }`}
+                                              />
+                                            )}
                                           </div>
                                         </div>
 
                                         {/* Expandable Category Items */}
-                                        {isActive && (
+                                        {isActive && hasItems && (
                                           <div className="mt-4 ml-4 space-y-1 animate-in slide-in-from-top-3 fade-in-20 duration-300">
                                             {category.items.map(
                                               (item, itemIdx) => (
