@@ -224,20 +224,11 @@ export const navLinks = [
       },
       {
         name: "Networking and Cyber Security",
-        href: "/it-services/networking-cybersecurity",
-        items: [
-          { name: "Network Infrastructure", href: "/it-services/networking-cybersecurity" },
-          { name: "Cybersecurity Solutions", href: "/it-services/networking-cybersecurity" },
-          { name: "Security Audits", href: "/it-services/networking-cybersecurity" },
-        ],
+        href: "/networking-cybersecurity",
       },
       {
         name: "Mobile Development",
-        items: [
-          { name: "iOS Development", href: "/mobile-development" },
-          { name: "Android Development", href: "/mobile-development" },
-          { name: "Cross-Platform Apps", href: "/mobile-development" },
-        ],
+        href: "/mobile-development",
       },
       {
         name: "Web Development",
