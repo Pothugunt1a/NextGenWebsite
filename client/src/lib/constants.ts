@@ -245,21 +245,11 @@ export const navLinks = [
       },
       {
         name: "Systems Integration",
-        href: "/it-services/system-integration",
-        items: [
-          { name: "API Integration", href: "/it-services/system-integration" },
-          { name: "Third-Party Integrations", href: "/it-services/system-integration" },
-          { name: "Legacy System Modernization", href: "/it-services/system-integration" },
-        ],
+        href: "/system-integration",
       },
       {
         name: "ERP",
-        href: "/it-services/erp",
-        items: [
-          { name: "ERP Implementation", href: "/it-services/erp" },
-          { name: "ERP Customization", href: "/it-services/erp" },
-          { name: "ERP Support", href: "/it-services/erp" },
-        ],
+        href: "/erp",
       },
       {
         name: "DevOps",
