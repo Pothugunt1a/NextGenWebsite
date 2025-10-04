@@ -224,7 +224,7 @@ export const navLinks = [
       },
       {
         name: "Networking and Cyber Security",
-        href: "/networking-cybersecurity",
+        href: "/it-services/networking-cybersecurity",
       },
       {
         name: "Mobile Development",
@@ -236,7 +236,7 @@ export const navLinks = [
       },
       {
         name: "Systems Integration",
-        href: "/system-integration",
+        href: "/it-services/system-integration",
       },
       {
         name: "ERP",

@@ -1,0 +1,130 @@
+Networking, Cybersecurity & Modern Engineering
+Hero / Executive Summary
+
+Modern networks are hybrid, identity-centric, and relentlessly targeted. AI—especially agentic systems and generative AI—now augments SecOps, NetOps, and ITOps to compress triage from hours to minutes, auto-correlate telemetry across endpoints, identities, cloud and network, and enforce Zero Trust at scale. Safe adoption pairs AI with NIST AI RMF governance, adversary-informed defense (MITRE ATT&CK), and GenAI-specific controls (OWASP Top 10 for LLM Apps). 
+NIST Publications
++2
+MITRE ATT&CK
++2
+
+Standards we anchor to:
+NIST CSF 2.0 • NIST SP 800-207 (Zero Trust) • NIST AI RMF • MITRE ATT&CK • OWASP (Top 10, API Top 10, Mobile Top 10, ASVS) • CIS Controls v8.1 • NIST SSDF • SLSA • PCI DSS v4.0. 
+PCI Security Standards Council
++10
+NIST Publications
++10
+NIST Publications
++10
+
+What “AI-Driven Security & Networking” Means
+
+AI for Security (SecOps/XDR/SIEM/SOAR). LLMs and behavioral ML summarize alerts, generate investigations, and automate responses with playbooks & agents: Microsoft Copilot for Security (GA Apr 1, 2024; pay-as-you-go), CrowdStrike Charlotte AI & the Agentic SOC (2025), SentinelOne Purple AI (agentic triage/investigation), Palo Alto Precision AI, Google Sec-Gemini (exp.). 
+Palo Alto Networks
++4
+Microsoft
++4
+Microsoft
++4
+
+AI for Networking (AIOps/NDR/SASE/SSE). ML baselines traffic, detects anomalies, recommends policies, and enforces micro-segmentation in AI-scale data centers (e.g., Cisco Hypershield). 
+The Verge
+
+Zero Trust is the control fabric. Identity-first access, continuous verification, least privilege, and data-centric policy across users, devices, apps, and networks. 
+NIST Publications
+
+Risk & governance. Adopt NIST AI RMF (Govern/Map/Measure/Manage) and OWASP Top 10 for LLM Apps (2025) (prompt injection, model DoS, data poisoning, supply chain, excessive agency). 
+NIST Publications
++1
+
+Adversary-informed defense. Map detections & responses to MITRE ATT&CK so AI output aligns to real attacker TTPs. 
+MITRE ATT&CK
+
+Data governance caution: recent research shows GenAI copilots can surface large volumes of sensitive content without tight permissions—enforce classification/labeling, least-privilege and DLP. 
+TechRadar
+
+Reference Architectures (diagram blueprints)
+
+Diagram A — AI-Augmented Zero-Trust Network & SOC
+
+[Identities (Users/Workloads/IoT)]
+        |
+   [Policy Engine / ZTA (IdP, PDP, PEP)]
+        |  (continuous authZ)
+[Network: SD-WAN | SASE/SSE | Micro-Segmentation]
+        |
+[Telemetry Bus: EDR/XDR, NDR, Cloud, Identity, DNS, Email]
+        |
+[SIEM/SOAR] <-> [GenAI/Agentic Layer (Copilot, Charlotte AI, Purple AI, Precision AI, Sec-Gemini)]
+        |                        |
+   [Use-case Agents]       [Guardrails: NIST AI RMF + OWASP LLM Top 10]
+        |
+[Response: EDR isolate | FW policy push | IAM step-up | Ticketing | IR runbooks]
+
+
+Anchors: ZTA, ATT&CK, AI RMF, OWASP LLM. 
+OWASP Foundation
++3
+NIST Publications
++3
+MITRE ATT&CK
++3
+
+Diagram B — Agentic SecOps Flow (Investigation → Action)
+
+Alerts -> AI Agent Orchestrator
+  -> Summarize + correlate (LLM over SIEM/XDR)
+  -> Map to ATT&CK (TTP tagging)
+  -> Decide next action (policy + risk scoring)
+  -> Execute (isolate, revoke, block, notify)
+  -> Explainability + logs (audit/governance)
+
+
+Backed by vendor agentic capabilities. 
+CrowdStrike
++1
+
+Diagram C — AI-Native Data Center Protection
+
+[Apps/Services] — [Distributed Policy/Enforcement] — [Fabric Telemetry]
+             \            [AI Control Plane]            /
+                 —— Risk scoring & micro-segmentation ——
+
+
+Aligns to emerging DC security patterns & marketplaces. 
+The Verge
+
+Current Landscape: Platforms & Capabilities
+
+Microsoft Copilot for Security — GA Apr 1, 2024; integrated with Defender, Sentinel, Entra; consumption pricing. 
+Microsoft
+
+CrowdStrike — Agentic SOC (Fall 2025) with mission-ready agents via Charlotte AI. 
+CrowdStrike
+
+SentinelOne Purple AI — agentic triage/investigation; Athena release; FedRAMP-High milestones. 
+SentinelOne
++1
+
+Palo Alto Networks Precision AI — AI Access Security, AI-SPM, AI Runtime Security. 
+Palo Alto Networks
+
+Ecosystem momentum — Microsoft launches Security Store for AI security agents & integrations. 
+The Verge
+
+Core Capabilities (what we implement)
+
+Threat Detection & Triage — Behavioral ML + LLM summaries across XDR/NDR/Cloud/Identity, mapped to ATT&CK, reduce alert fatigue. 
+MITRE ATT&CK
+
+Agentic Incident Response — Playbooks isolate endpoints, roll back processes, revoke tokens, quarantine SaaS, and open IR tickets with auditable reasoning. 
+CrowdStrike
+
+AI-Safe Networking & Segmentation — Continuous verification of east-west traffic, safeguards for model workloads, micro-segmentation in AI data centers. 
+The Verge
+
+Exposure Management — Agentic prioritization ranks vulns by exploitability & business impact (emerging but fast-maturing). 
+CrowdStrike
+
+Governed GenAI Adoption — NIST AI RMF lifecycle + OWASP LLM Top 10 controls. 
+NIST Publications
++1...
