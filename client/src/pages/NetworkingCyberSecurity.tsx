@@ -121,42 +121,42 @@ const aiDrivenSecurity = [
 
 const coreCapabilities = [
   {
-    icon: <Search className="h-8 w-8 text-white" />,
+    icon: Search,
     title: "Threat Detection & Triage",
     description:
       "Behavioral ML + LLM summaries across XDR/NDR/Cloud/Identity, mapped to ATT&CK, reduce alert fatigue",
     backgroundImage: "/assets/AI-ProcessOptimization.png",
   },
   {
-    icon: <Bot className="h-8 w-8 text-white" />,
+    icon: Bot,
     title: "Agentic Incident Response",
     description:
       "Playbooks isolate endpoints, roll back processes, revoke tokens, quarantine SaaS, and open IR tickets with auditable reasoning",
     backgroundImage: "/assets/GenerativeAI.png",
   },
   {
-    icon: <Shield className="h-8 w-8 text-white" />,
+    icon: Shield,
     title: "AI-Safe Networking & Segmentation",
     description:
       "Continuous verification of east-west traffic, safeguards for model workloads, micro-segmentation in AI data centers",
     backgroundImage: "/assets/AI-Usecase.png",
   },
   {
-    icon: <Gauge className="h-8 w-8 text-white" />,
+    icon: Gauge,
     title: "Exposure Management",
     description:
       "Agentic prioritization ranks vulnerabilities by exploitability & business impact (emerging but fast-maturing)",
     backgroundImage: "/assets/AI-Training.png",
   },
   {
-    icon: <ShieldCheck className="h-8 w-8 text-white" />,
+    icon: ShieldCheck,
     title: "Governed GenAI Adoption",
     description:
       "NIST AI RMF lifecycle + OWASP LLM Top 10 controls for safe AI deployment",
     backgroundImage: "/assets/AI&Data.png",
   },
   {
-    icon: <Activity className="h-8 w-8 text-white" />,
+    icon: Activity,
     title: "Adversary-Informed Defense",
     description:
       "Map detections & responses to MITRE ATT&CK so AI output aligns to real attacker TTPs",
