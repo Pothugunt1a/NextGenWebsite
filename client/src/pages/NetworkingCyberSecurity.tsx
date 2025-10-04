@@ -29,7 +29,6 @@ import {
   Search,
   Bot,
   Gauge,
-  Clock,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 
@@ -247,8 +246,55 @@ const faqs = [
   },
 ];
 
+// Industry data for the interactive section
+const industryData = [
+  {
+    id: "financial",
+    name: "Financial Services",
+    image: "/assets/Finance.png",
+    content:
+      "Financial institutions face constant cyber threats targeting sensitive customer data and transaction systems. Our solutions include advanced threat detection, DDoS protection, secure payment gateways, real-time fraud monitoring, and compliance with PCI DSS and banking regulations. We implement multi-layered security architectures with encrypted data transmission and secure API gateways.",
+  },
+  {
+    id: "healthcare",
+    name: "Healthcare",
+    image: "/assets/Healthcare.png",
+    content:
+      "Healthcare organizations require robust security to protect patient data and ensure HIPAA compliance. Our solutions include secure medical IoT device management, encrypted patient data storage, access control systems, secure telemedicine platforms, and comprehensive audit logging. We ensure healthcare systems remain operational while maintaining the highest security standards.",
+  },
+  {
+    id: "retail",
+    name: "Retail & E-commerce",
+    image: "/assets/Ecommerce&Retail.png",
+    content:
+      "Retail businesses need secure networks to protect customer payment information and maintain business continuity. We provide point-of-sale security, secure payment processing, DDoS protection for e-commerce platforms, inventory management system security, and multi-location network management with centralized monitoring and control.",
+  },
+  {
+    id: "manufacturing",
+    name: "Manufacturing",
+    image: "/assets/Manufacturing&Automation.png",
+    content:
+      "Manufacturing facilities require industrial IoT security, operational technology (OT) network protection, and secure supply chain connectivity. Our solutions include network segmentation for production systems, secure remote monitoring, protection against industrial espionage, and ensuring operational continuity with minimal downtime through redundant network architectures.",
+  },
+  {
+    id: "government",
+    name: "Government",
+    image: "/assets/Government&PublicSector.png",
+    content:
+      "Government agencies need the highest levels of security to protect sensitive information and critical infrastructure. We provide FISMA-compliant solutions, classified information protection, secure inter-agency communication networks, citizen data protection, and defense against nation-state cyber threats with advanced threat intelligence and monitoring.",
+  },
+  {
+    id: "education",
+    name: "Education",
+    image: "/assets/Education.png",
+    content:
+      "Educational institutions require secure networks for students, faculty, and research data. Our solutions include campus-wide secure Wi-Fi, student data protection under FERPA, research network security, protection against ransomware targeting educational systems, and secure online learning platforms with scalable infrastructure to support remote education.",
+  },
+];
+
 export default function NetworkingCyberSecurity() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [selectedIndustry, setSelectedIndustry] = useState(industryData[0]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -302,64 +348,216 @@ export default function NetworkingCyberSecurity() {
                 Modern networks are hybrid, identity-centric, and relentlessly targeted. AI—especially agentic systems and generative AI—now augments SecOps, NetOps, and ITOps to compress triage from hours to minutes, auto-correlate telemetry across endpoints, identities, cloud and network, and enforce Zero Trust at scale.
               </motion.p>
 
-              <div className="mb-32">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.6, type: "spring" }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm"
-                >
-                  <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
-                  <span className="text-white font-medium">
-                    AI-Augmented Zero-Trust Security & Networking
-                  </span>
-                  <Award className="h-4 w-4 text-blue-400 fill-current" />
-                </motion.div>
-              </div>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6, type: "spring" }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0066CC]/20 border border-[#0080FF]/30 rounded-full backdrop-blur-sm mb-32"
+              >
+                <CheckCircle className="h-5 w-5 text-cyan-400 fill-none" />
+                <span className="text-white font-medium">
+                  AI-Augmented Zero-Trust Security & Networking
+                </span>
+                <Award className="h-4 w-4 text-blue-400 fill-current" />
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Standards We Anchor To */}
-      <section className="py-20 bg-light relative overflow-hidden">
+      {/* Secure Infrastructure Section - Life Science Style CTA */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
+        </div>
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
+            className="text-center p-16 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/20 shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl font-bold mb-6 text-white">
+            {/* Top Badge */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
+            >
+              <Target className="h-5 w-5 text-cyan-400" />
+              <span className="text-white font-medium">
+                AI-Powered Cybersecurity Solutions
+              </span>
+              <Award className="h-4 w-4 text-blue-400 fill-current" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold mb-6"
+            >
+              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
+                Secure Your Infrastructure with
+              </span>
+              <br />
+              <span className="text-white">AI-Powered Protection</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
+              Partner with us to transform your network infrastructure and
+              cybersecurity posture with cutting-edge technology and expert
+              guidance
+            </motion.p>
+
+            {/* Benefits Grid */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  24/7 Threat Monitoring
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Zero Trust Architecture
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <CheckCircle className="h-6 w-6 text-white bg-primary rounded-full p-1" />
+                <span className="text-white font-semibold">
+                  Compliance Assured
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex justify-center"
+            >
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                >
+                  <Users className="mr-2 h-5 w-5" />
+                  Get Started Today
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Standards We Anchor To - Auto-scrolling Carousel */}
+      <section className="py-16 bg-light text-white relative overflow-hidden">
+        {/* Background gradient effects */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">
               Standards We Anchor To
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our security and networking solutions are built on industry-leading frameworks and standards
+              We align our solutions with industry-leading security standards and
+              compliance frameworks
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {standards.map((standard, index) => (
+          {/* Auto-scrolling container */}
+          <div className="relative">
+            {/* Gradient overlays for fade effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-light to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-light to-transparent z-10 pointer-events-none"></div>
+
+            {/* Scrolling wrapper */}
+            <div className="overflow-hidden">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group"
-                data-testid={`card-standard-${index}`}
+                className="flex gap-8"
+                animate={{
+                  x: [0, -2000],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 30,
+                    ease: "linear",
+                  },
+                }}
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-all duration-300">
-                  {standard.icon}
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {standard.name}
-                </h3>
-                <p className="text-gray-400 text-sm">{standard.description}</p>
+                {/* First set of standards */}
+                {standards.map((standard, index) => (
+                  <div
+                    key={`first-${index}`}
+                    className="flex-shrink-0 w-80 group"
+                  >
+                    <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-xl p-8 border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 h-full shadow-lg hover:shadow-cyan-500/20">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Shield className="h-6 w-6 text-cyan-400" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            {standard.name}
+                          </h3>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {standard.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {standards.map((standard, index) => (
+                  <div
+                    key={`second-${index}`}
+                    className="flex-shrink-0 w-80 group"
+                  >
+                    <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-xl p-8 border border-gray-700 hover:border-cyan-400/40 transition-all duration-300 h-full shadow-lg hover:shadow-cyan-500/20">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Shield className="h-6 w-6 text-cyan-400" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            {standard.name}
+                          </h3>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {standard.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </motion.div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -433,9 +631,17 @@ export default function NetworkingCyberSecurity() {
         </div>
       </section>
 
-      {/* Core Capabilities */}
-      <section className="py-20 bg-light relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Core Capabilities - AI Consulting Life Science Style */}
+      <div className="py-20 bg-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border border-cyan-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-40 h-40 border border-blue-400 rotate-45"></div>
+          <div className="absolute bottom-32 right-40 w-28 h-28 border border-cyan-400 rotate-12"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -448,47 +654,211 @@ export default function NetworkingCyberSecurity() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              What we implement to secure and optimize your infrastructure
+              Comprehensive security and network engineering solutions
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreCapabilities.map((capability, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
-                data-testid={`card-capability-${index}`}
-              >
-                <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-blue-500/50 hover:bg-gray-800/90 transition-all duration-500">
-                  <div className="relative w-16 h-16 mb-6 rounded-xl overflow-hidden">
-                    <img
-                      src={capability.backgroundImage}
-                      alt={capability.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      {capability.icon}
+          {/* 2x2 Grid Layout with Central Image */}
+          <div className="max-w-8xl mx-auto relative">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+              {/* Top Row - First 2 capabilities */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {coreCapabilities.slice(0, 2).map((capability, index) => {
+                  const IconComponent = capability.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: index === 0 ? -100 : 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8 }}
+                      className="group cursor-pointer h-full"
+                    >
+                      <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                        <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                          <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                            <IconComponent className="h-12 w-12 text-cyan-400" />
+                          </div>
+                        </div>
+                        <div className="flex-grow">
+                          <div className="flex items-center gap-3 mb-2">
+                            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                              {String(index + 1).padStart(2, '0')}
+                            </div>
+                          </div>
+                          <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            {capability.title}
+                          </h4>
+                          <p className="text-gray-400 text-sm leading-relaxed">
+                            {capability.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Second Row - Central Image with 3rd capability */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Central Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, type: "spring" }}
+                  className="relative group"
+                >
+                  <div className="relative h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
+                    <div className="absolute inset-0">
+                      <img
+                        src="/assets/NetworkingSecurity.png"
+                        alt="Network Security Solutions"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/assets/AI&Data.png";
+                        }}
+                      />
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 flex flex-col gap-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                        <Shield className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        Sec
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <span className="text-blue-200 text-sm font-medium">
+                            Security Hub
+                          </span>
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                          Network Security Excellence
+                        </h3>
+                        <p className="text-blue-100 leading-relaxed mb-6">
+                          Comprehensive cybersecurity and network engineering solutions for modern enterprises.
+                        </p>
+                      </div>
                     </div>
                   </div>
+                </motion.div>
 
-                  <h3 className="text-xl font-bold text-white mb-4">
-                    {capability.title}
-                  </h3>
+                {/* 3rd capability */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        {React.createElement(coreCapabilities[2].icon, { className: "h-12 w-12 text-cyan-400" })}
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          03
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {coreCapabilities[2].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {coreCapabilities[2].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
 
-                  <p className="text-gray-400 leading-relaxed">
-                    {capability.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+              {/* Third Row - Last 3 capabilities */}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
+                {coreCapabilities.slice(3, 6).map((capability, index) => {
+                  const IconComponent = capability.icon;
+                  return (
+                    <motion.div
+                      key={index + 3}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: index * 0.1 }}
+                      className="group cursor-pointer h-full"
+                    >
+                      <div className="flex flex-col items-center gap-4 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-y-2 h-full">
+                        <div className="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                          <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                            <IconComponent className="h-10 w-10 text-cyan-400" />
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <div className="flex items-center justify-center gap-3 mb-2">
+                            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                              {String(index + 4).padStart(2, '0')}
+                            </div>
+                          </div>
+                          <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            {capability.title}
+                          </h4>
+                          <p className="text-gray-400 text-sm leading-relaxed">
+                            {capability.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+              <svg className="w-full h-full opacity-10">
+                <defs>
+                  <linearGradient
+                    id="flowGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="50%" stopColor="#06B6D4" />
+                    <stop offset="100%" stopColor="#3B82F6" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M0,200 Q300,100 600,200 T1200,200"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray="10,5"
+                  opacity="0.6"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;15"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+              </svg>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Current Landscape: Platforms */}
       <section className="py-20 bg-gradient-to-b from-light to-gray-900">
@@ -582,35 +952,41 @@ export default function NetworkingCyberSecurity() {
         </div>
       </section>
 
-      {/* FAQs Section */}
+      {/* FAQs Section - AI Consulting Style */}
       <section className="py-16 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">FAQs</h2>
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Frequently Asked Questions
+              </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300">
-                Common questions about AI-driven security and networking
+                Common questions about our networking and cybersecurity services
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              {/* Left Side - Image */}
+              {/* Left Side - Security Image */}
               <div className="lg:col-span-5">
                 <div className="relative group">
                   <div className="relative overflow-hidden rounded-2xl">
                     <img
-                      src="/assets/FAQ's.png"
-                      alt="AI Security and Networking"
+                      src="/assets/NetworkingSecurity.png"
+                      alt="Network Security and Cybersecurity Solutions"
                       className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/assets/AI&Data.png";
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
                     <div className="absolute bottom-6 left-6 right-6">
                       <h3 className="text-2xl font-bold text-white mb-2">
-                        AI-Augmented Security
+                        Enterprise Network Security
                       </h3>
                       <p className="text-gray-200 text-sm">
-                        Transforming security operations through intelligent automation and Zero Trust architecture
+                        Protecting your digital infrastructure with advanced threat detection and AI-powered defense
                       </p>
                     </div>
                   </div>
@@ -624,12 +1000,10 @@ export default function NetworkingCyberSecurity() {
                     <div
                       key={index}
                       className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 overflow-hidden"
-                      data-testid={`faq-item-${index}`}
                     >
                       <button
                         className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700/30 transition-colors"
                         onClick={() => toggleFaq(index)}
-                        data-testid={`button-faq-toggle-${index}`}
                       >
                         <h3 className="text-lg font-semibold text-white pr-4">
                           {faq.question}
@@ -642,7 +1016,7 @@ export default function NetworkingCyberSecurity() {
                       </button>
                       {openFaq === index && (
                         <div className="px-6 pb-6">
-                          <p className="text-gray-300 leading-relaxed">
+                          <p className="text-gray-400 leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>
@@ -650,6 +1024,90 @@ export default function NetworkingCyberSecurity() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Use Cases - AI Consulting Style Interactive */}
+      <section className="py-16 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Industry Use Cases
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300">
+                Tailored networking and cybersecurity solutions across industries
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Left Navigation */}
+              <div className="lg:col-span-4">
+                <div className="grid grid-cols-1 gap-4">
+                  {industryData.map((industry) => (
+                    <Button
+                      key={industry.id}
+                      variant={
+                        selectedIndustry.id === industry.id
+                          ? "default"
+                          : "outline"
+                      }
+                      className={`text-center justify-center p-4 h-auto min-h-[60px] transition-all duration-300 ${
+                        selectedIndustry.id === industry.id
+                          ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none shadow-lg"
+                          : "bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/70 hover:border-blue-400/40 hover:text-white"
+                      }`}
+                      onClick={() => {
+                        setSelectedIndustry(industry);
+                      }}
+                    >
+                      <span className="font-semibold text-sm leading-tight text-center whitespace-normal">
+                        {industry.name}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Content Display */}
+              <div className="lg:col-span-8">
+                <motion.div
+                  key={selectedIndustry.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-xl overflow-hidden"
+                >
+                  {/* Industry Image */}
+                  <div className="relative h-64 overflow-hidden group cursor-pointer">
+                    <img
+                      src={selectedIndustry.image}
+                      alt={selectedIndustry.name}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/assets/NetworkingSecurity.png";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent group-hover:from-gray-900/60 transition-all duration-300"></div>
+                    <div className="absolute bottom-4 left-6">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                        {selectedIndustry.name}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Industry Content */}
+                  <div className="p-6">
+                    <p className="text-gray-300 leading-relaxed text-lg">
+                      {selectedIndustry.content}
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>
