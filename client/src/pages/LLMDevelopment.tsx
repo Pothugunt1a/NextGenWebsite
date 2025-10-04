@@ -22,6 +22,7 @@ import {
   Globe,
   Cog,
   TrendingUp,
+  CheckCircle // Import CheckCircle for the new CTA
 } from "lucide-react";
 import naturalLanguageProcessingIcon from "../assets/natural-language-processing.svg";
 import chatbotIntegrationIcon from "../assets/chatbot-integration.svg";
@@ -499,8 +500,8 @@ export default function LLMDevelopment() {
                     className="group"
                   >
                     <div className={`flex flex-col items-center justify-center p-4 w-56 text-center transition-all duration-500 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-500/30 shadow-2xl hover:border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/20 ${
-                      index === 0 ? 'rounded-l-2xl border-r-0' : 
-                      index === processSteps.length - 1 ? 'rounded-r-2xl border-l-0' : 
+                      index === 0 ? 'rounded-l-2xl border-r-0' :
+                      index === processSteps.length - 1 ? 'rounded-r-2xl border-l-0' :
                       'border-l-0 border-r-0'
                     }`} style={{ height: '15rem' }}>
                       {/* Icon */}
@@ -611,108 +612,105 @@ export default function LLMDevelopment() {
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section className="py-16 relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
-          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-          <div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          />
-        </div>
+      {/* Transform Your Business CTA Section - Same as Life Science */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-900/40 to-cyan-900/20"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            className="text-center p-16 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl border border-white/20 shadow-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* Top Badge */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
             <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring" }}
-              className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              <Brain className="h-5 w-5 text-cyan-400" />
-              <span className="text-white font-medium">
-                Leading LLM Development Solutions
-              </span>
-              <Star className="h-4 w-4 text-blue-400 fill-current" />
-            </motion.div>
-
-            <motion.h2
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-4xl md:text-6xl font-bold mb-6"
-            >
-              <span className="bg-gradient-to-r from-white via-blue-100 to-[#0080FF] bg-clip-text text-transparent">
-                Ready to Transform Your Business with
-              </span>
-              <br />
-              <span className="text-white">Custom LLM Solutions?</span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
-            >
-              Let's discuss how our LLM development and consulting services can
-              accelerate your AI transformation and deliver unprecedented
-              business value
-            </motion.p>
-
-            {/* Benefits Grid */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-            >
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Free LLM Strategy Session
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Business with{" "}
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Custom LLM Solutions?
                 </span>
-              </div>
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Expert LLM Guidance
-                </span>
-              </div>
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-                <CheckCircle2 className="h-6 w-6 text-white bg-primary rounded-full p-1" />
-                <span className="text-white font-semibold">
-                  Proven LLM Results
-                </span>
-              </div>
-            </motion.div>
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Partner with RT NextGenAI to unlock the full potential of Large Language Models. Our expert team will guide you through every step of your LLM journey.
+              </p>
 
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex justify-center"
-            >
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-10 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-                onClick={() => (window.location.href = "/contact")}
+              {/* Key Benefits List */}
+              <div className="space-y-4 mb-8">
+                {[
+                  "Custom LLM development tailored to your needs",
+                  "Enterprise-grade security and compliance",
+                  "Seamless integration with existing systems",
+                  "Ongoing support and optimization",
+                ].map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className="flex items-start gap-3"
+                  >
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mt-1">
+                      <CheckCircle className="w-4 h-4 text-white" />
+                    </div>
+                    <p className="text-gray-300 text-lg">{benefit}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
               >
-                <Brain className="mr-2 h-5 w-5" />
-                Get Started Today
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+                <Button
+                  size="lg"
+                  className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+                  onClick={() => (window.location.href = "/contact")}
+                >
+                  <Brain className="mr-2 h-5 w-5" />
+                  Get Started Today
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Right Image/Visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="/assets/LLM.png"
+                  alt="LLM Solutions"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+
+                {/* Floating Stats */}
+                <div className="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+                    <div className="text-3xl font-bold text-white mb-1">99.9%</div>
+                    <div className="text-sm text-gray-300">Accuracy Rate</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+                    <div className="text-3xl font-bold text-white mb-1">24/7</div>
+                    <div className="text-sm text-gray-300">Support</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full blur-2xl opacity-50"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full blur-2xl opacity-50"></div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </motion.div>
