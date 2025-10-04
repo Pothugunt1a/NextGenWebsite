@@ -1143,18 +1143,12 @@ export default function AIChatbotDevelopment() {
               {/* Central Circle */}
               <div className="relative z-20">
                 <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl">
-                  <div className="w-40 h-40 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex flex-col items-center justify-center border-4 border-blue-400/20">
-                    <div className="text-white mb-2">
-                      <Bot className="w-12 h-12" />
-                    </div>
-                    <div className="text-center">
-                      <div className="text-white font-bold text-lg">
-                        CHATBOT
-                      </div>
-                      <div className="text-white font-bold text-lg">
-                        PROCESS
-                      </div>
-                    </div>
+                  <div className="w-40 h-40 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex flex-col items-center justify-center border-4 border-blue-400/20 overflow-hidden">
+                    <img 
+                      src="/assets/Bot.gif" 
+                      alt="Chatbot Process" 
+                      className="w-full h-full object-cover rounded-full"
+                    />
                   </div>
                 </div>
               </div>
