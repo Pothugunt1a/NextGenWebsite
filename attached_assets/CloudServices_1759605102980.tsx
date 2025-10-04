@@ -332,240 +332,6 @@ export default function CloudServices() {
         </div>
       </div>
 
-      {/* How We Help Our Clients Section */}
-      <section className="py-16 text-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              className="text-center mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-400/20 mb-6">
-                <Target className="h-4 w-4 text-cyan-400" />
-                <span className="text-cyan-300 text-sm font-medium">
-                  Client-Centric Solutions
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                RTNextGenAI{" "}
-                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                  Cloud Services
-                </span>
-              </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                At RTNextGenAI, we empower businesses with intelligent,
-                scalable, and secure cloud-native solutions that accelerate
-                growth and innovation. We don't just provide cloud
-                infrastructure — we architect end-to-end digital ecosystems
-                designed to meet your business goals.
-              </p>
-            </motion.div>
-
-            {/* What We Offer Grid */}
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              {[
-                {
-                  title: "Cloud Strategy & Consulting",
-                  description:
-                    "We guide clients in choosing the right cloud model (AWS, Azure, GCP, hybrid, or multi-cloud) and align it with business priorities.",
-                  icon: Cloud,
-                },
-                {
-                  title: "Cloud Migration & Modernization",
-                  description:
-                    "We help organizations move from legacy systems to modern cloud platforms with minimal downtime and optimized costs.",
-                  icon: Server,
-                },
-                {
-                  title: "Data & AI Services",
-                  description:
-                    "With AI/ML pipelines, data lakes, and real-time analytics, we transform raw data into actionable insights.",
-                  icon: Database,
-                },
-                {
-                  title: "DevOps & Automation",
-                  description:
-                    "CI/CD pipelines, Infrastructure-as-Code (Terraform, Kubernetes), and AI-powered automation ensure faster, error-free deployments.",
-                  icon: Zap,
-                },
-                {
-                  title: "Cloud Security & Compliance",
-                  description:
-                    "We implement zero-trust security, governance frameworks, and compliance solutions (HIPAA, GDPR, SOC 2, etc.) to safeguard client data.",
-                  icon: Shield,
-                },
-                {
-                  title: "Industry-Specific Solutions",
-                  description:
-                    "Healthcare, Finance, Retail & E-Commerce solutions with personalization, recommendation engines, and AI-powered features.",
-                  icon: Target,
-                },
-              ].map((service, index) => {
-                const IconComponent = service.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{ y: -10, scale: 1.05 }}
-                    viewport={{ once: true }}
-                    className="group"
-                  >
-                    <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
-
-                      <div className="flex items-start gap-6 mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-colors flex-shrink-0">
-                          <IconComponent className="h-8 w-8 text-white" />
-                        </div>
-
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                            {service.title}
-                          </h3>
-                          <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
-                        </div>
-                      </div>
-
-                      <p className="text-gray-300 leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-
-            {/* How It Works Process */}
-            <motion.div
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <h3 className="text-3xl font-bold text-white mb-12 text-center">
-                How It Works
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  {
-                    step: "01",
-                    title: "Discovery & Assessment",
-                    description:
-                      "We begin with an in-depth analysis of your current systems, challenges, and future goals.",
-                  },
-                  {
-                    step: "02",
-                    title: "Tailored Roadmap",
-                    description:
-                      "Our experts design a custom cloud adoption plan — from selecting providers to defining architecture.",
-                  },
-                  {
-                    step: "03",
-                    title: "Seamless Migration",
-                    description:
-                      "We migrate applications, data, and workflows using proven frameworks, minimizing disruption.",
-                  },
-                  {
-                    step: "04",
-                    title: "Cloud-Native Development",
-                    description:
-                      "We build or modernize apps using microservices, APIs, serverless computing, and containerization for agility.",
-                  },
-                  {
-                    step: "05",
-                    title: "Automation & Intelligence",
-                    description:
-                      "AI-driven automation, real-time monitoring, and DevOps practices keep your systems running efficiently.",
-                  },
-                  {
-                    step: "06",
-                    title: "Ongoing Optimization & Support",
-                    description:
-                      "We provide continuous monitoring, performance tuning, and 24/7 support so your business stays ahead.",
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-6 hover:border-blue-400/40 transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-lg font-bold">
-                        {item.step}
-                      </div>
-                      <h4 className="text-lg font-bold text-white">
-                        {item.title}
-                      </h4>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Why Clients Choose RTNextGenAI */}
-            <motion.div
-              className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                Why Clients Choose RTNextGenAI
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {[
-                  "Multi-Cloud Expertise – Deep knowledge across AWS, Azure, and GCP",
-                  "AI-First Approach – Every solution leverages AI/ML intelligence for smarter decisions",
-                  "Industry Alignment – Tailored frameworks for healthcare, finance, e-commerce, and more",
-                  "Security by Design – Compliance, encryption, and zero-trust woven into every layer",
-                  "Proven Results – Faster go-to-market, reduced IT costs, and higher ROI",
-                  "Future-Ready – AI-powered cloud ecosystem that evolves with your business",
-                ].map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle className="h-5 w-5 text-cyan-400 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300 text-sm">{benefit}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Us Section */}
       <section className="py-16 text-white relative overflow-hidden">
         {/* Background Pattern */}
@@ -888,7 +654,7 @@ export default function CloudServices() {
                   <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="relative w-full">
                       <img
-                        src="/assets/Cloud1_1752856011773.gif"
+                        src="/assets/CloudServices.gif"
                         alt="Cloud Services"
                         className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
                         style={{ backgroundAttachment: "fixed" }}
@@ -1365,6 +1131,255 @@ export default function CloudServices() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Help Our Clients Section */}
+      <section className="py-16 text-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-400/20 mb-6">
+                <Target className="h-4 w-4 text-cyan-400" />
+                <span className="text-cyan-300 text-sm font-medium">
+                  Client-Centric Solutions
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                How we help{" "}
+                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                  our clients
+                </span>
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                At RTNextGenAI, we empower businesses with intelligent, scalable, and secure cloud-native solutions that accelerate growth and innovation. We don't just provide cloud infrastructure — we architect end-to-end digital ecosystems designed to meet your business goals.
+              </p>
+            </motion.div>
+
+            {/* What We Offer */}
+            <div className="mb-20">
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl font-bold mb-12 text-center"
+              >
+                <span className="text-white">What we </span>
+                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                  offer
+                </span>
+              </motion.h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    icon: <Brain className="h-8 w-8" />,
+                    title: "Cloud Strategy & Consulting",
+                    description: "We guide clients in choosing the right cloud model (AWS, Azure, GCP, hybrid, or multi-cloud) and align it with business priorities.",
+                    color: "from-blue-500 to-cyan-500"
+                  },
+                  {
+                    icon: <Cloud className="h-8 w-8" />,
+                    title: "Cloud Migration & Modernization",
+                    description: "We help organizations move from legacy systems to modern cloud platforms with minimal downtime and optimized costs.",
+                    color: "from-purple-500 to-pink-500"
+                  },
+                  {
+                    icon: <Database className="h-8 w-8" />,
+                    title: "Data & AI Services",
+                    description: "With AI/ML pipelines, data lakes, and real-time analytics, we transform raw data into actionable insights.",
+                    color: "from-green-500 to-emerald-500"
+                  },
+                  {
+                    icon: <Settings className="h-8 w-8" />,
+                    title: "DevOps & Automation",
+                    description: "CI/CD pipelines, Infrastructure-as-Code (Terraform, Kubernetes), and AI-powered automation ensure faster, error-free deployments.",
+                    color: "from-orange-500 to-red-500"
+                  },
+                  {
+                    icon: <Shield className="h-8 w-8" />,
+                    title: "Cloud Security & Compliance",
+                    description: "We implement zero-trust security, governance frameworks, and compliance solutions (HIPAA, GDPR, SOC 2, etc.) to safeguard client data.",
+                    color: "from-red-500 to-pink-500"
+                  },
+                  {
+                    icon: <Target className="h-8 w-8" />,
+                    title: "Industry-Specific Solutions",
+                    description: "Tailored cloud solutions for Healthcare, Finance, Retail & E-Commerce with specialized features and compliance.",
+                    color: "from-cyan-500 to-blue-500"
+                  }
+                ].map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group"
+                  >
+                    <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
+                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
+
+                      <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform`}>
+                        {service.icon}
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {service.title}
+                      </h4>
+                      <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-4"></div>
+                      <p className="text-gray-300 leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* How It Works */}
+            <div className="mb-20">
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl font-bold mb-12 text-center"
+              >
+                <span className="text-white">How it </span>
+                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                  works
+                </span>
+              </motion.h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    step: "01",
+                    title: "Discovery & Assessment",
+                    description: "We begin with an in-depth analysis of your current systems, challenges, and future goals."
+                  },
+                  {
+                    step: "02",
+                    title: "Tailored Roadmap",
+                    description: "Our experts design a custom cloud adoption plan — from selecting providers to defining architecture."
+                  },
+                  {
+                    step: "03",
+                    title: "Seamless Migration",
+                    description: "We migrate applications, data, and workflows using proven frameworks, minimizing disruption."
+                  },
+                  {
+                    step: "04",
+                    title: "Cloud-Native Development",
+                    description: "We build or modernize apps using microservices, APIs, serverless computing, and containerization for agility."
+                  },
+                  {
+                    step: "05",
+                    title: "Automation & Intelligence",
+                    description: "AI-driven automation, real-time monitoring, and DevOps practices keep your systems running efficiently."
+                  },
+                  {
+                    step: "06",
+                    title: "Ongoing Optimization & Support",
+                    description: "We provide continuous monitoring, performance tuning, and 24/7 support so your business stays ahead."
+                  }
+                ].map((process, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10"
+                  >
+                    <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                      {process.step}
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-3 mt-4 group-hover:text-cyan-400 transition-colors">
+                      {process.title}
+                    </h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {process.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Why Clients Choose Us */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 md:p-12 hover:border-cyan-400/30 transition-all duration-300"
+            >
+              <h3 className="text-3xl font-bold mb-8 text-center">
+                <span className="text-white">Why clients choose </span>
+                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                  RTNextGenAI
+                </span>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { icon: <Cloud className="h-6 w-6" />, text: "Multi-Cloud Expertise – Deep knowledge across AWS, Azure, and GCP" },
+                  { icon: <Brain className="h-6 w-6" />, text: "AI-First Approach – Every solution leverages AI/ML intelligence for smarter decisions" },
+                  { icon: <Target className="h-6 w-6" />, text: "Industry Alignment – Tailored frameworks for healthcare, finance, e-commerce, and more" },
+                  { icon: <Shield className="h-6 w-6" />, text: "Security by Design – Compliance, encryption, and zero-trust woven into every layer" },
+                  { icon: <TrendingUp className="h-6 w-6" />, text: "Proven Results – Faster go-to-market, reduced IT costs, and higher ROI" },
+                  { icon: <Award className="h-6 w-6" />, text: "Future-Ready – A secure, scalable, AI-powered cloud ecosystem that evolves with your business" }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="flex items-start gap-3 p-4 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg border border-cyan-400/20 hover:border-cyan-400/40 transition-colors"
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      {item.text}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Call to Action */}
+            <motion.div
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <div className="inline-flex items-center gap-4 bg-gradient-to-r from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-gray-300 text-sm">
+                    Ready to get started?
+                  </span>
+                </div>
+                <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Discuss Your Project
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
