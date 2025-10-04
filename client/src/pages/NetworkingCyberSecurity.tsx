@@ -765,7 +765,7 @@ export default function NetworkingCyberSecurity() {
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
                     <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
                       <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                        {React.createElement(coreCapabilities[2].icon, { className: "h-12 w-12 text-cyan-400" })}
+                        <Shield className="h-12 w-12 text-cyan-400" />
                       </div>
                     </div>
                     <div className="flex-grow">
