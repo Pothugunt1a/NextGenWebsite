@@ -72,7 +72,7 @@ const coreCapabilities = [
     title: "🔒 Threat Detection & Triage",
     description:
       "Behavioral ML + LLM summaries across XDR/NDR/Cloud/Identity, mapped to MITRE ATT&CK, reduce alert fatigue. AI-powered correlation compresses triage from hours to minutes with auto-investigation.",
-    backgroundImage: "/assets/AI-Training.png",
+    backgroundImage: "/assets/ThreatDetection.png",
     features: [
       "AI-driven alert correlation",
       "MITRE ATT&CK mapping",
