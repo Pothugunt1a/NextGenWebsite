@@ -588,8 +588,11 @@ export default function NetworkingCyberSecurity() {
         </div>
       </section>
 
-      {/* Core Capabilities - Matching AI Consulting 2x2 Grid Layout */}
-      <div className="py-20 bg-light relative overflow-hidden">
+      {/* Core Capabilities - Matching AI Consulting Layout */}
+      <div
+        id="capabilities-section"
+        className="py-20 bg-light relative overflow-hidden"
+      >
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 border border-blue-500 rotate-45"></div>
@@ -618,46 +621,79 @@ export default function NetworkingCyberSecurity() {
           {/* 2x2 Grid Layout with Central Image */}
           <div className="max-w-8xl mx-auto relative">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
               {/* Top Row - First two capabilities */}
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {coreCapabilities.slice(0, 2).map((capability, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: index === 0 ? -100 : 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="group cursor-pointer h-full"
-                  >
-                    <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                      <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
-                        {capability.icon}
-                      </div>
-                      <div className="flex-grow">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {String(index + 1).padStart(2, '0')}
-                          </div>
-                        </div>
-                        <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {capability.title}
-                        </h4>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-3">
-                          {capability.description}
-                        </p>
-                        <div className="space-y-1">
-                          {capability.features.slice(0, 2).map((feature, idx) => (
-                            <div key={idx} className="flex items-start gap-2">
-                              <CheckCircle className="h-3 w-3 text-cyan-400 mt-1 flex-shrink-0" />
-                              <span className="text-xs text-gray-500">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
+                {/* Capability 1 */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={coreCapabilities[0].backgroundImage}
+                        alt={coreCapabilities[0].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Shield className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                  </motion.div>
-                ))}
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          01
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {coreCapabilities[0].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {coreCapabilities[0].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Capability 2 */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={coreCapabilities[1].backgroundImage}
+                        alt={coreCapabilities[1].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Workflow className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          02
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {coreCapabilities[1].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {coreCapabilities[1].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
 
               {/* Second Row - Central Image with third capability */}
@@ -670,6 +706,7 @@ export default function NetworkingCyberSecurity() {
                   transition={{ duration: 1, type: "spring" }}
                   className="relative group"
                 >
+                  {/* Main Feature Card */}
                   <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                     <div className="relative w-full">
                       <img
@@ -713,7 +750,7 @@ export default function NetworkingCyberSecurity() {
                   </div>
                 </motion.div>
 
-                {/* Third capability */}
+                {/* Capability 3 */}
                 <motion.div
                   initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -722,8 +759,16 @@ export default function NetworkingCyberSecurity() {
                   className="group cursor-pointer h-full"
                 >
                   <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
-                      {coreCapabilities[2].icon}
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={coreCapabilities[2].backgroundImage}
+                        alt={coreCapabilities[2].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Network className="h-6 w-6 text-white" />
+                      </div>
                     </div>
                     <div className="flex-grow">
                       <div className="flex items-center gap-3 mb-2">
@@ -734,17 +779,9 @@ export default function NetworkingCyberSecurity() {
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                         {coreCapabilities[2].title}
                       </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                      <p className="text-gray-400 text-sm leading-relaxed">
                         {coreCapabilities[2].description}
                       </p>
-                      <div className="space-y-1">
-                        {coreCapabilities[2].features.slice(0, 2).map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-2">
-                            <CheckCircle className="h-3 w-3 text-cyan-400 mt-1 flex-shrink-0" />
-                            <span className="text-xs text-gray-500">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -752,63 +789,185 @@ export default function NetworkingCyberSecurity() {
 
               {/* Third Row - Remaining capabilities */}
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {coreCapabilities.slice(3, 5).map((capability, index) => (
-                  <motion.div
-                    key={index + 3}
-                    initial={{ opacity: 0, x: index === 0 ? -100 : 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="group cursor-pointer h-full"
-                  >
-                    <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
-                      <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
-                        {capability.icon}
-                      </div>
-                      <div className="flex-grow">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {String(index + 4).padStart(2, '0')}
-                          </div>
-                        </div>
-                        <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                          {capability.title}
-                        </h4>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-3">
-                          {capability.description}
-                        </p>
-                        <div className="space-y-1">
-                          {capability.features.slice(0, 2).map((feature, idx) => (
-                            <div key={idx} className="flex items-start gap-2">
-                              <CheckCircle className="h-3 w-3 text-cyan-400 mt-1 flex-shrink-0" />
-                              <span className="text-xs text-gray-500">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
+                {/* Capability 4 */}
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={coreCapabilities[3].backgroundImage}
+                        alt={coreCapabilities[3].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Target className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                  </motion.div>
-                ))}
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          04
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {coreCapabilities[3].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {coreCapabilities[3].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Capability 5 */}
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="group cursor-pointer h-full"
+                >
+                  <div className="flex items-center gap-6 p-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-500 group-hover:translate-x-2 h-full">
+                    <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={coreCapabilities[4].backgroundImage}
+                        alt={coreCapabilities[4].title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-slate-900/90"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Brain className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          05
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                        {coreCapabilities[4].title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {coreCapabilities[4].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
             {/* Decorative Elements */}
             <div className="absolute inset-0 pointer-events-none">
+              {/* Flowing Lines */}
               <svg className="w-full h-full opacity-10">
                 <defs>
-                  <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="flowGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#3B82F6" />
                     <stop offset="50%" stopColor="#06B6D4" />
                     <stop offset="100%" stopColor="#3B82F6" />
                   </linearGradient>
                 </defs>
-                <path d="M0,200 Q300,100 600,200 T1200,200" stroke="url(#flowGradient)" strokeWidth="3" fill="none" strokeDasharray="10,5" opacity="0.6">
-                  <animate attributeName="stroke-dashoffset" values="0;15" dur="2s" repeatCount="indefinite" />
+                <path
+                  d="M0,200 Q300,100 600,200 T1200,200"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray="10,5"
+                  opacity="0.6"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;15"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+                <path
+                  d="M0,400 Q400,300 800,400 T1600,400"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="8,4"
+                  opacity="0.4"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;12"
+                    dur="3s"
+                    repeatCount="indefinite"
+                  />
                 </path>
               </svg>
 
+              {/* Floating Particles */}
               <div className="absolute top-20 left-1/4 w-3 h-3 bg-blue-400 rounded-full opacity-60 animate-bounce"></div>
+              <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-cyan-400 rounded-full opacity-40 animate-pulse delay-1000"></div>
+              <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-blue-300 rounded-full opacity-30 animate-ping delay-500"></div>
               <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-cyan-300 rounded-full opacity-50 animate-bounce delay-2000"></div>
+            </div>
+
+            {/* Connecting Lines */}
+            <div className="absolute inset-0 pointer-events-none">
+              <svg className="w-full h-full opacity-20">
+                <defs>
+                  <linearGradient
+                    id="securityConnectGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="100%" stopColor="#06B6D4" />
+                  </linearGradient>
+                </defs>
+
+                {/* Connecting lines between elements */}
+                <path
+                  d="M300,150 Q500,200 700,150"
+                  stroke="url(#securityConnectGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="5,5"
+                  opacity="0.6"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;10"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+
+                <path
+                  d="M200,300 Q400,250 600,300"
+                  stroke="url(#securityConnectGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="5,5"
+                  opacity="0.4"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values="0;10"
+                    dur="3s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+              </svg>
             </div>
           </div>
         </div>
