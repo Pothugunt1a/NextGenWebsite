@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -188,7 +187,7 @@ const azureOfferings = [
       "Real-time reporting",
       "Advanced analytics",
     ],
-    backgroundImage: "/assets/cloud3_1752856017147.gif",
+    backgroundImage: "/assets/AzureAnalytics.gif",
   },
   {
     icon: Shield,
@@ -303,7 +302,7 @@ export default function AzureServices() {
         {/* Background for Azure page */}
         <div className="absolute inset-0">
           <img
-            src="/assets/CloudComputing-banner.png"
+            src="/assets/Azure-banner.png"
             alt="Azure Cloud Solutions"
             className="w-full h-full object-cover object-center"
           />
@@ -492,7 +491,7 @@ export default function AzureServices() {
                 <div className="relative min-h-96 w-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[3rem] overflow-hidden shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-700">
                   <div className="relative w-full">
                     <img
-                      src="/assets/cloud_1752856032189.gif"
+                      src="/assets/AzureAnalytics.gif"
                       alt="Azure Cloud Solutions"
                       className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
                     />
@@ -768,7 +767,7 @@ export default function AzureServices() {
               <div className="lg:col-span-5">
                 <div className="relative">
                   <img
-                    src="./assets/CloudComputing-banner.png"
+                    src="/assets/MicrosoftFAQ's.gif"
                     alt="Azure Cloud Technology"
                     className="w-full h-[500px] object-cover rounded-2xl"
                   />

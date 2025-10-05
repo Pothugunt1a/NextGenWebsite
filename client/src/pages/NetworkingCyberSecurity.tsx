@@ -84,7 +84,7 @@ const coreCapabilities = [
     title: "🤖 Agentic Incident Response",
     description:
       "Playbooks isolate endpoints, roll back processes, revoke tokens, quarantine SaaS, and open IR tickets with auditable reasoning. Automated response with human-in-the-loop governance.",
-    backgroundImage: "/assets/Data-Governance.png",
+    backgroundImage: "/assets/AgenticAI.png",
     features: [
       "Automated playbook execution",
       "Endpoint isolation & rollback",
@@ -96,7 +96,7 @@ const coreCapabilities = [
     title: "🌐 AI-Safe Networking & Segmentation",
     description:
       "Continuous verification of east-west traffic, safeguards for model workloads, micro-segmentation in AI data centers. Zero Trust architecture with identity-centric access controls.",
-    backgroundImage: "/assets/AI&Data.png",
+    backgroundImage: "/assets/AISafeNetworking.png",
     features: [
       "Zero Trust networking",
       "Micro-segmentation for AI workloads",
@@ -108,7 +108,7 @@ const coreCapabilities = [
     title: "🎯 Exposure Management",
     description:
       "Agentic prioritization ranks vulnerabilities by exploitability & business impact. Real-time risk scoring with automated remediation workflows and continuous posture management.",
-    backgroundImage: "/assets/AI-ProcessOptimization.png",
+    backgroundImage: "/assets/ExposureManagement.png",
     features: [
       "AI-powered vulnerability prioritization",
       "Real-time risk scoring",
@@ -120,7 +120,7 @@ const coreCapabilities = [
     title: "🧠 Governed GenAI Adoption",
     description:
       "NIST AI RMF lifecycle + OWASP LLM Top 10 controls. Secure deployment of AI copilots with guardrails against prompt injection, model DoS, data poisoning, and excessive agency.",
-    backgroundImage: "/assets/GenerativeAI.png",
+    backgroundImage: "/assets/GenAIAdoption.png",
     features: [
       "NIST AI RMF compliance",
       "OWASP LLM Top 10 controls",
@@ -133,54 +133,64 @@ const crossPracticeServices = [
   {
     icon: <Globe className="h-6 w-6" />,
     title: "Web Development Security",
-    description: "OWASP Top 10, ASVS 4.0.3/5.0, API Top 10, NIST SSDF tasks, WAF + RASP, secrets management.",
+    description:
+      "OWASP Top 10, ASVS 4.0.3/5.0, API Top 10, NIST SSDF tasks, WAF + RASP, secrets management.",
   },
   {
     icon: <Smartphone className="h-6 w-6" />,
     title: "Mobile Development Security",
-    description: "OWASP Mobile Top 10 (2024), secure keystores, attestation, signing integrity, tamper detection.",
+    description:
+      "OWASP Mobile Top 10 (2024), secure keystores, attestation, signing integrity, tamper detection.",
   },
   {
     icon: <GitBranch className="h-6 w-6" />,
     title: "DevOps & Supply-Chain Security",
-    description: "NIST SSDF, SLSA provenance, SBOM, image signing, policy as code (OPA/Gatekeeper), GitOps.",
+    description:
+      "NIST SSDF, SLSA provenance, SBOM, image signing, policy as code (OPA/Gatekeeper), GitOps.",
   },
   {
     icon: <Brain className="h-6 w-6" />,
     title: "AI & Data Security",
-    description: "NIST AI RMF, OWASP LLM Top 10 (2025), prompt injection defense, data classification, PII/PHI masking.",
+    description:
+      "NIST AI RMF, OWASP LLM Top 10 (2025), prompt injection defense, data classification, PII/PHI masking.",
   },
   {
     icon: <Database className="h-6 w-6" />,
     title: "Database Security",
-    description: "TDE + KMS, column encryption, RLS/CLS, DB-Firewall, activity monitoring, backup immutability.",
+    description:
+      "TDE + KMS, column encryption, RLS/CLS, DB-Firewall, activity monitoring, backup immutability.",
   },
   {
     icon: <Cloud className="h-6 w-6" />,
     title: "Cloud Security",
-    description: "Zero Trust (NIST SP 800-207), landing zones, SASE/SSE, threat detection with ATT&CK mapping.",
+    description:
+      "Zero Trust (NIST SP 800-207), landing zones, SASE/SSE, threat detection with ATT&CK mapping.",
   },
 ];
 
 const aiPlatforms = [
   {
     name: "Microsoft Copilot for Security",
-    description: "GA Apr 1, 2024; integrated with Defender, Sentinel, Entra; consumption pricing",
+    description:
+      "GA Apr 1, 2024; integrated with Defender, Sentinel, Entra; consumption pricing",
     badge: "Enterprise Ready",
   },
   {
     name: "CrowdStrike Charlotte AI",
-    description: "Agentic SOC (Fall 2025) with mission-ready agents for autonomous security operations",
+    description:
+      "Agentic SOC (Fall 2025) with mission-ready agents for autonomous security operations",
     badge: "Agentic SOC",
   },
   {
     name: "SentinelOne Purple AI",
-    description: "Agentic triage/investigation with Athena release; FedRAMP-High milestones",
+    description:
+      "Agentic triage/investigation with Athena release; FedRAMP-High milestones",
     badge: "FedRAMP-High",
   },
   {
     name: "Palo Alto Precision AI",
-    description: "AI Access Security, AI-SPM, AI Runtime Security for comprehensive AI protection",
+    description:
+      "AI Access Security, AI-SPM, AI Runtime Security for comprehensive AI protection",
     badge: "AI-Native",
   },
 ];
@@ -260,51 +270,89 @@ const industries = [
     name: "Education",
     description:
       "Student data protection, campus network security, research data safety. Our education-focused security solutions protect student information, secure campus networks, and safeguard valuable research data while ensuring FERPA compliance and academic freedom.",
-    solutions: "Learning platform security, FERPA compliance, research networks",
+    solutions:
+      "Learning platform security, FERPA compliance, research networks",
     image: "/assets/Education.png",
   },
 ];
 
 const standards = [
-  { name: "NIST CSF 2.0", description: "Cybersecurity Framework 2.0 with Govern function", icon: <ShieldCheck /> },
-  { name: "NIST SP 800-207", description: "Zero Trust Architecture guidelines", icon: <Lock /> },
-  { name: "NIST AI RMF", description: "AI Risk Management Framework 1.0", icon: <Brain /> },
-  { name: "MITRE ATT&CK", description: "Adversary tactics & techniques knowledge base", icon: <Target /> },
-  { name: "OWASP Top 10", description: "Web, API, Mobile, & LLM security risks", icon: <AlertTriangle /> },
-  { name: "CIS Controls v8.1", description: "Prioritized cybersecurity safeguards", icon: <CheckCircle /> },
-  { name: "NIST SSDF", description: "Secure Software Development Framework", icon: <FileCheck /> },
-  { name: "PCI DSS v4.0", description: "Payment Card Industry Data Security Standard", icon: <CreditCard /> },
+  {
+    name: "NIST CSF 2.0",
+    description: "Cybersecurity Framework 2.0 with Govern function",
+    icon: <ShieldCheck />,
+  },
+  {
+    name: "NIST SP 800-207",
+    description: "Zero Trust Architecture guidelines",
+    icon: <Lock />,
+  },
+  {
+    name: "NIST AI RMF",
+    description: "AI Risk Management Framework 1.0",
+    icon: <Brain />,
+  },
+  {
+    name: "MITRE ATT&CK",
+    description: "Adversary tactics & techniques knowledge base",
+    icon: <Target />,
+  },
+  {
+    name: "OWASP Top 10",
+    description: "Web, API, Mobile, & LLM security risks",
+    icon: <AlertTriangle />,
+  },
+  {
+    name: "CIS Controls v8.1",
+    description: "Prioritized cybersecurity safeguards",
+    icon: <CheckCircle />,
+  },
+  {
+    name: "NIST SSDF",
+    description: "Secure Software Development Framework",
+    icon: <FileCheck />,
+  },
+  {
+    name: "PCI DSS v4.0",
+    description: "Payment Card Industry Data Security Standard",
+    icon: <CreditCard />,
+  },
 ];
 
 const implementationRoadmap = [
   {
     phase: "Phase 1",
     title: "Baseline & Governance",
-    description: "Stand up AI RMF roles/artifacts; classify data; inventory model/agent usage; set LLM guardrails.",
+    description:
+      "Stand up AI RMF roles/artifacts; classify data; inventory model/agent usage; set LLM guardrails.",
     icon: <FileCheck className="h-6 w-6" />,
   },
   {
     phase: "Phase 2",
     title: "Zero Trust Foundations",
-    description: "Identity-centric access; device health; least-privilege segmentation; continuous policy checks.",
+    description:
+      "Identity-centric access; device health; least-privilege segmentation; continuous policy checks.",
     icon: <ShieldCheck className="h-6 w-6" />,
   },
   {
     phase: "Phase 3",
     title: "Telemetry Unification",
-    description: "Normalize XDR/NDR/cloud/identity/email/DNS into SIEM/XDR mapped to ATT&CK.",
+    description:
+      "Normalize XDR/NDR/cloud/identity/email/DNS into SIEM/XDR mapped to ATT&CK.",
     icon: <Activity className="h-6 w-6" />,
   },
   {
     phase: "Phase 4",
     title: "Agentic Use Cases",
-    description: "Start with enrichment & triage summaries; graduate to auto-isolation/revoke with human-in-the-loop.",
+    description:
+      "Start with enrichment & triage summaries; graduate to auto-isolation/revoke with human-in-the-loop.",
     icon: <Brain className="h-6 w-6" />,
   },
   {
     phase: "Phase 5",
     title: "AI-Native DC & SASE",
-    description: "Micro-segmentation + distributed enforcement for AI/ML clusters and east-west traffic.",
+    description:
+      "Micro-segmentation + distributed enforcement for AI/ML clusters and east-west traffic.",
     icon: <Network className="h-6 w-6" />,
   },
 ];
@@ -314,60 +362,180 @@ const techStack = [
     category: "Cloud Providers",
     icon: <Cloud className="h-6 w-6" />,
     technologies: [
-      { name: "Amazon Web Services", shortName: "AWS", icon: <SiAmazon className="h-8 w-8" />, color: "#FF9900" },
-      { name: "Microsoft Azure", shortName: "Azure", icon: <Cloud className="h-8 w-8" />, color: "#0078D4" },
-      { name: "Google Cloud Platform", shortName: "GCP", icon: <SiGooglecloud className="h-8 w-8" />, color: "#4285F4" },
-      { name: "IBM Cloud", shortName: "IBM", icon: <Cloud className="h-8 w-8" />, color: "#1261FE" },
+      {
+        name: "Amazon Web Services",
+        shortName: "AWS",
+        icon: <SiAmazon className="h-8 w-8" />,
+        color: "#FF9900",
+      },
+      {
+        name: "Microsoft Azure",
+        shortName: "Azure",
+        icon: <Cloud className="h-8 w-8" />,
+        color: "#0078D4",
+      },
+      {
+        name: "Google Cloud Platform",
+        shortName: "GCP",
+        icon: <SiGooglecloud className="h-8 w-8" />,
+        color: "#4285F4",
+      },
+      {
+        name: "IBM Cloud",
+        shortName: "IBM",
+        icon: <Cloud className="h-8 w-8" />,
+        color: "#1261FE",
+      },
     ],
   },
   {
     category: "Container Orchestration",
     icon: <Server className="h-6 w-6" />,
     technologies: [
-      { name: "Kubernetes", shortName: "K8s", icon: <SiKubernetes className="h-8 w-8" />, color: "#326CE5" },
-      { name: "Docker", shortName: "Docker", icon: <SiDocker className="h-8 w-8" />, color: "#2496ED" },
-      { name: "OpenShift", shortName: "OpenShift", icon: <SiRedhat className="h-8 w-8" />, color: "#EE0000" },
-      { name: "Amazon EKS", shortName: "EKS", icon: <SiAmazon className="h-8 w-8" />, color: "#FF9900" },
+      {
+        name: "Kubernetes",
+        shortName: "K8s",
+        icon: <SiKubernetes className="h-8 w-8" />,
+        color: "#326CE5",
+      },
+      {
+        name: "Docker",
+        shortName: "Docker",
+        icon: <SiDocker className="h-8 w-8" />,
+        color: "#2496ED",
+      },
+      {
+        name: "OpenShift",
+        shortName: "OpenShift",
+        icon: <SiRedhat className="h-8 w-8" />,
+        color: "#EE0000",
+      },
+      {
+        name: "Amazon EKS",
+        shortName: "EKS",
+        icon: <SiAmazon className="h-8 w-8" />,
+        color: "#FF9900",
+      },
     ],
   },
   {
     category: "AI/ML Frameworks",
     icon: <Brain className="h-6 w-6" />,
     technologies: [
-      { name: "TensorFlow", shortName: "TensorFlow", icon: <SiTensorflow className="h-8 w-8" />, color: "#FF6F00" },
-      { name: "PyTorch", shortName: "PyTorch", icon: <SiPytorch className="h-8 w-8" />, color: "#EE4C2C" },
-      { name: "Scikit-learn", shortName: "Scikit", icon: <SiScikitlearn className="h-8 w-8" />, color: "#F7931E" },
-      { name: "MLflow", shortName: "MLflow", icon: <Brain className="h-8 w-8" />, color: "#0194E2" },
+      {
+        name: "TensorFlow",
+        shortName: "TensorFlow",
+        icon: <SiTensorflow className="h-8 w-8" />,
+        color: "#FF6F00",
+      },
+      {
+        name: "PyTorch",
+        shortName: "PyTorch",
+        icon: <SiPytorch className="h-8 w-8" />,
+        color: "#EE4C2C",
+      },
+      {
+        name: "Scikit-learn",
+        shortName: "Scikit",
+        icon: <SiScikitlearn className="h-8 w-8" />,
+        color: "#F7931E",
+      },
+      {
+        name: "MLflow",
+        shortName: "MLflow",
+        icon: <Brain className="h-8 w-8" />,
+        color: "#0194E2",
+      },
     ],
   },
   {
     category: "Data Processing",
     icon: <Database className="h-6 w-6" />,
     technologies: [
-      { name: "Apache Spark", shortName: "Spark", icon: <SiApachespark className="h-8 w-8" />, color: "#E25A1C" },
-      { name: "Apache Kafka", shortName: "Kafka", icon: <SiApachekafka className="h-8 w-8" />, color: "#231F20" },
-      { name: "Apache Airflow", shortName: "Airflow", icon: <SiApacheairflow className="h-8 w-8" />, color: "#017CEE" },
-      { name: "Databricks", shortName: "Databricks", icon: <SiDatabricks className="h-8 w-8" />, color: "#FF3621" },
+      {
+        name: "Apache Spark",
+        shortName: "Spark",
+        icon: <SiApachespark className="h-8 w-8" />,
+        color: "#E25A1C",
+      },
+      {
+        name: "Apache Kafka",
+        shortName: "Kafka",
+        icon: <SiApachekafka className="h-8 w-8" />,
+        color: "#231F20",
+      },
+      {
+        name: "Apache Airflow",
+        shortName: "Airflow",
+        icon: <SiApacheairflow className="h-8 w-8" />,
+        color: "#017CEE",
+      },
+      {
+        name: "Databricks",
+        shortName: "Databricks",
+        icon: <SiDatabricks className="h-8 w-8" />,
+        color: "#FF3621",
+      },
     ],
   },
   {
     category: "Monitoring & Analytics",
     icon: <Activity className="h-6 w-6" />,
     technologies: [
-      { name: "Prometheus", shortName: "Prometheus", icon: <SiPrometheus className="h-8 w-8" />, color: "#E6522C" },
-      { name: "Grafana", shortName: "Grafana", icon: <SiGrafana className="h-8 w-8" />, color: "#F46800" },
-      { name: "ELK Stack", shortName: "ELK", icon: <SiElasticsearch className="h-8 w-8" />, color: "#005571" },
-      { name: "DataDog", shortName: "DataDog", icon: <SiDatadog className="h-8 w-8" />, color: "#632CA6" },
+      {
+        name: "Prometheus",
+        shortName: "Prometheus",
+        icon: <SiPrometheus className="h-8 w-8" />,
+        color: "#E6522C",
+      },
+      {
+        name: "Grafana",
+        shortName: "Grafana",
+        icon: <SiGrafana className="h-8 w-8" />,
+        color: "#F46800",
+      },
+      {
+        name: "ELK Stack",
+        shortName: "ELK",
+        icon: <SiElasticsearch className="h-8 w-8" />,
+        color: "#005571",
+      },
+      {
+        name: "DataDog",
+        shortName: "DataDog",
+        icon: <SiDatadog className="h-8 w-8" />,
+        color: "#632CA6",
+      },
     ],
   },
   {
     category: "Security & Compliance",
     icon: <ShieldCheck className="h-6 w-6" />,
     technologies: [
-      { name: "HashiCorp Vault", shortName: "Vault", icon: <SiVault className="h-8 w-8" />, color: "#FFD814" },
-      { name: "AWS IAM", shortName: "IAM", icon: <Key className="h-8 w-8" />, color: "#FF9900" },
-      { name: "Azure AD", shortName: "Azure AD", icon: <Users className="h-8 w-8" />, color: "#0078D4" },
-      { name: "SIEM", shortName: "SIEM", icon: <Eye className="h-8 w-8" />, color: "#0080FF" },
+      {
+        name: "HashiCorp Vault",
+        shortName: "Vault",
+        icon: <SiVault className="h-8 w-8" />,
+        color: "#FFD814",
+      },
+      {
+        name: "AWS IAM",
+        shortName: "IAM",
+        icon: <Key className="h-8 w-8" />,
+        color: "#FF9900",
+      },
+      {
+        name: "Azure AD",
+        shortName: "Azure AD",
+        icon: <Users className="h-8 w-8" />,
+        color: "#0078D4",
+      },
+      {
+        name: "SIEM",
+        shortName: "SIEM",
+        icon: <Eye className="h-8 w-8" />,
+        color: "#0080FF",
+      },
     ],
   },
 ];
@@ -465,7 +633,11 @@ export default function NetworkingCyberSecurity() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl"
               >
-                Modern networks are hybrid, identity-centric, and relentlessly targeted. AI—especially agentic systems and generative AI—now augments SecOps, NetOps, and ITOps to compress triage from hours to minutes, auto-correlate telemetry across endpoints, identities, cloud and network, and enforce Zero Trust at scale.
+                Modern networks are hybrid, identity-centric, and relentlessly
+                targeted. AI—especially agentic systems and generative AI—now
+                augments SecOps, NetOps, and ITOps to compress triage from hours
+                to minutes, auto-correlate telemetry across endpoints,
+                identities, cloud and network, and enforce Zero Trust at scale.
               </motion.p>
 
               <div className="mb-32">
@@ -549,7 +721,8 @@ export default function NetworkingCyberSecurity() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Leading-edge AI platforms we leverage for autonomous security operations
+              Leading-edge AI platforms we leverage for autonomous security
+              operations
             </p>
           </motion.div>
 
@@ -563,7 +736,8 @@ export default function NetworkingCyberSecurity() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20"
+                <div
+                  className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 h-full hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20"
                   data-testid={`card-platform-${index}`}
                 >
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-bl-2xl"></div>
@@ -614,7 +788,8 @@ export default function NetworkingCyberSecurity() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive security solutions designed to protect your modern enterprise infrastructure
+              Comprehensive security solutions designed to protect your modern
+              enterprise infrastructure
             </p>
           </motion.div>
 
@@ -743,7 +918,9 @@ export default function NetworkingCyberSecurity() {
                           Network Security Capabilities
                         </h3>
                         <p className="text-blue-100 leading-relaxed mb-6">
-                          Advanced network security solutions powered by AI-driven threat detection and zero-trust architecture.
+                          Advanced network security solutions powered by
+                          AI-driven threat detection and zero-trust
+                          architecture.
                         </p>
                       </div>
                     </div>
@@ -1005,7 +1182,8 @@ export default function NetworkingCyberSecurity() {
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Partner with security experts who combine cutting-edge AI technology with proven Zero Trust architecture
+                Partner with security experts who combine cutting-edge AI
+                technology with proven Zero Trust architecture
               </p>
             </motion.div>
 
@@ -1179,8 +1357,12 @@ export default function NetworkingCyberSecurity() {
                     {service.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
-                    <p className="text-gray-400 text-sm">{service.description}</p>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm">
+                      {service.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -1218,7 +1400,8 @@ export default function NetworkingCyberSecurity() {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We work with top-tier providers and cutting-edge technologies to deliver world-class solutions
+              We work with top-tier providers and cutting-edge technologies to
+              deliver world-class solutions
             </p>
           </motion.div>
 
@@ -1236,7 +1419,9 @@ export default function NetworkingCyberSecurity() {
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
                       {stack.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-white">{stack.category}</h3>
+                    <h3 className="text-2xl font-bold text-white">
+                      {stack.category}
+                    </h3>
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -1249,7 +1434,7 @@ export default function NetworkingCyberSecurity() {
                         transition={{ delay: techIndex * 0.05 }}
                         whileHover={{ scale: 1.05, y: -5 }}
                         className="group"
-                        data-testid={`tech-card-${stack.category.toLowerCase().replace(/\s+/g, '-')}-${techIndex}`}
+                        data-testid={`tech-card-${stack.category.toLowerCase().replace(/\s+/g, "-")}-${techIndex}`}
                       >
                         <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 h-full hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
                           <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-bl-2xl"></div>
@@ -1403,9 +1588,13 @@ export default function NetworkingCyberSecurity() {
                       <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">
                         {phase.phase}
                       </span>
-                      <h3 className="text-xl font-bold text-white">{phase.title}</h3>
+                      <h3 className="text-xl font-bold text-white">
+                        {phase.title}
+                      </h3>
                     </div>
-                    <p className="text-gray-400 leading-relaxed">{phase.description}</p>
+                    <p className="text-gray-400 leading-relaxed">
+                      {phase.description}
+                    </p>
                   </div>
                 </div>
                 {index < implementationRoadmap.length - 1 && (
