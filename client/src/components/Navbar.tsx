@@ -154,9 +154,21 @@ export default function Navbar({
 
   const toggleDropdown = (linkId: number, e: React.MouseEvent) => {
     e.preventDefault();
-    setActiveDropdown(activeDropdown === linkId ? null : linkId);
-    setActiveDesktopSubmenu(null);
-    setActiveDesktopSubSubmenu(null);
+    // Smooth transition when switching between dropdowns
+    if (activeDropdown !== null && activeDropdown !== linkId) {
+      // Switching from one dropdown to another - clear submenus first
+      setActiveDesktopSubmenu(null);
+      setActiveDesktopSubSubmenu(null);
+      // Small delay for smooth transition
+      setTimeout(() => {
+        setActiveDropdown(linkId);
+      }, 150);
+    } else {
+      // Toggling same dropdown or opening from closed state
+      setActiveDropdown(activeDropdown === linkId ? null : linkId);
+      setActiveDesktopSubmenu(null);
+      setActiveDesktopSubSubmenu(null);
+    }
   };
 
   const toggleMobileDropdown = (linkId: number) => {
@@ -245,7 +257,7 @@ export default function Navbar({
 
                       {activeDropdown === link.id && (
                         <div
-                          className="absolute left-0 right-0 top-full mt-2 bg-gray-900/95 backdrop-blur-sm shadow-2xl z-50 overflow-x-visible overflow-y-auto max-h-[80vh] animate-in fade-in-10 slide-in-from-top-5"
+                          className="absolute left-0 right-0 top-full mt-2 bg-gray-900/95 backdrop-blur-sm shadow-2xl z-50 overflow-x-visible overflow-y-auto max-h-[80vh]"
                           onMouseEnter={handleDropdownMouseEnter}
                           onMouseLeave={handleDropdownMouseLeave}
                           style={{
@@ -253,6 +265,8 @@ export default function Navbar({
                             left: 0,
                             right: 0,
                             top: scrolled ? "70px" : "80px",
+                            animation: "slideDown 0.3s ease-out forwards",
+                            transformOrigin: "top center",
                           }}
                         >
                           {/* Invisible bridge to prevent dropdown from closing */}
@@ -393,7 +407,12 @@ export default function Navbar({
 
                                         {/* Expandable Category Items */}
                                         {isActive && hasItems && (
-                                          <div className="mt-4 ml-4 space-y-1 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                          <div 
+                                            className="mt-4 ml-4 space-y-1 overflow-hidden"
+                                            style={{
+                                              animation: "expandHeight 0.3s ease-out forwards"
+                                            }}
+                                          >
                                             {category.items.map(
                                               (item, itemIdx) => (
                                                 <div key={itemIdx}>
@@ -426,7 +445,12 @@ export default function Navbar({
                                                       </div>
                                                       {/* Sub-category items - show when this specific sub-submenu is active */}
                                                       {activeDesktopSubSubmenu === `${category.name}-${item.name}` && (
-                                                        <div className="ml-8 space-y-2 animate-in slide-in-from-top-3 fade-in-20 duration-300 mt-2 relative z-[60] overflow-visible">
+                                                        <div 
+                                                          className="ml-8 space-y-2 mt-2 relative z-[60] overflow-hidden"
+                                                          style={{
+                                                            animation: "expandHeight 0.25s ease-out forwards"
+                                                          }}
+                                                        >
                                                           {item.items.map((subItem, subIdx) => (
                                                             <a
                                                               key={subIdx}
@@ -590,7 +614,12 @@ export default function Navbar({
                                             </div>
 
                                             {isActive && (
-                                              <div className="mt-4 ml-4 space-y-1 animate-in slide-in-from-top-3 fade-in-20 duration-300">
+                                              <div 
+                                                className="mt-4 ml-4 space-y-1 overflow-hidden"
+                                                style={{
+                                                  animation: "expandHeight 0.3s ease-out forwards"
+                                                }}
+                                              >
                                                 {category.items.map(
                                                   (item, itemIdx) => (
                                                     <a
