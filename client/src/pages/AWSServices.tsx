@@ -59,6 +59,7 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 interface FAQ {
   question: string;
@@ -459,12 +460,12 @@ export default function AWSServices() {
     >
       {/* Hero Section - Same style as LifeScienceNew */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background for AWS page - Enhanced with cloud transformation graphics */}
-        <div className="absolute inset-0">
+        <AnimatedBackground variant="hero" />
+        <div className="absolute inset-0 opacity-30">
           <img
             src="/assets/cloud_1752856032189.gif"
             alt="AWS Cloud Transformation"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center mix-blend-overlay"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.src = "/assets/AWS-banner.png";

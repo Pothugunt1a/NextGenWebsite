@@ -35,6 +35,7 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 interface FAQ {
   question: string;
@@ -271,15 +272,14 @@ export default function CloudServices() {
     >
       {/* Hero Section */}
       <div className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0">
+        <AnimatedBackground variant="hero" />
+        <div className="absolute inset-0 opacity-30">
           <img
             src="/assets/CloudComputing-banner.png"
             alt="Cloud Services"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center mix-blend-overlay"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
 
         <div className="relative flex items-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left">
@@ -334,13 +334,7 @@ export default function CloudServices() {
 
       {/* How We Help Our Clients Section */}
       <section className="py-16 text-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        </div>
-
+        <AnimatedBackground variant="section" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div

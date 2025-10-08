@@ -30,6 +30,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../components/ui/accordion";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 interface FAQ {
   question: string;
@@ -288,11 +289,12 @@ export default function DevOpsServices() {
     >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
+        <AnimatedBackground variant="hero" />
+        <div className="absolute inset-0 opacity-30">
           <img
             src="/assets/AI-ApplicationDevelopment.gif"
             alt="DevOps Services"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center mix-blend-overlay"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
