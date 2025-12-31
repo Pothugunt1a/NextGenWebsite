@@ -19,7 +19,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (process.env.RESEND_API_KEY) {
         try {
           await resend.emails.send({
-            from: "Contact Form <contact@rineueldue.resend.app>",
+            from: "Contact Form <onboarding@resend.dev>",
             to: "demo77019@gmail.com",
             replyTo: formData.email,
             subject: `New Contact Form Submission from ${formData.name}`,
@@ -31,8 +31,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
               ${formData.attachmentName ? `<p><strong>Attachment:</strong> ${formData.attachmentName} (${formData.attachmentSize} bytes)</p>` : ""}
             `,
           });
-        } catch (emailError: any) {
-          console.error("Error sending email via Resend:", emailError?.message || emailError);
+        } catch (emailError) {
+          console.error("Error sending email via Resend:", emailError);
         }
       }
 
