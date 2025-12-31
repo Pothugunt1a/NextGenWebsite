@@ -21,6 +21,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           await resend.emails.send({
             from: "Contact Form <onboarding@resend.dev>",
             to: "contact@rtnextgenai.com",
+            replyTo: formData.email,
             subject: `New Contact Form Submission from ${formData.name}`,
             html: `
               <h2>New Contact Form Submission</h2>
