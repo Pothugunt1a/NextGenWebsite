@@ -4,6 +4,9 @@ import path from "path";
 import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { z } from "zod";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -12,18 +15,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Validate request body against schema
       const formData = contactFormSchema.parse(req.body);
 
-      // Store contact form submission
-      // const contact = await storage.saveContactSubmission(formData); // Commented out database operation
-
-      // In a production environment, you would typically:
-      // 1. Send an email notification
-      // 2. Create a CRM entry
-      // 3. Set up an automated response
+      // Send email notification using Resend
+      if (process.env.RESEND_API_KEY) {
+        try {
+          await resend.emails.send({
+            from: "Contact Form <onboarding@resend.dev>",
+            to: "contact@rtnextgenai.com",
+            subject: `New Contact Form Submission from ${formData.name}`,
+            html: `
+              <h2>New Contact Form Submission</h2>
+              <p><strong>Name:</strong> ${formData.name}</p>
+              <p><strong>Email:</strong> ${formData.email}</p>
+              <p><strong>Message:</strong> ${formData.message}</p>
+              ${formData.attachmentName ? `<p><strong>Attachment:</strong> ${formData.attachmentName} (${formData.attachmentSize} bytes)</p>` : ""}
+            `,
+          });
+        } catch (emailError) {
+          console.error("Error sending email via Resend:", emailError);
+        }
+      }
 
       res.status(201).json({
         success: true,
         message: "Contact form submitted successfully",
-        // id: contact.id // Removed database id
       });
     } catch (error) {
       console.error("Error processing contact form:", error);
