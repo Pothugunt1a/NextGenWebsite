@@ -15,6 +15,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Validate request body against schema
       const formData = contactFormSchema.parse(req.body);
 
+      // Save to storage (database or memory)
+      await storage.saveContactSubmission(formData);
+
       // Send email notification using Resend
       if (process.env.RESEND_API_KEY) {
         try {
