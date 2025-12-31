@@ -35,14 +35,33 @@ var contactFormSchema = createInsertSchema(contactFormSubmissions).pick({
 
 // server/routes.ts
 import { z } from "zod";
+import { Resend } from "resend";
+var resend = new Resend(process.env.RESEND_API_KEY);
 async function registerRoutes(app2) {
   app2.post("/api/contact", async (req, res) => {
     try {
       const formData = contactFormSchema.parse(req.body);
+      if (process.env.RESEND_API_KEY) {
+        try {
+          await resend.emails.send({
+            from: "Contact Form <onboarding@resend.dev>",
+            to: "contact@rtnextgenai.com",
+            subject: `New Contact Form Submission from ${formData.name}`,
+            html: `
+              <h2>New Contact Form Submission</h2>
+              <p><strong>Name:</strong> ${formData.name}</p>
+              <p><strong>Email:</strong> ${formData.email}</p>
+              <p><strong>Message:</strong> ${formData.message}</p>
+              ${formData.attachmentName ? `<p><strong>Attachment:</strong> ${formData.attachmentName} (${formData.attachmentSize} bytes)</p>` : ""}
+            `
+          });
+        } catch (emailError) {
+          console.error("Error sending email via Resend:", emailError);
+        }
+      }
       res.status(201).json({
         success: true,
         message: "Contact form submitted successfully"
-        // id: contact.id // Removed database id
       });
     } catch (error) {
       console.error("Error processing contact form:", error);
